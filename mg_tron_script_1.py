@@ -1,4 +1,7 @@
 
+from dataclasses import dataclass
+from tkinter.tix import Tree
+from jmespath import search
 import serial
 
 PORT = "/dev/ttyACM1"
@@ -18,63 +21,66 @@ def serial_call(*args) -> None:
             print(output)
 
 
+@dataclass
 class Megatron:
     """Class to organize the manipulation of 8 channels"""
-
-    def __init__(
-            self) -> None:
-        pass
-    #     power: int,
-    #     frequency: float,
-    #     bandwidth: int,
-    #     save_state: bool,
-    #     amplifier_enable: bool,
-    #     high_stability_mode: bool,
-    #     noise_control: bool
-    # ) -> None:
-    #     self.power = power
-    #     self.frequency = frequency
-    #     self.bandwidth = bandwidth
-    #     self.save_state = save_state
-    #     self.amplifier_enable = amplifier_enable
-    #     self.high_stability_mode = high_stability_mode
-    #     self.noise_control = noise_control
 
     def status(self) -> None:
         """Check the status of the board"""
 
         serial_call('s')
 
-    def change_power(self, channel: str, power_level: str) -> None:
+    def change_power(self, channel: int, power_level: int) -> None:
         """Change the power level of a channel"""
 
-        serial_call('p', channel, power_level)
+        serial_call('p', str(channel), str(power_level))
 
-    def change_freq(self, channel: str, frequency: str) -> None:
-        """Change the power level of a channel"""
+    def change_freq(self, channel: int, frequency: float) -> None:
+        """Change the frequency of a channel"""
 
-        serial_call('f', channel, frequency)
+        serial_call('f', str(channel), str(frequency))
 
-    def change_bandwidth(self, channel: str, width: str) -> None:
-        """Change the power level of a channel"""
+    def change_bandwidth(self, channel: int, width: int) -> None:
+        """Change the bandwidth of a channel"""
 
-        serial_call('b', channel, width)
+        serial_call('b', str(channel), str(width))
+
+    def save_state(self, state: bool) -> None:
+        """Save each settings made by the user into memory for next startup"""
+
+        state = (1 if state else 0)
+        serial_call('x', str(state))
+
+    def amplification(self, channel: int, state: bool) -> None:
+        """Output HIGH or LOW logic level out of a channel"""
+
+        state = (1 if state else 0)
+        serial_call('a', str(channel), str(state))
+
+    def stability(self, state: bool) -> None:
+        """Boolean a second filtering stage of capacitors for further stability"""
+
+        state = (1 if state else 0)
+        serial_call('~', state)
+
+    def noise_control(self, state: bool) -> None:
+        """"""
 
     def reset_board(self) -> None:
+        """Reset the parameters of the board"""
 
-        [serial_call('p', str(i), '0') for i in range(1, 8)]
-        # [serial_call('f', str(i), '50') for i in range(1, 8)]
-        [serial_call('b', str(i), '0') for i in range(1, 8)]
+        [serial_call('p', str(i), '0') for i in range(1, 9)]
+        [serial_call('b', str(i), '0') for i in range(1, 9)]
 
 
 def main() -> None:
 
     test_1 = Megatron()
     test_1.reset_board()
+    test_1.save_state(True)
     #test_1.change_power("2", "63")
     #test_1.change_freq("2", "800")
     #test_1.change_bandwidth("2", "100")
-
 
 
 if __name__ == '__main__':
