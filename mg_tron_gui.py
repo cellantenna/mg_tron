@@ -2,7 +2,7 @@ from typing import List
 import dearpygui.dearpygui as dpg
 from interface import Megatron
 
-sender = Megatron()
+data_vehicle = Megatron()
 RESOLUTION: List[int] = [1200, 800]  # 1200x800
 
 dpg.create_context()
@@ -11,38 +11,55 @@ dpg.create_context()
 def callstack(sender, app_data, user_data) -> None:
     """Relational connection between GUI and Megatron class"""
 
-    # Create a function for each channel
-
-    print(f"\nSender: {sender}\n"
-          f"app_data: {app_data}\n"
-          f"user_data:",
-          {
-              "Frequency": dpg.get_value(f'freq_{1}'),
-              "Power": dpg.get_value(f'power_{1}'),
-              "Bandwidth": dpg.get_value(f'bandwidth_{1}'),
-          }
-          )
-
     match sender:
         case 27:
             print("Channel 1 information")
-            sender.change_power(1, dpg.get_value("power_1"))
-            sender.change_bandwidth(1, dpg.get_value("bandwidth_1"))
-            sender.change_frequency(1, dpg.get_value("freq_1"))
+            data_vehicle.change_power(1, dpg.get_value("power_1"))
+            data_vehicle.change_bandwidth(1, dpg.get_value("bandwidth_1"))
+            data_vehicle.change_frequency(1, dpg.get_value("freq_1"))
         case 33:
             print("Channel 2 information")
+            data_vehicle.change_power(1, dpg.get_value("power_2"))
+            data_vehicle.change_bandwidth(1, dpg.get_value("bandwidth_2"))
+            data_vehicle.change_frequency(1, dpg.get_value("freq_2"))
         case 39:
             print("Channel 3 information")
+            data_vehicle.change_power(1, dpg.get_value("power_3"))
+            data_vehicle.change_bandwidth(1, dpg.get_value("bandwidth_3"))
+            data_vehicle.change_frequency(1, dpg.get_value("freq_3"))
         case 45:
             print("Channel 4 information")
+            data_vehicle.change_power(1, dpg.get_value("power_4"))
+            data_vehicle.change_bandwidth(1, dpg.get_value("bandwidth_4"))
+            data_vehicle.change_frequency(1, dpg.get_value("freq_4"))
         case 51:
             print("Channel 5 information")
+            data_vehicle.change_power(1, dpg.get_value("power_5"))
+            data_vehicle.change_bandwidth(1, dpg.get_value("bandwidth_5"))
+            data_vehicle.change_frequency(1, dpg.get_value("freq_5"))
         case 57:
             print("Channel 6 information")
+            data_vehicle.change_power(1, dpg.get_value("power_6"))
+            data_vehicle.change_bandwidth(1, dpg.get_value("bandwidth_6"))
+            data_vehicle.change_frequency(1, dpg.get_value("freq_6"))
         case 63:
             print("Channel 7 information")
+            data_vehicle.change_power(1, dpg.get_value("power_7"))
+            data_vehicle.change_bandwidth(1, dpg.get_value("bandwidth_7"))
+            data_vehicle.change_frequency(1, dpg.get_value("freq_7"))
         case 69:
             print("Channel 8 information")
+            data_vehicle.change_power(1, dpg.get_value("power_8"))
+            data_vehicle.change_bandwidth(1, dpg.get_value("bandwidth_8"))
+            data_vehicle.change_frequency(1, dpg.get_value("freq_8"))
+        case _:
+            print("Unrecognized GUI report of a channel")
+
+def reset_button(sender, app_data, user_data) -> None:
+    """Reset all channel power levels to zero"""
+
+    data_vehicle.save_state(state=True)
+    data_vehicle.reset_board()
 
 
 with dpg.window(label="MGTron Control", tag="Primary Window", height=RESOLUTION[0], width=RESOLUTION[1], pos=(0, 0)):
@@ -58,7 +75,7 @@ with dpg.window(label="MGTron Control", tag="Primary Window", height=RESOLUTION[
                 max_value=6400,
                 clamped=True,
                 width=455,
-                payload_type="float",
+
             )
             slide_power = dpg.add_slider_int(
                 label="Power Level (0 - 63)",
@@ -75,12 +92,21 @@ with dpg.window(label="MGTron Control", tag="Primary Window", height=RESOLUTION[
                 clamped=True,
             )
 
-        with dpg.child_window(pos=(700, 98*i), width=(500)):
+        with dpg.child_window(pos=(700, 98*i), width=(250)):
             dpg.add_color_button(default_value=(115+3*i, 60+3*i, 199+2*i, 100),
                                  label="Colored Button",
                                  height=50,
                                  width=50,
-                                 callback=callstack)
+                                 callback=callstack,                                 
+                                 )
+
+        with dpg.child_window(pos=(950, ), width=(250)):
+            dpg.add_color_button(default_value=(200, 55, 0, 100),
+                                 label="Reset All Channels",
+                                 height=150,
+                                 width=230,
+                                 callback=reset_button,                                 
+                                 )
 
 
 with dpg.theme() as global_theme:
