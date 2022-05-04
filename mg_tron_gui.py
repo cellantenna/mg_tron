@@ -17,12 +17,11 @@ def callstack(sender, app_data, user_data) -> None:
 dpg.create_context()
 
 
-with dpg.window(label="MGTron Control", tag="Primary Window", height=600, width=800):
+with dpg.window(label="MGTron Control", tag="Primary Window", height=1200, width=800):
 
     for i in range(8):
 
-        with dpg.child_window(label=f"Channel {i}", tag=f"channel_{i}", pos=(0, 95*i)):
-            dpg.add_text(f"Channel {i+1}")
+        with dpg.child_window(label=f"Channel {i}", tag=f"channel_{i}", pos=(0, 98*i), width=(1200/2)):
             slide_frequency = dpg.add_slider_float(
                 label="Frequency Range (50 - 6400 MHz)",
                 tag=f"freq_{i+1}",
@@ -30,7 +29,8 @@ with dpg.window(label="MGTron Control", tag="Primary Window", height=600, width=
                 min_value=50,
                 max_value=6400,
                 clamped=True,
-                callback=callstack
+                callback=callstack,
+                width=1200/2
             )
             slide_power = dpg.add_slider_int(
                 label="Power Level (0 - 63)",
@@ -50,14 +50,14 @@ with dpg.window(label="MGTron Control", tag="Primary Window", height=600, width=
             )
 
             dpg.add_button(
-                label="Submit",
+                label=f"Send to Channel {i}",
                 callback=callstack,
                 user_data=(
                     dpg.get_value(slide_bandwidth),
                     slide_frequency,
                     slide_power,
                 ),
-                pos=[173, 7],
+                #pos=[173, ],
                 parent=f"channel_{i}"
             )
 
@@ -76,7 +76,7 @@ dpg.bind_theme(global_theme)
 
 dpg.create_viewport(
     title='MGTron Command Interface',
-    width=600, height=800,
+    width=1200, height=800,
     resizable=True,
     always_on_top=True,
 )
