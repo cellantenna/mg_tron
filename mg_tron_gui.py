@@ -16,7 +16,7 @@ def callstack(sender, app_data, user_data) -> None:
           f"app_data: {app_data}\n"
           f"user_data:",
           {
-              "Frequency": dpg.get_value(f'freq_{1}'),
+              "Frequency": dpg.get_value(f'freq_{[1,2,3,4,5,6,7,8]}'),
               "Power": dpg.get_value(f'power_{1}'),
               "Bandwidth": dpg.get_value(f'bandwidth_{1}'),
           }
