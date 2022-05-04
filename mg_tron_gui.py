@@ -5,29 +5,51 @@ from interface import Megatron
 sender = Megatron()
 RESOLUTION: List[int] = [1200, 800]  # 1200x800
 
-
 dpg.create_context()
 
 
 def callstack(sender, app_data, user_data) -> None:
     """Relational connection between GUI and Megatron class"""
 
+    # Create a function for each channel
+
     print(f"\nSender: {sender}\n"
           f"app_data: {app_data}\n"
           f"user_data:",
           {
-              "Frequency": dpg.get_value(f'freq_{[1,2,3,4,5,6,7,8]}'),
+              "Frequency": dpg.get_value(f'freq_{1}'),
               "Power": dpg.get_value(f'power_{1}'),
               "Bandwidth": dpg.get_value(f'bandwidth_{1}'),
           }
           )
 
+    match sender:
+        case 27:
+            print("Channel 1 information")
+            sender.change_power(1, dpg.get_value("power_1"))
+            sender.change_bandwidth(1, dpg.get_value("bandwidth_1"))
+            sender.change_frequency(1, dpg.get_value("freq_1"))
+        case 33:
+            print("Channel 2 information")
+        case 39:
+            print("Channel 3 information")
+        case 45:
+            print("Channel 4 information")
+        case 51:
+            print("Channel 5 information")
+        case 57:
+            print("Channel 6 information")
+        case 63:
+            print("Channel 7 information")
+        case 69:
+            print("Channel 8 information")
 
-with dpg.window(label="MGTron Control", tag="Primary Window", height=RESOLUTION[0], width=RESOLUTION[1]):
+
+with dpg.window(label="MGTron Control", tag="Primary Window", height=RESOLUTION[0], width=RESOLUTION[1], pos=(0, 0)):
 
     for i in range(8):
 
-        with dpg.child_window(label=f"Channel {i}", tag=f"channel_{i}", pos=(0, 98*i), width=(700)):
+        with dpg.child_window(label=f"Channel {i+1}", tag=f"channel_{i+1}", pos=(0, 98*i), width=(700)):
             slide_frequency = dpg.add_slider_float(
                 label="Frequency Range (50 - 6400 MHz)",
                 tag=f"freq_{i+1}",
@@ -36,6 +58,7 @@ with dpg.window(label="MGTron Control", tag="Primary Window", height=RESOLUTION[
                 max_value=6400,
                 clamped=True,
                 width=455,
+                payload_type="float",
             )
             slide_power = dpg.add_slider_int(
                 label="Power Level (0 - 63)",
@@ -50,12 +73,6 @@ with dpg.window(label="MGTron Control", tag="Primary Window", height=RESOLUTION[
                 min_value=0,
                 max_value=100,
                 clamped=True,
-            )
-
-            dpg.add_button(
-                label=f"Send to Channel {i+1}",
-                callback=callstack,
-                #pos=[173, ],
             )
 
         with dpg.child_window(pos=(700, 98*i), width=(500)):
@@ -81,8 +98,10 @@ dpg.bind_theme(global_theme)
 dpg.create_viewport(
     title='MGTron Command Interface',
     width=RESOLUTION[0], height=RESOLUTION[1],
-    resizable=True,
+    resizable=False,
     always_on_top=True,
+    x_pos=0,
+    y_pos=0,
 )
 dpg.setup_dearpygui()
 dpg.show_viewport()
