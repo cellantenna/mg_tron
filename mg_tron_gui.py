@@ -1,9 +1,12 @@
+from enum import auto
 from typing import List
 import dearpygui.dearpygui as dpg
 from interface import Megatron
 
-data_vehicle = Megatron()
+data_vehicle: Megatron = Megatron()
 RESOLUTION: List[int] = [1200, 800]  # 1200x800
+POWER: int = 0
+ROW_HEIGHT: int = 88
 
 dpg.create_context()
 
@@ -79,44 +82,90 @@ with dpg.font_registry():
     ital_font = dpg.add_font(file="MesloLGS NF Italic.ttf", size=16)
     bold_font = dpg.add_font(file="MesloLGS NF Bold Italic.ttf", size=22)
 
-
-with dpg.window(label="MGTron Control", tag="Primary Window", height=RESOLUTION[0], width=RESOLUTION[1], pos=(0, 0)):
+# Primary Window
+with dpg.window(label="MGTron Control",
+                tag="Primary Window",
+                height=RESOLUTION[0],
+                width=RESOLUTION[1],
+                pos=(0, 0),
+                ):
 
     for i in range(8):
 
-        with dpg.child_window(label=f"Channel {i+1}",
-                              tag=f"channel_{i+1}",
-                              pos=(0, 98*i),
-                              width=(700)
+        # Header Column Channel
+        with dpg.child_window(pos=(0,),  # (x, y)
+                              width=150,
+                              height=ROW_HEIGHT,
                               ):
-            slide_frequency = dpg.add_slider_float(
-                label="Frequency Range (50 - 6400 MHz)",
-                tag=f"freq_{i+1}",
-                default_value=50.000,
-                min_value=50,
-                max_value=6400,
-                clamped=True,
-                width=455,
-            )
-            slide_power = dpg.add_slider_int(
-                label="Power Level (0 - 63)",
-                tag=f"power_{i+1}",
-                min_value=0,
-                max_value=63,
-                clamped=True,
+            dpg.add_text(default_value=f"Channel", pos=(42, 33))
 
-            )
-            slide_bandwidth = dpg.add_slider_int(
-                label="Bandwidth Level (0 - 100%)",
-                tag=f"bandwidth_{i+1}",
-                min_value=0,
-                max_value=100,
-                clamped=True,
+        # Header Column Frequency
+        with dpg.child_window(pos=(150,),  # (x, y)
+                              width=150,
+                              height=ROW_HEIGHT,
+                              ):
+            dpg.add_text(default_value=f"Frequency", pos=[37, 33])
 
-            )
+        # Header Column Power
+        with dpg.child_window(pos=(300,),  # (x, y)
+                              width=150,
+                              height=ROW_HEIGHT,
+                              ):
+            dpg.add_text(default_value=f"Power", pos=[48, 33])
 
-        with dpg.child_window(pos=(700, 98*i), width=(250)):
-            dpg.add_color_button(default_value=(115, 60, 199, 100),
+        # Header Column Power
+        with dpg.child_window(pos=(450,),  # (x, y)
+                              width=150,
+                              height=ROW_HEIGHT,
+                              ):
+            dpg.add_text(default_value=f"Bandwidth", pos=[40, 33])
+
+        # First Column
+        with dpg.child_window(label=f"Channel {i+1}",
+                              pos=(0, ROW_HEIGHT*(i+1)),  # (x, y)
+                              width=150,
+                              height=ROW_HEIGHT,
+                              ):
+            dpg.add_text(default_value=i+1,
+                         tag=f"channel_{i}", pos=(70, ROW_HEIGHT/2-15))
+
+        # Frequency Column
+        with dpg.child_window(label=f"Channel {i+1}",
+                              pos=(150, ROW_HEIGHT*(i+1)),  # (x, y)
+                              width=150,
+                              height=ROW_HEIGHT,
+                              ):
+            dpg.add_input_float(tag=f"freq_{i+1}",
+                                default_value=50.000,
+                                min_value=50,
+                                max_value=6400,
+                                width=125,
+                                )
+        # Power Column
+        with dpg.child_window(label=f"Channel {i+1}",
+                              pos=(300, ROW_HEIGHT*(i+1)),  # (x, y)
+                              width=150,
+                              height=ROW_HEIGHT,
+                              ):
+            dpg.add_input_int(tag=f"power_{i+1}",
+                              min_value=0,
+                              max_value=63,
+                              width=125,
+                              )
+        # Bandwidth Channel
+        with dpg.child_window(label=f"Channel {i+1}",
+                              pos=(450, ROW_HEIGHT*(i+1)),  # (x, y)
+                              width=150,
+                              height=ROW_HEIGHT,
+                              ):
+            dpg.add_input_int(tag=f"bandwidth_{i+1}",
+                              min_value=0,
+                              max_value=100,
+                              width=125,
+                              )
+        # Send Button Column
+        with dpg.child_window(pos=(700, ROW_HEIGHT*(i+1)), width=(250), height=ROW_HEIGHT,):
+            dpg.add_color_button(default_value=(0, 0, 199, 255),
                                  label="Colored Button",
                                  height=50,
                                  width=50,
@@ -124,52 +173,75 @@ with dpg.window(label="MGTron Control", tag="Primary Window", height=RESOLUTION[
                                  user_data=i+1,
                                  )
             dpg.add_text(default_value="SEND", pos=(17, 23))
+            dpg.add_text(default_value=f"Channel {i+1} Status", pos=(80, 5))
 
-    with dpg.child_window(pos=(950, ), width=250, height=250):
-        rst = dpg.add_color_button(default_value=(200, 55, 0, 100),
-                                   label="Reset All Channels",
-                                   height=150,
-                                   width=230,
-                                   callback=reset_button,
-                                   )
-        dpg.add_text(default_value="RESET ALL", pos=(85, 69))
+            # Status Buttons
+            if POWER:
+                dpg.add_color_button(default_value=(0, 255, 0, 255),
+                                     tag=f"stats_{i+1}",
+                                     width=90,
+                                     height=50,
+                                     pos=(90, 30),
+                                     enabled=False,
+                                     no_border=True)
+            else:
+                dpg.add_color_button(default_value=(105, 105, 105, 255),
+                                     tag=f"stats_{i+1}",
+                                     width=90,
+                                     height=50,
+                                     pos=(90, 30),
+                                     enabled=False,
+                                     no_border=True)
+    # Big Buttons
+    with dpg.child_window(pos=(950, ROW_HEIGHT), width=250, autosize_y=True):
+        # Reset All Channels big button
+        dpg.add_color_button(default_value=(255, 0, 0, 255),  # RED
+                             label="Reset All Channels",
+                             height=150,
+                             width=230,
+                             callback=reset_button,
+                             pos=(10, 10)
+                             )
+        dpg.add_text(default_value="RESET ALL",
+                     pos=(85, 75), color=(0, 0, 0, 255))
 
-    with dpg.child_window(pos=(950, 249), width=250, height=250):
-        toggle = dpg.add_color_button(default_value=(100, 155, 0, 100),
-                                      label="Toggle All Off",
-                                      height=150,
-                                      width=230,
-                                      callback=toggle_off,
-                                      )
-        dpg.add_text(default_value="TOGGLE ALL OFF", pos=(70, 69))
+        # Toggle All Off big button
+        dpg.add_color_button(default_value=(255, 0, 0, 255),  # RED
+                             label="Toggle All Off",
+                             height=150,
+                             width=230,
+                             callback=toggle_off,
+                             pos=(10, 266),
+                             )
+        dpg.add_text(default_value="TOGGLE ALL OFF",
+                     pos=(70, 330), color=(0, 0, 0, 255))
 
-    with dpg.child_window(pos=(950, 498), width=250, height=250):
-        send_all = dpg.add_color_button(default_value=(100, 0, 0, 100),
-                                        label="Send All",
-                                        height=150,
-                                        width=230,
-                                        callback=toggle_off,
-                                        )
-        dpg.add_text(default_value="SEND ALL", pos=(89, 69))
+        # Send All big button
+        dpg.add_color_button(default_value=(0, 255, 0, 255),  # GREEN
+                             label="Send All",
+                             height=150,
+                             width=230,
+                             callback=toggle_off,
+                             pos=(10, 533)
+                             )
+        dpg.add_text(default_value="SEND ALL", pos=(
+            89, 599), color=(0, 0, 0, 255))
+
     dpg.bind_font(font=ital_font)
-    dpg.bind_item_font(item=toggle, font=bold_font)
 
 
 with dpg.theme() as global_theme:
 
     with dpg.theme_component(dpg.mvAll):
-        dpg.add_theme_color(dpg.mvThemeCol_FrameBg,
-                            (255, 140, 23), category=dpg.mvThemeCat_Core)
+        #dpg.add_theme_color(dpg.mvThemeCol_FrameBg, (255, 140, 23), category=dpg.mvThemeCat_Core)
         dpg.add_theme_style(dpg.mvStyleVar_FrameRounding,
                             5, category=dpg.mvThemeCat_Core)
 
     with dpg.theme_component(dpg.mvInputInt):
-        dpg.add_theme_color(dpg.mvThemeCol_FrameBg,
-                            (140, 255, 23), category=dpg.mvThemeCat_Core)
+        #dpg.add_theme_color(dpg.mvThemeCol_FrameBg,(140, 255, 23), category=dpg.mvThemeCat_Core)
         dpg.add_theme_style(dpg.mvStyleVar_FrameRounding,
                             5, category=dpg.mvThemeCat_Core)
 
-# dpg.show_font_manager()
 dpg.bind_theme(global_theme)
 
 dpg.create_viewport(
