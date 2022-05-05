@@ -4,7 +4,7 @@ import dearpygui.dearpygui as dpg
 from interface import Megatron
 
 data_vehicle: Megatron = Megatron()
-RESOLUTION: List[int] = [1200, 800]  # 1200x800
+RESOLUTION: List[int] = [1100, 800]  # 1200x800
 POWER: int = 0
 ROW_HEIGHT: int = 88
 
