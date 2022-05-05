@@ -4,9 +4,10 @@ import dearpygui.dearpygui as dpg
 from interface import Megatron
 
 data_vehicle: Megatron = Megatron()
-RESOLUTION: List[int] = [1100, 800]  # 1200x800
+RESOLUTION: List[int] = [1250, 735]  # 1200x800
 POWER: int = 0
-ROW_HEIGHT: int = 88
+ROW_HEIGHT: int = 78
+ADJUSTMENT: int = 40
 
 dpg.create_context()
 
@@ -95,34 +96,34 @@ with dpg.window(label="MGTron Control",
         # Header Column Channel
         with dpg.child_window(pos=(0,),  # (x, y)
                               width=150,
-                              height=ROW_HEIGHT,
+                              height=ROW_HEIGHT-ADJUSTMENT,
                               ):
-            dpg.add_text(default_value=f"Channel", pos=(42, 33))
+            dpg.add_text(default_value=f"Channel", pos=(42, 39-ADJUSTMENT+5))
 
         # Header Column Frequency
         with dpg.child_window(pos=(150,),  # (x, y)
                               width=150,
-                              height=ROW_HEIGHT,
+                              height=ROW_HEIGHT-ADJUSTMENT,
                               ):
-            dpg.add_text(default_value=f"Frequency", pos=[37, 33])
+            dpg.add_text(default_value=f"Frequency", pos=(37, 39-ADJUSTMENT+5))
 
         # Header Column Power
         with dpg.child_window(pos=(300,),  # (x, y)
                               width=150,
-                              height=ROW_HEIGHT,
+                              height=ROW_HEIGHT-ADJUSTMENT,
                               ):
-            dpg.add_text(default_value=f"Power", pos=[48, 33])
+            dpg.add_text(default_value=f"Power", pos=(48, 39-ADJUSTMENT+5))
 
         # Header Column Power
         with dpg.child_window(pos=(450,),  # (x, y)
                               width=150,
-                              height=ROW_HEIGHT,
+                              height=ROW_HEIGHT-ADJUSTMENT,
                               ):
-            dpg.add_text(default_value=f"Bandwidth", pos=[40, 33])
+            dpg.add_text(default_value=f"Bandwidth", pos=(40, 39-ADJUSTMENT+5))
 
         # First Column
         with dpg.child_window(label=f"Channel {i+1}",
-                              pos=(0, ROW_HEIGHT*(i+1)),  # (x, y)
+                              pos=(0, ROW_HEIGHT*(i+1)-ADJUSTMENT),  # (x, y)
                               width=150,
                               height=ROW_HEIGHT,
                               ):
@@ -131,7 +132,7 @@ with dpg.window(label="MGTron Control",
 
         # Frequency Column
         with dpg.child_window(label=f"Channel {i+1}",
-                              pos=(150, ROW_HEIGHT*(i+1)),  # (x, y)
+                              pos=(150, ROW_HEIGHT*(i+1)-ADJUSTMENT),  # (x, y)
                               width=150,
                               height=ROW_HEIGHT,
                               ):
@@ -143,7 +144,7 @@ with dpg.window(label="MGTron Control",
                                 )
         # Power Column
         with dpg.child_window(label=f"Channel {i+1}",
-                              pos=(300, ROW_HEIGHT*(i+1)),  # (x, y)
+                              pos=(300, ROW_HEIGHT*(i+1)-ADJUSTMENT),  # (x, y)
                               width=150,
                               height=ROW_HEIGHT,
                               ):
@@ -154,7 +155,7 @@ with dpg.window(label="MGTron Control",
                               )
         # Bandwidth Channel
         with dpg.child_window(label=f"Channel {i+1}",
-                              pos=(450, ROW_HEIGHT*(i+1)),  # (x, y)
+                              pos=(450, ROW_HEIGHT*(i+1)-ADJUSTMENT),  # (x, y)
                               width=150,
                               height=ROW_HEIGHT,
                               ):
@@ -164,7 +165,7 @@ with dpg.window(label="MGTron Control",
                               width=125,
                               )
         # Send Button Column
-        with dpg.child_window(pos=(700, ROW_HEIGHT*(i+1)), width=(250), height=ROW_HEIGHT,):
+        with dpg.child_window(pos=(700, ROW_HEIGHT*(i+1)-ADJUSTMENT), width=(250), height=ROW_HEIGHT,):
             dpg.add_color_button(default_value=(0, 0, 199, 255),
                                  label="Colored Button",
                                  height=50,
@@ -188,17 +189,17 @@ with dpg.window(label="MGTron Control",
                 dpg.add_color_button(default_value=(105, 105, 105, 255),
                                      tag=f"stats_{i+1}",
                                      width=90,
-                                     height=50,
+                                     height=30,
                                      pos=(90, 30),
                                      enabled=False,
                                      no_border=True)
     # Big Buttons
-    with dpg.child_window(pos=(950, ROW_HEIGHT), width=250, autosize_y=True):
+    with dpg.child_window(pos=(950, ROW_HEIGHT-ADJUSTMENT), width=250, autosize_y=True):
         # Reset All Channels big button
         dpg.add_color_button(default_value=(255, 0, 0, 255),  # RED
                              label="Reset All Channels",
                              height=150,
-                             width=230,
+                             width=220,
                              callback=reset_button,
                              pos=(10, 10)
                              )
@@ -209,23 +210,23 @@ with dpg.window(label="MGTron Control",
         dpg.add_color_button(default_value=(255, 0, 0, 255),  # RED
                              label="Toggle All Off",
                              height=150,
-                             width=230,
+                             width=220,
                              callback=toggle_off,
-                             pos=(10, 266),
+                             pos=(10, 256),
                              )
         dpg.add_text(default_value="TOGGLE ALL OFF",
-                     pos=(70, 330), color=(0, 0, 0, 255))
+                     pos=(70, 320), color=(0, 0, 0, 255))
 
         # Send All big button
         dpg.add_color_button(default_value=(0, 255, 0, 255),  # GREEN
                              label="Send All",
                              height=150,
-                             width=230,
+                             width=220,
                              callback=toggle_off,
-                             pos=(10, 533)
+                             pos=(10, 503)
                              )
         dpg.add_text(default_value="SEND ALL", pos=(
-            89, 599), color=(0, 0, 0, 255))
+            89, 569), color=(0, 0, 0, 255))
 
     dpg.bind_font(font=ital_font)
 
@@ -247,13 +248,13 @@ dpg.bind_theme(global_theme)
 dpg.create_viewport(
     title='MGTron Command Interface',
     width=RESOLUTION[0], height=RESOLUTION[1],
-    resizable=True,
-    always_on_top=False,
+    resizable=False,
+    always_on_top=True,
     x_pos=0,
     y_pos=0,
 )
 dpg.setup_dearpygui()
-dpg.show_viewport()
+dpg.show_viewport(maximized=False)
 dpg.set_primary_window("Primary Window", True)
 dpg.start_dearpygui()
 dpg.destroy_context()
