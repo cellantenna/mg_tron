@@ -1,11 +1,10 @@
-from enum import auto
 from typing import List
 import dearpygui.dearpygui as dpg
 from interface import Megatron
 
 data_vehicle: Megatron = Megatron()
 RESOLUTION: List[int] = [1250, 735]  # 1200x800
-POWER: int = 0
+POWER: bool = bool()
 ROW_HEIGHT: int = 78
 ADJUSTMENT: int = 40
 
@@ -17,6 +16,8 @@ def callstack(sender, app_data, user_data) -> None:
 
     match user_data:
         case 1:
+            global POWER
+            POWER = True
             print("Channel 1 information")
             data_vehicle.change_power(1, dpg.get_value("power_1"))
             data_vehicle.change_bandwidth(1, dpg.get_value("bandwidth_1"))
@@ -100,6 +101,14 @@ with dpg.window(label="MGTron Control",
                               ):
             dpg.add_text(default_value=f"Channel", pos=(42, 39-ADJUSTMENT+5))
 
+        # Right Header Column Channel
+        with dpg.child_window(pos=(700,),  # (x, y)
+                              width=250,
+                              height=ROW_HEIGHT-ADJUSTMENT,
+                              ):
+            dpg.add_text(default_value=f"Channel Status",
+                         pos=(60, 39-ADJUSTMENT+5))
+
         # Header Column Frequency
         with dpg.child_window(pos=(150,),  # (x, y)
                               width=150,
@@ -165,26 +174,31 @@ with dpg.window(label="MGTron Control",
                               width=125,
                               )
         # Send Button Column
-        with dpg.child_window(pos=(700, ROW_HEIGHT*(i+1)-ADJUSTMENT), width=(250), height=ROW_HEIGHT,):
-            dpg.add_color_button(default_value=(0, 0, 199, 255),
-                                 label="Colored Button",
-                                 height=50,
-                                 width=50,
-                                 callback=callstack,
-                                 user_data=i+1,
-                                 )
-            dpg.add_text(default_value="SEND", pos=(16, 23))
-            dpg.add_text(default_value=f"Channel {i+1} Status", pos=(80, 5))
+        with dpg.child_window(pos=(700, ROW_HEIGHT*(i+1)-ADJUSTMENT),
+                              width=(250), height=ROW_HEIGHT,
+                              ):
+
+            colored_btn = dpg.add_color_button(default_value=(0, 0, 199, 255),
+                                               label="Colored Button",
+                                               tag=f"colored_btn_{i+1}",
+                                               height=50,
+                                               width=50,
+                                               callback=callstack,
+                                               user_data=i+1,
+                                               )
+            dpg.add_text(default_value="SEND", pos=(14, 20))
+            dpg.add_text(default_value=i+1, pos=(134, 5))
 
             # Status Buttons
             if POWER:
                 dpg.add_color_button(default_value=(0, 255, 0, 255),
                                      tag=f"stats_{i+1}",
                                      width=90,
-                                     height=50,
+                                     height=30,
                                      pos=(90, 30),
                                      enabled=False,
-                                     no_border=True)
+                                     no_border=True,
+                                     )
             else:
                 dpg.add_color_button(default_value=(105, 105, 105, 255),
                                      tag=f"stats_{i+1}",
@@ -192,9 +206,17 @@ with dpg.window(label="MGTron Control",
                                      height=30,
                                      pos=(90, 30),
                                      enabled=False,
-                                     no_border=True)
+                                     no_border=True,
+                                     )
+
     # Big Buttons
-    with dpg.child_window(pos=(950, ROW_HEIGHT-ADJUSTMENT), width=250, autosize_y=True, border=False):
+    with dpg.child_window(pos=(975, ROW_HEIGHT-ADJUSTMENT),
+                          width=250,
+                          autosize_y=True,
+
+                          border=False,
+                          ):
+
         # Reset All Channels big button
         dpg.add_color_button(default_value=(255, 0, 0, 255),  # RED
                              label="Reset All Channels",
@@ -202,10 +224,9 @@ with dpg.window(label="MGTron Control",
                              width=220,
                              callback=reset_button,
                              pos=(10, 10),
-
                              )
         dpg.add_text(default_value="RESET ALL",
-                     pos=(85, 75), color=(0, 0, 0, 255))
+                     pos=(70, 70), color=(0, 0, 0, 255))
 
         # Toggle All Off big button
         dpg.add_color_button(default_value=(255, 0, 0, 255),  # RED
@@ -216,7 +237,7 @@ with dpg.window(label="MGTron Control",
                              pos=(10, 256),
                              )
         dpg.add_text(default_value="TOGGLE ALL OFF",
-                     pos=(70, 320), color=(0, 0, 0, 255))
+                     pos=(55, 315), color=(0, 0, 0, 255))
 
         # Send All big button
         dpg.add_color_button(default_value=(0, 255, 0, 255),  # GREEN
@@ -227,7 +248,10 @@ with dpg.window(label="MGTron Control",
                              pos=(10, 503)
                              )
         dpg.add_text(default_value="SEND ALL", pos=(
-            89, 569), color=(0, 0, 0, 255))
+            74, 569), color=(0, 0, 0, 255))
+
+    with dpg.tooltip(colored_btn, show=False):
+        pass
 
     dpg.bind_font(font=ital_font)
 
@@ -235,12 +259,12 @@ with dpg.window(label="MGTron Control",
 with dpg.theme() as global_theme:
 
     with dpg.theme_component(dpg.mvAll):
-        #dpg.add_theme_color(dpg.mvThemeCol_FrameBg, (255, 140, 23), category=dpg.mvThemeCat_Core)
+        # dpg.add_theme_color(dpg.mvThemeCol_FrameBg, (255, 140, 23), category=dpg.mvThemeCat_Core)
         dpg.add_theme_style(dpg.mvStyleVar_FrameRounding,
                             5, category=dpg.mvThemeCat_Core)
 
     with dpg.theme_component(dpg.mvInputInt):
-        #dpg.add_theme_color(dpg.mvThemeCol_FrameBg,(140, 255, 23), category=dpg.mvThemeCat_Core)
+        # dpg.add_theme_color(dpg.mvThemeCol_FrameBg,(140, 255, 23), category=dpg.mvThemeCat_Core)
         dpg.add_theme_style(dpg.mvStyleVar_FrameRounding,
                             5, category=dpg.mvThemeCat_Core)
 
