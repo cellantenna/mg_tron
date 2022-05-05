@@ -80,7 +80,7 @@ def toggle_off(sender, app_data, user_data) -> None:
 
 with dpg.font_registry():
     default_font_added = dpg.add_font(file="MesloLGS NF Regular.ttf", size=16)
-    ital_font = dpg.add_font(file="MesloLGS NF Italic.ttf", size=16)
+    ital_font = dpg.add_font(file="MesloLGS NF Italic.ttf", size=20)
     bold_font = dpg.add_font(file="MesloLGS NF Bold Italic.ttf", size=22)
 
 # Primary Window
@@ -173,7 +173,7 @@ with dpg.window(label="MGTron Control",
                                  callback=callstack,
                                  user_data=i+1,
                                  )
-            dpg.add_text(default_value="SEND", pos=(17, 23))
+            dpg.add_text(default_value="SEND", pos=(16, 23))
             dpg.add_text(default_value=f"Channel {i+1} Status", pos=(80, 5))
 
             # Status Buttons
@@ -194,14 +194,15 @@ with dpg.window(label="MGTron Control",
                                      enabled=False,
                                      no_border=True)
     # Big Buttons
-    with dpg.child_window(pos=(950, ROW_HEIGHT-ADJUSTMENT), width=250, autosize_y=True):
+    with dpg.child_window(pos=(950, ROW_HEIGHT-ADJUSTMENT), width=250, autosize_y=True, border=False):
         # Reset All Channels big button
         dpg.add_color_button(default_value=(255, 0, 0, 255),  # RED
                              label="Reset All Channels",
                              height=150,
                              width=220,
                              callback=reset_button,
-                             pos=(10, 10)
+                             pos=(10, 10),
+
                              )
         dpg.add_text(default_value="RESET ALL",
                      pos=(85, 75), color=(0, 0, 0, 255))
