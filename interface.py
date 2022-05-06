@@ -1,24 +1,27 @@
-
 from dataclasses import dataclass
 import os
 from typing import List
 import serial
+import subprocess
 
 PORT: str = str()
 BAUDRATE = 230_400
+holder = str()
+DEVICE_NUMBER: int = 0
+
 
 def serial_call(*args) -> None:
 
     with serial.Serial() as ser:
         ser.baudrate = BAUDRATE
         ser.port = PORT
-        ser.timeout = 4  # seconds
+        ser.timeout = 2  # seconds
         ser.open()
         ser.write(f"{' '.join([arg for arg in args])}".encode('utf-8'))
         outputs: list[str] = [line.decode('ascii') for line in ser.readlines()]
-        outputs = " ".join(outputs)
-
-        return outputs        
+        outputs = " ".join(output for output in outputs)
+        global holder
+        holder = outputs
 
 
 @dataclass
@@ -93,23 +96,21 @@ class Megatron:
 def find_device(operating_system: str) -> None:
     """Find the Megatron device plugged into the Linux computer"""
 
+    global PORT
     # Determine if system is Linux or WIN
     if operating_system.lower() == "linux":
 
         checker = Megatron()
         # Search Linux filesystem for device
-        filename = "ttyACM0"
-        devices = [os.path.join(root, filename) for root, dir,
-                   files in os.walk("/dev/") if filename in files]
-        global PORT
-        if devices:
-            for index, device in enumerate(devices):
-                if device == f'/dev/ttyACM{index}':
-                    print(f"Found: {device}")
-                    PORT = device
-                    results = checker.status()
-                    print(results)
-                    return PORT
+        find = ["find /dev -iname '*acm*'"]
+        results = subprocess.run(args=find,
+                                 shell=True,
+                                 encoding="utf-8",
+                                 capture_output=True,
+                                 )
+        results = [result.split("'")[1].split("\\n") for result in str(
+            results).split() if result.startswith("stdout")]
+        PORT = results[0][DEVICE_NUMBER]
 
     else:
         # Search Windows filesystem for device
@@ -123,11 +124,14 @@ def main() -> None:
     find_device("linux")
     test_1 = Megatron()
     test_1.status()
+    #print(holder)
+
     # test_1.reset_board()
-    # test_1.change_power(3, 55)
-    # test_1.change_freq(3, 1800)
-    # test_1.change_bandwidth(3, 40)
-    # test_1.amplification(3, True)
+    for i in range(8):
+        test_1.change_power(i+1, 55)
+        test_1.change_freq(i+1, 1800)
+        test_1.change_bandwidth(i+1, 40)
+    #test_1.amplification(3, True)
     # test_1.stability(True)
     # test_1.save_state(True)
 
