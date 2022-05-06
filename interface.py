@@ -1,10 +1,11 @@
 
 from dataclasses import dataclass
+import os
+from typing import List
 import serial
 
-PORT = "/dev/ttyACM1"
+PORT: str = str()
 BAUDRATE = 230_400
-
 
 def serial_call(*args) -> None:
 
@@ -14,9 +15,10 @@ def serial_call(*args) -> None:
         ser.timeout = 4  # seconds
         ser.open()
         ser.write(f"{' '.join([arg for arg in args])}".encode('utf-8'))
-        outputs = [line.decode('ascii') for line in ser.readlines()]
-        for output in outputs:
-            print(output)
+        outputs: list[str] = [line.decode('ascii') for line in ser.readlines()]
+        outputs = " ".join(outputs)
+
+        return outputs        
 
 
 @dataclass
@@ -88,10 +90,40 @@ class Megatron:
         self.save_state(False)
 
 
+def find_device(operating_system: str) -> None:
+    """Find the Megatron device plugged into the Linux computer"""
+
+    # Determine if system is Linux or WIN
+    if operating_system.lower() == "linux":
+
+        checker = Megatron()
+        # Search Linux filesystem for device
+        filename = "ttyACM0"
+        devices = [os.path.join(root, filename) for root, dir,
+                   files in os.walk("/dev/") if filename in files]
+        global PORT
+        if devices:
+            for index, device in enumerate(devices):
+                if device == f'/dev/ttyACM{index}':
+                    print(f"Found: {device}")
+                    PORT = device
+                    results = checker.status()
+                    print(results)
+                    return PORT
+
+    else:
+        # Search Windows filesystem for device
+        filename = "COM1"
+        devices = [os.path.join(root, filename) for root, dir,
+                   files in os.walk("/user/") if filename in files]
+
+
 def main() -> None:
 
+    find_device("linux")
     test_1 = Megatron()
-    test_1.reset_board()
+    test_1.status()
+    # test_1.reset_board()
     # test_1.change_power(3, 55)
     # test_1.change_freq(3, 1800)
     # test_1.change_bandwidth(3, 40)

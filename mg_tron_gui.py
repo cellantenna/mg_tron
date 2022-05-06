@@ -178,84 +178,86 @@ with dpg.window(label="MGTron Control",
                               width=(250), height=ROW_HEIGHT,
                               ):
 
-            colored_btn = dpg.add_color_button(default_value=(0, 0, 199, 255),
-                                               label="Colored Button",
-                                               tag=f"colored_btn_{i+1}",
-                                               height=50,
-                                               width=50,
-                                               callback=callstack,
-                                               user_data=i+1,
-                                               )
+            dpg.add_button(tag=f"send_btn_{i+1}",
+                           height=50,
+                           width=50,
+                           callback=callstack,
+                           user_data=i+1,
+                           )
             dpg.add_text(default_value="SEND", pos=(14, 20))
             dpg.add_text(default_value=i+1, pos=(134, 5))
 
             # Status Buttons
-            if POWER:
-                dpg.add_color_button(default_value=(0, 255, 0, 255),
-                                     tag=f"stats_{i+1}",
-                                     width=90,
-                                     height=30,
-                                     pos=(90, 30),
-                                     enabled=False,
-                                     no_border=True,
-                                     )
-            else:
-                dpg.add_color_button(default_value=(105, 105, 105, 255),
-                                     tag=f"stats_{i+1}",
-                                     width=90,
-                                     height=30,
-                                     pos=(90, 30),
-                                     enabled=False,
-                                     no_border=True,
-                                     )
+            dpg.add_button(tag=f"stats_{i+1}",
+                               width=90,
+                               height=30,
+                               pos=(90, 30),
+                               enabled=True,
+                           )
 
     # Big Buttons
     with dpg.child_window(pos=(975, ROW_HEIGHT-ADJUSTMENT),
                           width=250,
                           autosize_y=True,
-
                           border=False,
                           ):
 
         # Reset All Channels big button
-        dpg.add_color_button(default_value=(255, 0, 0, 255),  # RED
-                             label="Reset All Channels",
-                             height=150,
-                             width=220,
-                             callback=reset_button,
-                             pos=(10, 10),
-                             )
+        reset_all = dpg.add_button(tag="Reset All Channels",
+                                   height=150,
+                                   width=220,
+                                   callback=reset_button,
+                                   pos=(10, 10),
+                                   )
         dpg.add_text(default_value="RESET ALL",
                      pos=(70, 70), color=(0, 0, 0, 255))
 
         # Toggle All Off big button
-        dpg.add_color_button(default_value=(255, 0, 0, 255),  # RED
-                             label="Toggle All Off",
-                             height=150,
-                             width=220,
-                             callback=toggle_off,
-                             pos=(10, 256),
-                             )
+        toggle_all = dpg.add_button(tag="Toggle All Off",
+                                    height=150,
+                                    width=220,
+                                    callback=toggle_off,
+                                    pos=(10, 256),
+                                    )
         dpg.add_text(default_value="TOGGLE ALL OFF",
                      pos=(55, 315), color=(0, 0, 0, 255))
 
         # Send All big button
-        dpg.add_color_button(default_value=(0, 255, 0, 255),  # GREEN
-                             label="Send All",
-                             height=150,
-                             width=220,
-                             callback=toggle_off,
-                             pos=(10, 503)
-                             )
+        send_all = dpg.add_button(tag="Send All",
+                                  height=150,
+                                  width=220,
+                                  callback=toggle_off,
+                                  pos=(10, 503)
+                                  )
         dpg.add_text(default_value="SEND ALL", pos=(
             74, 569), color=(0, 0, 0, 255))
 
-    with dpg.tooltip(colored_btn, show=False):
-        pass
-
     dpg.bind_font(font=ital_font)
 
-
+# Green Button Theme
+with dpg.theme() as grn_btn_theme:
+    with dpg.theme_component(dpg.mvAll):
+        dpg.add_theme_color(dpg.mvThemeCol_Button, (0, 255, 0, 255))  # GREEN
+# Red Button Theme
+with dpg.theme() as red_btn_theme:
+    with dpg.theme_component(dpg.mvAll):
+        dpg.add_theme_color(dpg.mvThemeCol_Button, (255, 0, 0, 255))  # RED
+# Blue Button Theme
+with dpg.theme() as blue_btn_theme:
+    with dpg.theme_component(dpg.mvAll):
+        dpg.add_theme_color(dpg.mvThemeCol_Button,
+                            (0, 0, 255, 255))  # BLUE
+# Grey Button Theme
+with dpg.theme() as grey_btn_theme:
+    with dpg.theme_component(dpg.mvAll):
+        dpg.add_theme_color(dpg.mvThemeCol_Button,
+                            (105, 105, 105, 255))  # GREY
+# Orange Button Theme
+with dpg.theme() as orng_btn_theme:
+    with dpg.theme_component(dpg.mvAll):
+        dpg.add_theme_color(dpg.mvThemeCol_Button,
+                            (255, 165, 0, 255))  # ORANGE
+# Global Theme
 with dpg.theme() as global_theme:
 
     with dpg.theme_component(dpg.mvAll):
@@ -269,6 +271,17 @@ with dpg.theme() as global_theme:
                             5, category=dpg.mvThemeCat_Core)
 
 dpg.bind_theme(global_theme)
+dpg.bind_item_theme(send_all, grn_btn_theme)
+dpg.bind_item_theme(toggle_all, red_btn_theme)
+dpg.bind_item_theme(reset_all, red_btn_theme)
+[
+    (
+        dpg.bind_item_theme(f"send_btn_{i+1}", blue_btn_theme),
+        dpg.bind_item_theme(f"stats_{i+1}", grn_btn_theme)
+        if POWER else
+        dpg.bind_item_theme(f"stats_{i+1}", grey_btn_theme),
+    )
+    for i in range(8)]  # Propgation loop
 
 dpg.create_viewport(
     title='MGTron Command Interface',
