@@ -38,62 +38,38 @@ with dpg.theme() as orng_btn_theme:
 data_vehicle.save_state(False)
 
 
+def callstack_helper(channel: int):
+    """Helper function to reduce clutter"""
+
+    dpg.bind_item_theme(f"stats_{channel}", orng_btn_theme)
+    print(f"Channel {channel} Information Sent")
+    data_vehicle.change_power(channel, dpg.get_value(f"power_{channel}"))
+    data_vehicle.change_bandwidth(1, dpg.get_value(f"bandwidth_{channel}"))
+    data_vehicle.change_freq(1, dpg.get_value(f"freq_{channel}"))
+    print("Ready for next command.\n")
+    dpg.bind_item_theme(f"stats_{channel}", grn_btn_theme)
+
+
 def callstack(sender, app_data, user_data) -> None:
     """Relational connection between GUI and Megatron class"""
 
     match user_data:
         case 1:
-            #dpg.configure_item(item="stats_1", show=False)
-            dpg.bind_item_theme(f"stats_1", orng_btn_theme)
-            print("Channel 1 Information Sent")
-            data_vehicle.change_power(1, dpg.get_value("power_1"))
-            data_vehicle.change_bandwidth(1, dpg.get_value("bandwidth_1"))
-            data_vehicle.change_freq(1, dpg.get_value("freq_1"))
-            print("Ready for next command.\n")
-            dpg.bind_item_theme(f"stats_1", grn_btn_theme)
-
+            callstack_helper(channel=1)
         case 2:
-            print("Channel 2 Information Sent")
-            data_vehicle.change_power(2, dpg.get_value("power_2"))
-            data_vehicle.change_bandwidth(2, dpg.get_value("bandwidth_2"))
-            data_vehicle.change_freq(2, dpg.get_value("freq_2"))
-            print("Ready for next command.\n")
+            callstack_helper(channel=2)
         case 3:
-            print("Channel 3 Information Sent")
-            data_vehicle.change_power(3, dpg.get_value("power_3"))
-            data_vehicle.change_bandwidth(3, dpg.get_value("bandwidth_3"))
-            data_vehicle.change_freq(3, dpg.get_value("freq_3"))
-            print("Ready for next command.\n")
+            callstack_helper(channel=3)
         case 4:
-            print("Channel 4 Information Sent")
-            data_vehicle.change_power(4, dpg.get_value("power_4"))
-            data_vehicle.change_bandwidth(4, dpg.get_value("bandwidth_4"))
-            data_vehicle.change_freq(4, dpg.get_value("freq_4"))
-            print("Ready for next command.\n")
+            callstack_helper(channel=4)
         case 5:
-            print("Channel 5 Information Sent")
-            data_vehicle.change_power(5, dpg.get_value("power_5"))
-            data_vehicle.change_bandwidth(5, dpg.get_value("bandwidth_5"))
-            data_vehicle.change_freq(5, dpg.get_value("freq_5"))
-            print("Ready for next command.\n")
+            callstack_helper(channel=5)
         case 6:
-            print("Channel 6 Information Sent")
-            data_vehicle.change_power(6, dpg.get_value("power_6"))
-            data_vehicle.change_bandwidth(6, dpg.get_value("bandwidth_6"))
-            data_vehicle.change_freq(6, dpg.get_value("freq_6"))
-            print("Ready for next command.\n")
+            callstack_helper(channel=6)
         case 7:
-            print("Channel 7 Information Sent")
-            data_vehicle.change_power(7, dpg.get_value("power_7"))
-            data_vehicle.change_bandwidth(7, dpg.get_value("bandwidth_7"))
-            data_vehicle.change_freq(7, dpg.get_value("freq_7"))
-            print("Ready for next command.\n")
+            callstack_helper(channel=7)
         case 8:
-            print("Channel 8 Information Sent")
-            data_vehicle.change_power(8, dpg.get_value("power_8"))
-            data_vehicle.change_bandwidth(8, dpg.get_value("bandwidth_8"))
-            data_vehicle.change_freq(8, dpg.get_value("freq_8"))
-            print("Ready for next command.\n")
+            callstack_helper(channel=8)
         case _:
             print(f"Unrecognized GUI report of a channel: \n")
             print(
@@ -108,8 +84,16 @@ def reset_button(sender, app_data, user_data) -> None:
 
     print("Reset All command Sent")
 
+    [
+        dpg.bind_item_theme(f"stats_{i+1}", orng_btn_theme)
+        for i in range(8)
+    ]
     data_vehicle.save_state(state=True)
     data_vehicle.reset_board()
+    [
+        dpg.bind_item_theme(f"stats_{i+1}", grey_btn_theme)
+        for i in range(8)
+    ]
 
     print("Ready for next command.\n")
 
@@ -119,37 +103,14 @@ def send_all_channels(sender, app_data, user_data) -> None:
 
     print("Send All command executed")
 
-    data_vehicle.change_power(1, dpg.get_value("power_1"))
-    data_vehicle.change_bandwidth(1, dpg.get_value("bandwidth_1"))
-    data_vehicle.change_freq(1, dpg.get_value("freq_1"))
-
-    data_vehicle.change_power(2, dpg.get_value("power_2"))
-    data_vehicle.change_bandwidth(2, dpg.get_value("bandwidth_2"))
-    data_vehicle.change_freq(2, dpg.get_value("freq_2"))
-
-    data_vehicle.change_power(3, dpg.get_value("power_3"))
-    data_vehicle.change_bandwidth(3, dpg.get_value("bandwidth_3"))
-    data_vehicle.change_freq(3, dpg.get_value("freq_3"))
-
-    data_vehicle.change_power(4, dpg.get_value("power_4"))
-    data_vehicle.change_bandwidth(4, dpg.get_value("bandwidth_4"))
-    data_vehicle.change_freq(4, dpg.get_value("freq_4"))
-
-    data_vehicle.change_power(5, dpg.get_value("power_5"))
-    data_vehicle.change_bandwidth(5, dpg.get_value("bandwidth_5"))
-    data_vehicle.change_freq(5, dpg.get_value("freq_5"))
-
-    data_vehicle.change_power(6, dpg.get_value("power_6"))
-    data_vehicle.change_bandwidth(6, dpg.get_value("bandwidth_6"))
-    data_vehicle.change_freq(6, dpg.get_value("freq_6"))
-
-    data_vehicle.change_power(7, dpg.get_value("power_7"))
-    data_vehicle.change_bandwidth(7, dpg.get_value("bandwidth_7"))
-    data_vehicle.change_freq(7, dpg.get_value("freq_7"))
-
-    data_vehicle.change_power(8, dpg.get_value("power_8"))
-    data_vehicle.change_bandwidth(8, dpg.get_value("bandwidth_8"))
-    data_vehicle.change_freq(8, dpg.get_value("freq_8"))
+    callstack_helper(channel=1)
+    callstack_helper(channel=2)
+    callstack_helper(channel=3)
+    callstack_helper(channel=4)
+    callstack_helper(channel=5)
+    callstack_helper(channel=6)
+    callstack_helper(channel=7)
+    callstack_helper(channel=8)
 
     print("Ready for next command.\n")
 
@@ -324,6 +285,9 @@ with dpg.window(label="MGTron Control",
                                   )
         dpg.add_text(default_value="SEND ALL", pos=(
             78, 569), color=(0, 0, 0, 255))
+
+    # Save buttons
+
 
 dpg.bind_font(font=ital_font)
 
