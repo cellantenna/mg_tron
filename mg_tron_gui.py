@@ -11,6 +11,30 @@ ADJUSTMENT: int = 40
 
 dpg.create_context()
 
+# Green Button Theme
+with dpg.theme() as grn_btn_theme:
+    with dpg.theme_component(dpg.mvAll):
+        dpg.add_theme_color(dpg.mvThemeCol_Button, (0, 255, 0, 255))  # GREEN
+# Red Button Theme
+with dpg.theme() as red_btn_theme:
+    with dpg.theme_component(dpg.mvAll):
+        dpg.add_theme_color(dpg.mvThemeCol_Button, (255, 0, 0, 255))  # RED
+# Blue Button Theme
+with dpg.theme() as blue_btn_theme:
+    with dpg.theme_component(dpg.mvAll):
+        dpg.add_theme_color(dpg.mvThemeCol_Button,
+                            (0, 0, 255, 255))  # BLUE
+# Grey Button Theme
+with dpg.theme() as grey_btn_theme:
+    with dpg.theme_component(dpg.mvAll):
+        dpg.add_theme_color(dpg.mvThemeCol_Button,
+                            (105, 105, 105, 255))  # GREY
+# Orange Button Theme
+with dpg.theme() as orng_btn_theme:
+    with dpg.theme_component(dpg.mvAll):
+        dpg.add_theme_color(dpg.mvThemeCol_Button,
+                            (255, 165, 0, 255))  # ORANGE
+
 data_vehicle.save_state(False)
 
 
@@ -19,11 +43,15 @@ def callstack(sender, app_data, user_data) -> None:
 
     match user_data:
         case 1:
+            #dpg.configure_item(item="stats_1", show=False)
+            dpg.bind_item_theme(f"stats_1", orng_btn_theme)
             print("Channel 1 Information Sent")
             data_vehicle.change_power(1, dpg.get_value("power_1"))
             data_vehicle.change_bandwidth(1, dpg.get_value("bandwidth_1"))
             data_vehicle.change_freq(1, dpg.get_value("freq_1"))
             print("Ready for next command.\n")
+            dpg.bind_item_theme(f"stats_1", grn_btn_theme)
+
         case 2:
             print("Channel 2 Information Sent")
             data_vehicle.change_power(2, dpg.get_value("power_2"))
@@ -297,31 +325,8 @@ with dpg.window(label="MGTron Control",
         dpg.add_text(default_value="SEND ALL", pos=(
             78, 569), color=(0, 0, 0, 255))
 
-    dpg.bind_font(font=ital_font)
+dpg.bind_font(font=ital_font)
 
-# Green Button Theme
-with dpg.theme() as grn_btn_theme:
-    with dpg.theme_component(dpg.mvAll):
-        dpg.add_theme_color(dpg.mvThemeCol_Button, (0, 255, 0, 255))  # GREEN
-# Red Button Theme
-with dpg.theme() as red_btn_theme:
-    with dpg.theme_component(dpg.mvAll):
-        dpg.add_theme_color(dpg.mvThemeCol_Button, (255, 0, 0, 255))  # RED
-# Blue Button Theme
-with dpg.theme() as blue_btn_theme:
-    with dpg.theme_component(dpg.mvAll):
-        dpg.add_theme_color(dpg.mvThemeCol_Button,
-                            (0, 0, 255, 255))  # BLUE
-# Grey Button Theme
-with dpg.theme() as grey_btn_theme:
-    with dpg.theme_component(dpg.mvAll):
-        dpg.add_theme_color(dpg.mvThemeCol_Button,
-                            (105, 105, 105, 255))  # GREY
-# Orange Button Theme
-with dpg.theme() as orng_btn_theme:
-    with dpg.theme_component(dpg.mvAll):
-        dpg.add_theme_color(dpg.mvThemeCol_Button,
-                            (255, 165, 0, 255))  # ORANGE
 # Global Theme
 with dpg.theme() as global_theme:
 
@@ -343,8 +348,6 @@ dpg.bind_item_theme(reset_all, red_btn_theme)
 [
     (
         dpg.bind_item_theme(f"send_btn_{i+1}", blue_btn_theme),
-        dpg.bind_item_theme(f"stats_{i+1}", grn_btn_theme)
-        if POWER else
         dpg.bind_item_theme(f"stats_{i+1}", grey_btn_theme),
     )
     for i in range(8)]  # Propgation loop
