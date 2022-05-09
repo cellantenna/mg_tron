@@ -3,7 +3,7 @@ from typing import List
 import dearpygui.dearpygui as dpg
 
 from helpers import (callstack, change_inputs, reset_button, save_inputs,
-                     send_all_channels, data_vehicle)
+                     send_all_channels, load_inputs, data_vehicle)
 
 RESOLUTION: List[int] = [1250, 735]  # 1200x800
 POWER: bool = bool()
@@ -38,6 +38,11 @@ with dpg.theme() as orng_btn_theme:
     with dpg.theme_component(dpg.mvAll):
         dpg.add_theme_color(dpg.mvThemeCol_Button,
                             (255, 165, 0, 255))  # ORANGE
+# White Button Theme
+with dpg.theme() as wht_btn_theme:
+    with dpg.theme_component(dpg.mvAll):
+        dpg.add_theme_color(dpg.mvThemeCol_Button,
+                            (255, 255, 255, 255))  # WHITE
 
 
 with dpg.handler_registry():
@@ -203,18 +208,43 @@ with dpg.window(label="MGTron Control",
                                   callback=send_all_channels,
                                   pos=(10, 503)
                                   )
-        dpg.add_text(default_value="SEND ALL", pos=(
-            78, 569), color=(0, 0, 0, 255))
+        dpg.add_text(default_value="SEND ALL",
+                     pos=(78, 569),
+                     color=(0, 0, 0, 255),
+                     )
 
     # Save buttons
     with dpg.child_window(pos=(900, dpg.get_item_height(item="Primary Window") / 4),
-                          width=100,
+                          tag="save_window",
+                          width=450,
                           height=100,
-                          border=True,
+                          border=False,
                           ):
-        dpg.add_button(tag="save button",
-                       callback=save_inputs,
-                       )
+        save_all = dpg.add_button(tag="save button",
+                                  callback=save_inputs,
+                                  height=70,
+                                  width=70,
+                                  pos=((dpg.get_item_width(item="save_window")-50)/2,
+                                       (dpg.get_item_height(item="save_window")-50)/2),
+                                  )
+        dpg.add_text(default_value="SAVE\nCONFIG",
+                     pos=((dpg.get_item_width(item=save_all)+350)/2,
+                          (dpg.get_item_height(item=save_all))/2),
+                     color=(0, 0, 0, 255),
+                     )
+
+        load_all = dpg.add_button(tag="load_all",
+                                  callback=load_inputs,
+                                  height=70,
+                                  width=70,
+                                  pos=((dpg.get_item_width(item="save_window")-250)/2,
+                                       (dpg.get_item_height(item="save_window")-50)/2),
+                                  )
+        dpg.add_text(default_value="LOAD\nCONFIG",
+                     pos=((dpg.get_item_width(item=load_all)+150)/2,
+                          (dpg.get_item_height(item=load_all))/2),
+                     color=(0, 0, 0, 255),
+                     )
 
 dpg.bind_font(font=ital_font)
 
@@ -236,6 +266,8 @@ dpg.bind_theme(global_theme)
 dpg.bind_item_theme(send_all, grn_btn_theme)
 # dpg.bind_item_theme(reset_power, red_btn_theme)  # Disabled due to redundancy
 dpg.bind_item_theme(reset_all, red_btn_theme)
+dpg.bind_item_theme(save_all, wht_btn_theme)
+dpg.bind_item_theme(load_all, wht_btn_theme)
 [
     (
         dpg.bind_item_theme(f"send_btn_{i+1}", blue_btn_theme),

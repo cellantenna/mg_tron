@@ -1,10 +1,8 @@
-
+import json
 import dearpygui.dearpygui as dpg
-from pysondb import db
 
 from interface import Megatron
 
-json_db = db.getDb("mg_tron_presets.db")
 
 data_vehicle: Megatron = Megatron()
 
@@ -41,8 +39,9 @@ def callstack_helper(channel: int):
     dpg.bind_item_theme(f"stats_{channel}", orng_btn_theme)
     print(f"Channel {channel} Information Sent")
     data_vehicle.change_power(channel, dpg.get_value(f"power_{channel}"))
-    data_vehicle.change_bandwidth(1, dpg.get_value(f"bandwidth_{channel}"))
-    data_vehicle.change_freq(1, dpg.get_value(f"freq_{channel}"))
+    data_vehicle.change_bandwidth(
+        channel, dpg.get_value(f"bandwidth_{channel}"))
+    data_vehicle.change_freq(channel, dpg.get_value(f"freq_{channel}"))
     print("Ready for next command.\n")
     dpg.bind_item_theme(f"stats_{channel}", grn_btn_theme)
 
@@ -122,8 +121,45 @@ def toggle_off(sender, app_data, user_data) -> None:
 
 def save_inputs(sender, app_data, user_data) -> None:
     """Save the present inputs of the fields"""
-    [
 
+    prelim_data: list[dict[str, dict[str, str]]] = [
+        {
+            f"channel {channel}":
+            {
+                "Power": dpg.get_value(f"power_{channel}"),
+                "Bandwidth": dpg.get_value(f"bandwidth_{channel}"),
+                "Frequency": dpg.get_value(f"freq_{channel}"),
+            },
+        }
+        for channel in range(1, 9)
+    ]
+
+    with open(file="mg_tron_presets.json", mode="w") as file:
+        file.write(json.dumps(obj=prelim_data, indent=2))
+        print(json.dumps(obj=prelim_data, indent=2))
+        print("Save Complete")
+
+
+def load_inputs(sender, app_data, user_data) -> None:
+    """Load the last daved data"""
+
+    saved_data: list = []
+    with open(file="mg_tron_presets.json", mode="r") as file:
+        saved_data = json.loads(file.read())
+    [
+        (
+            dpg.set_value(
+                item=f"power_{channel}",
+                value=saved_data[channel-1][f"channel {channel}"]["Power"]),
+            dpg.set_value(
+                item=f"bandwidth_{channel}",
+                value=saved_data[channel-1][f"channel {channel}"]["Bandwidth"]),
+            dpg.set_value(
+                item=f"freq_{channel}",
+                value=saved_data[channel-1][f"channel {channel}"]["Frequency"]),
+        )
+        #print(saved_data[channel-1][f"channel {channel}"]["Frequency"])
+        for channel in range(1, 9)
     ]
 
 

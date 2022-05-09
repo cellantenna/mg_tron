@@ -11,7 +11,7 @@ DEVICE_NUMBER: int = 0
 
 
 def serial_call(*args) -> None:
-    sleep(0.5)
+    sleep(0.1)
     with serial.Serial() as ser:
         ser.baudrate = BAUDRATE
         ser.port = PORT
