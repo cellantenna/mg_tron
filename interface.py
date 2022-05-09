@@ -1,7 +1,6 @@
 from dataclasses import dataclass
 import os
 from time import sleep
-from typing import List
 import serial
 import subprocess
 

@@ -1,15 +1,19 @@
-import random
 from typing import List
-import dearpygui.dearpygui as dpg
-from interface import Megatron
 
-data_vehicle: Megatron = Megatron()
+import dearpygui.dearpygui as dpg
+
+from helpers import (callstack, change_inputs, reset_button, save_inputs,
+                     send_all_channels, data_vehicle)
+
 RESOLUTION: List[int] = [1250, 735]  # 1200x800
 POWER: bool = bool()
 ROW_HEIGHT: int = 78
 ADJUSTMENT: int = 40
 
 dpg.create_context()
+
+
+data_vehicle.save_state(False)
 
 # Green Button Theme
 with dpg.theme() as grn_btn_theme:
@@ -35,93 +39,9 @@ with dpg.theme() as orng_btn_theme:
         dpg.add_theme_color(dpg.mvThemeCol_Button,
                             (255, 165, 0, 255))  # ORANGE
 
-data_vehicle.save_state(False)
 
-
-def callstack_helper(channel: int):
-    """Helper function to reduce clutter"""
-
-    dpg.bind_item_theme(f"stats_{channel}", orng_btn_theme)
-    print(f"Channel {channel} Information Sent")
-    data_vehicle.change_power(channel, dpg.get_value(f"power_{channel}"))
-    data_vehicle.change_bandwidth(1, dpg.get_value(f"bandwidth_{channel}"))
-    data_vehicle.change_freq(1, dpg.get_value(f"freq_{channel}"))
-    print("Ready for next command.\n")
-    dpg.bind_item_theme(f"stats_{channel}", grn_btn_theme)
-
-
-def callstack(sender, app_data, user_data) -> None:
-    """Relational connection between GUI and Megatron class"""
-
-    match user_data:
-        case 1:
-            callstack_helper(channel=1)
-        case 2:
-            callstack_helper(channel=2)
-        case 3:
-            callstack_helper(channel=3)
-        case 4:
-            callstack_helper(channel=4)
-        case 5:
-            callstack_helper(channel=5)
-        case 6:
-            callstack_helper(channel=6)
-        case 7:
-            callstack_helper(channel=7)
-        case 8:
-            callstack_helper(channel=8)
-        case _:
-            print(f"Unrecognized GUI report of a channel: \n")
-            print(
-                f"Sender: {sender}\n"
-                f"App data: {app_data}\n"
-                f"User data: {user_data}\n"
-            )
-
-
-def reset_button(sender, app_data, user_data) -> None:
-    """Reset all channel power levels to zero"""
-
-    print("Reset All command Sent")
-
-    [
-        dpg.bind_item_theme(f"stats_{i+1}", orng_btn_theme)
-        for i in range(8)
-    ]
-    data_vehicle.save_state(state=True)
-    data_vehicle.reset_board()
-    [
-        dpg.bind_item_theme(f"stats_{i+1}", grey_btn_theme)
-        for i in range(8)
-    ]
-
-    print("Ready for next command.\n")
-
-
-def send_all_channels(sender, app_data, user_data) -> None:
-    """Send the data from all channels at once"""
-
-    print("Send All command executed")
-
-    callstack_helper(channel=1)
-    callstack_helper(channel=2)
-    callstack_helper(channel=3)
-    callstack_helper(channel=4)
-    callstack_helper(channel=5)
-    callstack_helper(channel=6)
-    callstack_helper(channel=7)
-    callstack_helper(channel=8)
-
-    print("Ready for next command.\n")
-
-
-def toggle_off(sender, app_data, user_data) -> None:
-    """Turn all power levels to zero"""
-
-    print("RESET POWER Command Executed")
-    [data_vehicle.change_power(i+1, 0) for i in range(8)]
-    print("Ready for next command.\n")
-
+with dpg.handler_registry():
+    dpg.add_mouse_wheel_handler(callback=change_inputs)
 
 with dpg.font_registry():
     default_font_added = dpg.add_font(file="MesloLGS NF Regular.ttf", size=16)
@@ -287,7 +207,14 @@ with dpg.window(label="MGTron Control",
             78, 569), color=(0, 0, 0, 255))
 
     # Save buttons
-
+    with dpg.child_window(pos=(900, dpg.get_item_height(item="Primary Window") / 4),
+                          width=100,
+                          height=100,
+                          border=True,
+                          ):
+        dpg.add_button(tag="save button",
+                       callback=save_inputs,
+                       )
 
 dpg.bind_font(font=ital_font)
 
