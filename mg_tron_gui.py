@@ -1,3 +1,4 @@
+import random
 from typing import List
 import dearpygui.dearpygui as dpg
 from interface import Megatron
@@ -10,53 +11,61 @@ ADJUSTMENT: int = 40
 
 dpg.create_context()
 
+data_vehicle.save_state(False)
+
 
 def callstack(sender, app_data, user_data) -> None:
     """Relational connection between GUI and Megatron class"""
 
     match user_data:
         case 1:
-            global POWER
-            POWER = True
-            print("Channel 1 information")
+            print("Channel 1 Information Sent")
             data_vehicle.change_power(1, dpg.get_value("power_1"))
             data_vehicle.change_bandwidth(1, dpg.get_value("bandwidth_1"))
-            data_vehicle.change_frequency(1, dpg.get_value("freq_1"))
+            data_vehicle.change_freq(1, dpg.get_value("freq_1"))
+            print("Ready for next command.\n")
         case 2:
-            print("Channel 2 information")
-            data_vehicle.change_power(1, dpg.get_value("power_2"))
-            data_vehicle.change_bandwidth(1, dpg.get_value("bandwidth_2"))
-            data_vehicle.change_frequency(1, dpg.get_value("freq_2"))
+            print("Channel 2 Information Sent")
+            data_vehicle.change_power(2, dpg.get_value("power_2"))
+            data_vehicle.change_bandwidth(2, dpg.get_value("bandwidth_2"))
+            data_vehicle.change_freq(2, dpg.get_value("freq_2"))
+            print("Ready for next command.\n")
         case 3:
-            print("Channel 3 information")
-            data_vehicle.change_power(1, dpg.get_value("power_3"))
-            data_vehicle.change_bandwidth(1, dpg.get_value("bandwidth_3"))
-            data_vehicle.change_frequency(1, dpg.get_value("freq_3"))
+            print("Channel 3 Information Sent")
+            data_vehicle.change_power(3, dpg.get_value("power_3"))
+            data_vehicle.change_bandwidth(3, dpg.get_value("bandwidth_3"))
+            data_vehicle.change_freq(3, dpg.get_value("freq_3"))
+            print("Ready for next command.\n")
         case 4:
-            print("Channel 4 information")
-            data_vehicle.change_power(1, dpg.get_value("power_4"))
-            data_vehicle.change_bandwidth(1, dpg.get_value("bandwidth_4"))
-            data_vehicle.change_frequency(1, dpg.get_value("freq_4"))
+            print("Channel 4 Information Sent")
+            data_vehicle.change_power(4, dpg.get_value("power_4"))
+            data_vehicle.change_bandwidth(4, dpg.get_value("bandwidth_4"))
+            data_vehicle.change_freq(4, dpg.get_value("freq_4"))
+            print("Ready for next command.\n")
         case 5:
-            print("Channel 5 information")
-            data_vehicle.change_power(1, dpg.get_value("power_5"))
-            data_vehicle.change_bandwidth(1, dpg.get_value("bandwidth_5"))
-            data_vehicle.change_frequency(1, dpg.get_value("freq_5"))
+            print("Channel 5 Information Sent")
+            data_vehicle.change_power(5, dpg.get_value("power_5"))
+            data_vehicle.change_bandwidth(5, dpg.get_value("bandwidth_5"))
+            data_vehicle.change_freq(5, dpg.get_value("freq_5"))
+            print("Ready for next command.\n")
         case 6:
-            print("Channel 6 information")
-            data_vehicle.change_power(1, dpg.get_value("power_6"))
-            data_vehicle.change_bandwidth(1, dpg.get_value("bandwidth_6"))
-            data_vehicle.change_frequency(1, dpg.get_value("freq_6"))
+            print("Channel 6 Information Sent")
+            data_vehicle.change_power(6, dpg.get_value("power_6"))
+            data_vehicle.change_bandwidth(6, dpg.get_value("bandwidth_6"))
+            data_vehicle.change_freq(6, dpg.get_value("freq_6"))
+            print("Ready for next command.\n")
         case 7:
-            print("Channel 7 information")
-            data_vehicle.change_power(1, dpg.get_value("power_7"))
-            data_vehicle.change_bandwidth(1, dpg.get_value("bandwidth_7"))
-            data_vehicle.change_frequency(1, dpg.get_value("freq_7"))
+            print("Channel 7 Information Sent")
+            data_vehicle.change_power(7, dpg.get_value("power_7"))
+            data_vehicle.change_bandwidth(7, dpg.get_value("bandwidth_7"))
+            data_vehicle.change_freq(7, dpg.get_value("freq_7"))
+            print("Ready for next command.\n")
         case 8:
-            print("Channel 8 information")
-            data_vehicle.change_power(1, dpg.get_value("power_8"))
-            data_vehicle.change_bandwidth(1, dpg.get_value("bandwidth_8"))
-            data_vehicle.change_frequency(1, dpg.get_value("freq_8"))
+            print("Channel 8 Information Sent")
+            data_vehicle.change_power(8, dpg.get_value("power_8"))
+            data_vehicle.change_bandwidth(8, dpg.get_value("bandwidth_8"))
+            data_vehicle.change_freq(8, dpg.get_value("freq_8"))
+            print("Ready for next command.\n")
         case _:
             print(f"Unrecognized GUI report of a channel: \n")
             print(
@@ -69,14 +78,60 @@ def callstack(sender, app_data, user_data) -> None:
 def reset_button(sender, app_data, user_data) -> None:
     """Reset all channel power levels to zero"""
 
+    print("Reset All command Sent")
+
     data_vehicle.save_state(state=True)
     data_vehicle.reset_board()
+
+    print("Ready for next command.\n")
+
+
+def send_all_channels(sender, app_data, user_data) -> None:
+    """Send the data from all channels at once"""
+
+    print("Send All command executed")
+
+    data_vehicle.change_power(1, dpg.get_value("power_1"))
+    data_vehicle.change_bandwidth(1, dpg.get_value("bandwidth_1"))
+    data_vehicle.change_freq(1, dpg.get_value("freq_1"))
+
+    data_vehicle.change_power(2, dpg.get_value("power_2"))
+    data_vehicle.change_bandwidth(2, dpg.get_value("bandwidth_2"))
+    data_vehicle.change_freq(2, dpg.get_value("freq_2"))
+
+    data_vehicle.change_power(3, dpg.get_value("power_3"))
+    data_vehicle.change_bandwidth(3, dpg.get_value("bandwidth_3"))
+    data_vehicle.change_freq(3, dpg.get_value("freq_3"))
+
+    data_vehicle.change_power(4, dpg.get_value("power_4"))
+    data_vehicle.change_bandwidth(4, dpg.get_value("bandwidth_4"))
+    data_vehicle.change_freq(4, dpg.get_value("freq_4"))
+
+    data_vehicle.change_power(5, dpg.get_value("power_5"))
+    data_vehicle.change_bandwidth(5, dpg.get_value("bandwidth_5"))
+    data_vehicle.change_freq(5, dpg.get_value("freq_5"))
+
+    data_vehicle.change_power(6, dpg.get_value("power_6"))
+    data_vehicle.change_bandwidth(6, dpg.get_value("bandwidth_6"))
+    data_vehicle.change_freq(6, dpg.get_value("freq_6"))
+
+    data_vehicle.change_power(7, dpg.get_value("power_7"))
+    data_vehicle.change_bandwidth(7, dpg.get_value("bandwidth_7"))
+    data_vehicle.change_freq(7, dpg.get_value("freq_7"))
+
+    data_vehicle.change_power(8, dpg.get_value("power_8"))
+    data_vehicle.change_bandwidth(8, dpg.get_value("bandwidth_8"))
+    data_vehicle.change_freq(8, dpg.get_value("freq_8"))
+
+    print("Ready for next command.\n")
 
 
 def toggle_off(sender, app_data, user_data) -> None:
     """Turn all power levels to zero"""
 
+    print("RESET POWER Command Executed")
     [data_vehicle.change_power(i+1, 0) for i in range(8)]
+    print("Ready for next command.\n")
 
 
 with dpg.font_registry():
@@ -92,43 +147,43 @@ with dpg.window(label="MGTron Control",
                 pos=(0, 0),
                 ):
 
+    # Header Column Channel
+    with dpg.child_window(pos=(0,),  # (x, y)
+                          width=150,
+                          height=ROW_HEIGHT-ADJUSTMENT,
+                          ):
+        dpg.add_text(default_value=f"Channel", pos=(42, 39-ADJUSTMENT+5))
+
+    # Header Column Frequency
+    with dpg.child_window(pos=(150,),  # (x, y)
+                          width=150,
+                          height=ROW_HEIGHT-ADJUSTMENT,
+                          ):
+        dpg.add_text(default_value=f"Frequency", pos=(37, 39-ADJUSTMENT+5))
+
+    # Header Column Power
+    with dpg.child_window(pos=(300,),  # (x, y)
+                          width=150,
+                          height=ROW_HEIGHT-ADJUSTMENT,
+                          ):
+        dpg.add_text(default_value=f"Power", pos=(48, 39-ADJUSTMENT+5))
+
+    # Header Column Bandwidth
+    with dpg.child_window(pos=(450,),  # (x, y)
+                          width=150,
+                          height=ROW_HEIGHT-ADJUSTMENT,
+                          ):
+        dpg.add_text(default_value=f"Bandwidth", pos=(40, 39-ADJUSTMENT+5))
+
+    # Right Header Column Channel Status
+    with dpg.child_window(pos=(600,),  # (x, y)
+                          width=250,
+                          height=ROW_HEIGHT-ADJUSTMENT,
+                          ):
+        dpg.add_text(default_value=f"Channel Status",
+                     pos=(60, 39-ADJUSTMENT+5))
+
     for i in range(8):
-
-        # Header Column Channel
-        with dpg.child_window(pos=(0,),  # (x, y)
-                              width=150,
-                              height=ROW_HEIGHT-ADJUSTMENT,
-                              ):
-            dpg.add_text(default_value=f"Channel", pos=(42, 39-ADJUSTMENT+5))
-
-        # Right Header Column Channel
-        with dpg.child_window(pos=(700,),  # (x, y)
-                              width=250,
-                              height=ROW_HEIGHT-ADJUSTMENT,
-                              ):
-            dpg.add_text(default_value=f"Channel Status",
-                         pos=(60, 39-ADJUSTMENT+5))
-
-        # Header Column Frequency
-        with dpg.child_window(pos=(150,),  # (x, y)
-                              width=150,
-                              height=ROW_HEIGHT-ADJUSTMENT,
-                              ):
-            dpg.add_text(default_value=f"Frequency", pos=(37, 39-ADJUSTMENT+5))
-
-        # Header Column Power
-        with dpg.child_window(pos=(300,),  # (x, y)
-                              width=150,
-                              height=ROW_HEIGHT-ADJUSTMENT,
-                              ):
-            dpg.add_text(default_value=f"Power", pos=(48, 39-ADJUSTMENT+5))
-
-        # Header Column Power
-        with dpg.child_window(pos=(450,),  # (x, y)
-                              width=150,
-                              height=ROW_HEIGHT-ADJUSTMENT,
-                              ):
-            dpg.add_text(default_value=f"Bandwidth", pos=(40, 39-ADJUSTMENT+5))
 
         # First Column
         with dpg.child_window(label=f"Channel {i+1}",
@@ -139,19 +194,23 @@ with dpg.window(label="MGTron Control",
             dpg.add_text(default_value=i+1,
                          tag=f"channel_{i}", pos=(70, ROW_HEIGHT/2-15))
 
-        # Frequency Column
+        # Frequency Column Input
         with dpg.child_window(label=f"Channel {i+1}",
                               pos=(150, ROW_HEIGHT*(i+1)-ADJUSTMENT),  # (x, y)
                               width=150,
                               height=ROW_HEIGHT,
                               ):
             dpg.add_input_float(tag=f"freq_{i+1}",
-                                default_value=50.000,
-                                min_value=50,
-                                max_value=6400,
-                                width=125,
+                                default_value=50.00,
+                                min_value=50.00,
+                                max_value=6400.00,
+                                min_clamped=True,
+                                max_clamped=True,
+                                width=145,
+                                step=0.01,
+                                pos=(2, ROW_HEIGHT/2-15),
                                 )
-        # Power Column
+        # Power Column Input
         with dpg.child_window(label=f"Channel {i+1}",
                               pos=(300, ROW_HEIGHT*(i+1)-ADJUSTMENT),  # (x, y)
                               width=150,
@@ -160,9 +219,12 @@ with dpg.window(label="MGTron Control",
             dpg.add_input_int(tag=f"power_{i+1}",
                               min_value=0,
                               max_value=63,
+                              min_clamped=True,
+                              max_clamped=True,
                               width=125,
+                              pos=(13, ROW_HEIGHT/2-15),
                               )
-        # Bandwidth Channel
+        # Bandwidth Channel Input
         with dpg.child_window(label=f"Channel {i+1}",
                               pos=(450, ROW_HEIGHT*(i+1)-ADJUSTMENT),  # (x, y)
                               width=150,
@@ -171,27 +233,30 @@ with dpg.window(label="MGTron Control",
             dpg.add_input_int(tag=f"bandwidth_{i+1}",
                               min_value=0,
                               max_value=100,
+                              min_clamped=True,
+                              max_clamped=True,
                               width=125,
+                              pos=(13, ROW_HEIGHT/2-15),
                               )
         # Send Button Column
-        with dpg.child_window(pos=(700, ROW_HEIGHT*(i+1)-ADJUSTMENT),
+        with dpg.child_window(pos=(600, ROW_HEIGHT*(i+1)-ADJUSTMENT),
                               width=(250), height=ROW_HEIGHT,
                               ):
-
-            dpg.add_button(tag=f"send_btn_{i+1}",
+            # SEND Buttons
+            dpg.add_button(label="SEND",
+                           tag=f"send_btn_{i+1}",
                            height=50,
                            width=50,
                            callback=callstack,
                            user_data=i+1,
+                           pos=(170, ROW_HEIGHT/2-25),
                            )
-            dpg.add_text(default_value="SEND", pos=(14, 20))
-            dpg.add_text(default_value=i+1, pos=(134, 5))
 
             # Status Buttons
             dpg.add_button(tag=f"stats_{i+1}",
-                               width=90,
+                               width=30,
                                height=30,
-                               pos=(90, 30),
+                               pos=(60, 30),
                                enabled=True,
                            )
 
@@ -210,27 +275,27 @@ with dpg.window(label="MGTron Control",
                                    pos=(10, 10),
                                    )
         dpg.add_text(default_value="RESET ALL",
-                     pos=(70, 70), color=(0, 0, 0, 255))
+                     pos=(70, 65), color=(0, 0, 0, 255))
 
-        # Toggle All Off big button
-        toggle_all = dpg.add_button(tag="Toggle All Off",
-                                    height=150,
-                                    width=220,
-                                    callback=toggle_off,
-                                    pos=(10, 256),
-                                    )
-        dpg.add_text(default_value="TOGGLE ALL OFF",
-                     pos=(55, 315), color=(0, 0, 0, 255))
+        # RESET All Off big button
+        # reset_power = dpg.add_button(tag="Reset Power",
+        #                              height=150,
+        #                              width=220,
+        #                              callback=toggle_off,
+        #                              pos=(10, 256),
+        #                              )
+        # dpg.add_text(default_value="RESET ALL POWER",
+        #              pos=(55, 320), color=(0, 0, 0, 255))
 
         # Send All big button
         send_all = dpg.add_button(tag="Send All",
                                   height=150,
                                   width=220,
-                                  callback=toggle_off,
+                                  callback=send_all_channels,
                                   pos=(10, 503)
                                   )
         dpg.add_text(default_value="SEND ALL", pos=(
-            74, 569), color=(0, 0, 0, 255))
+            78, 569), color=(0, 0, 0, 255))
 
     dpg.bind_font(font=ital_font)
 
@@ -271,8 +336,9 @@ with dpg.theme() as global_theme:
                             5, category=dpg.mvThemeCat_Core)
 
 dpg.bind_theme(global_theme)
+# Big Button Colors
 dpg.bind_item_theme(send_all, grn_btn_theme)
-dpg.bind_item_theme(toggle_all, red_btn_theme)
+# dpg.bind_item_theme(reset_power, red_btn_theme)  # Disabled due to redundancy
 dpg.bind_item_theme(reset_all, red_btn_theme)
 [
     (

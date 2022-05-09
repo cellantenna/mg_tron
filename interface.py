@@ -1,5 +1,6 @@
 from dataclasses import dataclass
 import os
+from time import sleep
 from typing import List
 import serial
 import subprocess
@@ -11,22 +12,50 @@ DEVICE_NUMBER: int = 0
 
 
 def serial_call(*args) -> None:
-
+    sleep(0.5)
     with serial.Serial() as ser:
         ser.baudrate = BAUDRATE
         ser.port = PORT
         ser.timeout = 2  # seconds
         ser.open()
         ser.write(f"{' '.join([arg for arg in args])}".encode('utf-8'))
-        outputs: list[str] = [line.decode('ascii') for line in ser.readlines()]
-        outputs = " ".join(output for output in outputs)
-        global holder
-        holder = outputs
+        #outputs: list[str] = [line.decode('ascii') for line in ser.readlines()]
+        #outputs = " ".join(output for output in outputs)
+        # global holder
+        # holder = outputs
+        #print(outputs)
+
+
+def find_device(operating_system: str) -> None:
+    """Find the Megatron device plugged into the Linux computer"""
+
+    global PORT
+    # Determine if system is Linux or WIN
+    if operating_system.lower() == "linux":
+
+        # Search Linux filesystem for device
+        find = ["find /dev -iname '*acm*'"]
+        results = subprocess.run(args=find,
+                                 shell=True,
+                                 encoding="utf-8",
+                                 capture_output=True,
+                                 )
+        results = [result.split("'")[1].split("\\n") for result in str(
+            results).split() if result.startswith("stdout")]
+        PORT = results[0][DEVICE_NUMBER]
+
+    else:
+        # Search Windows filesystem for device
+        filename = "COM1"
+        devices = [os.path.join(root, filename) for root, dir,
+                   files in os.walk("/user/") if filename in files]
 
 
 @dataclass
 class Megatron:
     """Class to organize the manipulation of 8 channels"""
+
+    find_device("linux")
 
     def status(self) -> None:
         """Check the status of the board"""
@@ -88,50 +117,33 @@ class Megatron:
     def reset_board(self) -> None:
         """Reset the parameters of the board"""
 
-        [serial_call('p', str(i), '0') for i in range(1, 9)]
-        [serial_call('b', str(i), '0') for i in range(1, 9)]
-        self.save_state(False)
-
-
-def find_device(operating_system: str) -> None:
-    """Find the Megatron device plugged into the Linux computer"""
-
-    global PORT
-    # Determine if system is Linux or WIN
-    if operating_system.lower() == "linux":
-
-        checker = Megatron()
-        # Search Linux filesystem for device
-        find = ["find /dev -iname '*acm*'"]
-        results = subprocess.run(args=find,
-                                 shell=True,
-                                 encoding="utf-8",
-                                 capture_output=True,
-                                 )
-        results = [result.split("'")[1].split("\\n") for result in str(
-            results).split() if result.startswith("stdout")]
-        PORT = results[0][DEVICE_NUMBER]
-
-    else:
-        # Search Windows filesystem for device
-        filename = "COM1"
-        devices = [os.path.join(root, filename) for root, dir,
-                   files in os.walk("/user/") if filename in files]
+        [
+            (
+                serial_call('p', str(i), '0'),
+                serial_call('b', str(i), '0'),
+                serial_call('f', str(i), '50.00'),
+            )
+            for i in range(1, 9)
+        ]
 
 
 def main() -> None:
+    import random
 
     find_device("linux")
     test_1 = Megatron()
-    test_1.status()
-    #print(holder)
 
-    # test_1.reset_board()
     for i in range(8):
-        test_1.change_power(i+1, 55)
-        test_1.change_freq(i+1, 1800)
-        test_1.change_bandwidth(i+1, 40)
-    #test_1.amplification(3, True)
+        test_1.change_power(i+1, random.randint(a=10, b=63))
+        #sleep(1)
+        test_1.change_freq(i+1, random.randint(a=50, b=6300))
+        #sleep(1)
+        test_1.change_bandwidth(i+1, random.randint(a=10, b=100))
+        #sleep(1)
+    #sleep(1)
+    test_1.reset_board()
+
+    # test_1.amplification(3, True)
     # test_1.stability(True)
     # test_1.save_state(True)
 
