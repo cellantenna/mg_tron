@@ -2,8 +2,9 @@ from typing import List
 
 import dearpygui.dearpygui as dpg
 
-from helpers import (auto_fill_bandwidth, auto_fill_power, callstack, change_inputs, reset_button, save_inputs,
-                     send_all_channels, load_inputs, auto_fill_freq, data_vehicle)
+from helpers import (auto_fill_bandwidth, auto_fill_freq, auto_fill_power,
+                     change_inputs, data_vehicle, load_inputs, reset_button,
+                     save_inputs, send_all_channels, send_vals)
 
 RESOLUTION: List[int] = [1250, 735]  # 1200x800
 POWER: bool = bool()
@@ -83,23 +84,25 @@ with dpg.window(label="MGTron Control",
                           width=150,
                           height=ROW_HEIGHT-ADJUSTMENT,
                           ):
-        dpg.add_text(default_value=f"Frequency: 50 - 6400 MHz",
-                     pos=(20, 39-ADJUSTMENT+5))
+        dpg.add_text(default_value=f"Freq.: 6.4GHz",
+                     pos=(5, 39-ADJUSTMENT+5))
 
     # Header Column Power
     with dpg.child_window(pos=(300,),  # (x, y)
                           width=150,
                           height=ROW_HEIGHT-ADJUSTMENT,
                           ):
-        dpg.add_text(default_value=f"Power: 0 - 63", pos=(40, 39-ADJUSTMENT+5))
+        dpg.add_text(default_value=f"Power: 63",
+                     pos=(5, 39-ADJUSTMENT+5),
+                     )
 
     # Header Column Bandwidth
     with dpg.child_window(pos=(450,),  # (x, y)
                           width=150,
                           height=ROW_HEIGHT-ADJUSTMENT,
                           ):
-        dpg.add_text(default_value=f"Bandwidth: 0 - 100%",
-                     pos=(30, 39-ADJUSTMENT+5))
+        dpg.add_text(default_value=f"Bandwidth: 100%",
+                     pos=(5, 39-ADJUSTMENT+5))
 
     # Right Header Column Channel Status
     with dpg.child_window(pos=(600,),  # (x, y)
@@ -176,7 +179,7 @@ with dpg.window(label="MGTron Control",
                            tag=f"send_btn_{i+1}",
                            height=50,
                            width=50,
-                           callback=callstack,
+                           callback=send_vals,
                            user_data=i+1,
                            pos=(170, ROW_HEIGHT/2-25),
                            )

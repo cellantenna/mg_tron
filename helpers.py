@@ -40,20 +40,21 @@ with dpg.theme() as orng_btn_theme:
                             (255, 165, 0, 255))  # ORANGE
 
 
-def callstack_helper(channel: int):
+def callstack_helper(channel: int, value: float = float()):
     """Helper function to reduce clutter"""
 
     dpg.bind_item_theme(f"stats_{channel}", orng_btn_theme)
     print(f"Channel {channel} Information Sent")
-    data_vehicle.change_power(channel, dpg.get_value(f"power_{channel}"))
+    data_vehicle.change_power(channel, dpg.get_value(
+        f"power_{channel}") | int(value))
     data_vehicle.change_bandwidth(
-        channel, dpg.get_value(f"bandwidth_{channel}"))
+        channel, dpg.get_value(f"bandwidth_{channel}") | int(value))
     data_vehicle.change_freq(channel, dpg.get_value(f"freq_{channel}"))
     print("Ready for next command.\n")
     dpg.bind_item_theme(f"stats_{channel}", grn_btn_theme)
 
 
-def callstack(sender, app_data, user_data) -> None:
+def send_vals(sender, app_data, user_data) -> None:
     """Relational connection between GUI and Megatron class"""
 
     match user_data:
@@ -94,7 +95,13 @@ def reset_button(sender, app_data, user_data) -> None:
     data_vehicle.save_state(state=True)
     data_vehicle.reset_board()
     [
-        dpg.bind_item_theme(f"stats_{i+1}", grey_btn_theme)
+        (
+            dpg.bind_item_theme(f"stats_{i+1}", grey_btn_theme),
+            dpg.set_value(item=f"power_{i+1}", value=0),
+            dpg.set_value(item=f"bandwidth_{i+1}", value=0),
+            dpg.set_value(item=f"freq_{i+1}", value=50.00),
+
+        )
         for i in range(8)
     ]
 
@@ -172,7 +179,9 @@ def load_inputs(sender, app_data, user_data) -> None:
 def auto_fill_freq() -> None:
     """Auto fill the frequency column based on the first input"""
 
-    [dpg.set_value(item=f"freq_{i}", value=dpg.get_value(item="freq_1"))
+    freq_constant: float = 5.00
+
+    [dpg.set_value(item=f"freq_{i}", value=dpg.get_value(item="freq_1")+freq_constant*(i-1))
      for i in range(2, 9) if dpg.get_value(item="freq_1")]
 
 
