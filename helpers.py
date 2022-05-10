@@ -3,6 +3,13 @@ import dearpygui.dearpygui as dpg
 
 from interface import Megatron
 
+from datetime import datetime
+
+# datetime object containing current date and time
+now = datetime.now()
+
+# dd/mm/YY H:M:S
+dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
 
 data_vehicle: Megatron = Megatron()
 
@@ -131,8 +138,7 @@ def save_inputs(sender, app_data, user_data) -> None:
                 "Frequency": dpg.get_value(f"freq_{channel}"),
             },
         }
-        for channel in range(1, 9)
-    ]
+        for channel in range(1, 9)]
 
     with open(file="mg_tron_presets.json", mode="w") as file:
         file.write(json.dumps(obj=prelim_data, indent=2))
