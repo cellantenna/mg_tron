@@ -2,8 +2,8 @@ from typing import List
 
 import dearpygui.dearpygui as dpg
 
-from helpers import (callstack, change_inputs, reset_button, save_inputs,
-                     send_all_channels, load_inputs, data_vehicle)
+from helpers import (auto_fill_bandwidth, auto_fill_power, callstack, change_inputs, reset_button, save_inputs,
+                     send_all_channels, load_inputs, auto_fill_freq, data_vehicle)
 
 RESOLUTION: List[int] = [1250, 735]  # 1200x800
 POWER: bool = bool()
@@ -73,21 +73,23 @@ with dpg.window(label="MGTron Control",
                           width=150,
                           height=ROW_HEIGHT-ADJUSTMENT,
                           ):
-        dpg.add_text(default_value=f"Frequency", pos=(37, 39-ADJUSTMENT+5))
+        dpg.add_text(default_value=f"Frequency: 50 - 6400 MHz",
+                     pos=(20, 39-ADJUSTMENT+5))
 
     # Header Column Power
     with dpg.child_window(pos=(300,),  # (x, y)
                           width=150,
                           height=ROW_HEIGHT-ADJUSTMENT,
                           ):
-        dpg.add_text(default_value=f"Power", pos=(48, 39-ADJUSTMENT+5))
+        dpg.add_text(default_value=f"Power: 0 - 63", pos=(40, 39-ADJUSTMENT+5))
 
     # Header Column Bandwidth
     with dpg.child_window(pos=(450,),  # (x, y)
                           width=150,
                           height=ROW_HEIGHT-ADJUSTMENT,
                           ):
-        dpg.add_text(default_value=f"Bandwidth", pos=(40, 39-ADJUSTMENT+5))
+        dpg.add_text(default_value=f"Bandwidth: 0 - 100%",
+                     pos=(30, 39-ADJUSTMENT+5))
 
     # Right Header Column Channel Status
     with dpg.child_window(pos=(600,),  # (x, y)
@@ -106,7 +108,7 @@ with dpg.window(label="MGTron Control",
                               height=ROW_HEIGHT,
                               ):
             dpg.add_text(default_value=i+1,
-                         tag=f"channel_{i}", pos=(70, ROW_HEIGHT/2-15))
+                         tag=f"channel_{i+1}", pos=(70, ROW_HEIGHT/2-15))
 
         # Frequency Column Input
         with dpg.child_window(label=f"Channel {i+1}",
@@ -138,6 +140,7 @@ with dpg.window(label="MGTron Control",
                               width=125,
                               pos=(13, ROW_HEIGHT/2-15),
                               )
+
         # Bandwidth Channel Input
         with dpg.child_window(label=f"Channel {i+1}",
                               pos=(450, ROW_HEIGHT*(i+1)-ADJUSTMENT),  # (x, y)
@@ -173,6 +176,41 @@ with dpg.window(label="MGTron Control",
                                pos=(60, 30),
                                enabled=True,
                            )
+
+    # Auto Fill button row
+    with dpg.child_window(pos=(150, ROW_HEIGHT*9-(ADJUSTMENT)),
+                          tag="auto_fill",
+                          height=65,
+                          width=150*3,
+                          border=False,
+                          ):
+        dpg.add_button(label="AUTO\nFILL",
+                       tag="auto_fill_freq",
+                       height=50,
+                       width=50,
+                       callback=auto_fill_freq,
+                       pos=(dpg.get_item_width(item="auto_fill")/8,
+                            dpg.get_item_height(item="auto_fill")/3-10,
+                            )
+                       )
+        dpg.add_button(label="AUTO\nFILL",
+                       tag="auto_fill_power",
+                       height=50,
+                       width=50,
+                       callback=auto_fill_power,
+                       pos=(dpg.get_item_width(item="auto_fill")/2.2,
+                            dpg.get_item_height(item="auto_fill")/3-10,
+                            )
+                       )
+        dpg.add_button(label="AUTO\nFILL",
+                       tag="auto_fill_bandwidth",
+                       height=50,
+                       width=50,
+                       callback=auto_fill_bandwidth,
+                       pos=(dpg.get_item_width(item="auto_fill")/1.3,
+                            dpg.get_item_height(item="auto_fill")/3-10,
+                            )
+                       )
 
     # Big Buttons
     with dpg.child_window(pos=(975, ROW_HEIGHT-ADJUSTMENT),

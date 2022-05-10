@@ -163,6 +163,27 @@ def load_inputs(sender, app_data, user_data) -> None:
     ]
 
 
+def auto_fill_freq() -> None:
+    """Auto fill the frequency column based on the first input"""
+
+    [dpg.set_value(item=f"freq_{i}", value=dpg.get_value(item="freq_1"))
+     for i in range(2, 9) if dpg.get_value(item="freq_1")]
+
+
+def auto_fill_power() -> None:
+    """Auto fill the power column based on the first input"""
+
+    [dpg.set_value(item=f"power_{i}", value=dpg.get_value(item="power_1"))
+     for i in range(2, 9) if dpg.get_value(item="power_1")]
+
+
+def auto_fill_bandwidth() -> None:
+    """Auto fill the bandwidth column based on the first input"""
+
+    [dpg.set_value(item=f"bandwidth_{i}", value=dpg.get_value(item="bandwidth_1"))
+     for i in range(2, 9) if dpg.get_value(item="bandwidth_1")]
+
+
 def change_inputs(sender, app_data) -> None:
     """Use the mouse wheel to change the field inputs"""
     print(app_data)
