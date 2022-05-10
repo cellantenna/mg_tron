@@ -19,31 +19,41 @@ data_vehicle.save_state(False)
 with dpg.theme() as grn_btn_theme:
     with dpg.theme_component(dpg.mvAll):
         dpg.add_theme_color(dpg.mvThemeCol_Button, (0, 255, 0, 255))  # GREEN
+
 # Red Button Theme
 with dpg.theme() as red_btn_theme:
     with dpg.theme_component(dpg.mvAll):
         dpg.add_theme_color(dpg.mvThemeCol_Button, (255, 0, 0, 255))  # RED
+
 # Blue Button Theme
 with dpg.theme() as blue_btn_theme:
     with dpg.theme_component(dpg.mvAll):
         dpg.add_theme_color(dpg.mvThemeCol_Button,
                             (0, 0, 255, 255))  # BLUE
+
 # Grey Button Theme
 with dpg.theme() as grey_btn_theme:
     with dpg.theme_component(dpg.mvAll):
         dpg.add_theme_color(dpg.mvThemeCol_Button,
                             (105, 105, 105, 255))  # GREY
+
 # Orange Button Theme
 with dpg.theme() as orng_btn_theme:
     with dpg.theme_component(dpg.mvAll):
         dpg.add_theme_color(dpg.mvThemeCol_Button,
                             (255, 165, 0, 255))  # ORANGE
+
 # White Button Theme
 with dpg.theme() as wht_btn_theme:
     with dpg.theme_component(dpg.mvAll):
         dpg.add_theme_color(dpg.mvThemeCol_Button,
                             (255, 255, 255, 255))  # WHITE
 
+# Grey Column Theme
+with dpg.theme() as grey_column_theme:
+    with dpg.theme_component(dpg.mvAll):
+        dpg.add_theme_color(dpg.mvThemeCol_Button,
+                            (185, 185, 185, 255))  # WHITE
 
 with dpg.handler_registry():
     dpg.add_mouse_wheel_handler(callback=change_inputs)
@@ -301,15 +311,16 @@ with dpg.theme() as global_theme:
 
 dpg.bind_theme(global_theme)
 # Big Button Colors
-dpg.bind_item_theme(send_all, grn_btn_theme)
+dpg.bind_item_theme(item=send_all, theme=grn_btn_theme)
 # dpg.bind_item_theme(reset_power, red_btn_theme)  # Disabled due to redundancy
-dpg.bind_item_theme(reset_all, red_btn_theme)
-dpg.bind_item_theme(save_all, wht_btn_theme)
-dpg.bind_item_theme(load_all, wht_btn_theme)
+dpg.bind_item_theme(item=reset_all, theme=red_btn_theme)
+dpg.bind_item_theme(item=save_all, theme=wht_btn_theme)
+dpg.bind_item_theme(item=load_all, theme=wht_btn_theme)
+dpg.bind_item_theme(item="channel 1", theme=grey_column_theme)
 [
     (
-        dpg.bind_item_theme(f"send_btn_{i+1}", blue_btn_theme),
-        dpg.bind_item_theme(f"stats_{i+1}", grey_btn_theme),
+        dpg.bind_item_theme(item=f"send_btn_{i+1}", theme=blue_btn_theme),
+        dpg.bind_item_theme(item=f"stats_{i+1}", theme=grey_btn_theme),
     )
     for i in range(8)]  # Propgation loop
 
