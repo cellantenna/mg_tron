@@ -45,15 +45,72 @@ with dpg.theme() as orng_btn_theme:
 def callstack_helper(channel: int, value: float = float()):
     """Helper function to reduce clutter"""
 
-    dpg.bind_item_theme(f"stats_{channel}", orng_btn_theme)
+    dpg.bind_item_theme(
+        item=f"stats_{channel}",
+        theme=orng_btn_theme,
+    )
     print(f"Channel {channel} Information Sent")
-    data_vehicle.change_power(channel, dpg.get_value(
-        f"power_{channel}") | int(value))
+    data_vehicle.change_power(
+        channel=channel,
+        power_level=dpg.get_value(
+            f"power_{channel}"
+        )
+        |
+        int(
+            value
+        )
+    )
     data_vehicle.change_bandwidth(
-        channel, dpg.get_value(f"bandwidth_{channel}") | int(value))
-    data_vehicle.change_freq(channel, dpg.get_value(f"freq_{channel}"))
+        channel=channel,
+        power_level=dpg.get_value(
+            f"bandwidth_{channel}"
+        ) | int(
+            value
+        )
+    )
+    data_vehicle.change_freq(
+        channel=channel,
+        power_level=dpg.get_value(
+            f"freq_{channel}"
+        )
+    ) if int(
+        dpg.get_value(
+            item=f"freq_1"
+        )
+    ) | int(
+        dpg.get_value(
+            item=f"freq_2"
+        )
+    ) | int(
+        dpg.get_value(
+            item=f"freq_3"
+        )
+    ) | int(
+        dpg.get_value(
+            item=f"freq_4"
+        )
+    ) | int(
+        dpg.get_value(
+            item=f"freq_5"
+        )
+    ) | int(
+        dpg.get_value(
+            item=f"freq_6"
+        )
+    ) | int(
+        dpg.get_value(
+            item=f"freq_7"
+        )
+    ) | int(
+        dpg.get_value(
+            item=f"freq_8"
+        )
+    ) <= 6400 else 6400
     print("Ready for next command.\n")
-    dpg.bind_item_theme(f"stats_{channel}", grn_btn_theme)
+    dpg.bind_item_theme(
+        item=f"stats_{channel}",
+        theme=grn_btn_theme
+    )
 
 
 def send_vals(sender, app_data, user_data) -> None:
@@ -124,14 +181,6 @@ def send_all_channels(sender, app_data, user_data) -> None:
     callstack_helper(channel=7)
     callstack_helper(channel=8)
 
-    print("Ready for next command.\n")
-
-
-def toggle_off(sender, app_data, user_data) -> None:
-    """Turn all power levels to zero"""
-
-    print("RESET POWER Command Executed")
-    [data_vehicle.change_power(i+1, 0) for i in range(8)]
     print("Ready for next command.\n")
 
 
@@ -232,15 +281,45 @@ def custom_load(sender, app_data, user_data) -> None:
 def auto_fill_freq(sender=None, app_data=None, user_data=None, freq_val: float = 0.0, freq_constant: float = 5.0) -> None:
     """Auto fill the frequency column based on the first input"""
 
-    if not freq_constant:
-        [
-            dpg.set_value(item=f"freq_{i}",value=abs(dpg.get_value(f"freq_{i-2}") - dpg.get_value(f"freq_{i-1}")) + dpg.get_value(f"freq_{i-1}"))
-            for i in range(3, 9)
-        ]
+    [
+        dpg.set_value(
+            item=f"freq_{i}",
+            value=(
+                abs(
+                    dpg.get_value(
+                        f"freq_{i-2}"
+                    ) -
+                    dpg.get_value(
+                        f"freq_{i-1}"
+                    )
+                ) +
+                dpg.get_value(
+                    f"freq_{i-1}"
+                )
+            ) if int(
+                dpg.get_value(
+                    item=f"freq_{i}"
+                )
+            ) <= 6400 else 6400
+        )
+
+        for i in range(3, 9) if not freq_constant
+    ]
 
     [
-        dpg.set_value(item=f"freq_{i}", value=freq_val+freq_constant*(i-1))
-        for i in range(1, 9) if freq_val
+        dpg.set_value(
+            item=f"freq_{i}",
+            value=freq_val+freq_constant *
+            (
+                i-1
+            )
+            if float(
+                dpg.get_value(
+                    item=f"freq_{i}"
+                )
+            ) <= 6400.00 else 6400.00
+        )
+        for i in range(1, 9) if freq_constant
     ]
 
 
@@ -271,10 +350,10 @@ def two_point_four(sender, app_data, user_data) -> None:
     auto_fill_freq(freq_val=2412.00, freq_constant=5)
 
 
-def five_ghz(sender, app_data, user_data) -> None:
-    """Auto Fill the 2.4GHz band"""
+def band_two(sender, app_data, user_data) -> None:
+    """Auto Fill the band 2 celluar band"""
 
-    auto_fill_freq(freq_val=5035.00, freq_constant=15)
+    auto_fill_freq(freq_val=1850.00, freq_constant=8.571428571)
 
 
 def band_four(sender, app_data, user_data) -> None:

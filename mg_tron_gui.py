@@ -4,8 +4,8 @@ from typing import List
 
 import dearpygui.dearpygui as dpg
 
-from helpers import (auto_fill_bandwidth, auto_fill_custom_save, auto_fill_freq, auto_fill_power, band_five, band_four,
-                     change_inputs, custom_load, data_vehicle, five_ghz, quick_load, reset_button,
+from helpers import (auto_fill_bandwidth, auto_fill_custom_save, auto_fill_freq, auto_fill_power, band_five, band_four, band_two,
+                     change_inputs, custom_load, data_vehicle, quick_load, reset_button,
                      quick_save, send_all_channels, send_vals, custom_save, two_point_four)
 
 RESOLUTION: List[int] = [1250, 735]  # 1200x800
@@ -143,8 +143,8 @@ with dpg.window(label="MGTron Control",
                               height=ROW_HEIGHT,
                               ):
             dpg.add_input_float(tag=f"freq_{i+1}",
-                                default_value=30.00,
-                                min_value=30.00,
+                                default_value=50.00,
+                                min_value=50.00,
                                 max_value=6400.00,
                                 min_clamped=True,
                                 max_clamped=True,
@@ -379,21 +379,21 @@ with dpg.window(label="MGTron Control",
                                                ),
                                                )
 
-        ################
-        # 5 GHz preset #
-        ################
-        five_g = dpg.add_button(tag="five_g",
-                                callback=five_ghz,
-                                label="5GHz\nCONFIG",
-                                height=70,
-                                width=70,
-                                pos=(
-                                    (dpg.get_item_width(
-                                        item="big_buttons")-50)/DIVISOR,
-                                    (dpg.get_item_height(
-                                        item="big_buttons")+WIFI_HEIGHT)/2
-                                ),
-                                )
+        #####################
+        # Band 2 GHz preset #
+        #####################
+        band_two_button = dpg.add_button(tag="band_two",
+                                         callback=band_two,
+                                         label="BAND\nTWO\nCONFIG",
+                                         height=70,
+                                         width=70,
+                                         pos=(
+                                             (dpg.get_item_width(
+                                                 item="big_buttons")-50)/DIVISOR,
+                                             (dpg.get_item_height(
+                                                 item="big_buttons")+WIFI_HEIGHT)/2
+                                         ),
+                                         )
 
         ###############
         # Custom save #
@@ -494,7 +494,7 @@ dpg.bind_item_theme(item=save_all, theme=blue_btn_theme)
 dpg.bind_item_theme(item=load_all, theme=blue_btn_theme)
 dpg.bind_item_theme(item=custom_save_button, theme=blue_btn_theme)
 dpg.bind_item_theme(item=two_point_four_button, theme=blue_btn_theme)
-dpg.bind_item_theme(item=five_g, theme=blue_btn_theme)
+dpg.bind_item_theme(item=band_two_button, theme=blue_btn_theme)
 dpg.bind_item_theme(item=custom_load_button, theme=blue_btn_theme)
 dpg.bind_item_theme(item=band_five_button, theme=blue_btn_theme)
 dpg.bind_item_theme(item=band_four_button, theme=blue_btn_theme)
