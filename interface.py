@@ -1,13 +1,10 @@
 from dataclasses import dataclass
-import os
 from time import sleep
 import serial
 import subprocess
 
-PORT: str = str()
 BAUDRATE = 230_400
-holder = str()
-DEVICE_NUMBER: int = 0
+DEVICE_PORT: int = 1
 
 
 def serial_call(*args) -> None:
@@ -18,43 +15,45 @@ def serial_call(*args) -> None:
         ser.timeout = 2  # seconds
         ser.open()
         ser.write(f"{' '.join([arg for arg in args])}".encode('utf-8'))
-        #outputs: list[str] = [line.decode('ascii') for line in ser.readlines()]
-        #outputs = " ".join(output for output in outputs)
-        # global holder
-        # holder = outputs
-        #print(outputs)
+        outputs: list[str] = [line.decode('ascii') for line in ser.readlines()]
+        outputs = " ".join(output for output in outputs)
+        print(outputs)
 
 
-def find_device(operating_system: str) -> None:
+def find_device(operating_system: str, DEVICE_NUMBER: int = 0) -> list:
     """Find the Megatron device plugged into the Linux computer"""
 
-    global PORT
     # Determine if system is Linux or WIN
     if operating_system.lower() == "linux":
 
         # Search Linux filesystem for device
         find = ["find /dev -iname '*acm*'"]
-        results = subprocess.run(args=find,
-                                 shell=True,
-                                 encoding="utf-8",
-                                 capture_output=True,
-                                 )
-        results = [result.split("'")[1].split("\\n") for result in str(
-            results).split() if result.startswith("stdout")]
-        PORT = results[0][DEVICE_NUMBER]
+        results_ = subprocess.run(args=find,
+                                  shell=True,
+                                  stdout=subprocess.PIPE,
+                                  universal_newlines=True,
+                                  encoding="utf-8",
+                                  capture_output=False,
+                                  )
+        results = sorted(results_.stdout.strip().splitlines())
+        # print(results[DEVICE_NUMBER])
+        return results[DEVICE_NUMBER]
 
     else:
+        global PORT
         # Search Windows filesystem for device
         filename = "COM1"
-        devices = [os.path.join(root, filename) for root, dir,
-                   files in os.walk("/user/") if filename in files]
+        # devices = [os.path.join(root, filename) for root, dir,
+        #           files in os.walk("/user/") if filename in files]
+        PORT = "COM1"
 
 
-@dataclass
+@dataclass(slots=True)
 class Megatron:
     """Class to organize the manipulation of 8 channels"""
 
-    find_device("linux")
+    global PORT
+    PORT = find_device("linux", DEVICE_PORT)
 
     def status(self) -> None:
         """Check the status of the board"""
@@ -72,7 +71,7 @@ class Megatron:
     def change_freq(self, channel: int, frequency: float) -> None:
         """
         Change the frequency of a channel
-        Range: 50 - 6400 MHz
+        Range: 30 - 6400 MHz
         """
 
         serial_call('f', str(channel), str(frequency))
@@ -120,7 +119,7 @@ class Megatron:
             (
                 serial_call('p', str(i), '0'),
                 serial_call('b', str(i), '0'),
-                serial_call('f', str(i), '50.00'),
+                serial_call('f', str(i), '30.00'),
             )
             for i in range(1, 9)
         ]
@@ -129,18 +128,23 @@ class Megatron:
 def main() -> None:
     import random
 
-    find_device("linux")
+    # find_device("linux")
     test_1 = Megatron()
 
     for i in range(8):
         test_1.change_power(i+1, random.randint(a=10, b=63))
-        #sleep(1)
-        test_1.change_freq(i+1, random.randint(a=50, b=6300))
-        #sleep(1)
+        # sleep(1)
+        test_1.change_freq(i+1, random.randint(a=30, b=6300))
+        # sleep(1)
         test_1.change_bandwidth(i+1, random.randint(a=10, b=100))
-        #sleep(1)
-    #sleep(1)
-    test_1.reset_board()
+        # sleep(1)
+    # sleep(1)
+    # test_1.reset_board()
+
+    #test_1.change_freq(1, 35.0)
+    #test_1.change_power(1, 63)
+
+    # test_1.status()
 
     # test_1.amplification(3, True)
     # test_1.stability(True)

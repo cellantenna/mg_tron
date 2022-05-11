@@ -1,0 +1,66 @@
+[
+  {
+    "channel 1": {
+      "Power": 45,
+      "Bandwidth": 12,
+      "Frequency": 30.0,
+      "Date": "10/05/2022 16:19:26"
+    }
+  },
+  {
+    "channel 2": {
+      "Power": 45,
+      "Bandwidth": 12,
+      "Frequency": 32.0,
+      "Date": "10/05/2022 16:19:26"
+    }
+  },
+  {
+    "channel 3": {
+      "Power": 45,
+      "Bandwidth": 12,
+      "Frequency": 34.0,
+      "Date": "10/05/2022 16:19:26"
+    }
+  },
+  {
+    "channel 4": {
+      "Power": 45,
+      "Bandwidth": 12,
+      "Frequency": 36.0,
+      "Date": "10/05/2022 16:19:26"
+    }
+  },
+  {
+    "channel 5": {
+      "Power": 45,
+      "Bandwidth": 12,
+      "Frequency": 40.0,
+      "Date": "10/05/2022 16:19:26"
+    }
+  },
+  {
+    "channel 6": {
+      "Power": 45,
+      "Bandwidth": 12,
+      "Frequency": 42.0,
+      "Date": "10/05/2022 16:19:26"
+    }
+  },
+  {
+    "channel 7": {
+      "Power": 45,
+      "Bandwidth": 12,
+      "Frequency": 44.0,
+      "Date": "10/05/2022 16:19:26"
+    }
+  },
+  {
+    "channel 8": {
+      "Power": 45,
+      "Bandwidth": 12,
+      "Frequency": 48.0,
+      "Date": "10/05/2022 16:19:26"
+    }
+  }
+]

@@ -1,15 +1,23 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 from typing import List
 
 import dearpygui.dearpygui as dpg
 
-from helpers import (auto_fill_bandwidth, auto_fill_freq, auto_fill_power,
-                     change_inputs, data_vehicle, load_inputs, reset_button,
-                     save_inputs, send_all_channels, send_vals)
+from helpers import (auto_fill_bandwidth, auto_fill_freq, auto_fill_power, band_five, band_four,
+                     change_inputs, custom_load, data_vehicle, five_ghz, quick_load, reset_button,
+                     quick_save, send_all_channels, send_vals, custom_save, two_point_four)
 
 RESOLUTION: List[int] = [1250, 735]  # 1200x800
 POWER: bool = bool()
 ROW_HEIGHT: int = 78
 ADJUSTMENT: int = 40
+DIVISOR: int = 1.4
+SEND_RESET_ALL_HEIGHT: int = 600
+CUSTOM_CONFIG_HEIGHT: int = 430
+QUICK_CONFIG_HEIGHT: int = 70
+WIFI_HEIGHT: int = 430
+CELLUAR_HEIGHT: int = 250
 
 dpg.create_context()
 
@@ -112,6 +120,9 @@ with dpg.window(label="MGTron Control",
         dpg.add_text(default_value=f"Channel Status",
                      pos=(60, 39-ADJUSTMENT+5))
 
+    ####################################
+    # Column buttons, inputs, and text #
+    ####################################
     for i in range(8):
 
         # First Column
@@ -132,8 +143,8 @@ with dpg.window(label="MGTron Control",
                               height=ROW_HEIGHT,
                               ):
             dpg.add_input_float(tag=f"freq_{i+1}",
-                                default_value=50.00,
-                                min_value=50.00,
+                                default_value=30.00,
+                                min_value=30.00,
                                 max_value=6400.00,
                                 min_clamped=True,
                                 max_clamped=True,
@@ -194,7 +205,9 @@ with dpg.window(label="MGTron Control",
 
             dpg.bind_item_theme(item=f"row_{i+1}", theme=grey_column_theme)
 
-    # Auto Fill button row
+    ########################
+    # Auto Fill button row #
+    ########################
     with dpg.child_window(pos=(150, ROW_HEIGHT*9-(ADJUSTMENT)),
                           tag="auto_fill",
                           height=65,
@@ -229,121 +242,228 @@ with dpg.window(label="MGTron Control",
                             )
                        )
 
-    # Big Buttons
-    with dpg.child_window(pos=(900, dpg.get_item_height(item="Primary Window") / 10),
+    ################
+    # Side buttons #
+    ################
+    with dpg.child_window(pos=(900, ROW_HEIGHT),
                           tag="big_buttons",
-                          width=450,
-                          height=400,
+                          width=300,
+                          height=dpg.get_item_height(
+                              item="Primary Window")/2,
                           border=False,
                           ):
 
-        # Reset All Channels button
+        ####################
+        # Reset All button #
+        ####################
         reset_all = dpg.add_button(tag="Reset All Channels",
                                    height=70,
                                    width=70,
                                    callback=reset_button,
                                    pos=(
                                        (dpg.get_item_width(
-                                           item="big_buttons")-50)/2,
+                                           item="big_buttons")-50)/DIVISOR,
                                        (dpg.get_item_height(
-                                           item="big_buttons")+150)/2
+                                           item="big_buttons")-SEND_RESET_ALL_HEIGHT)/2
                                    ),
                                    )
         dpg.add_text(default_value="RESET\nALL",
                      pos=(
-                         (dpg.get_item_width(item="big_buttons")-40)/2,
-                         (dpg.get_item_height(item="big_buttons")+150)/2
+                         (dpg.get_item_width(item="big_buttons")-40)/DIVISOR,
+                         (dpg.get_item_height(item="big_buttons") -
+                          SEND_RESET_ALL_HEIGHT)/2
                      ),
                      color=(0, 0, 0, 255),
                      )
 
-        # Send All button
+        ###################
+        # Send All button #
+        ###################
         send_all = dpg.add_button(tag="Send All",
                                   height=70,
                                   width=70,
                                   callback=send_all_channels,
                                   pos=(
-                                      (dpg.get_item_width(item="big_buttons")-250)/2,
-                                      (dpg.get_item_height(item="big_buttons")+150)/2
+                                      (dpg.get_item_width(
+                                          item="big_buttons")-250)/DIVISOR,
+                                      (dpg.get_item_height(
+                                          item="big_buttons")-SEND_RESET_ALL_HEIGHT)/2
                                   )
                                   )
         dpg.add_text(default_value="SEND\nALL",
                      pos=(
-                         (dpg.get_item_width(item="big_buttons")-240)/2,
-                         (dpg.get_item_height(item="big_buttons")+150)/2
+                         (dpg.get_item_width(item="big_buttons")-240)/DIVISOR,
+                         (dpg.get_item_height(item="big_buttons") -
+                          SEND_RESET_ALL_HEIGHT)/2
                      ),
                      color=(0, 0, 0, 255),
                      )
 
-        # Save buttons
+        #####################
+        # Quick Save button #
+        #####################
         save_all = dpg.add_button(tag="save button",
-                                  callback=save_inputs,
+                                  callback=quick_save,
+                                  label="QUICK\nSAVE\nCONFIG",
                                   height=70,
                                   width=70,
                                   pos=(
-                                      (dpg.get_item_width(item="big_buttons")-50)/2,
-                                      (dpg.get_item_height(item="big_buttons")-50)/2
+                                      (dpg.get_item_width(
+                                          item="big_buttons")-50)/DIVISOR,
+                                      (dpg.get_item_height(
+                                          item="big_buttons")+QUICK_CONFIG_HEIGHT)/2
                                   ),
                                   )
-        dpg.add_text(default_value="SAVE\nCONFIG",
-                     pos=(
-                         (dpg.get_item_width(item="big_buttons")-40)/2,
-                         (dpg.get_item_height(item="big_buttons")-50)/2
-                     ),
-                     color=(0, 0, 0, 255),
-                     )
 
+        #####################
+        # Quick Load button #
+        #####################
         load_all = dpg.add_button(tag="load_all",
-                                  callback=load_inputs,
+                                  callback=quick_load,
+                                  label="QUICK\nLOAD\nCONFIG",
                                   height=70,
                                   width=70,
                                   pos=(
-                                      (dpg.get_item_width(item="big_buttons")-250)/2,
-                                      (dpg.get_item_height(item="big_buttons")-50)/2
+                                      (dpg.get_item_width(
+                                          item="big_buttons")-250)/DIVISOR,
+                                      (dpg.get_item_height(
+                                          item="big_buttons")+QUICK_CONFIG_HEIGHT)/2
                                   ),
                                   )
-        dpg.add_text(default_value="LOAD\nCONFIG",
-                     pos=(
-                         (dpg.get_item_width(item="big_buttons")-235)/2,
-                         (dpg.get_item_height(item="big_buttons")-50)/2
-                     ),
-                     color=(0, 0, 0, 255),
-                     )
-        two_point_four = dpg.add_button(tag="two_point_four",
-                                        # callback=load_inputs,
-                                        height=70,
-                                        width=70,
-                                        pos=(
-                                            (dpg.get_item_width(
-                                                item="big_buttons")-250)/2,
-                                            (dpg.get_item_height(
-                                                item="big_buttons")-250)/2
-                                        ),
-                                        )
-        dpg.add_text(default_value="2.4GHz\nCONFIG",
-                     pos=(
-                         (dpg.get_item_width(item="big_buttons")-230)/2,
-                         (dpg.get_item_height(item="big_buttons")-250)/2
-                     ),
-                     color=(0, 0, 0, 255),
-                     )
 
+        #################
+        # Band 5 button #
+        #################
+        band_five_button = dpg.add_button(tag="band_five",
+                                          callback=band_five,
+                                          label="BAND\nFIVE\nCONFIG",
+                                          height=70,
+                                          width=70,
+                                          pos=(
+                                              (dpg.get_item_width(
+                                                  item="big_buttons")-50)/DIVISOR,
+                                              (dpg.get_item_height(
+                                                  item="big_buttons")+CELLUAR_HEIGHT)/2
+                                          ),
+                                          )
+
+        #################
+        # Band 4 button #
+        #################
+        band_four_button = dpg.add_button(tag="band_four",
+                                          callback=band_four,
+                                          label="BAND\nFOUR\nCONFIG",
+                                          height=70,
+                                          width=70,
+                                          pos=(
+                                              (dpg.get_item_width(
+                                                  item="big_buttons")-250)/DIVISOR,
+                                              (dpg.get_item_height(
+                                                  item="big_buttons")+CELLUAR_HEIGHT)/2
+                                          ),
+                                          )
+
+        ##################
+        # 2.4 GHz preset #
+        ##################
+        two_point_four_button = dpg.add_button(tag="two_point_four",
+                                               callback=two_point_four,
+                                               label="2.4GHz\nCONFIG",
+                                               height=70,
+                                               width=70,
+                                               pos=(
+                                                   (dpg.get_item_width(
+                                                       item="big_buttons")-250)/DIVISOR,
+                                                   (dpg.get_item_height(
+                                                       item="big_buttons")+WIFI_HEIGHT)/2
+                                               ),
+                                               )
+
+        ################
+        # 5 GHz preset #
+        ################
         five_g = dpg.add_button(tag="five_g",
-                                # callback=load_inputs,
+                                callback=five_ghz,
+                                label="5GHz\nCONFIG",
                                 height=70,
                                 width=70,
                                 pos=(
-                                    (dpg.get_item_width(item="big_buttons")-50)/2,
-                                    (dpg.get_item_height(item="big_buttons")-250)/2
+                                    (dpg.get_item_width(
+                                        item="big_buttons")-50)/DIVISOR,
+                                    (dpg.get_item_height(
+                                        item="big_buttons")+WIFI_HEIGHT)/2
                                 ),
                                 )
-        dpg.add_text(default_value="5GHz\nCONFIG",
-                     pos=(
-                         (dpg.get_item_width(item="big_buttons")-35)/2,
-                         (dpg.get_item_height(item="big_buttons")-250)/2
-                     ),
-                     color=(0, 0, 0, 255),
-                     )
+
+        ###############
+        # Custom save #
+        ###############
+        custom_save_button = dpg.add_button(tag="custom_save",
+                                            height=70,
+                                            label="CUSTOM\nCONFIG\nSAVE",
+                                            width=70,
+                                            pos=(
+                                                (dpg.get_item_width(
+                                                    item="big_buttons")-50)/DIVISOR,
+                                                (dpg.get_item_height(
+                                                    item="big_buttons")-CUSTOM_CONFIG_HEIGHT)/2
+                                            ),
+                                            )
+
+        with dpg.popup(parent=custom_save_button,
+                       mousebutton=dpg.mvMouseButton_Left,
+                       modal=True,
+                       tag="modal_save",
+                       ):
+            dpg.add_input_text(label="Save Name: ",
+                               tag="save_input",
+                               )
+            dpg.add_button(
+                label="Save",
+                tag="save_button",
+                callback=custom_save,
+            )
+            dpg.add_button(
+                label="Quit",
+                callback=lambda: dpg.configure_item(
+                    item="modal_save", show=False),
+            )
+
+        ###############
+        # Custom load #
+        ###############
+        custom_load_button = dpg.add_button(tag="custom_load",
+                                            height=70,
+                                            width=70,
+                                            label="CUSTOM\nCONFIG\nLOAD",
+                                            pos=(
+                                                (dpg.get_item_width(
+                                                    item="big_buttons")-250)/DIVISOR,
+                                                (dpg.get_item_height(
+                                                    item="big_buttons")-CUSTOM_CONFIG_HEIGHT)/2
+                                            ),
+                                            )
+
+        with dpg.popup(parent=custom_load_button,
+                       mousebutton=dpg.mvMouseButton_Left,
+                       modal=True,
+                       tag="modal_load",
+                       ):
+            dpg.add_menu(parent="modal_load",
+                         label="Load Name: ",
+                         tag="load_input",
+                         )
+            dpg.add_menu_item(parent="load_input",
+                              label="Previously Saved..",
+                              callback=lambda: print("\nMenu item called\n")
+                              )
+
+            dpg.add_button(
+                label="Quit",
+                callback=lambda: dpg.configure_item(
+                    item="modal_load", show=False),
+            )
+
 
 dpg.bind_font(font=ital_font)
 
@@ -360,13 +480,18 @@ with dpg.theme() as global_theme:
         dpg.add_theme_style(dpg.mvStyleVar_FrameRounding,
                             5, category=dpg.mvThemeCat_Core)
 
+# Button colors and global theme
 dpg.bind_theme(global_theme)
-# Big Button Colors
 dpg.bind_item_theme(item=send_all, theme=grn_btn_theme)
-# dpg.bind_item_theme(reset_power, red_btn_theme)  # Disabled due to redundancy
 dpg.bind_item_theme(item=reset_all, theme=red_btn_theme)
-dpg.bind_item_theme(item=save_all, theme=wht_btn_theme)
-dpg.bind_item_theme(item=load_all, theme=wht_btn_theme)
+dpg.bind_item_theme(item=save_all, theme=blue_btn_theme)
+dpg.bind_item_theme(item=load_all, theme=blue_btn_theme)
+dpg.bind_item_theme(item=custom_save_button, theme=blue_btn_theme)
+dpg.bind_item_theme(item=two_point_four_button, theme=blue_btn_theme)
+dpg.bind_item_theme(item=five_g, theme=blue_btn_theme)
+dpg.bind_item_theme(item=custom_load_button, theme=blue_btn_theme)
+dpg.bind_item_theme(item=band_five_button, theme=blue_btn_theme)
+dpg.bind_item_theme(item=band_four_button, theme=blue_btn_theme)
 
 [
     (
@@ -375,8 +500,13 @@ dpg.bind_item_theme(item=load_all, theme=wht_btn_theme)
     )
     for i in range(8)]  # Propgation loop
 
+
+############################
+# DearPyGUI required setup #
+############################
+TM = u"\U00002122"
 dpg.create_viewport(
-    title='MGTron Command Interface',
+    title=f'CellAntenna MGTron {TM}',
     width=RESOLUTION[0], height=RESOLUTION[1],
     resizable=False,
     always_on_top=True,

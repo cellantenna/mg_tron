@@ -1,0 +1,74 @@
+[
+  {
+    "channel 1": {
+      "Power": 45,
+      "Bandwidth": 88,
+      "Frequency": 3415.156005859375,
+      "Date": "10/05/2022 10:15:59",
+      "Save_name": "test save"
+    }
+  },
+  {
+    "channel 2": {
+      "Power": 48,
+      "Bandwidth": 82,
+      "Frequency": 3420.156005859375,
+      "Date": "10/05/2022 10:15:59",
+      "Save_name": "test save"
+    }
+  },
+  {
+    "channel 3": {
+      "Power": 50,
+      "Bandwidth": 93,
+      "Frequency": 3425.156005859375,
+      "Date": "10/05/2022 10:15:59",
+      "Save_name": "test save"
+    }
+  },
+  {
+    "channel 4": {
+      "Power": 55,
+      "Bandwidth": 75,
+      "Frequency": 3430.156005859375,
+      "Date": "10/05/2022 10:15:59",
+      "Save_name": "test save"
+    }
+  },
+  {
+    "channel 5": {
+      "Power": 38,
+      "Bandwidth": 94,
+      "Frequency": 3435.156005859375,
+      "Date": "10/05/2022 10:15:59",
+      "Save_name": "test save"
+    }
+  },
+  {
+    "channel 6": {
+      "Power": 51,
+      "Bandwidth": 77,
+      "Frequency": 3440.156005859375,
+      "Date": "10/05/2022 10:15:59",
+      "Save_name": "test save"
+    }
+  },
+  {
+    "channel 7": {
+      "Power": 40,
+      "Bandwidth": 91,
+      "Frequency": 3445.156005859375,
+      "Date": "10/05/2022 10:15:59",
+      "Save_name": "test save"
+    }
+  },
+  {
+    "channel 8": {
+      "Power": 51,
+      "Bandwidth": 82,
+      "Frequency": 3450.156005859375,
+      "Date": "10/05/2022 10:15:59",
+      "Save_name": "test save"
+    }
+  }
+]
