@@ -186,24 +186,29 @@ with dpg.window(label="MGTron Control",
                               width=(250), height=ROW_HEIGHT,
                               ):
             # SEND Buttons
-            dpg.add_button(label="SEND",
-                           tag=f"send_btn_{i+1}",
-                           height=50,
-                           width=50,
-                           callback=send_vals,
-                           user_data=i+1,
-                           pos=(170, ROW_HEIGHT/2-25),
-                           )
+            dpg.add_button(
+                label="SEND",
+                tag=f"send_btn_{i+1}",
+                height=50,
+                width=50,
+                callback=send_vals,
+                user_data=i+1,
+                pos=(170, ROW_HEIGHT/2-25),
+            )
 
-            # Status Buttons
-            dpg.add_button(tag=f"stats_{i+1}",
-                               width=30,
-                               height=30,
-                               pos=(60, 30),
-                               enabled=True,
-                           )
+            # Status LED Buttons
+            dpg.add_button(
+                tag=f"stats_{i+1}",
+                width=30,
+                height=30,
+                pos=(60, 30),
+                enabled=True,
+            )
 
-            dpg.bind_item_theme(item=f"row_{i+1}", theme=grey_column_theme)
+            dpg.bind_item_theme(
+                item=f"row_{i+1}",
+                theme=grey_column_theme,
+            )
 
     ########################
     # Auto Fill button row #
