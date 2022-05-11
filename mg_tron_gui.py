@@ -4,7 +4,7 @@ from typing import List
 
 import dearpygui.dearpygui as dpg
 
-from helpers import (auto_fill_bandwidth, auto_fill_freq, auto_fill_power, band_five, band_four,
+from helpers import (auto_fill_bandwidth, auto_fill_custom_save, auto_fill_freq, auto_fill_power, band_five, band_four,
                      change_inputs, custom_load, data_vehicle, five_ghz, quick_load, reset_button,
                      quick_save, send_all_channels, send_vals, custom_save, two_point_four)
 
@@ -215,7 +215,7 @@ with dpg.window(label="MGTron Control",
                           border=False,
                           ):
         dpg.add_button(label="AUTO\nFILL",
-                       tag="auto_fill_freq",
+                       tag="auto_fill_frequency",
                        height=50,
                        width=50,
                        callback=auto_fill_freq,
@@ -416,7 +416,8 @@ with dpg.window(label="MGTron Control",
                        tag="modal_save",
                        ):
             dpg.add_input_text(label="Save Name: ",
-                               tag="save_input",
+                               # default_value=,
+                               tag="save_custom_input",
                                )
             dpg.add_button(
                 label="Save",
@@ -432,7 +433,7 @@ with dpg.window(label="MGTron Control",
         ###############
         # Custom load #
         ###############
-        custom_load_button = dpg.add_button(tag="custom_load",
+        custom_load_button = dpg.add_button(tag="custom_load_button",
                                             height=70,
                                             width=70,
                                             label="CUSTOM\nCONFIG\nLOAD",
@@ -450,13 +451,18 @@ with dpg.window(label="MGTron Control",
                        tag="modal_load",
                        ):
             dpg.add_menu(parent="modal_load",
-                         label="Load Name: ",
+                         label="Load File: ",
                          tag="load_input",
                          )
-            dpg.add_menu_item(parent="load_input",
-                              label="Previously Saved..",
-                              callback=lambda: print("\nMenu item called\n")
-                              )
+            [
+                dpg.add_menu_item(parent="load_input",
+                                  label=f"Previously Saved custom named item {i}",
+                                  callback=lambda: print(
+                                      "\nMenu item called\n"),
+                                  )
+
+                for i in range(1, 9)
+            ]
 
             dpg.add_button(
                 label="Quit",

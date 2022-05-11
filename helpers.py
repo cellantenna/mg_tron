@@ -101,7 +101,7 @@ def reset_button(sender, app_data, user_data) -> None:
             dpg.bind_item_theme(f"stats_{i+1}", grey_btn_theme),
             dpg.set_value(item=f"power_{i+1}", value=0),
             dpg.set_value(item=f"bandwidth_{i+1}", value=0),
-            dpg.set_value(item=f"freq_{i+1}", value=30.00),
+            dpg.set_value(item=f"freq_{i+1}", value=412+(i*5)),
 
         )
         for i in range(8)
@@ -229,37 +229,33 @@ def custom_load(sender, app_data, user_data) -> None:
     ]
 
 
-def auto_fill_freq(freq_val: float = None, freq_constant: float = 5.0) -> None:
+def auto_fill_freq(sender=None, app_data=None, user_data=None, freq_val: float = 0.0, freq_constant: float = 5.0) -> None:
     """Auto fill the frequency column based on the first input"""
 
-    input_one = dpg.get_value(item="freq_1")
-    input_two = dpg.get_value(item="freq_2")
-    if not freq_val:
-        [dpg.set_value(item=f"freq_{i}",
-                       value=(
-                           dpg.get_value(f"freq_{i}") -
-                           dpg.get_value(f"freq_{i+1}")) +
-                       dpg.get_value(f"freq_{i+1}")
-                       )
-         for i in range(3, 9) if dpg.get_value(item="freq_1")]
-        return None
+    if not freq_constant:
+        [
+            dpg.set_value(item=f"freq_{i}",value=abs(dpg.get_value(f"freq_{i-2}") - dpg.get_value(f"freq_{i-1}")) + dpg.get_value(f"freq_{i-1}"))
+            for i in range(3, 9)
+        ]
 
-    [dpg.set_value(item=f"freq_{i}", value=freq_val+freq_constant*(i-1))
-        for i in range(1, 9) if freq_val]
+    [
+        dpg.set_value(item=f"freq_{i}", value=freq_val+freq_constant*(i-1))
+        for i in range(1, 9) if freq_val
+    ]
 
 
 def auto_fill_power() -> None:
     """Auto fill the power column based on the first input"""
 
     [dpg.set_value(item=f"power_{i}", value=dpg.get_value(item="power_1"))
-     for i in range(2, 9) if dpg.get_value(item="power_1")]
+     for i in range(2, 9)]
 
 
 def auto_fill_bandwidth() -> None:
     """Auto fill the bandwidth column based on the first input"""
 
     [dpg.set_value(item=f"bandwidth_{i}", value=dpg.get_value(item="bandwidth_1"))
-     for i in range(2, 9) if dpg.get_value(item="bandwidth_1")]
+     for i in range(2, 9)]
 
 
 def change_inputs(sender, app_data, user_data) -> None:
@@ -272,22 +268,31 @@ def change_inputs(sender, app_data, user_data) -> None:
 def two_point_four(sender, app_data, user_data) -> None:
     """Auto Fill the 2.4GHz band"""
 
-    auto_fill_freq(2412.00)
+    auto_fill_freq(freq_val=2412.00, freq_constant=5)
 
 
 def five_ghz(sender, app_data, user_data) -> None:
     """Auto Fill the 2.4GHz band"""
 
-    auto_fill_freq(5035.00, 15)
+    auto_fill_freq(freq_val=5035.00, freq_constant=15)
 
 
 def band_four(sender, app_data, user_data) -> None:
     """Auto Fill the band 4 celluar band"""
 
-    auto_fill_freq(1710, 5.625)
+    auto_fill_freq(freq_val=1710, freq_constant=5.625)
 
 
 def band_five(sender, app_data, user_data) -> None:
     """Auto Fill the band 5 celluar band"""
 
-    auto_fill_freq(824, 3.125)
+    auto_fill_freq(freq_val=824, freq_constant=3.125)
+
+
+def auto_fill_custom_save(sender, app_data, user_data) -> None:
+    """Grab the first and last frequency input and put as save name"""
+
+    freq_1 = dpg.get_value('freq_1')
+    freq_8 = dpg.get_value('freq_8')
+
+    dpg.set_value(item="save_custom_input", value=str(f"{freq_1} - {freq_8}"))

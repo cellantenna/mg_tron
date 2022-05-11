@@ -4,7 +4,7 @@ import serial
 import subprocess
 
 BAUDRATE = 230_400
-DEVICE_PORT: int = 1
+DEVICE_PORT: int = 0
 
 
 def serial_call(*args) -> None:
@@ -15,9 +15,9 @@ def serial_call(*args) -> None:
         ser.timeout = 2  # seconds
         ser.open()
         ser.write(f"{' '.join([arg for arg in args])}".encode('utf-8'))
-        outputs: list[str] = [line.decode('ascii') for line in ser.readlines()]
-        outputs = " ".join(output for output in outputs)
-        print(outputs)
+        # outputs: list[str] = [line.decode('ascii') for line in ser.readlines()]
+        # outputs = " ".join(output for output in outputs)
+        # print(outputs)
 
 
 def find_device(operating_system: str, DEVICE_NUMBER: int = 0) -> list:
@@ -36,16 +36,17 @@ def find_device(operating_system: str, DEVICE_NUMBER: int = 0) -> list:
                                   capture_output=False,
                                   )
         results = sorted(results_.stdout.strip().splitlines())
-        # print(results[DEVICE_NUMBER])
+        print(results[DEVICE_NUMBER])
         return results[DEVICE_NUMBER]
 
     else:
         global PORT
         # Search Windows filesystem for device
-        filename = "COM1"
+        #filename = "COM3"
         # devices = [os.path.join(root, filename) for root, dir,
         #           files in os.walk("/user/") if filename in files]
-        PORT = "COM1"
+
+        return "COM3"
 
 
 @dataclass(slots=True)
@@ -71,7 +72,7 @@ class Megatron:
     def change_freq(self, channel: int, frequency: float) -> None:
         """
         Change the frequency of a channel
-        Range: 30 - 6400 MHz
+        Range: 50 - 6400 MHz
         """
 
         serial_call('f', str(channel), str(frequency))
@@ -119,7 +120,7 @@ class Megatron:
             (
                 serial_call('p', str(i), '0'),
                 serial_call('b', str(i), '0'),
-                serial_call('f', str(i), '30.00'),
+                serial_call('f', str(i), '50.00'),
             )
             for i in range(1, 9)
         ]
@@ -129,19 +130,20 @@ def main() -> None:
     import random
 
     # find_device("linux")
-    test_1 = Megatron()
+    #test_1 = Megatron()
+    print(PORT)
 
-    for i in range(8):
-        test_1.change_power(i+1, random.randint(a=10, b=63))
-        # sleep(1)
-        test_1.change_freq(i+1, random.randint(a=30, b=6300))
-        # sleep(1)
-        test_1.change_bandwidth(i+1, random.randint(a=10, b=100))
-        # sleep(1)
+    # for i in range(8):
+    # test_1.change_power(i+1, random.randint(a=10, b=63))
+    # sleep(1)
+    # test_1.change_freq(i+1, random.randint(a=50, b=6300))
+    # sleep(1)
+    # test_1.change_bandwidth(i+1, random.randint(a=10, b=100))
+    # sleep(1)
     # sleep(1)
     # test_1.reset_board()
 
-    #test_1.change_freq(1, 35.0)
+    #test_1.change_freq(1, 2545.54)
     #test_1.change_power(1, 63)
 
     # test_1.status()

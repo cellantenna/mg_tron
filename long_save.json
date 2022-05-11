@@ -71,4 +71,150 @@
       "Save_name": "test save"
     }
   }
+][
+  {
+    "channel 1": {
+      "Power": 0,
+      "Bandwidth": 0,
+      "Frequency": 2412.0,
+      "Date": "11/05/2022 09:04:38",
+      "Save_name": "test save 2"
+    }
+  },
+  {
+    "channel 2": {
+      "Power": 0,
+      "Bandwidth": 0,
+      "Frequency": 2417.0,
+      "Date": "11/05/2022 09:04:38",
+      "Save_name": "test save 2"
+    }
+  },
+  {
+    "channel 3": {
+      "Power": 0,
+      "Bandwidth": 0,
+      "Frequency": 2422.0,
+      "Date": "11/05/2022 09:04:38",
+      "Save_name": "test save 2"
+    }
+  },
+  {
+    "channel 4": {
+      "Power": 0,
+      "Bandwidth": 0,
+      "Frequency": 2427.0,
+      "Date": "11/05/2022 09:04:38",
+      "Save_name": "test save 2"
+    }
+  },
+  {
+    "channel 5": {
+      "Power": 0,
+      "Bandwidth": 0,
+      "Frequency": 2432.0,
+      "Date": "11/05/2022 09:04:38",
+      "Save_name": "test save 2"
+    }
+  },
+  {
+    "channel 6": {
+      "Power": 0,
+      "Bandwidth": 0,
+      "Frequency": 2437.0,
+      "Date": "11/05/2022 09:04:38",
+      "Save_name": "test save 2"
+    }
+  },
+  {
+    "channel 7": {
+      "Power": 0,
+      "Bandwidth": 0,
+      "Frequency": 2442.0,
+      "Date": "11/05/2022 09:04:38",
+      "Save_name": "test save 2"
+    }
+  },
+  {
+    "channel 8": {
+      "Power": 0,
+      "Bandwidth": 0,
+      "Frequency": 2447.0,
+      "Date": "11/05/2022 09:04:38",
+      "Save_name": "test save 2"
+    }
+  }
+][
+  {
+    "channel 1": {
+      "Power": 45,
+      "Bandwidth": 12,
+      "Frequency": 1710.0,
+      "Date": "11/05/2022 13:37:37",
+      "Save_name": null
+    }
+  },
+  {
+    "channel 2": {
+      "Power": 45,
+      "Bandwidth": 12,
+      "Frequency": 1715.625,
+      "Date": "11/05/2022 13:37:37",
+      "Save_name": null
+    }
+  },
+  {
+    "channel 3": {
+      "Power": 45,
+      "Bandwidth": 12,
+      "Frequency": 1721.25,
+      "Date": "11/05/2022 13:37:37",
+      "Save_name": null
+    }
+  },
+  {
+    "channel 4": {
+      "Power": 45,
+      "Bandwidth": 12,
+      "Frequency": 1726.875,
+      "Date": "11/05/2022 13:37:37",
+      "Save_name": null
+    }
+  },
+  {
+    "channel 5": {
+      "Power": 45,
+      "Bandwidth": 12,
+      "Frequency": 1732.5,
+      "Date": "11/05/2022 13:37:37",
+      "Save_name": null
+    }
+  },
+  {
+    "channel 6": {
+      "Power": 45,
+      "Bandwidth": 12,
+      "Frequency": 1738.125,
+      "Date": "11/05/2022 13:37:37",
+      "Save_name": null
+    }
+  },
+  {
+    "channel 7": {
+      "Power": 45,
+      "Bandwidth": 12,
+      "Frequency": 1743.75,
+      "Date": "11/05/2022 13:37:37",
+      "Save_name": null
+    }
+  },
+  {
+    "channel 8": {
+      "Power": 45,
+      "Bandwidth": 12,
+      "Frequency": 1749.375,
+      "Date": "11/05/2022 13:37:37",
+      "Save_name": null
+    }
+  }
 ]
