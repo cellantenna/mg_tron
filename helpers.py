@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 import json
+import random
+from time import sleep
 import dearpygui.dearpygui as dpg
 
 from interface import Megatron
@@ -42,71 +44,48 @@ with dpg.theme() as orng_btn_theme:
                             (255, 165, 0, 255))  # ORANGE
 
 
-def callstack_helper(channel: int, value: float = float()):
+def callstack_helper(
+    channel: int,
+    freq_value: float = float(),
+    pwr_value: int = int(),
+    bw_value: int = int()
+):
     """Helper function to reduce clutter"""
 
     dpg.bind_item_theme(
         item=f"stats_{channel}",
         theme=orng_btn_theme,
     )
+
     print(f"Channel {channel} Information Sent")
+
     data_vehicle.change_power(
         channel=channel,
-        power_level=dpg.get_value(
+        power_level=pwr_value
+        or
+        dpg.get_value(
             f"power_{channel}"
         )
-        |
-        int(
-            value
-        )
     )
+
     data_vehicle.change_bandwidth(
         channel=channel,
-        power_level=dpg.get_value(
+        percentage=dpg.get_value(
             f"bandwidth_{channel}"
-        ) | int(
-            value
         )
+        or
+        bw_value
     )
+
     data_vehicle.change_freq(
         channel=channel,
-        power_level=dpg.get_value(
+        frequency=dpg.get_value(
             f"freq_{channel}"
-        )
-    ) if int(
-        dpg.get_value(
-            item=f"freq_1"
-        )
-    ) | int(
-        dpg.get_value(
-            item=f"freq_2"
-        )
-    ) | int(
-        dpg.get_value(
-            item=f"freq_3"
-        )
-    ) | int(
-        dpg.get_value(
-            item=f"freq_4"
-        )
-    ) | int(
-        dpg.get_value(
-            item=f"freq_5"
-        )
-    ) | int(
-        dpg.get_value(
-            item=f"freq_6"
-        )
-    ) | int(
-        dpg.get_value(
-            item=f"freq_7"
-        )
-    ) | int(
-        dpg.get_value(
-            item=f"freq_8"
-        )
-    ) <= 6400 else 6400
+        ) or freq_value
+    )
+
     print("Ready for next command.\n")
+
     dpg.bind_item_theme(
         item=f"stats_{channel}",
         theme=grn_btn_theme
@@ -350,22 +329,277 @@ def two_point_four(sender, app_data, user_data) -> None:
     auto_fill_freq(freq_val=2412.00, freq_constant=5)
 
 
-def band_two(sender, app_data, user_data) -> None:
+def mission_alpha(sender, app_data, user_data) -> None:
     """Auto Fill the band 2 celluar band"""
 
-    auto_fill_freq(freq_val=1850.00, freq_constant=8.571428571)
+    auto_fill_freq(
+        freq_val=650,
+        freq_constant=28.54,
+    )
 
 
-def band_four(sender, app_data, user_data) -> None:
+def mission_bravo(sender, app_data, user_data) -> None:
     """Auto Fill the band 4 celluar band"""
 
-    auto_fill_freq(freq_val=1710, freq_constant=5.625)
+    auto_fill_freq(
+        freq_val=1950,
+        freq_constant=57.1429,
+    )
 
 
-def band_five(sender, app_data, user_data) -> None:
+def mission_charlie(sender, app_data, user_data) -> None:
     """Auto Fill the band 5 celluar band"""
 
-    auto_fill_freq(freq_val=824, freq_constant=3.125)
+    auto_fill_freq(
+        freq_val=2450,
+        freq_constant=157.1429,
+    )
+
+
+def demo_engine(channel: int, freq_value: float, power: int, bw_value: int):
+    """Drive the demo configurations"""
+
+    data_vehicle.change_power(
+        channel=channel,
+        power_level=power
+    )
+
+    data_vehicle.change_bandwidth(
+        channel=channel,
+        percentage=bw_value
+    )
+
+    data_vehicle.change_freq(
+        channel=channel,
+        frequency=freq_value
+    )
+
+
+def demo_config(sender, app_data, user_data) -> None:
+    """Demonstration of frequency hopping"""
+
+    # Send all constant power small freq range
+
+    [
+        (
+            demo_engine(
+                channel={i},
+                freq_value=2400.00+(i*10),
+                power=50,
+                bw_value=0,
+            ),
+            sleep(2)
+        )
+        for i in range(1, 9)
+    ]
+
+    """ callstack_helper(
+        channel=1,
+        freq_value=2400,
+        pwr_value=50,
+        bw_value=0,
+    )
+    callstack_helper(
+        channel=2,
+        freq_value=2410,
+        pwr_value=50,
+        bw_value=0,
+    )
+    callstack_helper(
+        channel=3,
+        freq_value=2430,
+        pwr_value=50,
+        bw_value=0,
+    )
+    callstack_helper(
+        channel=4,
+        freq_value=2440,
+        pwr_value=50,
+        bw_value=0,
+    )
+    callstack_helper(
+        channel=5,
+        freq_value=2450,
+        pwr_value=50,
+        bw_value=0,
+    )
+    callstack_helper(
+        channel=6,
+        freq_value=2460,
+        pwr_value=50,
+        bw_value=0,
+    )
+    callstack_helper(
+        channel=7,
+        freq_value=2470,
+        pwr_value=50,
+        bw_value=0,
+    )
+    callstack_helper(
+        channel=8,
+        freq_value=2480,
+        pwr_value=50,
+        bw_value=0,
+    )
+
+    sleep(2) """
+
+    # Keep all channels up
+
+
+    # Send one down
+"""     callstack_helper(
+        channel=1,
+        freq_value=2400+(1*10),
+        pwr_value=0,
+        bw_value=0,
+    )
+    callstack_helper(
+        channel=1,
+        freq_value=random.randrange(
+            start=2400,
+            stop=2500,
+            step=1
+        ),
+        pwr_value=50,
+        bw_value=0,)
+    callstack_helper(
+        channel=2,
+        freq_value=2400+(2*10),
+        pwr_value=0,
+        bw_value=0,
+    )
+    callstack_helper(
+        channel=2,
+        freq_value=random.randrange(
+            start=2400,
+            stop=2500,
+            step=1
+        ),
+        pwr_value=50,
+        bw_value=0,)
+
+    callstack_helper(
+        channel=3,
+        freq_value=2400+(3*10),
+        pwr_value=0,
+        bw_value=0,
+    )
+    callstack_helper(
+        channel=3,
+        freq_value=random.randrange(
+            start=2400,
+            stop=2500,
+            step=1
+        ),
+        pwr_value=50,
+        bw_value=0,
+    )
+
+    callstack_helper(
+        channel=4,
+        freq_value=2400+(4*10),
+        pwr_value=0,
+        bw_value=0,
+    )
+    callstack_helper(
+        channel=4,
+        freq_value=random.randrange(
+            start=2400,
+            stop=2500,
+            step=1
+        ),
+        pwr_value=50,
+        bw_value=0,
+    )
+
+    callstack_helper(
+        channel=5,
+        freq_value=2400+(5*10),
+        pwr_value=0,
+        bw_value=0,
+    )
+    callstack_helper(
+        channel=5,
+        freq_value=random.randrange(
+            start=2400,
+            stop=2500,
+            step=1
+        ),
+        pwr_value=50,
+        bw_value=0,
+    )
+
+    callstack_helper(
+        channel=6,
+        freq_value=2400+(6*10),
+        pwr_value=0,
+        bw_value=0,
+    )
+    callstack_helper(
+        channel=6,
+        freq_value=random.randrange(
+            start=2400,
+            stop=2500,
+            step=1
+        ),
+        pwr_value=50,
+        bw_value=0,
+    )
+
+    callstack_helper(
+        channel=7,
+        freq_value=2400+(7*10),
+        pwr_value=0,
+        bw_value=0,
+    )
+    callstack_helper(
+        channel=7,
+        freq_value=random.randrange(
+            start=2400,
+            stop=2500,
+            step=1
+        ),
+        pwr_value=50,
+        bw_value=0,
+    )
+
+    callstack_helper(
+        channel=8,
+        freq_value=2400+(8*10),
+        pwr_value=0,
+        bw_value=0,
+    )
+    callstack_helper(
+        channel=8,
+        freq_value=random.randrange(
+            start=2400,
+            stop=2500,
+            step=1
+        ),
+        pwr_value=50,
+        bw_value=0,
+    )
+ """
+# Send one random high
+
+# Keep one up
+
+# ....
+
+
+def demo_config_2(sender, app_data, user_data) -> None:
+    """Demo 2 config"""
+
+    # Take any freq 1 input
+
+    # Add 0.2 MHz to the freq 1 value
+
+    # 100% BW
+
+    # Stop at 1GHz of travel
+
+    # Subtract 0.2 MHz until back to start
 
 
 def auto_fill_custom_save(sender, app_data, user_data) -> None:

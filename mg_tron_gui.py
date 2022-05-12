@@ -4,9 +4,25 @@ from typing import List
 
 import dearpygui.dearpygui as dpg
 
-from helpers import (auto_fill_bandwidth, auto_fill_custom_save, auto_fill_freq, auto_fill_power, band_five, band_four, band_two,
-                     change_inputs, custom_load, data_vehicle, quick_load, reset_button,
-                     quick_save, send_all_channels, send_vals, custom_save, two_point_four)
+from helpers import (
+    auto_fill_bandwidth,
+    auto_fill_custom_save,
+    auto_fill_freq,
+    auto_fill_power,
+    change_inputs,
+    custom_load,
+    data_vehicle,
+    demo_config,
+    mission_alpha,
+    mission_bravo,
+    mission_charlie,
+    quick_load,
+    reset_button,
+    quick_save,
+    send_all_channels,
+    send_vals,
+    custom_save,
+    two_point_four)
 
 RESOLUTION: List[int] = [1250, 735]  # 1200x800
 POWER: bool = bool()
@@ -98,19 +114,28 @@ with dpg.window(label="MGTron Control",
     # Header Column Power
     with dpg.child_window(pos=(300,),  # (x, y)
                           width=150,
+                          tag="col_pwr",
                           height=ROW_HEIGHT-ADJUSTMENT,
                           ):
         dpg.add_text(default_value=f"Power: 63",
-                     pos=(5, 39-ADJUSTMENT+5),
+                     pos=(
+                         dpg.get_item_width("col_pwr")/4,
+                         39-ADJUSTMENT+5
+                     ),
                      )
 
     # Header Column Bandwidth
     with dpg.child_window(pos=(450,),  # (x, y)
+                          tag="col_bw",
                           width=150,
                           height=ROW_HEIGHT-ADJUSTMENT,
                           ):
-        dpg.add_text(default_value=f"Bandwidth: 100%",
-                     pos=(5, 39-ADJUSTMENT+5))
+        dpg.add_text(default_value=f"BW: 100%",
+                     pos=(
+                         dpg.get_item_width(item="col_bw")/3.7,
+                         39-ADJUSTMENT+5
+                     )
+                     )
 
     # Right Header Column Channel Status
     with dpg.child_window(pos=(600,),  # (x, y)
@@ -143,13 +168,14 @@ with dpg.window(label="MGTron Control",
                               height=ROW_HEIGHT,
                               ):
             dpg.add_input_float(tag=f"freq_{i+1}",
-                                default_value=50.00,
+                                default_value=650.00*((i+1)),
                                 min_value=50.00,
                                 max_value=6400.00,
                                 min_clamped=True,
                                 max_clamped=True,
-                                width=145,
+                                width=141,
                                 step=0.01,
+                                step_fast=0.9,
                                 pos=(2, ROW_HEIGHT/2-15),
                                 )
         # Power Column Input
@@ -164,6 +190,7 @@ with dpg.window(label="MGTron Control",
                               min_clamped=True,
                               max_clamped=True,
                               width=125,
+                              step_fast=3,
                               pos=(13, ROW_HEIGHT/2-15),
                               )
 
@@ -179,6 +206,7 @@ with dpg.window(label="MGTron Control",
                               min_clamped=True,
                               max_clamped=True,
                               width=125,
+                              step_fast=10,
                               pos=(13, ROW_HEIGHT/2-15),
                               )
         # Send Button Column
@@ -258,20 +286,47 @@ with dpg.window(label="MGTron Control",
                           border=False,
                           ):
 
+        ###############
+        # DEMO button #
+        ###############
+        demo_button = dpg.add_button(
+            tag="demo",
+            height=70,
+            width=70,
+            callback=demo_config,
+            label="DEMO\nCONFIG",
+            pos=(
+                (
+                    dpg.get_item_width(
+                        item="big_buttons"
+                    )-150
+                )/DIVISOR,
+                (
+                    dpg.get_item_height(
+                        item="big_buttons"
+                    ) +
+                    (
+                        QUICK_CONFIG_HEIGHT - 250
+                    )
+                )/2
+            )
+        )
+
         ####################
         # Reset All button #
         ####################
-        reset_all = dpg.add_button(tag="Reset All Channels",
-                                   height=70,
-                                   width=70,
-                                   callback=reset_button,
-                                   pos=(
-                                       (dpg.get_item_width(
-                                           item="big_buttons")-50)/DIVISOR,
-                                       (dpg.get_item_height(
-                                           item="big_buttons")-SEND_RESET_ALL_HEIGHT)/2
-                                   ),
-                                   )
+        reset_all = dpg.add_button(
+            tag="Reset All Channels",
+            height=70,
+            width=70,
+            callback=reset_button,
+            pos=(
+                (dpg.get_item_width(
+                    item="big_buttons")-50)/DIVISOR,
+                (dpg.get_item_height(
+                    item="big_buttons")-SEND_RESET_ALL_HEIGHT)/2
+            ),
+        )
         dpg.add_text(default_value="RESET\nALL",
                      pos=(
                          (dpg.get_item_width(item="big_buttons")-40)/DIVISOR,
@@ -313,10 +368,16 @@ with dpg.window(label="MGTron Control",
                                   height=70,
                                   width=70,
                                   pos=(
-                                      (dpg.get_item_width(
-                                          item="big_buttons")-50)/DIVISOR,
-                                      (dpg.get_item_height(
-                                          item="big_buttons")+QUICK_CONFIG_HEIGHT)/2
+                                      (
+                                          dpg.get_item_width(
+                                              item="big_buttons"
+                                          )-50
+                                      )/DIVISOR,
+                                      (
+                                          dpg.get_item_height(
+                                              item="big_buttons"
+                                          )+QUICK_CONFIG_HEIGHT
+                                      )/2
                                   ),
                                   )
 
@@ -336,37 +397,37 @@ with dpg.window(label="MGTron Control",
                                   ),
                                   )
 
-        #################
-        # Band 5 button #
-        #################
-        band_five_button = dpg.add_button(tag="band_five",
-                                          callback=band_five,
-                                          label="BAND\nFIVE\nCONFIG",
-                                          height=70,
-                                          width=70,
-                                          pos=(
-                                              (dpg.get_item_width(
-                                                  item="big_buttons")-50)/DIVISOR,
-                                              (dpg.get_item_height(
-                                                  item="big_buttons")+CELLUAR_HEIGHT)/2
-                                          ),
-                                          )
+        ########################
+        # Mission Alpha button #
+        ########################
+        mission_alpha_button = dpg.add_button(tag="mssn_alpha",
+                                              callback=mission_alpha,
+                                              label="MISSION\nALPHA\nCONFIG",
+                                              height=70,
+                                              width=70,
+                                              pos=(
+                                                  (dpg.get_item_width(
+                                                      item="big_buttons")-50)/DIVISOR,
+                                                  (dpg.get_item_height(
+                                                      item="big_buttons")+CELLUAR_HEIGHT)/2
+                                              ),
+                                              )
 
-        #################
-        # Band 4 button #
-        #################
-        band_four_button = dpg.add_button(tag="band_four",
-                                          callback=band_four,
-                                          label="BAND\nFOUR\nCONFIG",
-                                          height=70,
-                                          width=70,
-                                          pos=(
-                                              (dpg.get_item_width(
-                                                  item="big_buttons")-250)/DIVISOR,
-                                              (dpg.get_item_height(
-                                                  item="big_buttons")+CELLUAR_HEIGHT)/2
-                                          ),
-                                          )
+        ########################
+        # Mission Bravo button #
+        ########################
+        mission_bravo_button = dpg.add_button(tag="mssn_bravo",
+                                              callback=mission_bravo,
+                                              label="MISSION\nBRAVO\nCONFIG",
+                                              height=70,
+                                              width=70,
+                                              pos=(
+                                                  (dpg.get_item_width(
+                                                      item="big_buttons")-250)/DIVISOR,
+                                                  (dpg.get_item_height(
+                                                      item="big_buttons")+CELLUAR_HEIGHT)/2
+                                              ),
+                                              )
 
         ##################
         # 2.4 GHz preset #
@@ -384,21 +445,21 @@ with dpg.window(label="MGTron Control",
                                                ),
                                                )
 
-        #####################
-        # Band 2 GHz preset #
-        #####################
-        band_two_button = dpg.add_button(tag="band_two",
-                                         callback=band_two,
-                                         label="BAND\nTWO\nCONFIG",
-                                         height=70,
-                                         width=70,
-                                         pos=(
-                                             (dpg.get_item_width(
-                                                 item="big_buttons")-50)/DIVISOR,
-                                             (dpg.get_item_height(
-                                                 item="big_buttons")+WIFI_HEIGHT)/2
-                                         ),
-                                         )
+        ##########################
+        # Mission Charlie preset #
+        ##########################
+        mission_charlie_button = dpg.add_button(tag="mssn_charlie",
+                                                callback=mission_charlie,
+                                                label="MISSION\nCHARLIE\nCONFIG",
+                                                height=70,
+                                                width=70,
+                                                pos=(
+                                                    (dpg.get_item_width(
+                                                        item="big_buttons")-50)/DIVISOR,
+                                                    (dpg.get_item_height(
+                                                        item="big_buttons")+WIFI_HEIGHT)/2
+                                                ),
+                                                )
 
         ###############
         # Custom save #
@@ -477,17 +538,23 @@ with dpg.window(label="MGTron Control",
 
 
 dpg.bind_font(font=ital_font)
+[
+    (
+        dpg.bind_item_font(item=f"freq_{i}", font=bold_font),
+        dpg.bind_item_font(item=f"power_{i}", font=bold_font),
+        dpg.bind_item_font(item=f"bandwidth_{i}", font=bold_font),
+    )
+    for i in range(1, 9)
+]
 
 # Global Theme
 with dpg.theme() as global_theme:
 
     with dpg.theme_component(dpg.mvAll):
-        # dpg.add_theme_color(dpg.mvThemeCol_FrameBg, (255, 140, 23), category=dpg.mvThemeCat_Core)
         dpg.add_theme_style(dpg.mvStyleVar_FrameRounding,
                             5, category=dpg.mvThemeCat_Core)
 
     with dpg.theme_component(dpg.mvInputInt):
-        # dpg.add_theme_color(dpg.mvThemeCol_FrameBg,(140, 255, 23), category=dpg.mvThemeCat_Core)
         dpg.add_theme_style(dpg.mvStyleVar_FrameRounding,
                             5, category=dpg.mvThemeCat_Core)
 
@@ -499,10 +566,11 @@ dpg.bind_item_theme(item=save_all, theme=blue_btn_theme)
 dpg.bind_item_theme(item=load_all, theme=blue_btn_theme)
 dpg.bind_item_theme(item=custom_save_button, theme=blue_btn_theme)
 dpg.bind_item_theme(item=two_point_four_button, theme=blue_btn_theme)
-dpg.bind_item_theme(item=band_two_button, theme=blue_btn_theme)
+dpg.bind_item_theme(item=mission_alpha_button, theme=blue_btn_theme)
 dpg.bind_item_theme(item=custom_load_button, theme=blue_btn_theme)
-dpg.bind_item_theme(item=band_five_button, theme=blue_btn_theme)
-dpg.bind_item_theme(item=band_four_button, theme=blue_btn_theme)
+dpg.bind_item_theme(item=mission_bravo_button, theme=blue_btn_theme)
+dpg.bind_item_theme(item=mission_charlie_button, theme=blue_btn_theme)
+dpg.bind_item_theme(item=demo_button, theme=blue_btn_theme)
 
 [
     (
