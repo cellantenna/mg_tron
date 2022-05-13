@@ -61,11 +61,9 @@ def callstack_helper(
 
     data_vehicle.change_power(
         channel=channel,
-        power_level=pwr_value
-        or
-        dpg.get_value(
+        power_level=dpg.get_value(
             f"power_{channel}"
-        )
+        ) if not pwr_value else 0
     )
 
     data_vehicle.change_bandwidth(
@@ -73,23 +71,32 @@ def callstack_helper(
         percentage=dpg.get_value(
             f"bandwidth_{channel}"
         )
-        or
-        bw_value
+        if not bw_value else 0
     )
 
     data_vehicle.change_freq(
         channel=channel,
         frequency=dpg.get_value(
             f"freq_{channel}"
-        ) or freq_value
+        )
+        if not freq_value else 0.0
     )
 
     print("Ready for next command.\n")
 
-    dpg.bind_item_theme(
-        item=f"stats_{channel}",
-        theme=grn_btn_theme
-    )
+    [
+        dpg.bind_item_theme(
+            item=f"stats_{channel}",
+            theme=grn_btn_theme,
+        )
+        if dpg.get_value(
+            f"power_{channel}"
+        )
+        else dpg.bind_item_theme(
+            item=f"stats_{channel}",
+            theme=grey_btn_theme,
+        )
+    ]
 
 
 def send_vals(sender, app_data, user_data) -> None:
@@ -356,236 +363,80 @@ def mission_charlie(sender, app_data, user_data) -> None:
     )
 
 
-def demo_engine(channel: int, freq_value: float, power: int, bw_value: int):
-    """Drive the demo configurations"""
-
-    data_vehicle.change_power(
-        channel=channel,
-        power_level=power
-    )
-
-    data_vehicle.change_bandwidth(
-        channel=channel,
-        percentage=bw_value
-    )
-
-    data_vehicle.change_freq(
-        channel=channel,
-        frequency=freq_value
-    )
-
-
 def demo_config(sender, app_data, user_data) -> None:
     """Demonstration of frequency hopping"""
 
     # Send all constant power small freq range
+    count: int = 1
+    while count <= 10:
 
-    [
-        (
-            demo_engine(
-                channel={i},
-                freq_value=2400.00+(i*10),
-                power=50,
-                bw_value=0,
-            ),
-            sleep(2)
-        )
-        for i in range(1, 9)
-    ]
+        [
+            (
+                dpg.set_value(item=f"freq_{i}", value=2400+(i*10)),
+                dpg.set_value(item=f"power_{i}", value=60),
+            )
+            for i in range(1, 9)
+        ]
 
-    """ callstack_helper(
-        channel=1,
-        freq_value=2400,
-        pwr_value=50,
-        bw_value=0,
-    )
-    callstack_helper(
-        channel=2,
-        freq_value=2410,
-        pwr_value=50,
-        bw_value=0,
-    )
-    callstack_helper(
-        channel=3,
-        freq_value=2430,
-        pwr_value=50,
-        bw_value=0,
-    )
-    callstack_helper(
-        channel=4,
-        freq_value=2440,
-        pwr_value=50,
-        bw_value=0,
-    )
-    callstack_helper(
-        channel=5,
-        freq_value=2450,
-        pwr_value=50,
-        bw_value=0,
-    )
-    callstack_helper(
-        channel=6,
-        freq_value=2460,
-        pwr_value=50,
-        bw_value=0,
-    )
-    callstack_helper(
-        channel=7,
-        freq_value=2470,
-        pwr_value=50,
-        bw_value=0,
-    )
-    callstack_helper(
-        channel=8,
-        freq_value=2480,
-        pwr_value=50,
-        bw_value=0,
-    )
+        callstack_helper(channel=1)
+        callstack_helper(channel=2)
+        callstack_helper(channel=3)
+        callstack_helper(channel=4)
+        callstack_helper(channel=5)
+        callstack_helper(channel=6)
+        callstack_helper(channel=7)
+        callstack_helper(channel=8)
 
-    sleep(2) """
+        dpg.set_value(item=f"freq_1", value=0,)
+        dpg.set_value(item=f"power_1", value=50,)
+        callstack_helper(channel=1)
+        dpg.set_value(item=f"freq_1", value=random.randint(a=2400, b=2500))
+        callstack_helper(channel=1)
 
-    # Keep all channels up
+        dpg.set_value(item=f"power_2", value=50,)
+        dpg.set_value(item=f"freq_2", value=0,)
+        callstack_helper(channel=2)
+        dpg.set_value(item=f"freq_2", value=random.randint(a=2400, b=2500))
+        callstack_helper(channel=2)
 
+        dpg.set_value(item=f"power_3", value=50,)
+        dpg.set_value(item=f"freq_3", value=0,)
+        callstack_helper(channel=3)
+        dpg.set_value(item=f"freq_3", value=random.randint(a=2400, b=2500))
+        callstack_helper(channel=3)
 
-    # Send one down
-"""     callstack_helper(
-        channel=1,
-        freq_value=2400+(1*10),
-        pwr_value=0,
-        bw_value=0,
-    )
-    callstack_helper(
-        channel=1,
-        freq_value=random.randrange(
-            start=2400,
-            stop=2500,
-            step=1
-        ),
-        pwr_value=50,
-        bw_value=0,)
-    callstack_helper(
-        channel=2,
-        freq_value=2400+(2*10),
-        pwr_value=0,
-        bw_value=0,
-    )
-    callstack_helper(
-        channel=2,
-        freq_value=random.randrange(
-            start=2400,
-            stop=2500,
-            step=1
-        ),
-        pwr_value=50,
-        bw_value=0,)
+        dpg.set_value(item=f"power_4", value=50,)
+        dpg.set_value(item=f"freq_4", value=0,)
+        callstack_helper(channel=4)
+        dpg.set_value(item=f"freq_4", value=random.randint(a=2400, b=2500))
+        callstack_helper(channel=4)
 
-    callstack_helper(
-        channel=3,
-        freq_value=2400+(3*10),
-        pwr_value=0,
-        bw_value=0,
-    )
-    callstack_helper(
-        channel=3,
-        freq_value=random.randrange(
-            start=2400,
-            stop=2500,
-            step=1
-        ),
-        pwr_value=50,
-        bw_value=0,
-    )
+        dpg.set_value(item=f"power_5", value=50,)
+        dpg.set_value(item=f"freq_5", value=0,)
+        callstack_helper(channel=5)
+        dpg.set_value(item=f"freq_5", value=random.randint(a=2400, b=2500))
+        callstack_helper(channel=5)
 
-    callstack_helper(
-        channel=4,
-        freq_value=2400+(4*10),
-        pwr_value=0,
-        bw_value=0,
-    )
-    callstack_helper(
-        channel=4,
-        freq_value=random.randrange(
-            start=2400,
-            stop=2500,
-            step=1
-        ),
-        pwr_value=50,
-        bw_value=0,
-    )
+        dpg.set_value(item=f"power_6", value=50,)
+        dpg.set_value(item=f"freq_6", value=0,)
+        callstack_helper(channel=6)
+        dpg.set_value(item=f"freq_6", value=random.randint(a=2400, b=2500))
+        callstack_helper(channel=6)
 
-    callstack_helper(
-        channel=5,
-        freq_value=2400+(5*10),
-        pwr_value=0,
-        bw_value=0,
-    )
-    callstack_helper(
-        channel=5,
-        freq_value=random.randrange(
-            start=2400,
-            stop=2500,
-            step=1
-        ),
-        pwr_value=50,
-        bw_value=0,
-    )
+        dpg.set_value(item=f"power_7", value=50,)
+        dpg.set_value(item=f"freq_7", value=0,)
+        callstack_helper(channel=7)
+        dpg.set_value(item=f"freq_7", value=random.randint(a=2400, b=2500))
+        callstack_helper(channel=7)
 
-    callstack_helper(
-        channel=6,
-        freq_value=2400+(6*10),
-        pwr_value=0,
-        bw_value=0,
-    )
-    callstack_helper(
-        channel=6,
-        freq_value=random.randrange(
-            start=2400,
-            stop=2500,
-            step=1
-        ),
-        pwr_value=50,
-        bw_value=0,
-    )
+        dpg.set_value(item=f"power_8", value=50,)
+        dpg.set_value(item=f"freq_8", value=0,)
+        callstack_helper(channel=8)
+        dpg.set_value(item=f"freq_8", value=random.randint(a=2400, b=2500))
+        callstack_helper(channel=8)
 
-    callstack_helper(
-        channel=7,
-        freq_value=2400+(7*10),
-        pwr_value=0,
-        bw_value=0,
-    )
-    callstack_helper(
-        channel=7,
-        freq_value=random.randrange(
-            start=2400,
-            stop=2500,
-            step=1
-        ),
-        pwr_value=50,
-        bw_value=0,
-    )
-
-    callstack_helper(
-        channel=8,
-        freq_value=2400+(8*10),
-        pwr_value=0,
-        bw_value=0,
-    )
-    callstack_helper(
-        channel=8,
-        freq_value=random.randrange(
-            start=2400,
-            stop=2500,
-            step=1
-        ),
-        pwr_value=50,
-        bw_value=0,
-    )
- """
-# Send one random high
-
-# Keep one up
-
-# ....
+        count += count
+        # ....
 
 
 def demo_config_2(sender, app_data, user_data) -> None:
