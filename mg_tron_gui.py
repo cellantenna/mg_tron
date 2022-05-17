@@ -17,6 +17,7 @@ from helpers import (
     mission_alpha,
     mission_bravo,
     mission_charlie,
+    mission_delta,
     quick_load,
     reset_button,
     quick_save,
@@ -543,7 +544,7 @@ with dpg.window(
         ########################
         mission_delta_button = dpg.add_button(
             tag="mssn_delta",
-            callback=mission_charlie,
+            callback=mission_delta,
             label="DELTA\nCONFIG",
             height=70,
             width=70,
@@ -557,7 +558,7 @@ with dpg.window(
         #######################
         mission_echo_button = dpg.add_button(
             tag="mssn_echo",
-            callback=mission_charlie,
+            # callback=mission_charlie,
             label="ECHO\nCONFIG",
             height=70,
             width=70,

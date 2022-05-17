@@ -550,3 +550,40 @@ def auto_fill_custom_save(sender, app_data, user_data) -> None:
     freq_8 = dpg.get_value("freq_8")
 
     dpg.set_value(item="save_custom_input", value=str(f"{freq_1} - {freq_8}"))
+
+
+def mission_delta(sender, app_data, user_data) -> None:
+    """GPS blocking presets"""
+
+    dpg.set_value(item=f"freq_1", value=1221)
+    dpg.set_value(item=f"power_1", value=10)
+    dpg.set_value(item=f"bandwidth_1", value=100)
+    
+    dpg.set_value(item=f"freq_2", value=1236)
+    dpg.set_value(item=f"power_2", value=10)
+    dpg.set_value(item=f"bandwidth_2", value=100)
+    
+    dpg.set_value(item=f"freq_3", value=1248)
+    dpg.set_value(item=f"power_3", value=10)
+    dpg.set_value(item=f"bandwidth_3", value=100)
+    
+    dpg.set_value(item=f"freq_4", value=1260)
+    dpg.set_value(item=f"power_4", value=10)
+    dpg.set_value(item=f"bandwidth_4", value=100)
+    
+    dpg.set_value(item=f"freq_5", value=1557)
+    dpg.set_value(item=f"power_5", value=10)
+    dpg.set_value(item=f"bandwidth_5", value=100)
+    
+    dpg.set_value(item=f"freq_6", value=1572)
+    dpg.set_value(item=f"power_6", value=10)
+    dpg.set_value(item=f"bandwidth_6", value=100)
+    
+    dpg.set_value(item=f"freq_7", value=1587)
+    dpg.set_value(item=f"power_7", value=10)
+    dpg.set_value(item=f"bandwidth_7", value=100)
+    
+    dpg.set_value(item=f"freq_8", value=1605)
+    dpg.set_value(item=f"power_8", value=10)
+    dpg.set_value(item=f"bandwidth_8", value=100)
+    
