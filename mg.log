@@ -1,0 +1,179 @@
+18-May-22 11:12:42 :: No device connected to machine
+18-May-22 11:12:42 :: Device not found
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 54, in find_device
+    print(results[DEVICE_NUMBER])
+IndexError: list index out of range
+18-May-22 11:13:02 :: No device connected to machine
+18-May-22 11:13:02 :: Device not found
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 54, in find_device
+    print(results[DEVICE_NUMBER])
+IndexError: list index out of range
+18-May-22 11:13:35 :: No device connected to machine
+18-May-22 11:13:35 :: Device not found
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 54, in find_device
+    print(results[DEVICE_NUMBER])
+IndexError: list index out of range
+18-May-22 11:16:12 :: No device connected to machine
+18-May-22 11:16:12 :: Device not found
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 54, in find_device
+    print(results[DEVICE_NUMBER])
+IndexError: list index out of range
+18-May-22 11:16:12 :: Call to device initiated
+18-May-22 11:16:12 :: Call initiated from Linux to 
+18-May-22 11:17:37 :: No device connected to machine :: WARNING
+18-May-22 11:17:37 :: Device not found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 54, in find_device
+    print(results[DEVICE_NUMBER])
+IndexError: list index out of range
+18-May-22 11:17:41 :: No device connected to machine :: WARNING
+18-May-22 11:17:41 :: Device not found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 54, in find_device
+    print(results[DEVICE_NUMBER])
+IndexError: list index out of range
+18-May-22 11:17:41 :: Call to device initiated :: DEBUG
+18-May-22 11:17:41 :: Call initiated from Linux to  :: INFO
+18-May-22 11:17:45 :: No device connected to machine :: WARNING
+18-May-22 11:17:45 :: Device not found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 54, in find_device
+    print(results[DEVICE_NUMBER])
+IndexError: list index out of range
+18-May-22 11:17:45 :: Call to device initiated :: DEBUG
+18-May-22 11:17:45 :: Call initiated from Linux to  :: INFO
+18-May-22 11:18:47 :: root :: No device connected to machine :: WARNING
+18-May-22 11:18:47 :: root :: Device not found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 54, in find_device
+    print(results[DEVICE_NUMBER])
+IndexError: list index out of range
+18-May-22 11:18:47 :: root :: Call to device initiated :: DEBUG
+18-May-22 11:18:47 :: root :: Call initiated from Linux to  :: INFO
+18-May-22 11:18:59 :: root :: No device connected to machine :: WARNING
+18-May-22 11:18:59 :: root :: Device not found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 54, in find_device
+    print(results[DEVICE_NUMBER])
+IndexError: list index out of range
+18-May-22 11:21:11 :: root :: No device connected to machine :: WARNING
+18-May-22 11:21:11 :: root :: Device not found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 55, in find_device
+    print(results[DEVICE_NUMBER])
+IndexError: list index out of range
+18-May-22 11:21:36 :: root :: No device connected to machine :: WARNING
+18-May-22 11:21:36 :: root :: Device not found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 55, in find_device
+    print(results[DEVICE_NUMBER])
+IndexError: list index out of range
+18-May-22 11:21:36 :: root :: Call to device initiated :: DEBUG
+18-May-22 11:21:36 :: root :: Call initiated from Linux to  :: INFO
+18-May-22 11:25:31 :: __main__ :: No device connected to machine :: WARNING
+18-May-22 11:25:31 :: __main__ :: Device not found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 55, in find_device
+    print(results[DEVICE_NUMBER])
+IndexError: list index out of range
+18-May-22 11:25:43 :: interface :: No device connected to machine :: WARNING
+18-May-22 11:25:43 :: interface :: Device not found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 55, in find_device
+    print(results[DEVICE_NUMBER])
+IndexError: list index out of range
+18-May-22 12:24:10 :: interface :: No device connected to machine :: WARNING
+18-May-22 12:24:10 :: interface :: Device not found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 55, in find_device
+    print(results[DEVICE_NUMBER])
+IndexError: list index out of range
+18-May-22 13:06:01 :: interface :: No device connected to machine :: WARNING
+18-May-22 13:06:01 :: interface :: Device not found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 55, in find_device
+    print(results[DEVICE_NUMBER])
+IndexError: list index out of range
+18-May-22 13:06:11 :: interface :: No device connected to machine :: WARNING
+18-May-22 13:06:11 :: interface :: Device not found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 55, in find_device
+    print(results[DEVICE_NUMBER])
+IndexError: list index out of range
+18-May-22 13:06:16 :: __main__ :: No device connected to machine :: WARNING
+18-May-22 13:06:16 :: __main__ :: Device not found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 55, in find_device
+    print(results[DEVICE_NUMBER])
+IndexError: list index out of range
+18-May-22 13:07:19 :: interface :: No device connected to machine :: WARNING
+18-May-22 13:07:19 :: interface :: Device not found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 55, in find_device
+    print(results[DEVICE_NUMBER])
+IndexError: list index out of range
+18-May-22 13:07:39 :: interface :: No device connected to machine :: WARNING
+18-May-22 13:07:39 :: interface :: Device not found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 55, in find_device
+    print(results[DEVICE_NUMBER])
+IndexError: list index out of range
+18-May-22 13:08:16 :: interface :: No device connected to machine :: WARNING
+18-May-22 13:08:16 :: interface :: Device not found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 55, in find_device
+    print(results[DEVICE_NUMBER])
+IndexError: list index out of range
+18-May-22 13:08:27 :: __main__ :: No device connected to machine :: WARNING
+18-May-22 13:08:27 :: __main__ :: Device not found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 55, in find_device
+    print(results[DEVICE_NUMBER])
+IndexError: list index out of range
+18-May-22 13:09:58 :: interface :: No device connected to machine :: WARNING
+18-May-22 13:09:58 :: interface :: Device not found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 55, in find_device
+    print(results[DEVICE_NUMBER])
+IndexError: list index out of range
+18-May-22 13:10:03 :: interface :: No device connected to machine :: WARNING
+18-May-22 13:10:03 :: interface :: Device not found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 55, in find_device
+    print(results[DEVICE_NUMBER])
+IndexError: list index out of range
+18-May-22 13:10:20 :: interface :: No device connected to machine :: WARNING
+18-May-22 13:10:20 :: interface :: Device not found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 55, in find_device
+    print(results[DEVICE_NUMBER])
+IndexError: list index out of range
+18-May-22 13:10:36 :: interface :: No device connected to machine :: WARNING
+18-May-22 13:10:36 :: interface :: Device not found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 55, in find_device
+    print(results[DEVICE_NUMBER])
+IndexError: list index out of range
+18-May-22 13:10:36 :: __main__ :: creating dpg context :: INFO
+18-May-22 13:10:36 :: interface :: Call to device initiated :: DEBUG
+18-May-22 13:10:36 :: interface :: Call initiated from Linux to  :: INFO
+18-May-22 13:12:22 :: interface :: No device connected to machine :: WARNING
+18-May-22 13:12:22 :: interface :: Device not found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 58, in find_device
+    print(results[DEVICE_NUMBER])
+IndexError: list index out of range
+18-May-22 13:12:22 :: __main__ :: creating dpg context :: INFO
+18-May-22 13:12:22 :: interface :: Call to device initiated :: DEBUG
+18-May-22 13:12:22 :: interface :: Call initiated from Linux to  :: INFO
+18-May-22 13:12:22 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 31, in serial_call
+    ser.open()
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/venv/lib/python3.10/site-packages/serial/serialposix.py", line 316, in open
+    raise SerialException("Port must be configured before it can be used.")
+serial.serialutil.SerialException: Port must be configured before it can be used.

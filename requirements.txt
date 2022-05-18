@@ -14,6 +14,8 @@ gevent-websocket==0.10.1
 greenlet==1.1.2
 iso8601==1.0.2
 mypy-extensions==0.4.3
+numpy==1.22.3
+pandas==1.4.2
 pathspec==0.9.0
 platformdirs==2.5.2
 pycodestyle==2.8.0
@@ -21,7 +23,11 @@ pyinstaller==5.0.1
 pyinstaller-hooks-contrib==2022.4
 pyserial==3.5
 pysondb==1.6.7
+python-dateutil==2.8.2
+pytz==2022.1
 PyYAML==6.0
+scapy==2.4.5
+six==1.16.0
 toml==0.10.2
 tomli==2.0.1
 wcwidth==0.2.5

@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 import json
+import logging
 import random
 from time import sleep
 import dearpygui.dearpygui as dpg
@@ -11,6 +12,8 @@ from datetime import datetime
 
 # datetime object containing current date and time
 now = datetime.now()
+
+loggey = logging.getLogger(name=__name__)
 
 # dd/mm/YY H:M:S
 dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
@@ -49,12 +52,14 @@ def callstack_helper(
 ):
     """Helper function to reduce clutter"""
 
+    loggey.info(msg=f"{callstack_helper.__name__} executed")
+
     dpg.bind_item_theme(
         item=f"stats_{channel}",
         theme=orng_btn_theme,
     )
 
-    print(f"Channel {channel} Information Sent")
+    loggey.info(f"Channel {channel} Information Sent")
 
     data_vehicle.change_power(
         channel=channel,
@@ -71,7 +76,7 @@ def callstack_helper(
         frequency=dpg.get_value(f"freq_{channel}") if not freq_value else 0.0,
     )
 
-    print("Ready for next command.\n")
+    loggey.info("Ready for next command.\n")
 
     [
         dpg.bind_item_theme(
@@ -88,6 +93,8 @@ def callstack_helper(
 
 def send_vals(sender, app_data, user_data) -> None:
     """Relational connection between GUI and Megatron class"""
+
+    loggey.info(msg=f"{send_vals.__name__} executed")
 
     match user_data:
         case 1:
@@ -107,8 +114,8 @@ def send_vals(sender, app_data, user_data) -> None:
         case 8:
             callstack_helper(channel=8)
         case _:
-            print(f"Unrecognized GUI report of a channel: \n")
-            print(
+            loggey.warning(f"Unrecognized GUI report of a channel: \n")
+            loggey.debug(
                 f"Sender: {sender}\n"
                 f"App data: {app_data}\n"
                 f"User data: {user_data}\n"
@@ -118,7 +125,7 @@ def send_vals(sender, app_data, user_data) -> None:
 def reset_button(sender, app_data, user_data) -> None:
     """Reset all channel power levels to zero"""
 
-    print("Reset All command Sent")
+    loggey.info("Reset All command Sent")
 
     [dpg.bind_item_theme(f"stats_{i+1}", orng_btn_theme) for i in range(8)]
     data_vehicle.save_state(state=True)
@@ -133,13 +140,13 @@ def reset_button(sender, app_data, user_data) -> None:
         for i in range(8)
     ]
 
-    print("Ready for next command.\n")
+    loggey.info("Ready for next command.\n")
 
 
 def send_all_channels(sender=None, app_data=None, user_data=None) -> None:
     """Send the data from all channels at once"""
 
-    print("Send All command executed")
+    loggey.info(f"{send_all_channels.__name__} executed")
 
     callstack_helper(channel=1)
     callstack_helper(channel=2)
@@ -150,7 +157,7 @@ def send_all_channels(sender=None, app_data=None, user_data=None) -> None:
     callstack_helper(channel=7)
     callstack_helper(channel=8)
 
-    print("Ready for next command.\n")
+    loggey.info("Ready for next command.\n")
 
 
 def quick_save(sender, app_data, user_data) -> None:
@@ -170,7 +177,7 @@ def quick_save(sender, app_data, user_data) -> None:
 
     with open(file="quick_save.json", mode="w") as file:
         file.write(json.dumps(obj=prelim_data, indent=2))
-        print("Save Complete")
+        loggey.info("Save Complete")
 
 
 def quick_load(sender, app_data, user_data) -> None:
@@ -201,7 +208,7 @@ def quick_load(sender, app_data, user_data) -> None:
 def custom_save(sender, app_data, user_data) -> None:
     """Save config w/ a custom name"""
 
-    print("Custom Save enacted\n")
+    loggey.info(f"{custom_save.__name__} executed")
 
     prelim_data: list[dict[str, dict[str, str, str, str]]] = [
         {
@@ -218,8 +225,8 @@ def custom_save(sender, app_data, user_data) -> None:
 
     with open(file="long_save.json", mode="a") as file:
         file.write(json.dumps(obj=prelim_data, indent=2))
-        print(json.dumps(obj=prelim_data, indent=2))
-        print("Save Complete")
+        loggey.debug(json.dumps(obj=prelim_data, indent=2))
+        loggey.info("long save Complete")
 
     # Clear input and close input
     dpg.set_value(item="save_input", value="")
@@ -308,13 +315,15 @@ def auto_fill_bandwidth() -> None:
 
 def change_inputs(sender, app_data, user_data) -> None:
     """Use the mouse wheel to change the field inputs"""
-    print(app_data)
+    loggey.info(f"app data: {app_data}")
     if dpg.is_item_focused(item="power_1"):
-        print(dpg.get_value("power_1"))
+        loggey.debug(dpg.get_value("power_1"))
 
 
 def two_point_four(sender, app_data, user_data) -> None:
     """Auto Fill the WIFI band"""
+
+    loggey.info(f"{two_point_four.__name__} executed")
 
     dpg.set_value(item=f"freq_1", value=2415)
     dpg.set_value(item=f"freq_2", value=2440)
@@ -329,6 +338,8 @@ def two_point_four(sender, app_data, user_data) -> None:
 def mission_alpha(sender, app_data, user_data) -> None:
     """Auto Fill the band 2 celluar band"""
 
+    loggey.info(msg=f"{mission_alpha.__name__} executed")
+
     auto_fill_freq(
         freq_val=650,
         freq_constant=28.54,
@@ -337,6 +348,8 @@ def mission_alpha(sender, app_data, user_data) -> None:
 
 def mission_bravo(sender, app_data, user_data) -> None:
     """Auto Fill the band 4 celluar band"""
+
+    loggey.info(msg=f"{mission_bravo.__name__} executed")
 
     auto_fill_freq(
         freq_val=1950,
@@ -347,6 +360,8 @@ def mission_bravo(sender, app_data, user_data) -> None:
 def mission_charlie(sender, app_data, user_data) -> None:
     """Auto Fill the band 5 celluar band"""
 
+    loggey.info(msg=f"{mission_charlie.__name__} executed")
+
     auto_fill_freq(
         freq_val=2450,
         freq_constant=157.1429,
@@ -356,10 +371,11 @@ def mission_charlie(sender, app_data, user_data) -> None:
 def demo_config(sender, app_data, user_data) -> None:
     """Demonstration of frequency hopping"""
 
+    loggey.info(msg=f"{demo_config.__name__} executed")
+
     # Send all constant power small freq range
     count: int = 1
     while count <= 10:
-
         [
             (
                 dpg.set_value(item=f"freq_{i}", value=2400 + (i * 10)),
@@ -474,11 +490,14 @@ def demo_config(sender, app_data, user_data) -> None:
         callstack_helper(channel=8)
 
         count += count
+        loggey.debug(msg=f"{demo_config.__name__} is at count: {count}")
         # ....
 
 
 def demo_config_2(sender, app_data, user_data) -> None:
     """Demo 2 config"""
+
+    loggey.info(msg=f"{demo_config_2.__name__} executed")
 
     # Take any freq 1 input
     freq_1 = dpg.get_value(
@@ -519,6 +538,7 @@ def demo_config_2(sender, app_data, user_data) -> None:
     )
 
     # Subtract 0.2 MHz until back to start
+    loggey.debug(msg="Subtracting 1 MHz until back to the start")
     [
         (
             dpg.set_value(
@@ -531,20 +551,24 @@ def demo_config_2(sender, app_data, user_data) -> None:
         for _ in range(1000)
     ]
 
-    # 100% BW
+    # 0% BW
     dpg.set_value(
         item="bandwidth_1",
         value=0,
     )
+    # 0 power
     dpg.set_value(
         item="power_1",
         value=0,
     )
+    # set the two previous values
     callstack_helper(channel=1)
 
 
 def auto_fill_custom_save(sender, app_data, user_data) -> None:
     """Grab the first and last frequency input and put as save name"""
+
+    loggey.info(msg=f"{auto_fill_custom_save.__name__} executed")
 
     freq_1 = dpg.get_value("freq_1")
     freq_8 = dpg.get_value("freq_8")
@@ -555,35 +579,36 @@ def auto_fill_custom_save(sender, app_data, user_data) -> None:
 def mission_delta(sender, app_data, user_data) -> None:
     """GPS blocking presets"""
 
+    loggey.info(msg=f"{mission_delta.__name__} executed")
+
     dpg.set_value(item=f"freq_1", value=1221)
     dpg.set_value(item=f"power_1", value=10)
     dpg.set_value(item=f"bandwidth_1", value=100)
-    
+
     dpg.set_value(item=f"freq_2", value=1236)
     dpg.set_value(item=f"power_2", value=10)
     dpg.set_value(item=f"bandwidth_2", value=100)
-    
+
     dpg.set_value(item=f"freq_3", value=1248)
     dpg.set_value(item=f"power_3", value=10)
     dpg.set_value(item=f"bandwidth_3", value=100)
-    
+
     dpg.set_value(item=f"freq_4", value=1260)
     dpg.set_value(item=f"power_4", value=10)
     dpg.set_value(item=f"bandwidth_4", value=100)
-    
+
     dpg.set_value(item=f"freq_5", value=1557)
     dpg.set_value(item=f"power_5", value=10)
     dpg.set_value(item=f"bandwidth_5", value=100)
-    
+
     dpg.set_value(item=f"freq_6", value=1572)
     dpg.set_value(item=f"power_6", value=10)
     dpg.set_value(item=f"bandwidth_6", value=100)
-    
+
     dpg.set_value(item=f"freq_7", value=1587)
     dpg.set_value(item=f"power_7", value=10)
     dpg.set_value(item=f"bandwidth_7", value=100)
-    
+
     dpg.set_value(item=f"freq_8", value=1605)
     dpg.set_value(item=f"power_8", value=10)
     dpg.set_value(item=f"bandwidth_8", value=100)
-    

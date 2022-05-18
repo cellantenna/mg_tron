@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+import logging
 from typing import Any
 
 import dearpygui.dearpygui as dpg
@@ -27,6 +28,8 @@ from helpers import (
     two_point_four,
 )
 
+logger = logging.getLogger(name=__name__)
+
 RESOLUTION: list[int] = [1250, 735]  # 1200x800
 POWER: bool = bool()
 ROW_HEIGHT: int = 78
@@ -39,7 +42,9 @@ DEMO_HEIGHT: int = 330
 WIFI_HEIGHT: int = 405
 CELLUAR_HEIGHT: int = 240
 
+
 dpg.create_context()
+logger.info(msg="creating dpg context")
 
 
 data_vehicle.save_state(False)
@@ -440,7 +445,7 @@ with dpg.window(
                 dpg.add_menu_item(
                     parent="load_input",
                     label=f"Previously Saved custom named item {i}",
-                    callback=lambda: print("\nMenu item called\n"),
+                    callback=lambda: logger.info(msg="\nMenu item called\n"),
                 )
                 for i in range(1, 9)
             ]
