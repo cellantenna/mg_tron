@@ -612,3 +612,14 @@ def mission_delta(sender, app_data, user_data) -> None:
     dpg.set_value(item=f"freq_8", value=1605)
     dpg.set_value(item=f"power_8", value=10)
     dpg.set_value(item=f"bandwidth_8", value=100)
+
+
+def kill_channel(sender, app_data, user_data) -> None:
+    """Kill channel w/out resetting power on user facing screen"""
+
+    print(f"USER DATA: {user_data}")
+    data_vehicle.change_power(
+        channel=user_data,
+        power_level=0,
+    ),
+    dpg.bind_item_theme(item=f"stats_{user_data}", theme=grey_btn_theme),

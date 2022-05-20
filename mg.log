@@ -177,3 +177,1175 @@ Traceback (most recent call last):
   File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/venv/lib/python3.10/site-packages/serial/serialposix.py", line 316, in open
     raise SerialException("Port must be configured before it can be used.")
 serial.serialutil.SerialException: Port must be configured before it can be used.
+20-May-22 11:22:43 :: __main__ :: creating dpg context :: INFO
+20-May-22 11:22:43 :: interface :: Call to device initiated :: DEBUG
+20-May-22 11:22:43 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 11:23:13 :: __main__ :: creating dpg context :: INFO
+20-May-22 11:23:13 :: interface :: Call to device initiated :: DEBUG
+20-May-22 11:23:13 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 11:23:26 :: __main__ :: creating dpg context :: INFO
+20-May-22 11:23:26 :: interface :: Call to device initiated :: DEBUG
+20-May-22 11:23:26 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 11:26:54 :: __main__ :: creating dpg context :: INFO
+20-May-22 11:26:54 :: interface :: Call to device initiated :: DEBUG
+20-May-22 11:26:54 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 11:27:00 :: helpers :: app data: -1 :: INFO
+20-May-22 11:27:00 :: helpers :: app data: -1 :: INFO
+20-May-22 11:27:00 :: helpers :: app data: -1 :: INFO
+20-May-22 11:27:00 :: helpers :: app data: -1 :: INFO
+20-May-22 11:27:00 :: helpers :: app data: -1 :: INFO
+20-May-22 11:27:00 :: helpers :: app data: -1 :: INFO
+20-May-22 11:27:00 :: helpers :: app data: -1 :: INFO
+20-May-22 11:27:00 :: helpers :: app data: -1 :: INFO
+20-May-22 11:27:00 :: helpers :: app data: -1 :: INFO
+20-May-22 11:27:00 :: helpers :: app data: -1 :: INFO
+20-May-22 11:27:00 :: helpers :: app data: -1 :: INFO
+20-May-22 11:27:00 :: helpers :: app data: -1 :: INFO
+20-May-22 11:27:00 :: helpers :: app data: -1 :: INFO
+20-May-22 11:27:00 :: helpers :: app data: -1 :: INFO
+20-May-22 11:27:00 :: helpers :: app data: -1 :: INFO
+20-May-22 11:27:01 :: helpers :: app data: -1 :: INFO
+20-May-22 11:27:01 :: helpers :: app data: -2 :: INFO
+20-May-22 11:27:01 :: helpers :: app data: -1 :: INFO
+20-May-22 11:27:01 :: helpers :: app data: -1 :: INFO
+20-May-22 11:27:01 :: helpers :: app data: -2 :: INFO
+20-May-22 11:27:01 :: helpers :: app data: -1 :: INFO
+20-May-22 11:27:01 :: helpers :: app data: -1 :: INFO
+20-May-22 11:27:01 :: helpers :: app data: -1 :: INFO
+20-May-22 11:27:01 :: helpers :: app data: -2 :: INFO
+20-May-22 11:27:01 :: helpers :: app data: -1 :: INFO
+20-May-22 11:27:01 :: helpers :: app data: -1 :: INFO
+20-May-22 11:27:01 :: helpers :: app data: -1 :: INFO
+20-May-22 11:27:01 :: helpers :: app data: -1 :: INFO
+20-May-22 11:27:01 :: helpers :: app data: -1 :: INFO
+20-May-22 11:27:01 :: helpers :: app data: -1 :: INFO
+20-May-22 11:27:01 :: helpers :: app data: -2 :: INFO
+20-May-22 11:27:01 :: helpers :: app data: -1 :: INFO
+20-May-22 11:27:01 :: helpers :: app data: -1 :: INFO
+20-May-22 11:27:01 :: helpers :: app data: -1 :: INFO
+20-May-22 11:27:02 :: helpers :: app data: -1 :: INFO
+20-May-22 11:27:02 :: helpers :: app data: -1 :: INFO
+20-May-22 11:27:02 :: helpers :: app data: -1 :: INFO
+20-May-22 11:27:02 :: helpers :: app data: -1 :: INFO
+20-May-22 11:27:02 :: helpers :: app data: -2 :: INFO
+20-May-22 11:27:02 :: helpers :: app data: -1 :: INFO
+20-May-22 11:27:02 :: helpers :: app data: -1 :: INFO
+20-May-22 11:27:02 :: helpers :: app data: -1 :: INFO
+20-May-22 11:27:02 :: helpers :: app data: -1 :: INFO
+20-May-22 11:27:02 :: helpers :: app data: -1 :: INFO
+20-May-22 11:27:02 :: helpers :: app data: -1 :: INFO
+20-May-22 11:27:02 :: helpers :: app data: -1 :: INFO
+20-May-22 11:27:02 :: helpers :: app data: -1 :: INFO
+20-May-22 11:27:02 :: helpers :: app data: -1 :: INFO
+20-May-22 11:27:02 :: helpers :: app data: -2 :: INFO
+20-May-22 11:27:02 :: helpers :: app data: -1 :: INFO
+20-May-22 11:27:02 :: helpers :: app data: -1 :: INFO
+20-May-22 11:27:02 :: helpers :: app data: -2 :: INFO
+20-May-22 11:27:02 :: helpers :: app data: -1 :: INFO
+20-May-22 11:27:03 :: helpers :: app data: -1 :: INFO
+20-May-22 11:27:03 :: helpers :: app data: -2 :: INFO
+20-May-22 11:27:03 :: helpers :: app data: -1 :: INFO
+20-May-22 11:27:03 :: helpers :: app data: -1 :: INFO
+20-May-22 11:27:03 :: helpers :: app data: -1 :: INFO
+20-May-22 11:27:03 :: helpers :: app data: -1 :: INFO
+20-May-22 11:27:03 :: helpers :: app data: -1 :: INFO
+20-May-22 11:27:03 :: helpers :: app data: -1 :: INFO
+20-May-22 11:27:03 :: helpers :: app data: -1 :: INFO
+20-May-22 11:27:03 :: helpers :: app data: -1 :: INFO
+20-May-22 11:27:05 :: helpers :: app data: 1 :: INFO
+20-May-22 11:27:05 :: helpers :: app data: 1 :: INFO
+20-May-22 11:27:05 :: helpers :: app data: 1 :: INFO
+20-May-22 11:27:05 :: helpers :: app data: 1 :: INFO
+20-May-22 11:27:05 :: helpers :: app data: 1 :: INFO
+20-May-22 11:27:05 :: helpers :: app data: 1 :: INFO
+20-May-22 11:27:05 :: helpers :: app data: 1 :: INFO
+20-May-22 11:27:05 :: helpers :: app data: 1 :: INFO
+20-May-22 11:27:06 :: helpers :: app data: 1 :: INFO
+20-May-22 11:27:06 :: helpers :: app data: 2 :: INFO
+20-May-22 11:27:06 :: helpers :: app data: 2 :: INFO
+20-May-22 11:27:06 :: helpers :: app data: 1 :: INFO
+20-May-22 11:27:06 :: helpers :: app data: 1 :: INFO
+20-May-22 11:27:06 :: helpers :: app data: 1 :: INFO
+20-May-22 11:27:06 :: helpers :: app data: 1 :: INFO
+20-May-22 11:27:06 :: helpers :: app data: 1 :: INFO
+20-May-22 11:27:06 :: helpers :: app data: 1 :: INFO
+20-May-22 11:27:06 :: helpers :: app data: 1 :: INFO
+20-May-22 11:27:06 :: helpers :: app data: 2 :: INFO
+20-May-22 11:27:06 :: helpers :: app data: 1 :: INFO
+20-May-22 11:27:06 :: helpers :: app data: 1 :: INFO
+20-May-22 11:27:06 :: helpers :: app data: 1 :: INFO
+20-May-22 11:27:06 :: helpers :: app data: 1 :: INFO
+20-May-22 11:27:06 :: helpers :: app data: 1 :: INFO
+20-May-22 11:27:06 :: helpers :: app data: 1 :: INFO
+20-May-22 11:27:06 :: helpers :: app data: 1 :: INFO
+20-May-22 11:27:06 :: helpers :: app data: 1 :: INFO
+20-May-22 11:27:06 :: helpers :: app data: 1 :: INFO
+20-May-22 11:27:07 :: helpers :: app data: 1 :: INFO
+20-May-22 11:27:07 :: helpers :: app data: 1 :: INFO
+20-May-22 11:27:07 :: helpers :: app data: 2 :: INFO
+20-May-22 11:27:07 :: helpers :: app data: 1 :: INFO
+20-May-22 11:27:07 :: helpers :: app data: 1 :: INFO
+20-May-22 11:27:07 :: helpers :: app data: 1 :: INFO
+20-May-22 11:27:07 :: helpers :: app data: 1 :: INFO
+20-May-22 11:27:07 :: helpers :: app data: 1 :: INFO
+20-May-22 11:27:07 :: helpers :: app data: 1 :: INFO
+20-May-22 11:27:07 :: helpers :: app data: 2 :: INFO
+20-May-22 11:27:07 :: helpers :: app data: 2 :: INFO
+20-May-22 11:27:07 :: helpers :: app data: 1 :: INFO
+20-May-22 11:27:07 :: helpers :: app data: 1 :: INFO
+20-May-22 11:27:07 :: helpers :: app data: 1 :: INFO
+20-May-22 11:27:07 :: helpers :: app data: 1 :: INFO
+20-May-22 11:27:07 :: helpers :: app data: 1 :: INFO
+20-May-22 11:27:07 :: helpers :: app data: 2 :: INFO
+20-May-22 11:27:07 :: helpers :: app data: 1 :: INFO
+20-May-22 11:27:08 :: helpers :: app data: 1 :: INFO
+20-May-22 11:27:08 :: helpers :: app data: 1 :: INFO
+20-May-22 11:27:08 :: helpers :: app data: 1 :: INFO
+20-May-22 11:27:08 :: helpers :: app data: 2 :: INFO
+20-May-22 11:27:08 :: helpers :: app data: 1 :: INFO
+20-May-22 11:27:08 :: helpers :: app data: 1 :: INFO
+20-May-22 11:27:08 :: helpers :: app data: 1 :: INFO
+20-May-22 11:27:08 :: helpers :: app data: 1 :: INFO
+20-May-22 11:27:08 :: helpers :: app data: 1 :: INFO
+20-May-22 11:27:08 :: helpers :: app data: 1 :: INFO
+20-May-22 11:27:08 :: helpers :: app data: 1 :: INFO
+20-May-22 11:27:08 :: helpers :: app data: 2 :: INFO
+20-May-22 11:27:08 :: helpers :: app data: 2 :: INFO
+20-May-22 11:27:08 :: helpers :: app data: 1 :: INFO
+20-May-22 11:27:08 :: helpers :: app data: 1 :: INFO
+20-May-22 11:27:09 :: helpers :: app data: 1 :: INFO
+20-May-22 11:27:09 :: helpers :: app data: 1 :: INFO
+20-May-22 11:27:09 :: helpers :: app data: 1 :: INFO
+20-May-22 11:27:09 :: helpers :: app data: 1 :: INFO
+20-May-22 11:27:09 :: helpers :: app data: 1 :: INFO
+20-May-22 11:28:03 :: __main__ :: creating dpg context :: INFO
+20-May-22 11:28:03 :: interface :: Call to device initiated :: DEBUG
+20-May-22 11:28:03 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 11:28:04 :: helpers :: app data: 1 :: INFO
+20-May-22 11:28:04 :: helpers :: app data: -1 :: INFO
+20-May-22 11:28:05 :: helpers :: app data: -1 :: INFO
+20-May-22 11:28:05 :: helpers :: app data: -1 :: INFO
+20-May-22 11:28:05 :: helpers :: app data: -1 :: INFO
+20-May-22 11:28:05 :: helpers :: app data: -1 :: INFO
+20-May-22 11:28:05 :: helpers :: app data: -1 :: INFO
+20-May-22 11:28:05 :: helpers :: app data: -1 :: INFO
+20-May-22 11:28:05 :: helpers :: app data: -1 :: INFO
+20-May-22 11:28:05 :: helpers :: app data: -1 :: INFO
+20-May-22 11:28:05 :: helpers :: app data: -1 :: INFO
+20-May-22 11:28:05 :: helpers :: app data: -1 :: INFO
+20-May-22 11:28:05 :: helpers :: app data: -1 :: INFO
+20-May-22 11:28:05 :: helpers :: app data: -1 :: INFO
+20-May-22 11:28:05 :: helpers :: app data: -1 :: INFO
+20-May-22 11:28:06 :: helpers :: app data: 1 :: INFO
+20-May-22 11:28:06 :: helpers :: app data: 1 :: INFO
+20-May-22 11:28:06 :: helpers :: app data: 1 :: INFO
+20-May-22 11:28:06 :: helpers :: app data: 1 :: INFO
+20-May-22 11:28:06 :: helpers :: app data: 1 :: INFO
+20-May-22 11:28:06 :: helpers :: app data: 1 :: INFO
+20-May-22 11:28:06 :: helpers :: app data: 1 :: INFO
+20-May-22 11:28:06 :: helpers :: app data: 1 :: INFO
+20-May-22 11:28:06 :: helpers :: app data: 1 :: INFO
+20-May-22 11:28:06 :: helpers :: app data: 2 :: INFO
+20-May-22 11:28:06 :: helpers :: app data: 1 :: INFO
+20-May-22 11:28:06 :: helpers :: app data: 1 :: INFO
+20-May-22 11:28:06 :: helpers :: app data: 1 :: INFO
+20-May-22 11:28:12 :: helpers :: app data: -1 :: INFO
+20-May-22 11:28:12 :: helpers :: app data: -1 :: INFO
+20-May-22 11:28:12 :: helpers :: app data: -1 :: INFO
+20-May-22 11:28:12 :: helpers :: app data: -1 :: INFO
+20-May-22 11:28:12 :: helpers :: app data: -1 :: INFO
+20-May-22 11:28:12 :: helpers :: app data: -1 :: INFO
+20-May-22 11:28:12 :: helpers :: app data: -1 :: INFO
+20-May-22 11:28:13 :: helpers :: app data: -1 :: INFO
+20-May-22 11:28:13 :: helpers :: app data: -1 :: INFO
+20-May-22 11:28:13 :: helpers :: app data: -1 :: INFO
+20-May-22 11:28:13 :: helpers :: app data: -1 :: INFO
+20-May-22 11:28:13 :: helpers :: app data: -1 :: INFO
+20-May-22 11:28:13 :: helpers :: app data: -1 :: INFO
+20-May-22 11:28:13 :: helpers :: app data: -1 :: INFO
+20-May-22 11:28:14 :: helpers :: app data: 1 :: INFO
+20-May-22 11:28:14 :: helpers :: app data: 1 :: INFO
+20-May-22 11:28:24 :: __main__ :: creating dpg context :: INFO
+20-May-22 11:28:24 :: interface :: Call to device initiated :: DEBUG
+20-May-22 11:28:24 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 11:28:39 :: __main__ :: creating dpg context :: INFO
+20-May-22 11:28:39 :: interface :: Call to device initiated :: DEBUG
+20-May-22 11:28:39 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 11:28:44 :: helpers :: app data: -1 :: INFO
+20-May-22 11:28:44 :: helpers :: app data: -1 :: INFO
+20-May-22 11:28:44 :: helpers :: app data: -1 :: INFO
+20-May-22 11:28:44 :: helpers :: app data: -1 :: INFO
+20-May-22 11:28:44 :: helpers :: app data: -1 :: INFO
+20-May-22 11:28:44 :: helpers :: app data: -1 :: INFO
+20-May-22 11:28:44 :: helpers :: app data: -1 :: INFO
+20-May-22 11:28:44 :: helpers :: app data: 1 :: INFO
+20-May-22 11:28:45 :: helpers :: app data: 1 :: INFO
+20-May-22 11:28:45 :: helpers :: app data: 1 :: INFO
+20-May-22 11:28:45 :: helpers :: app data: 1 :: INFO
+20-May-22 11:28:45 :: helpers :: app data: 1 :: INFO
+20-May-22 11:28:45 :: helpers :: app data: 1 :: INFO
+20-May-22 11:28:45 :: helpers :: app data: 1 :: INFO
+20-May-22 11:29:10 :: __main__ :: creating dpg context :: INFO
+20-May-22 11:29:10 :: interface :: Call to device initiated :: DEBUG
+20-May-22 11:29:10 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 11:29:54 :: __main__ :: creating dpg context :: INFO
+20-May-22 11:29:54 :: interface :: Call to device initiated :: DEBUG
+20-May-22 11:29:54 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 11:30:06 :: helpers :: app data: 1 :: INFO
+20-May-22 11:30:06 :: helpers :: app data: 1 :: INFO
+20-May-22 11:30:06 :: helpers :: app data: 1 :: INFO
+20-May-22 11:30:06 :: helpers :: app data: -1 :: INFO
+20-May-22 11:30:06 :: helpers :: app data: -1 :: INFO
+20-May-22 11:30:06 :: helpers :: app data: -1 :: INFO
+20-May-22 11:30:10 :: __main__ :: creating dpg context :: INFO
+20-May-22 11:30:10 :: interface :: Call to device initiated :: DEBUG
+20-May-22 11:30:10 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 11:30:25 :: __main__ :: creating dpg context :: INFO
+20-May-22 11:30:25 :: interface :: Call to device initiated :: DEBUG
+20-May-22 11:30:25 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 11:30:31 :: helpers :: app data: -1 :: INFO
+20-May-22 11:30:31 :: helpers :: app data: -1 :: INFO
+20-May-22 11:30:32 :: helpers :: app data: -1 :: INFO
+20-May-22 11:30:32 :: helpers :: app data: 1 :: INFO
+20-May-22 11:30:32 :: helpers :: app data: 1 :: INFO
+20-May-22 11:30:32 :: helpers :: app data: 1 :: INFO
+20-May-22 11:30:32 :: helpers :: app data: 1 :: INFO
+20-May-22 11:30:43 :: __main__ :: creating dpg context :: INFO
+20-May-22 11:30:43 :: interface :: Call to device initiated :: DEBUG
+20-May-22 11:30:43 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 11:30:56 :: __main__ :: creating dpg context :: INFO
+20-May-22 11:30:56 :: interface :: Call to device initiated :: DEBUG
+20-May-22 11:30:56 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 11:31:07 :: __main__ :: creating dpg context :: INFO
+20-May-22 11:31:07 :: interface :: Call to device initiated :: DEBUG
+20-May-22 11:31:07 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 11:31:56 :: __main__ :: creating dpg context :: INFO
+20-May-22 11:31:56 :: interface :: Call to device initiated :: DEBUG
+20-May-22 11:31:56 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 11:32:13 :: __main__ :: creating dpg context :: INFO
+20-May-22 11:32:13 :: interface :: Call to device initiated :: DEBUG
+20-May-22 11:32:13 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 11:33:28 :: __main__ :: creating dpg context :: INFO
+20-May-22 11:33:28 :: interface :: Call to device initiated :: DEBUG
+20-May-22 11:33:28 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 11:33:52 :: __main__ :: creating dpg context :: INFO
+20-May-22 11:33:52 :: interface :: Call to device initiated :: DEBUG
+20-May-22 11:33:52 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 11:34:42 :: __main__ :: creating dpg context :: INFO
+20-May-22 11:34:42 :: interface :: Call to device initiated :: DEBUG
+20-May-22 11:34:42 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 11:34:47 :: helpers :: app data: -1 :: INFO
+20-May-22 11:34:47 :: helpers :: app data: -1 :: INFO
+20-May-22 11:34:48 :: helpers :: app data: -1 :: INFO
+20-May-22 11:34:48 :: helpers :: app data: 1 :: INFO
+20-May-22 11:34:48 :: helpers :: app data: 1 :: INFO
+20-May-22 11:35:14 :: __main__ :: creating dpg context :: INFO
+20-May-22 11:35:14 :: interface :: Call to device initiated :: DEBUG
+20-May-22 11:35:14 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 11:35:59 :: __main__ :: creating dpg context :: INFO
+20-May-22 11:35:59 :: interface :: Call to device initiated :: DEBUG
+20-May-22 11:35:59 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 11:36:30 :: __main__ :: creating dpg context :: INFO
+20-May-22 11:36:30 :: interface :: Call to device initiated :: DEBUG
+20-May-22 11:36:30 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 11:36:44 :: __main__ :: creating dpg context :: INFO
+20-May-22 11:36:44 :: interface :: Call to device initiated :: DEBUG
+20-May-22 11:36:44 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 11:37:01 :: __main__ :: creating dpg context :: INFO
+20-May-22 11:37:01 :: interface :: Call to device initiated :: DEBUG
+20-May-22 11:37:01 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 11:37:12 :: __main__ :: creating dpg context :: INFO
+20-May-22 11:37:12 :: interface :: Call to device initiated :: DEBUG
+20-May-22 11:37:12 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 11:37:33 :: __main__ :: creating dpg context :: INFO
+20-May-22 11:37:33 :: interface :: Call to device initiated :: DEBUG
+20-May-22 11:37:33 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 11:38:10 :: __main__ :: creating dpg context :: INFO
+20-May-22 11:38:10 :: interface :: Call to device initiated :: DEBUG
+20-May-22 11:38:10 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 11:38:27 :: __main__ :: creating dpg context :: INFO
+20-May-22 11:38:27 :: interface :: Call to device initiated :: DEBUG
+20-May-22 11:38:27 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 11:39:06 :: __main__ :: creating dpg context :: INFO
+20-May-22 11:39:06 :: interface :: Call to device initiated :: DEBUG
+20-May-22 11:39:06 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 11:40:28 :: __main__ :: creating dpg context :: INFO
+20-May-22 11:40:28 :: interface :: Call to device initiated :: DEBUG
+20-May-22 11:40:28 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 11:40:44 :: __main__ :: creating dpg context :: INFO
+20-May-22 11:40:44 :: interface :: Call to device initiated :: DEBUG
+20-May-22 11:40:44 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 11:41:34 :: __main__ :: creating dpg context :: INFO
+20-May-22 11:41:34 :: interface :: Call to device initiated :: DEBUG
+20-May-22 11:41:34 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 11:41:49 :: __main__ :: creating dpg context :: INFO
+20-May-22 11:41:49 :: interface :: Call to device initiated :: DEBUG
+20-May-22 11:41:49 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 11:42:00 :: __main__ :: creating dpg context :: INFO
+20-May-22 11:42:00 :: interface :: Call to device initiated :: DEBUG
+20-May-22 11:42:00 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 11:54:00 :: __main__ :: creating dpg context :: INFO
+20-May-22 11:54:00 :: interface :: Call to device initiated :: DEBUG
+20-May-22 11:54:00 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 11:54:33 :: __main__ :: creating dpg context :: INFO
+20-May-22 11:54:33 :: interface :: Call to device initiated :: DEBUG
+20-May-22 11:54:33 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 11:55:22 :: __main__ :: creating dpg context :: INFO
+20-May-22 11:55:22 :: interface :: Call to device initiated :: DEBUG
+20-May-22 11:55:22 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 11:55:58 :: __main__ :: creating dpg context :: INFO
+20-May-22 11:55:58 :: interface :: Call to device initiated :: DEBUG
+20-May-22 11:55:58 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 11:56:27 :: __main__ :: creating dpg context :: INFO
+20-May-22 11:56:27 :: interface :: Call to device initiated :: DEBUG
+20-May-22 11:56:27 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 11:56:43 :: __main__ :: creating dpg context :: INFO
+20-May-22 11:56:43 :: interface :: Call to device initiated :: DEBUG
+20-May-22 11:56:43 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 11:56:55 :: __main__ :: creating dpg context :: INFO
+20-May-22 11:56:55 :: interface :: Call to device initiated :: DEBUG
+20-May-22 11:56:55 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 11:57:12 :: __main__ :: creating dpg context :: INFO
+20-May-22 11:57:12 :: interface :: Call to device initiated :: DEBUG
+20-May-22 11:57:12 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 11:57:18 :: helpers :: two_point_four executed :: INFO
+20-May-22 11:57:21 :: helpers :: mission_bravo executed :: INFO
+20-May-22 11:57:23 :: helpers :: mission_alpha executed :: INFO
+20-May-22 11:57:23 :: helpers :: mission_charlie executed :: INFO
+20-May-22 11:57:41 :: __main__ :: creating dpg context :: INFO
+20-May-22 11:57:41 :: interface :: Call to device initiated :: DEBUG
+20-May-22 11:57:41 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 11:58:19 :: __main__ :: creating dpg context :: INFO
+20-May-22 11:58:19 :: interface :: Call to device initiated :: DEBUG
+20-May-22 11:58:19 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 11:58:46 :: __main__ :: creating dpg context :: INFO
+20-May-22 11:58:46 :: interface :: Call to device initiated :: DEBUG
+20-May-22 11:58:46 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 11:59:01 :: __main__ :: creating dpg context :: INFO
+20-May-22 11:59:01 :: interface :: Call to device initiated :: DEBUG
+20-May-22 11:59:01 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 11:59:20 :: __main__ :: creating dpg context :: INFO
+20-May-22 11:59:20 :: interface :: Call to device initiated :: DEBUG
+20-May-22 11:59:20 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 11:59:29 :: __main__ :: creating dpg context :: INFO
+20-May-22 11:59:29 :: interface :: Call to device initiated :: DEBUG
+20-May-22 11:59:29 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 11:59:36 :: __main__ :: creating dpg context :: INFO
+20-May-22 11:59:36 :: interface :: Call to device initiated :: DEBUG
+20-May-22 11:59:36 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 11:59:47 :: __main__ :: creating dpg context :: INFO
+20-May-22 11:59:47 :: interface :: Call to device initiated :: DEBUG
+20-May-22 11:59:47 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 12:00:04 :: __main__ :: creating dpg context :: INFO
+20-May-22 12:00:04 :: interface :: Call to device initiated :: DEBUG
+20-May-22 12:00:04 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 12:00:11 :: __main__ :: creating dpg context :: INFO
+20-May-22 12:00:11 :: interface :: Call to device initiated :: DEBUG
+20-May-22 12:00:11 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 12:00:25 :: __main__ :: creating dpg context :: INFO
+20-May-22 12:00:25 :: interface :: Call to device initiated :: DEBUG
+20-May-22 12:00:25 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 12:01:29 :: __main__ :: creating dpg context :: INFO
+20-May-22 12:01:29 :: interface :: Call to device initiated :: DEBUG
+20-May-22 12:01:29 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 12:01:55 :: __main__ :: creating dpg context :: INFO
+20-May-22 12:01:55 :: interface :: Call to device initiated :: DEBUG
+20-May-22 12:01:55 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 12:02:40 :: __main__ :: creating dpg context :: INFO
+20-May-22 12:02:40 :: interface :: Call to device initiated :: DEBUG
+20-May-22 12:02:40 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 12:04:30 :: __main__ :: creating dpg context :: INFO
+20-May-22 12:04:30 :: interface :: Call to device initiated :: DEBUG
+20-May-22 12:04:30 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 12:04:54 :: __main__ :: creating dpg context :: INFO
+20-May-22 12:04:54 :: interface :: Call to device initiated :: DEBUG
+20-May-22 12:04:54 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 12:05:46 :: __main__ :: creating dpg context :: INFO
+20-May-22 12:05:46 :: interface :: Call to device initiated :: DEBUG
+20-May-22 12:05:46 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 12:06:26 :: __main__ :: creating dpg context :: INFO
+20-May-22 12:06:26 :: interface :: Call to device initiated :: DEBUG
+20-May-22 12:06:26 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 12:06:46 :: __main__ :: creating dpg context :: INFO
+20-May-22 12:06:46 :: interface :: Call to device initiated :: DEBUG
+20-May-22 12:06:46 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 12:07:05 :: __main__ :: creating dpg context :: INFO
+20-May-22 12:07:05 :: interface :: Call to device initiated :: DEBUG
+20-May-22 12:07:05 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 12:07:28 :: __main__ :: creating dpg context :: INFO
+20-May-22 12:07:28 :: interface :: Call to device initiated :: DEBUG
+20-May-22 12:07:28 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 12:08:20 :: __main__ :: creating dpg context :: INFO
+20-May-22 12:08:20 :: interface :: Call to device initiated :: DEBUG
+20-May-22 12:08:20 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 12:08:22 :: helpers :: app data: -1 :: INFO
+20-May-22 12:08:22 :: helpers :: app data: -1 :: INFO
+20-May-22 12:08:22 :: helpers :: app data: -1 :: INFO
+20-May-22 12:08:22 :: helpers :: app data: -1 :: INFO
+20-May-22 12:08:23 :: helpers :: app data: 1 :: INFO
+20-May-22 12:08:23 :: helpers :: app data: 1 :: INFO
+20-May-22 12:08:27 :: helpers :: app data: -1 :: INFO
+20-May-22 12:08:27 :: helpers :: app data: -1 :: INFO
+20-May-22 12:08:27 :: helpers :: app data: -1 :: INFO
+20-May-22 12:08:27 :: helpers :: app data: -1 :: INFO
+20-May-22 12:08:27 :: helpers :: app data: -1 :: INFO
+20-May-22 12:08:28 :: helpers :: app data: 1 :: INFO
+20-May-22 12:08:28 :: helpers :: app data: 1 :: INFO
+20-May-22 12:08:35 :: __main__ :: creating dpg context :: INFO
+20-May-22 12:08:35 :: interface :: Call to device initiated :: DEBUG
+20-May-22 12:08:35 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 12:08:40 :: helpers :: app data: 1 :: INFO
+20-May-22 12:08:40 :: helpers :: app data: -1 :: INFO
+20-May-22 12:08:40 :: helpers :: app data: -1 :: INFO
+20-May-22 12:08:41 :: helpers :: app data: 1 :: INFO
+20-May-22 12:08:51 :: __main__ :: creating dpg context :: INFO
+20-May-22 12:08:51 :: interface :: Call to device initiated :: DEBUG
+20-May-22 12:08:51 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 12:09:03 :: __main__ :: creating dpg context :: INFO
+20-May-22 12:09:03 :: interface :: Call to device initiated :: DEBUG
+20-May-22 12:09:03 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 12:09:24 :: __main__ :: creating dpg context :: INFO
+20-May-22 12:09:24 :: interface :: Call to device initiated :: DEBUG
+20-May-22 12:09:24 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 12:09:38 :: __main__ :: creating dpg context :: INFO
+20-May-22 12:09:38 :: interface :: Call to device initiated :: DEBUG
+20-May-22 12:09:38 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 12:10:19 :: __main__ :: creating dpg context :: INFO
+20-May-22 12:10:19 :: interface :: Call to device initiated :: DEBUG
+20-May-22 12:10:19 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 12:10:43 :: __main__ :: creating dpg context :: INFO
+20-May-22 12:10:43 :: interface :: Call to device initiated :: DEBUG
+20-May-22 12:10:43 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 12:10:52 :: helpers :: app data: -1 :: INFO
+20-May-22 12:10:52 :: helpers :: app data: -1 :: INFO
+20-May-22 12:10:52 :: helpers :: app data: -1 :: INFO
+20-May-22 12:10:53 :: helpers :: app data: 1 :: INFO
+20-May-22 12:10:53 :: helpers :: app data: 1 :: INFO
+20-May-22 12:10:53 :: helpers :: app data: 1 :: INFO
+20-May-22 12:10:53 :: helpers :: app data: 1 :: INFO
+20-May-22 12:10:55 :: helpers :: app data: -1 :: INFO
+20-May-22 12:10:55 :: helpers :: app data: -1 :: INFO
+20-May-22 12:10:56 :: helpers :: app data: 1 :: INFO
+20-May-22 12:10:56 :: helpers :: app data: 1 :: INFO
+20-May-22 12:11:26 :: __main__ :: creating dpg context :: INFO
+20-May-22 12:11:26 :: interface :: Call to device initiated :: DEBUG
+20-May-22 12:11:26 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 12:11:38 :: __main__ :: creating dpg context :: INFO
+20-May-22 12:11:38 :: interface :: Call to device initiated :: DEBUG
+20-May-22 12:11:38 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 12:11:40 :: helpers :: app data: -1 :: INFO
+20-May-22 12:11:40 :: helpers :: app data: -1 :: INFO
+20-May-22 12:11:40 :: helpers :: app data: -1 :: INFO
+20-May-22 12:11:40 :: helpers :: app data: -1 :: INFO
+20-May-22 12:11:43 :: helpers :: app data: 1 :: INFO
+20-May-22 12:11:43 :: helpers :: app data: 1 :: INFO
+20-May-22 12:11:43 :: helpers :: app data: 1 :: INFO
+20-May-22 12:11:43 :: helpers :: app data: -1 :: INFO
+20-May-22 12:11:43 :: helpers :: app data: -1 :: INFO
+20-May-22 12:11:57 :: __main__ :: creating dpg context :: INFO
+20-May-22 12:11:57 :: interface :: Call to device initiated :: DEBUG
+20-May-22 12:11:57 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 12:12:24 :: __main__ :: creating dpg context :: INFO
+20-May-22 12:12:24 :: interface :: Call to device initiated :: DEBUG
+20-May-22 12:12:24 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 12:12:32 :: __main__ :: creating dpg context :: INFO
+20-May-22 12:12:32 :: interface :: Call to device initiated :: DEBUG
+20-May-22 12:12:32 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 12:12:39 :: helpers :: app data: -1 :: INFO
+20-May-22 12:12:39 :: helpers :: app data: -1 :: INFO
+20-May-22 12:12:39 :: helpers :: app data: -1 :: INFO
+20-May-22 12:12:39 :: helpers :: app data: -1 :: INFO
+20-May-22 12:12:39 :: helpers :: app data: -1 :: INFO
+20-May-22 12:12:40 :: helpers :: app data: 1 :: INFO
+20-May-22 12:12:40 :: helpers :: app data: 1 :: INFO
+20-May-22 12:12:40 :: helpers :: app data: 1 :: INFO
+20-May-22 12:13:45 :: __main__ :: creating dpg context :: INFO
+20-May-22 12:13:45 :: interface :: Call to device initiated :: DEBUG
+20-May-22 12:13:45 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 12:13:46 :: helpers :: app data: -1 :: INFO
+20-May-22 12:13:47 :: helpers :: app data: -1 :: INFO
+20-May-22 12:13:47 :: helpers :: app data: -1 :: INFO
+20-May-22 12:13:47 :: helpers :: app data: -1 :: INFO
+20-May-22 12:13:47 :: helpers :: app data: 1 :: INFO
+20-May-22 12:13:47 :: helpers :: app data: 1 :: INFO
+20-May-22 12:13:47 :: helpers :: app data: 1 :: INFO
+20-May-22 12:14:20 :: helpers :: app data: -1 :: INFO
+20-May-22 12:14:20 :: helpers :: app data: -1 :: INFO
+20-May-22 12:14:21 :: helpers :: app data: -1 :: INFO
+20-May-22 12:14:21 :: helpers :: app data: -1 :: INFO
+20-May-22 12:14:21 :: helpers :: app data: -1 :: INFO
+20-May-22 12:14:21 :: helpers :: app data: 1 :: INFO
+20-May-22 12:14:21 :: helpers :: app data: 1 :: INFO
+20-May-22 12:14:21 :: helpers :: app data: 1 :: INFO
+20-May-22 12:14:21 :: helpers :: app data: 1 :: INFO
+20-May-22 12:14:21 :: helpers :: app data: -1 :: INFO
+20-May-22 12:14:21 :: helpers :: app data: -1 :: INFO
+20-May-22 12:14:21 :: helpers :: app data: -1 :: INFO
+20-May-22 12:14:21 :: helpers :: app data: -1 :: INFO
+20-May-22 12:14:22 :: helpers :: app data: 1 :: INFO
+20-May-22 12:14:22 :: helpers :: app data: 1 :: INFO
+20-May-22 12:14:22 :: helpers :: app data: 1 :: INFO
+20-May-22 12:14:22 :: helpers :: app data: -1 :: INFO
+20-May-22 12:14:22 :: helpers :: app data: -1 :: INFO
+20-May-22 12:14:22 :: helpers :: app data: -1 :: INFO
+20-May-22 12:14:22 :: helpers :: app data: 1 :: INFO
+20-May-22 12:14:22 :: helpers :: app data: 1 :: INFO
+20-May-22 12:14:22 :: helpers :: app data: 1 :: INFO
+20-May-22 12:14:22 :: helpers :: app data: 1 :: INFO
+20-May-22 12:14:23 :: helpers :: app data: -1 :: INFO
+20-May-22 12:14:23 :: helpers :: app data: -1 :: INFO
+20-May-22 12:14:23 :: helpers :: app data: -1 :: INFO
+20-May-22 12:14:23 :: helpers :: app data: -1 :: INFO
+20-May-22 12:14:23 :: helpers :: app data: 1 :: INFO
+20-May-22 12:14:23 :: helpers :: app data: 1 :: INFO
+20-May-22 12:14:23 :: helpers :: app data: 1 :: INFO
+20-May-22 12:14:24 :: helpers :: app data: -1 :: INFO
+20-May-22 12:14:24 :: helpers :: app data: -1 :: INFO
+20-May-22 12:14:24 :: helpers :: app data: -1 :: INFO
+20-May-22 12:14:24 :: helpers :: app data: 1 :: INFO
+20-May-22 12:14:24 :: helpers :: app data: 1 :: INFO
+20-May-22 12:14:24 :: helpers :: app data: 1 :: INFO
+20-May-22 12:14:24 :: helpers :: app data: -1 :: INFO
+20-May-22 12:14:24 :: helpers :: app data: -1 :: INFO
+20-May-22 12:14:24 :: helpers :: app data: 1 :: INFO
+20-May-22 12:14:25 :: helpers :: app data: 1 :: INFO
+20-May-22 12:14:34 :: __main__ :: creating dpg context :: INFO
+20-May-22 12:14:34 :: interface :: Call to device initiated :: DEBUG
+20-May-22 12:14:34 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 12:14:40 :: __main__ :: creating dpg context :: INFO
+20-May-22 12:14:40 :: interface :: Call to device initiated :: DEBUG
+20-May-22 12:14:40 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 12:15:01 :: __main__ :: creating dpg context :: INFO
+20-May-22 12:15:01 :: interface :: Call to device initiated :: DEBUG
+20-May-22 12:15:01 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 12:15:45 :: __main__ :: creating dpg context :: INFO
+20-May-22 12:15:45 :: interface :: Call to device initiated :: DEBUG
+20-May-22 12:15:45 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 12:16:14 :: __main__ :: creating dpg context :: INFO
+20-May-22 12:16:14 :: interface :: Call to device initiated :: DEBUG
+20-May-22 12:16:14 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 12:16:37 :: helpers :: app data: -1 :: INFO
+20-May-22 12:16:38 :: helpers :: app data: 1 :: INFO
+20-May-22 12:17:30 :: __main__ :: creating dpg context :: INFO
+20-May-22 12:17:30 :: interface :: Call to device initiated :: DEBUG
+20-May-22 12:17:30 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 12:18:10 :: __main__ :: creating dpg context :: INFO
+20-May-22 12:18:10 :: interface :: Call to device initiated :: DEBUG
+20-May-22 12:18:10 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 12:18:35 :: __main__ :: creating dpg context :: INFO
+20-May-22 12:18:35 :: interface :: Call to device initiated :: DEBUG
+20-May-22 12:18:35 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 12:19:00 :: __main__ :: creating dpg context :: INFO
+20-May-22 12:19:00 :: interface :: Call to device initiated :: DEBUG
+20-May-22 12:19:00 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 12:19:15 :: __main__ :: creating dpg context :: INFO
+20-May-22 12:19:15 :: interface :: Call to device initiated :: DEBUG
+20-May-22 12:19:15 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 12:19:53 :: __main__ :: creating dpg context :: INFO
+20-May-22 12:19:53 :: interface :: Call to device initiated :: DEBUG
+20-May-22 12:19:53 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 12:20:05 :: __main__ :: creating dpg context :: INFO
+20-May-22 12:20:05 :: interface :: Call to device initiated :: DEBUG
+20-May-22 12:20:05 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 12:22:17 :: __main__ :: creating dpg context :: INFO
+20-May-22 12:22:17 :: interface :: Call to device initiated :: DEBUG
+20-May-22 12:22:17 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 12:23:28 :: __main__ :: creating dpg context :: INFO
+20-May-22 12:23:28 :: interface :: Call to device initiated :: DEBUG
+20-May-22 12:23:28 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 12:24:10 :: __main__ :: creating dpg context :: INFO
+20-May-22 12:24:10 :: interface :: Call to device initiated :: DEBUG
+20-May-22 12:24:10 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 12:24:25 :: __main__ :: creating dpg context :: INFO
+20-May-22 12:24:25 :: interface :: Call to device initiated :: DEBUG
+20-May-22 12:24:25 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 12:24:37 :: __main__ :: creating dpg context :: INFO
+20-May-22 12:24:37 :: interface :: Call to device initiated :: DEBUG
+20-May-22 12:24:37 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 12:24:49 :: __main__ :: creating dpg context :: INFO
+20-May-22 12:24:49 :: interface :: Call to device initiated :: DEBUG
+20-May-22 12:24:49 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 12:25:10 :: __main__ :: creating dpg context :: INFO
+20-May-22 12:25:10 :: interface :: Call to device initiated :: DEBUG
+20-May-22 12:25:10 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 12:25:22 :: __main__ :: creating dpg context :: INFO
+20-May-22 12:25:22 :: interface :: Call to device initiated :: DEBUG
+20-May-22 12:25:22 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 12:25:32 :: __main__ :: creating dpg context :: INFO
+20-May-22 12:25:32 :: interface :: Call to device initiated :: DEBUG
+20-May-22 12:25:32 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 12:25:46 :: __main__ :: creating dpg context :: INFO
+20-May-22 12:25:46 :: interface :: Call to device initiated :: DEBUG
+20-May-22 12:25:46 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 12:25:53 :: __main__ :: creating dpg context :: INFO
+20-May-22 12:25:53 :: interface :: Call to device initiated :: DEBUG
+20-May-22 12:25:53 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 12:26:00 :: __main__ :: creating dpg context :: INFO
+20-May-22 12:26:00 :: interface :: Call to device initiated :: DEBUG
+20-May-22 12:26:00 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 12:26:07 :: __main__ :: creating dpg context :: INFO
+20-May-22 12:26:07 :: interface :: Call to device initiated :: DEBUG
+20-May-22 12:26:07 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 12:26:23 :: __main__ :: creating dpg context :: INFO
+20-May-22 12:26:23 :: interface :: Call to device initiated :: DEBUG
+20-May-22 12:26:23 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 12:26:38 :: __main__ :: creating dpg context :: INFO
+20-May-22 12:26:38 :: interface :: Call to device initiated :: DEBUG
+20-May-22 12:26:38 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 12:27:16 :: __main__ :: creating dpg context :: INFO
+20-May-22 12:27:16 :: interface :: Call to device initiated :: DEBUG
+20-May-22 12:27:16 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 12:29:16 :: __main__ :: creating dpg context :: INFO
+20-May-22 12:29:16 :: interface :: Call to device initiated :: DEBUG
+20-May-22 12:29:16 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 12:29:24 :: helpers :: app data: -1 :: INFO
+20-May-22 12:29:24 :: helpers :: app data: -1 :: INFO
+20-May-22 12:29:25 :: helpers :: app data: -1 :: INFO
+20-May-22 12:29:25 :: helpers :: app data: 1 :: INFO
+20-May-22 12:29:25 :: helpers :: app data: 1 :: INFO
+20-May-22 12:29:25 :: helpers :: app data: 1 :: INFO
+20-May-22 12:29:25 :: helpers :: app data: 1 :: INFO
+20-May-22 12:29:25 :: helpers :: app data: -1 :: INFO
+20-May-22 12:29:25 :: helpers :: app data: -1 :: INFO
+20-May-22 12:29:26 :: helpers :: app data: 1 :: INFO
+20-May-22 12:29:26 :: helpers :: app data: 1 :: INFO
+20-May-22 12:29:26 :: helpers :: app data: -1 :: INFO
+20-May-22 12:29:26 :: helpers :: app data: -1 :: INFO
+20-May-22 12:29:27 :: helpers :: app data: 1 :: INFO
+20-May-22 12:29:27 :: helpers :: app data: 1 :: INFO
+20-May-22 12:29:35 :: __main__ :: creating dpg context :: INFO
+20-May-22 12:29:35 :: interface :: Call to device initiated :: DEBUG
+20-May-22 12:29:35 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 12:32:55 :: __main__ :: creating dpg context :: INFO
+20-May-22 12:32:55 :: interface :: Call to device initiated :: DEBUG
+20-May-22 12:32:55 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 12:33:14 :: __main__ :: creating dpg context :: INFO
+20-May-22 12:33:14 :: interface :: Call to device initiated :: DEBUG
+20-May-22 12:33:14 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 12:33:31 :: __main__ :: creating dpg context :: INFO
+20-May-22 12:33:31 :: interface :: Call to device initiated :: DEBUG
+20-May-22 12:33:31 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 12:34:00 :: __main__ :: creating dpg context :: INFO
+20-May-22 12:34:00 :: interface :: Call to device initiated :: DEBUG
+20-May-22 12:34:00 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 12:34:15 :: __main__ :: creating dpg context :: INFO
+20-May-22 12:34:15 :: interface :: Call to device initiated :: DEBUG
+20-May-22 12:34:15 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 12:34:26 :: __main__ :: creating dpg context :: INFO
+20-May-22 12:34:26 :: interface :: Call to device initiated :: DEBUG
+20-May-22 12:34:26 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 12:34:46 :: __main__ :: creating dpg context :: INFO
+20-May-22 12:34:46 :: interface :: Call to device initiated :: DEBUG
+20-May-22 12:34:46 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 12:35:07 :: __main__ :: creating dpg context :: INFO
+20-May-22 12:35:07 :: interface :: Call to device initiated :: DEBUG
+20-May-22 12:35:07 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 12:35:18 :: __main__ :: creating dpg context :: INFO
+20-May-22 12:35:18 :: interface :: Call to device initiated :: DEBUG
+20-May-22 12:35:18 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 12:35:51 :: __main__ :: creating dpg context :: INFO
+20-May-22 12:35:51 :: interface :: Call to device initiated :: DEBUG
+20-May-22 12:35:51 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 12:38:03 :: __main__ :: creating dpg context :: INFO
+20-May-22 12:38:03 :: interface :: Call to device initiated :: DEBUG
+20-May-22 12:38:03 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 12:38:35 :: __main__ :: creating dpg context :: INFO
+20-May-22 12:38:35 :: interface :: Call to device initiated :: DEBUG
+20-May-22 12:38:35 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 12:38:46 :: __main__ :: creating dpg context :: INFO
+20-May-22 12:38:46 :: interface :: Call to device initiated :: DEBUG
+20-May-22 12:38:46 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 12:42:47 :: __main__ :: creating dpg context :: INFO
+20-May-22 12:42:47 :: interface :: Call to device initiated :: DEBUG
+20-May-22 12:42:47 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 12:44:41 :: __main__ :: creating dpg context :: INFO
+20-May-22 12:44:41 :: interface :: Call to device initiated :: DEBUG
+20-May-22 12:44:41 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 12:44:57 :: __main__ :: creating dpg context :: INFO
+20-May-22 12:44:57 :: interface :: Call to device initiated :: DEBUG
+20-May-22 12:44:57 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 12:45:14 :: __main__ :: creating dpg context :: INFO
+20-May-22 12:45:14 :: interface :: Call to device initiated :: DEBUG
+20-May-22 12:45:14 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 12:45:25 :: __main__ :: creating dpg context :: INFO
+20-May-22 12:45:25 :: interface :: Call to device initiated :: DEBUG
+20-May-22 12:45:25 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 12:45:47 :: __main__ :: creating dpg context :: INFO
+20-May-22 12:45:47 :: interface :: Call to device initiated :: DEBUG
+20-May-22 12:45:47 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 12:49:34 :: __main__ :: creating dpg context :: INFO
+20-May-22 12:49:34 :: interface :: Call to device initiated :: DEBUG
+20-May-22 12:49:34 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 12:50:19 :: __main__ :: creating dpg context :: INFO
+20-May-22 12:50:19 :: interface :: Call to device initiated :: DEBUG
+20-May-22 12:50:19 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:03:15 :: __main__ :: creating dpg context :: INFO
+20-May-22 13:03:15 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:03:15 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:03:21 :: helpers :: two_point_four executed :: INFO
+20-May-22 13:03:25 :: helpers :: two_point_four executed :: INFO
+20-May-22 13:03:34 :: helpers :: send_all_channels executed :: INFO
+20-May-22 13:03:34 :: helpers :: callstack_helper executed :: INFO
+20-May-22 13:03:34 :: helpers :: Channel 1 Information Sent :: INFO
+20-May-22 13:03:34 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:03:34 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:03:34 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:03:34 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:03:35 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:03:35 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:03:35 :: helpers :: Ready for next command.
+ :: INFO
+20-May-22 13:03:35 :: helpers :: callstack_helper executed :: INFO
+20-May-22 13:03:35 :: helpers :: Channel 2 Information Sent :: INFO
+20-May-22 13:03:35 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:03:35 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:03:35 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:03:35 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:03:35 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:03:35 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:03:35 :: helpers :: Ready for next command.
+ :: INFO
+20-May-22 13:03:35 :: helpers :: callstack_helper executed :: INFO
+20-May-22 13:03:35 :: helpers :: Channel 3 Information Sent :: INFO
+20-May-22 13:03:35 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:03:35 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:03:35 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:03:35 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:03:35 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:03:35 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:03:36 :: helpers :: Ready for next command.
+ :: INFO
+20-May-22 13:03:36 :: helpers :: callstack_helper executed :: INFO
+20-May-22 13:03:36 :: helpers :: Channel 4 Information Sent :: INFO
+20-May-22 13:03:36 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:03:36 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:03:36 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:03:36 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:03:36 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:03:36 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:03:36 :: helpers :: Ready for next command.
+ :: INFO
+20-May-22 13:03:36 :: helpers :: callstack_helper executed :: INFO
+20-May-22 13:03:36 :: helpers :: Channel 5 Information Sent :: INFO
+20-May-22 13:03:36 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:03:36 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:03:36 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:03:36 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:03:36 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:03:36 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:03:36 :: helpers :: Ready for next command.
+ :: INFO
+20-May-22 13:03:36 :: helpers :: callstack_helper executed :: INFO
+20-May-22 13:03:36 :: helpers :: Channel 6 Information Sent :: INFO
+20-May-22 13:03:36 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:03:36 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:03:37 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:03:37 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:03:37 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:03:37 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:03:37 :: helpers :: Ready for next command.
+ :: INFO
+20-May-22 13:03:37 :: helpers :: callstack_helper executed :: INFO
+20-May-22 13:03:37 :: helpers :: Channel 7 Information Sent :: INFO
+20-May-22 13:03:37 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:03:37 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:03:37 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:03:37 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:03:37 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:03:37 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:03:37 :: helpers :: Ready for next command.
+ :: INFO
+20-May-22 13:03:37 :: helpers :: callstack_helper executed :: INFO
+20-May-22 13:03:37 :: helpers :: Channel 8 Information Sent :: INFO
+20-May-22 13:03:37 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:03:37 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:03:37 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:03:37 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:03:37 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:03:37 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:03:38 :: helpers :: Ready for next command.
+ :: INFO
+20-May-22 13:03:38 :: helpers :: Ready for next command.
+ :: INFO
+20-May-22 13:03:40 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:03:40 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:03:40 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:03:40 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:03:41 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:03:41 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:03:41 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:03:41 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:03:41 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:03:41 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:03:41 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:03:41 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:03:41 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:03:41 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:03:41 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:03:41 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:05:16 :: __main__ :: creating dpg context :: INFO
+20-May-22 13:05:16 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:05:16 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:05:21 :: helpers :: demo_config_2 executed :: INFO
+20-May-22 13:05:21 :: helpers :: callstack_helper executed :: INFO
+20-May-22 13:05:21 :: helpers :: Channel 1 Information Sent :: INFO
+20-May-22 13:05:21 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:05:21 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:05:21 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:05:21 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:05:21 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:05:21 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:05:21 :: helpers :: Ready for next command.
+ :: INFO
+20-May-22 13:05:21 :: helpers :: callstack_helper executed :: INFO
+20-May-22 13:05:21 :: helpers :: Channel 1 Information Sent :: INFO
+20-May-22 13:05:21 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:05:21 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:05:22 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:05:22 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:05:22 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:05:22 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:05:22 :: helpers :: Ready for next command.
+ :: INFO
+20-May-22 13:05:22 :: helpers :: callstack_helper executed :: INFO
+20-May-22 13:05:22 :: helpers :: Channel 1 Information Sent :: INFO
+20-May-22 13:05:22 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:05:22 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:05:22 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:05:22 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:05:22 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:05:22 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:05:22 :: helpers :: Ready for next command.
+ :: INFO
+20-May-22 13:05:23 :: helpers :: callstack_helper executed :: INFO
+20-May-22 13:05:23 :: helpers :: Channel 1 Information Sent :: INFO
+20-May-22 13:05:23 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:05:23 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:05:23 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:05:23 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:05:23 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:05:23 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:05:23 :: helpers :: Ready for next command.
+ :: INFO
+20-May-22 13:05:23 :: helpers :: callstack_helper executed :: INFO
+20-May-22 13:05:23 :: helpers :: Channel 1 Information Sent :: INFO
+20-May-22 13:05:23 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:05:23 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:05:23 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:05:23 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:05:24 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:05:24 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:05:24 :: helpers :: Ready for next command.
+ :: INFO
+20-May-22 13:05:24 :: helpers :: callstack_helper executed :: INFO
+20-May-22 13:05:24 :: helpers :: Channel 1 Information Sent :: INFO
+20-May-22 13:05:24 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:05:24 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:05:24 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:05:24 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:05:24 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:05:24 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:05:24 :: helpers :: Ready for next command.
+ :: INFO
+20-May-22 13:05:24 :: helpers :: callstack_helper executed :: INFO
+20-May-22 13:05:24 :: helpers :: Channel 1 Information Sent :: INFO
+20-May-22 13:05:24 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:05:24 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:05:25 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:05:25 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:05:25 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:05:25 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:05:25 :: helpers :: Ready for next command.
+ :: INFO
+20-May-22 13:05:25 :: helpers :: callstack_helper executed :: INFO
+20-May-22 13:05:25 :: helpers :: Channel 1 Information Sent :: INFO
+20-May-22 13:05:25 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:05:25 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:05:25 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:05:25 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:05:25 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:05:25 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:05:26 :: helpers :: Ready for next command.
+ :: INFO
+20-May-22 13:05:26 :: helpers :: callstack_helper executed :: INFO
+20-May-22 13:05:26 :: helpers :: Channel 1 Information Sent :: INFO
+20-May-22 13:05:26 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:05:26 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:05:26 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:05:26 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:05:26 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:05:26 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:05:26 :: helpers :: Ready for next command.
+ :: INFO
+20-May-22 13:05:27 :: __main__ :: creating dpg context :: INFO
+20-May-22 13:05:27 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:05:27 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:05:38 :: helpers :: two_point_four executed :: INFO
+20-May-22 13:05:40 :: helpers :: two_point_four executed :: INFO
+20-May-22 13:05:45 :: helpers :: send_all_channels executed :: INFO
+20-May-22 13:05:45 :: helpers :: callstack_helper executed :: INFO
+20-May-22 13:05:45 :: helpers :: Channel 1 Information Sent :: INFO
+20-May-22 13:05:45 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:05:45 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:05:45 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:05:45 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:05:45 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:05:45 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:05:45 :: helpers :: Ready for next command.
+ :: INFO
+20-May-22 13:05:45 :: helpers :: callstack_helper executed :: INFO
+20-May-22 13:05:45 :: helpers :: Channel 2 Information Sent :: INFO
+20-May-22 13:05:45 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:05:45 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:05:46 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:05:46 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:05:46 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:05:46 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:05:46 :: helpers :: Ready for next command.
+ :: INFO
+20-May-22 13:05:46 :: helpers :: callstack_helper executed :: INFO
+20-May-22 13:05:46 :: helpers :: Channel 3 Information Sent :: INFO
+20-May-22 13:05:46 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:05:46 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:05:46 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:05:46 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:05:46 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:05:46 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:05:46 :: helpers :: Ready for next command.
+ :: INFO
+20-May-22 13:05:46 :: helpers :: callstack_helper executed :: INFO
+20-May-22 13:05:46 :: helpers :: Channel 4 Information Sent :: INFO
+20-May-22 13:05:46 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:05:46 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:05:46 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:05:46 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:05:46 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:05:46 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:05:47 :: helpers :: Ready for next command.
+ :: INFO
+20-May-22 13:05:47 :: helpers :: callstack_helper executed :: INFO
+20-May-22 13:05:47 :: helpers :: Channel 5 Information Sent :: INFO
+20-May-22 13:05:47 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:05:47 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:05:47 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:05:47 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:05:47 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:05:47 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:05:47 :: helpers :: Ready for next command.
+ :: INFO
+20-May-22 13:05:47 :: helpers :: callstack_helper executed :: INFO
+20-May-22 13:05:47 :: helpers :: Channel 6 Information Sent :: INFO
+20-May-22 13:05:47 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:05:47 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:05:47 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:05:47 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:05:47 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:05:47 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:05:47 :: helpers :: Ready for next command.
+ :: INFO
+20-May-22 13:05:47 :: helpers :: callstack_helper executed :: INFO
+20-May-22 13:05:47 :: helpers :: Channel 7 Information Sent :: INFO
+20-May-22 13:05:47 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:05:47 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:05:48 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:05:48 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:05:48 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:05:48 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:05:48 :: helpers :: Ready for next command.
+ :: INFO
+20-May-22 13:05:48 :: helpers :: callstack_helper executed :: INFO
+20-May-22 13:05:48 :: helpers :: Channel 8 Information Sent :: INFO
+20-May-22 13:05:48 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:05:48 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:05:48 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:05:48 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:05:48 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:05:48 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:05:48 :: helpers :: Ready for next command.
+ :: INFO
+20-May-22 13:05:48 :: helpers :: Ready for next command.
+ :: INFO
+20-May-22 13:05:49 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:05:49 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:05:52 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:05:52 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:05:53 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:05:53 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:06:35 :: __main__ :: creating dpg context :: INFO
+20-May-22 13:06:35 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:06:35 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:06:42 :: helpers :: send_vals executed :: INFO
+20-May-22 13:06:42 :: helpers :: callstack_helper executed :: INFO
+20-May-22 13:06:42 :: helpers :: Channel 1 Information Sent :: INFO
+20-May-22 13:06:42 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:06:42 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:06:42 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:06:42 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:06:42 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:06:42 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:06:43 :: helpers :: Ready for next command.
+ :: INFO
+20-May-22 13:06:44 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:06:44 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:07:10 :: __main__ :: creating dpg context :: INFO
+20-May-22 13:07:10 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:07:10 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:07:18 :: helpers :: send_vals executed :: INFO
+20-May-22 13:07:18 :: helpers :: callstack_helper executed :: INFO
+20-May-22 13:07:18 :: helpers :: Channel 1 Information Sent :: INFO
+20-May-22 13:07:18 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:07:18 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:07:18 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:07:18 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:07:18 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:07:18 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:07:18 :: helpers :: Ready for next command.
+ :: INFO
+20-May-22 13:07:20 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:07:20 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:07:30 :: helpers :: send_all_channels executed :: INFO
+20-May-22 13:07:30 :: helpers :: callstack_helper executed :: INFO
+20-May-22 13:07:30 :: helpers :: Channel 1 Information Sent :: INFO
+20-May-22 13:07:30 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:07:30 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:07:30 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:07:30 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:07:30 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:07:30 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:07:30 :: helpers :: Ready for next command.
+ :: INFO
+20-May-22 13:07:30 :: helpers :: callstack_helper executed :: INFO
+20-May-22 13:07:30 :: helpers :: Channel 2 Information Sent :: INFO
+20-May-22 13:07:30 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:07:30 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:07:31 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:07:31 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:07:31 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:07:31 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:07:31 :: helpers :: Ready for next command.
+ :: INFO
+20-May-22 13:07:31 :: helpers :: callstack_helper executed :: INFO
+20-May-22 13:07:31 :: helpers :: Channel 3 Information Sent :: INFO
+20-May-22 13:07:31 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:07:31 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:07:31 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:07:31 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:07:31 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:07:31 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:07:31 :: helpers :: Ready for next command.
+ :: INFO
+20-May-22 13:07:31 :: helpers :: callstack_helper executed :: INFO
+20-May-22 13:07:31 :: helpers :: Channel 4 Information Sent :: INFO
+20-May-22 13:07:31 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:07:31 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:07:31 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:07:31 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:07:32 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:07:32 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:07:32 :: helpers :: Ready for next command.
+ :: INFO
+20-May-22 13:07:32 :: helpers :: callstack_helper executed :: INFO
+20-May-22 13:07:32 :: helpers :: Channel 5 Information Sent :: INFO
+20-May-22 13:07:32 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:07:32 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:07:32 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:07:32 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:07:32 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:07:32 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:07:32 :: helpers :: Ready for next command.
+ :: INFO
+20-May-22 13:07:32 :: helpers :: callstack_helper executed :: INFO
+20-May-22 13:07:32 :: helpers :: Channel 6 Information Sent :: INFO
+20-May-22 13:07:32 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:07:32 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:07:32 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:07:32 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:07:32 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:07:32 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:07:33 :: helpers :: Ready for next command.
+ :: INFO
+20-May-22 13:07:33 :: helpers :: callstack_helper executed :: INFO
+20-May-22 13:07:33 :: helpers :: Channel 7 Information Sent :: INFO
+20-May-22 13:07:33 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:07:33 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:07:33 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:07:33 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:07:33 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:07:33 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:07:33 :: helpers :: Ready for next command.
+ :: INFO
+20-May-22 13:07:33 :: helpers :: callstack_helper executed :: INFO
+20-May-22 13:07:33 :: helpers :: Channel 8 Information Sent :: INFO
+20-May-22 13:07:33 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:07:33 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:07:33 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:07:33 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:07:33 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:07:33 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:07:33 :: helpers :: Ready for next command.
+ :: INFO
+20-May-22 13:07:33 :: helpers :: Ready for next command.
+ :: INFO
+20-May-22 13:07:39 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:07:39 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:07:41 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:07:41 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:07:43 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:07:43 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:07:44 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:07:44 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:07:45 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:07:45 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:07:47 :: helpers :: Reset All command Sent :: INFO
+20-May-22 13:07:47 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:07:47 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:07:48 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:07:48 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:07:48 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:07:48 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:07:48 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:07:48 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:07:48 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:07:48 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:07:48 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:07:48 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:07:48 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:07:48 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:07:48 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:07:48 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:07:48 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:07:48 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:07:49 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:07:49 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:07:49 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:07:49 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:07:49 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:07:49 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:07:49 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:07:49 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:07:49 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:07:49 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:07:49 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:07:49 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:07:49 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:07:49 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:07:50 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:07:50 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:07:50 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:07:50 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:07:50 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:07:50 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:07:50 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:07:50 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:07:50 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:07:50 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:07:50 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:07:50 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:07:50 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:07:50 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:07:50 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:07:50 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:07:51 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:07:51 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 13:07:51 :: helpers :: Ready for next command.
+ :: INFO

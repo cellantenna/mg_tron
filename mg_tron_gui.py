@@ -15,6 +15,7 @@ from helpers import (
     data_vehicle,
     demo_config,
     demo_config_2,
+    kill_channel,
     mission_alpha,
     mission_bravo,
     mission_charlie,
@@ -33,7 +34,7 @@ logger = logging.getLogger(name=__name__)
 RESOLUTION: list[int] = [1250, 735]  # 1200x800
 POWER: bool = bool()
 ROW_HEIGHT: int = 78
-ADJUSTMENT: int = 40
+ADJUSTMENT: int = -25
 DIVISOR: int = 1.4
 SEND_RESET_ALL_HEIGHT: int = 695
 CUSTOM_CONFIG_HEIGHT: int = 300
@@ -41,6 +42,7 @@ QUICK_CONFIG_HEIGHT: int = 480
 DEMO_HEIGHT: int = 330
 WIFI_HEIGHT: int = 405
 CELLUAR_HEIGHT: int = 240
+MAIN_TABLE_HEIGHT: int = 1
 
 
 dpg.create_context()
@@ -90,7 +92,7 @@ with dpg.handler_registry():
 with dpg.font_registry():
     default_font_added = dpg.add_font(file="MesloLGS NF Regular.ttf", size=40)
     ital_font = dpg.add_font(file="MesloLGS NF Italic.ttf", size=20)
-    bold_font = dpg.add_font(file="MesloLGS NF Bold Italic.ttf", size=22)
+    bold_font = dpg.add_font(file="MesloLGS NF Bold Italic.ttf", size=40)
 
 # Primary Window
 with dpg.window(
@@ -99,6 +101,8 @@ with dpg.window(
     height=RESOLUTION[0],
     width=RESOLUTION[1],
     pos=(0, 0),
+    no_scrollbar=True,
+    horizontal_scrollbar=False,
 ):
 
     # Header Column Channel
@@ -106,23 +110,26 @@ with dpg.window(
         pos=(0,),  # (x, y)
         width=50,
         height=ROW_HEIGHT - ADJUSTMENT,
+        border=False,
     ):
         dpg.add_text(default_value=f"CH", pos=(19, 39 - ADJUSTMENT + 5))
 
     # Header Column Frequency
     with dpg.child_window(
-        pos=(50,),  # (x, y)
-        width=150,
+        pos=(80,),  # (x, y)
+        width=200,
         height=ROW_HEIGHT - ADJUSTMENT,
+        border=False,
     ):
-        dpg.add_text(default_value=f"Freq.: 6.4GHz", pos=(5, 39 - ADJUSTMENT + 5))
+        dpg.add_text(default_value=f"Frequency: 6.4GHz", pos=(9, 39 - ADJUSTMENT + 5))
 
     # Header Column Power
     with dpg.child_window(
-        pos=(200,),  # (x, y)
+        pos=(300,),  # (x, y)
         width=150,
         tag="col_pwr",
         height=ROW_HEIGHT - ADJUSTMENT,
+        border=False,
     ):
         dpg.add_text(
             default_value=f"Power: 63",
@@ -131,10 +138,11 @@ with dpg.window(
 
     # Header Column Bandwidth
     with dpg.child_window(
-        pos=(350,),  # (x, y)
+        pos=(500,),  # (x, y)
         tag="col_bw",
         width=150,
         height=ROW_HEIGHT - ADJUSTMENT,
+        border=False,
     ):
         dpg.add_text(
             default_value=f"BW: 100%",
@@ -142,12 +150,13 @@ with dpg.window(
         )
 
     # Right Header Column Channel Status
-    with dpg.child_window(
-        pos=(500,),  # (x, y)
-        width=250,
-        height=ROW_HEIGHT - ADJUSTMENT,
-    ):
-        dpg.add_text(default_value=f"Channel Status", pos=(60, 39 - ADJUSTMENT + 5))
+    # with dpg.child_window(
+    #     pos=(620,),  # (x, y)
+    #     width=250,
+    #     height=ROW_HEIGHT - ADJUSTMENT,
+    #     border=False,
+    # ):
+    #     dpg.add_text(default_value=f"Channel Status", pos=(60, 39 - ADJUSTMENT + 5))
 
     ####################################
     # Column buttons, inputs, and text #
@@ -157,7 +166,7 @@ with dpg.window(
         # First Column
         with dpg.child_window(
             tag=f"row_{i+1}",
-            pos=(0, ROW_HEIGHT * (i + 1) - ADJUSTMENT),  # (x, y)
+            pos=(0, ROW_HEIGHT * (i + MAIN_TABLE_HEIGHT) - ADJUSTMENT),  # (x, y)
             width=50,
             height=ROW_HEIGHT,
         ):
@@ -170,8 +179,8 @@ with dpg.window(
         # Frequency Column Input
         with dpg.child_window(
             label=f"Channel {i+1}",
-            pos=(50, ROW_HEIGHT * (i + 1) - ADJUSTMENT),  # (x, y)
-            width=150,
+            pos=(50, ROW_HEIGHT * (i + MAIN_TABLE_HEIGHT) - ADJUSTMENT),  # (x, y)
+            width=250,
             height=ROW_HEIGHT,
         ):
             dpg.add_input_float(
@@ -181,16 +190,16 @@ with dpg.window(
                 max_value=6400.00,
                 min_clamped=True,
                 max_clamped=True,
-                width=141,
-                step=10,
+                width=236,
+                step=1,
                 step_fast=20,
                 pos=(2, ROW_HEIGHT / 2 - 15),
             )
         # Power Column Input
         with dpg.child_window(
             label=f"Channel {i+1}",
-            pos=(200, ROW_HEIGHT * (i + 1) - ADJUSTMENT),  # (x, y)
-            width=150,
+            pos=(300, ROW_HEIGHT * (i + MAIN_TABLE_HEIGHT) - ADJUSTMENT),  # (x, y)
+            width=180,
             height=ROW_HEIGHT,
         ):
             dpg.add_input_int(
@@ -199,7 +208,7 @@ with dpg.window(
                 max_value=63,
                 min_clamped=True,
                 max_clamped=True,
-                width=125,
+                width=145,
                 step_fast=3,
                 pos=(13, ROW_HEIGHT / 2 - 15),
             )
@@ -207,8 +216,8 @@ with dpg.window(
         # Bandwidth Channel Input
         with dpg.child_window(
             label=f"Channel {i+1}",
-            pos=(350, ROW_HEIGHT * (i + 1) - ADJUSTMENT),  # (x, y)
-            width=150,
+            pos=(480, ROW_HEIGHT * (i + MAIN_TABLE_HEIGHT) - ADJUSTMENT),  # (x, y)
+            width=180,
             height=ROW_HEIGHT,
         ):
             dpg.add_input_int(
@@ -217,14 +226,14 @@ with dpg.window(
                 max_value=100,
                 min_clamped=True,
                 max_clamped=True,
-                width=125,
+                width=160,
                 step_fast=10,
                 pos=(13, ROW_HEIGHT / 2 - 15),
             )
         # Send Button Column
         with dpg.child_window(
-            pos=(500, ROW_HEIGHT * (i + 1) - ADJUSTMENT),
-            width=(250),
+            pos=(660, ROW_HEIGHT * (i + MAIN_TABLE_HEIGHT) - ADJUSTMENT),
+            width=(200),
             height=ROW_HEIGHT,
         ):
             # SEND Buttons
@@ -232,10 +241,10 @@ with dpg.window(
                 label="SEND",
                 tag=f"send_btn_{i+1}",
                 height=50,
-                width=50,
+                width=70,
                 callback=send_vals,
                 user_data=i + 1,
-                pos=(170, ROW_HEIGHT / 2 - 25),
+                pos=(110, ROW_HEIGHT / 2 - 25),
             )
 
             # Status LED Buttons
@@ -243,8 +252,10 @@ with dpg.window(
                 tag=f"stats_{i+1}",
                 width=30,
                 height=30,
-                pos=(60, 30),
+                pos=(30, 25),
                 enabled=True,
+                callback=kill_channel,
+                user_data=i+1
             )
 
             dpg.bind_item_theme(
@@ -256,20 +267,20 @@ with dpg.window(
     # Auto Fill button row #
     ########################
     with dpg.child_window(
-        pos=(50, ROW_HEIGHT * 9 - (ADJUSTMENT)),
+        pos=(80,),
         tag="auto_fill",
         height=65,
-        width=150 * 3,
+        width=200 * 3,
         border=False,
     ):
         dpg.add_button(
             label="AUTO\nFILL",
             tag="auto_fill_frequency",
             height=50,
-            width=50,
+            width=70,
             callback=auto_fill_freq,
             pos=(
-                dpg.get_item_width(item="auto_fill") / 8,
+                dpg.get_item_width(item="auto_fill") / 9,
                 dpg.get_item_height(item="auto_fill") / 3 - 10,
             ),
         )
@@ -277,7 +288,7 @@ with dpg.window(
             label="AUTO\nFILL",
             tag="auto_fill_power",
             height=50,
-            width=50,
+            width=70,
             callback=auto_fill_power,
             pos=(
                 dpg.get_item_width(item="auto_fill") / 2.2,
@@ -288,12 +299,59 @@ with dpg.window(
             label="AUTO\nFILL",
             tag="auto_fill_bandwidth",
             height=50,
-            width=50,
+            width=70,
             callback=auto_fill_bandwidth,
             pos=(
                 dpg.get_item_width(item="auto_fill") / 1.3,
                 dpg.get_item_height(item="auto_fill") / 3 - 10,
             ),
+        )
+
+    #################
+    # Device Config #
+    #################
+    with dpg.child_window(
+        pos=(680,),
+        tag="device_config",
+        border=False,
+        width=180,
+        height=75,
+    ):
+        device_config = dpg.add_button(
+            label="Device Config",
+            tag="device_config_btn",
+            pos=(0,),
+        )
+        with dpg.popup(
+            parent=device_config,
+            mousebutton=dpg.mvMouseButton_Left,
+            modal=True,
+            tag="modal_device_config",
+        ):
+            dpg.add_menu(
+                parent="modal_device_config",
+                label="Choose Device: ",
+                tag="choose_device",
+            )
+            [
+                dpg.add_menu_item(
+                    parent="choose_device",
+                    label=f"Device Number: {i}",
+                    callback=lambda: logger.info(msg="\nMenu item called\n"),
+                )
+                for i in range(1, 9)
+            ]
+
+            dpg.add_button(
+                label="Quit",
+                callback=lambda: dpg.configure_item(
+                    item="modal_device_config", show=False
+                ),
+            )
+
+        dpg.add_text(
+            default_value="Device: TBD",
+            pos=(5, 35),
         )
 
     ################
@@ -313,7 +371,7 @@ with dpg.window(
         reset_all = dpg.add_button(
             tag="Reset All Channels",
             height=70,
-            width=70,
+            width=90,
             callback=reset_button,
             pos=(
                 (dpg.get_item_width(item="big_buttons") - 50) / DIVISOR,
@@ -334,11 +392,11 @@ with dpg.window(
         ###################
         send_all = dpg.add_button(
             tag="Send All",
-            height=70,
-            width=70,
+            height=85,
+            width=100,
             callback=send_all_channels,
             pos=(
-                (dpg.get_item_width(item="big_buttons") - 250) / DIVISOR,
+                (dpg.get_item_width(item="big_buttons") - 280) / DIVISOR,
                 (dpg.get_item_height(item="big_buttons") - SEND_RESET_ALL_HEIGHT) / 2,
             ),
         )
@@ -359,7 +417,7 @@ with dpg.window(
             callback=quick_save,
             label="QUICK\n SAVE\nCONFIG",
             height=70,
-            width=70,
+            width=90,
             pos=(
                 (dpg.get_item_width(item="big_buttons") - 50) / DIVISOR,
                 (dpg.get_item_height(item="big_buttons") - QUICK_CONFIG_HEIGHT) / 2,
@@ -374,7 +432,7 @@ with dpg.window(
             callback=quick_load,
             label="QUICK\n LOAD\nCONFIG",
             height=70,
-            width=70,
+            width=90,
             pos=(
                 (dpg.get_item_width(item="big_buttons") - 250) / DIVISOR,
                 (dpg.get_item_height(item="big_buttons") - QUICK_CONFIG_HEIGHT) / 2,
@@ -388,7 +446,7 @@ with dpg.window(
             tag="custom_save",
             height=70,
             label="CUSTOM\nCONFIG\nSAVE",
-            width=70,
+            width=90,
             pos=(
                 (dpg.get_item_width(item="big_buttons") - 50) / DIVISOR,
                 (dpg.get_item_height(item="big_buttons") - CUSTOM_CONFIG_HEIGHT) / 2,
@@ -422,7 +480,7 @@ with dpg.window(
         custom_load_button = dpg.add_button(
             tag="custom_load_button",
             height=70,
-            width=70,
+            width=90,
             label="CUSTOM\nCONFIG\nLOAD",
             pos=(
                 (dpg.get_item_width(item="big_buttons") - 250) / DIVISOR,
@@ -461,7 +519,7 @@ with dpg.window(
         demo_button = dpg.add_button(
             tag="demo",
             height=70,
-            width=70,
+            width=90,
             callback=demo_config,
             label="DEMO\nCONFIG",
             pos=(
@@ -476,7 +534,7 @@ with dpg.window(
         demo_two_button = dpg.add_button(
             tag="demo_two",
             height=70,
-            width=70,
+            width=90,
             callback=demo_config_2,
             label="DEMO\nTWO\nCONFIG",
             pos=(
@@ -493,7 +551,7 @@ with dpg.window(
             callback=mission_alpha,
             label="ALPHA\nCONFIG",
             height=70,
-            width=70,
+            width=90,
             pos=(
                 (dpg.get_item_width(item="big_buttons") - 50) / DIVISOR,
                 (dpg.get_item_height(item="big_buttons") + CELLUAR_HEIGHT) / 2,
@@ -508,7 +566,7 @@ with dpg.window(
             callback=mission_bravo,
             label="BRAVO\nCONFIG",
             height=70,
-            width=70,
+            width=90,
             pos=(
                 (dpg.get_item_width(item="big_buttons") - 250) / DIVISOR,
                 (dpg.get_item_height(item="big_buttons") + CELLUAR_HEIGHT) / 2,
@@ -523,7 +581,7 @@ with dpg.window(
             callback=two_point_four,
             label="WIFI\nCONFIG",
             height=70,
-            width=70,
+            width=90,
             pos=(
                 (dpg.get_item_width(item="big_buttons") - 250) / DIVISOR,
                 (dpg.get_item_height(item="big_buttons") + WIFI_HEIGHT) / 2,
@@ -538,7 +596,7 @@ with dpg.window(
             callback=mission_charlie,
             label="CHARLIE\nCONFIG",
             height=70,
-            width=70,
+            width=90,
             pos=(
                 (dpg.get_item_width(item="big_buttons") - 50) / DIVISOR,
                 (dpg.get_item_height(item="big_buttons") + WIFI_HEIGHT) / 2,
@@ -552,7 +610,7 @@ with dpg.window(
             callback=mission_delta,
             label="DELTA\nCONFIG",
             height=70,
-            width=70,
+            width=90,
             pos=(
                 (dpg.get_item_width(item="big_buttons") - 50) / DIVISOR,
                 (dpg.get_item_height(item="big_buttons") - 80),
@@ -566,7 +624,7 @@ with dpg.window(
             # callback=mission_charlie,
             label="ECHO\nCONFIG",
             height=70,
-            width=70,
+            width=90,
             pos=(
                 (dpg.get_item_width(item="big_buttons") - 250) / DIVISOR,
                 (dpg.get_item_height(item="big_buttons") - 80),
