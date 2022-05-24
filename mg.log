@@ -1349,3 +1349,2171 @@ serial.serialutil.SerialException: Port must be configured before it can be used
 20-May-22 13:07:51 :: interface :: Call initiated from Linux to  :: INFO
 20-May-22 13:07:51 :: helpers :: Ready for next command.
  :: INFO
+20-May-22 13:28:18 :: __main__ :: creating dpg context :: INFO
+20-May-22 13:28:18 :: interface :: Call to device initiated :: DEBUG
+20-May-22 13:28:18 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 15:01:54 :: __main__ :: creating dpg context :: INFO
+20-May-22 15:01:54 :: interface :: Call to device initiated :: DEBUG
+20-May-22 15:01:54 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 15:03:57 :: __main__ :: creating dpg context :: INFO
+20-May-22 15:03:57 :: interface :: Call to device initiated :: DEBUG
+20-May-22 15:03:57 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 15:13:23 :: __main__ :: creating dpg context :: INFO
+20-May-22 15:13:23 :: interface :: Call to device initiated :: DEBUG
+20-May-22 15:13:23 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 15:13:36 :: __main__ :: creating dpg context :: INFO
+20-May-22 15:13:36 :: interface :: Call to device initiated :: DEBUG
+20-May-22 15:13:36 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 15:15:10 :: __main__ :: creating dpg context :: INFO
+20-May-22 15:15:10 :: interface :: Call to device initiated :: DEBUG
+20-May-22 15:15:10 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 15:15:56 :: __main__ :: creating dpg context :: INFO
+20-May-22 15:15:56 :: interface :: Call to device initiated :: DEBUG
+20-May-22 15:15:56 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 15:16:18 :: __main__ :: creating dpg context :: INFO
+20-May-22 15:16:18 :: interface :: Call to device initiated :: DEBUG
+20-May-22 15:16:18 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 15:18:59 :: __main__ :: creating dpg context :: INFO
+20-May-22 15:18:59 :: interface :: Call to device initiated :: DEBUG
+20-May-22 15:18:59 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 15:19:09 :: __main__ :: creating dpg context :: INFO
+20-May-22 15:19:09 :: interface :: Call to device initiated :: DEBUG
+20-May-22 15:19:09 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 15:19:45 :: __main__ :: creating dpg context :: INFO
+20-May-22 15:19:45 :: interface :: Call to device initiated :: DEBUG
+20-May-22 15:19:45 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 15:20:12 :: __main__ :: creating dpg context :: INFO
+20-May-22 15:20:12 :: interface :: Call to device initiated :: DEBUG
+20-May-22 15:20:12 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 15:20:55 :: helpers :: Save Complete :: INFO
+20-May-22 15:20:58 :: helpers :: demo_config_2 executed :: INFO
+20-May-22 15:20:58 :: helpers :: callstack_helper executed :: INFO
+20-May-22 15:20:58 :: helpers :: Channel 1 Information Sent :: INFO
+20-May-22 15:20:58 :: interface :: Call to device initiated :: DEBUG
+20-May-22 15:20:58 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 15:20:58 :: interface :: Call to device initiated :: DEBUG
+20-May-22 15:20:58 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 15:20:59 :: interface :: Call to device initiated :: DEBUG
+20-May-22 15:20:59 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 15:20:59 :: helpers :: Ready for next command.
+ :: INFO
+20-May-22 15:20:59 :: helpers :: callstack_helper executed :: INFO
+20-May-22 15:20:59 :: helpers :: Channel 1 Information Sent :: INFO
+20-May-22 15:20:59 :: interface :: Call to device initiated :: DEBUG
+20-May-22 15:20:59 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 15:20:59 :: interface :: Call to device initiated :: DEBUG
+20-May-22 15:20:59 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 15:20:59 :: interface :: Call to device initiated :: DEBUG
+20-May-22 15:20:59 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 15:20:59 :: helpers :: Ready for next command.
+ :: INFO
+20-May-22 15:20:59 :: helpers :: callstack_helper executed :: INFO
+20-May-22 15:20:59 :: helpers :: Channel 1 Information Sent :: INFO
+20-May-22 15:20:59 :: interface :: Call to device initiated :: DEBUG
+20-May-22 15:20:59 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 15:21:00 :: interface :: Call to device initiated :: DEBUG
+20-May-22 15:21:00 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 15:21:00 :: interface :: Call to device initiated :: DEBUG
+20-May-22 15:21:00 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 15:21:00 :: helpers :: Ready for next command.
+ :: INFO
+20-May-22 15:21:00 :: helpers :: callstack_helper executed :: INFO
+20-May-22 15:21:00 :: helpers :: Channel 1 Information Sent :: INFO
+20-May-22 15:21:00 :: interface :: Call to device initiated :: DEBUG
+20-May-22 15:21:00 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 15:21:00 :: interface :: Call to device initiated :: DEBUG
+20-May-22 15:21:00 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 15:21:00 :: interface :: Call to device initiated :: DEBUG
+20-May-22 15:21:00 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 15:21:00 :: helpers :: Ready for next command.
+ :: INFO
+20-May-22 15:21:01 :: helpers :: callstack_helper executed :: INFO
+20-May-22 15:21:01 :: helpers :: Channel 1 Information Sent :: INFO
+20-May-22 15:21:01 :: interface :: Call to device initiated :: DEBUG
+20-May-22 15:21:01 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 15:21:01 :: interface :: Call to device initiated :: DEBUG
+20-May-22 15:21:01 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 15:21:01 :: interface :: Call to device initiated :: DEBUG
+20-May-22 15:21:01 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 15:21:01 :: helpers :: Ready for next command.
+ :: INFO
+20-May-22 15:21:01 :: helpers :: callstack_helper executed :: INFO
+20-May-22 15:21:01 :: helpers :: Channel 1 Information Sent :: INFO
+20-May-22 15:21:01 :: interface :: Call to device initiated :: DEBUG
+20-May-22 15:21:01 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 15:21:01 :: interface :: Call to device initiated :: DEBUG
+20-May-22 15:21:01 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 15:21:02 :: interface :: Call to device initiated :: DEBUG
+20-May-22 15:21:02 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 15:21:02 :: helpers :: Ready for next command.
+ :: INFO
+20-May-22 15:21:02 :: helpers :: callstack_helper executed :: INFO
+20-May-22 15:21:02 :: helpers :: Channel 1 Information Sent :: INFO
+20-May-22 15:21:02 :: interface :: Call to device initiated :: DEBUG
+20-May-22 15:21:02 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 15:21:02 :: interface :: Call to device initiated :: DEBUG
+20-May-22 15:21:02 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 15:21:02 :: interface :: Call to device initiated :: DEBUG
+20-May-22 15:21:02 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 15:21:02 :: helpers :: Ready for next command.
+ :: INFO
+20-May-22 15:21:03 :: helpers :: callstack_helper executed :: INFO
+20-May-22 15:21:03 :: helpers :: Channel 1 Information Sent :: INFO
+20-May-22 15:21:03 :: interface :: Call to device initiated :: DEBUG
+20-May-22 15:21:03 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 15:21:03 :: interface :: Call to device initiated :: DEBUG
+20-May-22 15:21:03 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 15:21:03 :: interface :: Call to device initiated :: DEBUG
+20-May-22 15:21:03 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 15:21:03 :: helpers :: Ready for next command.
+ :: INFO
+20-May-22 15:21:03 :: helpers :: callstack_helper executed :: INFO
+20-May-22 15:21:03 :: helpers :: Channel 1 Information Sent :: INFO
+20-May-22 15:21:03 :: interface :: Call to device initiated :: DEBUG
+20-May-22 15:21:03 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 15:21:03 :: interface :: Call to device initiated :: DEBUG
+20-May-22 15:21:03 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 15:21:03 :: interface :: Call to device initiated :: DEBUG
+20-May-22 15:21:03 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 15:21:04 :: helpers :: Ready for next command.
+ :: INFO
+20-May-22 15:21:04 :: helpers :: callstack_helper executed :: INFO
+20-May-22 15:21:04 :: helpers :: Channel 1 Information Sent :: INFO
+20-May-22 15:21:04 :: interface :: Call to device initiated :: DEBUG
+20-May-22 15:21:04 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 15:21:04 :: interface :: Call to device initiated :: DEBUG
+20-May-22 15:21:04 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 15:21:04 :: interface :: Call to device initiated :: DEBUG
+20-May-22 15:21:04 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 15:21:04 :: helpers :: Ready for next command.
+ :: INFO
+20-May-22 15:21:04 :: helpers :: callstack_helper executed :: INFO
+20-May-22 15:21:04 :: helpers :: Channel 1 Information Sent :: INFO
+20-May-22 15:21:04 :: interface :: Call to device initiated :: DEBUG
+20-May-22 15:21:04 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 15:21:04 :: interface :: Call to device initiated :: DEBUG
+20-May-22 15:21:04 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 15:21:05 :: interface :: Call to device initiated :: DEBUG
+20-May-22 15:21:05 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 15:21:05 :: helpers :: Ready for next command.
+ :: INFO
+20-May-22 15:21:05 :: helpers :: callstack_helper executed :: INFO
+20-May-22 15:21:05 :: helpers :: Channel 1 Information Sent :: INFO
+20-May-22 15:21:05 :: interface :: Call to device initiated :: DEBUG
+20-May-22 15:21:05 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 15:21:05 :: interface :: Call to device initiated :: DEBUG
+20-May-22 15:21:05 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 15:21:05 :: interface :: Call to device initiated :: DEBUG
+20-May-22 15:21:05 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 15:21:05 :: helpers :: Ready for next command.
+ :: INFO
+20-May-22 15:21:06 :: helpers :: callstack_helper executed :: INFO
+20-May-22 15:21:06 :: helpers :: Channel 1 Information Sent :: INFO
+20-May-22 15:21:06 :: interface :: Call to device initiated :: DEBUG
+20-May-22 15:21:06 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 15:21:06 :: interface :: Call to device initiated :: DEBUG
+20-May-22 15:21:06 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 15:21:06 :: interface :: Call to device initiated :: DEBUG
+20-May-22 15:21:06 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 15:21:06 :: helpers :: Ready for next command.
+ :: INFO
+20-May-22 15:21:06 :: helpers :: callstack_helper executed :: INFO
+20-May-22 15:21:06 :: helpers :: Channel 1 Information Sent :: INFO
+20-May-22 15:21:06 :: interface :: Call to device initiated :: DEBUG
+20-May-22 15:21:06 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 15:21:06 :: interface :: Call to device initiated :: DEBUG
+20-May-22 15:21:06 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 15:21:06 :: interface :: Call to device initiated :: DEBUG
+20-May-22 15:21:06 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 15:21:07 :: helpers :: Ready for next command.
+ :: INFO
+20-May-22 15:21:07 :: helpers :: callstack_helper executed :: INFO
+20-May-22 15:21:07 :: helpers :: Channel 1 Information Sent :: INFO
+20-May-22 15:21:07 :: interface :: Call to device initiated :: DEBUG
+20-May-22 15:21:07 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 15:21:07 :: interface :: Call to device initiated :: DEBUG
+20-May-22 15:21:07 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 15:21:07 :: interface :: Call to device initiated :: DEBUG
+20-May-22 15:21:07 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 15:21:07 :: helpers :: Ready for next command.
+ :: INFO
+20-May-22 15:21:07 :: helpers :: callstack_helper executed :: INFO
+20-May-22 15:21:07 :: helpers :: Channel 1 Information Sent :: INFO
+20-May-22 15:21:07 :: interface :: Call to device initiated :: DEBUG
+20-May-22 15:21:07 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 15:21:08 :: interface :: Call to device initiated :: DEBUG
+20-May-22 15:21:08 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 15:21:08 :: interface :: Call to device initiated :: DEBUG
+20-May-22 15:21:08 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 15:21:08 :: helpers :: Ready for next command.
+ :: INFO
+20-May-22 15:21:08 :: helpers :: callstack_helper executed :: INFO
+20-May-22 15:21:08 :: helpers :: Channel 1 Information Sent :: INFO
+20-May-22 15:21:08 :: interface :: Call to device initiated :: DEBUG
+20-May-22 15:21:08 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 15:21:08 :: interface :: Call to device initiated :: DEBUG
+20-May-22 15:21:08 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 15:21:08 :: interface :: Call to device initiated :: DEBUG
+20-May-22 15:21:08 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 15:21:08 :: helpers :: Ready for next command.
+ :: INFO
+20-May-22 15:21:09 :: helpers :: callstack_helper executed :: INFO
+20-May-22 15:21:09 :: helpers :: Channel 1 Information Sent :: INFO
+20-May-22 15:21:09 :: interface :: Call to device initiated :: DEBUG
+20-May-22 15:21:09 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 15:21:09 :: interface :: Call to device initiated :: DEBUG
+20-May-22 15:21:09 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 15:21:09 :: interface :: Call to device initiated :: DEBUG
+20-May-22 15:21:09 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 15:21:09 :: helpers :: Ready for next command.
+ :: INFO
+20-May-22 15:21:09 :: helpers :: callstack_helper executed :: INFO
+20-May-22 15:21:09 :: helpers :: Channel 1 Information Sent :: INFO
+20-May-22 15:21:09 :: interface :: Call to device initiated :: DEBUG
+20-May-22 15:21:09 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 15:21:09 :: interface :: Call to device initiated :: DEBUG
+20-May-22 15:21:09 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 15:21:09 :: interface :: Call to device initiated :: DEBUG
+20-May-22 15:21:09 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 15:21:10 :: helpers :: Ready for next command.
+ :: INFO
+20-May-22 15:21:10 :: helpers :: callstack_helper executed :: INFO
+20-May-22 15:21:10 :: helpers :: Channel 1 Information Sent :: INFO
+20-May-22 15:21:10 :: interface :: Call to device initiated :: DEBUG
+20-May-22 15:21:10 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 15:21:10 :: interface :: Call to device initiated :: DEBUG
+20-May-22 15:21:10 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 15:21:10 :: interface :: Call to device initiated :: DEBUG
+20-May-22 15:21:10 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 15:21:10 :: helpers :: Ready for next command.
+ :: INFO
+20-May-22 15:21:10 :: helpers :: callstack_helper executed :: INFO
+20-May-22 15:21:10 :: helpers :: Channel 1 Information Sent :: INFO
+20-May-22 15:21:10 :: interface :: Call to device initiated :: DEBUG
+20-May-22 15:21:10 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 15:21:11 :: interface :: Call to device initiated :: DEBUG
+20-May-22 15:21:11 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 15:21:11 :: interface :: Call to device initiated :: DEBUG
+20-May-22 15:21:11 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 15:21:11 :: helpers :: Ready for next command.
+ :: INFO
+20-May-22 15:21:11 :: helpers :: callstack_helper executed :: INFO
+20-May-22 15:21:11 :: helpers :: Channel 1 Information Sent :: INFO
+20-May-22 15:21:11 :: interface :: Call to device initiated :: DEBUG
+20-May-22 15:21:11 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 15:21:11 :: interface :: Call to device initiated :: DEBUG
+20-May-22 15:21:11 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 15:21:11 :: interface :: Call to device initiated :: DEBUG
+20-May-22 15:21:11 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 15:21:11 :: helpers :: Ready for next command.
+ :: INFO
+20-May-22 15:21:11 :: interface :: Call to device initiated :: DEBUG
+20-May-22 15:21:11 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 15:21:12 :: interface :: Call to device initiated :: DEBUG
+20-May-22 15:21:12 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 15:21:12 :: interface :: Call to device initiated :: DEBUG
+20-May-22 15:21:12 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 15:21:12 :: interface :: Call to device initiated :: DEBUG
+20-May-22 15:21:12 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 15:21:12 :: interface :: Call to device initiated :: DEBUG
+20-May-22 15:21:12 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 15:21:12 :: interface :: Call to device initiated :: DEBUG
+20-May-22 15:21:12 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 15:21:12 :: interface :: Call to device initiated :: DEBUG
+20-May-22 15:21:12 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 15:21:12 :: interface :: Call to device initiated :: DEBUG
+20-May-22 15:21:12 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 15:21:13 :: interface :: Call to device initiated :: DEBUG
+20-May-22 15:21:13 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 15:21:13 :: interface :: Call to device initiated :: DEBUG
+20-May-22 15:21:13 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 15:21:13 :: interface :: Call to device initiated :: DEBUG
+20-May-22 15:21:13 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 15:21:13 :: interface :: Call to device initiated :: DEBUG
+20-May-22 15:21:13 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 15:21:13 :: interface :: Call to device initiated :: DEBUG
+20-May-22 15:21:13 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 15:21:16 :: __main__ :: creating dpg context :: INFO
+20-May-22 15:21:16 :: interface :: Call to device initiated :: DEBUG
+20-May-22 15:21:16 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 15:21:27 :: helpers :: mission_bravo executed :: INFO
+20-May-22 15:21:57 :: helpers :: Save Complete :: INFO
+20-May-22 15:22:23 :: helpers :: custom_save executed :: INFO
+20-May-22 15:22:23 :: helpers :: [
+  {
+    "channel 1": {
+      "Power": 18,
+      "Bandwidth": 35,
+      "Frequency": 3576.0,
+      "Date": "20/05/2022 15:21:16",
+      "Save_name": null
+    }
+  },
+  {
+    "channel 2": {
+      "Power": 18,
+      "Bandwidth": 35,
+      "Frequency": 3784.0,
+      "Date": "20/05/2022 15:21:16",
+      "Save_name": null
+    }
+  },
+  {
+    "channel 3": {
+      "Power": 18,
+      "Bandwidth": 35,
+      "Frequency": 3992.0,
+      "Date": "20/05/2022 15:21:16",
+      "Save_name": null
+    }
+  },
+  {
+    "channel 4": {
+      "Power": 18,
+      "Bandwidth": 35,
+      "Frequency": 4200.0,
+      "Date": "20/05/2022 15:21:16",
+      "Save_name": null
+    }
+  },
+  {
+    "channel 5": {
+      "Power": 18,
+      "Bandwidth": 35,
+      "Frequency": 4408.0,
+      "Date": "20/05/2022 15:21:16",
+      "Save_name": null
+    }
+  },
+  {
+    "channel 6": {
+      "Power": 18,
+      "Bandwidth": 35,
+      "Frequency": 4616.0,
+      "Date": "20/05/2022 15:21:16",
+      "Save_name": null
+    }
+  },
+  {
+    "channel 7": {
+      "Power": 18,
+      "Bandwidth": 35,
+      "Frequency": 4824.0,
+      "Date": "20/05/2022 15:21:16",
+      "Save_name": null
+    }
+  },
+  {
+    "channel 8": {
+      "Power": 18,
+      "Bandwidth": 35,
+      "Frequency": 5032.0,
+      "Date": "20/05/2022 15:21:16",
+      "Save_name": null
+    }
+  }
+] :: DEBUG
+20-May-22 15:22:23 :: helpers :: long save Complete :: INFO
+20-May-22 15:22:25 :: helpers :: custom_save executed :: INFO
+20-May-22 15:22:25 :: helpers :: [
+  {
+    "channel 1": {
+      "Power": 18,
+      "Bandwidth": 35,
+      "Frequency": 3576.0,
+      "Date": "20/05/2022 15:21:16",
+      "Save_name": null
+    }
+  },
+  {
+    "channel 2": {
+      "Power": 18,
+      "Bandwidth": 35,
+      "Frequency": 3784.0,
+      "Date": "20/05/2022 15:21:16",
+      "Save_name": null
+    }
+  },
+  {
+    "channel 3": {
+      "Power": 18,
+      "Bandwidth": 35,
+      "Frequency": 3992.0,
+      "Date": "20/05/2022 15:21:16",
+      "Save_name": null
+    }
+  },
+  {
+    "channel 4": {
+      "Power": 18,
+      "Bandwidth": 35,
+      "Frequency": 4200.0,
+      "Date": "20/05/2022 15:21:16",
+      "Save_name": null
+    }
+  },
+  {
+    "channel 5": {
+      "Power": 18,
+      "Bandwidth": 35,
+      "Frequency": 4408.0,
+      "Date": "20/05/2022 15:21:16",
+      "Save_name": null
+    }
+  },
+  {
+    "channel 6": {
+      "Power": 18,
+      "Bandwidth": 35,
+      "Frequency": 4616.0,
+      "Date": "20/05/2022 15:21:16",
+      "Save_name": null
+    }
+  },
+  {
+    "channel 7": {
+      "Power": 18,
+      "Bandwidth": 35,
+      "Frequency": 4824.0,
+      "Date": "20/05/2022 15:21:16",
+      "Save_name": null
+    }
+  },
+  {
+    "channel 8": {
+      "Power": 18,
+      "Bandwidth": 35,
+      "Frequency": 5032.0,
+      "Date": "20/05/2022 15:21:16",
+      "Save_name": null
+    }
+  }
+] :: DEBUG
+20-May-22 15:22:25 :: helpers :: long save Complete :: INFO
+20-May-22 15:22:26 :: helpers :: custom_save executed :: INFO
+20-May-22 15:22:26 :: helpers :: [
+  {
+    "channel 1": {
+      "Power": 18,
+      "Bandwidth": 35,
+      "Frequency": 3576.0,
+      "Date": "20/05/2022 15:21:16",
+      "Save_name": null
+    }
+  },
+  {
+    "channel 2": {
+      "Power": 18,
+      "Bandwidth": 35,
+      "Frequency": 3784.0,
+      "Date": "20/05/2022 15:21:16",
+      "Save_name": null
+    }
+  },
+  {
+    "channel 3": {
+      "Power": 18,
+      "Bandwidth": 35,
+      "Frequency": 3992.0,
+      "Date": "20/05/2022 15:21:16",
+      "Save_name": null
+    }
+  },
+  {
+    "channel 4": {
+      "Power": 18,
+      "Bandwidth": 35,
+      "Frequency": 4200.0,
+      "Date": "20/05/2022 15:21:16",
+      "Save_name": null
+    }
+  },
+  {
+    "channel 5": {
+      "Power": 18,
+      "Bandwidth": 35,
+      "Frequency": 4408.0,
+      "Date": "20/05/2022 15:21:16",
+      "Save_name": null
+    }
+  },
+  {
+    "channel 6": {
+      "Power": 18,
+      "Bandwidth": 35,
+      "Frequency": 4616.0,
+      "Date": "20/05/2022 15:21:16",
+      "Save_name": null
+    }
+  },
+  {
+    "channel 7": {
+      "Power": 18,
+      "Bandwidth": 35,
+      "Frequency": 4824.0,
+      "Date": "20/05/2022 15:21:16",
+      "Save_name": null
+    }
+  },
+  {
+    "channel 8": {
+      "Power": 18,
+      "Bandwidth": 35,
+      "Frequency": 5032.0,
+      "Date": "20/05/2022 15:21:16",
+      "Save_name": null
+    }
+  }
+] :: DEBUG
+20-May-22 15:22:26 :: helpers :: long save Complete :: INFO
+20-May-22 15:22:28 :: helpers :: custom_save executed :: INFO
+20-May-22 15:22:28 :: helpers :: [
+  {
+    "channel 1": {
+      "Power": 18,
+      "Bandwidth": 35,
+      "Frequency": 3576.0,
+      "Date": "20/05/2022 15:21:16",
+      "Save_name": null
+    }
+  },
+  {
+    "channel 2": {
+      "Power": 18,
+      "Bandwidth": 35,
+      "Frequency": 3784.0,
+      "Date": "20/05/2022 15:21:16",
+      "Save_name": null
+    }
+  },
+  {
+    "channel 3": {
+      "Power": 18,
+      "Bandwidth": 35,
+      "Frequency": 3992.0,
+      "Date": "20/05/2022 15:21:16",
+      "Save_name": null
+    }
+  },
+  {
+    "channel 4": {
+      "Power": 18,
+      "Bandwidth": 35,
+      "Frequency": 4200.0,
+      "Date": "20/05/2022 15:21:16",
+      "Save_name": null
+    }
+  },
+  {
+    "channel 5": {
+      "Power": 18,
+      "Bandwidth": 35,
+      "Frequency": 4408.0,
+      "Date": "20/05/2022 15:21:16",
+      "Save_name": null
+    }
+  },
+  {
+    "channel 6": {
+      "Power": 18,
+      "Bandwidth": 35,
+      "Frequency": 4616.0,
+      "Date": "20/05/2022 15:21:16",
+      "Save_name": null
+    }
+  },
+  {
+    "channel 7": {
+      "Power": 18,
+      "Bandwidth": 35,
+      "Frequency": 4824.0,
+      "Date": "20/05/2022 15:21:16",
+      "Save_name": null
+    }
+  },
+  {
+    "channel 8": {
+      "Power": 18,
+      "Bandwidth": 35,
+      "Frequency": 5032.0,
+      "Date": "20/05/2022 15:21:16",
+      "Save_name": null
+    }
+  }
+] :: DEBUG
+20-May-22 15:22:28 :: helpers :: long save Complete :: INFO
+20-May-22 15:22:28 :: helpers :: custom_save executed :: INFO
+20-May-22 15:22:28 :: helpers :: [
+  {
+    "channel 1": {
+      "Power": 18,
+      "Bandwidth": 35,
+      "Frequency": 3576.0,
+      "Date": "20/05/2022 15:21:16",
+      "Save_name": null
+    }
+  },
+  {
+    "channel 2": {
+      "Power": 18,
+      "Bandwidth": 35,
+      "Frequency": 3784.0,
+      "Date": "20/05/2022 15:21:16",
+      "Save_name": null
+    }
+  },
+  {
+    "channel 3": {
+      "Power": 18,
+      "Bandwidth": 35,
+      "Frequency": 3992.0,
+      "Date": "20/05/2022 15:21:16",
+      "Save_name": null
+    }
+  },
+  {
+    "channel 4": {
+      "Power": 18,
+      "Bandwidth": 35,
+      "Frequency": 4200.0,
+      "Date": "20/05/2022 15:21:16",
+      "Save_name": null
+    }
+  },
+  {
+    "channel 5": {
+      "Power": 18,
+      "Bandwidth": 35,
+      "Frequency": 4408.0,
+      "Date": "20/05/2022 15:21:16",
+      "Save_name": null
+    }
+  },
+  {
+    "channel 6": {
+      "Power": 18,
+      "Bandwidth": 35,
+      "Frequency": 4616.0,
+      "Date": "20/05/2022 15:21:16",
+      "Save_name": null
+    }
+  },
+  {
+    "channel 7": {
+      "Power": 18,
+      "Bandwidth": 35,
+      "Frequency": 4824.0,
+      "Date": "20/05/2022 15:21:16",
+      "Save_name": null
+    }
+  },
+  {
+    "channel 8": {
+      "Power": 18,
+      "Bandwidth": 35,
+      "Frequency": 5032.0,
+      "Date": "20/05/2022 15:21:16",
+      "Save_name": null
+    }
+  }
+] :: DEBUG
+20-May-22 15:22:28 :: helpers :: long save Complete :: INFO
+20-May-22 15:22:28 :: helpers :: custom_save executed :: INFO
+20-May-22 15:22:28 :: helpers :: [
+  {
+    "channel 1": {
+      "Power": 18,
+      "Bandwidth": 35,
+      "Frequency": 3576.0,
+      "Date": "20/05/2022 15:21:16",
+      "Save_name": null
+    }
+  },
+  {
+    "channel 2": {
+      "Power": 18,
+      "Bandwidth": 35,
+      "Frequency": 3784.0,
+      "Date": "20/05/2022 15:21:16",
+      "Save_name": null
+    }
+  },
+  {
+    "channel 3": {
+      "Power": 18,
+      "Bandwidth": 35,
+      "Frequency": 3992.0,
+      "Date": "20/05/2022 15:21:16",
+      "Save_name": null
+    }
+  },
+  {
+    "channel 4": {
+      "Power": 18,
+      "Bandwidth": 35,
+      "Frequency": 4200.0,
+      "Date": "20/05/2022 15:21:16",
+      "Save_name": null
+    }
+  },
+  {
+    "channel 5": {
+      "Power": 18,
+      "Bandwidth": 35,
+      "Frequency": 4408.0,
+      "Date": "20/05/2022 15:21:16",
+      "Save_name": null
+    }
+  },
+  {
+    "channel 6": {
+      "Power": 18,
+      "Bandwidth": 35,
+      "Frequency": 4616.0,
+      "Date": "20/05/2022 15:21:16",
+      "Save_name": null
+    }
+  },
+  {
+    "channel 7": {
+      "Power": 18,
+      "Bandwidth": 35,
+      "Frequency": 4824.0,
+      "Date": "20/05/2022 15:21:16",
+      "Save_name": null
+    }
+  },
+  {
+    "channel 8": {
+      "Power": 18,
+      "Bandwidth": 35,
+      "Frequency": 5032.0,
+      "Date": "20/05/2022 15:21:16",
+      "Save_name": null
+    }
+  }
+] :: DEBUG
+20-May-22 15:22:28 :: helpers :: long save Complete :: INFO
+20-May-22 15:24:44 :: helpers :: mission_delta executed :: INFO
+20-May-22 15:25:41 :: __main__ :: creating dpg context :: INFO
+20-May-22 15:25:41 :: interface :: Call to device initiated :: DEBUG
+20-May-22 15:25:41 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 15:38:00 :: helpers :: custom_save executed :: INFO
+20-May-22 15:38:00 :: helpers :: [
+  {
+    "channel 1": {
+      "Power": 34,
+      "Bandwidth": 17,
+      "Frequency": 3489.0,
+      "Date": "20/05/2022 15:25:41",
+      "Save_name": null
+    }
+  },
+  {
+    "channel 2": {
+      "Power": 27,
+      "Bandwidth": 3,
+      "Frequency": 3733.0,
+      "Date": "20/05/2022 15:25:41",
+      "Save_name": null
+    }
+  },
+  {
+    "channel 3": {
+      "Power": 12,
+      "Bandwidth": 3,
+      "Frequency": 3977.0,
+      "Date": "20/05/2022 15:25:41",
+      "Save_name": null
+    }
+  },
+  {
+    "channel 4": {
+      "Power": 12,
+      "Bandwidth": 3,
+      "Frequency": 4221.0,
+      "Date": "20/05/2022 15:25:41",
+      "Save_name": null
+    }
+  },
+  {
+    "channel 5": {
+      "Power": 28,
+      "Bandwidth": 11,
+      "Frequency": 4465.0,
+      "Date": "20/05/2022 15:25:41",
+      "Save_name": null
+    }
+  },
+  {
+    "channel 6": {
+      "Power": 15,
+      "Bandwidth": 3,
+      "Frequency": 4709.0,
+      "Date": "20/05/2022 15:25:41",
+      "Save_name": null
+    }
+  },
+  {
+    "channel 7": {
+      "Power": 9,
+      "Bandwidth": 3,
+      "Frequency": 4953.0,
+      "Date": "20/05/2022 15:25:41",
+      "Save_name": null
+    }
+  },
+  {
+    "channel 8": {
+      "Power": 29,
+      "Bandwidth": 3,
+      "Frequency": 5197.0,
+      "Date": "20/05/2022 15:25:41",
+      "Save_name": null
+    }
+  }
+] :: DEBUG
+20-May-22 15:38:00 :: helpers :: long save Complete :: INFO
+20-May-22 15:38:01 :: helpers :: custom_save executed :: INFO
+20-May-22 15:38:01 :: helpers :: [
+  {
+    "channel 1": {
+      "Power": 34,
+      "Bandwidth": 17,
+      "Frequency": 3489.0,
+      "Date": "20/05/2022 15:25:41",
+      "Save_name": null
+    }
+  },
+  {
+    "channel 2": {
+      "Power": 27,
+      "Bandwidth": 3,
+      "Frequency": 3733.0,
+      "Date": "20/05/2022 15:25:41",
+      "Save_name": null
+    }
+  },
+  {
+    "channel 3": {
+      "Power": 12,
+      "Bandwidth": 3,
+      "Frequency": 3977.0,
+      "Date": "20/05/2022 15:25:41",
+      "Save_name": null
+    }
+  },
+  {
+    "channel 4": {
+      "Power": 12,
+      "Bandwidth": 3,
+      "Frequency": 4221.0,
+      "Date": "20/05/2022 15:25:41",
+      "Save_name": null
+    }
+  },
+  {
+    "channel 5": {
+      "Power": 28,
+      "Bandwidth": 11,
+      "Frequency": 4465.0,
+      "Date": "20/05/2022 15:25:41",
+      "Save_name": null
+    }
+  },
+  {
+    "channel 6": {
+      "Power": 15,
+      "Bandwidth": 3,
+      "Frequency": 4709.0,
+      "Date": "20/05/2022 15:25:41",
+      "Save_name": null
+    }
+  },
+  {
+    "channel 7": {
+      "Power": 9,
+      "Bandwidth": 3,
+      "Frequency": 4953.0,
+      "Date": "20/05/2022 15:25:41",
+      "Save_name": null
+    }
+  },
+  {
+    "channel 8": {
+      "Power": 29,
+      "Bandwidth": 3,
+      "Frequency": 5197.0,
+      "Date": "20/05/2022 15:25:41",
+      "Save_name": null
+    }
+  }
+] :: DEBUG
+20-May-22 15:38:01 :: helpers :: long save Complete :: INFO
+20-May-22 15:38:01 :: helpers :: custom_save executed :: INFO
+20-May-22 15:38:01 :: helpers :: [
+  {
+    "channel 1": {
+      "Power": 34,
+      "Bandwidth": 17,
+      "Frequency": 3489.0,
+      "Date": "20/05/2022 15:25:41",
+      "Save_name": null
+    }
+  },
+  {
+    "channel 2": {
+      "Power": 27,
+      "Bandwidth": 3,
+      "Frequency": 3733.0,
+      "Date": "20/05/2022 15:25:41",
+      "Save_name": null
+    }
+  },
+  {
+    "channel 3": {
+      "Power": 12,
+      "Bandwidth": 3,
+      "Frequency": 3977.0,
+      "Date": "20/05/2022 15:25:41",
+      "Save_name": null
+    }
+  },
+  {
+    "channel 4": {
+      "Power": 12,
+      "Bandwidth": 3,
+      "Frequency": 4221.0,
+      "Date": "20/05/2022 15:25:41",
+      "Save_name": null
+    }
+  },
+  {
+    "channel 5": {
+      "Power": 28,
+      "Bandwidth": 11,
+      "Frequency": 4465.0,
+      "Date": "20/05/2022 15:25:41",
+      "Save_name": null
+    }
+  },
+  {
+    "channel 6": {
+      "Power": 15,
+      "Bandwidth": 3,
+      "Frequency": 4709.0,
+      "Date": "20/05/2022 15:25:41",
+      "Save_name": null
+    }
+  },
+  {
+    "channel 7": {
+      "Power": 9,
+      "Bandwidth": 3,
+      "Frequency": 4953.0,
+      "Date": "20/05/2022 15:25:41",
+      "Save_name": null
+    }
+  },
+  {
+    "channel 8": {
+      "Power": 29,
+      "Bandwidth": 3,
+      "Frequency": 5197.0,
+      "Date": "20/05/2022 15:25:41",
+      "Save_name": null
+    }
+  }
+] :: DEBUG
+20-May-22 15:38:01 :: helpers :: long save Complete :: INFO
+20-May-22 15:38:26 :: __main__ :: creating dpg context :: INFO
+20-May-22 15:38:26 :: interface :: Call to device initiated :: DEBUG
+20-May-22 15:38:26 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 15:39:11 :: helpers :: custom_save executed :: INFO
+20-May-22 15:39:11 :: helpers :: [
+  {
+    "channel 1": {
+      "Power": 30,
+      "Bandwidth": 16,
+      "Frequency": 3565.0,
+      "Date": "20/05/2022 15:38:26",
+      "Save_name": null
+    }
+  },
+  {
+    "channel 2": {
+      "Power": 9,
+      "Bandwidth": 7,
+      "Frequency": 3784.0,
+      "Date": "20/05/2022 15:38:26",
+      "Save_name": null
+    }
+  },
+  {
+    "channel 3": {
+      "Power": 31,
+      "Bandwidth": 3,
+      "Frequency": 4003.0,
+      "Date": "20/05/2022 15:38:26",
+      "Save_name": null
+    }
+  },
+  {
+    "channel 4": {
+      "Power": 12,
+      "Bandwidth": 48,
+      "Frequency": 4222.0,
+      "Date": "20/05/2022 15:38:26",
+      "Save_name": null
+    }
+  },
+  {
+    "channel 5": {
+      "Power": 22,
+      "Bandwidth": 23,
+      "Frequency": 4441.0,
+      "Date": "20/05/2022 15:38:26",
+      "Save_name": null
+    }
+  },
+  {
+    "channel 6": {
+      "Power": 11,
+      "Bandwidth": 3,
+      "Frequency": 4660.0,
+      "Date": "20/05/2022 15:38:26",
+      "Save_name": null
+    }
+  },
+  {
+    "channel 7": {
+      "Power": 49,
+      "Bandwidth": 46,
+      "Frequency": 4879.0,
+      "Date": "20/05/2022 15:38:26",
+      "Save_name": null
+    }
+  },
+  {
+    "channel 8": {
+      "Power": 8,
+      "Bandwidth": 17,
+      "Frequency": 5098.0,
+      "Date": "20/05/2022 15:38:26",
+      "Save_name": null
+    }
+  }
+] :: DEBUG
+20-May-22 15:39:11 :: helpers :: long save Complete :: INFO
+20-May-22 15:49:23 :: helpers :: custom_save executed :: INFO
+20-May-22 15:49:23 :: helpers :: [
+  {
+    "channel 1": {
+      "Power": 30,
+      "Bandwidth": 16,
+      "Frequency": 3565.0,
+      "Date": "20/05/2022 15:38:26",
+      "Save_name": null
+    }
+  },
+  {
+    "channel 2": {
+      "Power": 9,
+      "Bandwidth": 7,
+      "Frequency": 3784.0,
+      "Date": "20/05/2022 15:38:26",
+      "Save_name": null
+    }
+  },
+  {
+    "channel 3": {
+      "Power": 31,
+      "Bandwidth": 3,
+      "Frequency": 4003.0,
+      "Date": "20/05/2022 15:38:26",
+      "Save_name": null
+    }
+  },
+  {
+    "channel 4": {
+      "Power": 12,
+      "Bandwidth": 48,
+      "Frequency": 4222.0,
+      "Date": "20/05/2022 15:38:26",
+      "Save_name": null
+    }
+  },
+  {
+    "channel 5": {
+      "Power": 22,
+      "Bandwidth": 23,
+      "Frequency": 4441.0,
+      "Date": "20/05/2022 15:38:26",
+      "Save_name": null
+    }
+  },
+  {
+    "channel 6": {
+      "Power": 11,
+      "Bandwidth": 3,
+      "Frequency": 4660.0,
+      "Date": "20/05/2022 15:38:26",
+      "Save_name": null
+    }
+  },
+  {
+    "channel 7": {
+      "Power": 49,
+      "Bandwidth": 46,
+      "Frequency": 4879.0,
+      "Date": "20/05/2022 15:38:26",
+      "Save_name": null
+    }
+  },
+  {
+    "channel 8": {
+      "Power": 8,
+      "Bandwidth": 17,
+      "Frequency": 5098.0,
+      "Date": "20/05/2022 15:38:26",
+      "Save_name": null
+    }
+  }
+] :: DEBUG
+20-May-22 15:49:23 :: helpers :: long save Complete :: INFO
+20-May-22 15:49:31 :: __main__ :: creating dpg context :: INFO
+20-May-22 15:49:31 :: interface :: Call to device initiated :: DEBUG
+20-May-22 15:49:31 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 15:49:39 :: helpers :: demo_config_2 executed :: INFO
+20-May-22 15:49:39 :: helpers :: demo_config executed :: INFO
+20-May-22 15:49:40 :: helpers :: mission_bravo executed :: INFO
+20-May-22 15:49:45 :: helpers :: two_point_four executed :: INFO
+20-May-22 15:50:43 :: helpers :: custom_save executed :: INFO
+20-May-22 15:50:43 :: helpers :: [
+  {
+    "channel 1": {
+      "Power": 40,
+      "Bandwidth": 15,
+      "Frequency": 2415.0,
+      "Date": "20/05/2022 15:49:31",
+      "Save_name": null
+    }
+  },
+  {
+    "channel 2": {
+      "Power": 15,
+      "Bandwidth": 2,
+      "Frequency": 2440.0,
+      "Date": "20/05/2022 15:49:31",
+      "Save_name": null
+    }
+  },
+  {
+    "channel 3": {
+      "Power": 18,
+      "Bandwidth": 23,
+      "Frequency": 2465.0,
+      "Date": "20/05/2022 15:49:31",
+      "Save_name": null
+    }
+  },
+  {
+    "channel 4": {
+      "Power": 3,
+      "Bandwidth": 9,
+      "Frequency": 2490.0,
+      "Date": "20/05/2022 15:49:31",
+      "Save_name": null
+    }
+  },
+  {
+    "channel 5": {
+      "Power": 32,
+      "Bandwidth": 26,
+      "Frequency": 2515.0,
+      "Date": "20/05/2022 15:49:31",
+      "Save_name": null
+    }
+  },
+  {
+    "channel 6": {
+      "Power": 3,
+      "Bandwidth": 31,
+      "Frequency": 2540.0,
+      "Date": "20/05/2022 15:49:31",
+      "Save_name": null
+    }
+  },
+  {
+    "channel 7": {
+      "Power": 29,
+      "Bandwidth": 11,
+      "Frequency": 2565.0,
+      "Date": "20/05/2022 15:49:31",
+      "Save_name": null
+    }
+  },
+  {
+    "channel 8": {
+      "Power": 3,
+      "Bandwidth": 18,
+      "Frequency": 2590.0,
+      "Date": "20/05/2022 15:49:31",
+      "Save_name": null
+    }
+  }
+] :: DEBUG
+20-May-22 15:50:43 :: helpers :: long save Complete :: INFO
+20-May-22 15:50:51 :: helpers :: custom_save executed :: INFO
+20-May-22 15:50:51 :: helpers :: [
+  {
+    "channel 1": {
+      "Power": 40,
+      "Bandwidth": 15,
+      "Frequency": 2415.0,
+      "Date": "20/05/2022 15:49:31",
+      "Save_name": null
+    }
+  },
+  {
+    "channel 2": {
+      "Power": 15,
+      "Bandwidth": 2,
+      "Frequency": 2440.0,
+      "Date": "20/05/2022 15:49:31",
+      "Save_name": null
+    }
+  },
+  {
+    "channel 3": {
+      "Power": 18,
+      "Bandwidth": 23,
+      "Frequency": 2465.0,
+      "Date": "20/05/2022 15:49:31",
+      "Save_name": null
+    }
+  },
+  {
+    "channel 4": {
+      "Power": 3,
+      "Bandwidth": 9,
+      "Frequency": 2490.0,
+      "Date": "20/05/2022 15:49:31",
+      "Save_name": null
+    }
+  },
+  {
+    "channel 5": {
+      "Power": 32,
+      "Bandwidth": 26,
+      "Frequency": 2515.0,
+      "Date": "20/05/2022 15:49:31",
+      "Save_name": null
+    }
+  },
+  {
+    "channel 6": {
+      "Power": 3,
+      "Bandwidth": 31,
+      "Frequency": 2540.0,
+      "Date": "20/05/2022 15:49:31",
+      "Save_name": null
+    }
+  },
+  {
+    "channel 7": {
+      "Power": 29,
+      "Bandwidth": 11,
+      "Frequency": 2565.0,
+      "Date": "20/05/2022 15:49:31",
+      "Save_name": null
+    }
+  },
+  {
+    "channel 8": {
+      "Power": 3,
+      "Bandwidth": 18,
+      "Frequency": 2590.0,
+      "Date": "20/05/2022 15:49:31",
+      "Save_name": null
+    }
+  }
+] :: DEBUG
+20-May-22 15:50:51 :: helpers :: long save Complete :: INFO
+20-May-22 15:50:52 :: helpers :: custom_save executed :: INFO
+20-May-22 15:50:52 :: helpers :: [
+  {
+    "channel 1": {
+      "Power": 40,
+      "Bandwidth": 15,
+      "Frequency": 2415.0,
+      "Date": "20/05/2022 15:49:31",
+      "Save_name": null
+    }
+  },
+  {
+    "channel 2": {
+      "Power": 15,
+      "Bandwidth": 2,
+      "Frequency": 2440.0,
+      "Date": "20/05/2022 15:49:31",
+      "Save_name": null
+    }
+  },
+  {
+    "channel 3": {
+      "Power": 18,
+      "Bandwidth": 23,
+      "Frequency": 2465.0,
+      "Date": "20/05/2022 15:49:31",
+      "Save_name": null
+    }
+  },
+  {
+    "channel 4": {
+      "Power": 3,
+      "Bandwidth": 9,
+      "Frequency": 2490.0,
+      "Date": "20/05/2022 15:49:31",
+      "Save_name": null
+    }
+  },
+  {
+    "channel 5": {
+      "Power": 32,
+      "Bandwidth": 26,
+      "Frequency": 2515.0,
+      "Date": "20/05/2022 15:49:31",
+      "Save_name": null
+    }
+  },
+  {
+    "channel 6": {
+      "Power": 3,
+      "Bandwidth": 31,
+      "Frequency": 2540.0,
+      "Date": "20/05/2022 15:49:31",
+      "Save_name": null
+    }
+  },
+  {
+    "channel 7": {
+      "Power": 29,
+      "Bandwidth": 11,
+      "Frequency": 2565.0,
+      "Date": "20/05/2022 15:49:31",
+      "Save_name": null
+    }
+  },
+  {
+    "channel 8": {
+      "Power": 3,
+      "Bandwidth": 18,
+      "Frequency": 2590.0,
+      "Date": "20/05/2022 15:49:31",
+      "Save_name": null
+    }
+  }
+] :: DEBUG
+20-May-22 15:50:52 :: helpers :: long save Complete :: INFO
+20-May-22 15:51:15 :: __main__ :: creating dpg context :: INFO
+20-May-22 15:51:15 :: interface :: Call to device initiated :: DEBUG
+20-May-22 15:51:15 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 15:51:25 :: helpers :: mission_alpha executed :: INFO
+20-May-22 15:51:37 :: helpers :: custom_save executed :: INFO
+20-May-22 15:51:37 :: helpers :: [
+  {
+    "channel 1": {
+      "Power": 0,
+      "Bandwidth": 0,
+      "Frequency": 650.0,
+      "Date": "20/05/2022 15:51:15",
+      "Save_name": null
+    }
+  },
+  {
+    "channel 2": {
+      "Power": 0,
+      "Bandwidth": 0,
+      "Frequency": 678.5399780273438,
+      "Date": "20/05/2022 15:51:15",
+      "Save_name": null
+    }
+  },
+  {
+    "channel 3": {
+      "Power": 0,
+      "Bandwidth": 0,
+      "Frequency": 707.0800170898438,
+      "Date": "20/05/2022 15:51:15",
+      "Save_name": null
+    }
+  },
+  {
+    "channel 4": {
+      "Power": 0,
+      "Bandwidth": 0,
+      "Frequency": 735.6199951171875,
+      "Date": "20/05/2022 15:51:15",
+      "Save_name": null
+    }
+  },
+  {
+    "channel 5": {
+      "Power": 0,
+      "Bandwidth": 0,
+      "Frequency": 764.1599731445312,
+      "Date": "20/05/2022 15:51:15",
+      "Save_name": null
+    }
+  },
+  {
+    "channel 6": {
+      "Power": 0,
+      "Bandwidth": 0,
+      "Frequency": 792.7000122070312,
+      "Date": "20/05/2022 15:51:15",
+      "Save_name": null
+    }
+  },
+  {
+    "channel 7": {
+      "Power": 0,
+      "Bandwidth": 0,
+      "Frequency": 821.239990234375,
+      "Date": "20/05/2022 15:51:15",
+      "Save_name": null
+    }
+  },
+  {
+    "channel 8": {
+      "Power": 0,
+      "Bandwidth": 0,
+      "Frequency": 849.780029296875,
+      "Date": "20/05/2022 15:51:15",
+      "Save_name": null
+    }
+  }
+] :: DEBUG
+20-May-22 15:51:37 :: helpers :: long save Complete :: INFO
+20-May-22 15:52:47 :: helpers :: custom_save executed :: INFO
+20-May-22 15:52:47 :: helpers :: [
+  {
+    "channel 1": {
+      "Power": 35,
+      "Bandwidth": 0,
+      "Frequency": 682.0,
+      "Date": "20/05/2022 15:51:15",
+      "Save_name": null
+    }
+  },
+  {
+    "channel 2": {
+      "Power": 35,
+      "Bandwidth": 0,
+      "Frequency": 818.5399780273438,
+      "Date": "20/05/2022 15:51:15",
+      "Save_name": null
+    }
+  },
+  {
+    "channel 3": {
+      "Power": 48,
+      "Bandwidth": 0,
+      "Frequency": 955.0799560546875,
+      "Date": "20/05/2022 15:51:15",
+      "Save_name": null
+    }
+  },
+  {
+    "channel 4": {
+      "Power": 23,
+      "Bandwidth": 0,
+      "Frequency": 1091.619873046875,
+      "Date": "20/05/2022 15:51:15",
+      "Save_name": null
+    }
+  },
+  {
+    "channel 5": {
+      "Power": 2,
+      "Bandwidth": 0,
+      "Frequency": 1228.1597900390625,
+      "Date": "20/05/2022 15:51:15",
+      "Save_name": null
+    }
+  },
+  {
+    "channel 6": {
+      "Power": 43,
+      "Bandwidth": 0,
+      "Frequency": 1364.69970703125,
+      "Date": "20/05/2022 15:51:15",
+      "Save_name": null
+    }
+  },
+  {
+    "channel 7": {
+      "Power": 23,
+      "Bandwidth": 0,
+      "Frequency": 1501.2396240234375,
+      "Date": "20/05/2022 15:51:15",
+      "Save_name": null
+    }
+  },
+  {
+    "channel 8": {
+      "Power": 41,
+      "Bandwidth": 0,
+      "Frequency": 1637.779541015625,
+      "Date": "20/05/2022 15:51:15",
+      "Save_name": null
+    }
+  }
+] :: DEBUG
+20-May-22 15:52:47 :: helpers :: long save Complete :: INFO
+20-May-22 15:57:11 :: __main__ :: creating dpg context :: INFO
+20-May-22 15:57:11 :: interface :: Call to device initiated :: DEBUG
+20-May-22 15:57:11 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 15:57:29 :: helpers :: custom_save executed :: INFO
+20-May-22 15:57:29 :: helpers :: [
+  {
+    "channel 1": {
+      "Power": 0,
+      "Bandwidth": 0,
+      "Frequency": 650.0,
+      "Date": "20/05/2022 15:57:11",
+      "Save_name": "custom save 1"
+    }
+  },
+  {
+    "channel 2": {
+      "Power": 0,
+      "Bandwidth": 0,
+      "Frequency": 1300.0,
+      "Date": "20/05/2022 15:57:11",
+      "Save_name": "custom save 1"
+    }
+  },
+  {
+    "channel 3": {
+      "Power": 0,
+      "Bandwidth": 0,
+      "Frequency": 1950.0,
+      "Date": "20/05/2022 15:57:11",
+      "Save_name": "custom save 1"
+    }
+  },
+  {
+    "channel 4": {
+      "Power": 0,
+      "Bandwidth": 0,
+      "Frequency": 2600.0,
+      "Date": "20/05/2022 15:57:11",
+      "Save_name": "custom save 1"
+    }
+  },
+  {
+    "channel 5": {
+      "Power": 0,
+      "Bandwidth": 0,
+      "Frequency": 3250.0,
+      "Date": "20/05/2022 15:57:11",
+      "Save_name": "custom save 1"
+    }
+  },
+  {
+    "channel 6": {
+      "Power": 0,
+      "Bandwidth": 0,
+      "Frequency": 3900.0,
+      "Date": "20/05/2022 15:57:11",
+      "Save_name": "custom save 1"
+    }
+  },
+  {
+    "channel 7": {
+      "Power": 0,
+      "Bandwidth": 0,
+      "Frequency": 4550.0,
+      "Date": "20/05/2022 15:57:11",
+      "Save_name": "custom save 1"
+    }
+  },
+  {
+    "channel 8": {
+      "Power": 0,
+      "Bandwidth": 0,
+      "Frequency": 5200.0,
+      "Date": "20/05/2022 15:57:11",
+      "Save_name": "custom save 1"
+    }
+  }
+] :: DEBUG
+20-May-22 15:57:29 :: helpers :: long save Complete :: INFO
+20-May-22 15:57:34 :: helpers :: custom_save executed :: INFO
+20-May-22 15:57:34 :: helpers :: [
+  {
+    "channel 1": {
+      "Power": 0,
+      "Bandwidth": 0,
+      "Frequency": 650.0,
+      "Date": "20/05/2022 15:57:11",
+      "Save_name": "custom save 1"
+    }
+  },
+  {
+    "channel 2": {
+      "Power": 0,
+      "Bandwidth": 0,
+      "Frequency": 1300.0,
+      "Date": "20/05/2022 15:57:11",
+      "Save_name": "custom save 1"
+    }
+  },
+  {
+    "channel 3": {
+      "Power": 0,
+      "Bandwidth": 0,
+      "Frequency": 1950.0,
+      "Date": "20/05/2022 15:57:11",
+      "Save_name": "custom save 1"
+    }
+  },
+  {
+    "channel 4": {
+      "Power": 0,
+      "Bandwidth": 0,
+      "Frequency": 2600.0,
+      "Date": "20/05/2022 15:57:11",
+      "Save_name": "custom save 1"
+    }
+  },
+  {
+    "channel 5": {
+      "Power": 0,
+      "Bandwidth": 0,
+      "Frequency": 3250.0,
+      "Date": "20/05/2022 15:57:11",
+      "Save_name": "custom save 1"
+    }
+  },
+  {
+    "channel 6": {
+      "Power": 0,
+      "Bandwidth": 0,
+      "Frequency": 3900.0,
+      "Date": "20/05/2022 15:57:11",
+      "Save_name": "custom save 1"
+    }
+  },
+  {
+    "channel 7": {
+      "Power": 0,
+      "Bandwidth": 0,
+      "Frequency": 4550.0,
+      "Date": "20/05/2022 15:57:11",
+      "Save_name": "custom save 1"
+    }
+  },
+  {
+    "channel 8": {
+      "Power": 0,
+      "Bandwidth": 0,
+      "Frequency": 5200.0,
+      "Date": "20/05/2022 15:57:11",
+      "Save_name": "custom save 1"
+    }
+  }
+] :: DEBUG
+20-May-22 15:57:34 :: helpers :: long save Complete :: INFO
+20-May-22 15:57:35 :: helpers :: custom_save executed :: INFO
+20-May-22 15:57:35 :: helpers :: [
+  {
+    "channel 1": {
+      "Power": 0,
+      "Bandwidth": 0,
+      "Frequency": 650.0,
+      "Date": "20/05/2022 15:57:11",
+      "Save_name": "custom save 1"
+    }
+  },
+  {
+    "channel 2": {
+      "Power": 0,
+      "Bandwidth": 0,
+      "Frequency": 1300.0,
+      "Date": "20/05/2022 15:57:11",
+      "Save_name": "custom save 1"
+    }
+  },
+  {
+    "channel 3": {
+      "Power": 0,
+      "Bandwidth": 0,
+      "Frequency": 1950.0,
+      "Date": "20/05/2022 15:57:11",
+      "Save_name": "custom save 1"
+    }
+  },
+  {
+    "channel 4": {
+      "Power": 0,
+      "Bandwidth": 0,
+      "Frequency": 2600.0,
+      "Date": "20/05/2022 15:57:11",
+      "Save_name": "custom save 1"
+    }
+  },
+  {
+    "channel 5": {
+      "Power": 0,
+      "Bandwidth": 0,
+      "Frequency": 3250.0,
+      "Date": "20/05/2022 15:57:11",
+      "Save_name": "custom save 1"
+    }
+  },
+  {
+    "channel 6": {
+      "Power": 0,
+      "Bandwidth": 0,
+      "Frequency": 3900.0,
+      "Date": "20/05/2022 15:57:11",
+      "Save_name": "custom save 1"
+    }
+  },
+  {
+    "channel 7": {
+      "Power": 0,
+      "Bandwidth": 0,
+      "Frequency": 4550.0,
+      "Date": "20/05/2022 15:57:11",
+      "Save_name": "custom save 1"
+    }
+  },
+  {
+    "channel 8": {
+      "Power": 0,
+      "Bandwidth": 0,
+      "Frequency": 5200.0,
+      "Date": "20/05/2022 15:57:11",
+      "Save_name": "custom save 1"
+    }
+  }
+] :: DEBUG
+20-May-22 15:57:35 :: helpers :: long save Complete :: INFO
+20-May-22 15:57:35 :: helpers :: custom_save executed :: INFO
+20-May-22 15:57:35 :: helpers :: [
+  {
+    "channel 1": {
+      "Power": 0,
+      "Bandwidth": 0,
+      "Frequency": 650.0,
+      "Date": "20/05/2022 15:57:11",
+      "Save_name": "custom save 1"
+    }
+  },
+  {
+    "channel 2": {
+      "Power": 0,
+      "Bandwidth": 0,
+      "Frequency": 1300.0,
+      "Date": "20/05/2022 15:57:11",
+      "Save_name": "custom save 1"
+    }
+  },
+  {
+    "channel 3": {
+      "Power": 0,
+      "Bandwidth": 0,
+      "Frequency": 1950.0,
+      "Date": "20/05/2022 15:57:11",
+      "Save_name": "custom save 1"
+    }
+  },
+  {
+    "channel 4": {
+      "Power": 0,
+      "Bandwidth": 0,
+      "Frequency": 2600.0,
+      "Date": "20/05/2022 15:57:11",
+      "Save_name": "custom save 1"
+    }
+  },
+  {
+    "channel 5": {
+      "Power": 0,
+      "Bandwidth": 0,
+      "Frequency": 3250.0,
+      "Date": "20/05/2022 15:57:11",
+      "Save_name": "custom save 1"
+    }
+  },
+  {
+    "channel 6": {
+      "Power": 0,
+      "Bandwidth": 0,
+      "Frequency": 3900.0,
+      "Date": "20/05/2022 15:57:11",
+      "Save_name": "custom save 1"
+    }
+  },
+  {
+    "channel 7": {
+      "Power": 0,
+      "Bandwidth": 0,
+      "Frequency": 4550.0,
+      "Date": "20/05/2022 15:57:11",
+      "Save_name": "custom save 1"
+    }
+  },
+  {
+    "channel 8": {
+      "Power": 0,
+      "Bandwidth": 0,
+      "Frequency": 5200.0,
+      "Date": "20/05/2022 15:57:11",
+      "Save_name": "custom save 1"
+    }
+  }
+] :: DEBUG
+20-May-22 15:57:35 :: helpers :: long save Complete :: INFO
+20-May-22 15:57:59 :: __main__ :: creating dpg context :: INFO
+20-May-22 15:57:59 :: interface :: Call to device initiated :: DEBUG
+20-May-22 15:57:59 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 15:58:12 :: helpers :: custom_save executed :: INFO
+20-May-22 15:58:12 :: helpers :: [
+  {
+    "channel 1": {
+      "Power": 0,
+      "Bandwidth": 0,
+      "Frequency": 650.0,
+      "Date": "20/05/2022 15:57:59",
+      "Save_name": "custom save 1"
+    }
+  },
+  {
+    "channel 2": {
+      "Power": 0,
+      "Bandwidth": 0,
+      "Frequency": 1300.0,
+      "Date": "20/05/2022 15:57:59",
+      "Save_name": "custom save 1"
+    }
+  },
+  {
+    "channel 3": {
+      "Power": 0,
+      "Bandwidth": 0,
+      "Frequency": 1950.0,
+      "Date": "20/05/2022 15:57:59",
+      "Save_name": "custom save 1"
+    }
+  },
+  {
+    "channel 4": {
+      "Power": 0,
+      "Bandwidth": 0,
+      "Frequency": 2600.0,
+      "Date": "20/05/2022 15:57:59",
+      "Save_name": "custom save 1"
+    }
+  },
+  {
+    "channel 5": {
+      "Power": 0,
+      "Bandwidth": 0,
+      "Frequency": 3250.0,
+      "Date": "20/05/2022 15:57:59",
+      "Save_name": "custom save 1"
+    }
+  },
+  {
+    "channel 6": {
+      "Power": 0,
+      "Bandwidth": 0,
+      "Frequency": 3900.0,
+      "Date": "20/05/2022 15:57:59",
+      "Save_name": "custom save 1"
+    }
+  },
+  {
+    "channel 7": {
+      "Power": 0,
+      "Bandwidth": 0,
+      "Frequency": 4550.0,
+      "Date": "20/05/2022 15:57:59",
+      "Save_name": "custom save 1"
+    }
+  },
+  {
+    "channel 8": {
+      "Power": 0,
+      "Bandwidth": 0,
+      "Frequency": 5200.0,
+      "Date": "20/05/2022 15:57:59",
+      "Save_name": "custom save 1"
+    }
+  }
+] :: DEBUG
+20-May-22 15:58:12 :: helpers :: long save Complete :: INFO
+20-May-22 15:59:39 :: __main__ :: creating dpg context :: INFO
+20-May-22 15:59:39 :: interface :: Call to device initiated :: DEBUG
+20-May-22 15:59:39 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 16:00:00 :: helpers :: custom_save executed :: INFO
+20-May-22 16:00:00 :: helpers :: [
+  {
+    "channel 1": {
+      "Power": 0,
+      "Bandwidth": 0,
+      "Frequency": 650.0,
+      "Date": "20/05/2022 15:59:39",
+      "Save_name": "custom save 2"
+    }
+  },
+  {
+    "channel 2": {
+      "Power": 0,
+      "Bandwidth": 0,
+      "Frequency": 1300.0,
+      "Date": "20/05/2022 15:59:39",
+      "Save_name": "custom save 2"
+    }
+  },
+  {
+    "channel 3": {
+      "Power": 0,
+      "Bandwidth": 0,
+      "Frequency": 1950.0,
+      "Date": "20/05/2022 15:59:39",
+      "Save_name": "custom save 2"
+    }
+  },
+  {
+    "channel 4": {
+      "Power": 0,
+      "Bandwidth": 0,
+      "Frequency": 2600.0,
+      "Date": "20/05/2022 15:59:39",
+      "Save_name": "custom save 2"
+    }
+  },
+  {
+    "channel 5": {
+      "Power": 0,
+      "Bandwidth": 0,
+      "Frequency": 3250.0,
+      "Date": "20/05/2022 15:59:39",
+      "Save_name": "custom save 2"
+    }
+  },
+  {
+    "channel 6": {
+      "Power": 0,
+      "Bandwidth": 0,
+      "Frequency": 3900.0,
+      "Date": "20/05/2022 15:59:39",
+      "Save_name": "custom save 2"
+    }
+  },
+  {
+    "channel 7": {
+      "Power": 0,
+      "Bandwidth": 0,
+      "Frequency": 4550.0,
+      "Date": "20/05/2022 15:59:39",
+      "Save_name": "custom save 2"
+    }
+  },
+  {
+    "channel 8": {
+      "Power": 0,
+      "Bandwidth": 0,
+      "Frequency": 5200.0,
+      "Date": "20/05/2022 15:59:39",
+      "Save_name": "custom save 2"
+    }
+  }
+] :: DEBUG
+20-May-22 16:00:00 :: helpers :: long save Complete :: INFO
+20-May-22 16:00:19 :: __main__ :: creating dpg context :: INFO
+20-May-22 16:00:19 :: interface :: Call to device initiated :: DEBUG
+20-May-22 16:00:19 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 16:00:33 :: helpers :: custom_save executed :: INFO
+20-May-22 16:00:33 :: helpers :: [
+  {
+    "channel 1": {
+      "Power": 0,
+      "Bandwidth": 0,
+      "Frequency": 650.0,
+      "Date": "20/05/2022 16:00:19",
+      "Save_name": "custom save 3"
+    }
+  },
+  {
+    "channel 2": {
+      "Power": 0,
+      "Bandwidth": 0,
+      "Frequency": 1300.0,
+      "Date": "20/05/2022 16:00:19",
+      "Save_name": "custom save 3"
+    }
+  },
+  {
+    "channel 3": {
+      "Power": 0,
+      "Bandwidth": 0,
+      "Frequency": 1950.0,
+      "Date": "20/05/2022 16:00:19",
+      "Save_name": "custom save 3"
+    }
+  },
+  {
+    "channel 4": {
+      "Power": 0,
+      "Bandwidth": 0,
+      "Frequency": 2600.0,
+      "Date": "20/05/2022 16:00:19",
+      "Save_name": "custom save 3"
+    }
+  },
+  {
+    "channel 5": {
+      "Power": 0,
+      "Bandwidth": 0,
+      "Frequency": 3250.0,
+      "Date": "20/05/2022 16:00:19",
+      "Save_name": "custom save 3"
+    }
+  },
+  {
+    "channel 6": {
+      "Power": 0,
+      "Bandwidth": 0,
+      "Frequency": 3900.0,
+      "Date": "20/05/2022 16:00:19",
+      "Save_name": "custom save 3"
+    }
+  },
+  {
+    "channel 7": {
+      "Power": 0,
+      "Bandwidth": 0,
+      "Frequency": 4550.0,
+      "Date": "20/05/2022 16:00:19",
+      "Save_name": "custom save 3"
+    }
+  },
+  {
+    "channel 8": {
+      "Power": 0,
+      "Bandwidth": 0,
+      "Frequency": 5200.0,
+      "Date": "20/05/2022 16:00:19",
+      "Save_name": "custom save 3"
+    }
+  }
+] :: DEBUG
+20-May-22 16:00:33 :: helpers :: long save Complete :: INFO
+20-May-22 16:03:25 :: __main__ :: creating dpg context :: INFO
+20-May-22 16:03:25 :: interface :: Call to device initiated :: DEBUG
+20-May-22 16:03:25 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 16:03:31 :: helpers :: custom_save executed :: INFO
+20-May-22 16:12:58 :: __main__ :: creating dpg context :: INFO
+20-May-22 16:12:58 :: interface :: Call to device initiated :: DEBUG
+20-May-22 16:12:58 :: interface :: Call initiated from Linux to  :: INFO
+20-May-22 16:13:04 :: helpers :: custom_save executed :: INFO
+20-May-22 16:13:04 :: helpers :: [
+  {
+    "channel 1": {
+      "Power": 0,
+      "Bandwidth": 0,
+      "Frequency": 650.0,
+      "Date": "20/05/2022 16:12:58",
+      "Save_name": null
+    }
+  },
+  {
+    "channel 2": {
+      "Power": 0,
+      "Bandwidth": 0,
+      "Frequency": 1300.0,
+      "Date": "20/05/2022 16:12:58",
+      "Save_name": null
+    }
+  },
+  {
+    "channel 3": {
+      "Power": 0,
+      "Bandwidth": 0,
+      "Frequency": 1950.0,
+      "Date": "20/05/2022 16:12:58",
+      "Save_name": null
+    }
+  },
+  {
+    "channel 4": {
+      "Power": 0,
+      "Bandwidth": 0,
+      "Frequency": 2600.0,
+      "Date": "20/05/2022 16:12:58",
+      "Save_name": null
+    }
+  },
+  {
+    "channel 5": {
+      "Power": 0,
+      "Bandwidth": 0,
+      "Frequency": 3250.0,
+      "Date": "20/05/2022 16:12:58",
+      "Save_name": null
+    }
+  },
+  {
+    "channel 6": {
+      "Power": 0,
+      "Bandwidth": 0,
+      "Frequency": 3900.0,
+      "Date": "20/05/2022 16:12:58",
+      "Save_name": null
+    }
+  },
+  {
+    "channel 7": {
+      "Power": 0,
+      "Bandwidth": 0,
+      "Frequency": 4550.0,
+      "Date": "20/05/2022 16:12:58",
+      "Save_name": null
+    }
+  },
+  {
+    "channel 8": {
+      "Power": 0,
+      "Bandwidth": 0,
+      "Frequency": 5200.0,
+      "Date": "20/05/2022 16:12:58",
+      "Save_name": null
+    }
+  }
+] :: DEBUG
+20-May-22 16:13:04 :: helpers :: long save Complete :: INFO
+23-May-22 14:37:21 :: __main__ :: creating dpg context :: INFO
+23-May-22 14:37:21 :: interface :: Call to device initiated :: DEBUG
+23-May-22 14:37:21 :: interface :: Call initiated from Linux to  :: INFO
+23-May-22 15:08:14 :: __main__ :: creating dpg context :: INFO
+23-May-22 15:08:14 :: interface :: Call to device initiated :: DEBUG
+23-May-22 15:08:14 :: interface :: Call initiated from Linux to  :: INFO
+23-May-22 15:08:47 :: __main__ :: creating dpg context :: INFO
+23-May-22 15:08:47 :: interface :: Call to device initiated :: DEBUG
+23-May-22 15:08:47 :: interface :: Call initiated from Linux to  :: INFO
+23-May-22 15:09:41 :: __main__ :: creating dpg context :: INFO
+23-May-22 15:09:41 :: interface :: Call to device initiated :: DEBUG
+23-May-22 15:09:41 :: interface :: Call initiated from Linux to  :: INFO
+23-May-22 15:09:44 :: __main__ :: creating dpg context :: INFO
+23-May-22 15:09:44 :: interface :: Call to device initiated :: DEBUG
+23-May-22 15:09:44 :: interface :: Call initiated from Linux to  :: INFO
+23-May-22 15:10:42 :: __main__ :: creating dpg context :: INFO
+23-May-22 15:10:42 :: interface :: Call to device initiated :: DEBUG
+23-May-22 15:10:42 :: interface :: Call initiated from Linux to  :: INFO

@@ -1,9 +1,11 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 import logging
+import platform
 from typing import Any
 
 import dearpygui.dearpygui as dpg
+from interface import find_device
 
 from helpers import (
     auto_fill_bandwidth,
@@ -15,6 +17,7 @@ from helpers import (
     data_vehicle,
     demo_config,
     demo_config_2,
+    device_finder,
     kill_channel,
     mission_alpha,
     mission_bravo,
@@ -43,6 +46,7 @@ DEMO_HEIGHT: int = 330
 WIFI_HEIGHT: int = 405
 CELLUAR_HEIGHT: int = 240
 MAIN_TABLE_HEIGHT: int = 1
+BUTTON_WIDTH = 120
 
 
 dpg.create_context()
@@ -90,9 +94,9 @@ with dpg.handler_registry():
     dpg.add_mouse_wheel_handler(callback=change_inputs)
 
 with dpg.font_registry():
-    default_font_added = dpg.add_font(file="MesloLGS NF Regular.ttf", size=40)
-    ital_font = dpg.add_font(file="MesloLGS NF Italic.ttf", size=20)
-    bold_font = dpg.add_font(file="MesloLGS NF Bold Italic.ttf", size=40)
+    default_font_added = dpg.add_font(file="src/gui/MesloLGS NF Regular.ttf", size=40)
+    ital_font = dpg.add_font(file="src/gui/MesloLGS NF Italic.ttf", size=20)
+    bold_font = dpg.add_font(file="src/gui/MesloLGS NF Bold Italic.ttf", size=40)
 
 # Primary Window
 with dpg.window(
@@ -255,7 +259,7 @@ with dpg.window(
                 pos=(30, 25),
                 enabled=True,
                 callback=kill_channel,
-                user_data=i+1
+                user_data=i + 1,
             )
 
             dpg.bind_item_theme(
@@ -327,20 +331,32 @@ with dpg.window(
             mousebutton=dpg.mvMouseButton_Left,
             modal=True,
             tag="modal_device_config",
+            no_move=True,
         ):
             dpg.add_menu(
                 parent="modal_device_config",
                 label="Choose Device: ",
                 tag="choose_device",
             )
-            [
-                dpg.add_menu_item(
-                    parent="choose_device",
-                    label=f"Device Number: {i}",
-                    callback=lambda: logger.info(msg="\nMenu item called\n"),
+            try:
+                [
+                    dpg.add_menu_item(
+                        parent="choose_device",
+                        label=f"Device Number: {i} , {device}",
+                        callback=device_finder,
+                        user_data=platform.system(),
+                    )
+                    for i, device in enumerate(find_device()[1])
+                    if i
+                ]
+            except TypeError:
+                dpg.popup(
+                    parent=device_config,
+                    modal=True,
+                    tag="no_device_detected",
+                    no_move=True,
                 )
-                for i in range(1, 9)
-            ]
+                logger.exception(msg="No device plugged in")
 
             dpg.add_button(
                 label="Quit",
@@ -371,7 +387,7 @@ with dpg.window(
         reset_all = dpg.add_button(
             tag="Reset All Channels",
             height=70,
-            width=90,
+            width=BUTTON_WIDTH,
             callback=reset_button,
             pos=(
                 (dpg.get_item_width(item="big_buttons") - 50) / DIVISOR,
@@ -393,17 +409,17 @@ with dpg.window(
         send_all = dpg.add_button(
             tag="Send All",
             height=85,
-            width=100,
+            width=BUTTON_WIDTH,
             callback=send_all_channels,
             pos=(
-                (dpg.get_item_width(item="big_buttons") - 280) / DIVISOR,
+                (dpg.get_item_width(item="big_buttons") - 260) / DIVISOR,
                 (dpg.get_item_height(item="big_buttons") - SEND_RESET_ALL_HEIGHT) / 2,
             ),
         )
         dpg.add_text(
             default_value="SEND\nALL",
             pos=(
-                (dpg.get_item_width(item="big_buttons") - 240) / DIVISOR,
+                (dpg.get_item_width(item="big_buttons") - 200) / DIVISOR,
                 (dpg.get_item_height(item="big_buttons") - SEND_RESET_ALL_HEIGHT) / 2,
             ),
             color=(0, 0, 0, 255),
@@ -417,7 +433,7 @@ with dpg.window(
             callback=quick_save,
             label="QUICK\n SAVE\nCONFIG",
             height=70,
-            width=90,
+            width=BUTTON_WIDTH,
             pos=(
                 (dpg.get_item_width(item="big_buttons") - 50) / DIVISOR,
                 (dpg.get_item_height(item="big_buttons") - QUICK_CONFIG_HEIGHT) / 2,
@@ -432,7 +448,7 @@ with dpg.window(
             callback=quick_load,
             label="QUICK\n LOAD\nCONFIG",
             height=70,
-            width=90,
+            width=BUTTON_WIDTH,
             pos=(
                 (dpg.get_item_width(item="big_buttons") - 250) / DIVISOR,
                 (dpg.get_item_height(item="big_buttons") - QUICK_CONFIG_HEIGHT) / 2,
@@ -446,7 +462,7 @@ with dpg.window(
             tag="custom_save",
             height=70,
             label="CUSTOM\nCONFIG\nSAVE",
-            width=90,
+            width=BUTTON_WIDTH,
             pos=(
                 (dpg.get_item_width(item="big_buttons") - 50) / DIVISOR,
                 (dpg.get_item_height(item="big_buttons") - CUSTOM_CONFIG_HEIGHT) / 2,
@@ -461,7 +477,6 @@ with dpg.window(
         ):
             dpg.add_input_text(
                 label="Save Name: ",
-                # default_value=,
                 tag="save_custom_input",
             )
             dpg.add_button(
@@ -480,7 +495,7 @@ with dpg.window(
         custom_load_button = dpg.add_button(
             tag="custom_load_button",
             height=70,
-            width=90,
+            width=BUTTON_WIDTH,
             label="CUSTOM\nCONFIG\nLOAD",
             pos=(
                 (dpg.get_item_width(item="big_buttons") - 250) / DIVISOR,
@@ -519,7 +534,7 @@ with dpg.window(
         demo_button = dpg.add_button(
             tag="demo",
             height=70,
-            width=90,
+            width=BUTTON_WIDTH,
             callback=demo_config,
             label="DEMO\nCONFIG",
             pos=(
@@ -534,7 +549,7 @@ with dpg.window(
         demo_two_button = dpg.add_button(
             tag="demo_two",
             height=70,
-            width=90,
+            width=BUTTON_WIDTH,
             callback=demo_config_2,
             label="DEMO\nTWO\nCONFIG",
             pos=(
@@ -551,7 +566,7 @@ with dpg.window(
             callback=mission_alpha,
             label="ALPHA\nCONFIG",
             height=70,
-            width=90,
+            width=BUTTON_WIDTH,
             pos=(
                 (dpg.get_item_width(item="big_buttons") - 50) / DIVISOR,
                 (dpg.get_item_height(item="big_buttons") + CELLUAR_HEIGHT) / 2,
@@ -566,7 +581,7 @@ with dpg.window(
             callback=mission_bravo,
             label="BRAVO\nCONFIG",
             height=70,
-            width=90,
+            width=BUTTON_WIDTH,
             pos=(
                 (dpg.get_item_width(item="big_buttons") - 250) / DIVISOR,
                 (dpg.get_item_height(item="big_buttons") + CELLUAR_HEIGHT) / 2,
@@ -581,7 +596,7 @@ with dpg.window(
             callback=two_point_four,
             label="WIFI\nCONFIG",
             height=70,
-            width=90,
+            width=BUTTON_WIDTH,
             pos=(
                 (dpg.get_item_width(item="big_buttons") - 250) / DIVISOR,
                 (dpg.get_item_height(item="big_buttons") + WIFI_HEIGHT) / 2,
@@ -596,7 +611,7 @@ with dpg.window(
             callback=mission_charlie,
             label="CHARLIE\nCONFIG",
             height=70,
-            width=90,
+            width=BUTTON_WIDTH,
             pos=(
                 (dpg.get_item_width(item="big_buttons") - 50) / DIVISOR,
                 (dpg.get_item_height(item="big_buttons") + WIFI_HEIGHT) / 2,
@@ -610,7 +625,7 @@ with dpg.window(
             callback=mission_delta,
             label="DELTA\nCONFIG",
             height=70,
-            width=90,
+            width=BUTTON_WIDTH,
             pos=(
                 (dpg.get_item_width(item="big_buttons") - 50) / DIVISOR,
                 (dpg.get_item_height(item="big_buttons") - 80),
@@ -624,7 +639,7 @@ with dpg.window(
             # callback=mission_charlie,
             label="ECHO\nCONFIG",
             height=70,
-            width=90,
+            width=BUTTON_WIDTH,
             pos=(
                 (dpg.get_item_width(item="big_buttons") - 250) / DIVISOR,
                 (dpg.get_item_height(item="big_buttons") - 80),

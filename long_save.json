@@ -1,74 +1,74 @@
 [
   {
     "channel 1": {
-      "Power": 45,
-      "Bandwidth": 88,
-      "Frequency": 3415.156005859375,
-      "Date": "10/05/2022 10:15:59",
-      "Save_name": "test save"
+      "Power": 0,
+      "Bandwidth": 0,
+      "Frequency": 650.0,
+      "Date": "20/05/2022 15:57:59",
+      "Save_name": "custom save 1"
     }
   },
   {
     "channel 2": {
-      "Power": 48,
-      "Bandwidth": 82,
-      "Frequency": 3420.156005859375,
-      "Date": "10/05/2022 10:15:59",
-      "Save_name": "test save"
+      "Power": 0,
+      "Bandwidth": 0,
+      "Frequency": 1300.0,
+      "Date": "20/05/2022 15:57:59",
+      "Save_name": "custom save 1"
     }
   },
   {
     "channel 3": {
-      "Power": 50,
-      "Bandwidth": 93,
-      "Frequency": 3425.156005859375,
-      "Date": "10/05/2022 10:15:59",
-      "Save_name": "test save"
+      "Power": 0,
+      "Bandwidth": 0,
+      "Frequency": 1950.0,
+      "Date": "20/05/2022 15:57:59",
+      "Save_name": "custom save 1"
     }
   },
   {
     "channel 4": {
-      "Power": 55,
-      "Bandwidth": 75,
-      "Frequency": 3430.156005859375,
-      "Date": "10/05/2022 10:15:59",
-      "Save_name": "test save"
+      "Power": 0,
+      "Bandwidth": 0,
+      "Frequency": 2600.0,
+      "Date": "20/05/2022 15:57:59",
+      "Save_name": "custom save 1"
     }
   },
   {
     "channel 5": {
-      "Power": 38,
-      "Bandwidth": 94,
-      "Frequency": 3435.156005859375,
-      "Date": "10/05/2022 10:15:59",
-      "Save_name": "test save"
+      "Power": 0,
+      "Bandwidth": 0,
+      "Frequency": 3250.0,
+      "Date": "20/05/2022 15:57:59",
+      "Save_name": "custom save 1"
     }
   },
   {
     "channel 6": {
-      "Power": 51,
-      "Bandwidth": 77,
-      "Frequency": 3440.156005859375,
-      "Date": "10/05/2022 10:15:59",
-      "Save_name": "test save"
+      "Power": 0,
+      "Bandwidth": 0,
+      "Frequency": 3900.0,
+      "Date": "20/05/2022 15:57:59",
+      "Save_name": "custom save 1"
     }
   },
   {
     "channel 7": {
-      "Power": 40,
-      "Bandwidth": 91,
-      "Frequency": 3445.156005859375,
-      "Date": "10/05/2022 10:15:59",
-      "Save_name": "test save"
+      "Power": 0,
+      "Bandwidth": 0,
+      "Frequency": 4550.0,
+      "Date": "20/05/2022 15:57:59",
+      "Save_name": "custom save 1"
     }
   },
   {
     "channel 8": {
-      "Power": 51,
-      "Bandwidth": 82,
-      "Frequency": 3450.156005859375,
-      "Date": "10/05/2022 10:15:59",
-      "Save_name": "test save"
+      "Power": 0,
+      "Bandwidth": 0,
+      "Frequency": 5200.0,
+      "Date": "20/05/2022 15:57:59",
+      "Save_name": "custom save 1"
     }
   }
 ][
@@ -76,144 +76,217 @@
     "channel 1": {
       "Power": 0,
       "Bandwidth": 0,
-      "Frequency": 2412.0,
-      "Date": "11/05/2022 09:04:38",
-      "Save_name": "test save 2"
+      "Frequency": 650.0,
+      "Date": "20/05/2022 15:59:39",
+      "Save_name": "custom save 2"
     }
   },
   {
     "channel 2": {
       "Power": 0,
       "Bandwidth": 0,
-      "Frequency": 2417.0,
-      "Date": "11/05/2022 09:04:38",
-      "Save_name": "test save 2"
+      "Frequency": 1300.0,
+      "Date": "20/05/2022 15:59:39",
+      "Save_name": "custom save 2"
     }
   },
   {
     "channel 3": {
       "Power": 0,
       "Bandwidth": 0,
-      "Frequency": 2422.0,
-      "Date": "11/05/2022 09:04:38",
-      "Save_name": "test save 2"
+      "Frequency": 1950.0,
+      "Date": "20/05/2022 15:59:39",
+      "Save_name": "custom save 2"
     }
   },
   {
     "channel 4": {
       "Power": 0,
       "Bandwidth": 0,
-      "Frequency": 2427.0,
-      "Date": "11/05/2022 09:04:38",
-      "Save_name": "test save 2"
+      "Frequency": 2600.0,
+      "Date": "20/05/2022 15:59:39",
+      "Save_name": "custom save 2"
     }
   },
   {
     "channel 5": {
       "Power": 0,
       "Bandwidth": 0,
-      "Frequency": 2432.0,
-      "Date": "11/05/2022 09:04:38",
-      "Save_name": "test save 2"
+      "Frequency": 3250.0,
+      "Date": "20/05/2022 15:59:39",
+      "Save_name": "custom save 2"
     }
   },
   {
     "channel 6": {
       "Power": 0,
       "Bandwidth": 0,
-      "Frequency": 2437.0,
-      "Date": "11/05/2022 09:04:38",
-      "Save_name": "test save 2"
+      "Frequency": 3900.0,
+      "Date": "20/05/2022 15:59:39",
+      "Save_name": "custom save 2"
     }
   },
   {
     "channel 7": {
       "Power": 0,
       "Bandwidth": 0,
-      "Frequency": 2442.0,
-      "Date": "11/05/2022 09:04:38",
-      "Save_name": "test save 2"
+      "Frequency": 4550.0,
+      "Date": "20/05/2022 15:59:39",
+      "Save_name": "custom save 2"
     }
   },
   {
     "channel 8": {
       "Power": 0,
       "Bandwidth": 0,
-      "Frequency": 2447.0,
-      "Date": "11/05/2022 09:04:38",
-      "Save_name": "test save 2"
+      "Frequency": 5200.0,
+      "Date": "20/05/2022 15:59:39",
+      "Save_name": "custom save 2"
     }
   }
 ][
   {
     "channel 1": {
-      "Power": 45,
-      "Bandwidth": 12,
-      "Frequency": 1710.0,
-      "Date": "11/05/2022 13:37:37",
+      "Power": 0,
+      "Bandwidth": 0,
+      "Frequency": 650.0,
+      "Date": "20/05/2022 16:00:19",
+      "Save_name": "custom save 3"
+    }
+  },
+  {
+    "channel 2": {
+      "Power": 0,
+      "Bandwidth": 0,
+      "Frequency": 1300.0,
+      "Date": "20/05/2022 16:00:19",
+      "Save_name": "custom save 3"
+    }
+  },
+  {
+    "channel 3": {
+      "Power": 0,
+      "Bandwidth": 0,
+      "Frequency": 1950.0,
+      "Date": "20/05/2022 16:00:19",
+      "Save_name": "custom save 3"
+    }
+  },
+  {
+    "channel 4": {
+      "Power": 0,
+      "Bandwidth": 0,
+      "Frequency": 2600.0,
+      "Date": "20/05/2022 16:00:19",
+      "Save_name": "custom save 3"
+    }
+  },
+  {
+    "channel 5": {
+      "Power": 0,
+      "Bandwidth": 0,
+      "Frequency": 3250.0,
+      "Date": "20/05/2022 16:00:19",
+      "Save_name": "custom save 3"
+    }
+  },
+  {
+    "channel 6": {
+      "Power": 0,
+      "Bandwidth": 0,
+      "Frequency": 3900.0,
+      "Date": "20/05/2022 16:00:19",
+      "Save_name": "custom save 3"
+    }
+  },
+  {
+    "channel 7": {
+      "Power": 0,
+      "Bandwidth": 0,
+      "Frequency": 4550.0,
+      "Date": "20/05/2022 16:00:19",
+      "Save_name": "custom save 3"
+    }
+  },
+  {
+    "channel 8": {
+      "Power": 0,
+      "Bandwidth": 0,
+      "Frequency": 5200.0,
+      "Date": "20/05/2022 16:00:19",
+      "Save_name": "custom save 3"
+    }
+  }
+][
+  {
+    "channel 1": {
+      "Power": 0,
+      "Bandwidth": 0,
+      "Frequency": 650.0,
+      "Date": "20/05/2022 16:12:58",
       "Save_name": null
     }
   },
   {
     "channel 2": {
-      "Power": 45,
-      "Bandwidth": 12,
-      "Frequency": 1715.625,
-      "Date": "11/05/2022 13:37:37",
+      "Power": 0,
+      "Bandwidth": 0,
+      "Frequency": 1300.0,
+      "Date": "20/05/2022 16:12:58",
       "Save_name": null
     }
   },
   {
     "channel 3": {
-      "Power": 45,
-      "Bandwidth": 12,
-      "Frequency": 1721.25,
-      "Date": "11/05/2022 13:37:37",
+      "Power": 0,
+      "Bandwidth": 0,
+      "Frequency": 1950.0,
+      "Date": "20/05/2022 16:12:58",
       "Save_name": null
     }
   },
   {
     "channel 4": {
-      "Power": 45,
-      "Bandwidth": 12,
-      "Frequency": 1726.875,
-      "Date": "11/05/2022 13:37:37",
+      "Power": 0,
+      "Bandwidth": 0,
+      "Frequency": 2600.0,
+      "Date": "20/05/2022 16:12:58",
       "Save_name": null
     }
   },
   {
     "channel 5": {
-      "Power": 45,
-      "Bandwidth": 12,
-      "Frequency": 1732.5,
-      "Date": "11/05/2022 13:37:37",
+      "Power": 0,
+      "Bandwidth": 0,
+      "Frequency": 3250.0,
+      "Date": "20/05/2022 16:12:58",
       "Save_name": null
     }
   },
   {
     "channel 6": {
-      "Power": 45,
-      "Bandwidth": 12,
-      "Frequency": 1738.125,
-      "Date": "11/05/2022 13:37:37",
+      "Power": 0,
+      "Bandwidth": 0,
+      "Frequency": 3900.0,
+      "Date": "20/05/2022 16:12:58",
       "Save_name": null
     }
   },
   {
     "channel 7": {
-      "Power": 45,
-      "Bandwidth": 12,
-      "Frequency": 1743.75,
-      "Date": "11/05/2022 13:37:37",
+      "Power": 0,
+      "Bandwidth": 0,
+      "Frequency": 4550.0,
+      "Date": "20/05/2022 16:12:58",
       "Save_name": null
     }
   },
   {
     "channel 8": {
-      "Power": 45,
-      "Bandwidth": 12,
-      "Frequency": 1749.375,
-      "Date": "11/05/2022 13:37:37",
+      "Power": 0,
+      "Bandwidth": 0,
+      "Frequency": 5200.0,
+      "Date": "20/05/2022 16:12:58",
       "Save_name": null
     }
   }

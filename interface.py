@@ -1,3 +1,4 @@
+from cmath import exp
 from dataclasses import dataclass
 import platform
 from time import sleep
@@ -19,24 +20,6 @@ BAUDRATE = 230_400
 DEVICE_PORT: int = 0
 
 
-def serial_call(*args) -> None:
-    logger.debug(msg="Call to device initiated")
-    logger.info(msg=f"Call initiated from {platform.system()} to ")
-    sleep(0.1)
-    try:
-        with serial.Serial() as ser:
-            ser.baudrate = BAUDRATE
-            ser.port = PORT
-            ser.timeout = 2  # seconds
-            ser.open()
-            ser.write(f"{' '.join([arg for arg in args])}".encode("utf-8"))
-            # outputs: list[str] = [line.decode('ascii') for line in ser.readlines()]
-            # outputs = " ".join(output for output in outputs)
-            # print(outputs)
-    except serial.SerialException:
-        logger.exception(msg="No device found")
-
-
 def find_device(DEVICE_NUMBER: int = 0) -> list:
     """Find the Megatron device plugged into the Linux computer"""
 
@@ -55,8 +38,8 @@ def find_device(DEVICE_NUMBER: int = 0) -> list:
                 capture_output=False,
             )
             results = sorted(results_.stdout.strip().splitlines())
-            print(results[DEVICE_NUMBER])
-            return results[DEVICE_NUMBER]
+            # print(results[DEVICE_NUMBER])
+            return results[DEVICE_NUMBER], results
         except IndexError:
             logger.warning("No device connected to machine")
             logger.exception("Device not found")
@@ -71,12 +54,35 @@ def find_device(DEVICE_NUMBER: int = 0) -> list:
         return "COM3"
 
 
+def serial_call(*args) -> None:
+    logger.debug(msg="Call to device initiated")
+    logger.info(msg=f"Call initiated from {platform.system()} to USB device")
+    sleep(0.1)
+    global PORT
+    try:
+        with serial.Serial() as ser:
+            ser.baudrate = BAUDRATE
+            ser.port = PORT
+            ser.timeout = 2  # seconds
+            ser.open()
+            ser.write(f"{' '.join([arg for arg in args])}".encode("utf-8"))
+            # outputs: list[str] = [line.decode('ascii') for line in ser.readlines()]
+            # outputs = " ".join(output for output in outputs)
+            # print(outputs)
+    except (serial.SerialException, NameError):
+        logger.exception(msg="No device found")
+
+
 @dataclass(slots=True)
 class Megatron:
     """Class to organize the manipulation of 8 channels"""
 
-    global PORT
-    PORT = find_device(DEVICE_PORT)
+    try:
+        global PORT
+        PORT = find_device(DEVICE_PORT)[0]
+    except TypeError:
+        logger.error(msg="No device found on system")
+        logger.exception(msg="No device found on system")
 
     def status(self) -> None:
         """Check the status of the board"""
