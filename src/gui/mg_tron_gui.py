@@ -97,6 +97,7 @@ with dpg.font_registry():
     default_font_added = dpg.add_font(file="src/gui/MesloLGS NF Regular.ttf", size=40)
     ital_font = dpg.add_font(file="src/gui/MesloLGS NF Italic.ttf", size=20)
     bold_font = dpg.add_font(file="src/gui/MesloLGS NF Bold Italic.ttf", size=40)
+    small_font = dpg.add_font(file="src/gui/MesloLGS NF Italic.ttf", size=13)
 
 # Primary Window
 with dpg.window(
@@ -318,14 +319,16 @@ with dpg.window(
         pos=(680,),
         tag="device_config",
         border=False,
-        width=180,
+        width=200,
         height=75,
     ):
+
         device_config = dpg.add_button(
             label="Device Config",
             tag="device_config_btn",
             pos=(0,),
         )
+
         with dpg.popup(
             parent=device_config,
             mousebutton=dpg.mvMouseButton_Left,
@@ -333,30 +336,33 @@ with dpg.window(
             tag="modal_device_config",
             no_move=True,
         ):
+
             dpg.add_menu(
                 parent="modal_device_config",
                 label="Choose Device: ",
                 tag="choose_device",
             )
+
             try:
                 [
                     dpg.add_menu_item(
                         parent="choose_device",
-                        label=f"Device Number: {i} , {device}",
+                        label=f"Device Number: {i}, {device}",
+                        tag=f"device_menu_item_{i}",
                         callback=device_finder,
-                        user_data=platform.system(),
+                        user_data=i,
                     )
                     for i, device in enumerate(find_device()[1])
-                    if i
                 ]
             except TypeError:
-                dpg.popup(
-                    parent=device_config,
-                    modal=True,
-                    tag="no_device_detected",
-                    no_move=True,
+                dpg.add_menu_item(
+                    parent="choose_device",
+                    label=f"Device Number: Not Found",
+                    callback=lambda: dpg.configure_item(
+                        item="modal_device_config", show=False
+                    ),
                 )
-                logger.exception(msg="No device plugged in")
+                logger.exception(msg="No device detected in")
 
             dpg.add_button(
                 label="Quit",
@@ -364,9 +370,9 @@ with dpg.window(
                     item="modal_device_config", show=False
                 ),
             )
-
         dpg.add_text(
-            default_value="Device: TBD",
+            tag="device_indicator",
+            default_value=f"Device:{None}",
             pos=(5, 35),
         )
 
@@ -374,7 +380,7 @@ with dpg.window(
     # Side buttons #
     ################
     with dpg.child_window(
-        pos=(900, 0),
+        pos=(870, 0),
         tag="big_buttons",
         width=300,
         height=dpg.get_item_height(item="Primary Window") / 1.72,
@@ -646,8 +652,28 @@ with dpg.window(
             ),
         )
 
+    ###############
+    # Version Tag #
+    ###############
+    with dpg.child_window(
+        tag="version",
+        height=15,
+        width=70,
+        border=False,
+        no_scrollbar=True,
+        pos=(
+            RESOLUTION[0] - 65,
+            RESOLUTION[1] - 30,
+        ),
+    ):
+        dpg.add_text(
+            default_value="ver. 0.8.3",
+            tag="ver_num",
+        )
 
 dpg.bind_font(font=ital_font)
+dpg.bind_item_font(item="ver_num", font=small_font)
+# dpg.bind_item_font(item="")
 [
     (
         dpg.bind_item_font(item=f"freq_{i}", font=bold_font),

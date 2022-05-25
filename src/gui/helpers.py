@@ -2,12 +2,12 @@
 # -*- coding: utf-8 -*-
 import json
 import logging
+from subprocess import call
 from platform import platform
-import random
-from time import sleep
 import dearpygui.dearpygui as dpg
+from interface import DEVICE_PORT
 
-from interface import Megatron
+from interface import Megatron, find_device
 
 from datetime import datetime
 
@@ -445,5 +445,15 @@ def kill_channel(sender, app_data, user_data: int) -> None:
 def device_finder(sender, app_data, user_data: platform) -> None:
     """List all the usb device connected to the machine"""
 
-    loggey.info(f"Device identified as: {user_data}")
     print(f"Device identified as: {user_data}")
+    print(f"sender: {sender}\n" f"app_data: {app_data}\n" f"user_data: {user_data}")
+
+    # user data contains the chosen port number
+    DEVICE_PORT = user_data
+    try:
+        devices = call("src/gui/find_dev.sh")
+    except TypeError:
+        loggey.exception(msg="No devices detected")
+    # reinitialize the method to update the device selected
+    device = find_device(DEVICE_PORT)
+    dpg.set_value(item="device_indicator", value=f"Device:{devices}")

@@ -2,6 +2,7 @@ from cmath import exp
 from dataclasses import dataclass
 import platform
 from time import sleep
+from pyparsing import restOfLine
 import serial
 import subprocess
 import logging
@@ -20,7 +21,7 @@ BAUDRATE = 230_400
 DEVICE_PORT: int = 0
 
 
-def find_device(DEVICE_NUMBER: int = 0) -> list:
+def find_device(DEVICE_NUMBER: int = DEVICE_PORT) -> tuple[str, list[str]]:
     """Find the Megatron device plugged into the Linux computer"""
 
     # Determine if system is Linux or WIN
@@ -45,7 +46,7 @@ def find_device(DEVICE_NUMBER: int = 0) -> list:
             logger.exception("Device not found")
 
     elif platform.system().lower() == "windows":
-        global PORT
+        # global PORT
         # Search Windows filesystem for device
         # filename = "COM3"
         # devices = [os.path.join(root, filename) for root, dir,
