@@ -667,7 +667,7 @@ with dpg.window(
         ),
     ):
         dpg.add_text(
-            default_value="ver. 0.8.3",
+            default_value="ver. 0.9.0",
             tag="ver_num",
         )
 

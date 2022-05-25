@@ -2981,3 +2981,211 @@ Traceback (most recent call last):
   File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/mg_tron_gui.py", line 355, in <module>
     for i, device in enumerate(find_device()[1])
 TypeError: 'NoneType' object is not subscriptable
+25-May-22 16:51:19 :: __main__ :: creating dpg context :: INFO
+25-May-22 16:51:19 :: interface :: Call to device initiated :: DEBUG
+25-May-22 16:51:19 :: interface :: Call initiated from Linux to USB device :: INFO
+25-May-22 16:54:25 :: __main__ :: creating dpg context :: INFO
+25-May-22 16:54:25 :: interface :: Call to device initiated :: DEBUG
+25-May-22 16:54:25 :: interface :: Call initiated from Linux to USB device :: INFO
+25-May-22 16:58:30 :: __main__ :: creating dpg context :: INFO
+25-May-22 16:58:30 :: interface :: Call to device initiated :: DEBUG
+25-May-22 16:58:30 :: interface :: Call initiated from Linux to USB device :: INFO
+25-May-22 16:59:28 :: __main__ :: creating dpg context :: INFO
+25-May-22 16:59:28 :: interface :: Call to device initiated :: DEBUG
+25-May-22 16:59:28 :: interface :: Call initiated from Linux to USB device :: INFO
+25-May-22 17:04:42 :: __main__ :: creating dpg context :: INFO
+25-May-22 17:04:42 :: interface :: Call to device initiated :: DEBUG
+25-May-22 17:04:42 :: interface :: Call initiated from Linux to USB device :: INFO
+25-May-22 17:05:00 :: __main__ :: creating dpg context :: INFO
+25-May-22 17:05:00 :: interface :: Call to device initiated :: DEBUG
+25-May-22 17:05:00 :: interface :: Call initiated from Linux to USB device :: INFO
+25-May-22 17:10:45 :: __main__ :: creating dpg context :: INFO
+25-May-22 17:10:45 :: interface :: Call to device initiated :: DEBUG
+25-May-22 17:10:45 :: interface :: Call initiated from Linux to USB device :: INFO
+25-May-22 17:12:23 :: __main__ :: creating dpg context :: INFO
+25-May-22 17:12:23 :: interface :: Call to device initiated :: DEBUG
+25-May-22 17:12:23 :: interface :: Call initiated from Linux to USB device :: INFO
+25-May-22 17:14:05 :: __main__ :: creating dpg context :: INFO
+25-May-22 17:14:05 :: interface :: Call to device initiated :: DEBUG
+25-May-22 17:14:05 :: interface :: Call initiated from Linux to USB device :: INFO
+25-May-22 17:14:58 :: __main__ :: creating dpg context :: INFO
+25-May-22 17:14:58 :: interface :: Call to device initiated :: DEBUG
+25-May-22 17:14:58 :: interface :: Call initiated from Linux to USB device :: INFO
+25-May-22 17:16:28 :: __main__ :: creating dpg context :: INFO
+25-May-22 17:16:28 :: interface :: Call to device initiated :: DEBUG
+25-May-22 17:16:28 :: interface :: Call initiated from Linux to USB device :: INFO
+25-May-22 17:17:08 :: __main__ :: creating dpg context :: INFO
+25-May-22 17:17:08 :: interface :: Call to device initiated :: DEBUG
+25-May-22 17:17:08 :: interface :: Call initiated from Linux to USB device :: INFO
+25-May-22 17:17:41 :: __main__ :: creating dpg context :: INFO
+25-May-22 17:17:41 :: interface :: Call to device initiated :: DEBUG
+25-May-22 17:17:41 :: interface :: Call initiated from Linux to USB device :: INFO
+25-May-22 17:17:58 :: __main__ :: creating dpg context :: INFO
+25-May-22 17:17:58 :: interface :: Call to device initiated :: DEBUG
+25-May-22 17:17:58 :: interface :: Call initiated from Linux to USB device :: INFO
+25-May-22 17:18:14 :: __main__ :: creating dpg context :: INFO
+25-May-22 17:18:14 :: interface :: Call to device initiated :: DEBUG
+25-May-22 17:18:14 :: interface :: Call initiated from Linux to USB device :: INFO
+25-May-22 17:18:44 :: __main__ :: creating dpg context :: INFO
+25-May-22 17:18:44 :: interface :: Call to device initiated :: DEBUG
+25-May-22 17:18:44 :: interface :: Call initiated from Linux to USB device :: INFO
+25-May-22 17:19:49 :: __main__ :: creating dpg context :: INFO
+25-May-22 17:19:49 :: interface :: Call to device initiated :: DEBUG
+25-May-22 17:19:49 :: interface :: Call initiated from Linux to USB device :: INFO
+25-May-22 17:20:06 :: __main__ :: creating dpg context :: INFO
+25-May-22 17:20:06 :: interface :: Call to device initiated :: DEBUG
+25-May-22 17:20:06 :: interface :: Call initiated from Linux to USB device :: INFO
+25-May-22 17:20:31 :: __main__ :: creating dpg context :: INFO
+25-May-22 17:20:31 :: interface :: Call to device initiated :: DEBUG
+25-May-22 17:20:31 :: interface :: Call initiated from Linux to USB device :: INFO
+25-May-22 17:21:23 :: __main__ :: creating dpg context :: INFO
+25-May-22 17:21:23 :: interface :: Call to device initiated :: DEBUG
+25-May-22 17:21:23 :: interface :: Call initiated from Linux to USB device :: INFO
+25-May-22 17:21:23 :: __main__ :: No device detected in :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/mg_tron_gui.py", line 355, in <module>
+    for i, device in enumerate(device_finder(None,None,None))
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/helpers.py", line 461, in device_finder
+    print(devices.split(sep="\n")[user_data])
+TypeError: list indices must be integers or slices, not NoneType
+25-May-22 17:24:35 :: __main__ :: creating dpg context :: INFO
+25-May-22 17:24:35 :: interface :: Call to device initiated :: DEBUG
+25-May-22 17:24:35 :: interface :: Call initiated from Linux to USB device :: INFO
+25-May-22 17:24:35 :: __main__ :: No device detected in :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/mg_tron_gui.py", line 355, in <module>
+    for i, device in enumerate(device_finder(None,None,None))
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/helpers.py", line 461, in device_finder
+    print(devices.split(sep="\n")[user_data])
+TypeError: list indices must be integers or slices, not NoneType
+25-May-22 17:25:30 :: __main__ :: creating dpg context :: INFO
+25-May-22 17:25:30 :: interface :: Call to device initiated :: DEBUG
+25-May-22 17:25:30 :: interface :: Call initiated from Linux to USB device :: INFO
+25-May-22 17:26:50 :: __main__ :: creating dpg context :: INFO
+25-May-22 17:26:50 :: interface :: Call to device initiated :: DEBUG
+25-May-22 17:26:50 :: interface :: Call initiated from Linux to USB device :: INFO
+25-May-22 17:27:15 :: __main__ :: creating dpg context :: INFO
+25-May-22 17:27:15 :: interface :: Call to device initiated :: DEBUG
+25-May-22 17:27:15 :: interface :: Call initiated from Linux to USB device :: INFO
+25-May-22 17:27:22 :: __main__ :: creating dpg context :: INFO
+25-May-22 17:27:22 :: interface :: Call to device initiated :: DEBUG
+25-May-22 17:27:22 :: interface :: Call initiated from Linux to USB device :: INFO
+25-May-22 17:27:22 :: __main__ :: No device detected in :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/mg_tron_gui.py", line 355, in <module>
+    for i, device in enumerate(device_finder(None,None,None))
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/helpers.py", line 461, in device_finder
+    print(devices.split(sep="\n")[user_data])
+TypeError: list indices must be integers or slices, not NoneType
+25-May-22 17:28:42 :: __main__ :: creating dpg context :: INFO
+25-May-22 17:28:42 :: interface :: Call to device initiated :: DEBUG
+25-May-22 17:28:42 :: interface :: Call initiated from Linux to USB device :: INFO
+25-May-22 17:28:43 :: __main__ :: No device detected in :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/mg_tron_gui.py", line 355, in <module>
+    for i, device in enumerate(device_finder(None,None,None))
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/helpers.py", line 461, in device_finder
+    print(devices.split(sep="\n")[user_data])
+TypeError: list indices must be integers or slices, not NoneType
+25-May-22 17:29:34 :: __main__ :: creating dpg context :: INFO
+25-May-22 17:29:34 :: interface :: Call to device initiated :: DEBUG
+25-May-22 17:29:34 :: interface :: Call initiated from Linux to USB device :: INFO
+25-May-22 17:29:34 :: __main__ :: No device detected in :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/mg_tron_gui.py", line 355, in <module>
+    for i, device in enumerate(device_finder(None,None,None))
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/helpers.py", line 461, in device_finder
+    print(devices.split(sep="\n")[user_data])
+TypeError: list indices must be integers or slices, not NoneType
+25-May-22 17:29:52 :: __main__ :: creating dpg context :: INFO
+25-May-22 17:29:52 :: interface :: Call to device initiated :: DEBUG
+25-May-22 17:29:52 :: interface :: Call initiated from Linux to USB device :: INFO
+25-May-22 17:30:50 :: __main__ :: creating dpg context :: INFO
+25-May-22 17:30:50 :: interface :: Call to device initiated :: DEBUG
+25-May-22 17:30:50 :: interface :: Call initiated from Linux to USB device :: INFO
+25-May-22 17:31:35 :: __main__ :: creating dpg context :: INFO
+25-May-22 17:31:35 :: interface :: Call to device initiated :: DEBUG
+25-May-22 17:31:35 :: interface :: Call initiated from Linux to USB device :: INFO
+25-May-22 17:31:35 :: __main__ :: No device detected in :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/mg_tron_gui.py", line 355, in <module>
+    for i, device in enumerate(device_finder(None,None,None))
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/helpers.py", line 461, in device_finder
+    print(devices.split(sep="\n")[user_data])
+TypeError: list indices must be integers or slices, not NoneType
+25-May-22 17:32:25 :: __main__ :: creating dpg context :: INFO
+25-May-22 17:32:25 :: interface :: Call to device initiated :: DEBUG
+25-May-22 17:32:25 :: interface :: Call initiated from Linux to USB device :: INFO
+25-May-22 17:33:05 :: __main__ :: creating dpg context :: INFO
+25-May-22 17:33:05 :: interface :: Call to device initiated :: DEBUG
+25-May-22 17:33:05 :: interface :: Call initiated from Linux to USB device :: INFO
+25-May-22 17:33:30 :: __main__ :: creating dpg context :: INFO
+25-May-22 17:33:30 :: interface :: Call to device initiated :: DEBUG
+25-May-22 17:33:30 :: interface :: Call initiated from Linux to USB device :: INFO
+25-May-22 17:34:14 :: __main__ :: creating dpg context :: INFO
+25-May-22 17:34:14 :: interface :: Call to device initiated :: DEBUG
+25-May-22 17:34:14 :: interface :: Call initiated from Linux to USB device :: INFO
+25-May-22 17:34:46 :: __main__ :: creating dpg context :: INFO
+25-May-22 17:34:46 :: interface :: Call to device initiated :: DEBUG
+25-May-22 17:34:46 :: interface :: Call initiated from Linux to USB device :: INFO
+25-May-22 17:35:04 :: __main__ :: creating dpg context :: INFO
+25-May-22 17:35:04 :: interface :: Call to device initiated :: DEBUG
+25-May-22 17:35:04 :: interface :: Call initiated from Linux to USB device :: INFO
+25-May-22 17:35:21 :: __main__ :: creating dpg context :: INFO
+25-May-22 17:35:21 :: interface :: Call to device initiated :: DEBUG
+25-May-22 17:35:21 :: interface :: Call initiated from Linux to USB device :: INFO
+25-May-22 17:35:52 :: __main__ :: creating dpg context :: INFO
+25-May-22 17:35:52 :: interface :: Call to device initiated :: DEBUG
+25-May-22 17:35:52 :: interface :: Call initiated from Linux to USB device :: INFO
+25-May-22 17:36:15 :: __main__ :: creating dpg context :: INFO
+25-May-22 17:36:15 :: interface :: Call to device initiated :: DEBUG
+25-May-22 17:36:15 :: interface :: Call initiated from Linux to USB device :: INFO
+25-May-22 17:37:17 :: __main__ :: creating dpg context :: INFO
+25-May-22 17:37:17 :: interface :: Call to device initiated :: DEBUG
+25-May-22 17:37:17 :: interface :: Call initiated from Linux to USB device :: INFO
+25-May-22 17:37:18 :: __main__ :: No device detected in :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/mg_tron_gui.py", line 355, in <module>
+    for i, device in enumerate(device_finder(None, None, None))
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/helpers.py", line 462, in device_finder
+    devices: str = devices.strip().split(sep="\n")[user_data]
+TypeError: list indices must be integers or slices, not NoneType
+25-May-22 17:40:33 :: __main__ :: creating dpg context :: INFO
+25-May-22 17:40:33 :: interface :: Call to device initiated :: DEBUG
+25-May-22 17:40:33 :: interface :: Call initiated from Linux to USB device :: INFO
+25-May-22 17:41:12 :: __main__ :: creating dpg context :: INFO
+25-May-22 17:41:12 :: interface :: Call to device initiated :: DEBUG
+25-May-22 17:41:12 :: interface :: Call initiated from Linux to USB device :: INFO
+25-May-22 17:41:31 :: __main__ :: creating dpg context :: INFO
+25-May-22 17:41:31 :: interface :: Call to device initiated :: DEBUG
+25-May-22 17:41:31 :: interface :: Call initiated from Linux to USB device :: INFO
+25-May-22 17:42:22 :: __main__ :: creating dpg context :: INFO
+25-May-22 17:42:22 :: interface :: Call to device initiated :: DEBUG
+25-May-22 17:42:22 :: interface :: Call initiated from Linux to USB device :: INFO
+25-May-22 17:43:28 :: __main__ :: creating dpg context :: INFO
+25-May-22 17:43:28 :: interface :: Call to device initiated :: DEBUG
+25-May-22 17:43:28 :: interface :: Call initiated from Linux to USB device :: INFO
+25-May-22 17:43:40 :: __main__ :: creating dpg context :: INFO
+25-May-22 17:43:40 :: interface :: Call to device initiated :: DEBUG
+25-May-22 17:43:40 :: interface :: Call initiated from Linux to USB device :: INFO
+25-May-22 17:44:00 :: __main__ :: creating dpg context :: INFO
+25-May-22 17:44:00 :: interface :: Call to device initiated :: DEBUG
+25-May-22 17:44:00 :: interface :: Call initiated from Linux to USB device :: INFO
+25-May-22 17:44:34 :: __main__ :: creating dpg context :: INFO
+25-May-22 17:44:34 :: interface :: Call to device initiated :: DEBUG
+25-May-22 17:44:34 :: interface :: Call initiated from Linux to USB device :: INFO
+25-May-22 17:44:45 :: __main__ :: creating dpg context :: INFO
+25-May-22 17:44:45 :: interface :: Call to device initiated :: DEBUG
+25-May-22 17:44:45 :: interface :: Call initiated from Linux to USB device :: INFO
+25-May-22 17:45:39 :: __main__ :: creating dpg context :: INFO
+25-May-22 17:45:39 :: interface :: Call to device initiated :: DEBUG
+25-May-22 17:45:39 :: interface :: Call initiated from Linux to USB device :: INFO
+25-May-22 17:45:43 :: __main__ :: creating dpg context :: INFO
+25-May-22 17:45:43 :: interface :: Call to device initiated :: DEBUG
+25-May-22 17:45:43 :: interface :: Call initiated from Linux to USB device :: INFO
+25-May-22 17:45:46 :: __main__ :: creating dpg context :: INFO
+25-May-22 17:45:46 :: interface :: Call to device initiated :: DEBUG
+25-May-22 17:45:46 :: interface :: Call initiated from Linux to USB device :: INFO
+25-May-22 17:45:59 :: __main__ :: creating dpg context :: INFO
+25-May-22 17:45:59 :: interface :: Call to device initiated :: DEBUG
+25-May-22 17:45:59 :: interface :: Call initiated from Linux to USB device :: INFO
