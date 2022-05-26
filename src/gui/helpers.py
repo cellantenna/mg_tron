@@ -2,12 +2,8 @@
 # -*- coding: utf-8 -*-
 import json
 import logging
-from os import sep
 import subprocess
-from platform import platform
 import dearpygui.dearpygui as dpg
-from numpy import byte
-from interface import DEVICE_PORT
 
 from interface import Megatron, find_device
 
@@ -448,7 +444,17 @@ def device_finder(sender, app_data, user_data: int) -> list[str]:
     """List all the usb microcontrollers connected to the machine"""
 
     # user data contains the chosen port number
-    # DEVICE_PORT = user_data
+    DEVICE_PORT = user_data
+
+    # reinitialize the method to update the device selected
+    device = find_device(DEVICE_PORT)
+
+    dpg.set_value(item="device_indicator", value=f"Device:{device}")
+    return device_names()
+
+
+def device_names() -> set[str]:
+    """Use a bash script to list connected microarchitectures"""
 
     try:
         devices: str = subprocess.check_output(
@@ -457,15 +463,6 @@ def device_finder(sender, app_data, user_data: int) -> list[str]:
     except TypeError:
         loggey.exception(msg="No devices detected")
 
-    ret_devices: list[str] = devices.split(sep="\n")
-    devices: str = devices.strip().split(sep="\n")[user_data]
-    # ret_devices = ret_devices.append("stuff")
-    
-    # for device in ret_devices:
-    #     print(device)
-
-    # reinitialize the method to update the device selected
-    # device = find_device(DEVICE_PORT)
-
-    dpg.set_value(item="device_indicator", value=f"Device:{devices}")
-    return ret_devices
+    devices: set = set(devices.strip().split(sep="\n"))
+    return devices
+    # print("Devices: ", devices)

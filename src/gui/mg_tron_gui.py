@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 import logging
-import platform
 from typing import Any
 
 import dearpygui.dearpygui as dpg
@@ -98,6 +97,7 @@ with dpg.font_registry():
     ital_font = dpg.add_font(file="src/gui/MesloLGS NF Italic.ttf", size=20)
     bold_font = dpg.add_font(file="src/gui/MesloLGS NF Bold Italic.ttf", size=40)
     small_font = dpg.add_font(file="src/gui/MesloLGS NF Italic.ttf", size=13)
+
 
 # Primary Window
 with dpg.window(
@@ -312,6 +312,14 @@ with dpg.window(
             ),
         )
 
+    [
+        (
+            dpg.bind_item_theme(item=f"send_btn_{i+1}", theme=blue_btn_theme),
+            dpg.bind_item_theme(item=f"stats_{i+1}", theme=grey_btn_theme),
+        )
+        for i in range(8)
+    ]  # Propgation loop
+
     #################
     # Device Config #
     #################
@@ -322,6 +330,20 @@ with dpg.window(
         width=200,
         height=75,
     ):
+        try:
+            # Grab the list of devices connected
+            devices: tuple[str] = find_device()[1]
+            print("Devices from GUI: ", devices)
+        except TypeError:
+            logger.exception(msg="No device detected")
+
+            [
+                dpg.bind_item_theme(
+                    item=f"stats_{channel}",
+                    theme=red_btn_theme,
+                )
+                for channel in range(1, 9)
+            ]
 
         device_config = dpg.add_button(
             label="Device Config",
@@ -352,9 +374,9 @@ with dpg.window(
                         callback=device_finder,
                         user_data=i,
                     )
-                    for i, device in enumerate(find_device()[1])
+                    for i, device in enumerate(devices)
                 ]
-            except TypeError:
+            except (TypeError, NameError):
                 dpg.add_menu_item(
                     parent="choose_device",
                     label=f"Device Number: Not Found",
@@ -370,11 +392,14 @@ with dpg.window(
                     item="modal_device_config", show=False
                 ),
             )
-        dpg.add_text(
-            tag="device_indicator",
-            default_value=f"Device:{None}",
-            pos=(5, 35),
-        )
+        try:
+            dpg.add_text(
+                tag="device_indicator",
+                default_value=f"Device:{devices[0]}",
+                pos=(5, 35),
+            )
+        except NameError:
+            logger.exception(msg="Device not detected")
 
     ################
     # Side buttons #
@@ -724,14 +749,6 @@ dpg.bind_theme(global_theme)
 ]
 dpg.bind_item_theme(item=send_all, theme=grn_btn_theme)
 dpg.bind_item_theme(item=reset_all, theme=red_btn_theme)
-
-[
-    (
-        dpg.bind_item_theme(item=f"send_btn_{i+1}", theme=blue_btn_theme),
-        dpg.bind_item_theme(item=f"stats_{i+1}", theme=grey_btn_theme),
-    )
-    for i in range(8)
-]  # Propgation loop
 
 
 ############################

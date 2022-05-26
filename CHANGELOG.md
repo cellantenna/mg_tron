@@ -12,18 +12,9 @@ Here we write upgrading and change notes.
 ✴️ MINOR version when you add functionality in a backwards compatible manner, and<br>
 ✳️ PATCH version when you make backwards compatible bug fixes.<br>
 
-### Added 
-
-- Added features
-
-### Changed
-- Changed items
-
-### Fixed
-- Bug fixes
-
 # [0.9.0] - 2022 MAY 25
 - Now show device location and name
+- Turn indicator buttons red if no device detected
 
 # [0.8.3] - 2022 MAY 25
 - Added version number in bottom right of GUI

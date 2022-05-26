@@ -81,6 +81,7 @@ class Megatron:
     try:
         global PORT
         PORT = find_device(DEVICE_PORT)[0]
+        print(PORT)
     except TypeError:
         logger.error(msg="No device found on system")
         logger.exception(msg="No device found on system")

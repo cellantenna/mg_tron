@@ -3189,3 +3189,1741 @@ TypeError: list indices must be integers or slices, not NoneType
 25-May-22 17:45:59 :: __main__ :: creating dpg context :: INFO
 25-May-22 17:45:59 :: interface :: Call to device initiated :: DEBUG
 25-May-22 17:45:59 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 08:43:35 :: __main__ :: creating dpg context :: INFO
+26-May-22 08:43:35 :: interface :: Call to device initiated :: DEBUG
+26-May-22 08:43:35 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 09:33:29 :: interface :: No device connected to machine :: WARNING
+26-May-22 09:33:29 :: interface :: Device not found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 43, in find_device
+    return results[DEVICE_NUMBER], results
+IndexError: list index out of range
+26-May-22 09:33:29 :: __main__ :: No device detected in :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/mg_tron_gui.py", line 355, in <module>
+    for i, device in enumerate(find_device()[1])
+TypeError: 'NoneType' object is not subscriptable
+26-May-22 13:52:33 :: __main__ :: creating dpg context :: INFO
+26-May-22 13:52:33 :: interface :: Call to device initiated :: DEBUG
+26-May-22 13:52:33 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 13:53:01 :: __main__ :: creating dpg context :: INFO
+26-May-22 13:53:01 :: interface :: Call to device initiated :: DEBUG
+26-May-22 13:53:01 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 13:55:21 :: __main__ :: creating dpg context :: INFO
+26-May-22 13:55:21 :: interface :: Call to device initiated :: DEBUG
+26-May-22 13:55:21 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 13:57:22 :: __main__ :: creating dpg context :: INFO
+26-May-22 13:57:22 :: interface :: Call to device initiated :: DEBUG
+26-May-22 13:57:22 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 13:59:42 :: __main__ :: creating dpg context :: INFO
+26-May-22 13:59:42 :: interface :: Call to device initiated :: DEBUG
+26-May-22 13:59:42 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 14:02:19 :: __main__ :: creating dpg context :: INFO
+26-May-22 14:02:19 :: interface :: Call to device initiated :: DEBUG
+26-May-22 14:02:19 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 14:02:29 :: __main__ :: creating dpg context :: INFO
+26-May-22 14:02:29 :: interface :: Call to device initiated :: DEBUG
+26-May-22 14:02:29 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 14:05:51 :: __main__ :: creating dpg context :: INFO
+26-May-22 14:05:51 :: interface :: Call to device initiated :: DEBUG
+26-May-22 14:05:51 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 14:40:35 :: __main__ :: creating dpg context :: INFO
+26-May-22 14:40:35 :: interface :: Call to device initiated :: DEBUG
+26-May-22 14:40:35 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 14:40:41 :: __main__ :: creating dpg context :: INFO
+26-May-22 14:40:41 :: interface :: Call to device initiated :: DEBUG
+26-May-22 14:40:41 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 14:43:17 :: __main__ :: creating dpg context :: INFO
+26-May-22 14:43:17 :: interface :: Call to device initiated :: DEBUG
+26-May-22 14:43:17 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 14:43:26 :: __main__ :: creating dpg context :: INFO
+26-May-22 14:43:26 :: interface :: Call to device initiated :: DEBUG
+26-May-22 14:43:26 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 14:44:25 :: __main__ :: creating dpg context :: INFO
+26-May-22 14:44:25 :: interface :: Call to device initiated :: DEBUG
+26-May-22 14:44:25 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 14:46:31 :: __main__ :: creating dpg context :: INFO
+26-May-22 14:46:31 :: interface :: Call to device initiated :: DEBUG
+26-May-22 14:46:31 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 14:46:37 :: __main__ :: creating dpg context :: INFO
+26-May-22 14:46:37 :: interface :: Call to device initiated :: DEBUG
+26-May-22 14:46:37 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 14:49:47 :: __main__ :: creating dpg context :: INFO
+26-May-22 14:49:47 :: interface :: Call to device initiated :: DEBUG
+26-May-22 14:49:47 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 14:51:07 :: __main__ :: creating dpg context :: INFO
+26-May-22 14:51:07 :: interface :: Call to device initiated :: DEBUG
+26-May-22 14:51:07 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 14:51:24 :: __main__ :: creating dpg context :: INFO
+26-May-22 14:51:24 :: interface :: Call to device initiated :: DEBUG
+26-May-22 14:51:24 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 14:52:18 :: __main__ :: creating dpg context :: INFO
+26-May-22 14:52:18 :: interface :: Call to device initiated :: DEBUG
+26-May-22 14:52:18 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 14:56:37 :: __main__ :: creating dpg context :: INFO
+26-May-22 14:56:37 :: interface :: Call to device initiated :: DEBUG
+26-May-22 14:56:37 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 14:57:57 :: __main__ :: creating dpg context :: INFO
+26-May-22 14:57:57 :: interface :: Call to device initiated :: DEBUG
+26-May-22 14:57:57 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 15:01:12 :: __main__ :: creating dpg context :: INFO
+26-May-22 15:01:12 :: interface :: Call to device initiated :: DEBUG
+26-May-22 15:01:12 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 15:01:22 :: __main__ :: creating dpg context :: INFO
+26-May-22 15:01:22 :: interface :: Call to device initiated :: DEBUG
+26-May-22 15:01:22 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 15:01:31 :: interface :: No device connected to machine :: WARNING
+26-May-22 15:01:31 :: interface :: Device not found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 43, in find_device
+    return results[DEVICE_NUMBER], results
+IndexError: list index out of range
+26-May-22 15:01:31 :: interface :: No device found on system :: ERROR
+26-May-22 15:01:31 :: interface :: No device found on system :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 83, in Megatron
+    PORT = find_device(DEVICE_PORT)[0]
+TypeError: 'NoneType' object is not subscriptable
+26-May-22 15:01:31 :: __main__ :: creating dpg context :: INFO
+26-May-22 15:01:31 :: interface :: Call to device initiated :: DEBUG
+26-May-22 15:01:31 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 15:01:31 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 66, in serial_call
+    ser.port = PORT
+NameError: name 'PORT' is not defined
+26-May-22 15:01:31 :: interface :: No device connected to machine :: WARNING
+26-May-22 15:01:31 :: interface :: Device not found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 43, in find_device
+    return results[DEVICE_NUMBER], results
+IndexError: list index out of range
+26-May-22 15:03:12 :: interface :: No device connected to machine :: WARNING
+26-May-22 15:03:12 :: interface :: Device not found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 43, in find_device
+    return results[DEVICE_NUMBER], results
+IndexError: list index out of range
+26-May-22 15:03:12 :: interface :: No device found on system :: ERROR
+26-May-22 15:03:12 :: interface :: No device found on system :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 83, in Megatron
+    PORT = find_device(DEVICE_PORT)[0]
+TypeError: 'NoneType' object is not subscriptable
+26-May-22 15:03:12 :: __main__ :: creating dpg context :: INFO
+26-May-22 15:03:12 :: interface :: Call to device initiated :: DEBUG
+26-May-22 15:03:12 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 15:03:12 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 66, in serial_call
+    ser.port = PORT
+NameError: name 'PORT' is not defined
+26-May-22 15:03:12 :: interface :: No device connected to machine :: WARNING
+26-May-22 15:03:12 :: interface :: Device not found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 43, in find_device
+    return results[DEVICE_NUMBER], results
+IndexError: list index out of range
+26-May-22 15:03:12 :: __main__ :: No device detected :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/mg_tron_gui.py", line 327, in <module>
+    devices: tuple[str] = find_device()[1]
+TypeError: 'NoneType' object is not subscriptable
+26-May-22 15:03:52 :: interface :: No device connected to machine :: WARNING
+26-May-22 15:03:52 :: interface :: Device not found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 43, in find_device
+    return results[DEVICE_NUMBER], results
+IndexError: list index out of range
+26-May-22 15:03:52 :: interface :: No device found on system :: ERROR
+26-May-22 15:03:52 :: interface :: No device found on system :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 83, in Megatron
+    PORT = find_device(DEVICE_PORT)[0]
+TypeError: 'NoneType' object is not subscriptable
+26-May-22 15:03:52 :: __main__ :: creating dpg context :: INFO
+26-May-22 15:03:52 :: interface :: Call to device initiated :: DEBUG
+26-May-22 15:03:52 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 15:03:52 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 66, in serial_call
+    ser.port = PORT
+NameError: name 'PORT' is not defined
+26-May-22 15:03:52 :: interface :: No device connected to machine :: WARNING
+26-May-22 15:03:52 :: interface :: Device not found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 43, in find_device
+    return results[DEVICE_NUMBER], results
+IndexError: list index out of range
+26-May-22 15:03:52 :: __main__ :: No device detected :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/mg_tron_gui.py", line 327, in <module>
+    devices: tuple[str] = find_device()[1]
+TypeError: 'NoneType' object is not subscriptable
+26-May-22 15:03:52 :: __main__ :: No device detected in :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/mg_tron_gui.py", line 361, in <module>
+    for i, device in enumerate(devices)
+NameError: name 'devices' is not defined
+26-May-22 15:04:58 :: interface :: No device connected to machine :: WARNING
+26-May-22 15:04:58 :: interface :: Device not found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 43, in find_device
+    return results[DEVICE_NUMBER], results
+IndexError: list index out of range
+26-May-22 15:04:58 :: interface :: No device found on system :: ERROR
+26-May-22 15:04:58 :: interface :: No device found on system :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 83, in Megatron
+    PORT = find_device(DEVICE_PORT)[0]
+TypeError: 'NoneType' object is not subscriptable
+26-May-22 15:04:58 :: __main__ :: creating dpg context :: INFO
+26-May-22 15:04:58 :: interface :: Call to device initiated :: DEBUG
+26-May-22 15:04:58 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 15:04:59 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 66, in serial_call
+    ser.port = PORT
+NameError: name 'PORT' is not defined
+26-May-22 15:04:59 :: interface :: No device connected to machine :: WARNING
+26-May-22 15:04:59 :: interface :: Device not found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 43, in find_device
+    return results[DEVICE_NUMBER], results
+IndexError: list index out of range
+26-May-22 15:04:59 :: __main__ :: No device detected :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/mg_tron_gui.py", line 327, in <module>
+    devices: tuple[str] = find_device()[1]
+TypeError: 'NoneType' object is not subscriptable
+26-May-22 15:04:59 :: __main__ :: No device detected in :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/mg_tron_gui.py", line 361, in <module>
+    for i, device in enumerate(devices)
+NameError: name 'devices' is not defined
+26-May-22 15:04:59 :: __main__ :: Device not detected :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/mg_tron_gui.py", line 382, in <module>
+    default_value=f"Device:{devices[0]}",
+NameError: name 'devices' is not defined
+26-May-22 15:06:20 :: interface :: No device connected to machine :: WARNING
+26-May-22 15:06:20 :: interface :: Device not found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 43, in find_device
+    return results[DEVICE_NUMBER], results
+IndexError: list index out of range
+26-May-22 15:06:20 :: interface :: No device found on system :: ERROR
+26-May-22 15:06:20 :: interface :: No device found on system :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 83, in Megatron
+    PORT = find_device(DEVICE_PORT)[0]
+TypeError: 'NoneType' object is not subscriptable
+26-May-22 15:06:20 :: __main__ :: creating dpg context :: INFO
+26-May-22 15:06:20 :: interface :: Call to device initiated :: DEBUG
+26-May-22 15:06:20 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 15:06:20 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 66, in serial_call
+    ser.port = PORT
+NameError: name 'PORT' is not defined
+26-May-22 15:06:20 :: interface :: No device connected to machine :: WARNING
+26-May-22 15:06:20 :: interface :: Device not found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 43, in find_device
+    return results[DEVICE_NUMBER], results
+IndexError: list index out of range
+26-May-22 15:06:20 :: __main__ :: No device detected :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/mg_tron_gui.py", line 327, in <module>
+    devices: tuple[str] = find_device()[1]
+TypeError: 'NoneType' object is not subscriptable
+26-May-22 15:06:20 :: __main__ :: No device detected in :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/mg_tron_gui.py", line 369, in <module>
+    for i, device in enumerate(devices)
+NameError: name 'devices' is not defined
+26-May-22 15:06:20 :: __main__ :: Device not detected :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/mg_tron_gui.py", line 390, in <module>
+    default_value=f"Device:{devices[0]}",
+NameError: name 'devices' is not defined
+26-May-22 15:08:09 :: helpers :: Reset All command Sent :: INFO
+26-May-22 15:08:09 :: interface :: Call to device initiated :: DEBUG
+26-May-22 15:08:09 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 15:08:09 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 66, in serial_call
+    ser.port = PORT
+NameError: name 'PORT' is not defined
+26-May-22 15:08:09 :: interface :: Call to device initiated :: DEBUG
+26-May-22 15:08:09 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 15:08:09 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 66, in serial_call
+    ser.port = PORT
+NameError: name 'PORT' is not defined
+26-May-22 15:08:09 :: interface :: Call to device initiated :: DEBUG
+26-May-22 15:08:09 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 15:08:09 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 66, in serial_call
+    ser.port = PORT
+NameError: name 'PORT' is not defined
+26-May-22 15:08:09 :: interface :: Call to device initiated :: DEBUG
+26-May-22 15:08:09 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 15:08:09 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 66, in serial_call
+    ser.port = PORT
+NameError: name 'PORT' is not defined
+26-May-22 15:08:09 :: interface :: Call to device initiated :: DEBUG
+26-May-22 15:08:09 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 15:08:09 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 66, in serial_call
+    ser.port = PORT
+NameError: name 'PORT' is not defined
+26-May-22 15:08:09 :: interface :: Call to device initiated :: DEBUG
+26-May-22 15:08:09 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 15:08:10 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 66, in serial_call
+    ser.port = PORT
+NameError: name 'PORT' is not defined
+26-May-22 15:08:10 :: interface :: Call to device initiated :: DEBUG
+26-May-22 15:08:10 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 15:08:10 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 66, in serial_call
+    ser.port = PORT
+NameError: name 'PORT' is not defined
+26-May-22 15:08:10 :: interface :: Call to device initiated :: DEBUG
+26-May-22 15:08:10 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 15:08:10 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 66, in serial_call
+    ser.port = PORT
+NameError: name 'PORT' is not defined
+26-May-22 15:08:10 :: interface :: Call to device initiated :: DEBUG
+26-May-22 15:08:10 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 15:08:10 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 66, in serial_call
+    ser.port = PORT
+NameError: name 'PORT' is not defined
+26-May-22 15:08:10 :: interface :: Call to device initiated :: DEBUG
+26-May-22 15:08:10 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 15:08:10 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 66, in serial_call
+    ser.port = PORT
+NameError: name 'PORT' is not defined
+26-May-22 15:08:10 :: interface :: Call to device initiated :: DEBUG
+26-May-22 15:08:10 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 15:08:10 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 66, in serial_call
+    ser.port = PORT
+NameError: name 'PORT' is not defined
+26-May-22 15:08:10 :: interface :: Call to device initiated :: DEBUG
+26-May-22 15:08:10 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 15:08:10 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 66, in serial_call
+    ser.port = PORT
+NameError: name 'PORT' is not defined
+26-May-22 15:08:10 :: interface :: Call to device initiated :: DEBUG
+26-May-22 15:08:10 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 15:08:10 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 66, in serial_call
+    ser.port = PORT
+NameError: name 'PORT' is not defined
+26-May-22 15:08:10 :: interface :: Call to device initiated :: DEBUG
+26-May-22 15:08:10 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 15:08:10 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 66, in serial_call
+    ser.port = PORT
+NameError: name 'PORT' is not defined
+26-May-22 15:08:10 :: interface :: Call to device initiated :: DEBUG
+26-May-22 15:08:10 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 15:08:10 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 66, in serial_call
+    ser.port = PORT
+NameError: name 'PORT' is not defined
+26-May-22 15:08:10 :: interface :: Call to device initiated :: DEBUG
+26-May-22 15:08:10 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 15:08:11 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 66, in serial_call
+    ser.port = PORT
+NameError: name 'PORT' is not defined
+26-May-22 15:08:11 :: interface :: Call to device initiated :: DEBUG
+26-May-22 15:08:11 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 15:08:11 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 66, in serial_call
+    ser.port = PORT
+NameError: name 'PORT' is not defined
+26-May-22 15:08:11 :: interface :: Call to device initiated :: DEBUG
+26-May-22 15:08:11 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 15:08:11 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 66, in serial_call
+    ser.port = PORT
+NameError: name 'PORT' is not defined
+26-May-22 15:08:11 :: interface :: Call to device initiated :: DEBUG
+26-May-22 15:08:11 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 15:08:11 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 66, in serial_call
+    ser.port = PORT
+NameError: name 'PORT' is not defined
+26-May-22 15:08:11 :: interface :: Call to device initiated :: DEBUG
+26-May-22 15:08:11 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 15:08:11 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 66, in serial_call
+    ser.port = PORT
+NameError: name 'PORT' is not defined
+26-May-22 15:08:11 :: interface :: Call to device initiated :: DEBUG
+26-May-22 15:08:11 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 15:08:11 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 66, in serial_call
+    ser.port = PORT
+NameError: name 'PORT' is not defined
+26-May-22 15:08:11 :: interface :: Call to device initiated :: DEBUG
+26-May-22 15:08:11 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 15:08:11 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 66, in serial_call
+    ser.port = PORT
+NameError: name 'PORT' is not defined
+26-May-22 15:08:11 :: interface :: Call to device initiated :: DEBUG
+26-May-22 15:08:11 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 15:08:11 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 66, in serial_call
+    ser.port = PORT
+NameError: name 'PORT' is not defined
+26-May-22 15:08:11 :: interface :: Call to device initiated :: DEBUG
+26-May-22 15:08:11 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 15:08:11 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 66, in serial_call
+    ser.port = PORT
+NameError: name 'PORT' is not defined
+26-May-22 15:08:11 :: interface :: Call to device initiated :: DEBUG
+26-May-22 15:08:11 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 15:08:11 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 66, in serial_call
+    ser.port = PORT
+NameError: name 'PORT' is not defined
+26-May-22 15:08:11 :: helpers :: Ready for next command.
+ :: INFO
+26-May-22 15:08:35 :: interface :: No device connected to machine :: WARNING
+26-May-22 15:08:35 :: interface :: Device not found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 43, in find_device
+    return results[DEVICE_NUMBER], results
+IndexError: list index out of range
+26-May-22 15:08:35 :: interface :: No device found on system :: ERROR
+26-May-22 15:08:35 :: interface :: No device found on system :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 83, in Megatron
+    PORT = find_device(DEVICE_PORT)[0]
+TypeError: 'NoneType' object is not subscriptable
+26-May-22 15:08:35 :: __main__ :: creating dpg context :: INFO
+26-May-22 15:08:35 :: interface :: Call to device initiated :: DEBUG
+26-May-22 15:08:35 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 15:08:35 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 66, in serial_call
+    ser.port = PORT
+NameError: name 'PORT' is not defined
+26-May-22 15:08:35 :: interface :: No device connected to machine :: WARNING
+26-May-22 15:08:35 :: interface :: Device not found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 43, in find_device
+    return results[DEVICE_NUMBER], results
+IndexError: list index out of range
+26-May-22 15:08:35 :: __main__ :: No device detected :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/mg_tron_gui.py", line 327, in <module>
+    devices: tuple[str] = find_device()[1]
+TypeError: 'NoneType' object is not subscriptable
+26-May-22 15:08:35 :: __main__ :: No device detected in :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/mg_tron_gui.py", line 369, in <module>
+    for i, device in enumerate(devices)
+NameError: name 'devices' is not defined
+26-May-22 15:08:35 :: __main__ :: Device not detected :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/mg_tron_gui.py", line 390, in <module>
+    default_value=f"Device:{devices[0]}",
+NameError: name 'devices' is not defined
+26-May-22 15:10:19 :: interface :: No device connected to machine :: WARNING
+26-May-22 15:10:19 :: interface :: Device not found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 43, in find_device
+    return results[DEVICE_NUMBER], results
+IndexError: list index out of range
+26-May-22 15:10:19 :: interface :: No device found on system :: ERROR
+26-May-22 15:10:19 :: interface :: No device found on system :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 83, in Megatron
+    PORT = find_device(DEVICE_PORT)[0]
+TypeError: 'NoneType' object is not subscriptable
+26-May-22 15:10:19 :: __main__ :: creating dpg context :: INFO
+26-May-22 15:10:19 :: interface :: Call to device initiated :: DEBUG
+26-May-22 15:10:19 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 15:10:19 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 66, in serial_call
+    ser.port = PORT
+NameError: name 'PORT' is not defined
+26-May-22 15:10:19 :: interface :: No device connected to machine :: WARNING
+26-May-22 15:10:19 :: interface :: Device not found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 43, in find_device
+    return results[DEVICE_NUMBER], results
+IndexError: list index out of range
+26-May-22 15:10:19 :: __main__ :: No device detected :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/mg_tron_gui.py", line 327, in <module>
+    devices: tuple[str] = find_device()[1]
+TypeError: 'NoneType' object is not subscriptable
+26-May-22 15:10:19 :: __main__ :: No device detected in :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/mg_tron_gui.py", line 369, in <module>
+    for i, device in enumerate(devices)
+NameError: name 'devices' is not defined
+26-May-22 15:10:19 :: __main__ :: Device not detected :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/mg_tron_gui.py", line 390, in <module>
+    default_value=f"Device:{devices[0]}",
+NameError: name 'devices' is not defined
+26-May-22 15:10:56 :: interface :: No device connected to machine :: WARNING
+26-May-22 15:10:56 :: interface :: Device not found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 43, in find_device
+    return results[DEVICE_NUMBER], results
+IndexError: list index out of range
+26-May-22 15:10:56 :: interface :: No device found on system :: ERROR
+26-May-22 15:10:56 :: interface :: No device found on system :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 83, in Megatron
+    PORT = find_device(DEVICE_PORT)[0]
+TypeError: 'NoneType' object is not subscriptable
+26-May-22 15:10:56 :: __main__ :: creating dpg context :: INFO
+26-May-22 15:11:25 :: interface :: No device connected to machine :: WARNING
+26-May-22 15:11:25 :: interface :: Device not found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 43, in find_device
+    return results[DEVICE_NUMBER], results
+IndexError: list index out of range
+26-May-22 15:11:25 :: interface :: No device found on system :: ERROR
+26-May-22 15:11:25 :: interface :: No device found on system :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 83, in Megatron
+    PORT = find_device(DEVICE_PORT)[0]
+TypeError: 'NoneType' object is not subscriptable
+26-May-22 15:11:25 :: __main__ :: creating dpg context :: INFO
+26-May-22 15:11:25 :: interface :: Call to device initiated :: DEBUG
+26-May-22 15:11:25 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 15:11:25 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 66, in serial_call
+    ser.port = PORT
+NameError: name 'PORT' is not defined
+26-May-22 15:12:23 :: interface :: No device connected to machine :: WARNING
+26-May-22 15:12:23 :: interface :: Device not found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 43, in find_device
+    return results[DEVICE_NUMBER], results
+IndexError: list index out of range
+26-May-22 15:12:23 :: interface :: No device found on system :: ERROR
+26-May-22 15:12:23 :: interface :: No device found on system :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 83, in Megatron
+    PORT = find_device(DEVICE_PORT)[0]
+TypeError: 'NoneType' object is not subscriptable
+26-May-22 15:12:23 :: __main__ :: creating dpg context :: INFO
+26-May-22 15:12:23 :: interface :: Call to device initiated :: DEBUG
+26-May-22 15:12:23 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 15:12:23 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 66, in serial_call
+    ser.port = PORT
+NameError: name 'PORT' is not defined
+26-May-22 15:12:23 :: interface :: No device connected to machine :: WARNING
+26-May-22 15:12:23 :: interface :: Device not found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 43, in find_device
+    return results[DEVICE_NUMBER], results
+IndexError: list index out of range
+26-May-22 15:12:23 :: __main__ :: No device detected :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/mg_tron_gui.py", line 336, in <module>
+    devices: tuple[str] = find_device()[1]
+TypeError: 'NoneType' object is not subscriptable
+26-May-22 15:12:23 :: __main__ :: No device detected in :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/mg_tron_gui.py", line 378, in <module>
+    for i, device in enumerate(devices)
+NameError: name 'devices' is not defined
+26-May-22 15:12:23 :: __main__ :: Device not detected :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/mg_tron_gui.py", line 399, in <module>
+    default_value=f"Device:{devices[0]}",
+NameError: name 'devices' is not defined
+26-May-22 15:12:31 :: helpers :: send_vals executed :: INFO
+26-May-22 15:12:31 :: helpers :: callstack_helper executed :: INFO
+26-May-22 15:12:31 :: helpers :: Channel 1 Information Sent :: INFO
+26-May-22 15:12:31 :: interface :: Call to device initiated :: DEBUG
+26-May-22 15:12:31 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 15:12:31 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 66, in serial_call
+    ser.port = PORT
+NameError: name 'PORT' is not defined
+26-May-22 15:12:31 :: interface :: Call to device initiated :: DEBUG
+26-May-22 15:12:31 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 15:12:31 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 66, in serial_call
+    ser.port = PORT
+NameError: name 'PORT' is not defined
+26-May-22 15:12:31 :: interface :: Call to device initiated :: DEBUG
+26-May-22 15:12:31 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 15:12:31 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 66, in serial_call
+    ser.port = PORT
+NameError: name 'PORT' is not defined
+26-May-22 15:12:31 :: helpers :: Ready for next command.
+ :: INFO
+26-May-22 15:12:43 :: helpers :: Reset All command Sent :: INFO
+26-May-22 15:12:43 :: interface :: Call to device initiated :: DEBUG
+26-May-22 15:12:43 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 15:12:43 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 66, in serial_call
+    ser.port = PORT
+NameError: name 'PORT' is not defined
+26-May-22 15:12:43 :: interface :: Call to device initiated :: DEBUG
+26-May-22 15:12:43 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 15:12:43 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 66, in serial_call
+    ser.port = PORT
+NameError: name 'PORT' is not defined
+26-May-22 15:12:43 :: interface :: Call to device initiated :: DEBUG
+26-May-22 15:12:43 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 15:12:44 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 66, in serial_call
+    ser.port = PORT
+NameError: name 'PORT' is not defined
+26-May-22 15:12:44 :: interface :: Call to device initiated :: DEBUG
+26-May-22 15:12:44 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 15:12:44 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 66, in serial_call
+    ser.port = PORT
+NameError: name 'PORT' is not defined
+26-May-22 15:12:44 :: interface :: Call to device initiated :: DEBUG
+26-May-22 15:12:44 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 15:12:44 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 66, in serial_call
+    ser.port = PORT
+NameError: name 'PORT' is not defined
+26-May-22 15:12:44 :: interface :: Call to device initiated :: DEBUG
+26-May-22 15:12:44 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 15:12:44 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 66, in serial_call
+    ser.port = PORT
+NameError: name 'PORT' is not defined
+26-May-22 15:12:44 :: interface :: Call to device initiated :: DEBUG
+26-May-22 15:12:44 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 15:12:44 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 66, in serial_call
+    ser.port = PORT
+NameError: name 'PORT' is not defined
+26-May-22 15:12:44 :: interface :: Call to device initiated :: DEBUG
+26-May-22 15:12:44 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 15:12:44 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 66, in serial_call
+    ser.port = PORT
+NameError: name 'PORT' is not defined
+26-May-22 15:12:44 :: interface :: Call to device initiated :: DEBUG
+26-May-22 15:12:44 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 15:12:44 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 66, in serial_call
+    ser.port = PORT
+NameError: name 'PORT' is not defined
+26-May-22 15:12:44 :: interface :: Call to device initiated :: DEBUG
+26-May-22 15:12:44 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 15:12:44 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 66, in serial_call
+    ser.port = PORT
+NameError: name 'PORT' is not defined
+26-May-22 15:12:44 :: interface :: Call to device initiated :: DEBUG
+26-May-22 15:12:44 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 15:12:44 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 66, in serial_call
+    ser.port = PORT
+NameError: name 'PORT' is not defined
+26-May-22 15:12:44 :: interface :: Call to device initiated :: DEBUG
+26-May-22 15:12:44 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 15:12:44 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 66, in serial_call
+    ser.port = PORT
+NameError: name 'PORT' is not defined
+26-May-22 15:12:44 :: interface :: Call to device initiated :: DEBUG
+26-May-22 15:12:44 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 15:12:45 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 66, in serial_call
+    ser.port = PORT
+NameError: name 'PORT' is not defined
+26-May-22 15:12:45 :: interface :: Call to device initiated :: DEBUG
+26-May-22 15:12:45 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 15:12:45 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 66, in serial_call
+    ser.port = PORT
+NameError: name 'PORT' is not defined
+26-May-22 15:12:45 :: interface :: Call to device initiated :: DEBUG
+26-May-22 15:12:45 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 15:12:45 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 66, in serial_call
+    ser.port = PORT
+NameError: name 'PORT' is not defined
+26-May-22 15:12:45 :: interface :: Call to device initiated :: DEBUG
+26-May-22 15:12:45 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 15:12:45 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 66, in serial_call
+    ser.port = PORT
+NameError: name 'PORT' is not defined
+26-May-22 15:12:45 :: interface :: Call to device initiated :: DEBUG
+26-May-22 15:12:45 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 15:12:45 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 66, in serial_call
+    ser.port = PORT
+NameError: name 'PORT' is not defined
+26-May-22 15:12:45 :: interface :: Call to device initiated :: DEBUG
+26-May-22 15:12:45 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 15:12:45 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 66, in serial_call
+    ser.port = PORT
+NameError: name 'PORT' is not defined
+26-May-22 15:12:45 :: interface :: Call to device initiated :: DEBUG
+26-May-22 15:12:45 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 15:12:45 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 66, in serial_call
+    ser.port = PORT
+NameError: name 'PORT' is not defined
+26-May-22 15:12:45 :: interface :: Call to device initiated :: DEBUG
+26-May-22 15:12:45 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 15:12:45 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 66, in serial_call
+    ser.port = PORT
+NameError: name 'PORT' is not defined
+26-May-22 15:12:45 :: interface :: Call to device initiated :: DEBUG
+26-May-22 15:12:45 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 15:12:45 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 66, in serial_call
+    ser.port = PORT
+NameError: name 'PORT' is not defined
+26-May-22 15:12:45 :: interface :: Call to device initiated :: DEBUG
+26-May-22 15:12:45 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 15:12:45 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 66, in serial_call
+    ser.port = PORT
+NameError: name 'PORT' is not defined
+26-May-22 15:12:45 :: interface :: Call to device initiated :: DEBUG
+26-May-22 15:12:45 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 15:12:46 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 66, in serial_call
+    ser.port = PORT
+NameError: name 'PORT' is not defined
+26-May-22 15:12:46 :: interface :: Call to device initiated :: DEBUG
+26-May-22 15:12:46 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 15:12:46 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 66, in serial_call
+    ser.port = PORT
+NameError: name 'PORT' is not defined
+26-May-22 15:12:46 :: interface :: Call to device initiated :: DEBUG
+26-May-22 15:12:46 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 15:12:46 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 66, in serial_call
+    ser.port = PORT
+NameError: name 'PORT' is not defined
+26-May-22 15:12:46 :: helpers :: Ready for next command.
+ :: INFO
+26-May-22 15:13:03 :: __main__ :: creating dpg context :: INFO
+26-May-22 15:13:03 :: interface :: Call to device initiated :: DEBUG
+26-May-22 15:13:03 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 15:13:27 :: __main__ :: creating dpg context :: INFO
+26-May-22 15:13:27 :: interface :: Call to device initiated :: DEBUG
+26-May-22 15:13:27 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 15:13:31 :: helpers :: send_vals executed :: INFO
+26-May-22 15:13:31 :: helpers :: callstack_helper executed :: INFO
+26-May-22 15:13:31 :: helpers :: Channel 1 Information Sent :: INFO
+26-May-22 15:13:31 :: interface :: Call to device initiated :: DEBUG
+26-May-22 15:13:31 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 15:13:31 :: interface :: Call to device initiated :: DEBUG
+26-May-22 15:13:31 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 15:13:31 :: interface :: Call to device initiated :: DEBUG
+26-May-22 15:13:31 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 15:13:31 :: helpers :: Ready for next command.
+ :: INFO
+26-May-22 15:13:33 :: helpers :: Reset All command Sent :: INFO
+26-May-22 15:13:33 :: interface :: Call to device initiated :: DEBUG
+26-May-22 15:13:33 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 15:13:33 :: interface :: Call to device initiated :: DEBUG
+26-May-22 15:13:33 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 15:13:33 :: interface :: Call to device initiated :: DEBUG
+26-May-22 15:13:33 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 15:13:33 :: interface :: Call to device initiated :: DEBUG
+26-May-22 15:13:33 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 15:13:33 :: interface :: Call to device initiated :: DEBUG
+26-May-22 15:13:33 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 15:13:33 :: interface :: Call to device initiated :: DEBUG
+26-May-22 15:13:33 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 15:13:34 :: interface :: Call to device initiated :: DEBUG
+26-May-22 15:13:34 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 15:13:34 :: interface :: Call to device initiated :: DEBUG
+26-May-22 15:13:34 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 15:13:34 :: interface :: Call to device initiated :: DEBUG
+26-May-22 15:13:34 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 15:13:34 :: interface :: Call to device initiated :: DEBUG
+26-May-22 15:13:34 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 15:13:34 :: interface :: Call to device initiated :: DEBUG
+26-May-22 15:13:34 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 15:13:34 :: interface :: Call to device initiated :: DEBUG
+26-May-22 15:13:34 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 15:13:34 :: interface :: Call to device initiated :: DEBUG
+26-May-22 15:13:34 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 15:13:35 :: interface :: Call to device initiated :: DEBUG
+26-May-22 15:13:35 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 15:13:35 :: interface :: Call to device initiated :: DEBUG
+26-May-22 15:13:35 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 15:13:35 :: interface :: Call to device initiated :: DEBUG
+26-May-22 15:13:35 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 15:13:35 :: interface :: Call to device initiated :: DEBUG
+26-May-22 15:13:35 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 15:13:35 :: interface :: Call to device initiated :: DEBUG
+26-May-22 15:13:35 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 15:13:35 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/.local/lib/python3.10/site-packages/serial/serialposix.py", line 322, in open
+    self.fd = os.open(self.portstr, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
+FileNotFoundError: [Errno 2] No such file or directory: '/dev/ttyACM0'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 68, in serial_call
+    ser.open()
+  File "/home/djhunter67/.local/lib/python3.10/site-packages/serial/serialposix.py", line 325, in open
+    raise SerialException(msg.errno, "could not open port {}: {}".format(self._port, msg))
+serial.serialutil.SerialException: [Errno 2] could not open port /dev/ttyACM0: [Errno 2] No such file or directory: '/dev/ttyACM0'
+26-May-22 15:13:35 :: interface :: Call to device initiated :: DEBUG
+26-May-22 15:13:35 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 15:13:35 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/.local/lib/python3.10/site-packages/serial/serialposix.py", line 322, in open
+    self.fd = os.open(self.portstr, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
+FileNotFoundError: [Errno 2] No such file or directory: '/dev/ttyACM0'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 68, in serial_call
+    ser.open()
+  File "/home/djhunter67/.local/lib/python3.10/site-packages/serial/serialposix.py", line 325, in open
+    raise SerialException(msg.errno, "could not open port {}: {}".format(self._port, msg))
+serial.serialutil.SerialException: [Errno 2] could not open port /dev/ttyACM0: [Errno 2] No such file or directory: '/dev/ttyACM0'
+26-May-22 15:13:35 :: interface :: Call to device initiated :: DEBUG
+26-May-22 15:13:35 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 15:13:35 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/.local/lib/python3.10/site-packages/serial/serialposix.py", line 322, in open
+    self.fd = os.open(self.portstr, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
+FileNotFoundError: [Errno 2] No such file or directory: '/dev/ttyACM0'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 68, in serial_call
+    ser.open()
+  File "/home/djhunter67/.local/lib/python3.10/site-packages/serial/serialposix.py", line 325, in open
+    raise SerialException(msg.errno, "could not open port {}: {}".format(self._port, msg))
+serial.serialutil.SerialException: [Errno 2] could not open port /dev/ttyACM0: [Errno 2] No such file or directory: '/dev/ttyACM0'
+26-May-22 15:13:35 :: interface :: Call to device initiated :: DEBUG
+26-May-22 15:13:35 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 15:13:35 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/.local/lib/python3.10/site-packages/serial/serialposix.py", line 322, in open
+    self.fd = os.open(self.portstr, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
+FileNotFoundError: [Errno 2] No such file or directory: '/dev/ttyACM0'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 68, in serial_call
+    ser.open()
+  File "/home/djhunter67/.local/lib/python3.10/site-packages/serial/serialposix.py", line 325, in open
+    raise SerialException(msg.errno, "could not open port {}: {}".format(self._port, msg))
+serial.serialutil.SerialException: [Errno 2] could not open port /dev/ttyACM0: [Errno 2] No such file or directory: '/dev/ttyACM0'
+26-May-22 15:13:35 :: interface :: Call to device initiated :: DEBUG
+26-May-22 15:13:35 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 15:13:36 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/.local/lib/python3.10/site-packages/serial/serialposix.py", line 322, in open
+    self.fd = os.open(self.portstr, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
+FileNotFoundError: [Errno 2] No such file or directory: '/dev/ttyACM0'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 68, in serial_call
+    ser.open()
+  File "/home/djhunter67/.local/lib/python3.10/site-packages/serial/serialposix.py", line 325, in open
+    raise SerialException(msg.errno, "could not open port {}: {}".format(self._port, msg))
+serial.serialutil.SerialException: [Errno 2] could not open port /dev/ttyACM0: [Errno 2] No such file or directory: '/dev/ttyACM0'
+26-May-22 15:13:36 :: interface :: Call to device initiated :: DEBUG
+26-May-22 15:13:36 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 15:13:36 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/.local/lib/python3.10/site-packages/serial/serialposix.py", line 322, in open
+    self.fd = os.open(self.portstr, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
+FileNotFoundError: [Errno 2] No such file or directory: '/dev/ttyACM0'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 68, in serial_call
+    ser.open()
+  File "/home/djhunter67/.local/lib/python3.10/site-packages/serial/serialposix.py", line 325, in open
+    raise SerialException(msg.errno, "could not open port {}: {}".format(self._port, msg))
+serial.serialutil.SerialException: [Errno 2] could not open port /dev/ttyACM0: [Errno 2] No such file or directory: '/dev/ttyACM0'
+26-May-22 15:13:36 :: interface :: Call to device initiated :: DEBUG
+26-May-22 15:13:36 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 15:13:36 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/.local/lib/python3.10/site-packages/serial/serialposix.py", line 322, in open
+    self.fd = os.open(self.portstr, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
+FileNotFoundError: [Errno 2] No such file or directory: '/dev/ttyACM0'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 68, in serial_call
+    ser.open()
+  File "/home/djhunter67/.local/lib/python3.10/site-packages/serial/serialposix.py", line 325, in open
+    raise SerialException(msg.errno, "could not open port {}: {}".format(self._port, msg))
+serial.serialutil.SerialException: [Errno 2] could not open port /dev/ttyACM0: [Errno 2] No such file or directory: '/dev/ttyACM0'
+26-May-22 15:13:36 :: interface :: Call to device initiated :: DEBUG
+26-May-22 15:13:36 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 15:13:36 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/.local/lib/python3.10/site-packages/serial/serialposix.py", line 322, in open
+    self.fd = os.open(self.portstr, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
+FileNotFoundError: [Errno 2] No such file or directory: '/dev/ttyACM0'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 68, in serial_call
+    ser.open()
+  File "/home/djhunter67/.local/lib/python3.10/site-packages/serial/serialposix.py", line 325, in open
+    raise SerialException(msg.errno, "could not open port {}: {}".format(self._port, msg))
+serial.serialutil.SerialException: [Errno 2] could not open port /dev/ttyACM0: [Errno 2] No such file or directory: '/dev/ttyACM0'
+26-May-22 15:13:36 :: helpers :: Ready for next command.
+ :: INFO
+26-May-22 15:13:40 :: interface :: No device connected to machine :: WARNING
+26-May-22 15:13:40 :: interface :: Device not found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 43, in find_device
+    return results[DEVICE_NUMBER], results
+IndexError: list index out of range
+26-May-22 15:13:40 :: interface :: No device found on system :: ERROR
+26-May-22 15:13:40 :: interface :: No device found on system :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 83, in Megatron
+    PORT = find_device(DEVICE_PORT)[0]
+TypeError: 'NoneType' object is not subscriptable
+26-May-22 15:13:40 :: __main__ :: creating dpg context :: INFO
+26-May-22 15:13:40 :: interface :: Call to device initiated :: DEBUG
+26-May-22 15:13:40 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 15:13:40 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 66, in serial_call
+    ser.port = PORT
+NameError: name 'PORT' is not defined
+26-May-22 15:13:40 :: interface :: No device connected to machine :: WARNING
+26-May-22 15:13:40 :: interface :: Device not found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 43, in find_device
+    return results[DEVICE_NUMBER], results
+IndexError: list index out of range
+26-May-22 15:13:40 :: __main__ :: No device detected :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/mg_tron_gui.py", line 336, in <module>
+    devices: tuple[str] = find_device()[1]
+TypeError: 'NoneType' object is not subscriptable
+26-May-22 15:13:40 :: __main__ :: No device detected in :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/mg_tron_gui.py", line 378, in <module>
+    for i, device in enumerate(devices)
+NameError: name 'devices' is not defined
+26-May-22 15:13:40 :: __main__ :: Device not detected :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/mg_tron_gui.py", line 399, in <module>
+    default_value=f"Device:{devices[0]}",
+NameError: name 'devices' is not defined
+26-May-22 15:13:47 :: helpers :: send_vals executed :: INFO
+26-May-22 15:13:47 :: helpers :: callstack_helper executed :: INFO
+26-May-22 15:13:47 :: helpers :: Channel 1 Information Sent :: INFO
+26-May-22 15:13:47 :: interface :: Call to device initiated :: DEBUG
+26-May-22 15:13:47 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 15:13:48 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 66, in serial_call
+    ser.port = PORT
+NameError: name 'PORT' is not defined
+26-May-22 15:13:48 :: interface :: Call to device initiated :: DEBUG
+26-May-22 15:13:48 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 15:13:48 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 66, in serial_call
+    ser.port = PORT
+NameError: name 'PORT' is not defined
+26-May-22 15:13:48 :: interface :: Call to device initiated :: DEBUG
+26-May-22 15:13:48 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 15:13:48 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 66, in serial_call
+    ser.port = PORT
+NameError: name 'PORT' is not defined
+26-May-22 15:13:48 :: helpers :: Ready for next command.
+ :: INFO
+26-May-22 15:13:50 :: helpers :: Reset All command Sent :: INFO
+26-May-22 15:13:50 :: interface :: Call to device initiated :: DEBUG
+26-May-22 15:13:50 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 15:13:50 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 66, in serial_call
+    ser.port = PORT
+NameError: name 'PORT' is not defined
+26-May-22 15:13:50 :: interface :: Call to device initiated :: DEBUG
+26-May-22 15:13:50 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 15:13:50 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 66, in serial_call
+    ser.port = PORT
+NameError: name 'PORT' is not defined
+26-May-22 15:13:50 :: interface :: Call to device initiated :: DEBUG
+26-May-22 15:13:50 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 15:13:50 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 66, in serial_call
+    ser.port = PORT
+NameError: name 'PORT' is not defined
+26-May-22 15:13:50 :: interface :: Call to device initiated :: DEBUG
+26-May-22 15:13:50 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 15:13:50 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 66, in serial_call
+    ser.port = PORT
+NameError: name 'PORT' is not defined
+26-May-22 15:13:50 :: interface :: Call to device initiated :: DEBUG
+26-May-22 15:13:50 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 15:13:50 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 66, in serial_call
+    ser.port = PORT
+NameError: name 'PORT' is not defined
+26-May-22 15:13:50 :: interface :: Call to device initiated :: DEBUG
+26-May-22 15:13:50 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 15:13:50 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 66, in serial_call
+    ser.port = PORT
+NameError: name 'PORT' is not defined
+26-May-22 15:13:50 :: interface :: Call to device initiated :: DEBUG
+26-May-22 15:13:50 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 15:13:50 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 66, in serial_call
+    ser.port = PORT
+NameError: name 'PORT' is not defined
+26-May-22 15:13:50 :: interface :: Call to device initiated :: DEBUG
+26-May-22 15:13:50 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 15:13:51 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 66, in serial_call
+    ser.port = PORT
+NameError: name 'PORT' is not defined
+26-May-22 15:13:51 :: interface :: Call to device initiated :: DEBUG
+26-May-22 15:13:51 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 15:13:51 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 66, in serial_call
+    ser.port = PORT
+NameError: name 'PORT' is not defined
+26-May-22 15:13:51 :: interface :: Call to device initiated :: DEBUG
+26-May-22 15:13:51 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 15:13:51 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 66, in serial_call
+    ser.port = PORT
+NameError: name 'PORT' is not defined
+26-May-22 15:13:51 :: interface :: Call to device initiated :: DEBUG
+26-May-22 15:13:51 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 15:13:51 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 66, in serial_call
+    ser.port = PORT
+NameError: name 'PORT' is not defined
+26-May-22 15:13:51 :: interface :: Call to device initiated :: DEBUG
+26-May-22 15:13:51 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 15:13:51 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 66, in serial_call
+    ser.port = PORT
+NameError: name 'PORT' is not defined
+26-May-22 15:13:51 :: interface :: Call to device initiated :: DEBUG
+26-May-22 15:13:51 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 15:13:51 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 66, in serial_call
+    ser.port = PORT
+NameError: name 'PORT' is not defined
+26-May-22 15:13:51 :: interface :: Call to device initiated :: DEBUG
+26-May-22 15:13:51 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 15:13:51 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 66, in serial_call
+    ser.port = PORT
+NameError: name 'PORT' is not defined
+26-May-22 15:13:51 :: interface :: Call to device initiated :: DEBUG
+26-May-22 15:13:51 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 15:13:51 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 66, in serial_call
+    ser.port = PORT
+NameError: name 'PORT' is not defined
+26-May-22 15:13:51 :: interface :: Call to device initiated :: DEBUG
+26-May-22 15:13:51 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 15:13:51 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 66, in serial_call
+    ser.port = PORT
+NameError: name 'PORT' is not defined
+26-May-22 15:13:51 :: interface :: Call to device initiated :: DEBUG
+26-May-22 15:13:51 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 15:13:51 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 66, in serial_call
+    ser.port = PORT
+NameError: name 'PORT' is not defined
+26-May-22 15:13:51 :: interface :: Call to device initiated :: DEBUG
+26-May-22 15:13:51 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 15:13:52 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 66, in serial_call
+    ser.port = PORT
+NameError: name 'PORT' is not defined
+26-May-22 15:13:52 :: interface :: Call to device initiated :: DEBUG
+26-May-22 15:13:52 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 15:13:52 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 66, in serial_call
+    ser.port = PORT
+NameError: name 'PORT' is not defined
+26-May-22 15:13:52 :: interface :: Call to device initiated :: DEBUG
+26-May-22 15:13:52 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 15:13:52 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 66, in serial_call
+    ser.port = PORT
+NameError: name 'PORT' is not defined
+26-May-22 15:13:52 :: interface :: Call to device initiated :: DEBUG
+26-May-22 15:13:52 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 15:13:52 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 66, in serial_call
+    ser.port = PORT
+NameError: name 'PORT' is not defined
+26-May-22 15:13:52 :: interface :: Call to device initiated :: DEBUG
+26-May-22 15:13:52 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 15:13:52 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 66, in serial_call
+    ser.port = PORT
+NameError: name 'PORT' is not defined
+26-May-22 15:13:52 :: interface :: Call to device initiated :: DEBUG
+26-May-22 15:13:52 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 15:13:52 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 66, in serial_call
+    ser.port = PORT
+NameError: name 'PORT' is not defined
+26-May-22 15:13:52 :: interface :: Call to device initiated :: DEBUG
+26-May-22 15:13:52 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 15:13:52 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 66, in serial_call
+    ser.port = PORT
+NameError: name 'PORT' is not defined
+26-May-22 15:13:52 :: interface :: Call to device initiated :: DEBUG
+26-May-22 15:13:52 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 15:13:52 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 66, in serial_call
+    ser.port = PORT
+NameError: name 'PORT' is not defined
+26-May-22 15:13:52 :: helpers :: Ready for next command.
+ :: INFO
+26-May-22 15:17:05 :: interface :: No device connected to machine :: WARNING
+26-May-22 15:17:05 :: interface :: Device not found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 43, in find_device
+    return results[DEVICE_NUMBER], results
+IndexError: list index out of range
+26-May-22 15:17:05 :: interface :: No device found on system :: ERROR
+26-May-22 15:17:05 :: interface :: No device found on system :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 83, in Megatron
+    PORT = find_device(DEVICE_PORT)[0]
+TypeError: 'NoneType' object is not subscriptable
+26-May-22 15:17:05 :: __main__ :: creating dpg context :: INFO
+26-May-22 15:17:05 :: interface :: Call to device initiated :: DEBUG
+26-May-22 15:17:05 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 15:17:05 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 66, in serial_call
+    ser.port = PORT
+NameError: name 'PORT' is not defined
+26-May-22 15:17:05 :: interface :: No device connected to machine :: WARNING
+26-May-22 15:17:05 :: interface :: Device not found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 43, in find_device
+    return results[DEVICE_NUMBER], results
+IndexError: list index out of range
+26-May-22 15:17:05 :: __main__ :: No device detected :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/mg_tron_gui.py", line 337, in <module>
+    devices: tuple[str] = find_device()[1]
+TypeError: 'NoneType' object is not subscriptable
+26-May-22 15:17:27 :: interface :: No device connected to machine :: WARNING
+26-May-22 15:17:27 :: interface :: Device not found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 43, in find_device
+    return results[DEVICE_NUMBER], results
+IndexError: list index out of range
+26-May-22 15:17:27 :: interface :: No device found on system :: ERROR
+26-May-22 15:17:27 :: interface :: No device found on system :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 83, in Megatron
+    PORT = find_device(DEVICE_PORT)[0]
+TypeError: 'NoneType' object is not subscriptable
+26-May-22 15:17:27 :: __main__ :: creating dpg context :: INFO
+26-May-22 15:17:27 :: interface :: Call to device initiated :: DEBUG
+26-May-22 15:17:27 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 15:17:27 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 66, in serial_call
+    ser.port = PORT
+NameError: name 'PORT' is not defined
+26-May-22 15:17:27 :: interface :: No device connected to machine :: WARNING
+26-May-22 15:17:27 :: interface :: Device not found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 43, in find_device
+    return results[DEVICE_NUMBER], results
+IndexError: list index out of range
+26-May-22 15:17:27 :: __main__ :: No device detected :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/mg_tron_gui.py", line 337, in <module>
+    devices: tuple[str] = find_device()[1]
+TypeError: 'NoneType' object is not subscriptable
+26-May-22 15:17:47 :: interface :: No device connected to machine :: WARNING
+26-May-22 15:17:47 :: interface :: Device not found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 43, in find_device
+    return results[DEVICE_NUMBER], results
+IndexError: list index out of range
+26-May-22 15:17:47 :: interface :: No device found on system :: ERROR
+26-May-22 15:17:47 :: interface :: No device found on system :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 83, in Megatron
+    PORT = find_device(DEVICE_PORT)[0]
+TypeError: 'NoneType' object is not subscriptable
+26-May-22 15:17:47 :: __main__ :: creating dpg context :: INFO
+26-May-22 15:17:47 :: interface :: Call to device initiated :: DEBUG
+26-May-22 15:17:47 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 15:17:47 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 66, in serial_call
+    ser.port = PORT
+NameError: name 'PORT' is not defined
+26-May-22 15:17:47 :: interface :: No device connected to machine :: WARNING
+26-May-22 15:17:47 :: interface :: Device not found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 43, in find_device
+    return results[DEVICE_NUMBER], results
+IndexError: list index out of range
+26-May-22 15:17:47 :: __main__ :: No device detected :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/mg_tron_gui.py", line 337, in <module>
+    devices: tuple[str] = find_device()[1]
+TypeError: 'NoneType' object is not subscriptable
+26-May-22 15:18:22 :: interface :: No device connected to machine :: WARNING
+26-May-22 15:18:22 :: interface :: Device not found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 43, in find_device
+    return results[DEVICE_NUMBER], results
+IndexError: list index out of range
+26-May-22 15:18:22 :: interface :: No device found on system :: ERROR
+26-May-22 15:18:22 :: interface :: No device found on system :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 83, in Megatron
+    PORT = find_device(DEVICE_PORT)[0]
+TypeError: 'NoneType' object is not subscriptable
+26-May-22 15:18:22 :: __main__ :: creating dpg context :: INFO
+26-May-22 15:18:22 :: interface :: Call to device initiated :: DEBUG
+26-May-22 15:18:22 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 15:18:23 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 66, in serial_call
+    ser.port = PORT
+NameError: name 'PORT' is not defined
+26-May-22 15:18:23 :: interface :: No device connected to machine :: WARNING
+26-May-22 15:18:23 :: interface :: Device not found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 43, in find_device
+    return results[DEVICE_NUMBER], results
+IndexError: list index out of range
+26-May-22 15:18:23 :: __main__ :: No device detected :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/mg_tron_gui.py", line 337, in <module>
+    devices: tuple[str] = find_device()[1]
+TypeError: 'NoneType' object is not subscriptable
+26-May-22 15:18:23 :: __main__ :: No device detected in :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/mg_tron_gui.py", line 383, in <module>
+    for i, device in enumerate(devices)
+NameError: name 'devices' is not defined
+26-May-22 15:18:23 :: __main__ :: Device not detected :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/mg_tron_gui.py", line 404, in <module>
+    default_value=f"Device:{devices[0]}",
+NameError: name 'devices' is not defined
+26-May-22 15:18:37 :: interface :: No device connected to machine :: WARNING
+26-May-22 15:18:37 :: interface :: Device not found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 43, in find_device
+    return results[DEVICE_NUMBER], results
+IndexError: list index out of range
+26-May-22 15:18:37 :: interface :: No device found on system :: ERROR
+26-May-22 15:18:37 :: interface :: No device found on system :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 83, in Megatron
+    PORT = find_device(DEVICE_PORT)[0]
+TypeError: 'NoneType' object is not subscriptable
+26-May-22 15:18:37 :: __main__ :: creating dpg context :: INFO
+26-May-22 15:18:37 :: interface :: Call to device initiated :: DEBUG
+26-May-22 15:18:37 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 15:18:37 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 66, in serial_call
+    ser.port = PORT
+NameError: name 'PORT' is not defined
+26-May-22 15:18:37 :: interface :: No device connected to machine :: WARNING
+26-May-22 15:18:37 :: interface :: Device not found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 43, in find_device
+    return results[DEVICE_NUMBER], results
+IndexError: list index out of range
+26-May-22 15:18:37 :: __main__ :: No device detected :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/mg_tron_gui.py", line 337, in <module>
+    devices: tuple[str] = find_device()[1]
+TypeError: 'NoneType' object is not subscriptable
+26-May-22 15:18:37 :: __main__ :: No device detected in :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/mg_tron_gui.py", line 384, in <module>
+    for i, device in enumerate(devices)
+NameError: name 'devices' is not defined
+26-May-22 15:18:37 :: __main__ :: Device not detected :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/mg_tron_gui.py", line 405, in <module>
+    default_value=f"Device:{devices[0]}",
+NameError: name 'devices' is not defined
+26-May-22 15:19:04 :: interface :: No device connected to machine :: WARNING
+26-May-22 15:19:04 :: interface :: Device not found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 43, in find_device
+    return results[DEVICE_NUMBER], results
+IndexError: list index out of range
+26-May-22 15:19:04 :: interface :: No device found on system :: ERROR
+26-May-22 15:19:04 :: interface :: No device found on system :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 83, in Megatron
+    PORT = find_device(DEVICE_PORT)[0]
+TypeError: 'NoneType' object is not subscriptable
+26-May-22 15:19:04 :: __main__ :: creating dpg context :: INFO
+26-May-22 15:19:04 :: interface :: Call to device initiated :: DEBUG
+26-May-22 15:19:04 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 15:19:04 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 66, in serial_call
+    ser.port = PORT
+NameError: name 'PORT' is not defined
+26-May-22 15:19:04 :: interface :: No device connected to machine :: WARNING
+26-May-22 15:19:04 :: interface :: Device not found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 43, in find_device
+    return results[DEVICE_NUMBER], results
+IndexError: list index out of range
+26-May-22 15:19:04 :: __main__ :: No device detected :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/mg_tron_gui.py", line 336, in <module>
+    devices: tuple[str] = find_device()[1]
+TypeError: 'NoneType' object is not subscriptable
+26-May-22 15:19:04 :: __main__ :: No device detected in :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/mg_tron_gui.py", line 378, in <module>
+    for i, device in enumerate(devices)
+NameError: name 'devices' is not defined
+26-May-22 15:19:04 :: __main__ :: Device not detected :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/mg_tron_gui.py", line 399, in <module>
+    default_value=f"Device:{devices[0]}",
+NameError: name 'devices' is not defined
+26-May-22 15:19:56 :: interface :: No device connected to machine :: WARNING
+26-May-22 15:19:56 :: interface :: Device not found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 43, in find_device
+    return results[DEVICE_NUMBER], results
+IndexError: list index out of range
+26-May-22 15:19:56 :: interface :: No device found on system :: ERROR
+26-May-22 15:19:56 :: interface :: No device found on system :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 83, in Megatron
+    PORT = find_device(DEVICE_PORT)[0]
+TypeError: 'NoneType' object is not subscriptable
+26-May-22 15:19:56 :: __main__ :: creating dpg context :: INFO
+26-May-22 15:19:56 :: interface :: Call to device initiated :: DEBUG
+26-May-22 15:19:56 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 15:19:56 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 66, in serial_call
+    ser.port = PORT
+NameError: name 'PORT' is not defined
+26-May-22 15:19:56 :: interface :: No device connected to machine :: WARNING
+26-May-22 15:19:56 :: interface :: Device not found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 43, in find_device
+    return results[DEVICE_NUMBER], results
+IndexError: list index out of range
+26-May-22 15:19:56 :: __main__ :: No device detected :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/mg_tron_gui.py", line 337, in <module>
+    devices: tuple[str] = find_device()[1]
+TypeError: 'NoneType' object is not subscriptable
+26-May-22 15:19:58 :: __main__ :: No device detected in :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/mg_tron_gui.py", line 387, in <module>
+    for i, device in enumerate(devices)
+NameError: name 'devices' is not defined
+26-May-22 15:19:58 :: __main__ :: Device not detected :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/mg_tron_gui.py", line 408, in <module>
+    default_value=f"Device:{devices[0]}",
+NameError: name 'devices' is not defined
+26-May-22 15:20:11 :: interface :: No device connected to machine :: WARNING
+26-May-22 15:20:11 :: interface :: Device not found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 43, in find_device
+    return results[DEVICE_NUMBER], results
+IndexError: list index out of range
+26-May-22 15:20:11 :: interface :: No device found on system :: ERROR
+26-May-22 15:20:11 :: interface :: No device found on system :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 83, in Megatron
+    PORT = find_device(DEVICE_PORT)[0]
+TypeError: 'NoneType' object is not subscriptable
+26-May-22 15:20:11 :: __main__ :: creating dpg context :: INFO
+26-May-22 15:20:11 :: interface :: Call to device initiated :: DEBUG
+26-May-22 15:20:11 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 15:20:11 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 66, in serial_call
+    ser.port = PORT
+NameError: name 'PORT' is not defined
+26-May-22 15:20:11 :: interface :: No device connected to machine :: WARNING
+26-May-22 15:20:11 :: interface :: Device not found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 43, in find_device
+    return results[DEVICE_NUMBER], results
+IndexError: list index out of range
+26-May-22 15:20:11 :: __main__ :: No device detected :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/mg_tron_gui.py", line 337, in <module>
+    devices: tuple[str] = find_device()[1]
+TypeError: 'NoneType' object is not subscriptable
+26-May-22 15:20:11 :: __main__ :: No device detected in :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/mg_tron_gui.py", line 386, in <module>
+    for i, device in enumerate(devices)
+NameError: name 'devices' is not defined
+26-May-22 15:20:11 :: __main__ :: Device not detected :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/mg_tron_gui.py", line 407, in <module>
+    default_value=f"Device:{devices[0]}",
+NameError: name 'devices' is not defined
+26-May-22 15:21:57 :: interface :: No device connected to machine :: WARNING
+26-May-22 15:21:57 :: interface :: Device not found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 43, in find_device
+    return results[DEVICE_NUMBER], results
+IndexError: list index out of range
+26-May-22 15:21:57 :: interface :: No device found on system :: ERROR
+26-May-22 15:21:57 :: interface :: No device found on system :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 83, in Megatron
+    PORT = find_device(DEVICE_PORT)[0]
+TypeError: 'NoneType' object is not subscriptable
+26-May-22 15:21:57 :: __main__ :: creating dpg context :: INFO
+26-May-22 15:21:57 :: interface :: Call to device initiated :: DEBUG
+26-May-22 15:21:57 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 15:21:57 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 66, in serial_call
+    ser.port = PORT
+NameError: name 'PORT' is not defined
+26-May-22 15:21:57 :: interface :: No device connected to machine :: WARNING
+26-May-22 15:21:57 :: interface :: Device not found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 43, in find_device
+    return results[DEVICE_NUMBER], results
+IndexError: list index out of range
+26-May-22 15:21:57 :: __main__ :: No device detected :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/mg_tron_gui.py", line 338, in <module>
+    devices: tuple[str] = find_device()[1]
+TypeError: 'NoneType' object is not subscriptable
+26-May-22 15:21:59 :: __main__ :: No device detected in :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/mg_tron_gui.py", line 373, in <module>
+    for i, device in enumerate(devices)
+NameError: name 'devices' is not defined
+26-May-22 15:21:59 :: __main__ :: Device not detected :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/mg_tron_gui.py", line 394, in <module>
+    default_value=f"Device:{devices[0]}",
+NameError: name 'devices' is not defined
+26-May-22 15:24:32 :: interface :: No device connected to machine :: WARNING
+26-May-22 15:24:32 :: interface :: Device not found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 43, in find_device
+    return results[DEVICE_NUMBER], results
+IndexError: list index out of range
+26-May-22 15:24:32 :: interface :: No device found on system :: ERROR
+26-May-22 15:24:32 :: interface :: No device found on system :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 83, in Megatron
+    PORT = find_device(DEVICE_PORT)[0]
+TypeError: 'NoneType' object is not subscriptable
+26-May-22 15:24:32 :: __main__ :: creating dpg context :: INFO
+26-May-22 15:24:32 :: interface :: Call to device initiated :: DEBUG
+26-May-22 15:24:32 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 15:24:32 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 66, in serial_call
+    ser.port = PORT
+NameError: name 'PORT' is not defined
+26-May-22 15:24:32 :: interface :: No device connected to machine :: WARNING
+26-May-22 15:24:32 :: interface :: Device not found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 43, in find_device
+    return results[DEVICE_NUMBER], results
+IndexError: list index out of range
+26-May-22 15:24:32 :: __main__ :: No device detected :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/mg_tron_gui.py", line 338, in <module>
+    devices: tuple[str] = find_device()[1]
+TypeError: 'NoneType' object is not subscriptable
+26-May-22 15:24:32 :: __main__ :: No device detected in :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/mg_tron_gui.py", line 373, in <module>
+    for i, device in enumerate(devices)
+NameError: name 'devices' is not defined
+26-May-22 15:24:32 :: __main__ :: Device not detected :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/mg_tron_gui.py", line 394, in <module>
+    default_value=f"Device:{devices[0]}",
+NameError: name 'devices' is not defined
+26-May-22 15:27:02 :: interface :: No device connected to machine :: WARNING
+26-May-22 15:27:02 :: interface :: Device not found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 43, in find_device
+    return results[DEVICE_NUMBER], results
+IndexError: list index out of range
+26-May-22 15:27:02 :: interface :: No device found on system :: ERROR
+26-May-22 15:27:02 :: interface :: No device found on system :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 83, in Megatron
+    PORT = find_device(DEVICE_PORT)[0]
+TypeError: 'NoneType' object is not subscriptable
+26-May-22 15:27:02 :: __main__ :: creating dpg context :: INFO
+26-May-22 15:27:02 :: interface :: Call to device initiated :: DEBUG
+26-May-22 15:27:02 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 15:27:02 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 66, in serial_call
+    ser.port = PORT
+NameError: name 'PORT' is not defined
+26-May-22 15:27:02 :: interface :: No device connected to machine :: WARNING
+26-May-22 15:27:02 :: interface :: Device not found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 43, in find_device
+    return results[DEVICE_NUMBER], results
+IndexError: list index out of range
+26-May-22 15:27:02 :: __main__ :: No device detected :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/mg_tron_gui.py", line 338, in <module>
+    devices: tuple[str] = find_device()[1]
+TypeError: 'NoneType' object is not subscriptable
+26-May-22 15:27:02 :: __main__ :: No device detected in :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/mg_tron_gui.py", line 373, in <module>
+    for i, device in enumerate(devices)
+NameError: name 'devices' is not defined
+26-May-22 15:27:02 :: __main__ :: Device not detected :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/mg_tron_gui.py", line 394, in <module>
+    default_value=f"Device:{devices[0]}",
+NameError: name 'devices' is not defined
+26-May-22 15:28:12 :: interface :: No device connected to machine :: WARNING
+26-May-22 15:28:12 :: interface :: Device not found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 43, in find_device
+    return results[DEVICE_NUMBER], results
+IndexError: list index out of range
+26-May-22 15:28:12 :: interface :: No device found on system :: ERROR
+26-May-22 15:28:12 :: interface :: No device found on system :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 83, in Megatron
+    PORT = find_device(DEVICE_PORT)[0]
+TypeError: 'NoneType' object is not subscriptable
+26-May-22 15:28:13 :: __main__ :: creating dpg context :: INFO
+26-May-22 15:28:13 :: interface :: Call to device initiated :: DEBUG
+26-May-22 15:28:13 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 15:28:13 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 66, in serial_call
+    ser.port = PORT
+NameError: name 'PORT' is not defined
+26-May-22 15:28:13 :: interface :: No device connected to machine :: WARNING
+26-May-22 15:28:13 :: interface :: Device not found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 43, in find_device
+    return results[DEVICE_NUMBER], results
+IndexError: list index out of range
+26-May-22 15:28:13 :: __main__ :: No device detected :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/mg_tron_gui.py", line 338, in <module>
+    devices: tuple[str] = find_device()[1]
+TypeError: 'NoneType' object is not subscriptable
+26-May-22 15:28:13 :: __main__ :: No device detected in :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/mg_tron_gui.py", line 380, in <module>
+    for i, device in enumerate(devices)
+NameError: name 'devices' is not defined
+26-May-22 15:28:13 :: __main__ :: Device not detected :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/mg_tron_gui.py", line 401, in <module>
+    default_value=f"Device:{devices[0]}",
+NameError: name 'devices' is not defined
+26-May-22 15:30:35 :: interface :: No device connected to machine :: WARNING
+26-May-22 15:30:35 :: interface :: Device not found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 43, in find_device
+    return results[DEVICE_NUMBER], results
+IndexError: list index out of range
+26-May-22 15:30:35 :: interface :: No device found on system :: ERROR
+26-May-22 15:30:35 :: interface :: No device found on system :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 83, in Megatron
+    PORT = find_device(DEVICE_PORT)[0]
+TypeError: 'NoneType' object is not subscriptable
+26-May-22 15:31:04 :: interface :: No device connected to machine :: WARNING
+26-May-22 15:31:04 :: interface :: Device not found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 43, in find_device
+    return results[DEVICE_NUMBER], results
+IndexError: list index out of range
+26-May-22 15:31:04 :: interface :: No device found on system :: ERROR
+26-May-22 15:31:04 :: interface :: No device found on system :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 83, in Megatron
+    PORT = find_device(DEVICE_PORT)[0]
+TypeError: 'NoneType' object is not subscriptable
+26-May-22 15:31:04 :: __main__ :: creating dpg context :: INFO
+26-May-22 15:31:04 :: interface :: Call to device initiated :: DEBUG
+26-May-22 15:31:04 :: interface :: Call initiated from Linux to USB device :: INFO
+26-May-22 15:31:04 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 66, in serial_call
+    ser.port = PORT
+NameError: name 'PORT' is not defined
+26-May-22 15:31:04 :: interface :: No device connected to machine :: WARNING
+26-May-22 15:31:04 :: interface :: Device not found :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/interface.py", line 43, in find_device
+    return results[DEVICE_NUMBER], results
+IndexError: list index out of range
+26-May-22 15:31:04 :: __main__ :: No device detected :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/mg_tron_gui.py", line 335, in <module>
+    devices: tuple[str] = find_device()[1]
+TypeError: 'NoneType' object is not subscriptable
+26-May-22 15:31:04 :: __main__ :: No device detected in :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/mg_tron_gui.py", line 377, in <module>
+    for i, device in enumerate(devices)
+NameError: name 'devices' is not defined
+26-May-22 15:31:04 :: __main__ :: Device not detected :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/mg_tron_gui.py", line 398, in <module>
+    default_value=f"Device:{devices[0]}",
+NameError: name 'devices' is not defined
