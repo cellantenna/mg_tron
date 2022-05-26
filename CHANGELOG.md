@@ -9,12 +9,13 @@ This project, henceforth, will recongnize [semantic versioning](https://semver.o
 Here we write upgrading and change notes.
 
 ⭐ MAJOR version when you make incompatible API changes,<br>
-✴️ MINOR version when you add functionality in a backwards compatible manner, and<br>
+✴️ MINOR version when you add functionality in a backwards compatible manner<br>
 ✳️ PATCH version when you make backwards compatible bug fixes.<br>
 
 # [0.9.0] - 2022 MAY 25
 - Now show device location and name
 - Turn indicator buttons red if no device detected
+- Add loggin to serial calls
 
 # [0.8.3] - 2022 MAY 25
 - Added version number in bottom right of GUI

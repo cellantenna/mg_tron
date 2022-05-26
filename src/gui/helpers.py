@@ -440,17 +440,15 @@ def kill_channel(sender, app_data, user_data: int) -> None:
     dpg.bind_item_theme(item=f"stats_{user_data}", theme=grey_btn_theme),
 
 
-def device_finder(sender, app_data, user_data: int) -> list[str]:
+def device_finder(sender, app_data, user_data: int) -> None:
     """List all the usb microcontrollers connected to the machine"""
 
     # user data contains the chosen port number
-    DEVICE_PORT = user_data
 
     # reinitialize the method to update the device selected
-    device = find_device(DEVICE_PORT)
+    device = find_device(user_data)[0]
 
     dpg.set_value(item="device_indicator", value=f"Device:{device}")
-    return device_names()
 
 
 def device_names() -> set[str]:
@@ -463,6 +461,5 @@ def device_names() -> set[str]:
     except TypeError:
         loggey.exception(msg="No devices detected")
 
-    devices: set = set(devices.strip().split(sep="\n"))
+    devices: list = devices.strip().split(sep="\n")
     return devices
-    # print("Devices: ", devices)

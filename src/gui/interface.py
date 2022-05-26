@@ -1,11 +1,10 @@
-from cmath import exp
 from dataclasses import dataclass
 import platform
 from time import sleep
-from pyparsing import restOfLine
 import serial
 import subprocess
 import logging
+
 
 logger = logging.getLogger(__name__)
 logging.basicConfig(
@@ -17,8 +16,8 @@ logging.basicConfig(
 )
 
 
-BAUDRATE = 230_400
-DEVICE_PORT: int = 0
+BAUDRATE = 115_200
+DEVICE_PORT: int = int()
 
 
 def find_device(DEVICE_NUMBER: int = DEVICE_PORT) -> tuple[str, list[str]]:
@@ -30,6 +29,9 @@ def find_device(DEVICE_NUMBER: int = DEVICE_PORT) -> tuple[str, list[str]]:
         # Search Linux filesystem for device
         find = ["find /dev -iname '*acm*'"]
         try:
+            logger.info(
+                msg=f"{__name__} executing linux shell command to get device file names"
+            )
             results_ = subprocess.run(
                 args=find,
                 shell=True,
@@ -39,7 +41,8 @@ def find_device(DEVICE_NUMBER: int = DEVICE_PORT) -> tuple[str, list[str]]:
                 capture_output=False,
             )
             results = sorted(results_.stdout.strip().splitlines())
-            # print(results[DEVICE_NUMBER])
+            global PORT
+            PORT = results[DEVICE_NUMBER]
             return results[DEVICE_NUMBER], results
         except IndexError:
             logger.warning("No device connected to machine")
@@ -55,11 +58,10 @@ def find_device(DEVICE_NUMBER: int = DEVICE_PORT) -> tuple[str, list[str]]:
         return "COM3"
 
 
-def serial_call(*args) -> None:
-    logger.debug(msg="Call to device initiated")
-    logger.info(msg=f"Call initiated from {platform.system()} to USB device")
-    sleep(0.1)
-    global PORT
+def serial_call(*args, PORT=DEVICE_PORT) -> None:
+    logger.debug(msg="Serial call to device initiated")
+    logger.info(msg=f"Serial call initiated from {platform.system()} to USB device")
+    sleep(0.1)  # Allow time to read and execute via serial
     try:
         with serial.Serial() as ser:
             ser.baudrate = BAUDRATE
@@ -67,7 +69,7 @@ def serial_call(*args) -> None:
             ser.timeout = 2  # seconds
             ser.open()
             ser.write(f"{' '.join([arg for arg in args])}".encode("utf-8"))
-            # outputs: list[str] = [line.decode('ascii') for line in ser.readlines()]
+            # outputs: list[str] = [line.decode('ascii') for line in ser.readlines()] # Serial output from MGTron
             # outputs = " ".join(output for output in outputs)
             # print(outputs)
     except (serial.SerialException, NameError):
@@ -79,9 +81,10 @@ class Megatron:
     """Class to organize the manipulation of 8 channels"""
 
     try:
+        logger.info(msg="Getting the port name of device")
         global PORT
         PORT = find_device(DEVICE_PORT)[0]
-        print(PORT)
+        print("PORT: ", PORT)
     except TypeError:
         logger.error(msg="No device found on system")
         logger.exception(msg="No device found on system")
@@ -89,7 +92,8 @@ class Megatron:
     def status(self) -> None:
         """Check the status of the board"""
 
-        serial_call("s")
+        serial_call("s", PORT=PORT)
+        logger.info(f"{__name__} executed")
 
     def change_power(self, channel: int, power_level: int) -> None:
         """
@@ -97,7 +101,8 @@ class Megatron:
         Range: 0 - 63
         """
 
-        serial_call("p", str(channel), str(power_level))
+        serial_call("p", str(channel), str(power_level), PORT=PORT)
+        logger.info(f"{__name__} executed")
 
     def change_freq(self, channel: int, frequency: float) -> None:
         """
@@ -105,7 +110,8 @@ class Megatron:
         Range: 50 - 6400 MHz
         """
 
-        serial_call("f", str(channel), str(frequency))
+        serial_call("f", str(channel), str(frequency), PORT=PORT)
+        logger.info(f"{__name__} executed")
 
     def change_bandwidth(self, channel: int, percentage: int) -> None:
         """
@@ -113,25 +119,29 @@ class Megatron:
         Range: 0 - 100
         """
 
-        serial_call("b", str(channel), str(percentage))
+        serial_call("b", str(channel), str(percentage), PORT=PORT)
+        logger.info(f"{__name__} executed")
 
     def save_state(self, state: bool) -> None:
         """Save each settings made by the user into memory for next startup"""
 
         state = 1 if state else 0
-        serial_call("x", str(state))
+        serial_call("x", str(state), PORT=PORT)
+        logger.info(f"{__name__} executed")
 
     def amplification(self, channel: int, state: bool) -> None:
         """Output HIGH or LOW logic level out of a chosen channel"""
 
         state = 1 if state else 0
-        serial_call("a", str(channel), str(state))
+        serial_call("a", str(channel), str(state), PORT=PORT)
+        logger.info(f"{__name__} executed")
 
     def stability(self, state: bool) -> None:
         """Boolean a second filtering stage of capacitors for further stability"""
 
         state = 1 if state else 0
-        serial_call("~", str(state))
+        serial_call("~", str(state), PORT=PORT)
+        logger.info(f"{__name__} executed")
 
     def noise_control(self, state: bool, percentage: int) -> None:
         """
@@ -141,19 +151,22 @@ class Megatron:
         """
 
         state = 1 if state else 0
-        serial_call("n", str(state), str(percentage))
+        serial_call("n", str(state), str(percentage), PORT=PORT)
+        logger.info(f"{__name__} executed")
 
     def reset_board(self) -> None:
         """Reset the parameters of the board"""
 
         [
             (
-                serial_call("p", str(i), "0"),
-                serial_call("b", str(i), "0"),
-                serial_call("f", str(i), "50.00"),
+                serial_call("p", str(i), "0", PORT=PORT),
+                serial_call("b", str(i), "0", PORT=PORT),
+                serial_call("f", str(i), "50.00", PORT=PORT),
             )
             for i in range(1, 9)
         ]
+
+    logger.info(f"{__name__} executed")
 
 
 def main() -> None:

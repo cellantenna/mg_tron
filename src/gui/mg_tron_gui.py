@@ -17,6 +17,7 @@ from helpers import (
     demo_config,
     demo_config_2,
     device_finder,
+    device_names,
     kill_channel,
     mission_alpha,
     mission_bravo,
@@ -330,20 +331,6 @@ with dpg.window(
         width=200,
         height=75,
     ):
-        try:
-            # Grab the list of devices connected
-            devices: tuple[str] = find_device()[1]
-            print("Devices from GUI: ", devices)
-        except TypeError:
-            logger.exception(msg="No device detected")
-
-            [
-                dpg.bind_item_theme(
-                    item=f"stats_{channel}",
-                    theme=red_btn_theme,
-                )
-                for channel in range(1, 9)
-            ]
 
         device_config = dpg.add_button(
             label="Device Config",
@@ -366,6 +353,10 @@ with dpg.window(
             )
 
             try:
+                # Grab the list of devices connected
+                devices: list[str] = device_names()
+                # print("DEVICE NAMES", device_names())
+
                 [
                     dpg.add_menu_item(
                         parent="choose_device",
@@ -376,6 +367,14 @@ with dpg.window(
                     )
                     for i, device in enumerate(devices)
                 ]
+
+                dpg.add_text(
+                    parent="device_config",
+                    tag="device_indicator",
+                    default_value=f"Device:{devices}",
+                    pos=(5, 35),
+                )
+
             except (TypeError, NameError):
                 dpg.add_menu_item(
                     parent="choose_device",
@@ -384,22 +383,22 @@ with dpg.window(
                         item="modal_device_config", show=False
                     ),
                 )
-                logger.exception(msg="No device detected in")
+                logger.exception(msg="No device detected")
+                [
+                    dpg.bind_item_theme(
+                        item=f"stats_{channel}",
+                        theme=red_btn_theme,
+                    )
+                    for channel in range(1, 9)
+                ]
 
             dpg.add_button(
                 label="Quit",
+                tag="Quit",
                 callback=lambda: dpg.configure_item(
                     item="modal_device_config", show=False
                 ),
             )
-        try:
-            dpg.add_text(
-                tag="device_indicator",
-                default_value=f"Device:{devices[0]}",
-                pos=(5, 35),
-            )
-        except NameError:
-            logger.exception(msg="Device not detected")
 
     ################
     # Side buttons #
