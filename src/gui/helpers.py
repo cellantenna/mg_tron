@@ -4,6 +4,7 @@ import json
 import logging
 import subprocess
 import dearpygui.dearpygui as dpg
+from numpy import equal
 
 from interface import Megatron, find_device
 
@@ -17,8 +18,10 @@ loggey = logging.getLogger(name=__name__)
 # dd/mm/YY H:M:S
 dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
 
+loggey.info(msg="class Megatron instatiated")
 data_vehicle: Megatron = Megatron()
 
+loggey.info(msg="Remote colors initialized")
 dpg.create_context()
 
 # Green Button Theme
@@ -440,18 +443,7 @@ def kill_channel(sender, app_data, user_data: int) -> None:
     dpg.bind_item_theme(item=f"stats_{user_data}", theme=grey_btn_theme),
 
 
-def device_finder(sender, app_data, user_data: int) -> None:
-    """List all the usb microcontrollers connected to the machine"""
-
-    # user data contains the chosen port number
-
-    # reinitialize the method to update the device selected
-    device = find_device(user_data)[0]
-
-    dpg.set_value(item="device_indicator", value=f"Device:{device}")
-
-
-def device_names() -> set[str]:
+def device_names() -> list[str]:
     """Use a bash script to list connected microarchitectures"""
 
     try:
@@ -462,4 +454,25 @@ def device_names() -> set[str]:
         loggey.exception(msg="No devices detected")
 
     devices: list = devices.strip().split(sep="\n")
-    return devices
+
+    return sorted(devices)
+
+
+def device_finder(sender, app_data, user_data: int) -> None:
+    """List all the usb microcontrollers connected to the machine"""
+
+    # user data contains the chosen port number
+
+    # reinitialize the method to update the device selected
+    new_device = find_device(user_data)[0]
+    devices = device_names()
+    device = [device.split(sep="_") for device in devices]
+    # print_device = [device[dev][-1] for dev in device if dev[0].split(sep="-")[0] == new_device]
+    # print("New Device: ", int(new_device[-1]))
+    # print("Old Device: ", str(device[0][0].split(sep="-")[0])[-2])
+    for dev in range(len(device)):
+        if int(new_device[-1]) == int(device[dev][0].split(sep="-")[0][-2]):
+            dpg.set_value(item="device_indicator", value=f"Device:{device[dev][-1]}")
+
+
+loggey.debug(msg="EOF")

@@ -16,6 +16,7 @@ Here we write upgrading and change notes.
 - Now show device location and name
 - Turn indicator buttons red if no device detected
 - Add loggin to serial calls
+- Connected devices are in numerical order
 
 # [0.8.3] - 2022 MAY 25
 - Added version number in bottom right of GUI

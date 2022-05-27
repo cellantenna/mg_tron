@@ -4,7 +4,7 @@ import logging
 from typing import Any
 
 import dearpygui.dearpygui as dpg
-from interface import find_device
+
 
 from helpers import (
     auto_fill_bandwidth,
@@ -34,6 +34,7 @@ from helpers import (
 
 logger = logging.getLogger(name=__name__)
 
+logger.info(msg=f"Imports imported in GUI file")
 RESOLUTION: list[int] = [1250, 735]  # 1200x800
 POWER: bool = bool()
 ROW_HEIGHT: int = 78
@@ -52,9 +53,10 @@ BUTTON_WIDTH = 120
 dpg.create_context()
 logger.info(msg="creating dpg context")
 
+logger.info(msg="Set save state of MGTron API to True")
+data_vehicle.save_state(True)
 
-data_vehicle.save_state(False)
-
+logger.info(msg="Setting GUI colors")
 # Green Button Theme
 with dpg.theme() as grn_btn_theme:
     with dpg.theme_component(dpg.mvAll):
@@ -89,6 +91,7 @@ with dpg.theme() as wht_btn_theme:
 with dpg.theme() as grey_column_theme:
     with dpg.theme_component(dpg.mvAll):
         dpg.add_theme_color(dpg.mvThemeCol_Button, (185, 185, 185, 255))  # WHITE
+logger.info(msg="GUI colors set")
 
 with dpg.handler_registry():
     dpg.add_mouse_wheel_handler(callback=change_inputs)
@@ -99,7 +102,7 @@ with dpg.font_registry():
     bold_font = dpg.add_font(file="src/gui/MesloLGS NF Bold Italic.ttf", size=40)
     small_font = dpg.add_font(file="src/gui/MesloLGS NF Italic.ttf", size=13)
 
-
+logger.info(msg="Setting Primary Window in GUI file")
 # Primary Window
 with dpg.window(
     label="MGTron Control",
@@ -155,15 +158,6 @@ with dpg.window(
             pos=(dpg.get_item_width(item="col_bw") / 3.7, 39 - ADJUSTMENT + 5),
         )
 
-    # Right Header Column Channel Status
-    # with dpg.child_window(
-    #     pos=(620,),  # (x, y)
-    #     width=250,
-    #     height=ROW_HEIGHT - ADJUSTMENT,
-    #     border=False,
-    # ):
-    #     dpg.add_text(default_value=f"Channel Status", pos=(60, 39 - ADJUSTMENT + 5))
-
     ####################################
     # Column buttons, inputs, and text #
     ####################################
@@ -176,6 +170,7 @@ with dpg.window(
             width=50,
             height=ROW_HEIGHT,
         ):
+
             dpg.add_text(
                 default_value=i + 1,
                 tag=f"channel_{i+1}",
@@ -189,6 +184,7 @@ with dpg.window(
             width=250,
             height=ROW_HEIGHT,
         ):
+
             dpg.add_input_float(
                 tag=f"freq_{i+1}",
                 default_value=650.00 * ((i + 1)),
@@ -198,9 +194,10 @@ with dpg.window(
                 max_clamped=True,
                 width=236,
                 step=1,
-                step_fast=20,
+                step_fast=100,
                 pos=(2, ROW_HEIGHT / 2 - 15),
             )
+
         # Power Column Input
         with dpg.child_window(
             label=f"Channel {i+1}",
@@ -208,6 +205,7 @@ with dpg.window(
             width=180,
             height=ROW_HEIGHT,
         ):
+
             dpg.add_input_int(
                 tag=f"power_{i+1}",
                 min_value=0,
@@ -226,6 +224,7 @@ with dpg.window(
             width=180,
             height=ROW_HEIGHT,
         ):
+
             dpg.add_input_int(
                 tag=f"bandwidth_{i+1}",
                 min_value=0,
@@ -236,12 +235,14 @@ with dpg.window(
                 step_fast=10,
                 pos=(13, ROW_HEIGHT / 2 - 15),
             )
+
         # Send Button Column
         with dpg.child_window(
             pos=(660, ROW_HEIGHT * (i + MAIN_TABLE_HEIGHT) - ADJUSTMENT),
             width=(200),
             height=ROW_HEIGHT,
         ):
+
             # SEND Buttons
             dpg.add_button(
                 label="SEND",
@@ -279,6 +280,7 @@ with dpg.window(
         width=200 * 3,
         border=False,
     ):
+
         dpg.add_button(
             label="AUTO\nFILL",
             tag="auto_fill_frequency",
@@ -290,6 +292,7 @@ with dpg.window(
                 dpg.get_item_height(item="auto_fill") / 3 - 10,
             ),
         )
+
         dpg.add_button(
             label="AUTO\nFILL",
             tag="auto_fill_power",
@@ -301,6 +304,7 @@ with dpg.window(
                 dpg.get_item_height(item="auto_fill") / 3 - 10,
             ),
         )
+
         dpg.add_button(
             label="AUTO\nFILL",
             tag="auto_fill_bandwidth",
@@ -360,7 +364,7 @@ with dpg.window(
                 [
                     dpg.add_menu_item(
                         parent="choose_device",
-                        label=f"Device Number: {i}, {device}",
+                        label=f"Device {i}: {device.split(sep='_')[-1]}",
                         tag=f"device_menu_item_{i}",
                         callback=device_finder,
                         user_data=i,
@@ -371,7 +375,7 @@ with dpg.window(
                 dpg.add_text(
                     parent="device_config",
                     tag="device_indicator",
-                    default_value=f"Device:{devices}",
+                    default_value=f"Device:{devices[0].split(sep='_')[-1]}",
                     pos=(5, 35),
                 )
 
@@ -414,6 +418,7 @@ with dpg.window(
         ####################
         # Reset All button #
         ####################
+        logger.info(msg="RESET ALL button pressed")
         reset_all = dpg.add_button(
             tag="Reset All Channels",
             height=70,
@@ -424,6 +429,7 @@ with dpg.window(
                 (dpg.get_item_height(item="big_buttons") - SEND_RESET_ALL_HEIGHT) / 2,
             ),
         )
+
         dpg.add_text(
             default_value="RESET\nALL",
             pos=(
@@ -436,6 +442,7 @@ with dpg.window(
         ###################
         # Send All button #
         ###################
+        logger.info(msg="SEND ALL button pressed")
         send_all = dpg.add_button(
             tag="Send All",
             height=85,
@@ -446,6 +453,7 @@ with dpg.window(
                 (dpg.get_item_height(item="big_buttons") - SEND_RESET_ALL_HEIGHT) / 2,
             ),
         )
+
         dpg.add_text(
             default_value="SEND\nALL",
             pos=(
@@ -458,6 +466,7 @@ with dpg.window(
         #####################
         # Quick Save button #
         #####################
+        logger.info(msg="Quick save button pressed")
         save_all = dpg.add_button(
             tag="save button",
             callback=quick_save,
@@ -473,6 +482,7 @@ with dpg.window(
         #####################
         # Quick Load button #
         #####################
+        logger.info(msg="Quick Load button pressed")
         load_all = dpg.add_button(
             tag="load_all",
             callback=quick_load,
@@ -488,6 +498,7 @@ with dpg.window(
         ###############
         # Custom save #
         ###############
+        logger.info(msg="Custom Save button pressed")
         custom_save_button = dpg.add_button(
             tag="custom_save",
             height=70,
@@ -522,6 +533,7 @@ with dpg.window(
         ###############
         # Custom load #
         ###############
+        logger.info(msg="Custom Load button pressed")
         custom_load_button = dpg.add_button(
             tag="custom_load_button",
             height=70,
@@ -539,11 +551,13 @@ with dpg.window(
             modal=True,
             tag="modal_load",
         ):
+
             dpg.add_menu(
                 parent="modal_load",
                 label="Load File: ",
                 tag="load_input",
             )
+
             [
                 dpg.add_menu_item(
                     parent="load_input",
@@ -558,9 +572,10 @@ with dpg.window(
                 callback=lambda: dpg.configure_item(item="modal_load", show=False),
             )
 
-        ###############
+        #################
         # DEMO 1 button #
-        ###############
+        #################
+        logger.info(msg="Demo 1 button pressed")
         demo_button = dpg.add_button(
             tag="demo",
             height=70,
@@ -576,6 +591,7 @@ with dpg.window(
         ###############
         # DEMO 2 button #
         ###############
+        logger.info(msg="Demo 2 button pressed")
         demo_two_button = dpg.add_button(
             tag="demo_two",
             height=70,
@@ -591,6 +607,7 @@ with dpg.window(
         ########################
         # Mission Alpha button #
         ########################
+        logger.info(msg="Mission Alpha button pressed")
         mission_alpha_button = dpg.add_button(
             tag="mssn_alpha",
             callback=mission_alpha,
@@ -606,6 +623,7 @@ with dpg.window(
         ########################
         # Mission Bravo button #
         ########################
+        logger.info(msg="Mission Bravo button pressed")
         mission_bravo_button = dpg.add_button(
             tag="mssn_bravo",
             callback=mission_bravo,
@@ -621,6 +639,7 @@ with dpg.window(
         ##################
         # WIFI preset #
         ##################
+        logger.info(msg="WIFI preset button pressed")
         two_point_four_button = dpg.add_button(
             tag="two_point_four",
             callback=two_point_four,
@@ -636,6 +655,7 @@ with dpg.window(
         ##########################
         # Mission Charlie preset #
         ##########################
+        logger.info(msg="Mission Charlie button pressed")
         mission_charlie_button = dpg.add_button(
             tag="mssn_charlie",
             callback=mission_charlie,
@@ -647,9 +667,11 @@ with dpg.window(
                 (dpg.get_item_height(item="big_buttons") + WIFI_HEIGHT) / 2,
             ),
         )
+
         ########################
         # Mission Delta preset #
         ########################
+        logger.info(msg="Mission Delta button pressed")
         mission_delta_button = dpg.add_button(
             tag="mssn_delta",
             callback=mission_delta,
@@ -661,9 +683,11 @@ with dpg.window(
                 (dpg.get_item_height(item="big_buttons") - 80),
             ),
         )
+
         #######################
         # Mission Echo preset #
         #######################
+        logger.info(msg="Mission Echo button pressed")
         mission_echo_button = dpg.add_button(
             tag="mssn_echo",
             # callback=mission_charlie,
@@ -697,7 +721,7 @@ with dpg.window(
 
 dpg.bind_font(font=ital_font)
 dpg.bind_item_font(item="ver_num", font=small_font)
-# dpg.bind_item_font(item="")
+
 [
     (
         dpg.bind_item_font(item=f"freq_{i}", font=bold_font),
@@ -758,7 +782,7 @@ dpg.create_viewport(
     title=f"CellAntenna MGTron {TM}",
     width=RESOLUTION[0],
     height=RESOLUTION[1],
-    resizable=False,
+    resizable=True,
     always_on_top=True,
     x_pos=0,
     y_pos=0,
