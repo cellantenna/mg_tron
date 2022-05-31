@@ -4,7 +4,6 @@ import json
 import logging
 import subprocess
 import dearpygui.dearpygui as dpg
-from numpy import equal
 
 from interface import Megatron, find_device
 
