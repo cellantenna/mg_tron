@@ -107,33 +107,33 @@ class Megatron:
         serial_call("s")
         logger.info(f"{Megatron.status.__name__} function executed")
 
-    def change_power(self, channel: int, power_level: int) -> None:
+    def change_power(self, channel: int, power_level: int) -> serial_call:
         """
         Change the power level of a channel
         Range: 0 - 63
         """
 
-        serial_call("p", str(channel), str(power_level))
         logger.info(f"{Megatron.change_power.__name__} function executed")
         logger.info(msg=f"Connected device path: {PORT}")
+        return serial_call("p", str(channel), str(power_level))
 
-    def change_freq(self, channel: int, frequency: float) -> None:
+    def change_freq(self, channel: int, frequency: float) -> serial_call:
         """
         Change the frequency of a channel
         Range: 50 - 6400 MHz
         """
 
-        serial_call("f", str(channel), str(frequency))
         logger.info(f"{Megatron.change_freq.__name__} function executed")
+        return serial_call("f", str(channel), str(frequency))
 
-    def change_bandwidth(self, channel: int, percentage: int) -> None:
+    def change_bandwidth(self, channel: int, percentage: int) -> serial_call:
         """
         Change the bandwidth of a channel
         Range: 0 - 100
         """
 
-        serial_call("b", str(channel), str(percentage))
         logger.info(f"{Megatron.change_bandwidth.__name__} function executed")
+        return serial_call("b", str(channel), str(percentage))
 
     def save_state(self, state: bool) -> None:
         """Save each settings made by the user into memory for next startup"""
