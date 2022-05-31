@@ -9,7 +9,7 @@ with open(
 
 setuptools.setup(
     name="mgtron",
-    version="0.9.0",
+    version="0.9.1",
     author="Hunter, Christerpher",
     author_email="djhunter67@gmail.com",
     description="GUI for proprietary signal generator",
@@ -29,5 +29,11 @@ setuptools.setup(
     ],
     package_dir={"": "src"},
     packages=setuptools.find_packages(where="src"),
+    install_requires=["dearpygui"],
+    entry_points={
+        "console_scripts": [
+            "mgtron=gui:mg_tron_gui",
+        ],
+    },
     python_requires=">=3.10",
 )
