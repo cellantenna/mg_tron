@@ -364,12 +364,11 @@ with dpg.window(
                 [
                     dpg.add_menu_item(
                         parent="choose_device",
-                        label=f"Device {i}: {device.split(sep='_')[-1]}",
-                        tag=f"device_menu_item_{i}",
+                        label=f"{device.split(sep='_')[0]} {device.split(sep='_')[-1]}",
                         callback=device_finder,
                         user_data=i,
                     )
-                    for i, device in enumerate(devices)
+                    for device in devices
                 ]
 
                 dpg.add_text(
@@ -379,7 +378,7 @@ with dpg.window(
                     pos=(5, 35),
                 )
 
-            except (TypeError, NameError):
+            except (TypeError, NameError, SystemError):
                 dpg.add_menu_item(
                     parent="choose_device",
                     label=f"Device Number: Not Found",
@@ -395,6 +394,12 @@ with dpg.window(
                     )
                     for channel in range(1, 9)
                 ]
+                dpg.add_text(
+                    parent="device_config",
+                    tag="device_indicator",
+                    default_value="No Device(s) Found",
+                    pos=(5, 35),
+                )
 
             dpg.add_button(
                 label="Quit",

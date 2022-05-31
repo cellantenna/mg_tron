@@ -14,6 +14,11 @@ Here we write upgrading and change notes.
 ✴️ MINOR version when you add functionality in a backwards compatible manner<br>
 ✳️ PATCH version when you make backwards compatible bug fixes.<br>
 
+## [0.9.1] - 2022 MAY 31
+
+- Device indicator reads no device detected if no device detected
+- Fixed device listing bug
+
 ## [0.9.0] - 2022 MAY 25
 
 - Now show device location and name

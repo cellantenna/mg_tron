@@ -452,7 +452,8 @@ def device_names() -> list[str]:
     except TypeError:
         loggey.exception(msg="No devices detected")
 
-    devices: list = devices.strip().split(sep="\n")
+    devices: str = devices.strip().split(sep="\n")
+    loggey.info(msg=f"Devices found: {devices} at {device_names.__name__}")
 
     return sorted(devices)
 
@@ -461,17 +462,22 @@ def device_finder(sender, app_data, user_data: int) -> None:
     """List all the usb microcontrollers connected to the machine"""
 
     # user data contains the chosen port number
+    try:
+        # reinitialize the method to update the device selected
+        new_device = find_device(user_data)[0]
+        devices = device_names()
+        device = [device.split(sep="_") for device in devices]
+        # print_device = [device[dev][-1] for dev in device if dev[0].split(sep="-")[0] == new_device]
+        # print("New Device: ", int(new_device[-1]))
+        # print("Old Device: ", str(device[0][0].split(sep="-")[0])[-2])
+        for dev in range(len(device)):
+            if int(new_device[-1]) == int(device[dev][0].split(sep="-")[0][-2]):
+                dpg.set_value(
+                    item="device_indicator", value=f"Device:{device[dev][-1]}"
+                )
 
-    # reinitialize the method to update the device selected
-    new_device = find_device(user_data)[0]
-    devices = device_names()
-    device = [device.split(sep="_") for device in devices]
-    # print_device = [device[dev][-1] for dev in device if dev[0].split(sep="-")[0] == new_device]
-    # print("New Device: ", int(new_device[-1]))
-    # print("Old Device: ", str(device[0][0].split(sep="-")[0])[-2])
-    for dev in range(len(device)):
-        if int(new_device[-1]) == int(device[dev][0].split(sep="-")[0][-2]):
-            dpg.set_value(item="device_indicator", value=f"Device:{device[dev][-1]}")
+    except TypeError:
+        loggey.exception(msg="No devices found")
 
 
 loggey.debug(msg="EOF")
