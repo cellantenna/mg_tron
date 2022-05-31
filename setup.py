@@ -1,6 +1,10 @@
 import setuptools
 
-with open("CHANGELOG.md", "r", encoding="utf-8") as fh:
+with open(
+    "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/CHANGELOG.md",
+    "r",
+    encoding="utf-8",
+) as fh:
     long_description = fh.read()
 
 setuptools.setup(
@@ -16,10 +20,12 @@ setuptools.setup(
         "Bug Tracker": "https://github.com/mg_tron/issues",
     },
     classifiers=[
-        "Programming Language :: Python :: 3",
-        "License :: Proprietary",
-        "Operating System :: Linux",
-        "Framework :: DearPyGUI",
+        "Programming Language :: Python :: 3.10",
+        "Operating System :: POSIX :: Linux",
+        "Programming Language :: Python :: Implementation :: CPython",
+        "Topic :: Software Development :: Libraries :: Python Modules",
+        "Topic :: System :: Hardware :: Universal Serial Bus (USB)",
+        "Topic :: Terminals :: Serial",
     ],
     package_dir={"": "src"},
     packages=setuptools.find_packages(where="src"),

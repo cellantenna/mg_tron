@@ -15504,3 +15504,114 @@ GUI LAUNCHED
 27-May-22 17:23:42 :: interface :: information send via serial protocol; serial_call :: DEBUG
 27-May-22 17:23:42 :: interface :: change_power function executed :: INFO
 27-May-22 17:23:42 :: interface :: Connected device path: /dev/ttyACM0 :: INFO
+31-May-22 12:54:49 :: interface :: 
+
+GUI LAUNCHED
+
+ :: INFO
+31-May-22 12:54:49 :: interface :: Getting the port name of device :: INFO
+31-May-22 12:54:49 :: interface :: find_device function executing linux shell command to get device file names :: INFO
+31-May-22 12:54:49 :: interface :: Connected Devices: ['/dev/ttyACM0', '/dev/ttyACM1', '/dev/ttyACM2', '/dev/ttyACM3', '/dev/ttyACM4'] :: INFO
+31-May-22 12:54:49 :: interface :: Chosen Device: /dev/ttyACM0 :: DEBUG
+31-May-22 12:54:49 :: interface :: Connected device path: /dev/ttyACM0 :: INFO
+31-May-22 12:54:49 :: interface :: class Megatron initialized :: INFO
+31-May-22 12:54:49 :: interface :: EOF :: DEBUG
+31-May-22 12:54:49 :: helpers :: class Megatron instatiated :: INFO
+31-May-22 12:54:49 :: helpers :: Remote colors initialized :: INFO
+31-May-22 12:54:49 :: helpers :: EOF :: DEBUG
+31-May-22 12:54:49 :: src.gui.mg_tron_gui :: Imports imported in GUI file :: INFO
+31-May-22 12:54:49 :: src.gui.mg_tron_gui :: creating dpg context :: INFO
+31-May-22 12:54:49 :: src.gui.mg_tron_gui :: Set save state of MGTron API to True :: INFO
+31-May-22 12:54:49 :: interface :: Serial call to device initiated :: DEBUG
+31-May-22 12:54:50 :: interface :: baudrate set from serial_call :: DEBUG
+31-May-22 12:54:50 :: interface :: Serial device set from serial_call :: DEBUG
+31-May-22 12:54:50 :: interface :: timeout set from serial_call :: DEBUG
+31-May-22 12:54:50 :: interface :: opening serial connection from serial_call :: DEBUG
+31-May-22 12:54:50 :: interface :: information send via serial protocol; serial_call :: DEBUG
+31-May-22 12:54:50 :: interface :: save_state function executed :: INFO
+31-May-22 12:54:50 :: src.gui.mg_tron_gui :: Setting GUI colors :: INFO
+31-May-22 12:54:50 :: src.gui.mg_tron_gui :: GUI colors set :: INFO
+31-May-22 12:54:50 :: src.gui.mg_tron_gui :: Setting Primary Window in GUI file :: INFO
+31-May-22 12:54:50 :: src.gui.mg_tron_gui :: RESET ALL button pressed :: INFO
+31-May-22 12:54:50 :: src.gui.mg_tron_gui :: SEND ALL button pressed :: INFO
+31-May-22 12:54:50 :: src.gui.mg_tron_gui :: Quick save button pressed :: INFO
+31-May-22 12:54:50 :: src.gui.mg_tron_gui :: Quick Load button pressed :: INFO
+31-May-22 12:54:50 :: src.gui.mg_tron_gui :: Custom Save button pressed :: INFO
+31-May-22 12:54:50 :: src.gui.mg_tron_gui :: Custom Load button pressed :: INFO
+31-May-22 12:54:50 :: src.gui.mg_tron_gui :: Demo 1 button pressed :: INFO
+31-May-22 12:54:50 :: src.gui.mg_tron_gui :: Demo 2 button pressed :: INFO
+31-May-22 12:54:50 :: src.gui.mg_tron_gui :: Mission Alpha button pressed :: INFO
+31-May-22 12:54:50 :: src.gui.mg_tron_gui :: Mission Bravo button pressed :: INFO
+31-May-22 12:54:50 :: src.gui.mg_tron_gui :: WIFI preset button pressed :: INFO
+31-May-22 12:54:50 :: src.gui.mg_tron_gui :: Mission Charlie button pressed :: INFO
+31-May-22 12:54:50 :: src.gui.mg_tron_gui :: Mission Delta button pressed :: INFO
+31-May-22 12:54:50 :: src.gui.mg_tron_gui :: Mission Echo button pressed :: INFO
+31-May-22 12:57:53 :: interface :: 
+
+GUI LAUNCHED
+
+ :: INFO
+31-May-22 12:57:53 :: interface :: Getting the port name of device :: INFO
+31-May-22 12:57:53 :: interface :: find_device function executing linux shell command to get device file names :: INFO
+31-May-22 12:57:53 :: interface :: Connected Devices: ['/dev/ttyACM0', '/dev/ttyACM1', '/dev/ttyACM2', '/dev/ttyACM3', '/dev/ttyACM4'] :: INFO
+31-May-22 12:57:53 :: interface :: Chosen Device: /dev/ttyACM0 :: DEBUG
+31-May-22 12:57:53 :: interface :: Connected device path: /dev/ttyACM0 :: INFO
+31-May-22 12:57:53 :: interface :: class Megatron initialized :: INFO
+31-May-22 12:57:53 :: interface :: EOF :: DEBUG
+31-May-22 12:57:53 :: helpers :: class Megatron instatiated :: INFO
+31-May-22 12:57:53 :: helpers :: Remote colors initialized :: INFO
+31-May-22 12:57:53 :: helpers :: EOF :: DEBUG
+31-May-22 12:57:53 :: src.gui.mg_tron_gui :: Imports imported in GUI file :: INFO
+31-May-22 12:57:53 :: src.gui.mg_tron_gui :: creating dpg context :: INFO
+31-May-22 12:57:53 :: src.gui.mg_tron_gui :: Set save state of MGTron API to True :: INFO
+31-May-22 12:57:53 :: interface :: Serial call to device initiated :: DEBUG
+31-May-22 12:57:53 :: interface :: baudrate set from serial_call :: DEBUG
+31-May-22 12:57:53 :: interface :: Serial device set from serial_call :: DEBUG
+31-May-22 12:57:53 :: interface :: timeout set from serial_call :: DEBUG
+31-May-22 12:57:53 :: interface :: opening serial connection from serial_call :: DEBUG
+31-May-22 12:57:53 :: interface :: information send via serial protocol; serial_call :: DEBUG
+31-May-22 12:57:53 :: interface :: save_state function executed :: INFO
+31-May-22 12:57:53 :: src.gui.mg_tron_gui :: Setting GUI colors :: INFO
+31-May-22 12:57:53 :: src.gui.mg_tron_gui :: GUI colors set :: INFO
+31-May-22 12:57:53 :: src.gui.mg_tron_gui :: Setting Primary Window in GUI file :: INFO
+31-May-22 12:57:53 :: src.gui.mg_tron_gui :: RESET ALL button pressed :: INFO
+31-May-22 12:57:53 :: src.gui.mg_tron_gui :: SEND ALL button pressed :: INFO
+31-May-22 12:57:53 :: src.gui.mg_tron_gui :: Quick save button pressed :: INFO
+31-May-22 12:57:53 :: src.gui.mg_tron_gui :: Quick Load button pressed :: INFO
+31-May-22 12:57:53 :: src.gui.mg_tron_gui :: Custom Save button pressed :: INFO
+31-May-22 12:57:53 :: src.gui.mg_tron_gui :: Custom Load button pressed :: INFO
+31-May-22 12:57:53 :: src.gui.mg_tron_gui :: Demo 1 button pressed :: INFO
+31-May-22 12:57:53 :: src.gui.mg_tron_gui :: Demo 2 button pressed :: INFO
+31-May-22 12:57:53 :: src.gui.mg_tron_gui :: Mission Alpha button pressed :: INFO
+31-May-22 12:57:53 :: src.gui.mg_tron_gui :: Mission Bravo button pressed :: INFO
+31-May-22 12:57:53 :: src.gui.mg_tron_gui :: WIFI preset button pressed :: INFO
+31-May-22 12:57:53 :: src.gui.mg_tron_gui :: Mission Charlie button pressed :: INFO
+31-May-22 12:57:53 :: src.gui.mg_tron_gui :: Mission Delta button pressed :: INFO
+31-May-22 12:57:53 :: src.gui.mg_tron_gui :: Mission Echo button pressed :: INFO
+31-May-22 12:57:58 :: helpers :: send_vals executed :: INFO
+31-May-22 12:57:58 :: helpers :: callstack_helper executed :: INFO
+31-May-22 12:57:58 :: helpers :: Channel 1 Information Sent :: INFO
+31-May-22 12:57:58 :: interface :: Serial call to device initiated :: DEBUG
+31-May-22 12:57:58 :: interface :: baudrate set from serial_call :: DEBUG
+31-May-22 12:57:58 :: interface :: Serial device set from serial_call :: DEBUG
+31-May-22 12:57:58 :: interface :: timeout set from serial_call :: DEBUG
+31-May-22 12:57:58 :: interface :: opening serial connection from serial_call :: DEBUG
+31-May-22 12:57:58 :: interface :: information send via serial protocol; serial_call :: DEBUG
+31-May-22 12:57:58 :: interface :: change_power function executed :: INFO
+31-May-22 12:57:58 :: interface :: Connected device path: /dev/ttyACM0 :: INFO
+31-May-22 12:57:58 :: interface :: Serial call to device initiated :: DEBUG
+31-May-22 12:57:58 :: interface :: baudrate set from serial_call :: DEBUG
+31-May-22 12:57:58 :: interface :: Serial device set from serial_call :: DEBUG
+31-May-22 12:57:58 :: interface :: timeout set from serial_call :: DEBUG
+31-May-22 12:57:58 :: interface :: opening serial connection from serial_call :: DEBUG
+31-May-22 12:57:58 :: interface :: information send via serial protocol; serial_call :: DEBUG
+31-May-22 12:57:58 :: interface :: change_bandwidth function executed :: INFO
+31-May-22 12:57:58 :: interface :: Serial call to device initiated :: DEBUG
+31-May-22 12:57:58 :: interface :: baudrate set from serial_call :: DEBUG
+31-May-22 12:57:58 :: interface :: Serial device set from serial_call :: DEBUG
+31-May-22 12:57:58 :: interface :: timeout set from serial_call :: DEBUG
+31-May-22 12:57:58 :: interface :: opening serial connection from serial_call :: DEBUG
+31-May-22 12:57:58 :: interface :: information send via serial protocol; serial_call :: DEBUG
+31-May-22 12:57:58 :: interface :: change_freq function executed :: INFO
+31-May-22 12:57:58 :: helpers :: Ready for next command.
+ :: INFO
