@@ -7,10 +7,12 @@ import dearpygui.dearpygui as dpg
 
 
 from helpers import (
+    VERSION,
     auto_fill_bandwidth,
     auto_fill_custom_save,
     auto_fill_freq,
     auto_fill_power,
+    card_selection,
     change_inputs,
     custom_load,
     data_vehicle,
@@ -39,7 +41,7 @@ RESOLUTION: list[int] = [1250, 735]  # 1200x800
 POWER: bool = bool()
 ROW_HEIGHT: int = 78
 ADJUSTMENT: int = -25
-DIVISOR: int = 1.4
+DIVISOR: int = 1.5
 SEND_RESET_ALL_HEIGHT: int = 695
 CUSTOM_CONFIG_HEIGHT: int = 300
 QUICK_CONFIG_HEIGHT: int = 480
@@ -359,17 +361,26 @@ with dpg.window(
             try:
                 # Grab the list of devices connected
                 devices: list[str] = device_names()
-                # print("DEVICE NAMES", device_names())
 
-                [
-                    dpg.add_menu_item(
-                        parent="choose_device",
-                        label=f"{device.split(sep='_')[0]} {device.split(sep='_')[-1]}",
-                        callback=device_finder,
-                        user_data=i,
-                    )
-                    for device in devices
-                ]
+                if len(devices) == 1:
+                    {
+                        dpg.add_menu_item(
+                            parent="choose_device",
+                            label=f"{devices[0].split(sep='_')[0]} {devices[0].split(sep='_')[-1]}",
+                        )
+                    }
+                else:
+                    {
+                        [
+                            dpg.add_menu_item(
+                                parent="choose_device",
+                                label=f"{device.split(sep='_')[0]} {device.split(sep='_')[-1]}",
+                                callback=device_finder,
+                                user_data=i,
+                            )
+                            for device in devices
+                        ]
+                    }
 
                 dpg.add_text(
                     parent="device_config",
@@ -413,9 +424,9 @@ with dpg.window(
     # Side buttons #
     ################
     with dpg.child_window(
-        pos=(870, 0),
+        pos=(860, 0),
         tag="big_buttons",
-        width=300,
+        width=270,
         height=dpg.get_item_height(item="Primary Window") / 1.72,
         border=False,
     ):
@@ -705,6 +716,37 @@ with dpg.window(
             ),
         )
 
+    ##########################
+    # Card Selection Buttons #
+    ##########################
+    with dpg.child_window(
+        tag="card_presets",
+        height=RESOLUTION[1] - 50,
+        width=75,
+        pos=(
+            RESOLUTION[0] - 80,
+            10,
+        ),
+        border=False,
+    ):
+
+        [
+            (
+                dpg.add_button(
+                    label=f"Card {card}",
+                    tag=f"card_{card}",
+                    height=60,
+                    width=65,
+                    pos=(0, 85 * card - 72),
+                    callback=card_selection,
+                    user_data=card,
+                    enabled=True,
+                ),
+                dpg.bind_item_theme(item=f"card_{card}", theme=grey_btn_theme),
+            )
+            for card in range(1, 9)
+        ]
+
     ###############
     # Version Tag #
     ###############
@@ -719,8 +761,9 @@ with dpg.window(
             RESOLUTION[1] - 30,
         ),
     ):
+
         dpg.add_text(
-            default_value="ver. 0.9.0",
+            default_value=f"ver. {VERSION}",
             tag="ver_num",
         )
 

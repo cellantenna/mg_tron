@@ -1,5 +1,7 @@
 import setuptools
 
+from gui.helpers import VERSION
+
 with open(
     "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/CHANGELOG.md",
     "r",
@@ -9,7 +11,7 @@ with open(
 
 setuptools.setup(
     name="mgtron",
-    version="0.9.1",
+    version=VERSION,
     author="Hunter, Christerpher",
     author_email="djhunter67@gmail.com",
     description="GUI for proprietary signal generator",
