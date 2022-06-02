@@ -14,10 +14,17 @@ Here we write upgrading and change notes.
 ✴️ MINOR version when you add functionality in a backwards compatible manner<br>
 ✳️ PATCH version when you make backwards compatible bug fixes.<br>
 
+## [0.10.0] - 2022 JUN 1
+
+- Added a set of buttons along the starboard side of the GUI
+- New buttons highlight green when selected and grey when not
+- When a device is chosen from the list the list promptly dissapears
+
 ## [0.9.1] - 2022 MAY 31
 
 - Device indicator reads no device detected if no device detected
 - Fixed device listing bug
+- Optimized scenario for if a single device detected
 
 ## [0.9.0] - 2022 MAY 25
 
