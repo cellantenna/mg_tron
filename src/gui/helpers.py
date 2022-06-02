@@ -454,12 +454,12 @@ def device_names() -> list[str]:
     except TypeError:
         loggey.exception(msg="No devices detected")
 
-    # If there is only one device skip the hooplah
-    if len(devices) == 1:
-        return devices.strip().split(sep="\n")
-    devices: str = devices.strip().split(sep="\n")
+    devices: list = devices.strip().split(sep="\n")
     loggey.info(msg=f"Devices found: {devices} at {device_names.__name__}")
 
+    # If there is only one device skip the hooplah
+    if len(devices) == 1:
+        return devices
     return sorted(devices)
 
 
@@ -478,6 +478,7 @@ def device_finder(sender, app_data, user_data: int) -> None:
                 dpg.set_value(
                     item="device_indicator", value=f"Device:{device[dev][-1]}"
                 )
+                dpg.configure_item(item="modal_device_config", show=False)
 
     except TypeError:
         loggey.exception(msg="No devices found")

@@ -369,16 +369,18 @@ with dpg.window(
                             label=f"{devices[0].split(sep='_')[0]} {devices[0].split(sep='_')[-1]}",
                         )
                     }
-                else:
+                elif len(devices) > 1:
                     {
                         [
                             dpg.add_menu_item(
                                 parent="choose_device",
-                                label=f"{device.split(sep='_')[0]} {device.split(sep='_')[-1]}",
+                                label=f"{devices[i].split(sep='_')[0]} {devices[i].split(sep='_')[-1]}",
                                 callback=device_finder,
-                                user_data=i,
+                                user_data=int(
+                                    devices[i].split(sep="_")[0][11:12]
+                                ),  # Grab the integer at the end of `/dev/ttyACM[0:]`
                             )
-                            for device in devices
+                            for i in range(len(devices))
                         ]
                     }
 
@@ -434,7 +436,7 @@ with dpg.window(
         ####################
         # Reset All button #
         ####################
-        logger.info(msg="RESET ALL button pressed")
+        logger.info(msg="RESET ALL button initialized")
         reset_all = dpg.add_button(
             tag="Reset All Channels",
             height=70,
@@ -458,7 +460,7 @@ with dpg.window(
         ###################
         # Send All button #
         ###################
-        logger.info(msg="SEND ALL button pressed")
+        logger.info(msg="SEND ALL button initialized")
         send_all = dpg.add_button(
             tag="Send All",
             height=85,
@@ -482,7 +484,7 @@ with dpg.window(
         #####################
         # Quick Save button #
         #####################
-        logger.info(msg="Quick save button pressed")
+        logger.info(msg="Quick save button initialized")
         save_all = dpg.add_button(
             tag="save button",
             callback=quick_save,
@@ -498,7 +500,7 @@ with dpg.window(
         #####################
         # Quick Load button #
         #####################
-        logger.info(msg="Quick Load button pressed")
+        logger.info(msg="Quick Load button initialized")
         load_all = dpg.add_button(
             tag="load_all",
             callback=quick_load,
@@ -514,7 +516,7 @@ with dpg.window(
         ###############
         # Custom save #
         ###############
-        logger.info(msg="Custom Save button pressed")
+        logger.info(msg="Custom Save button initialized")
         custom_save_button = dpg.add_button(
             tag="custom_save",
             height=70,
@@ -549,7 +551,7 @@ with dpg.window(
         ###############
         # Custom load #
         ###############
-        logger.info(msg="Custom Load button pressed")
+        logger.info(msg="Custom Load button initialized")
         custom_load_button = dpg.add_button(
             tag="custom_load_button",
             height=70,
@@ -591,7 +593,7 @@ with dpg.window(
         #################
         # DEMO 1 button #
         #################
-        logger.info(msg="Demo 1 button pressed")
+        logger.info(msg="Demo 1 button initialized")
         demo_button = dpg.add_button(
             tag="demo",
             height=70,
@@ -607,7 +609,7 @@ with dpg.window(
         ###############
         # DEMO 2 button #
         ###############
-        logger.info(msg="Demo 2 button pressed")
+        logger.info(msg="Demo 2 button initialized")
         demo_two_button = dpg.add_button(
             tag="demo_two",
             height=70,
@@ -623,7 +625,7 @@ with dpg.window(
         ########################
         # Mission Alpha button #
         ########################
-        logger.info(msg="Mission Alpha button pressed")
+        logger.info(msg="Mission Alpha button initialized")
         mission_alpha_button = dpg.add_button(
             tag="mssn_alpha",
             callback=mission_alpha,
@@ -639,7 +641,7 @@ with dpg.window(
         ########################
         # Mission Bravo button #
         ########################
-        logger.info(msg="Mission Bravo button pressed")
+        logger.info(msg="Mission Bravo button initialized")
         mission_bravo_button = dpg.add_button(
             tag="mssn_bravo",
             callback=mission_bravo,
@@ -655,7 +657,7 @@ with dpg.window(
         ##################
         # WIFI preset #
         ##################
-        logger.info(msg="WIFI preset button pressed")
+        logger.info(msg="WIFI preset button initialized")
         two_point_four_button = dpg.add_button(
             tag="two_point_four",
             callback=two_point_four,
@@ -671,7 +673,7 @@ with dpg.window(
         ##########################
         # Mission Charlie preset #
         ##########################
-        logger.info(msg="Mission Charlie button pressed")
+        logger.info(msg="Mission Charlie button initialized")
         mission_charlie_button = dpg.add_button(
             tag="mssn_charlie",
             callback=mission_charlie,
@@ -687,7 +689,7 @@ with dpg.window(
         ########################
         # Mission Delta preset #
         ########################
-        logger.info(msg="Mission Delta button pressed")
+        logger.info(msg="Mission Delta button initialized")
         mission_delta_button = dpg.add_button(
             tag="mssn_delta",
             callback=mission_delta,
@@ -703,7 +705,7 @@ with dpg.window(
         #######################
         # Mission Echo preset #
         #######################
-        logger.info(msg="Mission Echo button pressed")
+        logger.info(msg="Mission Echo button initialized")
         mission_echo_button = dpg.add_button(
             tag="mssn_echo",
             # callback=mission_charlie,
@@ -757,7 +759,7 @@ with dpg.window(
         border=False,
         no_scrollbar=True,
         pos=(
-            RESOLUTION[0] - 65,
+            RESOLUTION[0] - 75,
             RESOLUTION[1] - 30,
         ),
     ):

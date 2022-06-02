@@ -18,6 +18,7 @@ Here we write upgrading and change notes.
 
 - Added a set of buttons along the starboard side of the GUI
 - New buttons highlight green when selected and grey when not
+- When a device is chosen from the list the list promptly dissapears
 
 ## [0.9.1] - 2022 MAY 31
 
