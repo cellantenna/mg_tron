@@ -7,10 +7,12 @@ import dearpygui.dearpygui as dpg
 
 
 from helpers import (
+    VERSION,
     auto_fill_bandwidth,
     auto_fill_custom_save,
     auto_fill_freq,
     auto_fill_power,
+    card_selection,
     change_inputs,
     custom_load,
     data_vehicle,
@@ -39,7 +41,7 @@ RESOLUTION: list[int] = [1250, 735]  # 1200x800
 POWER: bool = bool()
 ROW_HEIGHT: int = 78
 ADJUSTMENT: int = -25
-DIVISOR: int = 1.4
+DIVISOR: int = 1.5
 SEND_RESET_ALL_HEIGHT: int = 695
 CUSTOM_CONFIG_HEIGHT: int = 300
 QUICK_CONFIG_HEIGHT: int = 480
@@ -359,18 +361,28 @@ with dpg.window(
             try:
                 # Grab the list of devices connected
                 devices: list[str] = device_names()
-                # print("DEVICE NAMES", device_names())
 
-                [
-                    dpg.add_menu_item(
-                        parent="choose_device",
-                        label=f"Device {i}: {device.split(sep='_')[-1]}",
-                        tag=f"device_menu_item_{i}",
-                        callback=device_finder,
-                        user_data=i,
-                    )
-                    for i, device in enumerate(devices)
-                ]
+                if len(devices) == 1:
+                    {
+                        dpg.add_menu_item(
+                            parent="choose_device",
+                            label=f"{devices[0].split(sep='_')[0]} {devices[0].split(sep='_')[-1]}",
+                        )
+                    }
+                elif len(devices) > 1:
+                    {
+                        [
+                            dpg.add_menu_item(
+                                parent="choose_device",
+                                label=f"{devices[i].split(sep='_')[0]} {devices[i].split(sep='_')[-1]}",
+                                callback=device_finder,
+                                user_data=int(
+                                    devices[i].split(sep="_")[0][11:12]
+                                ),  # Grab the integer at the end of `/dev/ttyACM[0:]`
+                            )
+                            for i in range(len(devices))
+                        ]
+                    }
 
                 dpg.add_text(
                     parent="device_config",
@@ -379,7 +391,7 @@ with dpg.window(
                     pos=(5, 35),
                 )
 
-            except (TypeError, NameError):
+            except (TypeError, NameError, SystemError):
                 dpg.add_menu_item(
                     parent="choose_device",
                     label=f"Device Number: Not Found",
@@ -395,6 +407,12 @@ with dpg.window(
                     )
                     for channel in range(1, 9)
                 ]
+                dpg.add_text(
+                    parent="device_config",
+                    tag="device_indicator",
+                    default_value="No Device(s) Found",
+                    pos=(5, 35),
+                )
 
             dpg.add_button(
                 label="Quit",
@@ -408,9 +426,9 @@ with dpg.window(
     # Side buttons #
     ################
     with dpg.child_window(
-        pos=(870, 0),
+        pos=(860, 0),
         tag="big_buttons",
-        width=300,
+        width=270,
         height=dpg.get_item_height(item="Primary Window") / 1.72,
         border=False,
     ):
@@ -418,7 +436,7 @@ with dpg.window(
         ####################
         # Reset All button #
         ####################
-        logger.info(msg="RESET ALL button pressed")
+        logger.info(msg="RESET ALL button initialized")
         reset_all = dpg.add_button(
             tag="Reset All Channels",
             height=70,
@@ -442,7 +460,7 @@ with dpg.window(
         ###################
         # Send All button #
         ###################
-        logger.info(msg="SEND ALL button pressed")
+        logger.info(msg="SEND ALL button initialized")
         send_all = dpg.add_button(
             tag="Send All",
             height=85,
@@ -466,7 +484,7 @@ with dpg.window(
         #####################
         # Quick Save button #
         #####################
-        logger.info(msg="Quick save button pressed")
+        logger.info(msg="Quick save button initialized")
         save_all = dpg.add_button(
             tag="save button",
             callback=quick_save,
@@ -482,7 +500,7 @@ with dpg.window(
         #####################
         # Quick Load button #
         #####################
-        logger.info(msg="Quick Load button pressed")
+        logger.info(msg="Quick Load button initialized")
         load_all = dpg.add_button(
             tag="load_all",
             callback=quick_load,
@@ -498,7 +516,7 @@ with dpg.window(
         ###############
         # Custom save #
         ###############
-        logger.info(msg="Custom Save button pressed")
+        logger.info(msg="Custom Save button initialized")
         custom_save_button = dpg.add_button(
             tag="custom_save",
             height=70,
@@ -533,7 +551,7 @@ with dpg.window(
         ###############
         # Custom load #
         ###############
-        logger.info(msg="Custom Load button pressed")
+        logger.info(msg="Custom Load button initialized")
         custom_load_button = dpg.add_button(
             tag="custom_load_button",
             height=70,
@@ -575,7 +593,7 @@ with dpg.window(
         #################
         # DEMO 1 button #
         #################
-        logger.info(msg="Demo 1 button pressed")
+        logger.info(msg="Demo 1 button initialized")
         demo_button = dpg.add_button(
             tag="demo",
             height=70,
@@ -591,7 +609,7 @@ with dpg.window(
         ###############
         # DEMO 2 button #
         ###############
-        logger.info(msg="Demo 2 button pressed")
+        logger.info(msg="Demo 2 button initialized")
         demo_two_button = dpg.add_button(
             tag="demo_two",
             height=70,
@@ -607,7 +625,7 @@ with dpg.window(
         ########################
         # Mission Alpha button #
         ########################
-        logger.info(msg="Mission Alpha button pressed")
+        logger.info(msg="Mission Alpha button initialized")
         mission_alpha_button = dpg.add_button(
             tag="mssn_alpha",
             callback=mission_alpha,
@@ -623,7 +641,7 @@ with dpg.window(
         ########################
         # Mission Bravo button #
         ########################
-        logger.info(msg="Mission Bravo button pressed")
+        logger.info(msg="Mission Bravo button initialized")
         mission_bravo_button = dpg.add_button(
             tag="mssn_bravo",
             callback=mission_bravo,
@@ -639,7 +657,7 @@ with dpg.window(
         ##################
         # WIFI preset #
         ##################
-        logger.info(msg="WIFI preset button pressed")
+        logger.info(msg="WIFI preset button initialized")
         two_point_four_button = dpg.add_button(
             tag="two_point_four",
             callback=two_point_four,
@@ -655,7 +673,7 @@ with dpg.window(
         ##########################
         # Mission Charlie preset #
         ##########################
-        logger.info(msg="Mission Charlie button pressed")
+        logger.info(msg="Mission Charlie button initialized")
         mission_charlie_button = dpg.add_button(
             tag="mssn_charlie",
             callback=mission_charlie,
@@ -671,7 +689,7 @@ with dpg.window(
         ########################
         # Mission Delta preset #
         ########################
-        logger.info(msg="Mission Delta button pressed")
+        logger.info(msg="Mission Delta button initialized")
         mission_delta_button = dpg.add_button(
             tag="mssn_delta",
             callback=mission_delta,
@@ -687,7 +705,7 @@ with dpg.window(
         #######################
         # Mission Echo preset #
         #######################
-        logger.info(msg="Mission Echo button pressed")
+        logger.info(msg="Mission Echo button initialized")
         mission_echo_button = dpg.add_button(
             tag="mssn_echo",
             # callback=mission_charlie,
@@ -700,6 +718,37 @@ with dpg.window(
             ),
         )
 
+    ##########################
+    # Card Selection Buttons #
+    ##########################
+    with dpg.child_window(
+        tag="card_presets",
+        height=RESOLUTION[1] - 50,
+        width=75,
+        pos=(
+            RESOLUTION[0] - 80,
+            10,
+        ),
+        border=False,
+    ):
+
+        [
+            (
+                dpg.add_button(
+                    label=f"Card {card}",
+                    tag=f"card_{card}",
+                    height=60,
+                    width=65,
+                    pos=(0, 85 * card - 72),
+                    callback=card_selection,
+                    user_data=card,
+                    enabled=True,
+                ),
+                dpg.bind_item_theme(item=f"card_{card}", theme=grey_btn_theme),
+            )
+            for card in range(1, 9)
+        ]
+
     ###############
     # Version Tag #
     ###############
@@ -710,12 +759,13 @@ with dpg.window(
         border=False,
         no_scrollbar=True,
         pos=(
-            RESOLUTION[0] - 65,
+            RESOLUTION[0] - 75,
             RESOLUTION[1] - 30,
         ),
     ):
+
         dpg.add_text(
-            default_value="ver. 0.9.0",
+            default_value=f"ver. {VERSION}",
             tag="ver_num",
         )
 
