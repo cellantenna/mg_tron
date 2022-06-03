@@ -6,6 +6,7 @@ import subprocess
 import dearpygui.dearpygui as dpg
 from numpy import equal
 import pandas as pd
+import sys
 from interface import Megatron, find_device
 
 from datetime import datetime
