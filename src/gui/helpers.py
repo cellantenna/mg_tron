@@ -517,7 +517,7 @@ def fill_config():
             loggey.info(msg="Config file has been automatically filled")
         else:
             loggey.info(msg="Config file already filled")
-    except KeyError:
+    except (KeyError, IndexError):
         loggey.exception(msg="Config file error")
 
 
