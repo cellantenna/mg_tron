@@ -497,26 +497,28 @@ def fill_config():
     parser = configparser.ConfigParser()
     parser.read(filenames="card_config.ini", encoding="utf-8")
     config = configparser.ConfigParser()
+    try:
+        if not parser["mgtron"]["card_1"]:
+            loggey.info(msg="The config file was not populated")
+            # Automatically fill in an empty config file
+            config["mgtron"] = {
+                "card_1": str(devices[0].split(sep="_")[-1]),
+                "card_2": str(devices[1].split(sep="_")[-1]),
+                "card_3": str(devices[2].split(sep="_")[-1]),
+                "card_4": str(devices[3].split(sep="_")[-1]),
+                "card_5": str(devices[4].split(sep="_")[-1]),
+                "card_6": str(devices[5].split(sep="_")[-1]),
+                "card_7": str(devices[6].split(sep="_")[-1]),
+                "card_8": str(devices[7].split(sep="_")[-1]),
+            }
 
-    if not parser["mgtron"]["card_1"]:
-        loggey.info(msg="The config file was not populated")
-        # Automatically fill in an empty config file
-        config["mgtron"] = {
-            "card_1": str(devices[0].split(sep="_")[-1]),
-            "card_2": str(devices[1].split(sep="_")[-1]),
-            "card_3": str(devices[2].split(sep="_")[-1]),
-            "card_4": str(devices[3].split(sep="_")[-1]),
-            "card_5": str(devices[4].split(sep="_")[-1]),
-            "card_6": str(devices[5].split(sep="_")[-1]),
-            "card_7": str(devices[6].split(sep="_")[-1]),
-            "card_8": str(devices[7].split(sep="_")[-1]),
-        }
-
-        with open(file="card_config.ini", mode="w") as configfile:
-            config.write(configfile)
-        loggey.info(msg="Config file has been automatically filled")
-    else:
-        loggey.info(msg="Config file already filled")
+            with open(file="card_config.ini", mode="w") as configfile:
+                config.write(configfile)
+            loggey.info(msg="Config file has been automatically filled")
+        else:
+            loggey.info(msg="Config file already filled")
+    except KeyError:
+        loggey.exception(msg="Config file error")
 
 
 def config_intake() -> None:
@@ -527,25 +529,25 @@ def config_intake() -> None:
     loggey.info(msg="finding the log file")
     parser.read(filenames="card_config.ini", encoding="utf-8")
     loggey.info(msg="file read attempted")
-
-    for card in range(1, len(devices) + 1):
-        try:
-            match devices[card - 1].split(sep="_")[-1] == parser["mgtron"][
-                f"card_{card}"
-            ]:
-                case True:
-                    dpg.bind_item_theme(item=f"card_{card}", theme=blue_btn_theme)
-                    dpg.configure_item(item=f"card_{card}", enabled=True)
-                    # devices[card - 1].split("_")[0].split("-")[0]
-                    loggey.info(
-                        msg=f"INI config file matched devices detected | {config_intake.__name__}"
-                    )
-                case False:
-                    loggey.info(
-                        msg=f"Config ID not detected by devices on {platform.machine()} | {config_intake.__name__}"
-                    )
-        except KeyError:
-            loggey.exception(msg="No config file detected")
+    if len(devices) > 1:
+        for card in range(1, len(devices) + 1):
+            try:
+                match devices[card - 1].split(sep="_")[-1] == parser["mgtron"][
+                    f"card_{card}"
+                ]:
+                    case True:
+                        dpg.bind_item_theme(item=f"card_{card}", theme=blue_btn_theme)
+                        dpg.configure_item(item=f"card_{card}", enabled=True)
+                        # devices[card - 1].split("_")[0].split("-")[0]
+                        loggey.info(
+                            msg=f"INI config file matched devices detected | {config_intake.__name__}"
+                        )
+                    case False:
+                        loggey.info(
+                            msg=f"Config ID not detected by devices on {platform.machine()} | {config_intake.__name__}"
+                        )
+            except KeyError:
+                loggey.exception(msg="No config file detected")
 
 
 def card_selection(sender, app_data, user_data: int) -> None:

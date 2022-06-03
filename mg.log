@@ -40651,3 +40651,608 @@ GUI LAUNCHED
 03-Jun-22 13:47:28 :: helpers :: INI config file matched devices detected | config_intake :: INFO
 03-Jun-22 13:47:28 :: helpers :: INI config file matched devices detected | config_intake :: INFO
 03-Jun-22 13:47:28 :: helpers :: INI config file matched devices detected | config_intake :: INFO
+03-Jun-22 14:25:42 :: interface :: 
+
+GUI LAUNCHED
+
+ :: INFO
+03-Jun-22 14:25:42 :: interface :: Getting the port name of device :: INFO
+03-Jun-22 14:25:42 :: interface :: find_device function executing linux shell command to get device file names :: INFO
+03-Jun-22 14:25:42 :: interface :: Connected Devices: ['/dev/ttyACM2'] :: INFO
+03-Jun-22 14:25:42 :: interface :: Chosen Device: /dev/ttyACM2 :: DEBUG
+03-Jun-22 14:25:42 :: interface :: Connected device path: /dev/ttyACM2 :: INFO
+03-Jun-22 14:25:42 :: interface :: class Megatron initialized :: INFO
+03-Jun-22 14:25:42 :: interface :: EOF :: DEBUG
+03-Jun-22 14:25:42 :: helpers :: class Megatron instatiated :: INFO
+03-Jun-22 14:25:42 :: helpers :: Remote colors initialized :: INFO
+03-Jun-22 14:25:42 :: helpers :: Devices found: ['/dev/ttyACM2 - Teensyduino_USB_Serial_8771180'] | device_names :: INFO
+03-Jun-22 14:25:42 :: helpers :: EOF :: DEBUG
+03-Jun-22 14:25:42 :: __main__ :: Imports imported in GUI file :: INFO
+03-Jun-22 14:25:42 :: __main__ :: creating dpg context :: INFO
+03-Jun-22 14:25:42 :: __main__ :: Set save state of MGTron API to True :: INFO
+03-Jun-22 14:25:42 :: interface :: Serial call to device initiated :: DEBUG
+03-Jun-22 14:25:42 :: interface :: baudrate set from serial_call :: DEBUG
+03-Jun-22 14:25:42 :: interface :: Serial device set from serial_call :: DEBUG
+03-Jun-22 14:25:42 :: interface :: timeout set from serial_call :: DEBUG
+03-Jun-22 14:25:42 :: interface :: opening serial connection from serial_call :: DEBUG
+03-Jun-22 14:25:42 :: interface :: information send via serial protocol; serial_call :: DEBUG
+03-Jun-22 14:25:42 :: interface :: save_state function executed :: INFO
+03-Jun-22 14:25:42 :: helpers :: Config file already filled :: INFO
+03-Jun-22 14:25:42 :: __main__ :: Setting GUI colors :: INFO
+03-Jun-22 14:25:42 :: __main__ :: GUI colors set :: INFO
+03-Jun-22 14:25:42 :: __main__ :: Setting Primary Window in GUI file :: INFO
+03-Jun-22 14:25:42 :: __main__ :: RESET ALL button initialized :: INFO
+03-Jun-22 14:25:42 :: __main__ :: SEND ALL button initialized :: INFO
+03-Jun-22 14:25:42 :: __main__ :: Quick save button initialized :: INFO
+03-Jun-22 14:25:42 :: __main__ :: Quick Load button initialized :: INFO
+03-Jun-22 14:25:42 :: __main__ :: Custom Save button initialized :: INFO
+03-Jun-22 14:25:42 :: __main__ :: Custom Load button initialized :: INFO
+03-Jun-22 14:25:42 :: __main__ :: Alpha button initialized :: INFO
+03-Jun-22 14:25:42 :: __main__ :: Bravo button initialized :: INFO
+03-Jun-22 14:25:42 :: __main__ :: Mission Charlie button initialized :: INFO
+03-Jun-22 14:25:42 :: __main__ :: Mission Delta button initialized :: INFO
+03-Jun-22 14:25:42 :: __main__ :: Mission Echo button initialized :: INFO
+03-Jun-22 14:25:42 :: __main__ :: Mission Fox button initialized :: INFO
+03-Jun-22 14:25:42 :: __main__ :: Mission Golf button initialized :: INFO
+03-Jun-22 14:25:42 :: __main__ :: Mission WiFi scan jam button initialized :: INFO
+03-Jun-22 14:25:42 :: helpers :: finding the log file :: INFO
+03-Jun-22 14:25:42 :: helpers :: file read attempted :: INFO
+03-Jun-22 14:25:42 :: helpers :: Config ID not detected by devices on x86_64 | config_intake :: INFO
+03-Jun-22 14:25:57 :: __main__ :: Ctrl C executed :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/mg_tron_gui.py", line 847, in <module>
+    dpg.start_dearpygui()
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/venv/lib64/python3.10/site-packages/dearpygui/dearpygui.py", line 102, in start_dearpygui
+    internal_dpg.render_dearpygui_frame()
+KeyboardInterrupt
+03-Jun-22 14:25:59 :: interface :: 
+
+GUI LAUNCHED
+
+ :: INFO
+03-Jun-22 14:25:59 :: interface :: Getting the port name of device :: INFO
+03-Jun-22 14:25:59 :: interface :: find_device function executing linux shell command to get device file names :: INFO
+03-Jun-22 14:25:59 :: interface :: Connected Devices: ['/dev/ttyACM0'] :: INFO
+03-Jun-22 14:25:59 :: interface :: Chosen Device: /dev/ttyACM0 :: DEBUG
+03-Jun-22 14:25:59 :: interface :: Connected device path: /dev/ttyACM0 :: INFO
+03-Jun-22 14:25:59 :: interface :: class Megatron initialized :: INFO
+03-Jun-22 14:25:59 :: interface :: EOF :: DEBUG
+03-Jun-22 14:25:59 :: helpers :: class Megatron instatiated :: INFO
+03-Jun-22 14:25:59 :: helpers :: Remote colors initialized :: INFO
+03-Jun-22 14:25:59 :: helpers :: Devices found: ['/dev/ttyACM0 - Teensyduino_USB_Serial_8771180'] | device_names :: INFO
+03-Jun-22 14:25:59 :: helpers :: EOF :: DEBUG
+03-Jun-22 14:25:59 :: __main__ :: Imports imported in GUI file :: INFO
+03-Jun-22 14:25:59 :: __main__ :: creating dpg context :: INFO
+03-Jun-22 14:25:59 :: __main__ :: Set save state of MGTron API to True :: INFO
+03-Jun-22 14:25:59 :: interface :: Serial call to device initiated :: DEBUG
+03-Jun-22 14:25:59 :: interface :: baudrate set from serial_call :: DEBUG
+03-Jun-22 14:25:59 :: interface :: Serial device set from serial_call :: DEBUG
+03-Jun-22 14:25:59 :: interface :: timeout set from serial_call :: DEBUG
+03-Jun-22 14:25:59 :: interface :: opening serial connection from serial_call :: DEBUG
+03-Jun-22 14:25:59 :: interface :: information send via serial protocol; serial_call :: DEBUG
+03-Jun-22 14:25:59 :: interface :: save_state function executed :: INFO
+03-Jun-22 14:25:59 :: helpers :: Config file already filled :: INFO
+03-Jun-22 14:25:59 :: __main__ :: Setting GUI colors :: INFO
+03-Jun-22 14:25:59 :: __main__ :: GUI colors set :: INFO
+03-Jun-22 14:25:59 :: __main__ :: Setting Primary Window in GUI file :: INFO
+03-Jun-22 14:25:59 :: __main__ :: RESET ALL button initialized :: INFO
+03-Jun-22 14:25:59 :: __main__ :: SEND ALL button initialized :: INFO
+03-Jun-22 14:25:59 :: __main__ :: Quick save button initialized :: INFO
+03-Jun-22 14:25:59 :: __main__ :: Quick Load button initialized :: INFO
+03-Jun-22 14:25:59 :: __main__ :: Custom Save button initialized :: INFO
+03-Jun-22 14:25:59 :: __main__ :: Custom Load button initialized :: INFO
+03-Jun-22 14:25:59 :: __main__ :: Alpha button initialized :: INFO
+03-Jun-22 14:25:59 :: __main__ :: Bravo button initialized :: INFO
+03-Jun-22 14:25:59 :: __main__ :: Mission Charlie button initialized :: INFO
+03-Jun-22 14:25:59 :: __main__ :: Mission Delta button initialized :: INFO
+03-Jun-22 14:25:59 :: __main__ :: Mission Echo button initialized :: INFO
+03-Jun-22 14:25:59 :: __main__ :: Mission Fox button initialized :: INFO
+03-Jun-22 14:25:59 :: __main__ :: Mission Golf button initialized :: INFO
+03-Jun-22 14:25:59 :: __main__ :: Mission WiFi scan jam button initialized :: INFO
+03-Jun-22 14:25:59 :: helpers :: finding the log file :: INFO
+03-Jun-22 14:25:59 :: helpers :: file read attempted :: INFO
+03-Jun-22 14:25:59 :: helpers :: Config ID not detected by devices on x86_64 | config_intake :: INFO
+03-Jun-22 14:27:28 :: interface :: 
+
+GUI LAUNCHED
+
+ :: INFO
+03-Jun-22 14:27:28 :: interface :: Getting the port name of device :: INFO
+03-Jun-22 14:27:28 :: interface :: find_device function executing linux shell command to get device file names :: INFO
+03-Jun-22 14:27:28 :: interface :: Connected Devices: ['/dev/ttyACM0'] :: INFO
+03-Jun-22 14:27:28 :: interface :: Chosen Device: /dev/ttyACM0 :: DEBUG
+03-Jun-22 14:27:28 :: interface :: Connected device path: /dev/ttyACM0 :: INFO
+03-Jun-22 14:27:28 :: interface :: class Megatron initialized :: INFO
+03-Jun-22 14:27:28 :: interface :: EOF :: DEBUG
+03-Jun-22 14:27:28 :: helpers :: class Megatron instatiated :: INFO
+03-Jun-22 14:27:28 :: helpers :: Remote colors initialized :: INFO
+03-Jun-22 14:27:28 :: helpers :: Devices found: ['/dev/ttyACM0 - Teensyduino_USB_Serial_8771180'] | device_names :: INFO
+03-Jun-22 14:27:28 :: helpers :: EOF :: DEBUG
+03-Jun-22 14:27:28 :: __main__ :: Imports imported in GUI file :: INFO
+03-Jun-22 14:27:28 :: __main__ :: creating dpg context :: INFO
+03-Jun-22 14:27:28 :: __main__ :: Set save state of MGTron API to True :: INFO
+03-Jun-22 14:27:28 :: interface :: Serial call to device initiated :: DEBUG
+03-Jun-22 14:27:28 :: interface :: baudrate set from serial_call :: DEBUG
+03-Jun-22 14:27:28 :: interface :: Serial device set from serial_call :: DEBUG
+03-Jun-22 14:27:28 :: interface :: timeout set from serial_call :: DEBUG
+03-Jun-22 14:27:28 :: interface :: opening serial connection from serial_call :: DEBUG
+03-Jun-22 14:27:28 :: interface :: information send via serial protocol; serial_call :: DEBUG
+03-Jun-22 14:27:28 :: interface :: save_state function executed :: INFO
+03-Jun-22 14:28:27 :: interface :: 
+
+GUI LAUNCHED
+
+ :: INFO
+03-Jun-22 14:28:27 :: interface :: Getting the port name of device :: INFO
+03-Jun-22 14:28:27 :: interface :: find_device function executing linux shell command to get device file names :: INFO
+03-Jun-22 14:28:27 :: interface :: Connected Devices: ['/dev/ttyACM0'] :: INFO
+03-Jun-22 14:28:27 :: interface :: Chosen Device: /dev/ttyACM0 :: DEBUG
+03-Jun-22 14:28:27 :: interface :: Connected device path: /dev/ttyACM0 :: INFO
+03-Jun-22 14:28:27 :: interface :: class Megatron initialized :: INFO
+03-Jun-22 14:28:27 :: interface :: EOF :: DEBUG
+03-Jun-22 14:28:27 :: helpers :: class Megatron instatiated :: INFO
+03-Jun-22 14:28:27 :: helpers :: Remote colors initialized :: INFO
+03-Jun-22 14:28:27 :: helpers :: Devices found: ['/dev/ttyACM0 - Teensyduino_USB_Serial_8771180'] | device_names :: INFO
+03-Jun-22 14:28:27 :: helpers :: EOF :: DEBUG
+03-Jun-22 14:28:27 :: __main__ :: Imports imported in GUI file :: INFO
+03-Jun-22 14:28:27 :: __main__ :: creating dpg context :: INFO
+03-Jun-22 14:28:27 :: __main__ :: Set save state of MGTron API to True :: INFO
+03-Jun-22 14:28:27 :: interface :: Serial call to device initiated :: DEBUG
+03-Jun-22 14:28:27 :: interface :: baudrate set from serial_call :: DEBUG
+03-Jun-22 14:28:27 :: interface :: Serial device set from serial_call :: DEBUG
+03-Jun-22 14:28:27 :: interface :: timeout set from serial_call :: DEBUG
+03-Jun-22 14:28:27 :: interface :: opening serial connection from serial_call :: DEBUG
+03-Jun-22 14:28:27 :: interface :: information send via serial protocol; serial_call :: DEBUG
+03-Jun-22 14:28:27 :: interface :: save_state function executed :: INFO
+03-Jun-22 14:28:27 :: helpers :: Config file error :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/helpers.py", line 501, in fill_config
+    if not parser["mgtron"]["card_1"]:
+  File "/usr/lib64/python3.10/configparser.py", line 964, in __getitem__
+    raise KeyError(key)
+KeyError: 'mgtron'
+03-Jun-22 14:28:27 :: __main__ :: Setting GUI colors :: INFO
+03-Jun-22 14:28:27 :: __main__ :: GUI colors set :: INFO
+03-Jun-22 14:28:27 :: __main__ :: Setting Primary Window in GUI file :: INFO
+03-Jun-22 14:28:27 :: __main__ :: RESET ALL button initialized :: INFO
+03-Jun-22 14:28:27 :: __main__ :: SEND ALL button initialized :: INFO
+03-Jun-22 14:28:27 :: __main__ :: Quick save button initialized :: INFO
+03-Jun-22 14:28:27 :: __main__ :: Quick Load button initialized :: INFO
+03-Jun-22 14:28:27 :: __main__ :: Custom Save button initialized :: INFO
+03-Jun-22 14:28:27 :: __main__ :: Custom Load button initialized :: INFO
+03-Jun-22 14:28:27 :: __main__ :: Alpha button initialized :: INFO
+03-Jun-22 14:28:27 :: __main__ :: Bravo button initialized :: INFO
+03-Jun-22 14:28:27 :: __main__ :: Mission Charlie button initialized :: INFO
+03-Jun-22 14:28:27 :: __main__ :: Mission Delta button initialized :: INFO
+03-Jun-22 14:28:27 :: __main__ :: Mission Echo button initialized :: INFO
+03-Jun-22 14:28:27 :: __main__ :: Mission Fox button initialized :: INFO
+03-Jun-22 14:28:27 :: __main__ :: Mission Golf button initialized :: INFO
+03-Jun-22 14:28:27 :: __main__ :: Mission WiFi scan jam button initialized :: INFO
+03-Jun-22 14:28:27 :: helpers :: finding the log file :: INFO
+03-Jun-22 14:28:27 :: helpers :: file read attempted :: INFO
+03-Jun-22 14:28:34 :: helpers :: two_point_four() executed :: INFO
+03-Jun-22 14:28:38 :: helpers :: send_all_channels() executed :: INFO
+03-Jun-22 14:28:38 :: helpers :: callstack_helper() executed :: INFO
+03-Jun-22 14:28:38 :: helpers :: Channel 1 Information Sent :: INFO
+03-Jun-22 14:28:38 :: interface :: change_power function executed :: INFO
+03-Jun-22 14:28:38 :: interface :: Connected device path: /dev/ttyACM0 :: INFO
+03-Jun-22 14:28:38 :: interface :: Serial call to device initiated :: DEBUG
+03-Jun-22 14:28:38 :: interface :: baudrate set from serial_call :: DEBUG
+03-Jun-22 14:28:38 :: interface :: Serial device set from serial_call :: DEBUG
+03-Jun-22 14:28:38 :: interface :: timeout set from serial_call :: DEBUG
+03-Jun-22 14:28:38 :: interface :: opening serial connection from serial_call :: DEBUG
+03-Jun-22 14:28:38 :: interface :: information send via serial protocol; serial_call :: DEBUG
+03-Jun-22 14:28:38 :: interface :: change_bandwidth function executed :: INFO
+03-Jun-22 14:28:38 :: interface :: Serial call to device initiated :: DEBUG
+03-Jun-22 14:28:38 :: interface :: baudrate set from serial_call :: DEBUG
+03-Jun-22 14:28:38 :: interface :: Serial device set from serial_call :: DEBUG
+03-Jun-22 14:28:38 :: interface :: timeout set from serial_call :: DEBUG
+03-Jun-22 14:28:38 :: interface :: opening serial connection from serial_call :: DEBUG
+03-Jun-22 14:28:38 :: interface :: information send via serial protocol; serial_call :: DEBUG
+03-Jun-22 14:28:38 :: interface :: change_freq function executed :: INFO
+03-Jun-22 14:28:38 :: interface :: Serial call to device initiated :: DEBUG
+03-Jun-22 14:28:38 :: interface :: baudrate set from serial_call :: DEBUG
+03-Jun-22 14:28:38 :: interface :: Serial device set from serial_call :: DEBUG
+03-Jun-22 14:28:38 :: interface :: timeout set from serial_call :: DEBUG
+03-Jun-22 14:28:38 :: interface :: opening serial connection from serial_call :: DEBUG
+03-Jun-22 14:28:38 :: interface :: information send via serial protocol; serial_call :: DEBUG
+03-Jun-22 14:28:38 :: helpers :: Ready for next command.
+ :: INFO
+03-Jun-22 14:28:38 :: helpers :: callstack_helper() executed :: INFO
+03-Jun-22 14:28:38 :: helpers :: Channel 2 Information Sent :: INFO
+03-Jun-22 14:28:38 :: interface :: change_power function executed :: INFO
+03-Jun-22 14:28:38 :: interface :: Connected device path: /dev/ttyACM0 :: INFO
+03-Jun-22 14:28:38 :: interface :: Serial call to device initiated :: DEBUG
+03-Jun-22 14:28:38 :: interface :: baudrate set from serial_call :: DEBUG
+03-Jun-22 14:28:38 :: interface :: Serial device set from serial_call :: DEBUG
+03-Jun-22 14:28:38 :: interface :: timeout set from serial_call :: DEBUG
+03-Jun-22 14:28:38 :: interface :: opening serial connection from serial_call :: DEBUG
+03-Jun-22 14:28:38 :: interface :: information send via serial protocol; serial_call :: DEBUG
+03-Jun-22 14:28:38 :: interface :: change_bandwidth function executed :: INFO
+03-Jun-22 14:28:38 :: interface :: Serial call to device initiated :: DEBUG
+03-Jun-22 14:28:39 :: interface :: baudrate set from serial_call :: DEBUG
+03-Jun-22 14:28:39 :: interface :: Serial device set from serial_call :: DEBUG
+03-Jun-22 14:28:39 :: interface :: timeout set from serial_call :: DEBUG
+03-Jun-22 14:28:39 :: interface :: opening serial connection from serial_call :: DEBUG
+03-Jun-22 14:28:39 :: interface :: information send via serial protocol; serial_call :: DEBUG
+03-Jun-22 14:28:39 :: interface :: change_freq function executed :: INFO
+03-Jun-22 14:28:39 :: interface :: Serial call to device initiated :: DEBUG
+03-Jun-22 14:28:39 :: interface :: baudrate set from serial_call :: DEBUG
+03-Jun-22 14:28:39 :: interface :: Serial device set from serial_call :: DEBUG
+03-Jun-22 14:28:39 :: interface :: timeout set from serial_call :: DEBUG
+03-Jun-22 14:28:39 :: interface :: opening serial connection from serial_call :: DEBUG
+03-Jun-22 14:28:39 :: interface :: information send via serial protocol; serial_call :: DEBUG
+03-Jun-22 14:28:39 :: helpers :: Ready for next command.
+ :: INFO
+03-Jun-22 14:28:39 :: helpers :: callstack_helper() executed :: INFO
+03-Jun-22 14:28:39 :: helpers :: Channel 3 Information Sent :: INFO
+03-Jun-22 14:28:39 :: interface :: change_power function executed :: INFO
+03-Jun-22 14:28:39 :: interface :: Connected device path: /dev/ttyACM0 :: INFO
+03-Jun-22 14:28:39 :: interface :: Serial call to device initiated :: DEBUG
+03-Jun-22 14:28:39 :: interface :: baudrate set from serial_call :: DEBUG
+03-Jun-22 14:28:39 :: interface :: Serial device set from serial_call :: DEBUG
+03-Jun-22 14:28:39 :: interface :: timeout set from serial_call :: DEBUG
+03-Jun-22 14:28:39 :: interface :: opening serial connection from serial_call :: DEBUG
+03-Jun-22 14:28:39 :: interface :: information send via serial protocol; serial_call :: DEBUG
+03-Jun-22 14:28:39 :: interface :: change_bandwidth function executed :: INFO
+03-Jun-22 14:28:39 :: interface :: Serial call to device initiated :: DEBUG
+03-Jun-22 14:28:39 :: interface :: baudrate set from serial_call :: DEBUG
+03-Jun-22 14:28:39 :: interface :: Serial device set from serial_call :: DEBUG
+03-Jun-22 14:28:39 :: interface :: timeout set from serial_call :: DEBUG
+03-Jun-22 14:28:39 :: interface :: opening serial connection from serial_call :: DEBUG
+03-Jun-22 14:28:39 :: interface :: information send via serial protocol; serial_call :: DEBUG
+03-Jun-22 14:28:39 :: interface :: change_freq function executed :: INFO
+03-Jun-22 14:28:39 :: interface :: Serial call to device initiated :: DEBUG
+03-Jun-22 14:28:39 :: interface :: baudrate set from serial_call :: DEBUG
+03-Jun-22 14:28:39 :: interface :: Serial device set from serial_call :: DEBUG
+03-Jun-22 14:28:39 :: interface :: timeout set from serial_call :: DEBUG
+03-Jun-22 14:28:39 :: interface :: opening serial connection from serial_call :: DEBUG
+03-Jun-22 14:28:39 :: interface :: information send via serial protocol; serial_call :: DEBUG
+03-Jun-22 14:28:39 :: helpers :: Ready for next command.
+ :: INFO
+03-Jun-22 14:28:39 :: helpers :: callstack_helper() executed :: INFO
+03-Jun-22 14:28:39 :: helpers :: Channel 4 Information Sent :: INFO
+03-Jun-22 14:28:39 :: interface :: change_power function executed :: INFO
+03-Jun-22 14:28:39 :: interface :: Connected device path: /dev/ttyACM0 :: INFO
+03-Jun-22 14:28:39 :: interface :: Serial call to device initiated :: DEBUG
+03-Jun-22 14:28:39 :: interface :: baudrate set from serial_call :: DEBUG
+03-Jun-22 14:28:39 :: interface :: Serial device set from serial_call :: DEBUG
+03-Jun-22 14:28:39 :: interface :: timeout set from serial_call :: DEBUG
+03-Jun-22 14:28:39 :: interface :: opening serial connection from serial_call :: DEBUG
+03-Jun-22 14:28:39 :: interface :: information send via serial protocol; serial_call :: DEBUG
+03-Jun-22 14:28:39 :: interface :: change_bandwidth function executed :: INFO
+03-Jun-22 14:28:39 :: interface :: Serial call to device initiated :: DEBUG
+03-Jun-22 14:28:39 :: interface :: baudrate set from serial_call :: DEBUG
+03-Jun-22 14:28:39 :: interface :: Serial device set from serial_call :: DEBUG
+03-Jun-22 14:28:39 :: interface :: timeout set from serial_call :: DEBUG
+03-Jun-22 14:28:39 :: interface :: opening serial connection from serial_call :: DEBUG
+03-Jun-22 14:28:39 :: interface :: information send via serial protocol; serial_call :: DEBUG
+03-Jun-22 14:28:39 :: interface :: change_freq function executed :: INFO
+03-Jun-22 14:28:39 :: interface :: Serial call to device initiated :: DEBUG
+03-Jun-22 14:28:39 :: interface :: baudrate set from serial_call :: DEBUG
+03-Jun-22 14:28:39 :: interface :: Serial device set from serial_call :: DEBUG
+03-Jun-22 14:28:39 :: interface :: timeout set from serial_call :: DEBUG
+03-Jun-22 14:28:39 :: interface :: opening serial connection from serial_call :: DEBUG
+03-Jun-22 14:28:39 :: interface :: information send via serial protocol; serial_call :: DEBUG
+03-Jun-22 14:28:39 :: helpers :: Ready for next command.
+ :: INFO
+03-Jun-22 14:28:39 :: helpers :: callstack_helper() executed :: INFO
+03-Jun-22 14:28:39 :: helpers :: Channel 5 Information Sent :: INFO
+03-Jun-22 14:28:39 :: interface :: change_power function executed :: INFO
+03-Jun-22 14:28:39 :: interface :: Connected device path: /dev/ttyACM0 :: INFO
+03-Jun-22 14:28:39 :: interface :: Serial call to device initiated :: DEBUG
+03-Jun-22 14:28:39 :: interface :: baudrate set from serial_call :: DEBUG
+03-Jun-22 14:28:39 :: interface :: Serial device set from serial_call :: DEBUG
+03-Jun-22 14:28:39 :: interface :: timeout set from serial_call :: DEBUG
+03-Jun-22 14:28:39 :: interface :: opening serial connection from serial_call :: DEBUG
+03-Jun-22 14:28:39 :: interface :: information send via serial protocol; serial_call :: DEBUG
+03-Jun-22 14:28:39 :: interface :: change_bandwidth function executed :: INFO
+03-Jun-22 14:28:39 :: interface :: Serial call to device initiated :: DEBUG
+03-Jun-22 14:28:39 :: interface :: baudrate set from serial_call :: DEBUG
+03-Jun-22 14:28:39 :: interface :: Serial device set from serial_call :: DEBUG
+03-Jun-22 14:28:39 :: interface :: timeout set from serial_call :: DEBUG
+03-Jun-22 14:28:39 :: interface :: opening serial connection from serial_call :: DEBUG
+03-Jun-22 14:28:39 :: interface :: information send via serial protocol; serial_call :: DEBUG
+03-Jun-22 14:28:39 :: interface :: change_freq function executed :: INFO
+03-Jun-22 14:28:39 :: interface :: Serial call to device initiated :: DEBUG
+03-Jun-22 14:28:40 :: interface :: baudrate set from serial_call :: DEBUG
+03-Jun-22 14:28:40 :: interface :: Serial device set from serial_call :: DEBUG
+03-Jun-22 14:28:40 :: interface :: timeout set from serial_call :: DEBUG
+03-Jun-22 14:28:40 :: interface :: opening serial connection from serial_call :: DEBUG
+03-Jun-22 14:28:40 :: interface :: information send via serial protocol; serial_call :: DEBUG
+03-Jun-22 14:28:40 :: helpers :: Ready for next command.
+ :: INFO
+03-Jun-22 14:28:40 :: helpers :: callstack_helper() executed :: INFO
+03-Jun-22 14:28:40 :: helpers :: Channel 6 Information Sent :: INFO
+03-Jun-22 14:28:40 :: interface :: change_power function executed :: INFO
+03-Jun-22 14:28:40 :: interface :: Connected device path: /dev/ttyACM0 :: INFO
+03-Jun-22 14:28:40 :: interface :: Serial call to device initiated :: DEBUG
+03-Jun-22 14:28:40 :: interface :: baudrate set from serial_call :: DEBUG
+03-Jun-22 14:28:40 :: interface :: Serial device set from serial_call :: DEBUG
+03-Jun-22 14:28:40 :: interface :: timeout set from serial_call :: DEBUG
+03-Jun-22 14:28:40 :: interface :: opening serial connection from serial_call :: DEBUG
+03-Jun-22 14:28:40 :: interface :: information send via serial protocol; serial_call :: DEBUG
+03-Jun-22 14:28:40 :: interface :: change_bandwidth function executed :: INFO
+03-Jun-22 14:28:40 :: interface :: Serial call to device initiated :: DEBUG
+03-Jun-22 14:28:40 :: interface :: baudrate set from serial_call :: DEBUG
+03-Jun-22 14:28:40 :: interface :: Serial device set from serial_call :: DEBUG
+03-Jun-22 14:28:40 :: interface :: timeout set from serial_call :: DEBUG
+03-Jun-22 14:28:40 :: interface :: opening serial connection from serial_call :: DEBUG
+03-Jun-22 14:28:40 :: interface :: information send via serial protocol; serial_call :: DEBUG
+03-Jun-22 14:28:40 :: interface :: change_freq function executed :: INFO
+03-Jun-22 14:28:40 :: interface :: Serial call to device initiated :: DEBUG
+03-Jun-22 14:28:40 :: interface :: baudrate set from serial_call :: DEBUG
+03-Jun-22 14:28:40 :: interface :: Serial device set from serial_call :: DEBUG
+03-Jun-22 14:28:40 :: interface :: timeout set from serial_call :: DEBUG
+03-Jun-22 14:28:40 :: interface :: opening serial connection from serial_call :: DEBUG
+03-Jun-22 14:28:40 :: interface :: information send via serial protocol; serial_call :: DEBUG
+03-Jun-22 14:28:40 :: helpers :: Ready for next command.
+ :: INFO
+03-Jun-22 14:28:40 :: helpers :: callstack_helper() executed :: INFO
+03-Jun-22 14:28:40 :: helpers :: Channel 7 Information Sent :: INFO
+03-Jun-22 14:28:40 :: interface :: change_power function executed :: INFO
+03-Jun-22 14:28:40 :: interface :: Connected device path: /dev/ttyACM0 :: INFO
+03-Jun-22 14:28:40 :: interface :: Serial call to device initiated :: DEBUG
+03-Jun-22 14:28:40 :: interface :: baudrate set from serial_call :: DEBUG
+03-Jun-22 14:28:40 :: interface :: Serial device set from serial_call :: DEBUG
+03-Jun-22 14:28:40 :: interface :: timeout set from serial_call :: DEBUG
+03-Jun-22 14:28:40 :: interface :: opening serial connection from serial_call :: DEBUG
+03-Jun-22 14:28:40 :: interface :: information send via serial protocol; serial_call :: DEBUG
+03-Jun-22 14:28:40 :: interface :: change_bandwidth function executed :: INFO
+03-Jun-22 14:28:40 :: interface :: Serial call to device initiated :: DEBUG
+03-Jun-22 14:28:40 :: interface :: baudrate set from serial_call :: DEBUG
+03-Jun-22 14:28:40 :: interface :: Serial device set from serial_call :: DEBUG
+03-Jun-22 14:28:40 :: interface :: timeout set from serial_call :: DEBUG
+03-Jun-22 14:28:40 :: interface :: opening serial connection from serial_call :: DEBUG
+03-Jun-22 14:28:40 :: interface :: information send via serial protocol; serial_call :: DEBUG
+03-Jun-22 14:28:40 :: interface :: change_freq function executed :: INFO
+03-Jun-22 14:28:40 :: interface :: Serial call to device initiated :: DEBUG
+03-Jun-22 14:28:40 :: interface :: baudrate set from serial_call :: DEBUG
+03-Jun-22 14:28:40 :: interface :: Serial device set from serial_call :: DEBUG
+03-Jun-22 14:28:40 :: interface :: timeout set from serial_call :: DEBUG
+03-Jun-22 14:28:40 :: interface :: opening serial connection from serial_call :: DEBUG
+03-Jun-22 14:28:40 :: interface :: information send via serial protocol; serial_call :: DEBUG
+03-Jun-22 14:28:40 :: helpers :: Ready for next command.
+ :: INFO
+03-Jun-22 14:28:40 :: helpers :: callstack_helper() executed :: INFO
+03-Jun-22 14:28:40 :: helpers :: Channel 8 Information Sent :: INFO
+03-Jun-22 14:28:40 :: interface :: change_power function executed :: INFO
+03-Jun-22 14:28:40 :: interface :: Connected device path: /dev/ttyACM0 :: INFO
+03-Jun-22 14:28:40 :: interface :: Serial call to device initiated :: DEBUG
+03-Jun-22 14:28:40 :: interface :: baudrate set from serial_call :: DEBUG
+03-Jun-22 14:28:40 :: interface :: Serial device set from serial_call :: DEBUG
+03-Jun-22 14:28:40 :: interface :: timeout set from serial_call :: DEBUG
+03-Jun-22 14:28:40 :: interface :: opening serial connection from serial_call :: DEBUG
+03-Jun-22 14:28:40 :: interface :: information send via serial protocol; serial_call :: DEBUG
+03-Jun-22 14:28:40 :: interface :: change_bandwidth function executed :: INFO
+03-Jun-22 14:28:40 :: interface :: Serial call to device initiated :: DEBUG
+03-Jun-22 14:28:40 :: interface :: baudrate set from serial_call :: DEBUG
+03-Jun-22 14:28:40 :: interface :: Serial device set from serial_call :: DEBUG
+03-Jun-22 14:28:40 :: interface :: timeout set from serial_call :: DEBUG
+03-Jun-22 14:28:40 :: interface :: opening serial connection from serial_call :: DEBUG
+03-Jun-22 14:28:40 :: interface :: information send via serial protocol; serial_call :: DEBUG
+03-Jun-22 14:28:40 :: interface :: change_freq function executed :: INFO
+03-Jun-22 14:28:40 :: interface :: Serial call to device initiated :: DEBUG
+03-Jun-22 14:28:41 :: interface :: baudrate set from serial_call :: DEBUG
+03-Jun-22 14:28:41 :: interface :: Serial device set from serial_call :: DEBUG
+03-Jun-22 14:28:41 :: interface :: timeout set from serial_call :: DEBUG
+03-Jun-22 14:28:41 :: interface :: opening serial connection from serial_call :: DEBUG
+03-Jun-22 14:28:41 :: interface :: information send via serial protocol; serial_call :: DEBUG
+03-Jun-22 14:28:41 :: helpers :: Ready for next command.
+ :: INFO
+03-Jun-22 14:28:41 :: helpers :: Ready for next command.
+ :: INFO
+03-Jun-22 14:28:43 :: helpers :: Reset All command Sent :: INFO
+03-Jun-22 14:28:43 :: interface :: Serial call to device initiated :: DEBUG
+03-Jun-22 14:28:43 :: interface :: baudrate set from serial_call :: DEBUG
+03-Jun-22 14:28:43 :: interface :: Serial device set from serial_call :: DEBUG
+03-Jun-22 14:28:43 :: interface :: timeout set from serial_call :: DEBUG
+03-Jun-22 14:28:43 :: interface :: opening serial connection from serial_call :: DEBUG
+03-Jun-22 14:28:43 :: interface :: information send via serial protocol; serial_call :: DEBUG
+03-Jun-22 14:28:43 :: interface :: save_state function executed :: INFO
+03-Jun-22 14:28:43 :: interface :: Serial call to device initiated :: DEBUG
+03-Jun-22 14:28:44 :: interface :: baudrate set from serial_call :: DEBUG
+03-Jun-22 14:28:44 :: interface :: Serial device set from serial_call :: DEBUG
+03-Jun-22 14:28:44 :: interface :: timeout set from serial_call :: DEBUG
+03-Jun-22 14:28:44 :: interface :: opening serial connection from serial_call :: DEBUG
+03-Jun-22 14:28:44 :: interface :: information send via serial protocol; serial_call :: DEBUG
+03-Jun-22 14:28:44 :: interface :: Serial call to device initiated :: DEBUG
+03-Jun-22 14:28:44 :: interface :: baudrate set from serial_call :: DEBUG
+03-Jun-22 14:28:44 :: interface :: Serial device set from serial_call :: DEBUG
+03-Jun-22 14:28:44 :: interface :: timeout set from serial_call :: DEBUG
+03-Jun-22 14:28:44 :: interface :: opening serial connection from serial_call :: DEBUG
+03-Jun-22 14:28:44 :: interface :: information send via serial protocol; serial_call :: DEBUG
+03-Jun-22 14:28:44 :: interface :: Serial call to device initiated :: DEBUG
+03-Jun-22 14:28:44 :: interface :: baudrate set from serial_call :: DEBUG
+03-Jun-22 14:28:44 :: interface :: Serial device set from serial_call :: DEBUG
+03-Jun-22 14:28:44 :: interface :: timeout set from serial_call :: DEBUG
+03-Jun-22 14:28:44 :: interface :: opening serial connection from serial_call :: DEBUG
+03-Jun-22 14:28:44 :: interface :: information send via serial protocol; serial_call :: DEBUG
+03-Jun-22 14:28:44 :: interface :: Serial call to device initiated :: DEBUG
+03-Jun-22 14:28:44 :: interface :: baudrate set from serial_call :: DEBUG
+03-Jun-22 14:28:44 :: interface :: Serial device set from serial_call :: DEBUG
+03-Jun-22 14:28:44 :: interface :: timeout set from serial_call :: DEBUG
+03-Jun-22 14:28:44 :: interface :: opening serial connection from serial_call :: DEBUG
+03-Jun-22 14:28:44 :: interface :: information send via serial protocol; serial_call :: DEBUG
+03-Jun-22 14:28:44 :: interface :: Serial call to device initiated :: DEBUG
+03-Jun-22 14:28:44 :: interface :: baudrate set from serial_call :: DEBUG
+03-Jun-22 14:28:44 :: interface :: Serial device set from serial_call :: DEBUG
+03-Jun-22 14:28:44 :: interface :: timeout set from serial_call :: DEBUG
+03-Jun-22 14:28:44 :: interface :: opening serial connection from serial_call :: DEBUG
+03-Jun-22 14:28:44 :: interface :: information send via serial protocol; serial_call :: DEBUG
+03-Jun-22 14:28:44 :: interface :: Serial call to device initiated :: DEBUG
+03-Jun-22 14:28:44 :: interface :: baudrate set from serial_call :: DEBUG
+03-Jun-22 14:28:44 :: interface :: Serial device set from serial_call :: DEBUG
+03-Jun-22 14:28:44 :: interface :: timeout set from serial_call :: DEBUG
+03-Jun-22 14:28:44 :: interface :: opening serial connection from serial_call :: DEBUG
+03-Jun-22 14:28:44 :: interface :: information send via serial protocol; serial_call :: DEBUG
+03-Jun-22 14:28:44 :: interface :: Serial call to device initiated :: DEBUG
+03-Jun-22 14:28:44 :: interface :: baudrate set from serial_call :: DEBUG
+03-Jun-22 14:28:44 :: interface :: Serial device set from serial_call :: DEBUG
+03-Jun-22 14:28:44 :: interface :: timeout set from serial_call :: DEBUG
+03-Jun-22 14:28:44 :: interface :: opening serial connection from serial_call :: DEBUG
+03-Jun-22 14:28:44 :: interface :: information send via serial protocol; serial_call :: DEBUG
+03-Jun-22 14:28:44 :: interface :: Serial call to device initiated :: DEBUG
+03-Jun-22 14:28:44 :: interface :: baudrate set from serial_call :: DEBUG
+03-Jun-22 14:28:44 :: interface :: Serial device set from serial_call :: DEBUG
+03-Jun-22 14:28:44 :: interface :: timeout set from serial_call :: DEBUG
+03-Jun-22 14:28:44 :: interface :: opening serial connection from serial_call :: DEBUG
+03-Jun-22 14:28:44 :: interface :: information send via serial protocol; serial_call :: DEBUG
+03-Jun-22 14:28:44 :: interface :: Serial call to device initiated :: DEBUG
+03-Jun-22 14:28:44 :: interface :: baudrate set from serial_call :: DEBUG
+03-Jun-22 14:28:44 :: interface :: Serial device set from serial_call :: DEBUG
+03-Jun-22 14:28:44 :: interface :: timeout set from serial_call :: DEBUG
+03-Jun-22 14:28:44 :: interface :: opening serial connection from serial_call :: DEBUG
+03-Jun-22 14:28:44 :: interface :: information send via serial protocol; serial_call :: DEBUG
+03-Jun-22 14:28:44 :: interface :: Serial call to device initiated :: DEBUG
+03-Jun-22 14:28:44 :: interface :: baudrate set from serial_call :: DEBUG
+03-Jun-22 14:28:44 :: interface :: Serial device set from serial_call :: DEBUG
+03-Jun-22 14:28:44 :: interface :: timeout set from serial_call :: DEBUG
+03-Jun-22 14:28:44 :: interface :: opening serial connection from serial_call :: DEBUG
+03-Jun-22 14:28:44 :: interface :: information send via serial protocol; serial_call :: DEBUG
+03-Jun-22 14:28:44 :: interface :: Serial call to device initiated :: DEBUG
+03-Jun-22 14:28:45 :: interface :: baudrate set from serial_call :: DEBUG
+03-Jun-22 14:28:45 :: interface :: Serial device set from serial_call :: DEBUG
+03-Jun-22 14:28:45 :: interface :: timeout set from serial_call :: DEBUG
+03-Jun-22 14:28:45 :: interface :: opening serial connection from serial_call :: DEBUG
+03-Jun-22 14:28:45 :: interface :: information send via serial protocol; serial_call :: DEBUG
+03-Jun-22 14:28:45 :: interface :: Serial call to device initiated :: DEBUG
+03-Jun-22 14:28:45 :: interface :: baudrate set from serial_call :: DEBUG
+03-Jun-22 14:28:45 :: interface :: Serial device set from serial_call :: DEBUG
+03-Jun-22 14:28:45 :: interface :: timeout set from serial_call :: DEBUG
+03-Jun-22 14:28:45 :: interface :: opening serial connection from serial_call :: DEBUG
+03-Jun-22 14:28:45 :: interface :: information send via serial protocol; serial_call :: DEBUG
+03-Jun-22 14:28:45 :: interface :: Serial call to device initiated :: DEBUG
+03-Jun-22 14:28:45 :: interface :: baudrate set from serial_call :: DEBUG
+03-Jun-22 14:28:45 :: interface :: Serial device set from serial_call :: DEBUG
+03-Jun-22 14:28:45 :: interface :: timeout set from serial_call :: DEBUG
+03-Jun-22 14:28:45 :: interface :: opening serial connection from serial_call :: DEBUG
+03-Jun-22 14:28:45 :: interface :: information send via serial protocol; serial_call :: DEBUG
+03-Jun-22 14:28:45 :: interface :: Serial call to device initiated :: DEBUG
+03-Jun-22 14:28:45 :: interface :: baudrate set from serial_call :: DEBUG
+03-Jun-22 14:28:45 :: interface :: Serial device set from serial_call :: DEBUG
+03-Jun-22 14:28:45 :: interface :: timeout set from serial_call :: DEBUG
+03-Jun-22 14:28:45 :: interface :: opening serial connection from serial_call :: DEBUG
+03-Jun-22 14:28:45 :: interface :: information send via serial protocol; serial_call :: DEBUG
+03-Jun-22 14:28:45 :: interface :: Serial call to device initiated :: DEBUG
+03-Jun-22 14:28:45 :: interface :: baudrate set from serial_call :: DEBUG
+03-Jun-22 14:28:45 :: interface :: Serial device set from serial_call :: DEBUG
+03-Jun-22 14:28:45 :: interface :: timeout set from serial_call :: DEBUG
+03-Jun-22 14:28:45 :: interface :: opening serial connection from serial_call :: DEBUG
+03-Jun-22 14:28:45 :: interface :: information send via serial protocol; serial_call :: DEBUG
+03-Jun-22 14:28:45 :: interface :: Serial call to device initiated :: DEBUG
+03-Jun-22 14:28:45 :: interface :: baudrate set from serial_call :: DEBUG
+03-Jun-22 14:28:45 :: interface :: Serial device set from serial_call :: DEBUG
+03-Jun-22 14:28:45 :: interface :: timeout set from serial_call :: DEBUG
+03-Jun-22 14:28:45 :: interface :: opening serial connection from serial_call :: DEBUG
+03-Jun-22 14:28:45 :: interface :: information send via serial protocol; serial_call :: DEBUG
+03-Jun-22 14:28:45 :: interface :: Serial call to device initiated :: DEBUG
+03-Jun-22 14:28:45 :: interface :: baudrate set from serial_call :: DEBUG
+03-Jun-22 14:28:45 :: interface :: Serial device set from serial_call :: DEBUG
+03-Jun-22 14:28:45 :: interface :: timeout set from serial_call :: DEBUG
+03-Jun-22 14:28:45 :: interface :: opening serial connection from serial_call :: DEBUG
+03-Jun-22 14:28:45 :: interface :: information send via serial protocol; serial_call :: DEBUG
+03-Jun-22 14:28:45 :: interface :: Serial call to device initiated :: DEBUG
+03-Jun-22 14:28:45 :: interface :: baudrate set from serial_call :: DEBUG
+03-Jun-22 14:28:45 :: interface :: Serial device set from serial_call :: DEBUG
+03-Jun-22 14:28:45 :: interface :: timeout set from serial_call :: DEBUG
+03-Jun-22 14:28:45 :: interface :: opening serial connection from serial_call :: DEBUG
+03-Jun-22 14:28:45 :: interface :: information send via serial protocol; serial_call :: DEBUG
+03-Jun-22 14:28:45 :: interface :: Serial call to device initiated :: DEBUG
+03-Jun-22 14:28:45 :: interface :: baudrate set from serial_call :: DEBUG
+03-Jun-22 14:28:45 :: interface :: Serial device set from serial_call :: DEBUG
+03-Jun-22 14:28:45 :: interface :: timeout set from serial_call :: DEBUG
+03-Jun-22 14:28:45 :: interface :: opening serial connection from serial_call :: DEBUG
+03-Jun-22 14:28:45 :: interface :: information send via serial protocol; serial_call :: DEBUG
+03-Jun-22 14:28:45 :: interface :: Serial call to device initiated :: DEBUG
+03-Jun-22 14:28:45 :: interface :: baudrate set from serial_call :: DEBUG
+03-Jun-22 14:28:45 :: interface :: Serial device set from serial_call :: DEBUG
+03-Jun-22 14:28:45 :: interface :: timeout set from serial_call :: DEBUG
+03-Jun-22 14:28:45 :: interface :: opening serial connection from serial_call :: DEBUG
+03-Jun-22 14:28:45 :: interface :: information send via serial protocol; serial_call :: DEBUG
+03-Jun-22 14:28:45 :: interface :: Serial call to device initiated :: DEBUG
+03-Jun-22 14:28:46 :: interface :: baudrate set from serial_call :: DEBUG
+03-Jun-22 14:28:46 :: interface :: Serial device set from serial_call :: DEBUG
+03-Jun-22 14:28:46 :: interface :: timeout set from serial_call :: DEBUG
+03-Jun-22 14:28:46 :: interface :: opening serial connection from serial_call :: DEBUG
+03-Jun-22 14:28:46 :: interface :: information send via serial protocol; serial_call :: DEBUG
+03-Jun-22 14:28:46 :: interface :: Serial call to device initiated :: DEBUG
+03-Jun-22 14:28:46 :: interface :: baudrate set from serial_call :: DEBUG
+03-Jun-22 14:28:46 :: interface :: Serial device set from serial_call :: DEBUG
+03-Jun-22 14:28:46 :: interface :: timeout set from serial_call :: DEBUG
+03-Jun-22 14:28:46 :: interface :: opening serial connection from serial_call :: DEBUG
+03-Jun-22 14:28:46 :: interface :: information send via serial protocol; serial_call :: DEBUG
+03-Jun-22 14:28:46 :: interface :: Serial call to device initiated :: DEBUG
+03-Jun-22 14:28:46 :: interface :: baudrate set from serial_call :: DEBUG
+03-Jun-22 14:28:46 :: interface :: Serial device set from serial_call :: DEBUG
+03-Jun-22 14:28:46 :: interface :: timeout set from serial_call :: DEBUG
+03-Jun-22 14:28:46 :: interface :: opening serial connection from serial_call :: DEBUG
+03-Jun-22 14:28:46 :: interface :: information send via serial protocol; serial_call :: DEBUG
+03-Jun-22 14:28:46 :: interface :: Serial call to device initiated :: DEBUG
+03-Jun-22 14:28:46 :: interface :: baudrate set from serial_call :: DEBUG
+03-Jun-22 14:28:46 :: interface :: Serial device set from serial_call :: DEBUG
+03-Jun-22 14:28:46 :: interface :: timeout set from serial_call :: DEBUG
+03-Jun-22 14:28:46 :: interface :: opening serial connection from serial_call :: DEBUG
+03-Jun-22 14:28:46 :: interface :: information send via serial protocol; serial_call :: DEBUG
+03-Jun-22 14:28:46 :: interface :: reset_board function executed :: INFO
+03-Jun-22 14:28:46 :: helpers :: Ready for next command.
+ :: INFO
+03-Jun-22 14:28:47 :: __main__ :: Ctrl C executed :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/mg_tron_gui.py", line 847, in <module>
+    dpg.start_dearpygui()
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/venv/lib64/python3.10/site-packages/dearpygui/dearpygui.py", line 102, in start_dearpygui
+    internal_dpg.render_dearpygui_frame()
+KeyboardInterrupt
+03-Jun-22 14:29:04 :: interface :: 
+
+GUI LAUNCHED
+
+ :: INFO
+03-Jun-22 14:29:04 :: interface :: Getting the port name of device :: INFO
+03-Jun-22 14:29:04 :: interface :: find_device function executing linux shell command to get device file names :: INFO
+03-Jun-22 14:29:04 :: interface :: Connected Devices: ['/dev/ttyACM0'] :: INFO
+03-Jun-22 14:29:04 :: interface :: Chosen Device: /dev/ttyACM0 :: DEBUG
+03-Jun-22 14:29:04 :: interface :: Connected device path: /dev/ttyACM0 :: INFO
+03-Jun-22 14:29:04 :: interface :: class Megatron initialized :: INFO
+03-Jun-22 14:29:04 :: interface :: EOF :: DEBUG
+03-Jun-22 14:29:04 :: helpers :: class Megatron instatiated :: INFO
+03-Jun-22 14:29:04 :: helpers :: Remote colors initialized :: INFO
+03-Jun-22 14:29:04 :: helpers :: Devices found: ['/dev/ttyACM0 - Teensyduino_USB_Serial_8771180'] | device_names :: INFO
+03-Jun-22 14:29:04 :: helpers :: EOF :: DEBUG
+03-Jun-22 14:29:04 :: __main__ :: Imports imported in GUI file :: INFO
+03-Jun-22 14:29:04 :: __main__ :: creating dpg context :: INFO
+03-Jun-22 14:29:04 :: __main__ :: Set save state of MGTron API to True :: INFO
+03-Jun-22 14:29:04 :: interface :: Serial call to device initiated :: DEBUG
+03-Jun-22 14:29:04 :: interface :: baudrate set from serial_call :: DEBUG
+03-Jun-22 14:29:04 :: interface :: Serial device set from serial_call :: DEBUG
+03-Jun-22 14:29:04 :: interface :: timeout set from serial_call :: DEBUG
+03-Jun-22 14:29:04 :: interface :: opening serial connection from serial_call :: DEBUG
+03-Jun-22 14:29:04 :: interface :: information send via serial protocol; serial_call :: DEBUG
+03-Jun-22 14:29:04 :: interface :: save_state function executed :: INFO
+03-Jun-22 14:29:04 :: helpers :: Config file error :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/helpers.py", line 501, in fill_config
+    if not parser["mgtron"]["card_1"]:
+  File "/usr/lib64/python3.10/configparser.py", line 964, in __getitem__
+    raise KeyError(key)
+KeyError: 'mgtron'
+03-Jun-22 14:29:04 :: __main__ :: Setting GUI colors :: INFO
+03-Jun-22 14:29:04 :: __main__ :: GUI colors set :: INFO
+03-Jun-22 14:29:04 :: __main__ :: Setting Primary Window in GUI file :: INFO
+03-Jun-22 14:29:04 :: __main__ :: RESET ALL button initialized :: INFO
+03-Jun-22 14:29:04 :: __main__ :: SEND ALL button initialized :: INFO
+03-Jun-22 14:29:04 :: __main__ :: Quick save button initialized :: INFO
+03-Jun-22 14:29:04 :: __main__ :: Quick Load button initialized :: INFO
+03-Jun-22 14:29:04 :: __main__ :: Custom Save button initialized :: INFO
+03-Jun-22 14:29:04 :: __main__ :: Custom Load button initialized :: INFO
+03-Jun-22 14:29:04 :: __main__ :: Alpha button initialized :: INFO
+03-Jun-22 14:29:04 :: __main__ :: Bravo button initialized :: INFO
+03-Jun-22 14:29:04 :: __main__ :: Mission Charlie button initialized :: INFO
+03-Jun-22 14:29:04 :: __main__ :: Mission Delta button initialized :: INFO
+03-Jun-22 14:29:04 :: __main__ :: Mission Echo button initialized :: INFO
+03-Jun-22 14:29:04 :: __main__ :: Mission Fox button initialized :: INFO
+03-Jun-22 14:29:04 :: __main__ :: Mission Golf button initialized :: INFO
+03-Jun-22 14:29:04 :: __main__ :: Mission WiFi scan jam button initialized :: INFO
+03-Jun-22 14:29:04 :: helpers :: finding the log file :: INFO
+03-Jun-22 14:29:04 :: helpers :: file read attempted :: INFO
