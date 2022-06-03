@@ -25,6 +25,7 @@ from helpers import (
     mission_bravo,
     mission_charlie,
     mission_delta,
+    mission_golf,
     quick_load,
     reset_button,
     quick_save,
@@ -384,7 +385,7 @@ with dpg.window(
                     pos=(5, 35),
                 )
 
-            except (TypeError, NameError, SystemError, AssertionError):
+            except (TypeError, NameError, SystemError, AssertionError, ValueError):
                 dpg.add_menu_item(
                     parent="choose_device",
                     label=f"Device Number: Not Found",
@@ -694,7 +695,7 @@ with dpg.window(
         logger.info(msg="Mission Golf button initialized")
         mission_golf_button = dpg.add_button(
             tag="mssn_golf",
-            # callback=mission_golf,
+            callback=mission_golf,
             label="GOLF\nCONFIG",
             height=70,
             width=BUTTON_WIDTH,

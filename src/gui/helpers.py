@@ -6,6 +6,7 @@ import logging
 from operator import mod
 import platform
 import subprocess
+from time import sleep
 import dearpygui.dearpygui as dpg
 import pandas as pd
 import sys
@@ -346,8 +347,11 @@ def auto_fill_bandwidth() -> None:
 
 def change_inputs(sender, app_data, user_data) -> None:
     """Use the mouse wheel to change the field inputs"""
+
     loggey.info(f"app data: {app_data}")
+
     if dpg.is_item_focused(item="power_1"):
+
         loggey.debug(dpg.get_value("power_1"))
 
 
@@ -371,10 +375,11 @@ def mission_alpha(sender, app_data, user_data) -> None:
 
     loggey.info(msg=f"{mission_alpha.__name__}() executed")
 
-    auto_fill_freq(
-        freq_val=650,
-        freq_constant=28.54,
-    )
+    # auto_fill_freq(
+    #     freq_val=650,
+    #     freq_constant=28.54,
+    # )
+
 
 
 def mission_bravo(sender, app_data, user_data) -> None:
@@ -460,6 +465,18 @@ def mission_delta(sender, app_data, user_data) -> None:
     dpg.set_value(item=f"bandwidth_8", value=100)
 
 
+def mission_golf(sender, app_data, user_data) -> None:
+    """Test to find max power vs frequency"""
+
+    [
+        (
+            dpg.set_value(item="freq_8", value=i),
+            callstack_helper(channel=8),
+        )
+        for i in range(50, 6400, 10)
+    ]
+
+
 def kill_channel(sender, app_data, user_data: int) -> None:
     """Kill channel w/out resetting power on user facing screen"""
 
@@ -498,26 +515,28 @@ def fill_config():
     parser = configparser.ConfigParser()
     parser.read(filenames="card_config.ini", encoding="utf-8")
     config = configparser.ConfigParser()
+    try:
+        if not parser["mgtron"]["card_1"]:
+            loggey.info(msg="The config file was not populated")
+            # Automatically fill in an empty config file
+            config["mgtron"] = {
+                "card_1": str(devices[0].split(sep="_")[-1]),
+                "card_2": str(devices[1].split(sep="_")[-1]),
+                "card_3": str(devices[2].split(sep="_")[-1]),
+                "card_4": str(devices[3].split(sep="_")[-1]),
+                "card_5": str(devices[4].split(sep="_")[-1]),
+                "card_6": str(devices[5].split(sep="_")[-1]),
+                "card_7": str(devices[6].split(sep="_")[-1]),
+                "card_8": str(devices[7].split(sep="_")[-1]),
+            }
 
-    if not parser["mgtron"]["card_1"]:
-        loggey.info(msg="The config file was not populated")
-        # Automatically fill in an empty config file
-        config["mgtron"] = {
-            "card_1": str(devices[0].split(sep="_")[-1]),
-            "card_2": str(devices[1].split(sep="_")[-1]),
-            "card_3": str(devices[2].split(sep="_")[-1]),
-            "card_4": str(devices[3].split(sep="_")[-1]),
-            "card_5": str(devices[4].split(sep="_")[-1]),
-            "card_6": str(devices[5].split(sep="_")[-1]),
-            "card_7": str(devices[6].split(sep="_")[-1]),
-            "card_8": str(devices[7].split(sep="_")[-1]),
-        }
-
-        with open(file="card_config.ini", mode="w") as configfile:
-            config.write(configfile)
-        loggey.info(msg="Config file has been automatically filled")
-    else:
-        loggey.info(msg="Config file already filled")
+            with open(file="card_config.ini", mode="w") as configfile:
+                config.write(configfile)
+            loggey.info(msg="Config file has been automatically filled")
+        else:
+            loggey.info(msg="Config file already filled")
+    except (KeyError, IndexError):
+        loggey.exception(msg="Config file error")
 
 
 def config_intake() -> None:
@@ -528,25 +547,25 @@ def config_intake() -> None:
     loggey.info(msg="finding the log file")
     parser.read(filenames="card_config.ini", encoding="utf-8")
     loggey.info(msg="file read attempted")
-
-    for card in range(1, len(devices) + 1):
-        try:
-            match devices[card - 1].split(sep="_")[-1] == parser["mgtron"][
-                f"card_{card}"
-            ]:
-                case True:
-                    dpg.bind_item_theme(item=f"card_{card}", theme=blue_btn_theme)
-                    dpg.configure_item(item=f"card_{card}", enabled=True)
-                    # devices[card - 1].split("_")[0].split("-")[0]
-                    loggey.info(
-                        msg=f"INI config file matched devices detected | {config_intake.__name__}"
-                    )
-                case False:
-                    loggey.info(
-                        msg=f"Config ID not detected by devices on {platform.machine()} | {config_intake.__name__}"
-                    )
-        except KeyError:
-            loggey.exception(msg="No config file detected")
+    if len(devices) > 1:
+        for card in range(1, len(devices) + 1):
+            try:
+                match devices[card - 1].split(sep="_")[-1] == parser["mgtron"][
+                    f"card_{card}"
+                ]:
+                    case True:
+                        dpg.bind_item_theme(item=f"card_{card}", theme=blue_btn_theme)
+                        dpg.configure_item(item=f"card_{card}", enabled=True)
+                        # devices[card - 1].split("_")[0].split("-")[0]
+                        loggey.info(
+                            msg=f"INI config file matched devices detected | {config_intake.__name__}"
+                        )
+                    case False:
+                        loggey.info(
+                            msg=f"Config ID not detected by devices on {platform.machine()} | {config_intake.__name__}"
+                        )
+            except KeyError:
+                loggey.exception(msg="No config file detected")
 
 
 def card_selection(sender, app_data, user_data: int) -> None:
