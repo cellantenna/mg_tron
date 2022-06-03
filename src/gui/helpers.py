@@ -474,15 +474,31 @@ def device_finder(sender, app_data, user_data: int) -> None:
         if int(new_device[-1]) == int(device[dev][0].split(sep="-")[0][-2]):
             dpg.set_value(item="device_indicator", value=f"Device:{device[dev][-1]}")
 
-def find_frequencies() -> list:
-    my_output = open('somefile.txt', 'w')
-    subprocess.call(["nmcli", "-f", "ALL", "dev", "wifi"], stdout=my_output)
-    df = pd.read_csv('somefile.txt',  index_col = False, delim_whitespace=True, engine='python')
+def find_signals_and_frequencies() -> dict:
+    
+    output = subprocess.Popen(["nmcli", "-f", "ALL", "dev", "wifi"], stdout=subprocess.PIPE)
+    if sys.version_info[0] < 3:
+            from StringIO import StringIO
+    else: 
+        from io import StringIO
+    b = StringIO(output.communicate()[0].decode('utf-8'))
+    df = pd.read_csv(b, index_col=False, delim_whitespace=True, engine='python')
+
+    signal_column = (df.loc[:, "SECURITY"])
+    signal_set = set(signal_column)
+    filtered_signals = [x for x in signal_set if not x.__contains__("MHz")]
+
     frequency_column = (df.loc[:, "FREQ"])
     frequency_column.unique()
     freq_set = set(frequency_column)
     filtered_frequencies = [x for x in freq_set if not x.__contains__(":")]
-    return filtered_frequencies
 
+    freq_and_signal = {}
+    for freq in filtered_frequencies:
+        for signal in filtered_signals:
+            freq_and_signal[freq] = signal
+            filtered_signals.remove(signal)
+            break
+    return freq_and_signal 
 
 loggey.debug(msg="EOF")
