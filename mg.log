@@ -40598,3 +40598,56 @@ GUI LAUNCHED
 03-Jun-22 13:32:50 :: helpers :: INI config file matched devices detected | config_intake :: INFO
 03-Jun-22 13:32:50 :: helpers :: INI config file matched devices detected | config_intake :: INFO
 03-Jun-22 13:32:50 :: helpers :: INI config file matched devices detected | config_intake :: INFO
+03-Jun-22 13:47:27 :: interface :: 
+
+GUI LAUNCHED
+
+ :: INFO
+03-Jun-22 13:47:27 :: interface :: Getting the port name of device :: INFO
+03-Jun-22 13:47:27 :: interface :: find_device function executing linux shell command to get device file names :: INFO
+03-Jun-22 13:47:27 :: interface :: Connected Devices: ['/dev/ttyACM0', '/dev/ttyACM1', '/dev/ttyACM2', '/dev/ttyACM3', '/dev/ttyACM4', '/dev/ttyACM5', '/dev/ttyACM6'] :: INFO
+03-Jun-22 13:47:27 :: interface :: Chosen Device: /dev/ttyACM0 :: DEBUG
+03-Jun-22 13:47:27 :: interface :: Connected device path: /dev/ttyACM0 :: INFO
+03-Jun-22 13:47:27 :: interface :: class Megatron initialized :: INFO
+03-Jun-22 13:47:27 :: interface :: EOF :: DEBUG
+03-Jun-22 13:47:27 :: helpers :: class Megatron instatiated :: INFO
+03-Jun-22 13:47:27 :: helpers :: Remote colors initialized :: INFO
+03-Jun-22 13:47:27 :: helpers :: Devices found: ['/dev/ttyACM4 - Teensyduino_USB_Serial_11192840', '/dev/ttyACM6 - Teensyduino_USB_Serial_11191020', '/dev/ttyACM1 - Teensyduino_USB_Serial_10100040', '/dev/ttyACM0 - Teensyduino_USB_Serial_11192830', '/dev/ttyACM3 - Teensyduino_USB_Serial_11192600', '/dev/ttyACM5 - Teensyduino_USB_Serial_11191000', '/dev/ttyACM2 - Teensyduino_USB_Serial_8771180'] | device_names :: INFO
+03-Jun-22 13:47:27 :: helpers :: EOF :: DEBUG
+03-Jun-22 13:47:27 :: __main__ :: Imports imported in GUI file :: INFO
+03-Jun-22 13:47:27 :: __main__ :: creating dpg context :: INFO
+03-Jun-22 13:47:27 :: __main__ :: Set save state of MGTron API to True :: INFO
+03-Jun-22 13:47:27 :: interface :: Serial call to device initiated :: DEBUG
+03-Jun-22 13:47:28 :: interface :: baudrate set from serial_call :: DEBUG
+03-Jun-22 13:47:28 :: interface :: Serial device set from serial_call :: DEBUG
+03-Jun-22 13:47:28 :: interface :: timeout set from serial_call :: DEBUG
+03-Jun-22 13:47:28 :: interface :: opening serial connection from serial_call :: DEBUG
+03-Jun-22 13:47:28 :: interface :: information send via serial protocol; serial_call :: DEBUG
+03-Jun-22 13:47:28 :: interface :: save_state function executed :: INFO
+03-Jun-22 13:47:28 :: helpers :: Config file already filled :: INFO
+03-Jun-22 13:47:28 :: __main__ :: Setting GUI colors :: INFO
+03-Jun-22 13:47:28 :: __main__ :: GUI colors set :: INFO
+03-Jun-22 13:47:28 :: __main__ :: Setting Primary Window in GUI file :: INFO
+03-Jun-22 13:47:28 :: __main__ :: RESET ALL button initialized :: INFO
+03-Jun-22 13:47:28 :: __main__ :: SEND ALL button initialized :: INFO
+03-Jun-22 13:47:28 :: __main__ :: Quick save button initialized :: INFO
+03-Jun-22 13:47:28 :: __main__ :: Quick Load button initialized :: INFO
+03-Jun-22 13:47:28 :: __main__ :: Custom Save button initialized :: INFO
+03-Jun-22 13:47:28 :: __main__ :: Custom Load button initialized :: INFO
+03-Jun-22 13:47:28 :: __main__ :: Alpha button initialized :: INFO
+03-Jun-22 13:47:28 :: __main__ :: Bravo button initialized :: INFO
+03-Jun-22 13:47:28 :: __main__ :: Mission Charlie button initialized :: INFO
+03-Jun-22 13:47:28 :: __main__ :: Mission Delta button initialized :: INFO
+03-Jun-22 13:47:28 :: __main__ :: Mission Echo button initialized :: INFO
+03-Jun-22 13:47:28 :: __main__ :: Mission Fox button initialized :: INFO
+03-Jun-22 13:47:28 :: __main__ :: Mission Golf button initialized :: INFO
+03-Jun-22 13:47:28 :: __main__ :: Mission WiFi scan jam button initialized :: INFO
+03-Jun-22 13:47:28 :: helpers :: finding the log file :: INFO
+03-Jun-22 13:47:28 :: helpers :: file read attempted :: INFO
+03-Jun-22 13:47:28 :: helpers :: INI config file matched devices detected | config_intake :: INFO
+03-Jun-22 13:47:28 :: helpers :: INI config file matched devices detected | config_intake :: INFO
+03-Jun-22 13:47:28 :: helpers :: INI config file matched devices detected | config_intake :: INFO
+03-Jun-22 13:47:28 :: helpers :: INI config file matched devices detected | config_intake :: INFO
+03-Jun-22 13:47:28 :: helpers :: INI config file matched devices detected | config_intake :: INFO
+03-Jun-22 13:47:28 :: helpers :: INI config file matched devices detected | config_intake :: INFO
+03-Jun-22 13:47:28 :: helpers :: INI config file matched devices detected | config_intake :: INFO
