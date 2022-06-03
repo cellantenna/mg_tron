@@ -14,11 +14,21 @@ Here we write upgrading and change notes.
 ✴️ MINOR version when you add functionality in a backwards compatible manner<br>
 ✳️ PATCH version when you make backwards compatible bug fixes.<br>
 
+## [0.10.1] - 2022 JUN 2
+
+- Corrected multiple device bug
+- Created an .ini config file and read contents
+- Automatically fill in config if card_1 is not fillied in
+- Changed name of all mission buttons
+- Added `MISSIONS` above the mission buttons
+- Card buttons turn blue if that number of cards are detected, disabled otherwise.
+
 ## [0.10.0] - 2022 JUN 1
 
 - Added a set of buttons along the starboard side of the GUI
 - New buttons highlight green when selected and grey when not
 - When a device is chosen from the list the list promptly dissapears
+- Added graceful exit
 
 ## [0.9.1] - 2022 MAY 31
 
