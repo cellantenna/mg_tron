@@ -7,6 +7,7 @@ import dearpygui.dearpygui as dpg
 
 
 from helpers import (
+    DEVICE,
     VERSION,
     auto_fill_bandwidth,
     auto_fill_custom_save,
@@ -17,10 +18,7 @@ from helpers import (
     config_intake,
     custom_load,
     data_vehicle,
-    demo_config,
-    demo_config_2,
     device_finder,
-    device_names,
     fill_config,
     kill_channel,
     mission_alpha,
@@ -357,7 +355,7 @@ with dpg.window(
 
             try:
                 # Grab the list of devices connected
-                devices: list[str] = device_names()
+                devices: list[str] = DEVICE
 
                 if len(devices) == 1 and devices[0]:
 
@@ -586,88 +584,48 @@ with dpg.window(
                 callback=lambda: dpg.configure_item(item="modal_load", show=False),
             )
 
-        #################
-        # DEMO 1 button #
-        #################
-        logger.info(msg="Demo 1 button initialized")
-        demo_button = dpg.add_button(
-            tag="demo",
-            height=70,
-            width=BUTTON_WIDTH,
-            callback=demo_config,
-            label="DEMO\nCONFIG",
+        dpg.add_text(
+            default_value="MISSIONS",
             pos=(
-                (dpg.get_item_width(item="big_buttons") - 50) / DIVISOR,
-                (dpg.get_item_height(item="big_buttons") + (DEMO_HEIGHT - 250)) / 2,
-            ),
-        )
-
-        ###############
-        # DEMO 2 button #
-        ###############
-        logger.info(msg="Demo 2 button initialized")
-        demo_two_button = dpg.add_button(
-            tag="demo_two",
-            height=70,
-            width=BUTTON_WIDTH,
-            callback=demo_config_2,
-            label="DEMO\nTWO\nCONFIG",
-            pos=(
-                (dpg.get_item_width(item="big_buttons") - 250) / DIVISOR,
-                (dpg.get_item_height(item="big_buttons") + (DEMO_HEIGHT - 250)) / 2,
+                (dpg.get_item_width(item="big_buttons") - 120) / DIVISOR,
+                (dpg.get_item_height(item="big_buttons") + (DEMO_HEIGHT - 320)) / 2,
             ),
         )
 
         ########################
         # Mission Alpha button #
         ########################
-        logger.info(msg="Mission Alpha button initialized")
+        logger.info(msg="Alpha button initialized")
         mission_alpha_button = dpg.add_button(
-            tag="mssn_alpha",
-            callback=mission_alpha,
-            label="ALPHA\nCONFIG",
+            tag="Alpha\nConfig",
             height=70,
             width=BUTTON_WIDTH,
+            callback=mission_alpha,
+            label="ALPHA\nCONFIG",
             pos=(
-                (dpg.get_item_width(item="big_buttons") - 50) / DIVISOR,
-                (dpg.get_item_height(item="big_buttons") + CELLUAR_HEIGHT) / 2,
+                (dpg.get_item_width(item="big_buttons") - 250) / DIVISOR,
+                (dpg.get_item_height(item="big_buttons") + (DEMO_HEIGHT - 250)) / 2,
             ),
         )
 
         ########################
         # Mission Bravo button #
         ########################
-        logger.info(msg="Mission Bravo button initialized")
+        logger.info(msg="Bravo button initialized")
         mission_bravo_button = dpg.add_button(
-            tag="mssn_bravo",
+            tag="Bravo\nConfig",
+            height=70,
+            width=BUTTON_WIDTH,
             callback=mission_bravo,
             label="BRAVO\nCONFIG",
-            height=70,
-            width=BUTTON_WIDTH,
             pos=(
-                (dpg.get_item_width(item="big_buttons") - 250) / DIVISOR,
-                (dpg.get_item_height(item="big_buttons") + CELLUAR_HEIGHT) / 2,
-            ),
-        )
-
-        ##################
-        # WIFI preset #
-        ##################
-        logger.info(msg="WIFI preset button initialized")
-        two_point_four_button = dpg.add_button(
-            tag="two_point_four",
-            callback=two_point_four,
-            label="WIFI\nCONFIG",
-            height=70,
-            width=BUTTON_WIDTH,
-            pos=(
-                (dpg.get_item_width(item="big_buttons") - 250) / DIVISOR,
-                (dpg.get_item_height(item="big_buttons") + WIFI_HEIGHT) / 2,
+                (dpg.get_item_width(item="big_buttons") - 50) / DIVISOR,
+                (dpg.get_item_height(item="big_buttons") + (DEMO_HEIGHT - 250)) / 2,
             ),
         )
 
         ##########################
-        # Mission Charlie preset #
+        # Mission Charlie button #
         ##########################
         logger.info(msg="Mission Charlie button initialized")
         mission_charlie_button = dpg.add_button(
@@ -677,13 +635,13 @@ with dpg.window(
             height=70,
             width=BUTTON_WIDTH,
             pos=(
-                (dpg.get_item_width(item="big_buttons") - 50) / DIVISOR,
-                (dpg.get_item_height(item="big_buttons") + WIFI_HEIGHT) / 2,
+                (dpg.get_item_width(item="big_buttons") - 250) / DIVISOR,
+                (dpg.get_item_height(item="big_buttons") + CELLUAR_HEIGHT) / 2,
             ),
         )
 
         ########################
-        # Mission Delta preset #
+        # Mission Delta button #
         ########################
         logger.info(msg="Mission Delta button initialized")
         mission_delta_button = dpg.add_button(
@@ -694,22 +652,70 @@ with dpg.window(
             width=BUTTON_WIDTH,
             pos=(
                 (dpg.get_item_width(item="big_buttons") - 50) / DIVISOR,
-                (dpg.get_item_height(item="big_buttons") - 80),
+                (dpg.get_item_height(item="big_buttons") + CELLUAR_HEIGHT) / 2,
             ),
         )
 
         #######################
-        # Mission Echo preset #
+        # Mission Echo button #
         #######################
         logger.info(msg="Mission Echo button initialized")
         mission_echo_button = dpg.add_button(
             tag="mssn_echo",
-            # callback=mission_charlie,
+            callback=two_point_four,
             label="ECHO\nCONFIG",
             height=70,
             width=BUTTON_WIDTH,
             pos=(
                 (dpg.get_item_width(item="big_buttons") - 250) / DIVISOR,
+                (dpg.get_item_height(item="big_buttons") + WIFI_HEIGHT) / 2,
+            ),
+        )
+
+        ##########################
+        # Mission Fox preset #
+        ##########################
+        logger.info(msg="Mission Fox button initialized")
+        mission_fox_button = dpg.add_button(
+            tag="mssn_fox",
+            # callback=mission_fox,
+            label="FOX\nCONFIG",
+            height=70,
+            width=BUTTON_WIDTH,
+            pos=(
+                (dpg.get_item_width(item="big_buttons") - 50) / DIVISOR,
+                (dpg.get_item_height(item="big_buttons") + WIFI_HEIGHT) / 2,
+            ),
+        )
+
+        #######################
+        # Mission Golf preset #
+        #######################
+        logger.info(msg="Mission Golf button initialized")
+        mission_golf_button = dpg.add_button(
+            tag="mssn_golf",
+            # callback=mission_golf,
+            label="GOLF\nCONFIG",
+            height=70,
+            width=BUTTON_WIDTH,
+            pos=(
+                (dpg.get_item_width(item="big_buttons") - 250) / DIVISOR,
+                (dpg.get_item_height(item="big_buttons") - 80),
+            ),
+        )
+
+        ################################
+        # Mission Wifi Scan Jam preset #
+        ################################
+        logger.info(msg="Mission WiFi scan jam button initialized")
+        wifi_scan_jam_button = dpg.add_button(
+            tag="mssn_scan_jam",
+            # callback=,
+            label="WiFi\nScan\nJam",
+            height=70,
+            width=BUTTON_WIDTH,
+            pos=(
+                (dpg.get_item_width(item="big_buttons") - 50) / DIVISOR,
                 (dpg.get_item_height(item="big_buttons") - 80),
             ),
         )
@@ -797,15 +803,15 @@ blue_btn_list: list[Any] = [
     save_all,
     load_all,
     custom_save_button,
-    two_point_four_button,
+    mission_golf_button,
     mission_alpha_button,
     custom_load_button,
     mission_bravo_button,
     mission_charlie_button,
     mission_delta_button,
     mission_echo_button,
-    demo_button,
-    demo_two_button,
+    mission_fox_button,
+    wifi_scan_jam_button,
 ]
 
 dpg.bind_theme(global_theme)

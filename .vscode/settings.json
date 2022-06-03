@@ -1,5 +1,6 @@
 {
     "python.analysis.extraPaths": [
         "./src/gui"
-    ]
+    ],
+    "python.formatting.provider": "black"
 }

@@ -49,6 +49,28 @@ with dpg.theme() as orng_btn_theme:
         dpg.add_theme_color(dpg.mvThemeCol_Button, (255, 165, 0, 255))  # ORANGE
 
 
+def device_names() -> list[str]:
+    """Use a bash script to list connected microarchitectures"""
+
+    # Avoid crashing program if there are no devices detected
+    try:
+        devices: str = subprocess.check_output(
+            "src/gui/find_dev.sh", stderr=subprocess.STDOUT  # call bash script
+        ).decode("utf-8")
+    except TypeError:
+        loggey.exception(msg="No devices detected")
+
+    devices: list = devices.strip().split(sep="\n")
+    loggey.info(msg=f"Devices found: {devices} | {device_names.__name__}")
+
+    # If there is only one device skip the hooplah
+    if len(devices) == 1:
+        return devices
+    return sorted(devices)
+
+DEVICE: device_names = device_names()
+
+
 def callstack_helper(
     channel: int,
     freq_value: float = float(),
@@ -446,26 +468,6 @@ def kill_channel(sender, app_data, user_data: int) -> None:
     dpg.bind_item_theme(item=f"stats_{user_data}", theme=grey_btn_theme),
 
 
-def device_names() -> list[str]:
-    """Use a bash script to list connected microarchitectures"""
-
-    # Avoid crashing program if there are no devices detected
-    try:
-        devices: str = subprocess.check_output(
-            "src/gui/find_dev.sh", stderr=subprocess.STDOUT  # call bash script
-        ).decode("utf-8")
-    except TypeError:
-        loggey.exception(msg="No devices detected")
-
-    devices: list = devices.strip().split(sep="\n")
-    loggey.info(msg=f"Devices found: {devices} | {device_names.__name__}")
-
-    # If there is only one device skip the hooplah
-    if len(devices) == 1:
-        return devices
-    return sorted(devices)
-
-
 def device_finder(sender, app_data, user_data: int) -> None:
     """List all the usb microcontrollers connected to the machine"""
 
@@ -473,7 +475,7 @@ def device_finder(sender, app_data, user_data: int) -> None:
     try:
         # reinitialize the method to update the device selected
         new_device = find_device(user_data)[0]
-        devices = device_names()
+        devices = DEVICE
         device = [device.split(sep="_") for device in devices]
 
         for dev in range(len(device)):
@@ -489,11 +491,14 @@ def device_finder(sender, app_data, user_data: int) -> None:
 
 def fill_config():
     """Automatically fill the config file with devices detected"""
-    devices = device_names()
+
+    devices = DEVICE
     parser = configparser.ConfigParser()
     parser.read(filenames="card_config.ini", encoding="utf-8")
     config = configparser.ConfigParser()
+    
     if not parser["mgtron"]["card_1"]:
+        loggey.info(msg="The config file was not populated")
         # Automatically fill in an empty config file
         config["mgtron"] = {
             "card_1": str(devices[0].split(sep="_")[-1]),
@@ -505,16 +510,18 @@ def fill_config():
             "card_7": str(devices[6].split(sep="_")[-1]),
             "card_8": str(devices[7].split(sep="_")[-1]),
         }
+        
         with open(file="card_config.ini", mode="w") as configfile:
             config.write(configfile)
+        loggey.info(msg="Config file has been automatically filled")
     else:
-        print("file occupied!")
+        loggey.info(msg="Config file already filled")
 
 
 def config_intake() -> None:
     """Read a config file and assign card buttons"""
 
-    devices = device_names()
+    devices = DEVICE
     parser = configparser.ConfigParser()
     loggey.info(msg="finding the log file")
     parser.read(filenames="card_config.ini", encoding="utf-8")
@@ -606,14 +613,20 @@ def card_selection(sender, app_data, user_data: int) -> None:
                 for greyed_card in card_list
             ]
 
+
 def find_frequencies() -> list:
-    my_output = open('somefile.txt', 'w')
+    """Scan local wifi and return occupied frequencies"""
+
+    my_output = open("somefile.txt", "w")
     subprocess.call(["nmcli", "-f", "ALL", "dev", "wifi"], stdout=my_output)
-    df = pd.read_csv('somefile.txt',  index_col = False, delim_whitespace=True, engine='python')
-    frequency_column = (df.loc[:, "FREQ"])
+    df = pd.read_csv(
+        "somefile.txt", index_col=False, delim_whitespace=True, engine="python"
+    )
+    frequency_column = df.loc[:, "FREQ"]
     frequency_column.unique()
     freq_set = set(frequency_column)
     filtered_frequencies = [x for x in freq_set if not x.__contains__(":")]
+
     return filtered_frequencies
 
 
