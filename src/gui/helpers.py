@@ -11,7 +11,7 @@ from datetime import datetime
 
 # datetime object containing current date and time
 now = datetime.now()
-VERSION: str = "0.10.0"
+VERSION: str = "0.10.1"
 
 loggey = logging.getLogger(name=__name__)
 
@@ -549,5 +549,7 @@ def card_selection(sender, app_data, user_data: int) -> None:
                 for greyed_card in card_list
             ]
 
+def config_intake() -> None:
+    """Read a config file and assign card buttons"""
 
 loggey.debug(msg="EOF")

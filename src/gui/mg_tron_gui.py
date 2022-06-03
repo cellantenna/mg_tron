@@ -352,36 +352,26 @@ with dpg.window(
             no_move=True,
         ):
 
-            # dpg.add_menu(
-            #     parent="modal_device_config",
-            #     label="Choose Device: ",
-            #     tag="choose_device",
-            # )
-
             try:
                 # Grab the list of devices connected
                 devices: list[str] = device_names()
 
                 if len(devices) == 1:
-                    {
-                        dpg.add_menu_item(
-                            # parent="choose_device",
-                            label=f"{devices[0].split(sep='_')[0]} {devices[0].split(sep='_')[-1]}",
-                        )
-                    }
+
+                    dpg.add_menu_item(
+                        label=f"{devices[0].split(sep='_')[0]} {devices[0].split(sep='_')[-1]}",
+                    )
+
                 elif len(devices) > 1:
                     {
-                        [
-                            dpg.add_menu_item(
-                                # parent="choose_device",
-                                label=f"{device.split(sep='_')[0]} {device.split(sep='_')[-1]}",
-                                callback=device_finder,
-                                user_data=int(
-                                    device.split(sep="_")[0][11:12]
-                                ),  # Grab the integer at the end of `/dev/ttyACM[0:]`
-                            )
-                            for device in devices
-                        ]
+                        dpg.add_menu_item(
+                            label=f"{device.split(sep='_')[0]} {device.split(sep='_')[-1]}",
+                            callback=device_finder,
+                            user_data=int(
+                                device.split(sep="_")[0][11:12]
+                            ),  # Grab the integer at the end of `/dev/ttyACM[0:]`
+                        )
+                        for device in devices
                     }
 
                 dpg.add_text(
@@ -840,5 +830,9 @@ dpg.create_viewport(
 dpg.setup_dearpygui()
 dpg.show_viewport(maximized=False)
 dpg.set_primary_window("Primary Window", True)
-dpg.start_dearpygui()
+try:
+    dpg.start_dearpygui()
+except KeyboardInterrupt:
+    logger.exception(msg="Ctrl C executed")
+    exit()  # Exit the program gracefully upon user input to quit
 dpg.destroy_context()
