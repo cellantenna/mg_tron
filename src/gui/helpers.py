@@ -3,6 +3,8 @@
 import configparser
 import json
 import logging
+from operator import mod
+import platform
 import subprocess
 import dearpygui.dearpygui as dpg
 
@@ -485,6 +487,57 @@ def device_finder(sender, app_data, user_data: int) -> None:
         loggey.exception(msg="No devices found")
 
 
+def fill_config():
+    """Automatically fill the config file with devices detected"""
+    devices = device_names()
+    parser = configparser.ConfigParser()
+    parser.read(filenames="card_config.ini", encoding="utf-8")
+    config = configparser.ConfigParser()
+    if not parser["mgtron"]["card_1"]:
+        # Automatically fill in an empty config file
+        config["mgtron"] = {
+            "card_1": str(devices[0].split(sep="_")[-1]),
+            "card_2": str(devices[1].split(sep="_")[-1]),
+            "card_3": str(devices[2].split(sep="_")[-1]),
+            "card_4": str(devices[3].split(sep="_")[-1]),
+            "card_5": str(devices[4].split(sep="_")[-1]),
+            "card_6": str(devices[5].split(sep="_")[-1]),
+            "card_7": str(devices[6].split(sep="_")[-1]),
+            "card_8": str(devices[7].split(sep="_")[-1]),
+        }
+        with open(file="card_config.ini", mode="w") as configfile:
+            config.write(configfile)
+    else:
+        print("file occupied!")
+
+
+def config_intake() -> None:
+    """Read a config file and assign card buttons"""
+
+    devices = device_names()
+    parser = configparser.ConfigParser()
+    loggey.info(msg="finding the log file")
+    parser.read(filenames="card_config.ini", encoding="utf-8")
+    loggey.info(msg="file read attempted")
+
+    for card in range(1, len(devices) + 1):
+        try:
+            match devices[card - 1].split(sep="_")[-1] == parser["mgtron"][
+                f"card_{card}"
+            ]:
+                case True:
+                    devices[card - 1].split("_")[0].split("-")[0]
+                    loggey.info(
+                        msg=f"INI config file matched devices detected | {config_intake.__name__}"
+                    )
+                case False:
+                    loggey.info(
+                        msg=f"Config ID not detected by devices on {platform.system()} | {config_intake.__name__}"
+                    )
+        except KeyError:
+            loggey.exception(msg="No config file detected")
+
+
 def card_selection(sender, app_data, user_data: int) -> None:
     """Load the selected cards prefix when selected"""
 
@@ -496,7 +549,7 @@ def card_selection(sender, app_data, user_data: int) -> None:
         case 1:
             dpg.bind_item_theme(item=f"card_{user_data}", theme=grn_btn_theme)
             dpg.set_value(item="device_indicator", value="button 1 chosen")
-            
+
             # Grey all other card buttons and make this one green when clicked
             card_list.remove(1)
             [
@@ -552,20 +605,6 @@ def card_selection(sender, app_data, user_data: int) -> None:
                 dpg.bind_item_theme(item=f"card_{greyed_card}", theme=grey_btn_theme)
                 for greyed_card in card_list
             ]
-
-
-def config_intake() -> None:
-    """Read a config file and assign card buttons"""
-    devices = device_names()
-    parser = configparser.ConfigParser()
-    parser.read(filenames="card_config.ini", encoding="utf-8")
-    for card in range(1, len(devices) + 1):
-        match devices[card - 1].split(sep="_")[-1] == parser["mgtron"][f"card_{card}"]:
-            case True:
-                devices[card - 1].split("_")[0].split("-")[0]
-                loggey.info(
-                    msg=f"INI config file matched devices detected | {config_intake.__name__}"
-                )
 
 
 loggey.debug(msg="EOF")

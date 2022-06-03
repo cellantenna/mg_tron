@@ -17,6 +17,8 @@ Here we write upgrading and change notes.
 ## [0.10.1] - 2022 JUN 2
 
 - Corrected multiple device bug
+- Created an .ini config file and read contents
+- Automatically fill in config if card_1 is not fillied in
 
 ## [0.10.0] - 2022 JUN 1
 

@@ -21,6 +21,7 @@ from helpers import (
     demo_config_2,
     device_finder,
     device_names,
+    fill_config,
     kill_channel,
     mission_alpha,
     mission_bravo,
@@ -58,6 +59,7 @@ logger.info(msg="creating dpg context")
 
 logger.info(msg="Set save state of MGTron API to True")
 data_vehicle.save_state(True)
+fill_config()
 
 logger.info(msg="Setting GUI colors")
 # Green Button Theme
