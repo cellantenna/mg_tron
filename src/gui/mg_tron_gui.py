@@ -352,11 +352,11 @@ with dpg.window(
             no_move=True,
         ):
 
-            dpg.add_menu(
-                parent="modal_device_config",
-                label="Choose Device: ",
-                tag="choose_device",
-            )
+            # dpg.add_menu(
+            #     parent="modal_device_config",
+            #     label="Choose Device: ",
+            #     tag="choose_device",
+            # )
 
             try:
                 # Grab the list of devices connected
@@ -365,7 +365,7 @@ with dpg.window(
                 if len(devices) == 1:
                     {
                         dpg.add_menu_item(
-                            parent="choose_device",
+                            # parent="choose_device",
                             label=f"{devices[0].split(sep='_')[0]} {devices[0].split(sep='_')[-1]}",
                         )
                     }
@@ -373,14 +373,14 @@ with dpg.window(
                     {
                         [
                             dpg.add_menu_item(
-                                parent="choose_device",
-                                label=f"{devices[i].split(sep='_')[0]} {devices[i].split(sep='_')[-1]}",
+                                # parent="choose_device",
+                                label=f"{device.split(sep='_')[0]} {device.split(sep='_')[-1]}",
                                 callback=device_finder,
                                 user_data=int(
-                                    devices[i].split(sep="_")[0][11:12]
+                                    device.split(sep="_")[0][11:12]
                                 ),  # Grab the integer at the end of `/dev/ttyACM[0:]`
                             )
-                            for i in range(len(devices))
+                            for device in devices
                         ]
                     }
 

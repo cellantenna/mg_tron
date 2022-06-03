@@ -29159,3 +29159,570 @@ TypeError: unhashable type: 'list'
  :: INFO
 02-Jun-22 14:49:57 :: helpers :: Ready for next command.
  :: INFO
+02-Jun-22 19:12:28 :: interface :: 
+
+GUI LAUNCHED
+
+ :: INFO
+02-Jun-22 19:12:28 :: interface :: Getting the port name of device :: INFO
+02-Jun-22 19:12:28 :: interface :: find_device function executing linux shell command to get device file names :: INFO
+02-Jun-22 19:12:28 :: interface :: Connected Devices: ['/dev/ttyACM0', '/dev/ttyACM1'] :: INFO
+02-Jun-22 19:12:28 :: interface :: Chosen Device: /dev/ttyACM0 :: DEBUG
+02-Jun-22 19:12:28 :: interface :: Connected device path: /dev/ttyACM0 :: INFO
+02-Jun-22 19:12:28 :: interface :: class Megatron initialized :: INFO
+02-Jun-22 19:12:28 :: interface :: EOF :: DEBUG
+02-Jun-22 19:12:28 :: helpers :: class Megatron instatiated :: INFO
+02-Jun-22 19:12:28 :: helpers :: Remote colors initialized :: INFO
+02-Jun-22 19:12:28 :: helpers :: EOF :: DEBUG
+02-Jun-22 19:12:28 :: __main__ :: Imports imported in GUI file :: INFO
+02-Jun-22 19:12:28 :: __main__ :: creating dpg context :: INFO
+02-Jun-22 19:12:28 :: __main__ :: Set save state of MGTron API to True :: INFO
+02-Jun-22 19:12:28 :: interface :: Serial call to device initiated :: DEBUG
+02-Jun-22 19:12:28 :: interface :: baudrate set from serial_call :: DEBUG
+02-Jun-22 19:12:28 :: interface :: Serial device set from serial_call :: DEBUG
+02-Jun-22 19:12:28 :: interface :: timeout set from serial_call :: DEBUG
+02-Jun-22 19:12:28 :: interface :: opening serial connection from serial_call :: DEBUG
+02-Jun-22 19:12:28 :: interface :: information send via serial protocol; serial_call :: DEBUG
+02-Jun-22 19:12:28 :: interface :: save_state function executed :: INFO
+02-Jun-22 19:12:28 :: __main__ :: Setting GUI colors :: INFO
+02-Jun-22 19:12:28 :: __main__ :: GUI colors set :: INFO
+02-Jun-22 19:12:28 :: __main__ :: Setting Primary Window in GUI file :: INFO
+02-Jun-22 19:12:28 :: helpers :: Devices found: ['/dev/ttyACM0 - Arduino__www.arduino.cc__Arduino_Due_Prog._Port_55731323836351A04241', '/dev/ttyACM1 - Arduino__www.arduino.cc__0043_5583834393335131C101'] at device_names :: INFO
+02-Jun-22 19:12:28 :: __main__ :: No device detected :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/mg_tron_gui.py", line 373, in <module>
+    {
+TypeError: unhashable type: 'list'
+02-Jun-22 19:12:28 :: __main__ :: RESET ALL button initialized :: INFO
+02-Jun-22 19:12:28 :: __main__ :: SEND ALL button initialized :: INFO
+02-Jun-22 19:12:28 :: __main__ :: Quick save button initialized :: INFO
+02-Jun-22 19:12:28 :: __main__ :: Quick Load button initialized :: INFO
+02-Jun-22 19:12:28 :: __main__ :: Custom Save button initialized :: INFO
+02-Jun-22 19:12:28 :: __main__ :: Custom Load button initialized :: INFO
+02-Jun-22 19:12:28 :: __main__ :: Demo 1 button initialized :: INFO
+02-Jun-22 19:12:28 :: __main__ :: Demo 2 button initialized :: INFO
+02-Jun-22 19:12:28 :: __main__ :: Mission Alpha button initialized :: INFO
+02-Jun-22 19:12:28 :: __main__ :: Mission Bravo button initialized :: INFO
+02-Jun-22 19:12:28 :: __main__ :: WIFI preset button initialized :: INFO
+02-Jun-22 19:12:28 :: __main__ :: Mission Charlie button initialized :: INFO
+02-Jun-22 19:12:28 :: __main__ :: Mission Delta button initialized :: INFO
+02-Jun-22 19:12:28 :: __main__ :: Mission Echo button initialized :: INFO
+02-Jun-22 19:13:08 :: helpers :: app data: -1 :: INFO
+02-Jun-22 19:13:08 :: helpers :: app data: -1 :: INFO
+02-Jun-22 19:13:08 :: helpers :: app data: 1 :: INFO
+02-Jun-22 19:13:08 :: helpers :: app data: 1 :: INFO
+02-Jun-22 19:13:08 :: helpers :: app data: 1 :: INFO
+02-Jun-22 19:19:01 :: helpers :: selected card: 1 from card_selection :: INFO
+02-Jun-22 19:19:02 :: helpers :: selected card: 2 from card_selection :: INFO
+02-Jun-22 19:19:03 :: helpers :: selected card: 1 from card_selection :: INFO
+02-Jun-22 19:19:04 :: helpers :: selected card: 1 from card_selection :: INFO
+02-Jun-22 19:19:14 :: interface :: find_device function executing linux shell command to get device file names :: INFO
+02-Jun-22 19:19:14 :: interface :: Connected Devices: ['/dev/ttyACM0', '/dev/ttyACM1'] :: INFO
+02-Jun-22 19:19:14 :: interface :: Chosen Device: /dev/ttyACM0 :: DEBUG
+02-Jun-22 19:19:14 :: helpers :: Devices found: ['/dev/ttyACM0 - Arduino__www.arduino.cc__Arduino_Due_Prog._Port_55731323836351A04241', '/dev/ttyACM1 - Arduino__www.arduino.cc__0043_5583834393335131C101'] at device_names :: INFO
+02-Jun-22 19:23:11 :: interface :: 
+
+GUI LAUNCHED
+
+ :: INFO
+02-Jun-22 19:23:11 :: interface :: Getting the port name of device :: INFO
+02-Jun-22 19:23:11 :: interface :: find_device function executing linux shell command to get device file names :: INFO
+02-Jun-22 19:23:11 :: interface :: Connected Devices: ['/dev/ttyACM0', '/dev/ttyACM1'] :: INFO
+02-Jun-22 19:23:11 :: interface :: Chosen Device: /dev/ttyACM0 :: DEBUG
+02-Jun-22 19:23:11 :: interface :: Connected device path: /dev/ttyACM0 :: INFO
+02-Jun-22 19:23:11 :: interface :: class Megatron initialized :: INFO
+02-Jun-22 19:23:11 :: interface :: EOF :: DEBUG
+02-Jun-22 19:23:11 :: helpers :: class Megatron instatiated :: INFO
+02-Jun-22 19:23:11 :: helpers :: Remote colors initialized :: INFO
+02-Jun-22 19:23:11 :: helpers :: EOF :: DEBUG
+02-Jun-22 19:23:11 :: __main__ :: Imports imported in GUI file :: INFO
+02-Jun-22 19:23:11 :: __main__ :: creating dpg context :: INFO
+02-Jun-22 19:23:11 :: __main__ :: Set save state of MGTron API to True :: INFO
+02-Jun-22 19:23:11 :: interface :: Serial call to device initiated :: DEBUG
+02-Jun-22 19:23:11 :: interface :: baudrate set from serial_call :: DEBUG
+02-Jun-22 19:23:11 :: interface :: Serial device set from serial_call :: DEBUG
+02-Jun-22 19:23:11 :: interface :: timeout set from serial_call :: DEBUG
+02-Jun-22 19:23:11 :: interface :: opening serial connection from serial_call :: DEBUG
+02-Jun-22 19:23:11 :: interface :: information send via serial protocol; serial_call :: DEBUG
+02-Jun-22 19:23:11 :: interface :: save_state function executed :: INFO
+02-Jun-22 19:23:11 :: __main__ :: Setting GUI colors :: INFO
+02-Jun-22 19:23:11 :: __main__ :: GUI colors set :: INFO
+02-Jun-22 19:23:11 :: __main__ :: Setting Primary Window in GUI file :: INFO
+02-Jun-22 19:23:11 :: helpers :: Devices found: ['/dev/ttyACM0 - Arduino__www.arduino.cc__Arduino_Due_Prog._Port_55731323836351A04241', '/dev/ttyACM1 - Arduino__www.arduino.cc__0043_5583834393335131C101'] at device_names :: INFO
+02-Jun-22 19:23:11 :: __main__ :: No device detected :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/mg_tron_gui.py", line 373, in <module>
+    {
+TypeError: unhashable type: 'list'
+02-Jun-22 19:23:11 :: __main__ :: RESET ALL button initialized :: INFO
+02-Jun-22 19:23:11 :: __main__ :: SEND ALL button initialized :: INFO
+02-Jun-22 19:23:11 :: __main__ :: Quick save button initialized :: INFO
+02-Jun-22 19:23:11 :: __main__ :: Quick Load button initialized :: INFO
+02-Jun-22 19:23:11 :: __main__ :: Custom Save button initialized :: INFO
+02-Jun-22 19:23:11 :: __main__ :: Custom Load button initialized :: INFO
+02-Jun-22 19:23:11 :: __main__ :: Demo 1 button initialized :: INFO
+02-Jun-22 19:23:11 :: __main__ :: Demo 2 button initialized :: INFO
+02-Jun-22 19:23:11 :: __main__ :: Mission Alpha button initialized :: INFO
+02-Jun-22 19:23:11 :: __main__ :: Mission Bravo button initialized :: INFO
+02-Jun-22 19:23:11 :: __main__ :: WIFI preset button initialized :: INFO
+02-Jun-22 19:23:11 :: __main__ :: Mission Charlie button initialized :: INFO
+02-Jun-22 19:23:11 :: __main__ :: Mission Delta button initialized :: INFO
+02-Jun-22 19:23:11 :: __main__ :: Mission Echo button initialized :: INFO
+02-Jun-22 20:36:11 :: interface :: 
+
+GUI LAUNCHED
+
+ :: INFO
+02-Jun-22 20:36:11 :: interface :: Getting the port name of device :: INFO
+02-Jun-22 20:36:11 :: interface :: find_device function executing linux shell command to get device file names :: INFO
+02-Jun-22 20:36:11 :: interface :: Connected Devices: ['/dev/ttyACM0', '/dev/ttyACM1'] :: INFO
+02-Jun-22 20:36:11 :: interface :: Chosen Device: /dev/ttyACM0 :: DEBUG
+02-Jun-22 20:36:11 :: interface :: Connected device path: /dev/ttyACM0 :: INFO
+02-Jun-22 20:36:11 :: interface :: class Megatron initialized :: INFO
+02-Jun-22 20:36:11 :: interface :: EOF :: DEBUG
+02-Jun-22 20:36:11 :: helpers :: class Megatron instatiated :: INFO
+02-Jun-22 20:36:11 :: helpers :: Remote colors initialized :: INFO
+02-Jun-22 20:36:11 :: helpers :: EOF :: DEBUG
+02-Jun-22 20:36:11 :: __main__ :: Imports imported in GUI file :: INFO
+02-Jun-22 20:36:11 :: __main__ :: creating dpg context :: INFO
+02-Jun-22 20:36:11 :: __main__ :: Set save state of MGTron API to True :: INFO
+02-Jun-22 20:36:11 :: interface :: Serial call to device initiated :: DEBUG
+02-Jun-22 20:36:11 :: interface :: baudrate set from serial_call :: DEBUG
+02-Jun-22 20:36:11 :: interface :: Serial device set from serial_call :: DEBUG
+02-Jun-22 20:36:11 :: interface :: timeout set from serial_call :: DEBUG
+02-Jun-22 20:36:11 :: interface :: opening serial connection from serial_call :: DEBUG
+02-Jun-22 20:36:11 :: interface :: information send via serial protocol; serial_call :: DEBUG
+02-Jun-22 20:36:11 :: interface :: save_state function executed :: INFO
+02-Jun-22 20:36:11 :: __main__ :: Setting GUI colors :: INFO
+02-Jun-22 20:36:11 :: __main__ :: GUI colors set :: INFO
+02-Jun-22 20:36:11 :: __main__ :: Setting Primary Window in GUI file :: INFO
+02-Jun-22 20:36:11 :: helpers :: Devices found: ['/dev/ttyACM0 - Arduino__www.arduino.cc__Arduino_Due_Prog._Port_55731323836351A04241', '/dev/ttyACM1 - Arduino__www.arduino.cc__0043_5583834393335131C101'] at device_names :: INFO
+02-Jun-22 20:36:11 :: __main__ :: No device detected :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/mg_tron_gui.py", line 373, in <module>
+    {
+TypeError: unhashable type: 'list'
+02-Jun-22 20:36:11 :: __main__ :: RESET ALL button initialized :: INFO
+02-Jun-22 20:36:11 :: __main__ :: SEND ALL button initialized :: INFO
+02-Jun-22 20:36:11 :: __main__ :: Quick save button initialized :: INFO
+02-Jun-22 20:36:11 :: __main__ :: Quick Load button initialized :: INFO
+02-Jun-22 20:36:11 :: __main__ :: Custom Save button initialized :: INFO
+02-Jun-22 20:36:11 :: __main__ :: Custom Load button initialized :: INFO
+02-Jun-22 20:36:11 :: __main__ :: Demo 1 button initialized :: INFO
+02-Jun-22 20:36:11 :: __main__ :: Demo 2 button initialized :: INFO
+02-Jun-22 20:36:11 :: __main__ :: Mission Alpha button initialized :: INFO
+02-Jun-22 20:36:11 :: __main__ :: Mission Bravo button initialized :: INFO
+02-Jun-22 20:36:11 :: __main__ :: WIFI preset button initialized :: INFO
+02-Jun-22 20:36:11 :: __main__ :: Mission Charlie button initialized :: INFO
+02-Jun-22 20:36:11 :: __main__ :: Mission Delta button initialized :: INFO
+02-Jun-22 20:36:11 :: __main__ :: Mission Echo button initialized :: INFO
+02-Jun-22 20:38:00 :: interface :: 
+
+GUI LAUNCHED
+
+ :: INFO
+02-Jun-22 20:38:00 :: interface :: Getting the port name of device :: INFO
+02-Jun-22 20:38:00 :: interface :: find_device function executing linux shell command to get device file names :: INFO
+02-Jun-22 20:38:00 :: interface :: Connected Devices: ['/dev/ttyACM0', '/dev/ttyACM1'] :: INFO
+02-Jun-22 20:38:00 :: interface :: Chosen Device: /dev/ttyACM0 :: DEBUG
+02-Jun-22 20:38:00 :: interface :: Connected device path: /dev/ttyACM0 :: INFO
+02-Jun-22 20:38:00 :: interface :: class Megatron initialized :: INFO
+02-Jun-22 20:38:00 :: interface :: EOF :: DEBUG
+02-Jun-22 20:38:00 :: helpers :: class Megatron instatiated :: INFO
+02-Jun-22 20:38:00 :: helpers :: Remote colors initialized :: INFO
+02-Jun-22 20:38:00 :: helpers :: EOF :: DEBUG
+02-Jun-22 20:38:00 :: __main__ :: Imports imported in GUI file :: INFO
+02-Jun-22 20:38:00 :: __main__ :: creating dpg context :: INFO
+02-Jun-22 20:38:00 :: __main__ :: Set save state of MGTron API to True :: INFO
+02-Jun-22 20:38:00 :: interface :: Serial call to device initiated :: DEBUG
+02-Jun-22 20:38:00 :: interface :: baudrate set from serial_call :: DEBUG
+02-Jun-22 20:38:00 :: interface :: Serial device set from serial_call :: DEBUG
+02-Jun-22 20:38:00 :: interface :: timeout set from serial_call :: DEBUG
+02-Jun-22 20:38:00 :: interface :: opening serial connection from serial_call :: DEBUG
+02-Jun-22 20:38:00 :: interface :: information send via serial protocol; serial_call :: DEBUG
+02-Jun-22 20:38:00 :: interface :: save_state function executed :: INFO
+02-Jun-22 20:38:00 :: __main__ :: Setting GUI colors :: INFO
+02-Jun-22 20:38:00 :: __main__ :: GUI colors set :: INFO
+02-Jun-22 20:38:00 :: __main__ :: Setting Primary Window in GUI file :: INFO
+02-Jun-22 20:38:00 :: helpers :: Devices found: ['/dev/ttyACM0 - Arduino__www.arduino.cc__Arduino_Due_Prog._Port_55731323836351A04241', '/dev/ttyACM1 - Arduino__www.arduino.cc__0043_5583834393335131C101'] at device_names :: INFO
+02-Jun-22 20:38:00 :: __main__ :: No device detected :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/mg_tron_gui.py", line 373, in <module>
+    {
+TypeError: unhashable type: 'list'
+02-Jun-22 20:38:00 :: __main__ :: RESET ALL button initialized :: INFO
+02-Jun-22 20:38:00 :: __main__ :: SEND ALL button initialized :: INFO
+02-Jun-22 20:38:00 :: __main__ :: Quick save button initialized :: INFO
+02-Jun-22 20:38:00 :: __main__ :: Quick Load button initialized :: INFO
+02-Jun-22 20:38:00 :: __main__ :: Custom Save button initialized :: INFO
+02-Jun-22 20:38:00 :: __main__ :: Custom Load button initialized :: INFO
+02-Jun-22 20:38:00 :: __main__ :: Demo 1 button initialized :: INFO
+02-Jun-22 20:38:00 :: __main__ :: Demo 2 button initialized :: INFO
+02-Jun-22 20:38:00 :: __main__ :: Mission Alpha button initialized :: INFO
+02-Jun-22 20:38:00 :: __main__ :: Mission Bravo button initialized :: INFO
+02-Jun-22 20:38:00 :: __main__ :: WIFI preset button initialized :: INFO
+02-Jun-22 20:38:00 :: __main__ :: Mission Charlie button initialized :: INFO
+02-Jun-22 20:38:00 :: __main__ :: Mission Delta button initialized :: INFO
+02-Jun-22 20:38:00 :: __main__ :: Mission Echo button initialized :: INFO
+02-Jun-22 20:38:25 :: interface :: 
+
+GUI LAUNCHED
+
+ :: INFO
+02-Jun-22 20:38:25 :: interface :: Getting the port name of device :: INFO
+02-Jun-22 20:38:25 :: interface :: find_device function executing linux shell command to get device file names :: INFO
+02-Jun-22 20:38:25 :: interface :: Connected Devices: ['/dev/ttyACM0', '/dev/ttyACM1'] :: INFO
+02-Jun-22 20:38:25 :: interface :: Chosen Device: /dev/ttyACM0 :: DEBUG
+02-Jun-22 20:38:25 :: interface :: Connected device path: /dev/ttyACM0 :: INFO
+02-Jun-22 20:38:25 :: interface :: class Megatron initialized :: INFO
+02-Jun-22 20:38:25 :: interface :: EOF :: DEBUG
+02-Jun-22 20:38:25 :: helpers :: class Megatron instatiated :: INFO
+02-Jun-22 20:38:25 :: helpers :: Remote colors initialized :: INFO
+02-Jun-22 20:38:25 :: helpers :: EOF :: DEBUG
+02-Jun-22 20:38:25 :: __main__ :: Imports imported in GUI file :: INFO
+02-Jun-22 20:38:25 :: __main__ :: creating dpg context :: INFO
+02-Jun-22 20:38:25 :: __main__ :: Set save state of MGTron API to True :: INFO
+02-Jun-22 20:38:25 :: interface :: Serial call to device initiated :: DEBUG
+02-Jun-22 20:38:25 :: interface :: baudrate set from serial_call :: DEBUG
+02-Jun-22 20:38:25 :: interface :: Serial device set from serial_call :: DEBUG
+02-Jun-22 20:38:25 :: interface :: timeout set from serial_call :: DEBUG
+02-Jun-22 20:38:25 :: interface :: opening serial connection from serial_call :: DEBUG
+02-Jun-22 20:38:25 :: interface :: information send via serial protocol; serial_call :: DEBUG
+02-Jun-22 20:38:25 :: interface :: save_state function executed :: INFO
+02-Jun-22 20:38:25 :: __main__ :: Setting GUI colors :: INFO
+02-Jun-22 20:38:25 :: __main__ :: GUI colors set :: INFO
+02-Jun-22 20:38:25 :: __main__ :: Setting Primary Window in GUI file :: INFO
+02-Jun-22 20:38:25 :: helpers :: Devices found: ['/dev/ttyACM0 - Arduino__www.arduino.cc__Arduino_Due_Prog._Port_55731323836351A04241', '/dev/ttyACM1 - Arduino__www.arduino.cc__0043_5583834393335131C101'] at device_names :: INFO
+02-Jun-22 20:38:25 :: __main__ :: No device detected :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/mg_tron_gui.py", line 373, in <module>
+    {
+TypeError: unhashable type: 'list'
+02-Jun-22 20:38:25 :: __main__ :: RESET ALL button initialized :: INFO
+02-Jun-22 20:38:25 :: __main__ :: SEND ALL button initialized :: INFO
+02-Jun-22 20:38:25 :: __main__ :: Quick save button initialized :: INFO
+02-Jun-22 20:38:25 :: __main__ :: Quick Load button initialized :: INFO
+02-Jun-22 20:38:25 :: __main__ :: Custom Save button initialized :: INFO
+02-Jun-22 20:38:25 :: __main__ :: Custom Load button initialized :: INFO
+02-Jun-22 20:38:25 :: __main__ :: Demo 1 button initialized :: INFO
+02-Jun-22 20:38:25 :: __main__ :: Demo 2 button initialized :: INFO
+02-Jun-22 20:38:25 :: __main__ :: Mission Alpha button initialized :: INFO
+02-Jun-22 20:38:25 :: __main__ :: Mission Bravo button initialized :: INFO
+02-Jun-22 20:38:25 :: __main__ :: WIFI preset button initialized :: INFO
+02-Jun-22 20:38:25 :: __main__ :: Mission Charlie button initialized :: INFO
+02-Jun-22 20:38:25 :: __main__ :: Mission Delta button initialized :: INFO
+02-Jun-22 20:38:25 :: __main__ :: Mission Echo button initialized :: INFO
+02-Jun-22 20:38:52 :: interface :: 
+
+GUI LAUNCHED
+
+ :: INFO
+02-Jun-22 20:38:52 :: interface :: Getting the port name of device :: INFO
+02-Jun-22 20:38:52 :: interface :: find_device function executing linux shell command to get device file names :: INFO
+02-Jun-22 20:38:52 :: interface :: Connected Devices: ['/dev/ttyACM0', '/dev/ttyACM1'] :: INFO
+02-Jun-22 20:38:52 :: interface :: Chosen Device: /dev/ttyACM0 :: DEBUG
+02-Jun-22 20:38:52 :: interface :: Connected device path: /dev/ttyACM0 :: INFO
+02-Jun-22 20:38:52 :: interface :: class Megatron initialized :: INFO
+02-Jun-22 20:38:52 :: interface :: EOF :: DEBUG
+02-Jun-22 20:38:52 :: helpers :: class Megatron instatiated :: INFO
+02-Jun-22 20:38:52 :: helpers :: Remote colors initialized :: INFO
+02-Jun-22 20:38:52 :: helpers :: EOF :: DEBUG
+02-Jun-22 20:38:52 :: __main__ :: Imports imported in GUI file :: INFO
+02-Jun-22 20:38:52 :: __main__ :: creating dpg context :: INFO
+02-Jun-22 20:38:52 :: __main__ :: Set save state of MGTron API to True :: INFO
+02-Jun-22 20:38:52 :: interface :: Serial call to device initiated :: DEBUG
+02-Jun-22 20:38:52 :: interface :: baudrate set from serial_call :: DEBUG
+02-Jun-22 20:38:52 :: interface :: Serial device set from serial_call :: DEBUG
+02-Jun-22 20:38:52 :: interface :: timeout set from serial_call :: DEBUG
+02-Jun-22 20:38:52 :: interface :: opening serial connection from serial_call :: DEBUG
+02-Jun-22 20:38:52 :: interface :: information send via serial protocol; serial_call :: DEBUG
+02-Jun-22 20:38:52 :: interface :: save_state function executed :: INFO
+02-Jun-22 20:38:52 :: __main__ :: Setting GUI colors :: INFO
+02-Jun-22 20:38:52 :: __main__ :: GUI colors set :: INFO
+02-Jun-22 20:38:52 :: __main__ :: Setting Primary Window in GUI file :: INFO
+02-Jun-22 20:38:52 :: helpers :: Devices found: ['/dev/ttyACM0 - Arduino__www.arduino.cc__Arduino_Due_Prog._Port_55731323836351A04241', '/dev/ttyACM1 - Arduino__www.arduino.cc__0043_5583834393335131C101'] at device_names :: INFO
+02-Jun-22 20:38:52 :: __main__ :: No device detected :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/mg_tron_gui.py", line 373, in <module>
+    {
+TypeError: unhashable type: 'list'
+02-Jun-22 20:38:52 :: __main__ :: RESET ALL button initialized :: INFO
+02-Jun-22 20:38:52 :: __main__ :: SEND ALL button initialized :: INFO
+02-Jun-22 20:38:52 :: __main__ :: Quick save button initialized :: INFO
+02-Jun-22 20:38:52 :: __main__ :: Quick Load button initialized :: INFO
+02-Jun-22 20:38:52 :: __main__ :: Custom Save button initialized :: INFO
+02-Jun-22 20:38:52 :: __main__ :: Custom Load button initialized :: INFO
+02-Jun-22 20:38:52 :: __main__ :: Demo 1 button initialized :: INFO
+02-Jun-22 20:38:52 :: __main__ :: Demo 2 button initialized :: INFO
+02-Jun-22 20:38:52 :: __main__ :: Mission Alpha button initialized :: INFO
+02-Jun-22 20:38:52 :: __main__ :: Mission Bravo button initialized :: INFO
+02-Jun-22 20:38:52 :: __main__ :: WIFI preset button initialized :: INFO
+02-Jun-22 20:38:52 :: __main__ :: Mission Charlie button initialized :: INFO
+02-Jun-22 20:38:52 :: __main__ :: Mission Delta button initialized :: INFO
+02-Jun-22 20:38:52 :: __main__ :: Mission Echo button initialized :: INFO
+02-Jun-22 20:40:47 :: interface :: 
+
+GUI LAUNCHED
+
+ :: INFO
+02-Jun-22 20:40:47 :: interface :: Getting the port name of device :: INFO
+02-Jun-22 20:40:47 :: interface :: find_device function executing linux shell command to get device file names :: INFO
+02-Jun-22 20:40:47 :: interface :: Connected Devices: ['/dev/ttyACM0', '/dev/ttyACM1'] :: INFO
+02-Jun-22 20:40:47 :: interface :: Chosen Device: /dev/ttyACM0 :: DEBUG
+02-Jun-22 20:40:47 :: interface :: Connected device path: /dev/ttyACM0 :: INFO
+02-Jun-22 20:40:47 :: interface :: class Megatron initialized :: INFO
+02-Jun-22 20:40:47 :: interface :: EOF :: DEBUG
+02-Jun-22 20:40:47 :: helpers :: class Megatron instatiated :: INFO
+02-Jun-22 20:40:47 :: helpers :: Remote colors initialized :: INFO
+02-Jun-22 20:40:47 :: helpers :: EOF :: DEBUG
+02-Jun-22 20:40:47 :: __main__ :: Imports imported in GUI file :: INFO
+02-Jun-22 20:40:47 :: __main__ :: creating dpg context :: INFO
+02-Jun-22 20:40:47 :: __main__ :: Set save state of MGTron API to True :: INFO
+02-Jun-22 20:40:47 :: interface :: Serial call to device initiated :: DEBUG
+02-Jun-22 20:40:47 :: interface :: baudrate set from serial_call :: DEBUG
+02-Jun-22 20:40:47 :: interface :: Serial device set from serial_call :: DEBUG
+02-Jun-22 20:40:47 :: interface :: timeout set from serial_call :: DEBUG
+02-Jun-22 20:40:47 :: interface :: opening serial connection from serial_call :: DEBUG
+02-Jun-22 20:40:47 :: interface :: information send via serial protocol; serial_call :: DEBUG
+02-Jun-22 20:40:47 :: interface :: save_state function executed :: INFO
+02-Jun-22 20:40:47 :: __main__ :: Setting GUI colors :: INFO
+02-Jun-22 20:40:47 :: __main__ :: GUI colors set :: INFO
+02-Jun-22 20:40:47 :: __main__ :: Setting Primary Window in GUI file :: INFO
+02-Jun-22 20:40:47 :: helpers :: Devices found: ['/dev/ttyACM0 - Arduino__www.arduino.cc__Arduino_Due_Prog._Port_55731323836351A04241', '/dev/ttyACM1 - Arduino__www.arduino.cc__0043_5583834393335131C101'] at device_names :: INFO
+02-Jun-22 20:40:58 :: interface :: 
+
+GUI LAUNCHED
+
+ :: INFO
+02-Jun-22 20:40:58 :: interface :: Getting the port name of device :: INFO
+02-Jun-22 20:40:58 :: interface :: find_device function executing linux shell command to get device file names :: INFO
+02-Jun-22 20:40:58 :: interface :: Connected Devices: ['/dev/ttyACM0', '/dev/ttyACM1'] :: INFO
+02-Jun-22 20:40:58 :: interface :: Chosen Device: /dev/ttyACM0 :: DEBUG
+02-Jun-22 20:40:58 :: interface :: Connected device path: /dev/ttyACM0 :: INFO
+02-Jun-22 20:40:58 :: interface :: class Megatron initialized :: INFO
+02-Jun-22 20:40:58 :: interface :: EOF :: DEBUG
+02-Jun-22 20:40:58 :: helpers :: class Megatron instatiated :: INFO
+02-Jun-22 20:40:58 :: helpers :: Remote colors initialized :: INFO
+02-Jun-22 20:40:58 :: helpers :: EOF :: DEBUG
+02-Jun-22 20:40:58 :: __main__ :: Imports imported in GUI file :: INFO
+02-Jun-22 20:40:58 :: __main__ :: creating dpg context :: INFO
+02-Jun-22 20:40:58 :: __main__ :: Set save state of MGTron API to True :: INFO
+02-Jun-22 20:40:58 :: interface :: Serial call to device initiated :: DEBUG
+02-Jun-22 20:40:58 :: interface :: baudrate set from serial_call :: DEBUG
+02-Jun-22 20:40:58 :: interface :: Serial device set from serial_call :: DEBUG
+02-Jun-22 20:40:58 :: interface :: timeout set from serial_call :: DEBUG
+02-Jun-22 20:40:58 :: interface :: opening serial connection from serial_call :: DEBUG
+02-Jun-22 20:40:58 :: interface :: information send via serial protocol; serial_call :: DEBUG
+02-Jun-22 20:40:58 :: interface :: save_state function executed :: INFO
+02-Jun-22 20:40:58 :: __main__ :: Setting GUI colors :: INFO
+02-Jun-22 20:40:58 :: __main__ :: GUI colors set :: INFO
+02-Jun-22 20:40:58 :: __main__ :: Setting Primary Window in GUI file :: INFO
+02-Jun-22 20:40:58 :: helpers :: Devices found: ['/dev/ttyACM0 - Arduino__www.arduino.cc__Arduino_Due_Prog._Port_55731323836351A04241', '/dev/ttyACM1 - Arduino__www.arduino.cc__0043_5583834393335131C101'] at device_names :: INFO
+02-Jun-22 20:41:25 :: interface :: 
+
+GUI LAUNCHED
+
+ :: INFO
+02-Jun-22 20:41:25 :: interface :: Getting the port name of device :: INFO
+02-Jun-22 20:41:25 :: interface :: find_device function executing linux shell command to get device file names :: INFO
+02-Jun-22 20:41:25 :: interface :: Connected Devices: ['/dev/ttyACM0', '/dev/ttyACM1'] :: INFO
+02-Jun-22 20:41:25 :: interface :: Chosen Device: /dev/ttyACM0 :: DEBUG
+02-Jun-22 20:41:25 :: interface :: Connected device path: /dev/ttyACM0 :: INFO
+02-Jun-22 20:41:25 :: interface :: class Megatron initialized :: INFO
+02-Jun-22 20:41:25 :: interface :: EOF :: DEBUG
+02-Jun-22 20:41:25 :: helpers :: class Megatron instatiated :: INFO
+02-Jun-22 20:41:25 :: helpers :: Remote colors initialized :: INFO
+02-Jun-22 20:41:25 :: helpers :: EOF :: DEBUG
+02-Jun-22 20:41:25 :: __main__ :: Imports imported in GUI file :: INFO
+02-Jun-22 20:41:25 :: __main__ :: creating dpg context :: INFO
+02-Jun-22 20:41:25 :: __main__ :: Set save state of MGTron API to True :: INFO
+02-Jun-22 20:41:25 :: interface :: Serial call to device initiated :: DEBUG
+02-Jun-22 20:41:25 :: interface :: baudrate set from serial_call :: DEBUG
+02-Jun-22 20:41:25 :: interface :: Serial device set from serial_call :: DEBUG
+02-Jun-22 20:41:25 :: interface :: timeout set from serial_call :: DEBUG
+02-Jun-22 20:41:25 :: interface :: opening serial connection from serial_call :: DEBUG
+02-Jun-22 20:41:25 :: interface :: information send via serial protocol; serial_call :: DEBUG
+02-Jun-22 20:41:25 :: interface :: save_state function executed :: INFO
+02-Jun-22 20:41:25 :: __main__ :: Setting GUI colors :: INFO
+02-Jun-22 20:41:25 :: __main__ :: GUI colors set :: INFO
+02-Jun-22 20:41:25 :: __main__ :: Setting Primary Window in GUI file :: INFO
+02-Jun-22 20:41:25 :: helpers :: Devices found: ['/dev/ttyACM0 - Arduino__www.arduino.cc__Arduino_Due_Prog._Port_55731323836351A04241', '/dev/ttyACM1 - Arduino__www.arduino.cc__0043_5583834393335131C101'] at device_names :: INFO
+02-Jun-22 20:41:25 :: __main__ :: No device detected :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/mg_tron_gui.py", line 373, in <module>
+    {
+TypeError: unhashable type: 'list'
+02-Jun-22 20:41:25 :: __main__ :: RESET ALL button initialized :: INFO
+02-Jun-22 20:41:25 :: __main__ :: SEND ALL button initialized :: INFO
+02-Jun-22 20:41:25 :: __main__ :: Quick save button initialized :: INFO
+02-Jun-22 20:41:25 :: __main__ :: Quick Load button initialized :: INFO
+02-Jun-22 20:41:25 :: __main__ :: Custom Save button initialized :: INFO
+02-Jun-22 20:41:25 :: __main__ :: Custom Load button initialized :: INFO
+02-Jun-22 20:41:25 :: __main__ :: Demo 1 button initialized :: INFO
+02-Jun-22 20:41:25 :: __main__ :: Demo 2 button initialized :: INFO
+02-Jun-22 20:41:25 :: __main__ :: Mission Alpha button initialized :: INFO
+02-Jun-22 20:41:25 :: __main__ :: Mission Bravo button initialized :: INFO
+02-Jun-22 20:41:25 :: __main__ :: WIFI preset button initialized :: INFO
+02-Jun-22 20:41:25 :: __main__ :: Mission Charlie button initialized :: INFO
+02-Jun-22 20:41:25 :: __main__ :: Mission Delta button initialized :: INFO
+02-Jun-22 20:41:25 :: __main__ :: Mission Echo button initialized :: INFO
+02-Jun-22 20:42:17 :: interface :: 
+
+GUI LAUNCHED
+
+ :: INFO
+02-Jun-22 20:42:17 :: interface :: Getting the port name of device :: INFO
+02-Jun-22 20:42:17 :: interface :: find_device function executing linux shell command to get device file names :: INFO
+02-Jun-22 20:42:17 :: interface :: Connected Devices: ['/dev/ttyACM0', '/dev/ttyACM1'] :: INFO
+02-Jun-22 20:42:17 :: interface :: Chosen Device: /dev/ttyACM0 :: DEBUG
+02-Jun-22 20:42:17 :: interface :: Connected device path: /dev/ttyACM0 :: INFO
+02-Jun-22 20:42:17 :: interface :: class Megatron initialized :: INFO
+02-Jun-22 20:42:17 :: interface :: EOF :: DEBUG
+02-Jun-22 20:42:17 :: helpers :: class Megatron instatiated :: INFO
+02-Jun-22 20:42:17 :: helpers :: Remote colors initialized :: INFO
+02-Jun-22 20:42:17 :: helpers :: EOF :: DEBUG
+02-Jun-22 20:42:17 :: __main__ :: Imports imported in GUI file :: INFO
+02-Jun-22 20:42:17 :: __main__ :: creating dpg context :: INFO
+02-Jun-22 20:42:17 :: __main__ :: Set save state of MGTron API to True :: INFO
+02-Jun-22 20:42:17 :: interface :: Serial call to device initiated :: DEBUG
+02-Jun-22 20:42:17 :: interface :: baudrate set from serial_call :: DEBUG
+02-Jun-22 20:42:17 :: interface :: Serial device set from serial_call :: DEBUG
+02-Jun-22 20:42:17 :: interface :: timeout set from serial_call :: DEBUG
+02-Jun-22 20:42:17 :: interface :: opening serial connection from serial_call :: DEBUG
+02-Jun-22 20:42:17 :: interface :: information send via serial protocol; serial_call :: DEBUG
+02-Jun-22 20:42:17 :: interface :: save_state function executed :: INFO
+02-Jun-22 20:42:17 :: __main__ :: Setting GUI colors :: INFO
+02-Jun-22 20:42:17 :: __main__ :: GUI colors set :: INFO
+02-Jun-22 20:42:17 :: __main__ :: Setting Primary Window in GUI file :: INFO
+02-Jun-22 20:42:17 :: helpers :: Devices found: ['/dev/ttyACM0 - Arduino__www.arduino.cc__Arduino_Due_Prog._Port_55731323836351A04241', '/dev/ttyACM1 - Arduino__www.arduino.cc__0043_5583834393335131C101'] at device_names :: INFO
+02-Jun-22 20:42:17 :: __main__ :: No device detected :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/mg_tron_gui.py", line 373, in <module>
+    {
+TypeError: unhashable type: 'list'
+02-Jun-22 20:42:17 :: __main__ :: RESET ALL button initialized :: INFO
+02-Jun-22 20:42:17 :: __main__ :: SEND ALL button initialized :: INFO
+02-Jun-22 20:42:17 :: __main__ :: Quick save button initialized :: INFO
+02-Jun-22 20:42:17 :: __main__ :: Quick Load button initialized :: INFO
+02-Jun-22 20:42:17 :: __main__ :: Custom Save button initialized :: INFO
+02-Jun-22 20:42:17 :: __main__ :: Custom Load button initialized :: INFO
+02-Jun-22 20:42:17 :: __main__ :: Demo 1 button initialized :: INFO
+02-Jun-22 20:42:17 :: __main__ :: Demo 2 button initialized :: INFO
+02-Jun-22 20:42:17 :: __main__ :: Mission Alpha button initialized :: INFO
+02-Jun-22 20:42:17 :: __main__ :: Mission Bravo button initialized :: INFO
+02-Jun-22 20:42:17 :: __main__ :: WIFI preset button initialized :: INFO
+02-Jun-22 20:42:17 :: __main__ :: Mission Charlie button initialized :: INFO
+02-Jun-22 20:42:17 :: __main__ :: Mission Delta button initialized :: INFO
+02-Jun-22 20:42:17 :: __main__ :: Mission Echo button initialized :: INFO
+02-Jun-22 20:42:37 :: interface :: 
+
+GUI LAUNCHED
+
+ :: INFO
+02-Jun-22 20:42:37 :: interface :: Getting the port name of device :: INFO
+02-Jun-22 20:42:37 :: interface :: find_device function executing linux shell command to get device file names :: INFO
+02-Jun-22 20:42:37 :: interface :: Connected Devices: ['/dev/ttyACM0', '/dev/ttyACM1'] :: INFO
+02-Jun-22 20:42:37 :: interface :: Chosen Device: /dev/ttyACM0 :: DEBUG
+02-Jun-22 20:42:37 :: interface :: Connected device path: /dev/ttyACM0 :: INFO
+02-Jun-22 20:42:37 :: interface :: class Megatron initialized :: INFO
+02-Jun-22 20:42:37 :: interface :: EOF :: DEBUG
+02-Jun-22 20:42:37 :: helpers :: class Megatron instatiated :: INFO
+02-Jun-22 20:42:37 :: helpers :: Remote colors initialized :: INFO
+02-Jun-22 20:42:37 :: helpers :: EOF :: DEBUG
+02-Jun-22 20:42:37 :: __main__ :: Imports imported in GUI file :: INFO
+02-Jun-22 20:42:37 :: __main__ :: creating dpg context :: INFO
+02-Jun-22 20:42:37 :: __main__ :: Set save state of MGTron API to True :: INFO
+02-Jun-22 20:42:37 :: interface :: Serial call to device initiated :: DEBUG
+02-Jun-22 20:42:37 :: interface :: baudrate set from serial_call :: DEBUG
+02-Jun-22 20:42:37 :: interface :: Serial device set from serial_call :: DEBUG
+02-Jun-22 20:42:37 :: interface :: timeout set from serial_call :: DEBUG
+02-Jun-22 20:42:37 :: interface :: opening serial connection from serial_call :: DEBUG
+02-Jun-22 20:42:37 :: interface :: information send via serial protocol; serial_call :: DEBUG
+02-Jun-22 20:42:37 :: interface :: save_state function executed :: INFO
+02-Jun-22 20:42:37 :: __main__ :: Setting GUI colors :: INFO
+02-Jun-22 20:42:37 :: __main__ :: GUI colors set :: INFO
+02-Jun-22 20:42:37 :: __main__ :: Setting Primary Window in GUI file :: INFO
+02-Jun-22 20:42:37 :: helpers :: Devices found: ['/dev/ttyACM0 - Arduino__www.arduino.cc__Arduino_Due_Prog._Port_55731323836351A04241', '/dev/ttyACM1 - Arduino__www.arduino.cc__0043_5583834393335131C101'] at device_names :: INFO
+02-Jun-22 20:42:37 :: __main__ :: No device detected :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/mg_tron_gui.py", line 373, in <module>
+    {
+TypeError: unhashable type: 'list'
+02-Jun-22 20:42:37 :: __main__ :: RESET ALL button initialized :: INFO
+02-Jun-22 20:42:37 :: __main__ :: SEND ALL button initialized :: INFO
+02-Jun-22 20:42:37 :: __main__ :: Quick save button initialized :: INFO
+02-Jun-22 20:42:37 :: __main__ :: Quick Load button initialized :: INFO
+02-Jun-22 20:42:37 :: __main__ :: Custom Save button initialized :: INFO
+02-Jun-22 20:42:37 :: __main__ :: Custom Load button initialized :: INFO
+02-Jun-22 20:42:37 :: __main__ :: Demo 1 button initialized :: INFO
+02-Jun-22 20:42:37 :: __main__ :: Demo 2 button initialized :: INFO
+02-Jun-22 20:42:37 :: __main__ :: Mission Alpha button initialized :: INFO
+02-Jun-22 20:42:37 :: __main__ :: Mission Bravo button initialized :: INFO
+02-Jun-22 20:42:37 :: __main__ :: WIFI preset button initialized :: INFO
+02-Jun-22 20:42:37 :: __main__ :: Mission Charlie button initialized :: INFO
+02-Jun-22 20:42:37 :: __main__ :: Mission Delta button initialized :: INFO
+02-Jun-22 20:42:37 :: __main__ :: Mission Echo button initialized :: INFO
+02-Jun-22 20:43:10 :: interface :: 
+
+GUI LAUNCHED
+
+ :: INFO
+02-Jun-22 20:43:10 :: interface :: Getting the port name of device :: INFO
+02-Jun-22 20:43:10 :: interface :: find_device function executing linux shell command to get device file names :: INFO
+02-Jun-22 20:43:10 :: interface :: Connected Devices: ['/dev/ttyACM0', '/dev/ttyACM1'] :: INFO
+02-Jun-22 20:43:10 :: interface :: Chosen Device: /dev/ttyACM0 :: DEBUG
+02-Jun-22 20:43:10 :: interface :: Connected device path: /dev/ttyACM0 :: INFO
+02-Jun-22 20:43:10 :: interface :: class Megatron initialized :: INFO
+02-Jun-22 20:43:10 :: interface :: EOF :: DEBUG
+02-Jun-22 20:43:10 :: helpers :: class Megatron instatiated :: INFO
+02-Jun-22 20:43:10 :: helpers :: Remote colors initialized :: INFO
+02-Jun-22 20:43:10 :: helpers :: EOF :: DEBUG
+02-Jun-22 20:43:10 :: __main__ :: Imports imported in GUI file :: INFO
+02-Jun-22 20:43:10 :: __main__ :: creating dpg context :: INFO
+02-Jun-22 20:43:10 :: __main__ :: Set save state of MGTron API to True :: INFO
+02-Jun-22 20:43:10 :: interface :: Serial call to device initiated :: DEBUG
+02-Jun-22 20:43:10 :: interface :: baudrate set from serial_call :: DEBUG
+02-Jun-22 20:43:10 :: interface :: Serial device set from serial_call :: DEBUG
+02-Jun-22 20:43:10 :: interface :: timeout set from serial_call :: DEBUG
+02-Jun-22 20:43:10 :: interface :: opening serial connection from serial_call :: DEBUG
+02-Jun-22 20:43:10 :: interface :: information send via serial protocol; serial_call :: DEBUG
+02-Jun-22 20:43:10 :: interface :: save_state function executed :: INFO
+02-Jun-22 20:43:10 :: __main__ :: Setting GUI colors :: INFO
+02-Jun-22 20:43:10 :: __main__ :: GUI colors set :: INFO
+02-Jun-22 20:43:10 :: __main__ :: Setting Primary Window in GUI file :: INFO
+02-Jun-22 20:43:10 :: helpers :: Devices found: ['/dev/ttyACM0 - Arduino__www.arduino.cc__Arduino_Due_Prog._Port_55731323836351A04241', '/dev/ttyACM1 - Arduino__www.arduino.cc__0043_5583834393335131C101'] at device_names :: INFO
+02-Jun-22 20:43:10 :: __main__ :: No device detected :: ERROR
+Traceback (most recent call last):
+  File "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/src/gui/mg_tron_gui.py", line 373, in <module>
+    {
+TypeError: unhashable type: 'list'
+02-Jun-22 20:43:10 :: __main__ :: RESET ALL button initialized :: INFO
+02-Jun-22 20:43:10 :: __main__ :: SEND ALL button initialized :: INFO
+02-Jun-22 20:43:10 :: __main__ :: Quick save button initialized :: INFO
+02-Jun-22 20:43:10 :: __main__ :: Quick Load button initialized :: INFO
+02-Jun-22 20:43:10 :: __main__ :: Custom Save button initialized :: INFO
+02-Jun-22 20:43:10 :: __main__ :: Custom Load button initialized :: INFO
+02-Jun-22 20:43:10 :: __main__ :: Demo 1 button initialized :: INFO
+02-Jun-22 20:43:10 :: __main__ :: Demo 2 button initialized :: INFO
+02-Jun-22 20:43:10 :: __main__ :: Mission Alpha button initialized :: INFO
+02-Jun-22 20:43:10 :: __main__ :: Mission Bravo button initialized :: INFO
+02-Jun-22 20:43:10 :: __main__ :: WIFI preset button initialized :: INFO
+02-Jun-22 20:43:10 :: __main__ :: Mission Charlie button initialized :: INFO
+02-Jun-22 20:43:10 :: __main__ :: Mission Delta button initialized :: INFO
+02-Jun-22 20:43:10 :: __main__ :: Mission Echo button initialized :: INFO
+02-Jun-22 20:43:14 :: interface :: find_device function executing linux shell command to get device file names :: INFO
+02-Jun-22 20:43:14 :: interface :: Connected Devices: ['/dev/ttyACM0', '/dev/ttyACM1'] :: INFO
+02-Jun-22 20:43:14 :: interface :: Chosen Device: /dev/ttyACM1 :: DEBUG
+02-Jun-22 20:43:14 :: helpers :: Devices found: ['/dev/ttyACM0 - Arduino__www.arduino.cc__Arduino_Due_Prog._Port_55731323836351A04241', '/dev/ttyACM1 - Arduino__www.arduino.cc__0043_5583834393335131C101'] at device_names :: INFO
+02-Jun-22 20:43:18 :: interface :: find_device function executing linux shell command to get device file names :: INFO
+02-Jun-22 20:43:18 :: interface :: Connected Devices: ['/dev/ttyACM0', '/dev/ttyACM1'] :: INFO
+02-Jun-22 20:43:18 :: interface :: Chosen Device: /dev/ttyACM0 :: DEBUG
+02-Jun-22 20:43:18 :: helpers :: Devices found: ['/dev/ttyACM0 - Arduino__www.arduino.cc__Arduino_Due_Prog._Port_55731323836351A04241', '/dev/ttyACM1 - Arduino__www.arduino.cc__0043_5583834393335131C101'] at device_names :: INFO
+02-Jun-22 20:43:21 :: interface :: find_device function executing linux shell command to get device file names :: INFO
+02-Jun-22 20:43:21 :: interface :: Connected Devices: ['/dev/ttyACM0', '/dev/ttyACM1'] :: INFO
+02-Jun-22 20:43:21 :: interface :: Chosen Device: /dev/ttyACM1 :: DEBUG
+02-Jun-22 20:43:21 :: helpers :: Devices found: ['/dev/ttyACM0 - Arduino__www.arduino.cc__Arduino_Due_Prog._Port_55731323836351A04241', '/dev/ttyACM1 - Arduino__www.arduino.cc__0043_5583834393335131C101'] at device_names :: INFO
+02-Jun-22 20:57:48 :: interface :: find_device function executing linux shell command to get device file names :: INFO
+02-Jun-22 20:57:48 :: interface :: Connected Devices: ['/dev/ttyACM0', '/dev/ttyACM1'] :: INFO
+02-Jun-22 20:57:48 :: interface :: Chosen Device: /dev/ttyACM0 :: DEBUG
+02-Jun-22 20:57:48 :: helpers :: Devices found: ['/dev/ttyACM0 - Arduino__www.arduino.cc__Arduino_Due_Prog._Port_55731323836351A04241', '/dev/ttyACM1 - Arduino__www.arduino.cc__0043_5583834393335131C101'] at device_names :: INFO
