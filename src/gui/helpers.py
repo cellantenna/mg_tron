@@ -470,8 +470,8 @@ def mission_golf(sender, app_data, user_data) -> None:
 
     [
         (
-            dpg.set_value(item="freq_8", value=i),
-            callstack_helper(channel=8),
+            dpg.set_value(item="freq_4", value=i),
+            callstack_helper(channel=4),
         )
         for i in range(50, 6400, 10)
     ]
@@ -640,7 +640,7 @@ def find_signals_and_frequencies() -> dict:
     
     output = subprocess.Popen(["nmcli", "-f", "ALL", "dev", "wifi"], stdout=subprocess.PIPE)
     if sys.version_info[0] < 3:
-            from StringIO import StringIO
+        from StringIO import StringIO
     else: 
         from io import StringIO
     b = StringIO(output.communicate()[0].decode('utf-8'))
