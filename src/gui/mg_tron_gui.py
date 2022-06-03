@@ -14,6 +14,7 @@ from helpers import (
     auto_fill_power,
     card_selection,
     change_inputs,
+    config_intake,
     custom_load,
     data_vehicle,
     demo_config,
@@ -356,7 +357,7 @@ with dpg.window(
                 # Grab the list of devices connected
                 devices: list[str] = device_names()
 
-                if len(devices) == 1:
+                if len(devices) == 1 and devices[0]:
 
                     dpg.add_menu_item(
                         label=f"{devices[0].split(sep='_')[0]} {devices[0].split(sep='_')[-1]}",
@@ -373,6 +374,8 @@ with dpg.window(
                         )
                         for device in devices
                     }
+                else:
+                    assert devices[0] == False
 
                 dpg.add_text(
                     parent="device_config",
@@ -381,7 +384,7 @@ with dpg.window(
                     pos=(5, 35),
                 )
 
-            except (TypeError, NameError, SystemError):
+            except (TypeError, NameError, SystemError, AssertionError):
                 dpg.add_menu_item(
                     parent="choose_device",
                     label=f"Device Number: Not Found",
@@ -390,6 +393,7 @@ with dpg.window(
                     ),
                 )
                 logger.exception(msg="No device detected")
+
                 [
                     dpg.bind_item_theme(
                         item=f"stats_{channel}",
@@ -400,7 +404,7 @@ with dpg.window(
                 dpg.add_text(
                     parent="device_config",
                     tag="device_indicator",
-                    default_value="No Device(s) Found",
+                    default_value="",
                     pos=(5, 35),
                 )
 
@@ -722,6 +726,7 @@ with dpg.window(
         border=False,
     ):
 
+        config_intake()
         [
             (
                 dpg.add_button(

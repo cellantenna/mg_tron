@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+import configparser
 import json
 import logging
 import subprocess
@@ -54,7 +55,7 @@ def callstack_helper(
 ):
     """Helper function to reduce clutter"""
 
-    loggey.info(msg=f"{callstack_helper.__name__} executed")
+    loggey.info(msg=f"{callstack_helper.__name__}() executed")
 
     dpg.bind_item_theme(
         item=f"stats_{channel}",
@@ -96,7 +97,7 @@ def callstack_helper(
 def send_vals(sender, app_data, user_data) -> None:
     """Relational connection between GUI and Megatron class"""
 
-    loggey.info(msg=f"{send_vals.__name__} executed")
+    loggey.info(msg=f"{send_vals.__name__}() executed")
 
     match user_data:
         case 1:
@@ -148,7 +149,7 @@ def reset_button(sender, app_data, user_data) -> None:
 def send_all_channels(sender=None, app_data=None, user_data=None) -> None:
     """Send the data from all channels at once"""
 
-    loggey.info(f"{send_all_channels.__name__} executed")
+    loggey.info(f"{send_all_channels.__name__}() executed")
 
     callstack_helper(channel=1)
     callstack_helper(channel=2)
@@ -210,7 +211,7 @@ def quick_load(sender, app_data, user_data) -> None:
 def custom_save(sender, app_data, user_data) -> None:
     """Save config w/ a custom name"""
 
-    loggey.info(f"{custom_save.__name__} executed")
+    loggey.info(f"{custom_save.__name__}() executed")
 
     prelim_data: list[dict[str, dict[str, str, str, str]]] = [
         {
@@ -327,7 +328,7 @@ def change_inputs(sender, app_data, user_data) -> None:
 def two_point_four(sender, app_data, user_data) -> None:
     """Auto Fill the WIFI band"""
 
-    loggey.info(f"{two_point_four.__name__} executed")
+    loggey.info(f"{two_point_four.__name__}() executed")
 
     dpg.set_value(item=f"freq_1", value=2415)
     dpg.set_value(item=f"freq_2", value=2440)
@@ -342,7 +343,7 @@ def two_point_four(sender, app_data, user_data) -> None:
 def mission_alpha(sender, app_data, user_data) -> None:
     """Auto Fill the band 2 celluar band"""
 
-    loggey.info(msg=f"{mission_alpha.__name__} executed")
+    loggey.info(msg=f"{mission_alpha.__name__}() executed")
 
     auto_fill_freq(
         freq_val=650,
@@ -353,7 +354,7 @@ def mission_alpha(sender, app_data, user_data) -> None:
 def mission_bravo(sender, app_data, user_data) -> None:
     """Auto Fill the band 4 celluar band"""
 
-    loggey.info(msg=f"{mission_bravo.__name__} executed")
+    loggey.info(msg=f"{mission_bravo.__name__}() executed")
 
     auto_fill_freq(
         freq_val=1950,
@@ -364,7 +365,7 @@ def mission_bravo(sender, app_data, user_data) -> None:
 def mission_charlie(sender, app_data, user_data) -> None:
     """Auto Fill the band 5 celluar band"""
 
-    loggey.info(msg=f"{mission_charlie.__name__} executed")
+    loggey.info(msg=f"{mission_charlie.__name__}() executed")
 
     auto_fill_freq(
         freq_val=2450,
@@ -375,19 +376,19 @@ def mission_charlie(sender, app_data, user_data) -> None:
 def demo_config(sender, app_data, user_data) -> None:
     """Demonstration of frequency hopping"""
 
-    loggey.info(msg=f"{demo_config.__name__} executed")
+    loggey.info(msg=f"{demo_config.__name__}() executed")
 
 
 def demo_config_2(sender, app_data, user_data) -> None:
     """Demo 2 config"""
 
-    loggey.info(msg=f"{demo_config_2.__name__} executed")
+    loggey.info(msg=f"{demo_config_2.__name__}() executed")
 
 
 def auto_fill_custom_save(sender, app_data, user_data) -> None:
     """Grab the first and last frequency input and put as save name"""
 
-    loggey.info(msg=f"{auto_fill_custom_save.__name__} executed")
+    loggey.info(msg=f"{auto_fill_custom_save.__name__}() executed")
 
     freq_1 = dpg.get_value("freq_1")
     freq_8 = dpg.get_value("freq_8")
@@ -398,7 +399,7 @@ def auto_fill_custom_save(sender, app_data, user_data) -> None:
 def mission_delta(sender, app_data, user_data) -> None:
     """GPS blocking presets"""
 
-    loggey.info(msg=f"{mission_delta.__name__} executed")
+    loggey.info(msg=f"{mission_delta.__name__}() executed")
 
     dpg.set_value(item=f"freq_1", value=1221)
     dpg.set_value(item=f"power_1", value=10)
@@ -449,13 +450,13 @@ def device_names() -> list[str]:
     # Avoid crashing program if there are no devices detected
     try:
         devices: str = subprocess.check_output(
-            "src/gui/find_dev.sh", stderr=subprocess.STDOUT
+            "src/gui/find_dev.sh", stderr=subprocess.STDOUT  # call bash script
         ).decode("utf-8")
     except TypeError:
         loggey.exception(msg="No devices detected")
 
     devices: list = devices.strip().split(sep="\n")
-    loggey.info(msg=f"Devices found: {devices} at {device_names.__name__}")
+    loggey.info(msg=f"Devices found: {devices} | {device_names.__name__}")
 
     # If there is only one device skip the hooplah
     if len(devices) == 1:
@@ -487,13 +488,16 @@ def device_finder(sender, app_data, user_data: int) -> None:
 def card_selection(sender, app_data, user_data: int) -> None:
     """Load the selected cards prefix when selected"""
 
-    loggey.info(msg=f"selected card: {user_data} from {card_selection.__name__}")
+    loggey.info(msg=f"selected card: {user_data} | {card_selection.__name__}")
 
     # Manipulate the set to accomplish a loop without the currently selected button
     card_list: set[int] = {1, 2, 3, 4, 5, 6, 7, 8}
     match user_data:
         case 1:
             dpg.bind_item_theme(item=f"card_{user_data}", theme=grn_btn_theme)
+            dpg.set_value(item="device_indicator", value="button 1 chosen")
+            
+            # Grey all other card buttons and make this one green when clicked
             card_list.remove(1)
             [
                 dpg.bind_item_theme(item=f"card_{greyed_card}", theme=grey_btn_theme)
@@ -549,7 +553,19 @@ def card_selection(sender, app_data, user_data: int) -> None:
                 for greyed_card in card_list
             ]
 
+
 def config_intake() -> None:
     """Read a config file and assign card buttons"""
+    devices = device_names()
+    parser = configparser.ConfigParser()
+    parser.read(filenames="card_config.ini", encoding="utf-8")
+    for card in range(1, len(devices) + 1):
+        match devices[card - 1].split(sep="_")[-1] == parser["mgtron"][f"card_{card}"]:
+            case True:
+                devices[card - 1].split("_")[0].split("-")[0]
+                loggey.info(
+                    msg=f"INI config file matched devices detected | {config_intake.__name__}"
+                )
+
 
 loggey.debug(msg="EOF")
