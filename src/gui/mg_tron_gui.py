@@ -384,7 +384,7 @@ with dpg.window(
                     pos=(5, 35),
                 )
 
-            except (TypeError, NameError, SystemError, AssertionError):
+            except (TypeError, NameError, SystemError, AssertionError, ValueError):
                 dpg.add_menu_item(
                     parent="choose_device",
                     label=f"Device Number: Not Found",
