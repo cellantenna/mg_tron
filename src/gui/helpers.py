@@ -7,7 +7,7 @@ from operator import mod
 import platform
 import subprocess
 import dearpygui.dearpygui as dpg
-
+import pandas as pd
 from interface import Megatron, find_device
 
 from datetime import datetime
@@ -605,6 +605,16 @@ def card_selection(sender, app_data, user_data: int) -> None:
                 dpg.bind_item_theme(item=f"card_{greyed_card}", theme=grey_btn_theme)
                 for greyed_card in card_list
             ]
+
+def find_frequencies() -> list:
+    my_output = open('somefile.txt', 'w')
+    subprocess.call(["nmcli", "-f", "ALL", "dev", "wifi"], stdout=my_output)
+    df = pd.read_csv('somefile.txt',  index_col = False, delim_whitespace=True, engine='python')
+    frequency_column = (df.loc[:, "FREQ"])
+    frequency_column.unique()
+    freq_set = set(frequency_column)
+    filtered_frequencies = [x for x in freq_set if not x.__contains__(":")]
+    return filtered_frequencies
 
 
 loggey.debug(msg="EOF")
