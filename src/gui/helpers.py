@@ -6,6 +6,7 @@ import logging
 from operator import mod
 import platform
 import subprocess
+from time import sleep
 import dearpygui.dearpygui as dpg
 import pandas as pd
 from interface import Megatron, find_device
@@ -345,8 +346,11 @@ def auto_fill_bandwidth() -> None:
 
 def change_inputs(sender, app_data, user_data) -> None:
     """Use the mouse wheel to change the field inputs"""
+
     loggey.info(f"app data: {app_data}")
+
     if dpg.is_item_focused(item="power_1"):
+
         loggey.debug(dpg.get_value("power_1"))
 
 
@@ -370,10 +374,11 @@ def mission_alpha(sender, app_data, user_data) -> None:
 
     loggey.info(msg=f"{mission_alpha.__name__}() executed")
 
-    auto_fill_freq(
-        freq_val=650,
-        freq_constant=28.54,
-    )
+    # auto_fill_freq(
+    #     freq_val=650,
+    #     freq_constant=28.54,
+    # )
+
 
 
 def mission_bravo(sender, app_data, user_data) -> None:
@@ -457,6 +462,18 @@ def mission_delta(sender, app_data, user_data) -> None:
     dpg.set_value(item=f"freq_8", value=1605)
     dpg.set_value(item=f"power_8", value=10)
     dpg.set_value(item=f"bandwidth_8", value=100)
+
+
+def mission_golf(sender, app_data, user_data) -> None:
+    """Test to find max power vs frequency"""
+
+    [
+        (
+            dpg.set_value(item="freq_8", value=i),
+            callstack_helper(channel=8),
+        )
+        for i in range(50, 6400, 10)
+    ]
 
 
 def kill_channel(sender, app_data, user_data: int) -> None:

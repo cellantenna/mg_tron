@@ -25,6 +25,7 @@ from helpers import (
     mission_bravo,
     mission_charlie,
     mission_delta,
+    mission_golf,
     quick_load,
     reset_button,
     quick_save,
@@ -694,7 +695,7 @@ with dpg.window(
         logger.info(msg="Mission Golf button initialized")
         mission_golf_button = dpg.add_button(
             tag="mssn_golf",
-            # callback=mission_golf,
+            callback=mission_golf,
             label="GOLF\nCONFIG",
             height=70,
             width=BUTTON_WIDTH,
