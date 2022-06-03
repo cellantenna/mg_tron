@@ -39877,3 +39877,724 @@ GUI LAUNCHED
 03-Jun-22 12:57:10 :: helpers :: INI config file matched devices detected | config_intake :: INFO
 03-Jun-22 12:57:10 :: helpers :: INI config file matched devices detected | config_intake :: INFO
 03-Jun-22 12:57:10 :: helpers :: INI config file matched devices detected | config_intake :: INFO
+03-Jun-22 13:03:51 :: interface :: 
+
+GUI LAUNCHED
+
+ :: INFO
+03-Jun-22 13:03:51 :: interface :: Getting the port name of device :: INFO
+03-Jun-22 13:03:51 :: interface :: find_device function executing linux shell command to get device file names :: INFO
+03-Jun-22 13:03:51 :: interface :: Connected Devices: ['/dev/ttyACM0', '/dev/ttyACM1', '/dev/ttyACM2', '/dev/ttyACM3', '/dev/ttyACM4', '/dev/ttyACM5', '/dev/ttyACM6', '/dev/ttyACM7'] :: INFO
+03-Jun-22 13:03:51 :: interface :: Chosen Device: /dev/ttyACM0 :: DEBUG
+03-Jun-22 13:03:51 :: interface :: Connected device path: /dev/ttyACM0 :: INFO
+03-Jun-22 13:03:51 :: interface :: class Megatron initialized :: INFO
+03-Jun-22 13:03:51 :: interface :: EOF :: DEBUG
+03-Jun-22 13:03:51 :: helpers :: class Megatron instatiated :: INFO
+03-Jun-22 13:03:51 :: helpers :: Remote colors initialized :: INFO
+03-Jun-22 13:03:52 :: helpers :: Devices found: ['/dev/ttyACM7 - Seeed_Studio_Seeeduino_XIAO_B5B534B15054414B352E3120FF162E2D', '/dev/ttyACM4 - Teensyduino_USB_Serial_11192840', '/dev/ttyACM6 - Teensyduino_USB_Serial_11191020', '/dev/ttyACM1 - Teensyduino_USB_Serial_10100040', '/dev/ttyACM0 - Teensyduino_USB_Serial_11192830', '/dev/ttyACM3 - Teensyduino_USB_Serial_11192600', '/dev/ttyACM5 - Teensyduino_USB_Serial_11191000', '/dev/ttyACM2 - Teensyduino_USB_Serial_8771180'] | device_names :: INFO
+03-Jun-22 13:03:52 :: helpers :: EOF :: DEBUG
+03-Jun-22 13:03:52 :: __main__ :: Imports imported in GUI file :: INFO
+03-Jun-22 13:03:52 :: __main__ :: creating dpg context :: INFO
+03-Jun-22 13:03:52 :: __main__ :: Set save state of MGTron API to True :: INFO
+03-Jun-22 13:03:52 :: interface :: Serial call to device initiated :: DEBUG
+03-Jun-22 13:03:52 :: interface :: baudrate set from serial_call :: DEBUG
+03-Jun-22 13:03:52 :: interface :: Serial device set from serial_call :: DEBUG
+03-Jun-22 13:03:52 :: interface :: timeout set from serial_call :: DEBUG
+03-Jun-22 13:03:52 :: interface :: opening serial connection from serial_call :: DEBUG
+03-Jun-22 13:03:52 :: interface :: information send via serial protocol; serial_call :: DEBUG
+03-Jun-22 13:03:52 :: interface :: save_state function executed :: INFO
+03-Jun-22 13:03:52 :: helpers :: Config file already filled :: INFO
+03-Jun-22 13:03:52 :: __main__ :: Setting GUI colors :: INFO
+03-Jun-22 13:03:52 :: __main__ :: GUI colors set :: INFO
+03-Jun-22 13:03:52 :: __main__ :: Setting Primary Window in GUI file :: INFO
+03-Jun-22 13:03:52 :: __main__ :: RESET ALL button initialized :: INFO
+03-Jun-22 13:03:52 :: __main__ :: SEND ALL button initialized :: INFO
+03-Jun-22 13:03:52 :: __main__ :: Quick save button initialized :: INFO
+03-Jun-22 13:03:52 :: __main__ :: Quick Load button initialized :: INFO
+03-Jun-22 13:03:52 :: __main__ :: Custom Save button initialized :: INFO
+03-Jun-22 13:03:52 :: __main__ :: Custom Load button initialized :: INFO
+03-Jun-22 13:03:52 :: __main__ :: Alpha button initialized :: INFO
+03-Jun-22 13:03:52 :: __main__ :: Bravo button initialized :: INFO
+03-Jun-22 13:03:52 :: __main__ :: Mission Charlie button initialized :: INFO
+03-Jun-22 13:03:52 :: __main__ :: Mission Delta button initialized :: INFO
+03-Jun-22 13:03:52 :: __main__ :: Mission Echo button initialized :: INFO
+03-Jun-22 13:03:52 :: __main__ :: Mission Fox button initialized :: INFO
+03-Jun-22 13:03:52 :: __main__ :: Mission Golf button initialized :: INFO
+03-Jun-22 13:03:52 :: __main__ :: Mission WiFi scan jam button initialized :: INFO
+03-Jun-22 13:03:52 :: helpers :: finding the log file :: INFO
+03-Jun-22 13:03:52 :: helpers :: file read attempted :: INFO
+03-Jun-22 13:03:52 :: helpers :: INI config file matched devices detected | config_intake :: INFO
+03-Jun-22 13:03:52 :: helpers :: INI config file matched devices detected | config_intake :: INFO
+03-Jun-22 13:03:52 :: helpers :: INI config file matched devices detected | config_intake :: INFO
+03-Jun-22 13:03:52 :: helpers :: INI config file matched devices detected | config_intake :: INFO
+03-Jun-22 13:03:52 :: helpers :: INI config file matched devices detected | config_intake :: INFO
+03-Jun-22 13:03:52 :: helpers :: INI config file matched devices detected | config_intake :: INFO
+03-Jun-22 13:03:52 :: helpers :: INI config file matched devices detected | config_intake :: INFO
+03-Jun-22 13:03:52 :: helpers :: INI config file matched devices detected | config_intake :: INFO
+03-Jun-22 13:10:23 :: interface :: 
+
+GUI LAUNCHED
+
+ :: INFO
+03-Jun-22 13:10:23 :: interface :: Getting the port name of device :: INFO
+03-Jun-22 13:10:23 :: interface :: find_device function executing linux shell command to get device file names :: INFO
+03-Jun-22 13:10:23 :: interface :: Connected Devices: ['/dev/ttyACM0', '/dev/ttyACM1', '/dev/ttyACM2', '/dev/ttyACM3', '/dev/ttyACM4', '/dev/ttyACM5', '/dev/ttyACM6', '/dev/ttyACM7'] :: INFO
+03-Jun-22 13:10:23 :: interface :: Chosen Device: /dev/ttyACM0 :: DEBUG
+03-Jun-22 13:10:23 :: interface :: Connected device path: /dev/ttyACM0 :: INFO
+03-Jun-22 13:10:23 :: interface :: class Megatron initialized :: INFO
+03-Jun-22 13:10:23 :: interface :: EOF :: DEBUG
+03-Jun-22 13:10:23 :: helpers :: class Megatron instatiated :: INFO
+03-Jun-22 13:10:23 :: helpers :: Remote colors initialized :: INFO
+03-Jun-22 13:10:23 :: helpers :: Devices found: ['/dev/ttyACM7 - Seeed_Studio_Seeeduino_XIAO_B5B534B15054414B352E3120FF162E2D', '/dev/ttyACM4 - Teensyduino_USB_Serial_11192840', '/dev/ttyACM6 - Teensyduino_USB_Serial_11191020', '/dev/ttyACM1 - Teensyduino_USB_Serial_10100040', '/dev/ttyACM0 - Teensyduino_USB_Serial_11192830', '/dev/ttyACM3 - Teensyduino_USB_Serial_11192600', '/dev/ttyACM5 - Teensyduino_USB_Serial_11191000', '/dev/ttyACM2 - Teensyduino_USB_Serial_8771180'] | device_names :: INFO
+03-Jun-22 13:10:23 :: helpers :: EOF :: DEBUG
+03-Jun-22 13:10:23 :: __main__ :: Imports imported in GUI file :: INFO
+03-Jun-22 13:10:23 :: __main__ :: creating dpg context :: INFO
+03-Jun-22 13:10:23 :: __main__ :: Set save state of MGTron API to True :: INFO
+03-Jun-22 13:10:23 :: interface :: Serial call to device initiated :: DEBUG
+03-Jun-22 13:10:23 :: interface :: baudrate set from serial_call :: DEBUG
+03-Jun-22 13:10:23 :: interface :: Serial device set from serial_call :: DEBUG
+03-Jun-22 13:10:23 :: interface :: timeout set from serial_call :: DEBUG
+03-Jun-22 13:10:23 :: interface :: opening serial connection from serial_call :: DEBUG
+03-Jun-22 13:10:23 :: interface :: information send via serial protocol; serial_call :: DEBUG
+03-Jun-22 13:10:23 :: interface :: save_state function executed :: INFO
+03-Jun-22 13:10:23 :: helpers :: Config file already filled :: INFO
+03-Jun-22 13:10:23 :: __main__ :: Setting GUI colors :: INFO
+03-Jun-22 13:10:23 :: __main__ :: GUI colors set :: INFO
+03-Jun-22 13:10:23 :: __main__ :: Setting Primary Window in GUI file :: INFO
+03-Jun-22 13:10:23 :: __main__ :: RESET ALL button initialized :: INFO
+03-Jun-22 13:10:23 :: __main__ :: SEND ALL button initialized :: INFO
+03-Jun-22 13:10:23 :: __main__ :: Quick save button initialized :: INFO
+03-Jun-22 13:10:23 :: __main__ :: Quick Load button initialized :: INFO
+03-Jun-22 13:10:23 :: __main__ :: Custom Save button initialized :: INFO
+03-Jun-22 13:10:23 :: __main__ :: Custom Load button initialized :: INFO
+03-Jun-22 13:10:23 :: __main__ :: Alpha button initialized :: INFO
+03-Jun-22 13:10:23 :: __main__ :: Bravo button initialized :: INFO
+03-Jun-22 13:10:23 :: __main__ :: Mission Charlie button initialized :: INFO
+03-Jun-22 13:10:23 :: __main__ :: Mission Delta button initialized :: INFO
+03-Jun-22 13:10:23 :: __main__ :: Mission Echo button initialized :: INFO
+03-Jun-22 13:10:23 :: __main__ :: Mission Fox button initialized :: INFO
+03-Jun-22 13:10:23 :: __main__ :: Mission Golf button initialized :: INFO
+03-Jun-22 13:10:23 :: __main__ :: Mission WiFi scan jam button initialized :: INFO
+03-Jun-22 13:10:23 :: helpers :: finding the log file :: INFO
+03-Jun-22 13:10:23 :: helpers :: file read attempted :: INFO
+03-Jun-22 13:10:36 :: interface :: 
+
+GUI LAUNCHED
+
+ :: INFO
+03-Jun-22 13:10:36 :: interface :: Getting the port name of device :: INFO
+03-Jun-22 13:10:36 :: interface :: find_device function executing linux shell command to get device file names :: INFO
+03-Jun-22 13:10:36 :: interface :: Connected Devices: ['/dev/ttyACM0', '/dev/ttyACM1', '/dev/ttyACM2', '/dev/ttyACM3', '/dev/ttyACM4', '/dev/ttyACM5', '/dev/ttyACM6', '/dev/ttyACM7'] :: INFO
+03-Jun-22 13:10:36 :: interface :: Chosen Device: /dev/ttyACM0 :: DEBUG
+03-Jun-22 13:10:36 :: interface :: Connected device path: /dev/ttyACM0 :: INFO
+03-Jun-22 13:10:36 :: interface :: class Megatron initialized :: INFO
+03-Jun-22 13:10:36 :: interface :: EOF :: DEBUG
+03-Jun-22 13:10:36 :: helpers :: class Megatron instatiated :: INFO
+03-Jun-22 13:10:36 :: helpers :: Remote colors initialized :: INFO
+03-Jun-22 13:10:36 :: helpers :: Devices found: ['/dev/ttyACM7 - Seeed_Studio_Seeeduino_XIAO_B5B534B15054414B352E3120FF162E2D', '/dev/ttyACM4 - Teensyduino_USB_Serial_11192840', '/dev/ttyACM6 - Teensyduino_USB_Serial_11191020', '/dev/ttyACM1 - Teensyduino_USB_Serial_10100040', '/dev/ttyACM0 - Teensyduino_USB_Serial_11192830', '/dev/ttyACM3 - Teensyduino_USB_Serial_11192600', '/dev/ttyACM5 - Teensyduino_USB_Serial_11191000', '/dev/ttyACM2 - Teensyduino_USB_Serial_8771180'] | device_names :: INFO
+03-Jun-22 13:10:36 :: helpers :: EOF :: DEBUG
+03-Jun-22 13:10:36 :: __main__ :: Imports imported in GUI file :: INFO
+03-Jun-22 13:10:36 :: __main__ :: creating dpg context :: INFO
+03-Jun-22 13:10:36 :: __main__ :: Set save state of MGTron API to True :: INFO
+03-Jun-22 13:10:36 :: interface :: Serial call to device initiated :: DEBUG
+03-Jun-22 13:10:36 :: interface :: baudrate set from serial_call :: DEBUG
+03-Jun-22 13:10:36 :: interface :: Serial device set from serial_call :: DEBUG
+03-Jun-22 13:10:36 :: interface :: timeout set from serial_call :: DEBUG
+03-Jun-22 13:10:36 :: interface :: opening serial connection from serial_call :: DEBUG
+03-Jun-22 13:10:36 :: interface :: information send via serial protocol; serial_call :: DEBUG
+03-Jun-22 13:10:36 :: interface :: save_state function executed :: INFO
+03-Jun-22 13:10:36 :: helpers :: Config file already filled :: INFO
+03-Jun-22 13:10:36 :: __main__ :: Setting GUI colors :: INFO
+03-Jun-22 13:10:36 :: __main__ :: GUI colors set :: INFO
+03-Jun-22 13:10:36 :: __main__ :: Setting Primary Window in GUI file :: INFO
+03-Jun-22 13:10:36 :: __main__ :: RESET ALL button initialized :: INFO
+03-Jun-22 13:10:36 :: __main__ :: SEND ALL button initialized :: INFO
+03-Jun-22 13:10:36 :: __main__ :: Quick save button initialized :: INFO
+03-Jun-22 13:10:36 :: __main__ :: Quick Load button initialized :: INFO
+03-Jun-22 13:10:36 :: __main__ :: Custom Save button initialized :: INFO
+03-Jun-22 13:10:36 :: __main__ :: Custom Load button initialized :: INFO
+03-Jun-22 13:10:36 :: __main__ :: Alpha button initialized :: INFO
+03-Jun-22 13:10:36 :: __main__ :: Bravo button initialized :: INFO
+03-Jun-22 13:10:36 :: __main__ :: Mission Charlie button initialized :: INFO
+03-Jun-22 13:10:36 :: __main__ :: Mission Delta button initialized :: INFO
+03-Jun-22 13:10:36 :: __main__ :: Mission Echo button initialized :: INFO
+03-Jun-22 13:10:36 :: __main__ :: Mission Fox button initialized :: INFO
+03-Jun-22 13:10:36 :: __main__ :: Mission Golf button initialized :: INFO
+03-Jun-22 13:10:36 :: __main__ :: Mission WiFi scan jam button initialized :: INFO
+03-Jun-22 13:10:36 :: helpers :: finding the log file :: INFO
+03-Jun-22 13:10:36 :: helpers :: file read attempted :: INFO
+03-Jun-22 13:11:10 :: interface :: 
+
+GUI LAUNCHED
+
+ :: INFO
+03-Jun-22 13:11:10 :: interface :: Getting the port name of device :: INFO
+03-Jun-22 13:11:10 :: interface :: find_device function executing linux shell command to get device file names :: INFO
+03-Jun-22 13:11:10 :: interface :: Connected Devices: ['/dev/ttyACM0', '/dev/ttyACM1', '/dev/ttyACM2', '/dev/ttyACM3', '/dev/ttyACM4', '/dev/ttyACM5', '/dev/ttyACM6', '/dev/ttyACM7'] :: INFO
+03-Jun-22 13:11:10 :: interface :: Chosen Device: /dev/ttyACM0 :: DEBUG
+03-Jun-22 13:11:10 :: interface :: Connected device path: /dev/ttyACM0 :: INFO
+03-Jun-22 13:11:10 :: interface :: class Megatron initialized :: INFO
+03-Jun-22 13:11:10 :: interface :: EOF :: DEBUG
+03-Jun-22 13:11:10 :: helpers :: class Megatron instatiated :: INFO
+03-Jun-22 13:11:10 :: helpers :: Remote colors initialized :: INFO
+03-Jun-22 13:11:10 :: helpers :: Devices found: ['/dev/ttyACM7 - Seeed_Studio_Seeeduino_XIAO_B5B534B15054414B352E3120FF162E2D', '/dev/ttyACM4 - Teensyduino_USB_Serial_11192840', '/dev/ttyACM6 - Teensyduino_USB_Serial_11191020', '/dev/ttyACM1 - Teensyduino_USB_Serial_10100040', '/dev/ttyACM0 - Teensyduino_USB_Serial_11192830', '/dev/ttyACM3 - Teensyduino_USB_Serial_11192600', '/dev/ttyACM5 - Teensyduino_USB_Serial_11191000', '/dev/ttyACM2 - Teensyduino_USB_Serial_8771180'] | device_names :: INFO
+03-Jun-22 13:11:10 :: helpers :: EOF :: DEBUG
+03-Jun-22 13:11:10 :: __main__ :: Imports imported in GUI file :: INFO
+03-Jun-22 13:11:10 :: __main__ :: creating dpg context :: INFO
+03-Jun-22 13:11:10 :: __main__ :: Set save state of MGTron API to True :: INFO
+03-Jun-22 13:11:10 :: interface :: Serial call to device initiated :: DEBUG
+03-Jun-22 13:11:10 :: interface :: baudrate set from serial_call :: DEBUG
+03-Jun-22 13:11:10 :: interface :: Serial device set from serial_call :: DEBUG
+03-Jun-22 13:11:10 :: interface :: timeout set from serial_call :: DEBUG
+03-Jun-22 13:11:10 :: interface :: opening serial connection from serial_call :: DEBUG
+03-Jun-22 13:11:10 :: interface :: information send via serial protocol; serial_call :: DEBUG
+03-Jun-22 13:11:10 :: interface :: save_state function executed :: INFO
+03-Jun-22 13:11:10 :: helpers :: Config file already filled :: INFO
+03-Jun-22 13:11:10 :: __main__ :: Setting GUI colors :: INFO
+03-Jun-22 13:11:10 :: __main__ :: GUI colors set :: INFO
+03-Jun-22 13:11:10 :: __main__ :: Setting Primary Window in GUI file :: INFO
+03-Jun-22 13:11:10 :: __main__ :: RESET ALL button initialized :: INFO
+03-Jun-22 13:11:10 :: __main__ :: SEND ALL button initialized :: INFO
+03-Jun-22 13:11:10 :: __main__ :: Quick save button initialized :: INFO
+03-Jun-22 13:11:10 :: __main__ :: Quick Load button initialized :: INFO
+03-Jun-22 13:11:10 :: __main__ :: Custom Save button initialized :: INFO
+03-Jun-22 13:11:10 :: __main__ :: Custom Load button initialized :: INFO
+03-Jun-22 13:11:10 :: __main__ :: Alpha button initialized :: INFO
+03-Jun-22 13:11:10 :: __main__ :: Bravo button initialized :: INFO
+03-Jun-22 13:11:10 :: __main__ :: Mission Charlie button initialized :: INFO
+03-Jun-22 13:11:10 :: __main__ :: Mission Delta button initialized :: INFO
+03-Jun-22 13:11:10 :: __main__ :: Mission Echo button initialized :: INFO
+03-Jun-22 13:11:10 :: __main__ :: Mission Fox button initialized :: INFO
+03-Jun-22 13:11:10 :: __main__ :: Mission Golf button initialized :: INFO
+03-Jun-22 13:11:10 :: __main__ :: Mission WiFi scan jam button initialized :: INFO
+03-Jun-22 13:11:10 :: helpers :: finding the log file :: INFO
+03-Jun-22 13:11:10 :: helpers :: file read attempted :: INFO
+03-Jun-22 13:11:10 :: helpers :: INI config file matched devices detected | config_intake :: INFO
+03-Jun-22 13:11:10 :: helpers :: INI config file matched devices detected | config_intake :: INFO
+03-Jun-22 13:11:10 :: helpers :: INI config file matched devices detected | config_intake :: INFO
+03-Jun-22 13:11:10 :: helpers :: INI config file matched devices detected | config_intake :: INFO
+03-Jun-22 13:11:10 :: helpers :: INI config file matched devices detected | config_intake :: INFO
+03-Jun-22 13:11:10 :: helpers :: INI config file matched devices detected | config_intake :: INFO
+03-Jun-22 13:11:10 :: helpers :: INI config file matched devices detected | config_intake :: INFO
+03-Jun-22 13:11:10 :: helpers :: INI config file matched devices detected | config_intake :: INFO
+03-Jun-22 13:11:21 :: interface :: 
+
+GUI LAUNCHED
+
+ :: INFO
+03-Jun-22 13:11:21 :: interface :: Getting the port name of device :: INFO
+03-Jun-22 13:11:21 :: interface :: find_device function executing linux shell command to get device file names :: INFO
+03-Jun-22 13:11:21 :: interface :: Connected Devices: ['/dev/ttyACM0', '/dev/ttyACM1', '/dev/ttyACM2', '/dev/ttyACM3', '/dev/ttyACM4', '/dev/ttyACM5', '/dev/ttyACM6'] :: INFO
+03-Jun-22 13:11:21 :: interface :: Chosen Device: /dev/ttyACM0 :: DEBUG
+03-Jun-22 13:11:21 :: interface :: Connected device path: /dev/ttyACM0 :: INFO
+03-Jun-22 13:11:21 :: interface :: class Megatron initialized :: INFO
+03-Jun-22 13:11:21 :: interface :: EOF :: DEBUG
+03-Jun-22 13:11:21 :: helpers :: class Megatron instatiated :: INFO
+03-Jun-22 13:11:21 :: helpers :: Remote colors initialized :: INFO
+03-Jun-22 13:11:21 :: helpers :: Devices found: ['/dev/ttyACM4 - Teensyduino_USB_Serial_11192840', '/dev/ttyACM6 - Teensyduino_USB_Serial_11191020', '/dev/ttyACM1 - Teensyduino_USB_Serial_10100040', '/dev/ttyACM0 - Teensyduino_USB_Serial_11192830', '/dev/ttyACM3 - Teensyduino_USB_Serial_11192600', '/dev/ttyACM5 - Teensyduino_USB_Serial_11191000', '/dev/ttyACM2 - Teensyduino_USB_Serial_8771180'] | device_names :: INFO
+03-Jun-22 13:11:21 :: helpers :: EOF :: DEBUG
+03-Jun-22 13:11:21 :: __main__ :: Imports imported in GUI file :: INFO
+03-Jun-22 13:11:21 :: __main__ :: creating dpg context :: INFO
+03-Jun-22 13:11:21 :: __main__ :: Set save state of MGTron API to True :: INFO
+03-Jun-22 13:11:21 :: interface :: Serial call to device initiated :: DEBUG
+03-Jun-22 13:11:21 :: interface :: baudrate set from serial_call :: DEBUG
+03-Jun-22 13:11:21 :: interface :: Serial device set from serial_call :: DEBUG
+03-Jun-22 13:11:21 :: interface :: timeout set from serial_call :: DEBUG
+03-Jun-22 13:11:21 :: interface :: opening serial connection from serial_call :: DEBUG
+03-Jun-22 13:11:21 :: interface :: information send via serial protocol; serial_call :: DEBUG
+03-Jun-22 13:11:21 :: interface :: save_state function executed :: INFO
+03-Jun-22 13:11:21 :: helpers :: Config file already filled :: INFO
+03-Jun-22 13:11:21 :: __main__ :: Setting GUI colors :: INFO
+03-Jun-22 13:11:21 :: __main__ :: GUI colors set :: INFO
+03-Jun-22 13:11:21 :: __main__ :: Setting Primary Window in GUI file :: INFO
+03-Jun-22 13:11:21 :: __main__ :: RESET ALL button initialized :: INFO
+03-Jun-22 13:11:21 :: __main__ :: SEND ALL button initialized :: INFO
+03-Jun-22 13:11:21 :: __main__ :: Quick save button initialized :: INFO
+03-Jun-22 13:11:21 :: __main__ :: Quick Load button initialized :: INFO
+03-Jun-22 13:11:21 :: __main__ :: Custom Save button initialized :: INFO
+03-Jun-22 13:11:21 :: __main__ :: Custom Load button initialized :: INFO
+03-Jun-22 13:11:21 :: __main__ :: Alpha button initialized :: INFO
+03-Jun-22 13:11:21 :: __main__ :: Bravo button initialized :: INFO
+03-Jun-22 13:11:21 :: __main__ :: Mission Charlie button initialized :: INFO
+03-Jun-22 13:11:21 :: __main__ :: Mission Delta button initialized :: INFO
+03-Jun-22 13:11:21 :: __main__ :: Mission Echo button initialized :: INFO
+03-Jun-22 13:11:21 :: __main__ :: Mission Fox button initialized :: INFO
+03-Jun-22 13:11:21 :: __main__ :: Mission Golf button initialized :: INFO
+03-Jun-22 13:11:21 :: __main__ :: Mission WiFi scan jam button initialized :: INFO
+03-Jun-22 13:11:21 :: helpers :: finding the log file :: INFO
+03-Jun-22 13:11:21 :: helpers :: file read attempted :: INFO
+03-Jun-22 13:11:21 :: helpers :: INI config file matched devices detected | config_intake :: INFO
+03-Jun-22 13:11:21 :: helpers :: INI config file matched devices detected | config_intake :: INFO
+03-Jun-22 13:11:21 :: helpers :: INI config file matched devices detected | config_intake :: INFO
+03-Jun-22 13:11:21 :: helpers :: INI config file matched devices detected | config_intake :: INFO
+03-Jun-22 13:11:21 :: helpers :: INI config file matched devices detected | config_intake :: INFO
+03-Jun-22 13:11:21 :: helpers :: INI config file matched devices detected | config_intake :: INFO
+03-Jun-22 13:11:21 :: helpers :: INI config file matched devices detected | config_intake :: INFO
+03-Jun-22 13:12:43 :: interface :: 
+
+GUI LAUNCHED
+
+ :: INFO
+03-Jun-22 13:12:43 :: interface :: Getting the port name of device :: INFO
+03-Jun-22 13:12:43 :: interface :: find_device function executing linux shell command to get device file names :: INFO
+03-Jun-22 13:12:43 :: interface :: Connected Devices: ['/dev/ttyACM0', '/dev/ttyACM1', '/dev/ttyACM2', '/dev/ttyACM3', '/dev/ttyACM4', '/dev/ttyACM5', '/dev/ttyACM6'] :: INFO
+03-Jun-22 13:12:43 :: interface :: Chosen Device: /dev/ttyACM0 :: DEBUG
+03-Jun-22 13:12:43 :: interface :: Connected device path: /dev/ttyACM0 :: INFO
+03-Jun-22 13:12:43 :: interface :: class Megatron initialized :: INFO
+03-Jun-22 13:12:43 :: interface :: EOF :: DEBUG
+03-Jun-22 13:12:43 :: helpers :: class Megatron instatiated :: INFO
+03-Jun-22 13:12:43 :: helpers :: Remote colors initialized :: INFO
+03-Jun-22 13:12:43 :: helpers :: Devices found: ['/dev/ttyACM4 - Teensyduino_USB_Serial_11192840', '/dev/ttyACM6 - Teensyduino_USB_Serial_11191020', '/dev/ttyACM1 - Teensyduino_USB_Serial_10100040', '/dev/ttyACM0 - Teensyduino_USB_Serial_11192830', '/dev/ttyACM3 - Teensyduino_USB_Serial_11192600', '/dev/ttyACM5 - Teensyduino_USB_Serial_11191000', '/dev/ttyACM2 - Teensyduino_USB_Serial_8771180'] | device_names :: INFO
+03-Jun-22 13:12:43 :: helpers :: EOF :: DEBUG
+03-Jun-22 13:12:43 :: __main__ :: Imports imported in GUI file :: INFO
+03-Jun-22 13:12:43 :: __main__ :: creating dpg context :: INFO
+03-Jun-22 13:12:43 :: __main__ :: Set save state of MGTron API to True :: INFO
+03-Jun-22 13:12:43 :: interface :: Serial call to device initiated :: DEBUG
+03-Jun-22 13:12:43 :: interface :: baudrate set from serial_call :: DEBUG
+03-Jun-22 13:12:43 :: interface :: Serial device set from serial_call :: DEBUG
+03-Jun-22 13:12:43 :: interface :: timeout set from serial_call :: DEBUG
+03-Jun-22 13:12:43 :: interface :: opening serial connection from serial_call :: DEBUG
+03-Jun-22 13:12:43 :: interface :: information send via serial protocol; serial_call :: DEBUG
+03-Jun-22 13:12:43 :: interface :: save_state function executed :: INFO
+03-Jun-22 13:12:43 :: helpers :: Config file already filled :: INFO
+03-Jun-22 13:12:43 :: __main__ :: Setting GUI colors :: INFO
+03-Jun-22 13:12:43 :: __main__ :: GUI colors set :: INFO
+03-Jun-22 13:12:43 :: __main__ :: Setting Primary Window in GUI file :: INFO
+03-Jun-22 13:12:43 :: __main__ :: RESET ALL button initialized :: INFO
+03-Jun-22 13:12:43 :: __main__ :: SEND ALL button initialized :: INFO
+03-Jun-22 13:12:43 :: __main__ :: Quick save button initialized :: INFO
+03-Jun-22 13:12:43 :: __main__ :: Quick Load button initialized :: INFO
+03-Jun-22 13:12:43 :: __main__ :: Custom Save button initialized :: INFO
+03-Jun-22 13:12:43 :: __main__ :: Custom Load button initialized :: INFO
+03-Jun-22 13:12:43 :: __main__ :: Alpha button initialized :: INFO
+03-Jun-22 13:12:43 :: __main__ :: Bravo button initialized :: INFO
+03-Jun-22 13:12:43 :: __main__ :: Mission Charlie button initialized :: INFO
+03-Jun-22 13:12:43 :: __main__ :: Mission Delta button initialized :: INFO
+03-Jun-22 13:12:43 :: __main__ :: Mission Echo button initialized :: INFO
+03-Jun-22 13:12:43 :: __main__ :: Mission Fox button initialized :: INFO
+03-Jun-22 13:12:43 :: __main__ :: Mission Golf button initialized :: INFO
+03-Jun-22 13:12:43 :: __main__ :: Mission WiFi scan jam button initialized :: INFO
+03-Jun-22 13:12:43 :: helpers :: finding the log file :: INFO
+03-Jun-22 13:12:43 :: helpers :: file read attempted :: INFO
+03-Jun-22 13:12:43 :: helpers :: INI config file matched devices detected | config_intake :: INFO
+03-Jun-22 13:12:43 :: helpers :: INI config file matched devices detected | config_intake :: INFO
+03-Jun-22 13:12:43 :: helpers :: INI config file matched devices detected | config_intake :: INFO
+03-Jun-22 13:12:43 :: helpers :: INI config file matched devices detected | config_intake :: INFO
+03-Jun-22 13:12:43 :: helpers :: INI config file matched devices detected | config_intake :: INFO
+03-Jun-22 13:12:43 :: helpers :: INI config file matched devices detected | config_intake :: INFO
+03-Jun-22 13:12:43 :: helpers :: INI config file matched devices detected | config_intake :: INFO
+03-Jun-22 13:12:55 :: interface :: 
+
+GUI LAUNCHED
+
+ :: INFO
+03-Jun-22 13:12:55 :: interface :: Getting the port name of device :: INFO
+03-Jun-22 13:12:55 :: interface :: find_device function executing linux shell command to get device file names :: INFO
+03-Jun-22 13:12:55 :: interface :: Connected Devices: ['/dev/ttyACM0', '/dev/ttyACM1', '/dev/ttyACM2', '/dev/ttyACM3', '/dev/ttyACM4', '/dev/ttyACM5', '/dev/ttyACM6'] :: INFO
+03-Jun-22 13:12:55 :: interface :: Chosen Device: /dev/ttyACM0 :: DEBUG
+03-Jun-22 13:12:55 :: interface :: Connected device path: /dev/ttyACM0 :: INFO
+03-Jun-22 13:12:55 :: interface :: class Megatron initialized :: INFO
+03-Jun-22 13:12:55 :: interface :: EOF :: DEBUG
+03-Jun-22 13:12:55 :: helpers :: class Megatron instatiated :: INFO
+03-Jun-22 13:12:55 :: helpers :: Remote colors initialized :: INFO
+03-Jun-22 13:12:55 :: helpers :: Devices found: ['/dev/ttyACM4 - Teensyduino_USB_Serial_11192840', '/dev/ttyACM6 - Teensyduino_USB_Serial_11191020', '/dev/ttyACM1 - Teensyduino_USB_Serial_10100040', '/dev/ttyACM0 - Teensyduino_USB_Serial_11192830', '/dev/ttyACM3 - Teensyduino_USB_Serial_11192600', '/dev/ttyACM5 - Teensyduino_USB_Serial_11191000', '/dev/ttyACM2 - Teensyduino_USB_Serial_8771180'] | device_names :: INFO
+03-Jun-22 13:12:55 :: helpers :: EOF :: DEBUG
+03-Jun-22 13:12:55 :: __main__ :: Imports imported in GUI file :: INFO
+03-Jun-22 13:12:55 :: __main__ :: creating dpg context :: INFO
+03-Jun-22 13:12:55 :: __main__ :: Set save state of MGTron API to True :: INFO
+03-Jun-22 13:12:55 :: interface :: Serial call to device initiated :: DEBUG
+03-Jun-22 13:12:55 :: interface :: baudrate set from serial_call :: DEBUG
+03-Jun-22 13:12:55 :: interface :: Serial device set from serial_call :: DEBUG
+03-Jun-22 13:12:55 :: interface :: timeout set from serial_call :: DEBUG
+03-Jun-22 13:12:55 :: interface :: opening serial connection from serial_call :: DEBUG
+03-Jun-22 13:12:55 :: interface :: information send via serial protocol; serial_call :: DEBUG
+03-Jun-22 13:12:55 :: interface :: save_state function executed :: INFO
+03-Jun-22 13:12:55 :: helpers :: Config file already filled :: INFO
+03-Jun-22 13:12:55 :: __main__ :: Setting GUI colors :: INFO
+03-Jun-22 13:12:55 :: __main__ :: GUI colors set :: INFO
+03-Jun-22 13:12:55 :: __main__ :: Setting Primary Window in GUI file :: INFO
+03-Jun-22 13:12:55 :: __main__ :: RESET ALL button initialized :: INFO
+03-Jun-22 13:12:55 :: __main__ :: SEND ALL button initialized :: INFO
+03-Jun-22 13:12:55 :: __main__ :: Quick save button initialized :: INFO
+03-Jun-22 13:12:55 :: __main__ :: Quick Load button initialized :: INFO
+03-Jun-22 13:12:55 :: __main__ :: Custom Save button initialized :: INFO
+03-Jun-22 13:12:55 :: __main__ :: Custom Load button initialized :: INFO
+03-Jun-22 13:12:55 :: __main__ :: Alpha button initialized :: INFO
+03-Jun-22 13:12:55 :: __main__ :: Bravo button initialized :: INFO
+03-Jun-22 13:12:55 :: __main__ :: Mission Charlie button initialized :: INFO
+03-Jun-22 13:12:55 :: __main__ :: Mission Delta button initialized :: INFO
+03-Jun-22 13:12:55 :: __main__ :: Mission Echo button initialized :: INFO
+03-Jun-22 13:12:55 :: __main__ :: Mission Fox button initialized :: INFO
+03-Jun-22 13:12:55 :: __main__ :: Mission Golf button initialized :: INFO
+03-Jun-22 13:12:55 :: __main__ :: Mission WiFi scan jam button initialized :: INFO
+03-Jun-22 13:12:55 :: helpers :: finding the log file :: INFO
+03-Jun-22 13:12:55 :: helpers :: file read attempted :: INFO
+03-Jun-22 13:12:55 :: helpers :: INI config file matched devices detected | config_intake :: INFO
+03-Jun-22 13:12:55 :: helpers :: INI config file matched devices detected | config_intake :: INFO
+03-Jun-22 13:12:55 :: helpers :: INI config file matched devices detected | config_intake :: INFO
+03-Jun-22 13:12:55 :: helpers :: INI config file matched devices detected | config_intake :: INFO
+03-Jun-22 13:12:55 :: helpers :: INI config file matched devices detected | config_intake :: INFO
+03-Jun-22 13:12:55 :: helpers :: INI config file matched devices detected | config_intake :: INFO
+03-Jun-22 13:12:55 :: helpers :: INI config file matched devices detected | config_intake :: INFO
+03-Jun-22 13:13:32 :: interface :: 
+
+GUI LAUNCHED
+
+ :: INFO
+03-Jun-22 13:13:32 :: interface :: Getting the port name of device :: INFO
+03-Jun-22 13:13:32 :: interface :: find_device function executing linux shell command to get device file names :: INFO
+03-Jun-22 13:13:32 :: interface :: Connected Devices: ['/dev/ttyACM0', '/dev/ttyACM1', '/dev/ttyACM2', '/dev/ttyACM3', '/dev/ttyACM4', '/dev/ttyACM5', '/dev/ttyACM6'] :: INFO
+03-Jun-22 13:13:32 :: interface :: Chosen Device: /dev/ttyACM0 :: DEBUG
+03-Jun-22 13:13:32 :: interface :: Connected device path: /dev/ttyACM0 :: INFO
+03-Jun-22 13:13:32 :: interface :: class Megatron initialized :: INFO
+03-Jun-22 13:13:32 :: interface :: EOF :: DEBUG
+03-Jun-22 13:13:32 :: helpers :: class Megatron instatiated :: INFO
+03-Jun-22 13:13:32 :: helpers :: Remote colors initialized :: INFO
+03-Jun-22 13:13:32 :: helpers :: Devices found: ['/dev/ttyACM4 - Teensyduino_USB_Serial_11192840', '/dev/ttyACM6 - Teensyduino_USB_Serial_11191020', '/dev/ttyACM1 - Teensyduino_USB_Serial_10100040', '/dev/ttyACM0 - Teensyduino_USB_Serial_11192830', '/dev/ttyACM3 - Teensyduino_USB_Serial_11192600', '/dev/ttyACM5 - Teensyduino_USB_Serial_11191000', '/dev/ttyACM2 - Teensyduino_USB_Serial_8771180'] | device_names :: INFO
+03-Jun-22 13:13:32 :: helpers :: EOF :: DEBUG
+03-Jun-22 13:13:32 :: __main__ :: Imports imported in GUI file :: INFO
+03-Jun-22 13:13:32 :: __main__ :: creating dpg context :: INFO
+03-Jun-22 13:13:32 :: __main__ :: Set save state of MGTron API to True :: INFO
+03-Jun-22 13:13:32 :: interface :: Serial call to device initiated :: DEBUG
+03-Jun-22 13:13:32 :: interface :: baudrate set from serial_call :: DEBUG
+03-Jun-22 13:13:32 :: interface :: Serial device set from serial_call :: DEBUG
+03-Jun-22 13:13:32 :: interface :: timeout set from serial_call :: DEBUG
+03-Jun-22 13:13:32 :: interface :: opening serial connection from serial_call :: DEBUG
+03-Jun-22 13:13:32 :: interface :: information send via serial protocol; serial_call :: DEBUG
+03-Jun-22 13:13:32 :: interface :: save_state function executed :: INFO
+03-Jun-22 13:13:32 :: helpers :: Config file already filled :: INFO
+03-Jun-22 13:13:32 :: __main__ :: Setting GUI colors :: INFO
+03-Jun-22 13:13:32 :: __main__ :: GUI colors set :: INFO
+03-Jun-22 13:13:32 :: __main__ :: Setting Primary Window in GUI file :: INFO
+03-Jun-22 13:13:32 :: __main__ :: RESET ALL button initialized :: INFO
+03-Jun-22 13:13:32 :: __main__ :: SEND ALL button initialized :: INFO
+03-Jun-22 13:13:32 :: __main__ :: Quick save button initialized :: INFO
+03-Jun-22 13:13:32 :: __main__ :: Quick Load button initialized :: INFO
+03-Jun-22 13:13:32 :: __main__ :: Custom Save button initialized :: INFO
+03-Jun-22 13:13:32 :: __main__ :: Custom Load button initialized :: INFO
+03-Jun-22 13:13:32 :: __main__ :: Alpha button initialized :: INFO
+03-Jun-22 13:13:32 :: __main__ :: Bravo button initialized :: INFO
+03-Jun-22 13:13:32 :: __main__ :: Mission Charlie button initialized :: INFO
+03-Jun-22 13:13:32 :: __main__ :: Mission Delta button initialized :: INFO
+03-Jun-22 13:13:32 :: __main__ :: Mission Echo button initialized :: INFO
+03-Jun-22 13:13:32 :: __main__ :: Mission Fox button initialized :: INFO
+03-Jun-22 13:13:32 :: __main__ :: Mission Golf button initialized :: INFO
+03-Jun-22 13:13:32 :: __main__ :: Mission WiFi scan jam button initialized :: INFO
+03-Jun-22 13:13:32 :: helpers :: finding the log file :: INFO
+03-Jun-22 13:13:32 :: helpers :: file read attempted :: INFO
+03-Jun-22 13:16:52 :: interface :: 
+
+GUI LAUNCHED
+
+ :: INFO
+03-Jun-22 13:16:52 :: interface :: Getting the port name of device :: INFO
+03-Jun-22 13:16:52 :: interface :: find_device function executing linux shell command to get device file names :: INFO
+03-Jun-22 13:16:52 :: interface :: Connected Devices: ['/dev/ttyACM0', '/dev/ttyACM1', '/dev/ttyACM2', '/dev/ttyACM3', '/dev/ttyACM4', '/dev/ttyACM5', '/dev/ttyACM6'] :: INFO
+03-Jun-22 13:16:52 :: interface :: Chosen Device: /dev/ttyACM0 :: DEBUG
+03-Jun-22 13:16:52 :: interface :: Connected device path: /dev/ttyACM0 :: INFO
+03-Jun-22 13:16:52 :: interface :: class Megatron initialized :: INFO
+03-Jun-22 13:16:52 :: interface :: EOF :: DEBUG
+03-Jun-22 13:16:52 :: helpers :: class Megatron instatiated :: INFO
+03-Jun-22 13:16:52 :: helpers :: Remote colors initialized :: INFO
+03-Jun-22 13:16:53 :: helpers :: Devices found: ['/dev/ttyACM4 - Teensyduino_USB_Serial_11192840', '/dev/ttyACM6 - Teensyduino_USB_Serial_11191020', '/dev/ttyACM1 - Teensyduino_USB_Serial_10100040', '/dev/ttyACM0 - Teensyduino_USB_Serial_11192830', '/dev/ttyACM3 - Teensyduino_USB_Serial_11192600', '/dev/ttyACM5 - Teensyduino_USB_Serial_11191000', '/dev/ttyACM2 - Teensyduino_USB_Serial_8771180'] | device_names :: INFO
+03-Jun-22 13:16:53 :: helpers :: EOF :: DEBUG
+03-Jun-22 13:16:53 :: __main__ :: Imports imported in GUI file :: INFO
+03-Jun-22 13:16:53 :: __main__ :: creating dpg context :: INFO
+03-Jun-22 13:16:53 :: __main__ :: Set save state of MGTron API to True :: INFO
+03-Jun-22 13:16:53 :: interface :: Serial call to device initiated :: DEBUG
+03-Jun-22 13:16:53 :: interface :: baudrate set from serial_call :: DEBUG
+03-Jun-22 13:16:53 :: interface :: Serial device set from serial_call :: DEBUG
+03-Jun-22 13:16:53 :: interface :: timeout set from serial_call :: DEBUG
+03-Jun-22 13:16:53 :: interface :: opening serial connection from serial_call :: DEBUG
+03-Jun-22 13:16:53 :: interface :: information send via serial protocol; serial_call :: DEBUG
+03-Jun-22 13:16:53 :: interface :: save_state function executed :: INFO
+03-Jun-22 13:16:53 :: helpers :: Config file already filled :: INFO
+03-Jun-22 13:16:53 :: __main__ :: Setting GUI colors :: INFO
+03-Jun-22 13:16:53 :: __main__ :: GUI colors set :: INFO
+03-Jun-22 13:16:53 :: __main__ :: Setting Primary Window in GUI file :: INFO
+03-Jun-22 13:16:53 :: __main__ :: RESET ALL button initialized :: INFO
+03-Jun-22 13:16:53 :: __main__ :: SEND ALL button initialized :: INFO
+03-Jun-22 13:16:53 :: __main__ :: Quick save button initialized :: INFO
+03-Jun-22 13:16:53 :: __main__ :: Quick Load button initialized :: INFO
+03-Jun-22 13:16:53 :: __main__ :: Custom Save button initialized :: INFO
+03-Jun-22 13:16:53 :: __main__ :: Custom Load button initialized :: INFO
+03-Jun-22 13:16:53 :: __main__ :: Alpha button initialized :: INFO
+03-Jun-22 13:16:53 :: __main__ :: Bravo button initialized :: INFO
+03-Jun-22 13:16:53 :: __main__ :: Mission Charlie button initialized :: INFO
+03-Jun-22 13:16:53 :: __main__ :: Mission Delta button initialized :: INFO
+03-Jun-22 13:16:53 :: __main__ :: Mission Echo button initialized :: INFO
+03-Jun-22 13:16:53 :: __main__ :: Mission Fox button initialized :: INFO
+03-Jun-22 13:16:53 :: __main__ :: Mission Golf button initialized :: INFO
+03-Jun-22 13:16:53 :: __main__ :: Mission WiFi scan jam button initialized :: INFO
+03-Jun-22 13:16:53 :: helpers :: finding the log file :: INFO
+03-Jun-22 13:16:53 :: helpers :: file read attempted :: INFO
+03-Jun-22 13:16:53 :: helpers :: INI config file matched devices detected | config_intake :: INFO
+03-Jun-22 13:16:53 :: helpers :: INI config file matched devices detected | config_intake :: INFO
+03-Jun-22 13:16:53 :: helpers :: INI config file matched devices detected | config_intake :: INFO
+03-Jun-22 13:16:53 :: helpers :: INI config file matched devices detected | config_intake :: INFO
+03-Jun-22 13:16:53 :: helpers :: INI config file matched devices detected | config_intake :: INFO
+03-Jun-22 13:16:53 :: helpers :: INI config file matched devices detected | config_intake :: INFO
+03-Jun-22 13:16:53 :: helpers :: INI config file matched devices detected | config_intake :: INFO
+03-Jun-22 13:17:53 :: interface :: 
+
+GUI LAUNCHED
+
+ :: INFO
+03-Jun-22 13:17:53 :: interface :: Getting the port name of device :: INFO
+03-Jun-22 13:17:53 :: interface :: find_device function executing linux shell command to get device file names :: INFO
+03-Jun-22 13:17:53 :: interface :: Connected Devices: ['/dev/ttyACM0', '/dev/ttyACM1', '/dev/ttyACM2', '/dev/ttyACM3', '/dev/ttyACM4', '/dev/ttyACM5', '/dev/ttyACM6'] :: INFO
+03-Jun-22 13:17:53 :: interface :: Chosen Device: /dev/ttyACM0 :: DEBUG
+03-Jun-22 13:17:53 :: interface :: Connected device path: /dev/ttyACM0 :: INFO
+03-Jun-22 13:17:53 :: interface :: class Megatron initialized :: INFO
+03-Jun-22 13:17:53 :: interface :: EOF :: DEBUG
+03-Jun-22 13:17:53 :: helpers :: class Megatron instatiated :: INFO
+03-Jun-22 13:17:53 :: helpers :: Remote colors initialized :: INFO
+03-Jun-22 13:17:53 :: helpers :: Devices found: ['/dev/ttyACM4 - Teensyduino_USB_Serial_11192840', '/dev/ttyACM6 - Teensyduino_USB_Serial_11191020', '/dev/ttyACM1 - Teensyduino_USB_Serial_10100040', '/dev/ttyACM0 - Teensyduino_USB_Serial_11192830', '/dev/ttyACM3 - Teensyduino_USB_Serial_11192600', '/dev/ttyACM5 - Teensyduino_USB_Serial_11191000', '/dev/ttyACM2 - Teensyduino_USB_Serial_8771180'] | device_names :: INFO
+03-Jun-22 13:17:53 :: helpers :: EOF :: DEBUG
+03-Jun-22 13:17:53 :: __main__ :: Imports imported in GUI file :: INFO
+03-Jun-22 13:17:53 :: __main__ :: creating dpg context :: INFO
+03-Jun-22 13:17:53 :: __main__ :: Set save state of MGTron API to True :: INFO
+03-Jun-22 13:17:53 :: interface :: Serial call to device initiated :: DEBUG
+03-Jun-22 13:17:53 :: interface :: baudrate set from serial_call :: DEBUG
+03-Jun-22 13:17:53 :: interface :: Serial device set from serial_call :: DEBUG
+03-Jun-22 13:17:53 :: interface :: timeout set from serial_call :: DEBUG
+03-Jun-22 13:17:53 :: interface :: opening serial connection from serial_call :: DEBUG
+03-Jun-22 13:17:53 :: interface :: information send via serial protocol; serial_call :: DEBUG
+03-Jun-22 13:17:53 :: interface :: save_state function executed :: INFO
+03-Jun-22 13:17:53 :: helpers :: Config file already filled :: INFO
+03-Jun-22 13:17:53 :: __main__ :: Setting GUI colors :: INFO
+03-Jun-22 13:17:53 :: __main__ :: GUI colors set :: INFO
+03-Jun-22 13:17:53 :: __main__ :: Setting Primary Window in GUI file :: INFO
+03-Jun-22 13:17:53 :: __main__ :: RESET ALL button initialized :: INFO
+03-Jun-22 13:17:53 :: __main__ :: SEND ALL button initialized :: INFO
+03-Jun-22 13:17:53 :: __main__ :: Quick save button initialized :: INFO
+03-Jun-22 13:17:53 :: __main__ :: Quick Load button initialized :: INFO
+03-Jun-22 13:17:53 :: __main__ :: Custom Save button initialized :: INFO
+03-Jun-22 13:17:53 :: __main__ :: Custom Load button initialized :: INFO
+03-Jun-22 13:17:53 :: __main__ :: Alpha button initialized :: INFO
+03-Jun-22 13:17:53 :: __main__ :: Bravo button initialized :: INFO
+03-Jun-22 13:17:53 :: __main__ :: Mission Charlie button initialized :: INFO
+03-Jun-22 13:17:53 :: __main__ :: Mission Delta button initialized :: INFO
+03-Jun-22 13:17:53 :: __main__ :: Mission Echo button initialized :: INFO
+03-Jun-22 13:17:53 :: __main__ :: Mission Fox button initialized :: INFO
+03-Jun-22 13:17:53 :: __main__ :: Mission Golf button initialized :: INFO
+03-Jun-22 13:17:53 :: __main__ :: Mission WiFi scan jam button initialized :: INFO
+03-Jun-22 13:17:53 :: helpers :: finding the log file :: INFO
+03-Jun-22 13:17:53 :: helpers :: file read attempted :: INFO
+03-Jun-22 13:17:53 :: helpers :: INI config file matched devices detected | config_intake :: INFO
+03-Jun-22 13:17:53 :: helpers :: INI config file matched devices detected | config_intake :: INFO
+03-Jun-22 13:17:53 :: helpers :: INI config file matched devices detected | config_intake :: INFO
+03-Jun-22 13:17:53 :: helpers :: INI config file matched devices detected | config_intake :: INFO
+03-Jun-22 13:17:53 :: helpers :: INI config file matched devices detected | config_intake :: INFO
+03-Jun-22 13:17:53 :: helpers :: INI config file matched devices detected | config_intake :: INFO
+03-Jun-22 13:17:53 :: helpers :: INI config file matched devices detected | config_intake :: INFO
+03-Jun-22 13:18:03 :: interface :: 
+
+GUI LAUNCHED
+
+ :: INFO
+03-Jun-22 13:18:03 :: interface :: Getting the port name of device :: INFO
+03-Jun-22 13:18:03 :: interface :: find_device function executing linux shell command to get device file names :: INFO
+03-Jun-22 13:18:03 :: interface :: Connected Devices: ['/dev/ttyACM1', '/dev/ttyACM2', '/dev/ttyACM3', '/dev/ttyACM4', '/dev/ttyACM5', '/dev/ttyACM6'] :: INFO
+03-Jun-22 13:18:03 :: interface :: Chosen Device: /dev/ttyACM1 :: DEBUG
+03-Jun-22 13:18:03 :: interface :: Connected device path: /dev/ttyACM1 :: INFO
+03-Jun-22 13:18:03 :: interface :: class Megatron initialized :: INFO
+03-Jun-22 13:18:03 :: interface :: EOF :: DEBUG
+03-Jun-22 13:18:03 :: helpers :: class Megatron instatiated :: INFO
+03-Jun-22 13:18:03 :: helpers :: Remote colors initialized :: INFO
+03-Jun-22 13:18:03 :: helpers :: Devices found: ['/dev/ttyACM4 - Teensyduino_USB_Serial_11192840', '/dev/ttyACM6 - Teensyduino_USB_Serial_11191020', '/dev/ttyACM1 - Teensyduino_USB_Serial_10100040', '/dev/ttyACM3 - Teensyduino_USB_Serial_11192600', '/dev/ttyACM5 - Teensyduino_USB_Serial_11191000', '/dev/ttyACM2 - Teensyduino_USB_Serial_8771180'] | device_names :: INFO
+03-Jun-22 13:18:03 :: helpers :: EOF :: DEBUG
+03-Jun-22 13:18:03 :: __main__ :: Imports imported in GUI file :: INFO
+03-Jun-22 13:18:03 :: __main__ :: creating dpg context :: INFO
+03-Jun-22 13:18:03 :: __main__ :: Set save state of MGTron API to True :: INFO
+03-Jun-22 13:18:03 :: interface :: Serial call to device initiated :: DEBUG
+03-Jun-22 13:18:03 :: interface :: baudrate set from serial_call :: DEBUG
+03-Jun-22 13:18:03 :: interface :: Serial device set from serial_call :: DEBUG
+03-Jun-22 13:18:03 :: interface :: timeout set from serial_call :: DEBUG
+03-Jun-22 13:18:03 :: interface :: opening serial connection from serial_call :: DEBUG
+03-Jun-22 13:18:03 :: interface :: information send via serial protocol; serial_call :: DEBUG
+03-Jun-22 13:18:03 :: interface :: save_state function executed :: INFO
+03-Jun-22 13:18:03 :: helpers :: Config file already filled :: INFO
+03-Jun-22 13:18:03 :: __main__ :: Setting GUI colors :: INFO
+03-Jun-22 13:18:03 :: __main__ :: GUI colors set :: INFO
+03-Jun-22 13:18:03 :: __main__ :: Setting Primary Window in GUI file :: INFO
+03-Jun-22 13:18:03 :: __main__ :: RESET ALL button initialized :: INFO
+03-Jun-22 13:18:03 :: __main__ :: SEND ALL button initialized :: INFO
+03-Jun-22 13:18:03 :: __main__ :: Quick save button initialized :: INFO
+03-Jun-22 13:18:03 :: __main__ :: Quick Load button initialized :: INFO
+03-Jun-22 13:18:03 :: __main__ :: Custom Save button initialized :: INFO
+03-Jun-22 13:18:03 :: __main__ :: Custom Load button initialized :: INFO
+03-Jun-22 13:18:03 :: __main__ :: Alpha button initialized :: INFO
+03-Jun-22 13:18:03 :: __main__ :: Bravo button initialized :: INFO
+03-Jun-22 13:18:03 :: __main__ :: Mission Charlie button initialized :: INFO
+03-Jun-22 13:18:03 :: __main__ :: Mission Delta button initialized :: INFO
+03-Jun-22 13:18:03 :: __main__ :: Mission Echo button initialized :: INFO
+03-Jun-22 13:18:03 :: __main__ :: Mission Fox button initialized :: INFO
+03-Jun-22 13:18:03 :: __main__ :: Mission Golf button initialized :: INFO
+03-Jun-22 13:18:03 :: __main__ :: Mission WiFi scan jam button initialized :: INFO
+03-Jun-22 13:18:03 :: helpers :: finding the log file :: INFO
+03-Jun-22 13:18:03 :: helpers :: file read attempted :: INFO
+03-Jun-22 13:18:03 :: helpers :: Config ID not detected by devices on x86_64 | config_intake :: INFO
+03-Jun-22 13:18:03 :: helpers :: Config ID not detected by devices on x86_64 | config_intake :: INFO
+03-Jun-22 13:18:03 :: helpers :: Config ID not detected by devices on x86_64 | config_intake :: INFO
+03-Jun-22 13:18:03 :: helpers :: Config ID not detected by devices on x86_64 | config_intake :: INFO
+03-Jun-22 13:18:03 :: helpers :: Config ID not detected by devices on x86_64 | config_intake :: INFO
+03-Jun-22 13:18:03 :: helpers :: Config ID not detected by devices on x86_64 | config_intake :: INFO
+03-Jun-22 13:18:26 :: interface :: 
+
+GUI LAUNCHED
+
+ :: INFO
+03-Jun-22 13:18:26 :: interface :: Getting the port name of device :: INFO
+03-Jun-22 13:18:26 :: interface :: find_device function executing linux shell command to get device file names :: INFO
+03-Jun-22 13:18:26 :: interface :: Connected Devices: ['/dev/ttyACM1', '/dev/ttyACM2', '/dev/ttyACM3', '/dev/ttyACM4', '/dev/ttyACM5', '/dev/ttyACM6'] :: INFO
+03-Jun-22 13:18:26 :: interface :: Chosen Device: /dev/ttyACM1 :: DEBUG
+03-Jun-22 13:18:26 :: interface :: Connected device path: /dev/ttyACM1 :: INFO
+03-Jun-22 13:18:26 :: interface :: class Megatron initialized :: INFO
+03-Jun-22 13:18:26 :: interface :: EOF :: DEBUG
+03-Jun-22 13:18:26 :: helpers :: class Megatron instatiated :: INFO
+03-Jun-22 13:18:26 :: helpers :: Remote colors initialized :: INFO
+03-Jun-22 13:18:27 :: helpers :: Devices found: ['/dev/ttyACM4 - Teensyduino_USB_Serial_11192840', '/dev/ttyACM6 - Teensyduino_USB_Serial_11191020', '/dev/ttyACM1 - Teensyduino_USB_Serial_10100040', '/dev/ttyACM3 - Teensyduino_USB_Serial_11192600', '/dev/ttyACM5 - Teensyduino_USB_Serial_11191000', '/dev/ttyACM2 - Teensyduino_USB_Serial_8771180'] | device_names :: INFO
+03-Jun-22 13:18:27 :: helpers :: EOF :: DEBUG
+03-Jun-22 13:18:27 :: __main__ :: Imports imported in GUI file :: INFO
+03-Jun-22 13:18:27 :: __main__ :: creating dpg context :: INFO
+03-Jun-22 13:18:27 :: __main__ :: Set save state of MGTron API to True :: INFO
+03-Jun-22 13:18:27 :: interface :: Serial call to device initiated :: DEBUG
+03-Jun-22 13:18:27 :: interface :: baudrate set from serial_call :: DEBUG
+03-Jun-22 13:18:27 :: interface :: Serial device set from serial_call :: DEBUG
+03-Jun-22 13:18:27 :: interface :: timeout set from serial_call :: DEBUG
+03-Jun-22 13:18:27 :: interface :: opening serial connection from serial_call :: DEBUG
+03-Jun-22 13:18:27 :: interface :: information send via serial protocol; serial_call :: DEBUG
+03-Jun-22 13:18:27 :: interface :: save_state function executed :: INFO
+03-Jun-22 13:18:27 :: helpers :: Config file already filled :: INFO
+03-Jun-22 13:18:27 :: __main__ :: Setting GUI colors :: INFO
+03-Jun-22 13:18:27 :: __main__ :: GUI colors set :: INFO
+03-Jun-22 13:18:27 :: __main__ :: Setting Primary Window in GUI file :: INFO
+03-Jun-22 13:18:27 :: __main__ :: RESET ALL button initialized :: INFO
+03-Jun-22 13:18:27 :: __main__ :: SEND ALL button initialized :: INFO
+03-Jun-22 13:18:27 :: __main__ :: Quick save button initialized :: INFO
+03-Jun-22 13:18:27 :: __main__ :: Quick Load button initialized :: INFO
+03-Jun-22 13:18:27 :: __main__ :: Custom Save button initialized :: INFO
+03-Jun-22 13:18:27 :: __main__ :: Custom Load button initialized :: INFO
+03-Jun-22 13:18:27 :: __main__ :: Alpha button initialized :: INFO
+03-Jun-22 13:18:27 :: __main__ :: Bravo button initialized :: INFO
+03-Jun-22 13:18:27 :: __main__ :: Mission Charlie button initialized :: INFO
+03-Jun-22 13:18:27 :: __main__ :: Mission Delta button initialized :: INFO
+03-Jun-22 13:18:27 :: __main__ :: Mission Echo button initialized :: INFO
+03-Jun-22 13:18:27 :: __main__ :: Mission Fox button initialized :: INFO
+03-Jun-22 13:18:27 :: __main__ :: Mission Golf button initialized :: INFO
+03-Jun-22 13:18:27 :: __main__ :: Mission WiFi scan jam button initialized :: INFO
+03-Jun-22 13:18:27 :: helpers :: finding the log file :: INFO
+03-Jun-22 13:18:27 :: helpers :: file read attempted :: INFO
+03-Jun-22 13:18:27 :: helpers :: Config ID not detected by devices on x86_64 | config_intake :: INFO
+03-Jun-22 13:18:27 :: helpers :: Config ID not detected by devices on x86_64 | config_intake :: INFO
+03-Jun-22 13:18:27 :: helpers :: Config ID not detected by devices on x86_64 | config_intake :: INFO
+03-Jun-22 13:18:27 :: helpers :: Config ID not detected by devices on x86_64 | config_intake :: INFO
+03-Jun-22 13:18:27 :: helpers :: Config ID not detected by devices on x86_64 | config_intake :: INFO
+03-Jun-22 13:18:27 :: helpers :: Config ID not detected by devices on x86_64 | config_intake :: INFO
+03-Jun-22 13:18:41 :: interface :: 
+
+GUI LAUNCHED
+
+ :: INFO
+03-Jun-22 13:18:41 :: interface :: Getting the port name of device :: INFO
+03-Jun-22 13:18:41 :: interface :: find_device function executing linux shell command to get device file names :: INFO
+03-Jun-22 13:18:41 :: interface :: Connected Devices: ['/dev/ttyACM0', '/dev/ttyACM1', '/dev/ttyACM2', '/dev/ttyACM3', '/dev/ttyACM4', '/dev/ttyACM5', '/dev/ttyACM6'] :: INFO
+03-Jun-22 13:18:41 :: interface :: Chosen Device: /dev/ttyACM0 :: DEBUG
+03-Jun-22 13:18:41 :: interface :: Connected device path: /dev/ttyACM0 :: INFO
+03-Jun-22 13:18:41 :: interface :: class Megatron initialized :: INFO
+03-Jun-22 13:18:41 :: interface :: EOF :: DEBUG
+03-Jun-22 13:18:41 :: helpers :: class Megatron instatiated :: INFO
+03-Jun-22 13:18:41 :: helpers :: Remote colors initialized :: INFO
+03-Jun-22 13:18:41 :: helpers :: Devices found: ['/dev/ttyACM4 - Teensyduino_USB_Serial_11192840', '/dev/ttyACM6 - Teensyduino_USB_Serial_11191020', '/dev/ttyACM1 - Teensyduino_USB_Serial_10100040', '/dev/ttyACM0 - Teensyduino_USB_Serial_11192830', '/dev/ttyACM3 - Teensyduino_USB_Serial_11192600', '/dev/ttyACM5 - Teensyduino_USB_Serial_11191000', '/dev/ttyACM2 - Teensyduino_USB_Serial_8771180'] | device_names :: INFO
+03-Jun-22 13:18:41 :: helpers :: EOF :: DEBUG
+03-Jun-22 13:18:41 :: __main__ :: Imports imported in GUI file :: INFO
+03-Jun-22 13:18:41 :: __main__ :: creating dpg context :: INFO
+03-Jun-22 13:18:41 :: __main__ :: Set save state of MGTron API to True :: INFO
+03-Jun-22 13:18:41 :: interface :: Serial call to device initiated :: DEBUG
+03-Jun-22 13:18:41 :: interface :: baudrate set from serial_call :: DEBUG
+03-Jun-22 13:18:41 :: interface :: Serial device set from serial_call :: DEBUG
+03-Jun-22 13:18:41 :: interface :: timeout set from serial_call :: DEBUG
+03-Jun-22 13:18:41 :: interface :: opening serial connection from serial_call :: DEBUG
+03-Jun-22 13:18:41 :: interface :: information send via serial protocol; serial_call :: DEBUG
+03-Jun-22 13:18:41 :: interface :: save_state function executed :: INFO
+03-Jun-22 13:18:41 :: helpers :: Config file already filled :: INFO
+03-Jun-22 13:18:41 :: __main__ :: Setting GUI colors :: INFO
+03-Jun-22 13:18:41 :: __main__ :: GUI colors set :: INFO
+03-Jun-22 13:18:41 :: __main__ :: Setting Primary Window in GUI file :: INFO
+03-Jun-22 13:18:41 :: __main__ :: RESET ALL button initialized :: INFO
+03-Jun-22 13:18:41 :: __main__ :: SEND ALL button initialized :: INFO
+03-Jun-22 13:18:41 :: __main__ :: Quick save button initialized :: INFO
+03-Jun-22 13:18:41 :: __main__ :: Quick Load button initialized :: INFO
+03-Jun-22 13:18:41 :: __main__ :: Custom Save button initialized :: INFO
+03-Jun-22 13:18:41 :: __main__ :: Custom Load button initialized :: INFO
+03-Jun-22 13:18:41 :: __main__ :: Alpha button initialized :: INFO
+03-Jun-22 13:18:41 :: __main__ :: Bravo button initialized :: INFO
+03-Jun-22 13:18:41 :: __main__ :: Mission Charlie button initialized :: INFO
+03-Jun-22 13:18:41 :: __main__ :: Mission Delta button initialized :: INFO
+03-Jun-22 13:18:41 :: __main__ :: Mission Echo button initialized :: INFO
+03-Jun-22 13:18:41 :: __main__ :: Mission Fox button initialized :: INFO
+03-Jun-22 13:18:41 :: __main__ :: Mission Golf button initialized :: INFO
+03-Jun-22 13:18:41 :: __main__ :: Mission WiFi scan jam button initialized :: INFO
+03-Jun-22 13:18:41 :: helpers :: finding the log file :: INFO
+03-Jun-22 13:18:41 :: helpers :: file read attempted :: INFO
+03-Jun-22 13:18:41 :: helpers :: INI config file matched devices detected | config_intake :: INFO
+03-Jun-22 13:18:41 :: helpers :: INI config file matched devices detected | config_intake :: INFO
+03-Jun-22 13:18:41 :: helpers :: INI config file matched devices detected | config_intake :: INFO
+03-Jun-22 13:18:41 :: helpers :: INI config file matched devices detected | config_intake :: INFO
+03-Jun-22 13:18:41 :: helpers :: INI config file matched devices detected | config_intake :: INFO
+03-Jun-22 13:18:41 :: helpers :: INI config file matched devices detected | config_intake :: INFO
+03-Jun-22 13:18:41 :: helpers :: INI config file matched devices detected | config_intake :: INFO
+03-Jun-22 13:32:50 :: interface :: 
+
+GUI LAUNCHED
+
+ :: INFO
+03-Jun-22 13:32:50 :: interface :: Getting the port name of device :: INFO
+03-Jun-22 13:32:50 :: interface :: find_device function executing linux shell command to get device file names :: INFO
+03-Jun-22 13:32:50 :: interface :: Connected Devices: ['/dev/ttyACM0', '/dev/ttyACM1', '/dev/ttyACM2', '/dev/ttyACM3', '/dev/ttyACM4', '/dev/ttyACM5', '/dev/ttyACM6'] :: INFO
+03-Jun-22 13:32:50 :: interface :: Chosen Device: /dev/ttyACM0 :: DEBUG
+03-Jun-22 13:32:50 :: interface :: Connected device path: /dev/ttyACM0 :: INFO
+03-Jun-22 13:32:50 :: interface :: class Megatron initialized :: INFO
+03-Jun-22 13:32:50 :: interface :: EOF :: DEBUG
+03-Jun-22 13:32:50 :: helpers :: class Megatron instatiated :: INFO
+03-Jun-22 13:32:50 :: helpers :: Remote colors initialized :: INFO
+03-Jun-22 13:32:50 :: helpers :: Devices found: ['/dev/ttyACM4 - Teensyduino_USB_Serial_11192840', '/dev/ttyACM6 - Teensyduino_USB_Serial_11191020', '/dev/ttyACM1 - Teensyduino_USB_Serial_10100040', '/dev/ttyACM0 - Teensyduino_USB_Serial_11192830', '/dev/ttyACM3 - Teensyduino_USB_Serial_11192600', '/dev/ttyACM5 - Teensyduino_USB_Serial_11191000', '/dev/ttyACM2 - Teensyduino_USB_Serial_8771180'] | device_names :: INFO
+03-Jun-22 13:32:50 :: helpers :: EOF :: DEBUG
+03-Jun-22 13:32:50 :: __main__ :: Imports imported in GUI file :: INFO
+03-Jun-22 13:32:50 :: __main__ :: creating dpg context :: INFO
+03-Jun-22 13:32:50 :: __main__ :: Set save state of MGTron API to True :: INFO
+03-Jun-22 13:32:50 :: interface :: Serial call to device initiated :: DEBUG
+03-Jun-22 13:32:50 :: interface :: baudrate set from serial_call :: DEBUG
+03-Jun-22 13:32:50 :: interface :: Serial device set from serial_call :: DEBUG
+03-Jun-22 13:32:50 :: interface :: timeout set from serial_call :: DEBUG
+03-Jun-22 13:32:50 :: interface :: opening serial connection from serial_call :: DEBUG
+03-Jun-22 13:32:50 :: interface :: information send via serial protocol; serial_call :: DEBUG
+03-Jun-22 13:32:50 :: interface :: save_state function executed :: INFO
+03-Jun-22 13:32:50 :: helpers :: Config file already filled :: INFO
+03-Jun-22 13:32:50 :: __main__ :: Setting GUI colors :: INFO
+03-Jun-22 13:32:50 :: __main__ :: GUI colors set :: INFO
+03-Jun-22 13:32:50 :: __main__ :: Setting Primary Window in GUI file :: INFO
+03-Jun-22 13:32:50 :: __main__ :: RESET ALL button initialized :: INFO
+03-Jun-22 13:32:50 :: __main__ :: SEND ALL button initialized :: INFO
+03-Jun-22 13:32:50 :: __main__ :: Quick save button initialized :: INFO
+03-Jun-22 13:32:50 :: __main__ :: Quick Load button initialized :: INFO
+03-Jun-22 13:32:50 :: __main__ :: Custom Save button initialized :: INFO
+03-Jun-22 13:32:50 :: __main__ :: Custom Load button initialized :: INFO
+03-Jun-22 13:32:50 :: __main__ :: Alpha button initialized :: INFO
+03-Jun-22 13:32:50 :: __main__ :: Bravo button initialized :: INFO
+03-Jun-22 13:32:50 :: __main__ :: Mission Charlie button initialized :: INFO
+03-Jun-22 13:32:50 :: __main__ :: Mission Delta button initialized :: INFO
+03-Jun-22 13:32:50 :: __main__ :: Mission Echo button initialized :: INFO
+03-Jun-22 13:32:50 :: __main__ :: Mission Fox button initialized :: INFO
+03-Jun-22 13:32:50 :: __main__ :: Mission Golf button initialized :: INFO
+03-Jun-22 13:32:50 :: __main__ :: Mission WiFi scan jam button initialized :: INFO
+03-Jun-22 13:32:50 :: helpers :: finding the log file :: INFO
+03-Jun-22 13:32:50 :: helpers :: file read attempted :: INFO
+03-Jun-22 13:32:50 :: helpers :: INI config file matched devices detected | config_intake :: INFO
+03-Jun-22 13:32:50 :: helpers :: INI config file matched devices detected | config_intake :: INFO
+03-Jun-22 13:32:50 :: helpers :: INI config file matched devices detected | config_intake :: INFO
+03-Jun-22 13:32:50 :: helpers :: INI config file matched devices detected | config_intake :: INFO
+03-Jun-22 13:32:50 :: helpers :: INI config file matched devices detected | config_intake :: INFO
+03-Jun-22 13:32:50 :: helpers :: INI config file matched devices detected | config_intake :: INFO
+03-Jun-22 13:32:50 :: helpers :: INI config file matched devices detected | config_intake :: INFO

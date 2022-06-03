@@ -21,6 +21,7 @@ Here we write upgrading and change notes.
 - Automatically fill in config if card_1 is not fillied in
 - Changed name of all mission buttons
 - Added `MISSIONS` above the mission buttons
+- Card buttons turn blue if that number of cards are detected, disabled otherwise.
 
 ## [0.10.0] - 2022 JUN 1
 

@@ -68,6 +68,7 @@ def device_names() -> list[str]:
         return devices
     return sorted(devices)
 
+
 DEVICE: device_names = device_names()
 
 
@@ -496,7 +497,7 @@ def fill_config():
     parser = configparser.ConfigParser()
     parser.read(filenames="card_config.ini", encoding="utf-8")
     config = configparser.ConfigParser()
-    
+
     if not parser["mgtron"]["card_1"]:
         loggey.info(msg="The config file was not populated")
         # Automatically fill in an empty config file
@@ -510,7 +511,7 @@ def fill_config():
             "card_7": str(devices[6].split(sep="_")[-1]),
             "card_8": str(devices[7].split(sep="_")[-1]),
         }
-        
+
         with open(file="card_config.ini", mode="w") as configfile:
             config.write(configfile)
         loggey.info(msg="Config file has been automatically filled")
@@ -533,13 +534,15 @@ def config_intake() -> None:
                 f"card_{card}"
             ]:
                 case True:
-                    devices[card - 1].split("_")[0].split("-")[0]
+                    dpg.bind_item_theme(item=f"card_{card}", theme=blue_btn_theme)
+                    dpg.configure_item(item=f"card_{card}", enabled=True)
+                    # devices[card - 1].split("_")[0].split("-")[0]
                     loggey.info(
                         msg=f"INI config file matched devices detected | {config_intake.__name__}"
                     )
                 case False:
                     loggey.info(
-                        msg=f"Config ID not detected by devices on {platform.system()} | {config_intake.__name__}"
+                        msg=f"Config ID not detected by devices on {platform.machine()} | {config_intake.__name__}"
                     )
         except KeyError:
             loggey.exception(msg="No config file detected")

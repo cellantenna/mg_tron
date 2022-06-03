@@ -734,7 +734,6 @@ with dpg.window(
         border=False,
     ):
 
-        config_intake()
         [
             (
                 dpg.add_button(
@@ -745,12 +744,13 @@ with dpg.window(
                     pos=(0, 85 * card - 72),
                     callback=card_selection,
                     user_data=card,
-                    enabled=True,
+                    enabled=False,
                 ),
-                dpg.bind_item_theme(item=f"card_{card}", theme=grey_btn_theme),
+                #dpg.bind_item_theme(item=f"card_{card}", theme=grey_btn_theme),
             )
             for card in range(1, 9)
         ]
+        config_intake()
 
     ###############
     # Version Tag #
