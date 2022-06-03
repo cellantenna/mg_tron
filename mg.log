@@ -16390,3 +16390,1119 @@ serial.serialutil.SerialException: [Errno 13] could not open port /dev/ttyACM0: 
 31-May-22 12:26:27 :: __main__ :: Mission Charlie button pressed :: INFO
 31-May-22 12:26:27 :: __main__ :: Mission Delta button pressed :: INFO
 31-May-22 12:26:27 :: __main__ :: Mission Echo button pressed :: INFO
+31-May-22 13:10:53 :: interface :: 
+
+GUI LAUNCHED
+
+ :: INFO
+31-May-22 13:10:53 :: interface :: Getting the port name of device :: INFO
+31-May-22 13:10:53 :: interface :: find_device function executing linux shell command to get device file names :: INFO
+31-May-22 13:10:53 :: interface :: Connected Devices: ['/dev/ttyACM0'] :: INFO
+31-May-22 13:10:53 :: interface :: Chosen Device: /dev/ttyACM0 :: DEBUG
+31-May-22 13:10:53 :: interface :: Connected device path: /dev/ttyACM0 :: INFO
+31-May-22 13:10:53 :: interface :: class Megatron initialized :: INFO
+31-May-22 13:10:53 :: interface :: EOF :: DEBUG
+31-May-22 13:10:53 :: helpers :: class Megatron instatiated :: INFO
+31-May-22 13:10:53 :: helpers :: Remote colors initialized :: INFO
+31-May-22 13:10:53 :: helpers :: EOF :: DEBUG
+31-May-22 13:10:53 :: __main__ :: Imports imported in GUI file :: INFO
+31-May-22 13:10:53 :: __main__ :: creating dpg context :: INFO
+31-May-22 13:10:53 :: __main__ :: Set save state of MGTron API to True :: INFO
+31-May-22 13:10:53 :: interface :: Serial call to device initiated :: DEBUG
+31-May-22 13:10:53 :: interface :: baudrate set from serial_call :: DEBUG
+31-May-22 13:10:53 :: interface :: Serial device set from serial_call :: DEBUG
+31-May-22 13:10:53 :: interface :: timeout set from serial_call :: DEBUG
+31-May-22 13:10:53 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/mirza/cellantenna/mgtron_development/mg_tron/venv/lib64/python3.10/site-packages/serial/serialposix.py", line 322, in open
+    self.fd = os.open(self.portstr, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
+PermissionError: [Errno 13] Permission denied: '/dev/ttyACM0'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mirza/cellantenna/mgtron_development/mg_tron/src/gui/interface.py", line 78, in serial_call
+    ser.open()
+  File "/home/mirza/cellantenna/mgtron_development/mg_tron/venv/lib64/python3.10/site-packages/serial/serialposix.py", line 325, in open
+    raise SerialException(msg.errno, "could not open port {}: {}".format(self._port, msg))
+serial.serialutil.SerialException: [Errno 13] could not open port /dev/ttyACM0: [Errno 13] Permission denied: '/dev/ttyACM0'
+31-May-22 13:10:53 :: interface :: save_state function executed :: INFO
+31-May-22 13:10:53 :: __main__ :: Setting GUI colors :: INFO
+31-May-22 13:10:53 :: __main__ :: GUI colors set :: INFO
+31-May-22 13:10:53 :: __main__ :: Setting Primary Window in GUI file :: INFO
+31-May-22 13:10:53 :: __main__ :: RESET ALL button pressed :: INFO
+31-May-22 13:10:53 :: __main__ :: SEND ALL button pressed :: INFO
+31-May-22 13:10:53 :: __main__ :: Quick save button pressed :: INFO
+31-May-22 13:10:53 :: __main__ :: Quick Load button pressed :: INFO
+31-May-22 13:10:53 :: __main__ :: Custom Save button pressed :: INFO
+31-May-22 13:10:53 :: __main__ :: Custom Load button pressed :: INFO
+31-May-22 13:10:53 :: __main__ :: Demo 1 button pressed :: INFO
+31-May-22 13:10:53 :: __main__ :: Demo 2 button pressed :: INFO
+31-May-22 13:10:53 :: __main__ :: Mission Alpha button pressed :: INFO
+31-May-22 13:10:53 :: __main__ :: Mission Bravo button pressed :: INFO
+31-May-22 13:10:53 :: __main__ :: WIFI preset button pressed :: INFO
+31-May-22 13:10:53 :: __main__ :: Mission Charlie button pressed :: INFO
+31-May-22 13:10:53 :: __main__ :: Mission Delta button pressed :: INFO
+31-May-22 13:10:53 :: __main__ :: Mission Echo button pressed :: INFO
+31-May-22 13:10:57 :: helpers :: app data: -1 :: INFO
+31-May-22 13:10:58 :: helpers :: app data: -1 :: INFO
+31-May-22 13:34:09 :: interface :: 
+
+GUI LAUNCHED
+
+ :: INFO
+31-May-22 13:34:09 :: interface :: Getting the port name of device :: INFO
+31-May-22 13:34:09 :: interface :: find_device function executing linux shell command to get device file names :: INFO
+31-May-22 13:34:09 :: interface :: Connected Devices: ['/dev/ttyACM0'] :: INFO
+31-May-22 13:34:09 :: interface :: Chosen Device: /dev/ttyACM0 :: DEBUG
+31-May-22 13:34:09 :: interface :: Connected device path: /dev/ttyACM0 :: INFO
+31-May-22 13:34:09 :: interface :: class Megatron initialized :: INFO
+31-May-22 13:34:09 :: interface :: EOF :: DEBUG
+31-May-22 13:34:09 :: helpers :: class Megatron instatiated :: INFO
+31-May-22 13:34:09 :: helpers :: Remote colors initialized :: INFO
+31-May-22 13:34:09 :: helpers :: EOF :: DEBUG
+31-May-22 13:34:09 :: __main__ :: Imports imported in GUI file :: INFO
+31-May-22 13:34:09 :: __main__ :: creating dpg context :: INFO
+31-May-22 13:34:09 :: __main__ :: Set save state of MGTron API to True :: INFO
+31-May-22 13:34:09 :: interface :: Serial call to device initiated :: DEBUG
+31-May-22 13:34:09 :: interface :: baudrate set from serial_call :: DEBUG
+31-May-22 13:34:09 :: interface :: Serial device set from serial_call :: DEBUG
+31-May-22 13:34:09 :: interface :: timeout set from serial_call :: DEBUG
+31-May-22 13:34:09 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/mirza/cellantenna/mgtron_development/mg_tron/venv/lib64/python3.10/site-packages/serial/serialposix.py", line 322, in open
+    self.fd = os.open(self.portstr, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
+PermissionError: [Errno 13] Permission denied: '/dev/ttyACM0'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mirza/cellantenna/mgtron_development/mg_tron/src/gui/interface.py", line 78, in serial_call
+    ser.open()
+  File "/home/mirza/cellantenna/mgtron_development/mg_tron/venv/lib64/python3.10/site-packages/serial/serialposix.py", line 325, in open
+    raise SerialException(msg.errno, "could not open port {}: {}".format(self._port, msg))
+serial.serialutil.SerialException: [Errno 13] could not open port /dev/ttyACM0: [Errno 13] Permission denied: '/dev/ttyACM0'
+31-May-22 13:34:09 :: interface :: save_state function executed :: INFO
+31-May-22 13:34:09 :: __main__ :: Setting GUI colors :: INFO
+31-May-22 13:34:09 :: __main__ :: GUI colors set :: INFO
+31-May-22 13:34:09 :: __main__ :: Setting Primary Window in GUI file :: INFO
+31-May-22 13:34:09 :: __main__ :: RESET ALL button pressed :: INFO
+31-May-22 13:34:09 :: __main__ :: SEND ALL button pressed :: INFO
+31-May-22 13:34:09 :: __main__ :: Quick save button pressed :: INFO
+31-May-22 13:34:09 :: __main__ :: Quick Load button pressed :: INFO
+31-May-22 13:34:09 :: __main__ :: Custom Save button pressed :: INFO
+31-May-22 13:34:09 :: __main__ :: Custom Load button pressed :: INFO
+31-May-22 13:34:09 :: __main__ :: Demo 1 button pressed :: INFO
+31-May-22 13:34:09 :: __main__ :: Demo 2 button pressed :: INFO
+31-May-22 13:34:09 :: __main__ :: Mission Alpha button pressed :: INFO
+31-May-22 13:34:09 :: __main__ :: Mission Bravo button pressed :: INFO
+31-May-22 13:34:09 :: __main__ :: WIFI preset button pressed :: INFO
+31-May-22 13:34:09 :: __main__ :: Mission Charlie button pressed :: INFO
+31-May-22 13:34:09 :: __main__ :: Mission Delta button pressed :: INFO
+31-May-22 13:34:09 :: __main__ :: Mission Echo button pressed :: INFO
+31-May-22 13:34:42 :: interface :: 
+
+GUI LAUNCHED
+
+ :: INFO
+31-May-22 13:34:42 :: interface :: Getting the port name of device :: INFO
+31-May-22 13:34:42 :: interface :: find_device function executing linux shell command to get device file names :: INFO
+31-May-22 13:34:42 :: interface :: Connected Devices: ['/dev/ttyACM0'] :: INFO
+31-May-22 13:34:42 :: interface :: Chosen Device: /dev/ttyACM0 :: DEBUG
+31-May-22 13:34:42 :: interface :: Connected device path: /dev/ttyACM0 :: INFO
+31-May-22 13:34:42 :: interface :: class Megatron initialized :: INFO
+31-May-22 13:34:42 :: interface :: EOF :: DEBUG
+31-May-22 13:34:42 :: helpers :: class Megatron instatiated :: INFO
+31-May-22 13:34:42 :: helpers :: Remote colors initialized :: INFO
+31-May-22 13:34:42 :: helpers :: EOF :: DEBUG
+31-May-22 13:34:42 :: __main__ :: Imports imported in GUI file :: INFO
+31-May-22 13:34:42 :: __main__ :: creating dpg context :: INFO
+31-May-22 13:34:42 :: __main__ :: Set save state of MGTron API to True :: INFO
+31-May-22 13:34:42 :: interface :: Serial call to device initiated :: DEBUG
+31-May-22 13:34:42 :: interface :: baudrate set from serial_call :: DEBUG
+31-May-22 13:34:42 :: interface :: Serial device set from serial_call :: DEBUG
+31-May-22 13:34:42 :: interface :: timeout set from serial_call :: DEBUG
+31-May-22 13:34:42 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/mirza/cellantenna/mgtron_development/mg_tron/venv/lib64/python3.10/site-packages/serial/serialposix.py", line 322, in open
+    self.fd = os.open(self.portstr, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
+PermissionError: [Errno 13] Permission denied: '/dev/ttyACM0'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mirza/cellantenna/mgtron_development/mg_tron/src/gui/interface.py", line 78, in serial_call
+    ser.open()
+  File "/home/mirza/cellantenna/mgtron_development/mg_tron/venv/lib64/python3.10/site-packages/serial/serialposix.py", line 325, in open
+    raise SerialException(msg.errno, "could not open port {}: {}".format(self._port, msg))
+serial.serialutil.SerialException: [Errno 13] could not open port /dev/ttyACM0: [Errno 13] Permission denied: '/dev/ttyACM0'
+31-May-22 13:34:42 :: interface :: save_state function executed :: INFO
+31-May-22 13:34:42 :: __main__ :: Setting GUI colors :: INFO
+31-May-22 13:34:42 :: __main__ :: GUI colors set :: INFO
+31-May-22 13:34:42 :: __main__ :: Setting Primary Window in GUI file :: INFO
+31-May-22 13:34:42 :: __main__ :: RESET ALL button pressed :: INFO
+31-May-22 13:34:42 :: __main__ :: SEND ALL button pressed :: INFO
+31-May-22 13:34:42 :: __main__ :: Quick save button pressed :: INFO
+31-May-22 13:34:42 :: __main__ :: Quick Load button pressed :: INFO
+31-May-22 13:34:42 :: __main__ :: Custom Save button pressed :: INFO
+31-May-22 13:34:42 :: __main__ :: Custom Load button pressed :: INFO
+31-May-22 13:34:42 :: __main__ :: Demo 1 button pressed :: INFO
+31-May-22 13:34:42 :: __main__ :: Demo 2 button pressed :: INFO
+31-May-22 13:34:42 :: __main__ :: Mission Alpha button pressed :: INFO
+31-May-22 13:34:42 :: __main__ :: Mission Bravo button pressed :: INFO
+31-May-22 13:34:42 :: __main__ :: WIFI preset button pressed :: INFO
+31-May-22 13:34:42 :: __main__ :: Mission Charlie button pressed :: INFO
+31-May-22 13:34:42 :: __main__ :: Mission Delta button pressed :: INFO
+31-May-22 13:34:42 :: __main__ :: Mission Echo button pressed :: INFO
+31-May-22 13:39:00 :: interface :: 
+
+GUI LAUNCHED
+
+ :: INFO
+31-May-22 13:39:00 :: interface :: Getting the port name of device :: INFO
+31-May-22 13:39:00 :: interface :: find_device function executing linux shell command to get device file names :: INFO
+31-May-22 13:39:00 :: interface :: Connected Devices: ['/dev/ttyACM0'] :: INFO
+31-May-22 13:39:00 :: interface :: Chosen Device: /dev/ttyACM0 :: DEBUG
+31-May-22 13:39:00 :: interface :: Connected device path: /dev/ttyACM0 :: INFO
+31-May-22 13:39:00 :: interface :: class Megatron initialized :: INFO
+31-May-22 13:39:00 :: interface :: EOF :: DEBUG
+31-May-22 13:39:00 :: helpers :: class Megatron instatiated :: INFO
+31-May-22 13:39:00 :: helpers :: Remote colors initialized :: INFO
+31-May-22 13:39:00 :: helpers :: EOF :: DEBUG
+31-May-22 13:39:00 :: __main__ :: Imports imported in GUI file :: INFO
+31-May-22 13:39:00 :: __main__ :: creating dpg context :: INFO
+31-May-22 13:39:00 :: __main__ :: Set save state of MGTron API to True :: INFO
+31-May-22 13:39:00 :: interface :: Serial call to device initiated :: DEBUG
+31-May-22 13:39:00 :: interface :: baudrate set from serial_call :: DEBUG
+31-May-22 13:39:00 :: interface :: Serial device set from serial_call :: DEBUG
+31-May-22 13:39:00 :: interface :: timeout set from serial_call :: DEBUG
+31-May-22 13:39:00 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/mirza/cellantenna/mgtron_development/mg_tron/venv/lib64/python3.10/site-packages/serial/serialposix.py", line 322, in open
+    self.fd = os.open(self.portstr, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
+PermissionError: [Errno 13] Permission denied: '/dev/ttyACM0'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mirza/cellantenna/mgtron_development/mg_tron/src/gui/interface.py", line 78, in serial_call
+    ser.open()
+  File "/home/mirza/cellantenna/mgtron_development/mg_tron/venv/lib64/python3.10/site-packages/serial/serialposix.py", line 325, in open
+    raise SerialException(msg.errno, "could not open port {}: {}".format(self._port, msg))
+serial.serialutil.SerialException: [Errno 13] could not open port /dev/ttyACM0: [Errno 13] Permission denied: '/dev/ttyACM0'
+31-May-22 13:39:00 :: interface :: save_state function executed :: INFO
+31-May-22 13:39:00 :: __main__ :: Setting GUI colors :: INFO
+31-May-22 13:39:00 :: __main__ :: GUI colors set :: INFO
+31-May-22 13:39:00 :: __main__ :: Setting Primary Window in GUI file :: INFO
+31-May-22 13:39:00 :: __main__ :: RESET ALL button pressed :: INFO
+31-May-22 13:39:00 :: __main__ :: SEND ALL button pressed :: INFO
+31-May-22 13:39:00 :: __main__ :: Quick save button pressed :: INFO
+31-May-22 13:39:00 :: __main__ :: Quick Load button pressed :: INFO
+31-May-22 13:39:00 :: __main__ :: Custom Save button pressed :: INFO
+31-May-22 13:39:00 :: __main__ :: Custom Load button pressed :: INFO
+31-May-22 13:39:00 :: __main__ :: Demo 1 button pressed :: INFO
+31-May-22 13:39:00 :: __main__ :: Demo 2 button pressed :: INFO
+31-May-22 13:39:00 :: __main__ :: Mission Alpha button pressed :: INFO
+31-May-22 13:39:00 :: __main__ :: Mission Bravo button pressed :: INFO
+31-May-22 13:39:00 :: __main__ :: WIFI preset button pressed :: INFO
+31-May-22 13:39:00 :: __main__ :: Mission Charlie button pressed :: INFO
+31-May-22 13:39:00 :: __main__ :: Mission Delta button pressed :: INFO
+31-May-22 13:39:00 :: __main__ :: Mission Echo button pressed :: INFO
+31-May-22 13:39:07 :: helpers :: send_vals executed :: INFO
+31-May-22 13:39:07 :: helpers :: callstack_helper executed :: INFO
+31-May-22 13:39:07 :: helpers :: Channel 1 Information Sent :: INFO
+31-May-22 13:39:07 :: interface :: change_power function executed :: INFO
+31-May-22 13:39:07 :: interface :: Connected device path: /dev/ttyACM0 :: INFO
+31-May-22 13:39:07 :: interface :: Serial call to device initiated :: DEBUG
+31-May-22 13:39:07 :: interface :: baudrate set from serial_call :: DEBUG
+31-May-22 13:39:07 :: interface :: Serial device set from serial_call :: DEBUG
+31-May-22 13:39:07 :: interface :: timeout set from serial_call :: DEBUG
+31-May-22 13:39:07 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/mirza/cellantenna/mgtron_development/mg_tron/venv/lib64/python3.10/site-packages/serial/serialposix.py", line 322, in open
+    self.fd = os.open(self.portstr, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
+PermissionError: [Errno 13] Permission denied: '/dev/ttyACM0'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mirza/cellantenna/mgtron_development/mg_tron/src/gui/interface.py", line 78, in serial_call
+    ser.open()
+  File "/home/mirza/cellantenna/mgtron_development/mg_tron/venv/lib64/python3.10/site-packages/serial/serialposix.py", line 325, in open
+    raise SerialException(msg.errno, "could not open port {}: {}".format(self._port, msg))
+serial.serialutil.SerialException: [Errno 13] could not open port /dev/ttyACM0: [Errno 13] Permission denied: '/dev/ttyACM0'
+31-May-22 13:39:07 :: interface :: change_bandwidth function executed :: INFO
+31-May-22 13:39:07 :: interface :: Serial call to device initiated :: DEBUG
+31-May-22 13:39:08 :: interface :: baudrate set from serial_call :: DEBUG
+31-May-22 13:39:08 :: interface :: Serial device set from serial_call :: DEBUG
+31-May-22 13:39:08 :: interface :: timeout set from serial_call :: DEBUG
+31-May-22 13:39:08 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/mirza/cellantenna/mgtron_development/mg_tron/venv/lib64/python3.10/site-packages/serial/serialposix.py", line 322, in open
+    self.fd = os.open(self.portstr, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
+PermissionError: [Errno 13] Permission denied: '/dev/ttyACM0'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mirza/cellantenna/mgtron_development/mg_tron/src/gui/interface.py", line 78, in serial_call
+    ser.open()
+  File "/home/mirza/cellantenna/mgtron_development/mg_tron/venv/lib64/python3.10/site-packages/serial/serialposix.py", line 325, in open
+    raise SerialException(msg.errno, "could not open port {}: {}".format(self._port, msg))
+serial.serialutil.SerialException: [Errno 13] could not open port /dev/ttyACM0: [Errno 13] Permission denied: '/dev/ttyACM0'
+31-May-22 13:39:08 :: interface :: change_freq function executed :: INFO
+31-May-22 13:39:08 :: interface :: Serial call to device initiated :: DEBUG
+31-May-22 13:39:08 :: interface :: baudrate set from serial_call :: DEBUG
+31-May-22 13:39:08 :: interface :: Serial device set from serial_call :: DEBUG
+31-May-22 13:39:08 :: interface :: timeout set from serial_call :: DEBUG
+31-May-22 13:39:08 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/mirza/cellantenna/mgtron_development/mg_tron/venv/lib64/python3.10/site-packages/serial/serialposix.py", line 322, in open
+    self.fd = os.open(self.portstr, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
+PermissionError: [Errno 13] Permission denied: '/dev/ttyACM0'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mirza/cellantenna/mgtron_development/mg_tron/src/gui/interface.py", line 78, in serial_call
+    ser.open()
+  File "/home/mirza/cellantenna/mgtron_development/mg_tron/venv/lib64/python3.10/site-packages/serial/serialposix.py", line 325, in open
+    raise SerialException(msg.errno, "could not open port {}: {}".format(self._port, msg))
+serial.serialutil.SerialException: [Errno 13] could not open port /dev/ttyACM0: [Errno 13] Permission denied: '/dev/ttyACM0'
+31-May-22 13:39:08 :: helpers :: Ready for next command.
+ :: INFO
+31-May-22 13:39:13 :: helpers :: send_vals executed :: INFO
+31-May-22 13:39:13 :: helpers :: callstack_helper executed :: INFO
+31-May-22 13:39:13 :: helpers :: Channel 1 Information Sent :: INFO
+31-May-22 13:39:13 :: interface :: change_power function executed :: INFO
+31-May-22 13:39:13 :: interface :: Connected device path: /dev/ttyACM0 :: INFO
+31-May-22 13:39:13 :: interface :: Serial call to device initiated :: DEBUG
+31-May-22 13:39:13 :: interface :: baudrate set from serial_call :: DEBUG
+31-May-22 13:39:13 :: interface :: Serial device set from serial_call :: DEBUG
+31-May-22 13:39:13 :: interface :: timeout set from serial_call :: DEBUG
+31-May-22 13:39:13 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/mirza/cellantenna/mgtron_development/mg_tron/venv/lib64/python3.10/site-packages/serial/serialposix.py", line 322, in open
+    self.fd = os.open(self.portstr, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
+PermissionError: [Errno 13] Permission denied: '/dev/ttyACM0'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mirza/cellantenna/mgtron_development/mg_tron/src/gui/interface.py", line 78, in serial_call
+    ser.open()
+  File "/home/mirza/cellantenna/mgtron_development/mg_tron/venv/lib64/python3.10/site-packages/serial/serialposix.py", line 325, in open
+    raise SerialException(msg.errno, "could not open port {}: {}".format(self._port, msg))
+serial.serialutil.SerialException: [Errno 13] could not open port /dev/ttyACM0: [Errno 13] Permission denied: '/dev/ttyACM0'
+31-May-22 13:39:13 :: interface :: change_bandwidth function executed :: INFO
+31-May-22 13:39:13 :: interface :: Serial call to device initiated :: DEBUG
+31-May-22 13:39:13 :: interface :: baudrate set from serial_call :: DEBUG
+31-May-22 13:39:13 :: interface :: Serial device set from serial_call :: DEBUG
+31-May-22 13:39:13 :: interface :: timeout set from serial_call :: DEBUG
+31-May-22 13:39:13 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/mirza/cellantenna/mgtron_development/mg_tron/venv/lib64/python3.10/site-packages/serial/serialposix.py", line 322, in open
+    self.fd = os.open(self.portstr, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
+PermissionError: [Errno 13] Permission denied: '/dev/ttyACM0'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mirza/cellantenna/mgtron_development/mg_tron/src/gui/interface.py", line 78, in serial_call
+    ser.open()
+  File "/home/mirza/cellantenna/mgtron_development/mg_tron/venv/lib64/python3.10/site-packages/serial/serialposix.py", line 325, in open
+    raise SerialException(msg.errno, "could not open port {}: {}".format(self._port, msg))
+serial.serialutil.SerialException: [Errno 13] could not open port /dev/ttyACM0: [Errno 13] Permission denied: '/dev/ttyACM0'
+31-May-22 13:39:13 :: interface :: change_freq function executed :: INFO
+31-May-22 13:39:13 :: interface :: Serial call to device initiated :: DEBUG
+31-May-22 13:39:13 :: interface :: baudrate set from serial_call :: DEBUG
+31-May-22 13:39:13 :: interface :: Serial device set from serial_call :: DEBUG
+31-May-22 13:39:13 :: interface :: timeout set from serial_call :: DEBUG
+31-May-22 13:39:13 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/mirza/cellantenna/mgtron_development/mg_tron/venv/lib64/python3.10/site-packages/serial/serialposix.py", line 322, in open
+    self.fd = os.open(self.portstr, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
+PermissionError: [Errno 13] Permission denied: '/dev/ttyACM0'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mirza/cellantenna/mgtron_development/mg_tron/src/gui/interface.py", line 78, in serial_call
+    ser.open()
+  File "/home/mirza/cellantenna/mgtron_development/mg_tron/venv/lib64/python3.10/site-packages/serial/serialposix.py", line 325, in open
+    raise SerialException(msg.errno, "could not open port {}: {}".format(self._port, msg))
+serial.serialutil.SerialException: [Errno 13] could not open port /dev/ttyACM0: [Errno 13] Permission denied: '/dev/ttyACM0'
+31-May-22 13:39:13 :: helpers :: Ready for next command.
+ :: INFO
+31-May-22 13:39:17 :: interface :: 
+
+GUI LAUNCHED
+
+ :: INFO
+31-May-22 13:39:17 :: interface :: Getting the port name of device :: INFO
+31-May-22 13:39:17 :: interface :: find_device function executing linux shell command to get device file names :: INFO
+31-May-22 13:39:17 :: interface :: Connected Devices: ['/dev/ttyACM0'] :: INFO
+31-May-22 13:39:17 :: interface :: Chosen Device: /dev/ttyACM0 :: DEBUG
+31-May-22 13:39:17 :: interface :: Connected device path: /dev/ttyACM0 :: INFO
+31-May-22 13:39:17 :: interface :: class Megatron initialized :: INFO
+31-May-22 13:39:17 :: interface :: EOF :: DEBUG
+31-May-22 13:39:17 :: helpers :: class Megatron instatiated :: INFO
+31-May-22 13:39:17 :: helpers :: Remote colors initialized :: INFO
+31-May-22 13:39:17 :: helpers :: EOF :: DEBUG
+31-May-22 13:39:17 :: __main__ :: Imports imported in GUI file :: INFO
+31-May-22 13:39:17 :: __main__ :: creating dpg context :: INFO
+31-May-22 13:39:17 :: __main__ :: Set save state of MGTron API to True :: INFO
+31-May-22 13:39:17 :: interface :: Serial call to device initiated :: DEBUG
+31-May-22 13:39:17 :: interface :: baudrate set from serial_call :: DEBUG
+31-May-22 13:39:17 :: interface :: Serial device set from serial_call :: DEBUG
+31-May-22 13:39:17 :: interface :: timeout set from serial_call :: DEBUG
+31-May-22 13:39:17 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/mirza/cellantenna/mgtron_development/mg_tron/venv/lib64/python3.10/site-packages/serial/serialposix.py", line 322, in open
+    self.fd = os.open(self.portstr, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
+PermissionError: [Errno 13] Permission denied: '/dev/ttyACM0'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mirza/cellantenna/mgtron_development/mg_tron/src/gui/interface.py", line 78, in serial_call
+    ser.open()
+  File "/home/mirza/cellantenna/mgtron_development/mg_tron/venv/lib64/python3.10/site-packages/serial/serialposix.py", line 325, in open
+    raise SerialException(msg.errno, "could not open port {}: {}".format(self._port, msg))
+serial.serialutil.SerialException: [Errno 13] could not open port /dev/ttyACM0: [Errno 13] Permission denied: '/dev/ttyACM0'
+31-May-22 13:39:17 :: interface :: save_state function executed :: INFO
+31-May-22 13:39:17 :: __main__ :: Setting GUI colors :: INFO
+31-May-22 13:39:17 :: __main__ :: GUI colors set :: INFO
+31-May-22 13:39:17 :: __main__ :: Setting Primary Window in GUI file :: INFO
+31-May-22 13:39:17 :: __main__ :: RESET ALL button pressed :: INFO
+31-May-22 13:39:17 :: __main__ :: SEND ALL button pressed :: INFO
+31-May-22 13:39:17 :: __main__ :: Quick save button pressed :: INFO
+31-May-22 13:39:17 :: __main__ :: Quick Load button pressed :: INFO
+31-May-22 13:39:17 :: __main__ :: Custom Save button pressed :: INFO
+31-May-22 13:39:17 :: __main__ :: Custom Load button pressed :: INFO
+31-May-22 13:39:17 :: __main__ :: Demo 1 button pressed :: INFO
+31-May-22 13:39:17 :: __main__ :: Demo 2 button pressed :: INFO
+31-May-22 13:39:17 :: __main__ :: Mission Alpha button pressed :: INFO
+31-May-22 13:39:17 :: __main__ :: Mission Bravo button pressed :: INFO
+31-May-22 13:39:17 :: __main__ :: WIFI preset button pressed :: INFO
+31-May-22 13:39:17 :: __main__ :: Mission Charlie button pressed :: INFO
+31-May-22 13:39:17 :: __main__ :: Mission Delta button pressed :: INFO
+31-May-22 13:39:17 :: __main__ :: Mission Echo button pressed :: INFO
+31-May-22 13:50:51 :: interface :: 
+
+GUI LAUNCHED
+
+ :: INFO
+31-May-22 13:50:51 :: interface :: Getting the port name of device :: INFO
+31-May-22 13:50:51 :: interface :: find_device function executing linux shell command to get device file names :: INFO
+31-May-22 13:50:51 :: interface :: Connected Devices: ['/dev/ttyACM0'] :: INFO
+31-May-22 13:50:51 :: interface :: Chosen Device: /dev/ttyACM0 :: DEBUG
+31-May-22 13:50:51 :: interface :: Connected device path: /dev/ttyACM0 :: INFO
+31-May-22 13:50:51 :: interface :: class Megatron initialized :: INFO
+31-May-22 13:50:51 :: interface :: EOF :: DEBUG
+31-May-22 13:50:51 :: helpers :: class Megatron instatiated :: INFO
+31-May-22 13:50:51 :: helpers :: Remote colors initialized :: INFO
+31-May-22 13:50:51 :: helpers :: EOF :: DEBUG
+31-May-22 13:50:51 :: __main__ :: Imports imported in GUI file :: INFO
+31-May-22 13:50:51 :: __main__ :: creating dpg context :: INFO
+31-May-22 13:50:51 :: __main__ :: Set save state of MGTron API to True :: INFO
+31-May-22 13:50:51 :: interface :: Serial call to device initiated :: DEBUG
+31-May-22 13:50:51 :: interface :: baudrate set from serial_call :: DEBUG
+31-May-22 13:50:51 :: interface :: Serial device set from serial_call :: DEBUG
+31-May-22 13:50:51 :: interface :: timeout set from serial_call :: DEBUG
+31-May-22 13:50:51 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/mirza/cellantenna/mgtron_development/mg_tron/venv/lib64/python3.10/site-packages/serial/serialposix.py", line 322, in open
+    self.fd = os.open(self.portstr, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
+PermissionError: [Errno 13] Permission denied: '/dev/ttyACM0'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mirza/cellantenna/mgtron_development/mg_tron/src/gui/interface.py", line 78, in serial_call
+    ser.open()
+  File "/home/mirza/cellantenna/mgtron_development/mg_tron/venv/lib64/python3.10/site-packages/serial/serialposix.py", line 325, in open
+    raise SerialException(msg.errno, "could not open port {}: {}".format(self._port, msg))
+serial.serialutil.SerialException: [Errno 13] could not open port /dev/ttyACM0: [Errno 13] Permission denied: '/dev/ttyACM0'
+31-May-22 13:50:51 :: interface :: save_state function executed :: INFO
+31-May-22 13:50:51 :: __main__ :: Setting GUI colors :: INFO
+31-May-22 13:50:51 :: __main__ :: GUI colors set :: INFO
+31-May-22 13:50:51 :: __main__ :: Setting Primary Window in GUI file :: INFO
+31-May-22 13:50:51 :: __main__ :: RESET ALL button pressed :: INFO
+31-May-22 13:50:51 :: __main__ :: SEND ALL button pressed :: INFO
+31-May-22 13:50:51 :: __main__ :: Quick save button pressed :: INFO
+31-May-22 13:50:51 :: __main__ :: Quick Load button pressed :: INFO
+31-May-22 13:50:51 :: __main__ :: Custom Save button pressed :: INFO
+31-May-22 13:50:51 :: __main__ :: Custom Load button pressed :: INFO
+31-May-22 13:50:51 :: __main__ :: Demo 1 button pressed :: INFO
+31-May-22 13:50:51 :: __main__ :: Demo 2 button pressed :: INFO
+31-May-22 13:50:51 :: __main__ :: Mission Alpha button pressed :: INFO
+31-May-22 13:50:51 :: __main__ :: Mission Bravo button pressed :: INFO
+31-May-22 13:50:51 :: __main__ :: WIFI preset button pressed :: INFO
+31-May-22 13:50:51 :: __main__ :: Mission Charlie button pressed :: INFO
+31-May-22 13:50:51 :: __main__ :: Mission Delta button pressed :: INFO
+31-May-22 13:50:51 :: __main__ :: Mission Echo button pressed :: INFO
+31-May-22 14:04:23 :: interface :: 
+
+GUI LAUNCHED
+
+ :: INFO
+31-May-22 14:04:23 :: interface :: Getting the port name of device :: INFO
+31-May-22 14:04:23 :: interface :: find_device function executing linux shell command to get device file names :: INFO
+31-May-22 14:04:23 :: interface :: Connected Devices: ['/dev/ttyACM0'] :: INFO
+31-May-22 14:04:23 :: interface :: Chosen Device: /dev/ttyACM0 :: DEBUG
+31-May-22 14:04:23 :: interface :: Connected device path: /dev/ttyACM0 :: INFO
+31-May-22 14:04:23 :: interface :: class Megatron initialized :: INFO
+31-May-22 14:04:23 :: interface :: EOF :: DEBUG
+31-May-22 14:04:23 :: helpers :: class Megatron instatiated :: INFO
+31-May-22 14:04:23 :: helpers :: Remote colors initialized :: INFO
+31-May-22 14:04:23 :: helpers :: EOF :: DEBUG
+31-May-22 14:04:23 :: __main__ :: Imports imported in GUI file :: INFO
+31-May-22 14:04:23 :: __main__ :: creating dpg context :: INFO
+31-May-22 14:04:23 :: __main__ :: Set save state of MGTron API to True :: INFO
+31-May-22 14:04:23 :: interface :: Serial call to device initiated :: DEBUG
+31-May-22 14:04:23 :: interface :: baudrate set from serial_call :: DEBUG
+31-May-22 14:04:23 :: interface :: Serial device set from serial_call :: DEBUG
+31-May-22 14:04:23 :: interface :: timeout set from serial_call :: DEBUG
+31-May-22 14:04:23 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/mirza/cellantenna/mgtron_development/mg_tron/venv/lib64/python3.10/site-packages/serial/serialposix.py", line 322, in open
+    self.fd = os.open(self.portstr, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
+PermissionError: [Errno 13] Permission denied: '/dev/ttyACM0'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mirza/cellantenna/mgtron_development/mg_tron/src/gui/interface.py", line 78, in serial_call
+    ser.open()
+  File "/home/mirza/cellantenna/mgtron_development/mg_tron/venv/lib64/python3.10/site-packages/serial/serialposix.py", line 325, in open
+    raise SerialException(msg.errno, "could not open port {}: {}".format(self._port, msg))
+serial.serialutil.SerialException: [Errno 13] could not open port /dev/ttyACM0: [Errno 13] Permission denied: '/dev/ttyACM0'
+31-May-22 14:04:23 :: interface :: save_state function executed :: INFO
+31-May-22 14:04:23 :: __main__ :: Setting GUI colors :: INFO
+31-May-22 14:04:23 :: __main__ :: GUI colors set :: INFO
+31-May-22 14:04:23 :: __main__ :: Setting Primary Window in GUI file :: INFO
+31-May-22 14:04:23 :: __main__ :: RESET ALL button pressed :: INFO
+31-May-22 14:04:23 :: __main__ :: SEND ALL button pressed :: INFO
+31-May-22 14:04:23 :: __main__ :: Quick save button pressed :: INFO
+31-May-22 14:04:23 :: __main__ :: Quick Load button pressed :: INFO
+31-May-22 14:04:23 :: __main__ :: Custom Save button pressed :: INFO
+31-May-22 14:04:23 :: __main__ :: Custom Load button pressed :: INFO
+31-May-22 14:04:23 :: __main__ :: Demo 1 button pressed :: INFO
+31-May-22 14:04:23 :: __main__ :: Demo 2 button pressed :: INFO
+31-May-22 14:04:23 :: __main__ :: Mission Alpha button pressed :: INFO
+31-May-22 14:04:23 :: __main__ :: Mission Bravo button pressed :: INFO
+31-May-22 14:04:23 :: __main__ :: WIFI preset button pressed :: INFO
+31-May-22 14:04:23 :: __main__ :: Mission Charlie button pressed :: INFO
+31-May-22 14:04:23 :: __main__ :: Mission Delta button pressed :: INFO
+31-May-22 14:04:23 :: __main__ :: Mission Echo button pressed :: INFO
+31-May-22 14:11:33 :: interface :: 
+
+GUI LAUNCHED
+
+ :: INFO
+31-May-22 14:11:33 :: interface :: Getting the port name of device :: INFO
+31-May-22 14:11:33 :: interface :: find_device function executing linux shell command to get device file names :: INFO
+31-May-22 14:11:33 :: interface :: Connected Devices: ['/dev/ttyACM0'] :: INFO
+31-May-22 14:11:33 :: interface :: Chosen Device: /dev/ttyACM0 :: DEBUG
+31-May-22 14:11:33 :: interface :: Connected device path: /dev/ttyACM0 :: INFO
+31-May-22 14:11:33 :: interface :: class Megatron initialized :: INFO
+31-May-22 14:11:33 :: interface :: EOF :: DEBUG
+31-May-22 14:11:33 :: helpers :: class Megatron instatiated :: INFO
+31-May-22 14:11:33 :: helpers :: Remote colors initialized :: INFO
+31-May-22 14:11:33 :: helpers :: EOF :: DEBUG
+31-May-22 14:11:33 :: __main__ :: Imports imported in GUI file :: INFO
+31-May-22 14:11:33 :: __main__ :: creating dpg context :: INFO
+31-May-22 14:11:33 :: __main__ :: Set save state of MGTron API to True :: INFO
+31-May-22 14:11:33 :: interface :: Serial call to device initiated :: DEBUG
+31-May-22 14:11:33 :: interface :: baudrate set from serial_call :: DEBUG
+31-May-22 14:11:33 :: interface :: Serial device set from serial_call :: DEBUG
+31-May-22 14:11:33 :: interface :: timeout set from serial_call :: DEBUG
+31-May-22 14:11:33 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/mirza/cellantenna/mgtron_development/mg_tron/venv/lib64/python3.10/site-packages/serial/serialposix.py", line 322, in open
+    self.fd = os.open(self.portstr, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
+PermissionError: [Errno 13] Permission denied: '/dev/ttyACM0'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mirza/cellantenna/mgtron_development/mg_tron/src/gui/interface.py", line 78, in serial_call
+    ser.open()
+  File "/home/mirza/cellantenna/mgtron_development/mg_tron/venv/lib64/python3.10/site-packages/serial/serialposix.py", line 325, in open
+    raise SerialException(msg.errno, "could not open port {}: {}".format(self._port, msg))
+serial.serialutil.SerialException: [Errno 13] could not open port /dev/ttyACM0: [Errno 13] Permission denied: '/dev/ttyACM0'
+31-May-22 14:11:33 :: interface :: save_state function executed :: INFO
+31-May-22 14:11:33 :: __main__ :: Setting GUI colors :: INFO
+31-May-22 14:11:33 :: __main__ :: GUI colors set :: INFO
+31-May-22 14:11:33 :: __main__ :: Setting Primary Window in GUI file :: INFO
+31-May-22 14:11:33 :: __main__ :: RESET ALL button pressed :: INFO
+31-May-22 14:11:33 :: __main__ :: SEND ALL button pressed :: INFO
+31-May-22 14:11:33 :: __main__ :: Quick save button pressed :: INFO
+31-May-22 14:11:33 :: __main__ :: Quick Load button pressed :: INFO
+31-May-22 14:11:33 :: __main__ :: Custom Save button pressed :: INFO
+31-May-22 14:11:33 :: __main__ :: Custom Load button pressed :: INFO
+31-May-22 14:11:33 :: __main__ :: Demo 1 button pressed :: INFO
+31-May-22 14:11:33 :: __main__ :: Demo 2 button pressed :: INFO
+31-May-22 14:11:33 :: __main__ :: Mission Alpha button pressed :: INFO
+31-May-22 14:11:33 :: __main__ :: Mission Bravo button pressed :: INFO
+31-May-22 14:11:33 :: __main__ :: WIFI preset button pressed :: INFO
+31-May-22 14:11:33 :: __main__ :: Mission Charlie button pressed :: INFO
+31-May-22 14:11:33 :: __main__ :: Mission Delta button pressed :: INFO
+31-May-22 14:11:33 :: __main__ :: Mission Echo button pressed :: INFO
+31-May-22 14:12:12 :: helpers :: send_all_channels executed :: INFO
+31-May-22 14:12:12 :: helpers :: callstack_helper executed :: INFO
+31-May-22 14:12:12 :: helpers :: Channel 1 Information Sent :: INFO
+31-May-22 14:12:12 :: interface :: change_power function executed :: INFO
+31-May-22 14:12:12 :: interface :: Connected device path: /dev/ttyACM0 :: INFO
+31-May-22 14:12:12 :: interface :: Serial call to device initiated :: DEBUG
+31-May-22 14:12:12 :: interface :: baudrate set from serial_call :: DEBUG
+31-May-22 14:12:12 :: interface :: Serial device set from serial_call :: DEBUG
+31-May-22 14:12:12 :: interface :: timeout set from serial_call :: DEBUG
+31-May-22 14:12:12 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/mirza/cellantenna/mgtron_development/mg_tron/venv/lib64/python3.10/site-packages/serial/serialposix.py", line 322, in open
+    self.fd = os.open(self.portstr, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
+PermissionError: [Errno 13] Permission denied: '/dev/ttyACM0'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mirza/cellantenna/mgtron_development/mg_tron/src/gui/interface.py", line 78, in serial_call
+    ser.open()
+  File "/home/mirza/cellantenna/mgtron_development/mg_tron/venv/lib64/python3.10/site-packages/serial/serialposix.py", line 325, in open
+    raise SerialException(msg.errno, "could not open port {}: {}".format(self._port, msg))
+serial.serialutil.SerialException: [Errno 13] could not open port /dev/ttyACM0: [Errno 13] Permission denied: '/dev/ttyACM0'
+31-May-22 14:12:12 :: interface :: change_bandwidth function executed :: INFO
+31-May-22 14:12:12 :: interface :: Serial call to device initiated :: DEBUG
+31-May-22 14:12:12 :: interface :: baudrate set from serial_call :: DEBUG
+31-May-22 14:12:12 :: interface :: Serial device set from serial_call :: DEBUG
+31-May-22 14:12:12 :: interface :: timeout set from serial_call :: DEBUG
+31-May-22 14:12:12 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/mirza/cellantenna/mgtron_development/mg_tron/venv/lib64/python3.10/site-packages/serial/serialposix.py", line 322, in open
+    self.fd = os.open(self.portstr, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
+PermissionError: [Errno 13] Permission denied: '/dev/ttyACM0'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mirza/cellantenna/mgtron_development/mg_tron/src/gui/interface.py", line 78, in serial_call
+    ser.open()
+  File "/home/mirza/cellantenna/mgtron_development/mg_tron/venv/lib64/python3.10/site-packages/serial/serialposix.py", line 325, in open
+    raise SerialException(msg.errno, "could not open port {}: {}".format(self._port, msg))
+serial.serialutil.SerialException: [Errno 13] could not open port /dev/ttyACM0: [Errno 13] Permission denied: '/dev/ttyACM0'
+31-May-22 14:12:12 :: interface :: change_freq function executed :: INFO
+31-May-22 14:12:12 :: interface :: Serial call to device initiated :: DEBUG
+31-May-22 14:12:12 :: interface :: baudrate set from serial_call :: DEBUG
+31-May-22 14:12:12 :: interface :: Serial device set from serial_call :: DEBUG
+31-May-22 14:12:12 :: interface :: timeout set from serial_call :: DEBUG
+31-May-22 14:12:12 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/mirza/cellantenna/mgtron_development/mg_tron/venv/lib64/python3.10/site-packages/serial/serialposix.py", line 322, in open
+    self.fd = os.open(self.portstr, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
+PermissionError: [Errno 13] Permission denied: '/dev/ttyACM0'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mirza/cellantenna/mgtron_development/mg_tron/src/gui/interface.py", line 78, in serial_call
+    ser.open()
+  File "/home/mirza/cellantenna/mgtron_development/mg_tron/venv/lib64/python3.10/site-packages/serial/serialposix.py", line 325, in open
+    raise SerialException(msg.errno, "could not open port {}: {}".format(self._port, msg))
+serial.serialutil.SerialException: [Errno 13] could not open port /dev/ttyACM0: [Errno 13] Permission denied: '/dev/ttyACM0'
+31-May-22 14:12:12 :: helpers :: Ready for next command.
+ :: INFO
+31-May-22 14:12:12 :: helpers :: callstack_helper executed :: INFO
+31-May-22 14:12:12 :: helpers :: Channel 2 Information Sent :: INFO
+31-May-22 14:12:12 :: interface :: change_power function executed :: INFO
+31-May-22 14:12:12 :: interface :: Connected device path: /dev/ttyACM0 :: INFO
+31-May-22 14:12:12 :: interface :: Serial call to device initiated :: DEBUG
+31-May-22 14:12:13 :: interface :: baudrate set from serial_call :: DEBUG
+31-May-22 14:12:13 :: interface :: Serial device set from serial_call :: DEBUG
+31-May-22 14:12:13 :: interface :: timeout set from serial_call :: DEBUG
+31-May-22 14:12:13 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/mirza/cellantenna/mgtron_development/mg_tron/venv/lib64/python3.10/site-packages/serial/serialposix.py", line 322, in open
+    self.fd = os.open(self.portstr, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
+PermissionError: [Errno 13] Permission denied: '/dev/ttyACM0'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mirza/cellantenna/mgtron_development/mg_tron/src/gui/interface.py", line 78, in serial_call
+    ser.open()
+  File "/home/mirza/cellantenna/mgtron_development/mg_tron/venv/lib64/python3.10/site-packages/serial/serialposix.py", line 325, in open
+    raise SerialException(msg.errno, "could not open port {}: {}".format(self._port, msg))
+serial.serialutil.SerialException: [Errno 13] could not open port /dev/ttyACM0: [Errno 13] Permission denied: '/dev/ttyACM0'
+31-May-22 14:12:13 :: interface :: change_bandwidth function executed :: INFO
+31-May-22 14:12:13 :: interface :: Serial call to device initiated :: DEBUG
+31-May-22 14:12:13 :: interface :: baudrate set from serial_call :: DEBUG
+31-May-22 14:12:13 :: interface :: Serial device set from serial_call :: DEBUG
+31-May-22 14:12:13 :: interface :: timeout set from serial_call :: DEBUG
+31-May-22 14:12:13 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/mirza/cellantenna/mgtron_development/mg_tron/venv/lib64/python3.10/site-packages/serial/serialposix.py", line 322, in open
+    self.fd = os.open(self.portstr, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
+PermissionError: [Errno 13] Permission denied: '/dev/ttyACM0'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mirza/cellantenna/mgtron_development/mg_tron/src/gui/interface.py", line 78, in serial_call
+    ser.open()
+  File "/home/mirza/cellantenna/mgtron_development/mg_tron/venv/lib64/python3.10/site-packages/serial/serialposix.py", line 325, in open
+    raise SerialException(msg.errno, "could not open port {}: {}".format(self._port, msg))
+serial.serialutil.SerialException: [Errno 13] could not open port /dev/ttyACM0: [Errno 13] Permission denied: '/dev/ttyACM0'
+31-May-22 14:12:13 :: interface :: change_freq function executed :: INFO
+31-May-22 14:12:13 :: interface :: Serial call to device initiated :: DEBUG
+31-May-22 14:12:13 :: interface :: baudrate set from serial_call :: DEBUG
+31-May-22 14:12:13 :: interface :: Serial device set from serial_call :: DEBUG
+31-May-22 14:12:13 :: interface :: timeout set from serial_call :: DEBUG
+31-May-22 14:12:13 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/mirza/cellantenna/mgtron_development/mg_tron/venv/lib64/python3.10/site-packages/serial/serialposix.py", line 322, in open
+    self.fd = os.open(self.portstr, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
+PermissionError: [Errno 13] Permission denied: '/dev/ttyACM0'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mirza/cellantenna/mgtron_development/mg_tron/src/gui/interface.py", line 78, in serial_call
+    ser.open()
+  File "/home/mirza/cellantenna/mgtron_development/mg_tron/venv/lib64/python3.10/site-packages/serial/serialposix.py", line 325, in open
+    raise SerialException(msg.errno, "could not open port {}: {}".format(self._port, msg))
+serial.serialutil.SerialException: [Errno 13] could not open port /dev/ttyACM0: [Errno 13] Permission denied: '/dev/ttyACM0'
+31-May-22 14:12:13 :: helpers :: Ready for next command.
+ :: INFO
+31-May-22 14:12:13 :: helpers :: callstack_helper executed :: INFO
+31-May-22 14:12:13 :: helpers :: Channel 3 Information Sent :: INFO
+31-May-22 14:12:13 :: interface :: change_power function executed :: INFO
+31-May-22 14:12:13 :: interface :: Connected device path: /dev/ttyACM0 :: INFO
+31-May-22 14:12:13 :: interface :: Serial call to device initiated :: DEBUG
+31-May-22 14:12:13 :: interface :: baudrate set from serial_call :: DEBUG
+31-May-22 14:12:13 :: interface :: Serial device set from serial_call :: DEBUG
+31-May-22 14:12:13 :: interface :: timeout set from serial_call :: DEBUG
+31-May-22 14:12:13 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/mirza/cellantenna/mgtron_development/mg_tron/venv/lib64/python3.10/site-packages/serial/serialposix.py", line 322, in open
+    self.fd = os.open(self.portstr, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
+PermissionError: [Errno 13] Permission denied: '/dev/ttyACM0'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mirza/cellantenna/mgtron_development/mg_tron/src/gui/interface.py", line 78, in serial_call
+    ser.open()
+  File "/home/mirza/cellantenna/mgtron_development/mg_tron/venv/lib64/python3.10/site-packages/serial/serialposix.py", line 325, in open
+    raise SerialException(msg.errno, "could not open port {}: {}".format(self._port, msg))
+serial.serialutil.SerialException: [Errno 13] could not open port /dev/ttyACM0: [Errno 13] Permission denied: '/dev/ttyACM0'
+31-May-22 14:12:13 :: interface :: change_bandwidth function executed :: INFO
+31-May-22 14:12:13 :: interface :: Serial call to device initiated :: DEBUG
+31-May-22 14:12:13 :: interface :: baudrate set from serial_call :: DEBUG
+31-May-22 14:12:13 :: interface :: Serial device set from serial_call :: DEBUG
+31-May-22 14:12:13 :: interface :: timeout set from serial_call :: DEBUG
+31-May-22 14:12:13 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/mirza/cellantenna/mgtron_development/mg_tron/venv/lib64/python3.10/site-packages/serial/serialposix.py", line 322, in open
+    self.fd = os.open(self.portstr, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
+PermissionError: [Errno 13] Permission denied: '/dev/ttyACM0'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mirza/cellantenna/mgtron_development/mg_tron/src/gui/interface.py", line 78, in serial_call
+    ser.open()
+  File "/home/mirza/cellantenna/mgtron_development/mg_tron/venv/lib64/python3.10/site-packages/serial/serialposix.py", line 325, in open
+    raise SerialException(msg.errno, "could not open port {}: {}".format(self._port, msg))
+serial.serialutil.SerialException: [Errno 13] could not open port /dev/ttyACM0: [Errno 13] Permission denied: '/dev/ttyACM0'
+31-May-22 14:12:13 :: interface :: change_freq function executed :: INFO
+31-May-22 14:12:13 :: interface :: Serial call to device initiated :: DEBUG
+31-May-22 14:12:13 :: interface :: baudrate set from serial_call :: DEBUG
+31-May-22 14:12:13 :: interface :: Serial device set from serial_call :: DEBUG
+31-May-22 14:12:13 :: interface :: timeout set from serial_call :: DEBUG
+31-May-22 14:12:13 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/mirza/cellantenna/mgtron_development/mg_tron/venv/lib64/python3.10/site-packages/serial/serialposix.py", line 322, in open
+    self.fd = os.open(self.portstr, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
+PermissionError: [Errno 13] Permission denied: '/dev/ttyACM0'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mirza/cellantenna/mgtron_development/mg_tron/src/gui/interface.py", line 78, in serial_call
+    ser.open()
+  File "/home/mirza/cellantenna/mgtron_development/mg_tron/venv/lib64/python3.10/site-packages/serial/serialposix.py", line 325, in open
+    raise SerialException(msg.errno, "could not open port {}: {}".format(self._port, msg))
+serial.serialutil.SerialException: [Errno 13] could not open port /dev/ttyACM0: [Errno 13] Permission denied: '/dev/ttyACM0'
+31-May-22 14:12:13 :: helpers :: Ready for next command.
+ :: INFO
+31-May-22 14:12:13 :: helpers :: callstack_helper executed :: INFO
+31-May-22 14:12:13 :: helpers :: Channel 4 Information Sent :: INFO
+31-May-22 14:12:13 :: interface :: change_power function executed :: INFO
+31-May-22 14:12:13 :: interface :: Connected device path: /dev/ttyACM0 :: INFO
+31-May-22 14:12:13 :: interface :: Serial call to device initiated :: DEBUG
+31-May-22 14:12:13 :: interface :: baudrate set from serial_call :: DEBUG
+31-May-22 14:12:13 :: interface :: Serial device set from serial_call :: DEBUG
+31-May-22 14:12:13 :: interface :: timeout set from serial_call :: DEBUG
+31-May-22 14:12:13 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/mirza/cellantenna/mgtron_development/mg_tron/venv/lib64/python3.10/site-packages/serial/serialposix.py", line 322, in open
+    self.fd = os.open(self.portstr, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
+PermissionError: [Errno 13] Permission denied: '/dev/ttyACM0'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mirza/cellantenna/mgtron_development/mg_tron/src/gui/interface.py", line 78, in serial_call
+    ser.open()
+  File "/home/mirza/cellantenna/mgtron_development/mg_tron/venv/lib64/python3.10/site-packages/serial/serialposix.py", line 325, in open
+    raise SerialException(msg.errno, "could not open port {}: {}".format(self._port, msg))
+serial.serialutil.SerialException: [Errno 13] could not open port /dev/ttyACM0: [Errno 13] Permission denied: '/dev/ttyACM0'
+31-May-22 14:12:13 :: interface :: change_bandwidth function executed :: INFO
+31-May-22 14:12:13 :: interface :: Serial call to device initiated :: DEBUG
+31-May-22 14:12:13 :: interface :: baudrate set from serial_call :: DEBUG
+31-May-22 14:12:13 :: interface :: Serial device set from serial_call :: DEBUG
+31-May-22 14:12:13 :: interface :: timeout set from serial_call :: DEBUG
+31-May-22 14:12:13 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/mirza/cellantenna/mgtron_development/mg_tron/venv/lib64/python3.10/site-packages/serial/serialposix.py", line 322, in open
+    self.fd = os.open(self.portstr, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
+PermissionError: [Errno 13] Permission denied: '/dev/ttyACM0'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mirza/cellantenna/mgtron_development/mg_tron/src/gui/interface.py", line 78, in serial_call
+    ser.open()
+  File "/home/mirza/cellantenna/mgtron_development/mg_tron/venv/lib64/python3.10/site-packages/serial/serialposix.py", line 325, in open
+    raise SerialException(msg.errno, "could not open port {}: {}".format(self._port, msg))
+serial.serialutil.SerialException: [Errno 13] could not open port /dev/ttyACM0: [Errno 13] Permission denied: '/dev/ttyACM0'
+31-May-22 14:12:13 :: interface :: change_freq function executed :: INFO
+31-May-22 14:12:13 :: interface :: Serial call to device initiated :: DEBUG
+31-May-22 14:12:13 :: interface :: baudrate set from serial_call :: DEBUG
+31-May-22 14:12:13 :: interface :: Serial device set from serial_call :: DEBUG
+31-May-22 14:12:13 :: interface :: timeout set from serial_call :: DEBUG
+31-May-22 14:12:13 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/mirza/cellantenna/mgtron_development/mg_tron/venv/lib64/python3.10/site-packages/serial/serialposix.py", line 322, in open
+    self.fd = os.open(self.portstr, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
+PermissionError: [Errno 13] Permission denied: '/dev/ttyACM0'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mirza/cellantenna/mgtron_development/mg_tron/src/gui/interface.py", line 78, in serial_call
+    ser.open()
+  File "/home/mirza/cellantenna/mgtron_development/mg_tron/venv/lib64/python3.10/site-packages/serial/serialposix.py", line 325, in open
+    raise SerialException(msg.errno, "could not open port {}: {}".format(self._port, msg))
+serial.serialutil.SerialException: [Errno 13] could not open port /dev/ttyACM0: [Errno 13] Permission denied: '/dev/ttyACM0'
+31-May-22 14:12:13 :: helpers :: Ready for next command.
+ :: INFO
+31-May-22 14:12:13 :: helpers :: callstack_helper executed :: INFO
+31-May-22 14:12:13 :: helpers :: Channel 5 Information Sent :: INFO
+31-May-22 14:12:13 :: interface :: change_power function executed :: INFO
+31-May-22 14:12:13 :: interface :: Connected device path: /dev/ttyACM0 :: INFO
+31-May-22 14:12:13 :: interface :: Serial call to device initiated :: DEBUG
+31-May-22 14:12:13 :: interface :: baudrate set from serial_call :: DEBUG
+31-May-22 14:12:13 :: interface :: Serial device set from serial_call :: DEBUG
+31-May-22 14:12:13 :: interface :: timeout set from serial_call :: DEBUG
+31-May-22 14:12:13 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/mirza/cellantenna/mgtron_development/mg_tron/venv/lib64/python3.10/site-packages/serial/serialposix.py", line 322, in open
+    self.fd = os.open(self.portstr, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
+PermissionError: [Errno 13] Permission denied: '/dev/ttyACM0'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mirza/cellantenna/mgtron_development/mg_tron/src/gui/interface.py", line 78, in serial_call
+    ser.open()
+  File "/home/mirza/cellantenna/mgtron_development/mg_tron/venv/lib64/python3.10/site-packages/serial/serialposix.py", line 325, in open
+    raise SerialException(msg.errno, "could not open port {}: {}".format(self._port, msg))
+serial.serialutil.SerialException: [Errno 13] could not open port /dev/ttyACM0: [Errno 13] Permission denied: '/dev/ttyACM0'
+31-May-22 14:12:13 :: interface :: change_bandwidth function executed :: INFO
+31-May-22 14:12:13 :: interface :: Serial call to device initiated :: DEBUG
+31-May-22 14:12:14 :: interface :: baudrate set from serial_call :: DEBUG
+31-May-22 14:12:14 :: interface :: Serial device set from serial_call :: DEBUG
+31-May-22 14:12:14 :: interface :: timeout set from serial_call :: DEBUG
+31-May-22 14:12:14 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/mirza/cellantenna/mgtron_development/mg_tron/venv/lib64/python3.10/site-packages/serial/serialposix.py", line 322, in open
+    self.fd = os.open(self.portstr, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
+PermissionError: [Errno 13] Permission denied: '/dev/ttyACM0'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mirza/cellantenna/mgtron_development/mg_tron/src/gui/interface.py", line 78, in serial_call
+    ser.open()
+  File "/home/mirza/cellantenna/mgtron_development/mg_tron/venv/lib64/python3.10/site-packages/serial/serialposix.py", line 325, in open
+    raise SerialException(msg.errno, "could not open port {}: {}".format(self._port, msg))
+serial.serialutil.SerialException: [Errno 13] could not open port /dev/ttyACM0: [Errno 13] Permission denied: '/dev/ttyACM0'
+31-May-22 14:12:14 :: interface :: change_freq function executed :: INFO
+31-May-22 14:12:14 :: interface :: Serial call to device initiated :: DEBUG
+31-May-22 14:12:14 :: interface :: baudrate set from serial_call :: DEBUG
+31-May-22 14:12:14 :: interface :: Serial device set from serial_call :: DEBUG
+31-May-22 14:12:14 :: interface :: timeout set from serial_call :: DEBUG
+31-May-22 14:12:14 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/mirza/cellantenna/mgtron_development/mg_tron/venv/lib64/python3.10/site-packages/serial/serialposix.py", line 322, in open
+    self.fd = os.open(self.portstr, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
+PermissionError: [Errno 13] Permission denied: '/dev/ttyACM0'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mirza/cellantenna/mgtron_development/mg_tron/src/gui/interface.py", line 78, in serial_call
+    ser.open()
+  File "/home/mirza/cellantenna/mgtron_development/mg_tron/venv/lib64/python3.10/site-packages/serial/serialposix.py", line 325, in open
+    raise SerialException(msg.errno, "could not open port {}: {}".format(self._port, msg))
+serial.serialutil.SerialException: [Errno 13] could not open port /dev/ttyACM0: [Errno 13] Permission denied: '/dev/ttyACM0'
+31-May-22 14:12:14 :: helpers :: Ready for next command.
+ :: INFO
+31-May-22 14:12:14 :: helpers :: callstack_helper executed :: INFO
+31-May-22 14:12:14 :: helpers :: Channel 6 Information Sent :: INFO
+31-May-22 14:12:14 :: interface :: change_power function executed :: INFO
+31-May-22 14:12:14 :: interface :: Connected device path: /dev/ttyACM0 :: INFO
+31-May-22 14:12:14 :: interface :: Serial call to device initiated :: DEBUG
+31-May-22 14:12:14 :: interface :: baudrate set from serial_call :: DEBUG
+31-May-22 14:12:14 :: interface :: Serial device set from serial_call :: DEBUG
+31-May-22 14:12:14 :: interface :: timeout set from serial_call :: DEBUG
+31-May-22 14:12:14 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/mirza/cellantenna/mgtron_development/mg_tron/venv/lib64/python3.10/site-packages/serial/serialposix.py", line 322, in open
+    self.fd = os.open(self.portstr, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
+PermissionError: [Errno 13] Permission denied: '/dev/ttyACM0'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mirza/cellantenna/mgtron_development/mg_tron/src/gui/interface.py", line 78, in serial_call
+    ser.open()
+  File "/home/mirza/cellantenna/mgtron_development/mg_tron/venv/lib64/python3.10/site-packages/serial/serialposix.py", line 325, in open
+    raise SerialException(msg.errno, "could not open port {}: {}".format(self._port, msg))
+serial.serialutil.SerialException: [Errno 13] could not open port /dev/ttyACM0: [Errno 13] Permission denied: '/dev/ttyACM0'
+31-May-22 14:12:14 :: interface :: change_bandwidth function executed :: INFO
+31-May-22 14:12:14 :: interface :: Serial call to device initiated :: DEBUG
+31-May-22 14:12:14 :: interface :: baudrate set from serial_call :: DEBUG
+31-May-22 14:12:14 :: interface :: Serial device set from serial_call :: DEBUG
+31-May-22 14:12:14 :: interface :: timeout set from serial_call :: DEBUG
+31-May-22 14:12:14 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/mirza/cellantenna/mgtron_development/mg_tron/venv/lib64/python3.10/site-packages/serial/serialposix.py", line 322, in open
+    self.fd = os.open(self.portstr, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
+PermissionError: [Errno 13] Permission denied: '/dev/ttyACM0'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mirza/cellantenna/mgtron_development/mg_tron/src/gui/interface.py", line 78, in serial_call
+    ser.open()
+  File "/home/mirza/cellantenna/mgtron_development/mg_tron/venv/lib64/python3.10/site-packages/serial/serialposix.py", line 325, in open
+    raise SerialException(msg.errno, "could not open port {}: {}".format(self._port, msg))
+serial.serialutil.SerialException: [Errno 13] could not open port /dev/ttyACM0: [Errno 13] Permission denied: '/dev/ttyACM0'
+31-May-22 14:12:14 :: interface :: change_freq function executed :: INFO
+31-May-22 14:12:14 :: interface :: Serial call to device initiated :: DEBUG
+31-May-22 14:12:14 :: interface :: baudrate set from serial_call :: DEBUG
+31-May-22 14:12:14 :: interface :: Serial device set from serial_call :: DEBUG
+31-May-22 14:12:14 :: interface :: timeout set from serial_call :: DEBUG
+31-May-22 14:12:14 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/mirza/cellantenna/mgtron_development/mg_tron/venv/lib64/python3.10/site-packages/serial/serialposix.py", line 322, in open
+    self.fd = os.open(self.portstr, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
+PermissionError: [Errno 13] Permission denied: '/dev/ttyACM0'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mirza/cellantenna/mgtron_development/mg_tron/src/gui/interface.py", line 78, in serial_call
+    ser.open()
+  File "/home/mirza/cellantenna/mgtron_development/mg_tron/venv/lib64/python3.10/site-packages/serial/serialposix.py", line 325, in open
+    raise SerialException(msg.errno, "could not open port {}: {}".format(self._port, msg))
+serial.serialutil.SerialException: [Errno 13] could not open port /dev/ttyACM0: [Errno 13] Permission denied: '/dev/ttyACM0'
+31-May-22 14:12:14 :: helpers :: Ready for next command.
+ :: INFO
+31-May-22 14:12:14 :: helpers :: callstack_helper executed :: INFO
+31-May-22 14:12:14 :: helpers :: Channel 7 Information Sent :: INFO
+31-May-22 14:12:14 :: interface :: change_power function executed :: INFO
+31-May-22 14:12:14 :: interface :: Connected device path: /dev/ttyACM0 :: INFO
+31-May-22 14:12:14 :: interface :: Serial call to device initiated :: DEBUG
+31-May-22 14:12:14 :: interface :: baudrate set from serial_call :: DEBUG
+31-May-22 14:12:14 :: interface :: Serial device set from serial_call :: DEBUG
+31-May-22 14:12:14 :: interface :: timeout set from serial_call :: DEBUG
+31-May-22 14:12:14 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/mirza/cellantenna/mgtron_development/mg_tron/venv/lib64/python3.10/site-packages/serial/serialposix.py", line 322, in open
+    self.fd = os.open(self.portstr, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
+PermissionError: [Errno 13] Permission denied: '/dev/ttyACM0'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mirza/cellantenna/mgtron_development/mg_tron/src/gui/interface.py", line 78, in serial_call
+    ser.open()
+  File "/home/mirza/cellantenna/mgtron_development/mg_tron/venv/lib64/python3.10/site-packages/serial/serialposix.py", line 325, in open
+    raise SerialException(msg.errno, "could not open port {}: {}".format(self._port, msg))
+serial.serialutil.SerialException: [Errno 13] could not open port /dev/ttyACM0: [Errno 13] Permission denied: '/dev/ttyACM0'
+31-May-22 14:12:14 :: interface :: change_bandwidth function executed :: INFO
+31-May-22 14:12:14 :: interface :: Serial call to device initiated :: DEBUG
+31-May-22 14:12:14 :: interface :: baudrate set from serial_call :: DEBUG
+31-May-22 14:12:14 :: interface :: Serial device set from serial_call :: DEBUG
+31-May-22 14:12:14 :: interface :: timeout set from serial_call :: DEBUG
+31-May-22 14:12:14 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/mirza/cellantenna/mgtron_development/mg_tron/venv/lib64/python3.10/site-packages/serial/serialposix.py", line 322, in open
+    self.fd = os.open(self.portstr, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
+PermissionError: [Errno 13] Permission denied: '/dev/ttyACM0'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mirza/cellantenna/mgtron_development/mg_tron/src/gui/interface.py", line 78, in serial_call
+    ser.open()
+  File "/home/mirza/cellantenna/mgtron_development/mg_tron/venv/lib64/python3.10/site-packages/serial/serialposix.py", line 325, in open
+    raise SerialException(msg.errno, "could not open port {}: {}".format(self._port, msg))
+serial.serialutil.SerialException: [Errno 13] could not open port /dev/ttyACM0: [Errno 13] Permission denied: '/dev/ttyACM0'
+31-May-22 14:12:14 :: interface :: change_freq function executed :: INFO
+31-May-22 14:12:14 :: interface :: Serial call to device initiated :: DEBUG
+31-May-22 14:12:14 :: interface :: baudrate set from serial_call :: DEBUG
+31-May-22 14:12:14 :: interface :: Serial device set from serial_call :: DEBUG
+31-May-22 14:12:14 :: interface :: timeout set from serial_call :: DEBUG
+31-May-22 14:12:14 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/mirza/cellantenna/mgtron_development/mg_tron/venv/lib64/python3.10/site-packages/serial/serialposix.py", line 322, in open
+    self.fd = os.open(self.portstr, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
+PermissionError: [Errno 13] Permission denied: '/dev/ttyACM0'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mirza/cellantenna/mgtron_development/mg_tron/src/gui/interface.py", line 78, in serial_call
+    ser.open()
+  File "/home/mirza/cellantenna/mgtron_development/mg_tron/venv/lib64/python3.10/site-packages/serial/serialposix.py", line 325, in open
+    raise SerialException(msg.errno, "could not open port {}: {}".format(self._port, msg))
+serial.serialutil.SerialException: [Errno 13] could not open port /dev/ttyACM0: [Errno 13] Permission denied: '/dev/ttyACM0'
+31-May-22 14:12:14 :: helpers :: Ready for next command.
+ :: INFO
+31-May-22 14:12:14 :: helpers :: callstack_helper executed :: INFO
+31-May-22 14:12:14 :: helpers :: Channel 8 Information Sent :: INFO
+31-May-22 14:12:14 :: interface :: change_power function executed :: INFO
+31-May-22 14:12:14 :: interface :: Connected device path: /dev/ttyACM0 :: INFO
+31-May-22 14:12:14 :: interface :: Serial call to device initiated :: DEBUG
+31-May-22 14:12:14 :: interface :: baudrate set from serial_call :: DEBUG
+31-May-22 14:12:14 :: interface :: Serial device set from serial_call :: DEBUG
+31-May-22 14:12:14 :: interface :: timeout set from serial_call :: DEBUG
+31-May-22 14:12:14 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/mirza/cellantenna/mgtron_development/mg_tron/venv/lib64/python3.10/site-packages/serial/serialposix.py", line 322, in open
+    self.fd = os.open(self.portstr, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
+PermissionError: [Errno 13] Permission denied: '/dev/ttyACM0'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mirza/cellantenna/mgtron_development/mg_tron/src/gui/interface.py", line 78, in serial_call
+    ser.open()
+  File "/home/mirza/cellantenna/mgtron_development/mg_tron/venv/lib64/python3.10/site-packages/serial/serialposix.py", line 325, in open
+    raise SerialException(msg.errno, "could not open port {}: {}".format(self._port, msg))
+serial.serialutil.SerialException: [Errno 13] could not open port /dev/ttyACM0: [Errno 13] Permission denied: '/dev/ttyACM0'
+31-May-22 14:12:14 :: interface :: change_bandwidth function executed :: INFO
+31-May-22 14:12:14 :: interface :: Serial call to device initiated :: DEBUG
+31-May-22 14:12:14 :: interface :: baudrate set from serial_call :: DEBUG
+31-May-22 14:12:14 :: interface :: Serial device set from serial_call :: DEBUG
+31-May-22 14:12:14 :: interface :: timeout set from serial_call :: DEBUG
+31-May-22 14:12:14 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/mirza/cellantenna/mgtron_development/mg_tron/venv/lib64/python3.10/site-packages/serial/serialposix.py", line 322, in open
+    self.fd = os.open(self.portstr, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
+PermissionError: [Errno 13] Permission denied: '/dev/ttyACM0'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mirza/cellantenna/mgtron_development/mg_tron/src/gui/interface.py", line 78, in serial_call
+    ser.open()
+  File "/home/mirza/cellantenna/mgtron_development/mg_tron/venv/lib64/python3.10/site-packages/serial/serialposix.py", line 325, in open
+    raise SerialException(msg.errno, "could not open port {}: {}".format(self._port, msg))
+serial.serialutil.SerialException: [Errno 13] could not open port /dev/ttyACM0: [Errno 13] Permission denied: '/dev/ttyACM0'
+31-May-22 14:12:14 :: interface :: change_freq function executed :: INFO
+31-May-22 14:12:14 :: interface :: Serial call to device initiated :: DEBUG
+31-May-22 14:12:15 :: interface :: baudrate set from serial_call :: DEBUG
+31-May-22 14:12:15 :: interface :: Serial device set from serial_call :: DEBUG
+31-May-22 14:12:15 :: interface :: timeout set from serial_call :: DEBUG
+31-May-22 14:12:15 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/mirza/cellantenna/mgtron_development/mg_tron/venv/lib64/python3.10/site-packages/serial/serialposix.py", line 322, in open
+    self.fd = os.open(self.portstr, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
+PermissionError: [Errno 13] Permission denied: '/dev/ttyACM0'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mirza/cellantenna/mgtron_development/mg_tron/src/gui/interface.py", line 78, in serial_call
+    ser.open()
+  File "/home/mirza/cellantenna/mgtron_development/mg_tron/venv/lib64/python3.10/site-packages/serial/serialposix.py", line 325, in open
+    raise SerialException(msg.errno, "could not open port {}: {}".format(self._port, msg))
+serial.serialutil.SerialException: [Errno 13] could not open port /dev/ttyACM0: [Errno 13] Permission denied: '/dev/ttyACM0'
+31-May-22 14:12:15 :: helpers :: Ready for next command.
+ :: INFO
+31-May-22 14:12:15 :: helpers :: Ready for next command.
+ :: INFO
+31-May-22 14:23:07 :: interface :: 
+
+GUI LAUNCHED
+
+ :: INFO
+31-May-22 14:23:07 :: interface :: Getting the port name of device :: INFO
+31-May-22 14:23:07 :: interface :: find_device function executing linux shell command to get device file names :: INFO
+31-May-22 14:23:07 :: interface :: Connected Devices: ['/dev/ttyACM0'] :: INFO
+31-May-22 14:23:07 :: interface :: Chosen Device: /dev/ttyACM0 :: DEBUG
+31-May-22 14:23:07 :: interface :: Connected device path: /dev/ttyACM0 :: INFO
+31-May-22 14:23:07 :: interface :: class Megatron initialized :: INFO
+31-May-22 14:23:07 :: interface :: EOF :: DEBUG
+31-May-22 14:23:07 :: helpers :: class Megatron instatiated :: INFO
+31-May-22 14:23:07 :: helpers :: Remote colors initialized :: INFO
+31-May-22 14:23:07 :: helpers :: EOF :: DEBUG
+31-May-22 14:23:07 :: __main__ :: Imports imported in GUI file :: INFO
+31-May-22 14:23:07 :: __main__ :: creating dpg context :: INFO
+31-May-22 14:23:07 :: __main__ :: Set save state of MGTron API to True :: INFO
+31-May-22 14:23:07 :: interface :: Serial call to device initiated :: DEBUG
+31-May-22 14:23:07 :: interface :: baudrate set from serial_call :: DEBUG
+31-May-22 14:23:07 :: interface :: Serial device set from serial_call :: DEBUG
+31-May-22 14:23:07 :: interface :: timeout set from serial_call :: DEBUG
+31-May-22 14:23:07 :: interface :: No device found :: ERROR
+Traceback (most recent call last):
+  File "/home/mirza/cellantenna/mgtron_development/mg_tron/venv/lib64/python3.10/site-packages/serial/serialposix.py", line 322, in open
+    self.fd = os.open(self.portstr, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
+PermissionError: [Errno 13] Permission denied: '/dev/ttyACM0'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mirza/cellantenna/mgtron_development/mg_tron/src/gui/interface.py", line 78, in serial_call
+    ser.open()
+  File "/home/mirza/cellantenna/mgtron_development/mg_tron/venv/lib64/python3.10/site-packages/serial/serialposix.py", line 325, in open
+    raise SerialException(msg.errno, "could not open port {}: {}".format(self._port, msg))
+serial.serialutil.SerialException: [Errno 13] could not open port /dev/ttyACM0: [Errno 13] Permission denied: '/dev/ttyACM0'
+31-May-22 14:23:07 :: interface :: save_state function executed :: INFO
+31-May-22 14:23:07 :: __main__ :: Setting GUI colors :: INFO
+31-May-22 14:23:07 :: __main__ :: GUI colors set :: INFO
+31-May-22 14:23:07 :: __main__ :: Setting Primary Window in GUI file :: INFO
+31-May-22 14:23:07 :: __main__ :: RESET ALL button pressed :: INFO
+31-May-22 14:23:07 :: __main__ :: SEND ALL button pressed :: INFO
+31-May-22 14:23:07 :: __main__ :: Quick save button pressed :: INFO
+31-May-22 14:23:07 :: __main__ :: Quick Load button pressed :: INFO
+31-May-22 14:23:07 :: __main__ :: Custom Save button pressed :: INFO
+31-May-22 14:23:07 :: __main__ :: Custom Load button pressed :: INFO
+31-May-22 14:23:07 :: __main__ :: Demo 1 button pressed :: INFO
+31-May-22 14:23:07 :: __main__ :: Demo 2 button pressed :: INFO
+31-May-22 14:23:07 :: __main__ :: Mission Alpha button pressed :: INFO
+31-May-22 14:23:07 :: __main__ :: Mission Bravo button pressed :: INFO
+31-May-22 14:23:07 :: __main__ :: WIFI preset button pressed :: INFO
+31-May-22 14:23:07 :: __main__ :: Mission Charlie button pressed :: INFO
+31-May-22 14:23:07 :: __main__ :: Mission Delta button pressed :: INFO
+31-May-22 14:23:07 :: __main__ :: Mission Echo button pressed :: INFO
+31-May-22 14:23:08 :: helpers :: app data: -1 :: INFO
+31-May-22 14:23:08 :: helpers :: app data: -1 :: INFO
+31-May-22 14:23:08 :: helpers :: app data: -1 :: INFO
