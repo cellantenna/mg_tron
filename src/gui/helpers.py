@@ -16,7 +16,7 @@ from datetime import datetime
 
 # datetime object containing current date and time
 now = datetime.now()
-VERSION: str = "0.10.2"
+VERSION: str = "0.11.0"
 
 loggey = logging.getLogger(name=__name__)
 

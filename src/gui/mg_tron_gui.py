@@ -484,7 +484,7 @@ with dpg.window(
         save_all = dpg.add_button(
             tag="save button",
             callback=quick_save,
-            label="QUICK\n SAVE\nCONFIG",
+            label="QUICK\n SAVE",
             height=70,
             width=BUTTON_WIDTH,
             pos=(
@@ -500,7 +500,7 @@ with dpg.window(
         load_all = dpg.add_button(
             tag="load_all",
             callback=quick_load,
-            label="QUICK\n LOAD\nCONFIG",
+            label="QUICK\n LOAD",
             height=70,
             width=BUTTON_WIDTH,
             pos=(
@@ -516,7 +516,7 @@ with dpg.window(
         custom_save_button = dpg.add_button(
             tag="custom_save",
             height=70,
-            label="CUSTOM\nCONFIG\nSAVE",
+            label="CUSTOM\nSAVE",
             width=BUTTON_WIDTH,
             pos=(
                 (dpg.get_item_width(item="big_buttons") - 50) / DIVISOR,
@@ -552,7 +552,7 @@ with dpg.window(
             tag="custom_load_button",
             height=70,
             width=BUTTON_WIDTH,
-            label="CUSTOM\nCONFIG\nLOAD",
+            label="CUSTOM\nLOAD",
             pos=(
                 (dpg.get_item_width(item="big_buttons") - 250) / DIVISOR,
                 (dpg.get_item_height(item="big_buttons") - CUSTOM_CONFIG_HEIGHT) / 2,
@@ -603,7 +603,7 @@ with dpg.window(
             height=70,
             width=BUTTON_WIDTH,
             callback=mission_alpha,
-            label="ALPHA\nCONFIG",
+            label="ALPHA\n",
             pos=(
                 (dpg.get_item_width(item="big_buttons") - 250) / DIVISOR,
                 (dpg.get_item_height(item="big_buttons") + (DEMO_HEIGHT - 250)) / 2,
@@ -619,7 +619,7 @@ with dpg.window(
             height=70,
             width=BUTTON_WIDTH,
             callback=mission_bravo,
-            label="BRAVO\nCONFIG",
+            label="BRAVO\n",
             pos=(
                 (dpg.get_item_width(item="big_buttons") - 50) / DIVISOR,
                 (dpg.get_item_height(item="big_buttons") + (DEMO_HEIGHT - 250)) / 2,
@@ -633,7 +633,7 @@ with dpg.window(
         mission_charlie_button = dpg.add_button(
             tag="mssn_charlie",
             callback=mission_charlie,
-            label="CHARLIE\nCONFIG",
+            label="CHARLIE\n",
             height=70,
             width=BUTTON_WIDTH,
             pos=(
@@ -649,7 +649,7 @@ with dpg.window(
         mission_delta_button = dpg.add_button(
             tag="mssn_delta",
             callback=mission_delta,
-            label="DELTA\nCONFIG",
+            label="DELTA\n",
             height=70,
             width=BUTTON_WIDTH,
             pos=(
@@ -665,7 +665,7 @@ with dpg.window(
         mission_echo_button = dpg.add_button(
             tag="mssn_echo",
             callback=two_point_four,
-            label="ECHO\nCONFIG",
+            label="ECHO\n",
             height=70,
             width=BUTTON_WIDTH,
             pos=(
@@ -681,7 +681,7 @@ with dpg.window(
         mission_fox_button = dpg.add_button(
             tag="mssn_fox",
             # callback=mission_fox,
-            label="FOX\nCONFIG",
+            label="FOX\n",
             height=70,
             width=BUTTON_WIDTH,
             pos=(
@@ -697,7 +697,7 @@ with dpg.window(
         mission_golf_button = dpg.add_button(
             tag="mssn_golf",
             callback=mission_golf,
-            label="GOLF\nCONFIG",
+            label="GOLF\n",
             height=70,
             width=BUTTON_WIDTH,
             pos=(
