@@ -33,6 +33,7 @@ from helpers import (
     send_vals,
     custom_save,
     two_point_four,
+    wifi_scan_jam,
 )
 
 logger = logging.getLogger(name=__name__)
@@ -711,7 +712,7 @@ with dpg.window(
         logger.info(msg="Mission WiFi scan jam button initialized")
         wifi_scan_jam_button = dpg.add_button(
             tag="mssn_scan_jam",
-            # callback=,
+            callback=wifi_scan_jam,
             label="WiFi\nScan\nJam",
             height=70,
             width=BUTTON_WIDTH,

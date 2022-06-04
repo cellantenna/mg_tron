@@ -476,6 +476,10 @@ def mission_golf(sender, app_data, user_data) -> None:
     ]
 
 
+def mission_fox(sender, app_data, user_data) -> None:
+    """Action to be taken upon depression of mission fox button"""
+
+
 def kill_channel(sender, app_data, user_data: int) -> None:
     """Kill channel w/out resetting power on user facing screen"""
 
@@ -659,7 +663,27 @@ def find_signals_and_frequencies() -> dict:
             freq_and_signal[freq] = signal
             filtered_signals.remove(signal)
             break
+    loggey.info(
+        msg=f"Freq and Strength: {freq_and_signal} | {find_signals_and_frequencies.__name__}"
+    )
     return freq_and_signal
+
+
+def wifi_scan_jam(sender, app_data, user_data) -> None:
+    """Scan the local wifi channels and jam them"""
+
+    loggey.info(msg="Scan jammer method called")
+    freq_and_strength: dict = find_signals_and_frequencies()
+    [
+        (
+            dpg.set_value(item=f"freq_{i}", value=float(freq)),
+            dpg.set_value(item=f"power_{i}", value=63),
+            dpg.set_value(item=f"bandwidth_{i}", value=100),
+            loggey.debug(msg=f"Frequency, in sig strength order, discovered: {freq}"),
+            callstack_helper(channel=i),
+        )
+        for i, freq in enumerate(sorted(freq_and_strength), start=1)
+    ]
 
 
 loggey.debug(msg="EOF")
