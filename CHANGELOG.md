@@ -14,6 +14,10 @@ Here we write upgrading and change notes.
 ✴️ MINOR version when you add functionality in a backwards compatible manner<br>
 ✳️ PATCH version when you make backwards compatible bug fixes.<br>
 
+## [0.10.2] - 2022 JUN 3
+
+- Automatically create config file and automatically populate config file
+
 ## [0.10.1] - 2022 JUN 2
 
 - Corrected multiple device bug

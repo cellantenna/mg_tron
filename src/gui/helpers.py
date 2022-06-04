@@ -16,7 +16,7 @@ from datetime import datetime
 
 # datetime object containing current date and time
 now = datetime.now()
-VERSION: str = "0.10.1"
+VERSION: str = "0.10.2"
 
 loggey = logging.getLogger(name=__name__)
 
@@ -381,7 +381,6 @@ def mission_alpha(sender, app_data, user_data) -> None:
     # )
 
 
-
 def mission_bravo(sender, app_data, user_data) -> None:
     """Auto Fill the band 4 celluar band"""
 
@@ -520,16 +519,9 @@ def fill_config():
             loggey.info(msg="The config file was not populated")
             # Automatically fill in an empty config file
             config["mgtron"] = {
-                "card_1": str(devices[0].split(sep="_")[-1]),
-                "card_2": str(devices[1].split(sep="_")[-1]),
-                "card_3": str(devices[2].split(sep="_")[-1]),
-                "card_4": str(devices[3].split(sep="_")[-1]),
-                "card_5": str(devices[4].split(sep="_")[-1]),
-                "card_6": str(devices[5].split(sep="_")[-1]),
-                "card_7": str(devices[6].split(sep="_")[-1]),
-                "card_8": str(devices[7].split(sep="_")[-1]),
+                f"card_{i+1}": str(devices[i].split(sep="_")[-1])
+                for i in range(len(devices))
             }
-
             with open(file="card_config.ini", mode="w") as configfile:
                 config.write(configfile)
             loggey.info(msg="Config file has been automatically filled")
@@ -537,6 +529,10 @@ def fill_config():
             loggey.info(msg="Config file already filled")
     except (KeyError, IndexError):
         loggey.exception(msg="Config file error")
+        with open(file="card_config.ini", mode="w") as config_file:
+            config_file.write("[mgtron]\n")
+            [config_file.write(f"card_{i+1}=\n") for i in range(len(DEVICE))]
+        fill_config()
 
 
 def config_intake() -> None:
@@ -635,22 +631,25 @@ def card_selection(sender, app_data, user_data: int) -> None:
                 dpg.bind_item_theme(item=f"card_{greyed_card}", theme=grey_btn_theme)
                 for greyed_card in card_list
             ]
-            
-def find_signals_and_frequencies() -> dict:
-    
-    output = subprocess.Popen(["nmcli", "-f", "ALL", "dev", "wifi"], stdout=subprocess.PIPE)
-    if sys.version_info[0] < 3:
-            from StringIO import StringIO
-    else: 
-        from io import StringIO
-    b = StringIO(output.communicate()[0].decode('utf-8'))
-    df = pd.read_csv(b, index_col=False, delim_whitespace=True, engine='python')
 
-    signal_column = (df.loc[:, "SECURITY"])
+
+def find_signals_and_frequencies() -> dict:
+
+    output = subprocess.Popen(
+        ["nmcli", "-f", "ALL", "dev", "wifi"], stdout=subprocess.PIPE
+    )
+    if sys.version_info[0] < 3:
+        from StringIO import StringIO
+    else:
+        from io import StringIO
+    b = StringIO(output.communicate()[0].decode("utf-8"))
+    df = pd.read_csv(b, index_col=False, delim_whitespace=True, engine="python")
+
+    signal_column = df.loc[:, "SECURITY"]
     signal_set = set(signal_column)
     filtered_signals = [x for x in signal_set if not x.__contains__("MHz")]
 
-    frequency_column = (df.loc[:, "FREQ"])
+    frequency_column = df.loc[:, "FREQ"]
     frequency_column.unique()
     freq_set = set(frequency_column)
     filtered_frequencies = [x for x in freq_set if not x.__contains__(":")]
@@ -660,6 +659,7 @@ def find_signals_and_frequencies() -> dict:
             freq_and_signal[freq] = signal
             filtered_signals.remove(signal)
             break
-    return freq_and_signal 
+    return freq_and_signal
+
 
 loggey.debug(msg="EOF")
