@@ -205,7 +205,7 @@ def quick_save(sender, app_data, user_data) -> None:
         for channel in range(1, 9)
     ]
 
-    with open(file="quick_save.json", mode="w") as file:
+    with open(file="src/gui/db/quick_save.json", mode="w") as file:
         file.write(json.dumps(obj=prelim_data, indent=2))
         loggey.info("Save Complete")
 
@@ -214,7 +214,7 @@ def quick_load(sender, app_data, user_data) -> None:
     """Load the last daved data"""
 
     saved_data: list = []
-    with open(file="quick_save.json", mode="r") as file:
+    with open(file="src/gui/db/quick_save.json", mode="r") as file:
         saved_data = json.loads(file.read())
     [
         (
@@ -255,7 +255,7 @@ def custom_save(sender, app_data, user_data) -> None:
         for channel in range(1, 9)
     ]
 
-    with open(file="long_save.json", mode="a") as file:
+    with open(file="src/gui/db/long_save.json", mode="a") as file:
         file.write(json.dumps(obj=prelim_data, indent=2))
         loggey.debug(json.dumps(obj=prelim_data, indent=2))
         loggey.info("long save Complete")
@@ -269,7 +269,7 @@ def custom_load(sender, app_data, user_data) -> None:
     """Load config /w a custom name"""
 
     saved_data: list = []
-    with open(file="quick_save.json", mode="r") as file:
+    with open(file="src/gui/db/quick_save.json", mode="r") as file:
         saved_data = json.loads(file.read())
     [
         (
