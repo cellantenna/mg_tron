@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 import logging
+from tkinter.tix import Tree
 from typing import Any
 
 import dearpygui.dearpygui as dpg
@@ -594,6 +595,21 @@ with dpg.window(
             ),
         )
 
+        ##########################
+        # Mission buttons border #
+        ##########################
+        with dpg.child_window(
+            border=True,
+            tag="mission_buttons_border",
+            height=330,
+            width=BUTTON_WIDTH * 2 + 20,
+            pos=(
+                (dpg.get_item_width(item="big_buttons") - 255) / DIVISOR,
+                (dpg.get_item_height(item="big_buttons") + (DEMO_HEIGHT - 270)) / 2,
+            ),
+        ):
+            pass
+
         ########################
         # Mission Alpha button #
         ########################
@@ -748,7 +764,7 @@ with dpg.window(
                     user_data=card,
                     enabled=False,
                 ),
-                #dpg.bind_item_theme(item=f"card_{card}", theme=grey_btn_theme),
+                # dpg.bind_item_theme(item=f"card_{card}", theme=grey_btn_theme),
             )
             for card in range(1, 9)
         ]

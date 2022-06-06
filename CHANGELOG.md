@@ -16,7 +16,8 @@ Here we write upgrading and change notes.
 
 ## [0.11.0] - 2022 JUN 3
 
-- Scan and jame wifi automatically in RSSI order
+- Scan and jam wifi automatically in RSSI order
+- Added box around mission buttons
 
 ## [0.10.2] - 2022 JUN 3
 
