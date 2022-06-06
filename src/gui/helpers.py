@@ -16,7 +16,7 @@ from datetime import datetime
 
 # datetime object containing current date and time
 now = datetime.now()
-VERSION: str = "0.11.0"
+VERSION: str = "0.12.0"
 
 loggey = logging.getLogger(name=__name__)
 
@@ -490,7 +490,7 @@ def kill_channel(sender, app_data, user_data: int) -> None:
     dpg.bind_item_theme(item=f"stats_{user_data}", theme=grey_btn_theme),
 
 
-def device_finder(sender, app_data, user_data: int) -> None:
+def device_finder(sender=None, app_data=None, user_data: int = int()) -> None:
     """List all the usb microcontrollers connected to the machine"""
 
     # user data contains the chosen port number
@@ -546,7 +546,7 @@ def config_intake() -> None:
     parser = configparser.ConfigParser()
     loggey.info(msg="finding the log file")
     parser.read(filenames="card_config.ini", encoding="utf-8")
-    loggey.info(msg="file read attempted")
+    loggey.info(msg="file read")
     if len(devices) > 1:
         for card in range(1, len(devices) + 1):
             try:
@@ -571,68 +571,119 @@ def config_intake() -> None:
 def card_selection(sender, app_data, user_data: int) -> None:
     """Load the selected cards prefix when selected"""
 
+    parser = configparser.ConfigParser()
+    loggey.info(msg="finding the log file")
+    parser.read(filenames="card_config.ini", encoding="utf-8")
+    loggey.info(msg="file read")
+
     loggey.info(msg=f"selected card: {user_data} | {card_selection.__name__}")
 
     # Manipulate the set to accomplish a loop without the currently selected button
     card_list: set[int] = {1, 2, 3, 4, 5, 6, 7, 8}
     match user_data:
+
         case 1:
             dpg.bind_item_theme(item=f"card_{user_data}", theme=grn_btn_theme)
-            dpg.set_value(item="device_indicator", value="button 1 chosen")
+            dpg.set_value(
+                item="device_indicator", value=f"Device:{parser['mgtron']['card_1']}"
+            )
+            device_finder(user_data=0)
 
-            # Grey all other card buttons and make this one green when clicked
+            # Blue all other active card buttons and make this one green when clicked
             card_list.remove(1)
             [
-                dpg.bind_item_theme(item=f"card_{greyed_card}", theme=grey_btn_theme)
+                dpg.bind_item_theme(item=f"card_{greyed_card}", theme=blue_btn_theme)
                 for greyed_card in card_list
             ]
+
         case 2:
-            card_list.remove(2)
             dpg.bind_item_theme(item=f"card_{user_data}", theme=grn_btn_theme)
+            dpg.set_value(
+                item="device_indicator", value=f"Device:{parser['mgtron']['card_2']}"
+            )
+            device_finder(user_data=1)
+
+            card_list.remove(2)
             [
-                dpg.bind_item_theme(item=f"card_{greyed_card}", theme=grey_btn_theme)
+                dpg.bind_item_theme(item=f"card_{greyed_card}", theme=blue_btn_theme)
                 for greyed_card in card_list
             ]
+
         case 3:
             card_list.remove(3)
             dpg.bind_item_theme(item=f"card_{user_data}", theme=grn_btn_theme)
+            dpg.set_value(
+                item="device_indicator", value=f"Device:{parser['mgtron']['card_3']}"
+            )
+            device_finder(user_data=2)
+
             [
-                dpg.bind_item_theme(item=f"card_{greyed_card}", theme=grey_btn_theme)
+                dpg.bind_item_theme(item=f"card_{greyed_card}", theme=blue_btn_theme)
                 for greyed_card in card_list
             ]
+
         case 4:
             card_list.remove(4)
             dpg.bind_item_theme(item=f"card_{user_data}", theme=grn_btn_theme)
+            dpg.set_value(
+                item="device_indicator", value=f"Device:{parser['mgtron']['card_4']}"
+            )
+            device_finder(user_data=3)
+
             [
-                dpg.bind_item_theme(item=f"card_{greyed_card}", theme=grey_btn_theme)
+                dpg.bind_item_theme(item=f"card_{greyed_card}", theme=blue_btn_theme)
                 for greyed_card in card_list
             ]
+
         case 5:
             card_list.remove(5)
             dpg.bind_item_theme(item=f"card_{user_data}", theme=grn_btn_theme)
+            dpg.set_value(
+                item="device_indicator", value=f"Device:{parser['mgtron']['card_4']}"
+            )
+            device_finder(user_data=4)
+
             [
-                dpg.bind_item_theme(item=f"card_{greyed_card}", theme=grey_btn_theme)
+                dpg.bind_item_theme(item=f"card_{greyed_card}", theme=blue_btn_theme)
                 for greyed_card in card_list
             ]
+
         case 6:
             card_list.remove(6)
             dpg.bind_item_theme(item=f"card_{user_data}", theme=grn_btn_theme)
+            dpg.set_value(
+                item="device_indicator", value=f"Device:{parser['mgtron']['card_6']}"
+            )
+            device_finder(user_data=5)
+
             [
-                dpg.bind_item_theme(item=f"card_{greyed_card}", theme=grey_btn_theme)
+                dpg.bind_item_theme(item=f"card_{greyed_card}", theme=blue_btn_theme)
                 for greyed_card in card_list
             ]
+
         case 7:
             card_list.remove(7)
             dpg.bind_item_theme(item=f"card_{user_data}", theme=grn_btn_theme)
+            dpg.set_value(
+                item="device_indicator", value=f"Device:{parser['mgtron']['card_7']}"
+            )
+            device_finder(user_data=6)
+
             [
-                dpg.bind_item_theme(item=f"card_{greyed_card}", theme=grey_btn_theme)
+                dpg.bind_item_theme(item=f"card_{greyed_card}", theme=blue_btn_theme)
                 for greyed_card in card_list
             ]
+
         case 8:
             card_list.remove(8)
             dpg.bind_item_theme(item=f"card_{user_data}", theme=grn_btn_theme)
+            dpg.set_value(
+                item="device_indicator", value=f"Device:{parser['mgtron']['card_8']}"
+            )
+            device_finder(user_data=7)
+
             [
-                dpg.bind_item_theme(item=f"card_{greyed_card}", theme=grey_btn_theme)
+                dpg.bind_item_theme(item=f"card_{greyed_card}", theme=blue_btn_theme)
                 for greyed_card in card_list
             ]
 
@@ -642,10 +693,8 @@ def find_signals_and_frequencies() -> dict:
     output = subprocess.Popen(
         ["nmcli", "-f", "ALL", "dev", "wifi"], stdout=subprocess.PIPE
     )
-    if sys.version_info[0] < 3:
-        from StringIO import StringIO
-    else:
-        from io import StringIO
+    from io import StringIO
+
     b = StringIO(output.communicate()[0].decode("utf-8"))
     df = pd.read_csv(b, index_col=False, delim_whitespace=True, engine="python")
 

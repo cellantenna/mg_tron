@@ -8,11 +8,17 @@ This project, henceforth, will recongnize [semantic versioning](https://semver.o
 
 ## [⭐.✴️.✳️] - YEAR MONTH DAY
 
-Here we write upgrading and change notes.
+Here we write upgrade and change notes.
 
-⭐ MAJOR version when you make incompatible API changes,<br>
-✴️ MINOR version when you add functionality in a backwards compatible manner<br>
-✳️ PATCH version when you make backwards compatible bug fixes.<br>
+⭐ MAJOR version when you make incompatible API changes,
+
+✴️ MINOR version when you add functionality in a backwards compatible manner
+
+✳️ PATCH version when you make backwards compatible bug fixes.
+
+## [0.12.0] - 2022 JUN 6
+
+- The eight button on the right border correspond to up to eight cards
 
 ## [0.11.0] - 2022 JUN 3
 
@@ -67,5 +73,5 @@ Here we write upgrading and change notes.
 
 ## [0.8.0] - 2022 MAY 23
 
-- Changelog created.<br>
+- Changelog created.
 - Project evolved enough to function and actuate hardware as expected.
