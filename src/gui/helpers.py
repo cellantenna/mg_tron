@@ -677,10 +677,10 @@ def wifi_scan_jam(sender, app_data, user_data) -> None:
     [
         (
             dpg.set_value(item=f"freq_{i}", value=float(freq)),
-            dpg.set_value(item=f"power_{i}", value=63),
+            dpg.set_value(item=f"power_{i}", value=40),
             dpg.set_value(item=f"bandwidth_{i}", value=100),
             loggey.debug(msg=f"Frequency, in sig strength order, discovered: {freq}"),
-            callstack_helper(channel=i),
+            # callstack_helper(channel=i),
         )
         for i, freq in enumerate(sorted(freq_and_strength), start=1)
     ]
