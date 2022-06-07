@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+from collections import Counter
 import logging
 from typing import Any
 
@@ -80,22 +81,26 @@ with dpg.theme() as blue_btn_theme:
 # Grey Button Theme
 with dpg.theme() as grey_btn_theme:
     with dpg.theme_component(dpg.mvAll):
-        dpg.add_theme_color(dpg.mvThemeCol_Button, (105, 105, 105, 255))  # GREY
+        dpg.add_theme_color(dpg.mvThemeCol_Button,
+                            (105, 105, 105, 255))  # GREY
 
 # Orange Button Theme
 with dpg.theme() as orng_btn_theme:
     with dpg.theme_component(dpg.mvAll):
-        dpg.add_theme_color(dpg.mvThemeCol_Button, (255, 165, 0, 255))  # ORANGE
+        dpg.add_theme_color(dpg.mvThemeCol_Button,
+                            (255, 165, 0, 255))  # ORANGE
 
 # White Button Theme
 with dpg.theme() as wht_btn_theme:
     with dpg.theme_component(dpg.mvAll):
-        dpg.add_theme_color(dpg.mvThemeCol_Button, (255, 255, 255, 255))  # WHITE
+        dpg.add_theme_color(dpg.mvThemeCol_Button,
+                            (255, 255, 255, 255))  # WHITE
 
 # Grey Column Theme
 with dpg.theme() as grey_column_theme:
     with dpg.theme_component(dpg.mvAll):
-        dpg.add_theme_color(dpg.mvThemeCol_Button, (185, 185, 185, 255))  # WHITE
+        dpg.add_theme_color(dpg.mvThemeCol_Button,
+                            (185, 185, 185, 255))  # WHITE
 logger.info(msg="GUI colors set")
 
 with dpg.handler_registry():
@@ -105,9 +110,12 @@ with dpg.font_registry():
     default_font_added = dpg.add_font(
         file="src/gui/fonts/MesloLGS NF Regular.ttf", size=40
     )
-    ital_font = dpg.add_font(file="src/gui/fonts/MesloLGS NF Italic.ttf", size=20)
-    bold_font = dpg.add_font(file="src/gui/fonts/MesloLGS NF Bold Italic.ttf", size=40)
-    small_font = dpg.add_font(file="src/gui/fonts/MesloLGS NF Italic.ttf", size=13)
+    ital_font = dpg.add_font(
+        file="src/gui/fonts/MesloLGS NF Italic.ttf", size=20)
+    bold_font = dpg.add_font(
+        file="src/gui/fonts/MesloLGS NF Bold Italic.ttf", size=40)
+    small_font = dpg.add_font(
+        file="src/gui/fonts/MesloLGS NF Italic.ttf", size=13)
 
 logger.info(msg="Setting Primary Window in GUI file")
 # Primary Window
@@ -137,7 +145,8 @@ with dpg.window(
         height=ROW_HEIGHT - ADJUSTMENT,
         border=False,
     ):
-        dpg.add_text(default_value=f"Frequency: 6.4GHz", pos=(9, 39 - ADJUSTMENT + 5))
+        dpg.add_text(default_value=f"Frequency: 6.4GHz",
+                     pos=(9, 39 - ADJUSTMENT + 5))
 
     # Header Column Power
     with dpg.child_window(
@@ -169,6 +178,7 @@ with dpg.window(
     # Column buttons, inputs, and text #
     ####################################
     for i in range(8):
+    
 
         # First Column
         with dpg.child_window(
@@ -544,7 +554,8 @@ with dpg.window(
             )
             dpg.add_button(
                 label="Quit",
-                callback=lambda: dpg.configure_item(item="modal_save", show=False),
+                callback=lambda: dpg.configure_item(
+                    item="modal_save", show=False),
             )
 
         ###############
@@ -568,25 +579,24 @@ with dpg.window(
             modal=True,
             tag="modal_load",
         ):
-
-            dpg.add_menu(
-                parent="modal_load",
-                label="Load File: ",
-                tag="load_input",
-            )
+            SAVED_LIST: dict[str, Any] = custom_load()
+            SAVED_DATA = set(SAVED_LIST[i]["Save_name"])
+                             #for i in range(len(SAVED_LIST)))
 
             [
                 dpg.add_menu_item(
                     parent="load_input",
-                    label=f"Previously Saved custom named item {i}",
-                    callback=lambda: logger.info(msg="\nMenu item called\n"),
+                    label=list(SAVED_DATA),
+                    callback=lambda: logger.info(
+                        msg="\nLoad menu item called\n"),
                 )
-                for i in range(1, 9)
+                for _ in range(len(SAVED_LIST))
             ]
 
             dpg.add_button(
                 label="Quit",
-                callback=lambda: dpg.configure_item(item="modal_load", show=False),
+                callback=lambda: dpg.configure_item(
+                    item="modal_load", show=False),
             )
 
         dpg.add_text(

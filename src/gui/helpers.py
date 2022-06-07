@@ -1,15 +1,15 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+from cmath import log
 import configparser
 import json
 import logging
-from operator import mod
+from typing import Any
+from pysondb import db, errors
 import platform
 import subprocess
-from time import sleep
 import dearpygui.dearpygui as dpg
 import pandas as pd
-import sys
 from interface import Megatron, find_device
 
 from datetime import datetime
@@ -44,11 +44,13 @@ with dpg.theme() as blue_btn_theme:
 # Grey Button Theme
 with dpg.theme() as grey_btn_theme:
     with dpg.theme_component(dpg.mvAll):
-        dpg.add_theme_color(dpg.mvThemeCol_Button, (105, 105, 105, 255))  # GREY
+        dpg.add_theme_color(dpg.mvThemeCol_Button,
+                            (105, 105, 105, 255))  # GREY
 # Orange Button Theme
 with dpg.theme() as orng_btn_theme:
     with dpg.theme_component(dpg.mvAll):
-        dpg.add_theme_color(dpg.mvThemeCol_Button, (255, 165, 0, 255))  # ORANGE
+        dpg.add_theme_color(dpg.mvThemeCol_Button,
+                            (255, 165, 0, 255))  # ORANGE
 
 
 def device_names() -> list[str]:
@@ -98,7 +100,8 @@ def callstack_helper(
 
     data_vehicle.change_bandwidth(
         channel=channel,
-        percentage=dpg.get_value(f"bandwidth_{channel}") if not bw_value else 0,
+        percentage=dpg.get_value(
+            f"bandwidth_{channel}") if not bw_value else 0,
     )
 
     data_vehicle.change_freq(
@@ -224,11 +227,13 @@ def quick_load(sender, app_data, user_data) -> None:
             ),
             dpg.set_value(
                 item=f"bandwidth_{channel}",
-                value=saved_data[channel - 1][f"channel {channel}"]["Bandwidth"],
+                value=saved_data[channel -
+                                 1][f"channel {channel}"]["Bandwidth"],
             ),
             dpg.set_value(
                 item=f"freq_{channel}",
-                value=saved_data[channel - 1][f"channel {channel}"]["Frequency"],
+                value=saved_data[channel -
+                                 1][f"channel {channel}"]["Frequency"],
             ),
         )
         for channel in range(1, 9)
@@ -240,56 +245,43 @@ def custom_save(sender, app_data, user_data) -> None:
 
     loggey.info(f"{custom_save.__name__}() executed")
 
-    prelim_data: list[dict[str, dict[str, str, str, str]]] = [
-        {
-            f"channel {channel}": {
+    custom_save_file = db.getDb("src/gui/db/long_save.json")
+    try:
+
+        custom_save_file.addMany(
+
+            {
+                "Save_name": dpg.get_value(item="save_custom_input"),
+                "channel": channel,
                 "Power": dpg.get_value(f"power_{channel}"),
                 "Bandwidth": dpg.get_value(f"bandwidth_{channel}"),
                 "Frequency": dpg.get_value(f"freq_{channel}"),
                 "Date": dt_string,
-                "Save_name": dpg.get_value(item="save_custom_input")
-                if dpg.get_value(item="custom_save_input")
-                else dpg.set_value(item="save_custom_input", value="Must be filled"),
-            },
-        }
-        for channel in range(1, 9)
-    ]
 
-    with open(file="src/gui/db/long_save.json", mode="a") as file:
-        file.write(json.dumps(obj=prelim_data, indent=2))
-        loggey.debug(json.dumps(obj=prelim_data, indent=2))
-        loggey.info("long save Complete")
+            }
+            for channel in range(1, 9)
+        )
+
+    except (TypeError, IndexError, KeyError, errors.db_errors.SchemaError, AttributeError):
+        loggey.exception(msg="database failure")
 
     # Clear input and close input
     dpg.set_value(item="save_custom_input", value="")
     dpg.configure_item(item="modal_save", show=False)
 
 
-def custom_load(sender, app_data, user_data) -> None:
+def custom_load(sender=None, app_data=None, user_data=None) -> json:
     """Load config /w a custom name"""
 
-    saved_data: list = []
-    with open(file="src/gui/db/quick_save.json", mode="r") as file:
-        saved_data = json.loads(file.read())
-    [
-        (
-            dpg.set_value(
-                item=f"power_{channel}",
-                value=saved_data[channel - 1][f"channel {channel}"]["Power"],
-            ),
-            dpg.set_value(
-                item=f"bandwidth_{channel}",
-                value=saved_data[channel - 1][f"channel {channel}"]["Bandwidth"],
-            ),
-            dpg.set_value(
-                item=f"freq_{channel}",
-                value=saved_data[channel - 1][f"channel {channel}"]["Frequency"],
-            ),
-        )
-        for channel in range(1, 9)
-        if dpg.get_value(item="modal_load")
-        == saved_data[channel - 1][f"channel {channel}"]["Save_name"]
-    ]
+    loggey.debug(msg="Attempting to load custom save data")
+
+    custom_save_file = db.getDb("src/gui/db/long_save.json")
+
+    return custom_save_file.getAll()
+
+    
+
+    
 
 
 def auto_fill_freq(
@@ -305,7 +297,8 @@ def auto_fill_freq(
         dpg.set_value(
             item=f"freq_{i}",
             value=(
-                abs(dpg.get_value(f"freq_{i-2}") - dpg.get_value(f"freq_{i-1}"))
+                abs(dpg.get_value(f"freq_{i-2}") -
+                    dpg.get_value(f"freq_{i-1}"))
                 + dpg.get_value(f"freq_{i-1}")
             )
             if int(dpg.get_value(item=f"freq_{i}")) <= 6400
@@ -340,7 +333,8 @@ def auto_fill_bandwidth() -> None:
     """Auto fill the bandwidth column based on the first input"""
 
     [
-        dpg.set_value(item=f"bandwidth_{i}", value=dpg.get_value(item="bandwidth_1"))
+        dpg.set_value(item=f"bandwidth_{i}",
+                      value=dpg.get_value(item="bandwidth_1"))
         for i in range(2, 9)
     ]
 
@@ -554,7 +548,8 @@ def config_intake() -> None:
                     f"card_{card}"
                 ]:
                     case True:
-                        dpg.bind_item_theme(item=f"card_{card}", theme=blue_btn_theme)
+                        dpg.bind_item_theme(
+                            item=f"card_{card}", theme=blue_btn_theme)
                         dpg.configure_item(item=f"card_{card}", enabled=True)
                         # devices[card - 1].split("_")[0].split("-")[0]
                         loggey.info(
@@ -592,7 +587,8 @@ def card_selection(sender, app_data, user_data: int) -> None:
             # Blue all other active card buttons and make this one green when clicked
             card_list.remove(1)
             [
-                dpg.bind_item_theme(item=f"card_{greyed_card}", theme=blue_btn_theme)
+                dpg.bind_item_theme(
+                    item=f"card_{greyed_card}", theme=blue_btn_theme)
                 for greyed_card in card_list
             ]
 
@@ -605,7 +601,8 @@ def card_selection(sender, app_data, user_data: int) -> None:
 
             card_list.remove(2)
             [
-                dpg.bind_item_theme(item=f"card_{greyed_card}", theme=blue_btn_theme)
+                dpg.bind_item_theme(
+                    item=f"card_{greyed_card}", theme=blue_btn_theme)
                 for greyed_card in card_list
             ]
 
@@ -618,7 +615,8 @@ def card_selection(sender, app_data, user_data: int) -> None:
             device_finder(user_data=2)
 
             [
-                dpg.bind_item_theme(item=f"card_{greyed_card}", theme=blue_btn_theme)
+                dpg.bind_item_theme(
+                    item=f"card_{greyed_card}", theme=blue_btn_theme)
                 for greyed_card in card_list
             ]
 
@@ -631,7 +629,8 @@ def card_selection(sender, app_data, user_data: int) -> None:
             device_finder(user_data=3)
 
             [
-                dpg.bind_item_theme(item=f"card_{greyed_card}", theme=blue_btn_theme)
+                dpg.bind_item_theme(
+                    item=f"card_{greyed_card}", theme=blue_btn_theme)
                 for greyed_card in card_list
             ]
 
@@ -644,7 +643,8 @@ def card_selection(sender, app_data, user_data: int) -> None:
             device_finder(user_data=4)
 
             [
-                dpg.bind_item_theme(item=f"card_{greyed_card}", theme=blue_btn_theme)
+                dpg.bind_item_theme(
+                    item=f"card_{greyed_card}", theme=blue_btn_theme)
                 for greyed_card in card_list
             ]
 
@@ -657,7 +657,8 @@ def card_selection(sender, app_data, user_data: int) -> None:
             device_finder(user_data=5)
 
             [
-                dpg.bind_item_theme(item=f"card_{greyed_card}", theme=blue_btn_theme)
+                dpg.bind_item_theme(
+                    item=f"card_{greyed_card}", theme=blue_btn_theme)
                 for greyed_card in card_list
             ]
 
@@ -670,7 +671,8 @@ def card_selection(sender, app_data, user_data: int) -> None:
             device_finder(user_data=6)
 
             [
-                dpg.bind_item_theme(item=f"card_{greyed_card}", theme=blue_btn_theme)
+                dpg.bind_item_theme(
+                    item=f"card_{greyed_card}", theme=blue_btn_theme)
                 for greyed_card in card_list
             ]
 
@@ -683,7 +685,8 @@ def card_selection(sender, app_data, user_data: int) -> None:
             device_finder(user_data=7)
 
             [
-                dpg.bind_item_theme(item=f"card_{greyed_card}", theme=blue_btn_theme)
+                dpg.bind_item_theme(
+                    item=f"card_{greyed_card}", theme=blue_btn_theme)
                 for greyed_card in card_list
             ]
 
@@ -696,7 +699,8 @@ def find_signals_and_frequencies() -> dict:
     from io import StringIO
 
     b = StringIO(output.communicate()[0].decode("utf-8"))
-    df = pd.read_csv(b, index_col=False, delim_whitespace=True, engine="python")
+    df = pd.read_csv(b, index_col=False,
+                     delim_whitespace=True, engine="python")
 
     signal_column = df.loc[:, "SECURITY"]
     signal_set = set(signal_column)
@@ -728,7 +732,8 @@ def wifi_scan_jam(sender, app_data, user_data) -> None:
             dpg.set_value(item=f"freq_{i}", value=float(freq)),
             dpg.set_value(item=f"power_{i}", value=40),
             dpg.set_value(item=f"bandwidth_{i}", value=100),
-            loggey.debug(msg=f"Frequency, in sig strength order, discovered: {freq}"),
+            loggey.debug(
+                msg=f"Frequency, in sig strength order, discovered: {freq}"),
             # callstack_helper(channel=i),
         )
         for i, freq in enumerate(sorted(freq_and_strength), start=1)
