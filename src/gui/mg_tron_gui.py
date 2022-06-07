@@ -178,7 +178,6 @@ with dpg.window(
     # Column buttons, inputs, and text #
     ####################################
     for i in range(8):
-    
 
         # First Column
         with dpg.child_window(
@@ -580,13 +579,12 @@ with dpg.window(
             tag="modal_load",
         ):
             SAVED_LIST: dict[str, Any] = custom_load()
-            SAVED_DATA = set(SAVED_LIST[i]["Save_name"])
-                             #for i in range(len(SAVED_LIST)))
+            SAVED_DATA = set(k["Save_name"] for k in SAVED_LIST)
 
             [
                 dpg.add_menu_item(
                     parent="load_input",
-                    label=list(SAVED_DATA),
+                    label=SAVED_DATA,
                     callback=lambda: logger.info(
                         msg="\nLoad menu item called\n"),
                 )

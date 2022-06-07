@@ -1,346 +1,229 @@
 {
    "data": [
       {
-         "channel": 1,
-         "Power": 18,
-         "Bandwidth": 7,
-         "Frequency": 550.0,
-         "Date": "06/06/2022 15:42:59",
-         "Save_name": "custom save 1",
-         "id": 218194220259626709
+         "Save_name": "init save",
+         "channel": 2,
+         "Power": 0,
+         "Bandwidth": 0,
+         "Frequency": 1300.0,
+         "Date": "06/06/2022 20:45:22",
+         "id": 660756509829302513
       },
       {
-         "channel": 1,
-         "Power": 18,
-         "Bandwidth": 7,
-         "Frequency": 550.0,
-         "Date": "06/06/2022 15:46:46",
-         "Save_name": "custom save 2",
-         "id": 168090785755487976
+         "Save_name": "dsfsdf",
+         "channel": 2,
+         "Power": 0,
+         "Bandwidth": 0,
+         "Frequency": 1300.0,
+         "Date": "06/06/2022 20:52:22",
+         "id": 225839636990866434
       },
       {
-         "Save_name": null,
-         "channel": 1,
-         "Power": 18,
-         "Bandwidth": 7,
-         "Frequency": 550.0,
-         "Date": "06/06/2022 15:49:21",
-         "id": 327131969649458187
+         "Save_name": "dsfsdf",
+         "channel": 2,
+         "Power": 0,
+         "Bandwidth": 0,
+         "Frequency": 1300.0,
+         "Date": "06/06/2022 20:52:22",
+         "id": 328420129103404152
       },
       {
-         "Save_name": null,
+         "Save_name": "dsfsdf",
+         "channel": 2,
+         "Power": 0,
+         "Bandwidth": 0,
+         "Frequency": 1300.0,
+         "Date": "06/06/2022 20:52:22",
+         "id": 205951343099164007
+      },
+      {
+         "Save_name": "dsfsdf",
+         "channel": 2,
+         "Power": 0,
+         "Bandwidth": 0,
+         "Frequency": 1300.0,
+         "Date": "06/06/2022 20:52:22",
+         "id": 584775148146177631
+      },
+      {
+         "Save_name": "dsfsdf",
+         "channel": 2,
+         "Power": 0,
+         "Bandwidth": 0,
+         "Frequency": 1300.0,
+         "Date": "06/06/2022 20:52:22",
+         "id": 161601255239800416
+      },
+      {
+         "Save_name": "dsfsdf",
+         "channel": 2,
+         "Power": 0,
+         "Bandwidth": 0,
+         "Frequency": 1300.0,
+         "Date": "06/06/2022 20:52:22",
+         "id": 271525613900953121
+      },
+      {
+         "Save_name": "dsfsdf",
+         "channel": 2,
+         "Power": 0,
+         "Bandwidth": 0,
+         "Frequency": 1300.0,
+         "Date": "06/06/2022 20:52:22",
+         "id": 380582026650857867
+      },
+      {
+         "Save_name": "dsfsdf",
+         "channel": 2,
+         "Power": 0,
+         "Bandwidth": 0,
+         "Frequency": 1300.0,
+         "Date": "06/06/2022 20:52:22",
+         "id": 245655372113434022
+      },
+      {
+         "Save_name": "init 2",
+         "channel": 2,
+         "Power": 0,
+         "Bandwidth": 0,
+         "Frequency": 1300.0,
+         "Date": "06/06/2022 20:52:22",
+         "id": 745215734527279058
+      },
+      {
+         "Save_name": "init 2",
+         "channel": 2,
+         "Power": 0,
+         "Bandwidth": 0,
+         "Frequency": 1300.0,
+         "Date": "06/06/2022 20:52:22",
+         "id": 141445886595420829
+      },
+      {
+         "Save_name": "init 2",
+         "channel": 2,
+         "Power": 0,
+         "Bandwidth": 0,
+         "Frequency": 1300.0,
+         "Date": "06/06/2022 20:52:22",
+         "id": 272681620869163670
+      },
+      {
+         "Save_name": "init 2",
+         "channel": 2,
+         "Power": 0,
+         "Bandwidth": 0,
+         "Frequency": 1300.0,
+         "Date": "06/06/2022 20:52:22",
+         "id": 326799520634904701
+      },
+      {
+         "Save_name": "init 2",
+         "channel": 2,
+         "Power": 0,
+         "Bandwidth": 0,
+         "Frequency": 1300.0,
+         "Date": "06/06/2022 20:52:22",
+         "id": 171231157156274978
+      },
+      {
+         "Save_name": "init 2",
+         "channel": 2,
+         "Power": 0,
+         "Bandwidth": 0,
+         "Frequency": 1300.0,
+         "Date": "06/06/2022 20:52:22",
+         "id": 924769139733995135
+      },
+      {
+         "Save_name": "init 2",
+         "channel": 2,
+         "Power": 0,
+         "Bandwidth": 0,
+         "Frequency": 1300.0,
+         "Date": "06/06/2022 20:52:22",
+         "id": 245267717255853034
+      },
+      {
+         "Save_name": "init 2",
+         "channel": 2,
+         "Power": 0,
+         "Bandwidth": 0,
+         "Frequency": 1300.0,
+         "Date": "06/06/2022 20:52:22",
+         "id": 240338657925755822
+      },
+      {
+         "Save_name": "charlie conf",
          "channel": 1,
-         "Power": 18,
-         "Bandwidth": 7,
+         "Power": 12,
+         "Bandwidth": 0,
          "Frequency": 2450.0,
-         "Date": "06/06/2022 16:05:19",
-         "id": 178438820228141032
+         "Date": "06/06/2022 20:53:20",
+         "id": 300999984800990449
       },
       {
-         "Save_name": null,
-         "channel": 1,
-         "Power": 61,
-         "Bandwidth": 3,
-         "Frequency": 2450.0,
-         "Date": "06/06/2022 16:09:47",
-         "id": 310348948830203880
-      },
-      {
-         "Save_name": "custom save 6",
-         "channel": 1,
-         "Power": 10,
-         "Bandwidth": 100,
-         "Frequency": 1221.0,
-         "Date": "06/06/2022 16:10:35",
-         "id": 290947490864150290
-      },
-      {
-         "Save_name": "ghkj",
-         "channel": 1,
-         "Power": 0,
-         "Bandwidth": 0,
-         "Frequency": 650.0,
-         "Date": "06/06/2022 16:11:49",
-         "id": 230780834825497682
-      },
-      {
-         "Save_name": "ghkj",
+         "Save_name": "charlie conf",
          "channel": 2,
-         "Power": 0,
+         "Power": 12,
          "Bandwidth": 0,
-         "Frequency": 1300.0,
-         "Date": "06/06/2022 16:11:49",
-         "id": 209391369600093472
+         "Frequency": 2607.142822265625,
+         "Date": "06/06/2022 20:53:20",
+         "id": 156454986302537241
       },
       {
-         "Save_name": "ghkj",
+         "Save_name": "charlie conf",
          "channel": 3,
-         "Power": 0,
+         "Power": 12,
          "Bandwidth": 0,
-         "Frequency": 1950.0,
-         "Date": "06/06/2022 16:11:49",
-         "id": 205708064534476567
+         "Frequency": 2764.285888671875,
+         "Date": "06/06/2022 20:53:20",
+         "id": 837222702712651824
       },
       {
-         "Save_name": "ghkj",
+         "Save_name": "charlie conf",
          "channel": 4,
-         "Power": 0,
+         "Power": 12,
          "Bandwidth": 0,
-         "Frequency": 2600.0,
-         "Date": "06/06/2022 16:11:49",
-         "id": 141802139864808349
+         "Frequency": 2921.4287109375,
+         "Date": "06/06/2022 20:53:20",
+         "id": 288718770428248118
       },
       {
-         "Save_name": "ghkj",
+         "Save_name": "charlie conf",
          "channel": 5,
-         "Power": 0,
+         "Power": 12,
          "Bandwidth": 0,
-         "Frequency": 3250.0,
-         "Date": "06/06/2022 16:11:49",
-         "id": 198628047215697406
+         "Frequency": 3078.571533203125,
+         "Date": "06/06/2022 20:53:20",
+         "id": 309101295540873613
       },
       {
-         "Save_name": "ghkj",
+         "Save_name": "charlie conf",
          "channel": 6,
-         "Power": 0,
+         "Power": 12,
          "Bandwidth": 0,
-         "Frequency": 3900.0,
-         "Date": "06/06/2022 16:11:49",
-         "id": 218864980006210088
+         "Frequency": 3235.714599609375,
+         "Date": "06/06/2022 20:53:20",
+         "id": 129220973313291918
       },
       {
-         "Save_name": "ghkj",
+         "Save_name": "charlie conf",
          "channel": 7,
-         "Power": 0,
+         "Power": 12,
          "Bandwidth": 0,
-         "Frequency": 4550.0,
-         "Date": "06/06/2022 16:11:49",
-         "id": 225522041670861065
+         "Frequency": 3392.857421875,
+         "Date": "06/06/2022 20:53:20",
+         "id": 118039222599849971
       },
       {
-         "Save_name": "ghkj",
+         "Save_name": "charlie conf",
          "channel": 8,
-         "Power": 0,
+         "Power": 12,
          "Bandwidth": 0,
-         "Frequency": 5200.0,
-         "Date": "06/06/2022 16:11:49",
-         "id": 281420991844411931
-      },
-      {
-         "Save_name": "wifi save",
-         "channel": 1,
-         "Power": 17,
-         "Bandwidth": 2,
-         "Frequency": 2415.0,
-         "Date": "06/06/2022 16:11:49",
-         "id": 209979562790219019
-      },
-      {
-         "Save_name": "wifi save",
-         "channel": 2,
-         "Power": 17,
-         "Bandwidth": 2,
-         "Frequency": 2440.0,
-         "Date": "06/06/2022 16:11:49",
-         "id": 108637707878527535
-      },
-      {
-         "Save_name": "wifi save",
-         "channel": 3,
-         "Power": 17,
-         "Bandwidth": 2,
-         "Frequency": 2455.0,
-         "Date": "06/06/2022 16:11:49",
-         "id": 159280437188711349
-      },
-      {
-         "Save_name": "wifi save",
-         "channel": 4,
-         "Power": 17,
-         "Bandwidth": 2,
-         "Frequency": 5213.0,
-         "Date": "06/06/2022 16:11:49",
-         "id": 498904413945228051
-      },
-      {
-         "Save_name": "wifi save",
-         "channel": 5,
-         "Power": 17,
-         "Bandwidth": 2,
-         "Frequency": 5760.0,
-         "Date": "06/06/2022 16:11:49",
-         "id": 217029342053732823
-      },
-      {
-         "Save_name": "wifi save",
-         "channel": 6,
-         "Power": 17,
-         "Bandwidth": 2,
-         "Frequency": 5195.0,
-         "Date": "06/06/2022 16:11:49",
-         "id": 576800849009751309
-      },
-      {
-         "Save_name": "wifi save",
-         "channel": 7,
-         "Power": 17,
-         "Bandwidth": 2,
-         "Frequency": 5510.0,
-         "Date": "06/06/2022 16:11:49",
-         "id": 300571307250029034
-      },
-      {
-         "Save_name": "wifi save",
-         "channel": 8,
-         "Power": 17,
-         "Bandwidth": 2,
-         "Frequency": 5705.0,
-         "Date": "06/06/2022 16:11:49",
-         "id": 319035234386523545
-      },
-      {
-         "Save_name": "sfsdfsdagasd",
-         "channel": 1,
-         "Power": 0,
-         "Bandwidth": 0,
-         "Frequency": 650.0,
-         "Date": "06/06/2022 16:22:01",
-         "id": 563214836706411201
-      },
-      {
-         "Save_name": "sfsdfsdagasd",
-         "channel": 2,
-         "Power": 0,
-         "Bandwidth": 0,
-         "Frequency": 1300.0,
-         "Date": "06/06/2022 16:22:01",
-         "id": 577227175517661238
-      },
-      {
-         "Save_name": "sfsdfsdagasd",
-         "channel": 3,
-         "Power": 0,
-         "Bandwidth": 0,
-         "Frequency": 1950.0,
-         "Date": "06/06/2022 16:22:01",
-         "id": 251999438686914737
-      },
-      {
-         "Save_name": "sfsdfsdagasd",
-         "channel": 4,
-         "Power": 0,
-         "Bandwidth": 0,
-         "Frequency": 2600.0,
-         "Date": "06/06/2022 16:22:01",
-         "id": 107798198401741447
-      },
-      {
-         "Save_name": "sfsdfsdagasd",
-         "channel": 5,
-         "Power": 0,
-         "Bandwidth": 0,
-         "Frequency": 3250.0,
-         "Date": "06/06/2022 16:22:01",
-         "id": 143336052753353791
-      },
-      {
-         "Save_name": "sfsdfsdagasd",
-         "channel": 6,
-         "Power": 0,
-         "Bandwidth": 0,
-         "Frequency": 3900.0,
-         "Date": "06/06/2022 16:22:01",
-         "id": 185307492239535387
-      },
-      {
-         "Save_name": "sfsdfsdagasd",
-         "channel": 7,
-         "Power": 0,
-         "Bandwidth": 0,
-         "Frequency": 4550.0,
-         "Date": "06/06/2022 16:22:01",
-         "id": 137118728119425331
-      },
-      {
-         "Save_name": "sfsdfsdagasd",
-         "channel": 8,
-         "Power": 0,
-         "Bandwidth": 0,
-         "Frequency": 5200.0,
-         "Date": "06/06/2022 16:22:01",
-         "id": 191277540246628451
-      },
-      {
-         "Save_name": "list change",
-         "channel": 1,
-         "Power": 0,
-         "Bandwidth": 0,
-         "Frequency": 650.0,
-         "Date": "06/06/2022 16:22:50",
-         "id": 134467797221810198
-      },
-      {
-         "Save_name": "list change",
-         "channel": 2,
-         "Power": 0,
-         "Bandwidth": 0,
-         "Frequency": 1300.0,
-         "Date": "06/06/2022 16:22:50",
-         "id": 256918685163968945
-      },
-      {
-         "Save_name": "list change",
-         "channel": 3,
-         "Power": 0,
-         "Bandwidth": 0,
-         "Frequency": 1950.0,
-         "Date": "06/06/2022 16:22:50",
-         "id": 164157683172879454
-      },
-      {
-         "Save_name": "list change",
-         "channel": 4,
-         "Power": 0,
-         "Bandwidth": 0,
-         "Frequency": 2600.0,
-         "Date": "06/06/2022 16:22:50",
-         "id": 150205797673340923
-      },
-      {
-         "Save_name": "list change",
-         "channel": 5,
-         "Power": 0,
-         "Bandwidth": 0,
-         "Frequency": 3250.0,
-         "Date": "06/06/2022 16:22:50",
-         "id": 159408588595855132
-      },
-      {
-         "Save_name": "list change",
-         "channel": 6,
-         "Power": 0,
-         "Bandwidth": 0,
-         "Frequency": 3900.0,
-         "Date": "06/06/2022 16:22:50",
-         "id": 200276493353147962
-      },
-      {
-         "Save_name": "list change",
-         "channel": 7,
-         "Power": 0,
-         "Bandwidth": 0,
-         "Frequency": 4550.0,
-         "Date": "06/06/2022 16:22:50",
-         "id": 330027101940652293
-      },
-      {
-         "Save_name": "list change",
-         "channel": 8,
-         "Power": 0,
-         "Bandwidth": 0,
-         "Frequency": 5200.0,
-         "Date": "06/06/2022 16:22:50",
-         "id": 283001546463169012
+         "Frequency": 3550.000244140625,
+         "Date": "06/06/2022 20:53:20",
+         "id": 277628032472009006
       }
    ]
 }

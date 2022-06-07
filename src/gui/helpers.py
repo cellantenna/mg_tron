@@ -257,7 +257,6 @@ def custom_save(sender, app_data, user_data) -> None:
                 "Bandwidth": dpg.get_value(f"bandwidth_{channel}"),
                 "Frequency": dpg.get_value(f"freq_{channel}"),
                 "Date": dt_string,
-
             }
             for channel in range(1, 9)
         )
@@ -278,10 +277,6 @@ def custom_load(sender=None, app_data=None, user_data=None) -> json:
     custom_save_file = db.getDb("src/gui/db/long_save.json")
 
     return custom_save_file.getAll()
-
-    
-
-    
 
 
 def auto_fill_freq(

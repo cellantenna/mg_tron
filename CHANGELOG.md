@@ -19,6 +19,7 @@ Here we write upgrade and change notes.
 ## [0.12.0] - 2022 JUN 6
 
 - The eight button on the right border correspond to up to eight cards
+- Custom save configured and working
 
 ## [0.11.0] - 2022 JUN 3
 
