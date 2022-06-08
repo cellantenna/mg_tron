@@ -1,19 +1,20 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-from cmath import log
 import configparser
 import json
 import logging
-import sys
-from typing import Any
-from pysondb import db, errors
 import platform
 import subprocess
+import sys
+from cmath import log
+from datetime import datetime
+from typing import Any
+
 import dearpygui.dearpygui as dpg
 import pandas as pd
-from interface import Megatron, find_device
+from pysondb import db, errors
 
-from datetime import datetime
+from interface import Megatron, find_device
 
 # datetime object containing current date and time
 now = datetime.now()
@@ -716,7 +717,7 @@ def find_signals_and_frequencies() -> dict:
                      delim_whitespace=True, engine="python")
 
     signal_column = df.loc[:, "SECURITY"]
-    signal_set = set(signal_column)
+    signal_set = set(str(signal_column))
     filtered_signals = [x for x in signal_set if not x.__contains__("MHz")]
 
     frequency_column = df.loc[:, "FREQ"]
@@ -748,6 +749,7 @@ def wifi_scan_jam(sender, app_data, user_data) -> None:
             loggey.debug(
                 msg=f"Frequency, in sig strength order, discovered: {freq}"),
             # callstack_helper(channel=i),
+
         )
         for i, freq in enumerate(sorted(freq_and_strength), start=1)
     ]

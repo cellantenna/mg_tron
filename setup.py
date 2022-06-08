@@ -22,7 +22,7 @@ setuptools.setup(
         "Bug Tracker": "https://github.com/mg_tron/issues",
     },
     classifiers=[
-        "Programming Language :: Python :: 3.10",
+        "Programming Language :: Python :: 3.10.5",
         "Operating System :: POSIX :: Linux",
         "Programming Language :: Python :: Implementation :: CPython",
         "Topic :: Software Development :: Libraries :: Python Modules",
