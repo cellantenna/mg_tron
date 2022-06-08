@@ -1,9 +1,9 @@
 import setuptools
 
-from gui.helpers import VERSION
+from src.gui.helpers import VERSION
 
 with open(
-    "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/CHANGELOG.md",
+    "/home/mirza/megatron_pip/mg_tron/CHANGELOG.md",
     "r",
     encoding="utf-8",
 ) as fh:

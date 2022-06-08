@@ -16,3 +16,6 @@ gmon.out
 *egg*
 dist/
 mg.log
+build/
+mg.log*
+*Stashed*
