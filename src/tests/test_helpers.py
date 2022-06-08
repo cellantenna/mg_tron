@@ -1,3 +1,4 @@
+from typing import type_check_only
 from gui.helpers import kill_channel
 import dearpygui.dearpygui as dpg
 from src.gui.helpers import find_signals_and_frequencies

@@ -468,7 +468,7 @@ def mission_golf(sender, app_data, user_data) -> None:
             dpg.set_value(item="freq_4", value=i),
             #callstack_helper(channel=4),
         )
-        for i in range(6350, 6400, 10)
+        for i in range(50, 100, 10)
     ]
 
 
