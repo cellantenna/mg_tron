@@ -16,6 +16,10 @@ Here we write upgrade and change notes.
 
 ✳️ PATCH version when you make backwards compatible bug fixes.
 
+## [0.12.1] - 2022 JUN 7
+
+- Critical error in `find_dev.sh`; linux device finding listing script
+
 ## [0.12.0] - 2022 JUN 6
 
 - The eight button on the right border correspond to up to eight cards

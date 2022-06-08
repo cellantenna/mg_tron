@@ -18,7 +18,7 @@ from interface import Megatron, find_device
 
 # datetime object containing current date and time
 now = datetime.now()
-VERSION: str = "0.12.0"
+VERSION: str = "0.12.1"
 
 loggey = logging.getLogger(name=__name__)
 
@@ -466,9 +466,9 @@ def mission_golf(sender, app_data, user_data) -> None:
     [
         (
             dpg.set_value(item="freq_4", value=i),
-            callstack_helper(channel=4),
+            #callstack_helper(channel=4),
         )
-        for i in range(50, 6400, 10)
+        for i in range(6350, 6400, 10)
     ]
 
 
