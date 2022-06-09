@@ -723,7 +723,7 @@ def find_signals_and_frequencies() -> dict:
     frequency_column = df.loc[:, "FREQ"] 
     frequency_column.unique()
     freq_set = set(frequency_column)
-    filtered_frequencies = [x for x in freq_set if not x.__contains__(":")]
+    filtered_frequencies = [x for x in freq_set if not x.__contains__(":") & isinstance(x, str)]
     freq_and_signal = {}
     for freq in filtered_frequencies:
         for signal in filtered_signals:

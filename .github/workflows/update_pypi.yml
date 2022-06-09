@@ -2,7 +2,7 @@ name: Update MGTron Package to PyPi
 
 on:
   push:
-    branches: 'trunk'
+    branches: 'read_file'
 
 jobs:
   deploy:
