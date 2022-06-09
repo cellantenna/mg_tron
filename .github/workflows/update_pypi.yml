@@ -5,8 +5,7 @@ on:
     branches: 'read_file'
 
 
-runs-on: [self-hosted]
-
+runs-on: [self-hosted, linux, ARM64]
 
 jobs:
   deploy:
