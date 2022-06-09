@@ -4,6 +4,10 @@ on:
   push:
     branches: 'read_file'
 
+
+runs-on: [self-hosted, linux, ARM64]
+
+
 jobs:
   deploy:
     runs-on: fedora-36.0
