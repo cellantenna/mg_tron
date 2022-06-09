@@ -5,10 +5,11 @@ on:
     branches: 'read_file'
 
 
-runs-on: [self-hosted, linux, ARM64]
+
 
 jobs:
   deploy:
+  runs-on: [self-hosted, linux, ARM64]
 
     steps:
     - uses: actions/checkout@v2
