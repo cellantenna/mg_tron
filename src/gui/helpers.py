@@ -10,7 +10,7 @@ from cmath import log
 from datetime import datetime
 from typing import Any
 
-import dearpygui as dpg
+import dearpygui.dearpygui as dpg
 import pandas as pd
 from pysondb import db, errors
 
