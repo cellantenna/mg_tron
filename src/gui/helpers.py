@@ -717,12 +717,14 @@ def find_signals_and_frequencies() -> dict:
 
     signal_column = df.loc[:, "SECURITY"]
     signal_set = set(signal_column)
-    filtered_signals = [x for x in signal_set if not x.__contains__("MHz") & isinstance(x, str)]
+    filtered_signals = [x for x in signal_set if not x.__contains__("MHz")]
 
     frequency_column = df.loc[:, "FREQ"] 
     frequency_column.unique()
     freq_set = set(frequency_column)
-    filtered_frequencies = [x for x in freq_set if not x.__contains__(":") & isinstance(x, str)]
+    filtered_frequencies = [x for x in freq_set if not x.__contains__(":")]
+    filtered_frequencies = [x for x in filtered_frequencies if not x.__contains__("Infra")]
+    filtered_frequencies = [i for i in filtered_frequencies if i >= "2400"]
     freq_and_signal = {}
     for freq in filtered_frequencies:
         for signal in filtered_signals:

@@ -1,7 +1,9 @@
-from typing import type_check_only
+from sre_constants import ASSERT_NOT
+
+from numpy import isin
 from gui.helpers import kill_channel
 import dearpygui.dearpygui as dpg
-from src.gui.helpers import find_signals_and_frequencies
+from gui.helpers import find_signals_and_frequencies
 
 def test_kill_channel() -> None:
     
@@ -9,5 +11,12 @@ def test_kill_channel() -> None:
 
 
 def test_wifi_scanner(): 
-    
+    x = find_signals_and_frequencies()
     assert isinstance(find_signals_and_frequencies(), dict)
+
+
+def test_frequency_dict_for_string():
+
+    val = "Infra"
+    if val in find_signals_and_frequencies(): 
+        assert isinstance(find_signals_and_frequencies(), list)
