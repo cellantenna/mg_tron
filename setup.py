@@ -3,7 +3,7 @@ import setuptools
 from src.gui.helpers import VERSION
 
 with open(
-    "/home/mirza/megatron_pip/mg_tron/CHANGELOG.md",
+    "CHANGELOG.md",
     "r",
     encoding="utf-8",
 ) as fh:
