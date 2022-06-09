@@ -5,12 +5,11 @@ on:
     branches: 'read_file'
 
 
-runs-on: [self-hosted, linux, ARM64]
+runs-on: [self-hosted]
 
 
 jobs:
   deploy:
-    runs-on: fedora-36.0
 
     steps:
     - uses: actions/checkout@v2
