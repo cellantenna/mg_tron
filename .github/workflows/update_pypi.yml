@@ -4,12 +4,9 @@ on:
   push:
     branches: 'read_file'
 
-
-
-
 jobs:
   deploy:
-  runs-on: [self-hosted, linux, ARM64]
+    runs-on: [self-hosted, linux, ARM64]
 
     steps:
     - uses: actions/checkout@v2
