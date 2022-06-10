@@ -22,6 +22,7 @@ from helpers import (
     device_finder,
     fill_config,
     kill_channel,
+    load_chosen,
     mission_alpha,
     mission_bravo,
     mission_charlie,
@@ -40,7 +41,6 @@ from helpers import (
 )
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent.parent
-WORKING = ROOT / "src" / "gui"
 
 logger = logging.getLogger(name=__name__)
 
@@ -116,13 +116,13 @@ with dpg.handler_registry():
 with dpg.font_registry():
     try:  # Stop gap incase the files cannot be found
         default_font_added = dpg.add_font(
-            file=str(WORKING / "fonts/MesloLGS NF Regular.ttf"), size=40)
+            file="fonts/MesloLGS NF Regular.ttf", size=40)
         ital_font = dpg.add_font(
-            file=WORKING / "fonts/MesloLGS NF Italic.ttf", size=20)
+            file="fonts/MesloLGS NF Italic.ttf", size=20)
         bold_font = dpg.add_font(
-            file=WORKING / "fonts/MesloLGS NF Bold Italic.ttf", size=40)
+            file="fonts/MesloLGS NF Bold Italic.ttf", size=40)
         small_font = dpg.add_font(
-            file=WORKING / "fonts/MesloLGS NF Italic.ttf", size=13)
+            file="fonts/MesloLGS NF Italic.ttf", size=13)
     except SystemError:
         logger.exception(msg="Unable to locate font files")
 
@@ -587,18 +587,18 @@ with dpg.window(
             modal=True,
             tag="modal_load",
         ):
-            SAVED_LIST: dict[str, Any] = custom_load()
-            SAVED_DATA = set(k["Save_name"] for k in SAVED_LIST)
+            SAVED_LIST: list[dict[str]] = custom_load()
 
-            [
+            logger.debug(msg="Custom load options loaded")
+            {
                 dpg.add_menu_item(
                     parent="load_input",
-                    label=SAVED_DATA,
-                    callback=lambda: logger.info(
-                        msg="\nLoad menu item called\n"),
+                    label=save["Save_name"],
+                    callback=load_chosen,
+                    user_data=save["Save_name"],
                 )
-                for _ in range(len(SAVED_LIST))
-            ]
+                for save in SAVED_LIST
+            }
 
             dpg.add_button(
                 label="Quit",
