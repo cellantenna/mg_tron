@@ -1,1 +1,68 @@
-{"data": []}
+{
+   "data": [
+      {
+         "save_name": "delta save",
+         "Power": 30,
+         "Bandwidth": 10,
+         "Frequency": 4000.0,
+         "Date": "10/06/2022 15:31:38",
+         "id": 259494285692567384
+      },
+      {
+         "save_name": "delta save",
+         "Power": 32,
+         "Bandwidth": 10,
+         "Frequency": 5650.0,
+         "Date": "10/06/2022 15:31:38",
+         "id": 258085478283581753
+      },
+      {
+         "save_name": "delta save",
+         "Power": 34,
+         "Bandwidth": 10,
+         "Frequency": 5800.0,
+         "Date": "10/06/2022 15:31:38",
+         "id": 192006877798847852
+      },
+      {
+         "save_name": "delta save",
+         "Power": 36,
+         "Bandwidth": 10,
+         "Frequency": 5850.0,
+         "Date": "10/06/2022 15:31:38",
+         "id": 236543707601838348
+      },
+      {
+         "save_name": "delta save",
+         "Power": 36,
+         "Bandwidth": 10,
+         "Frequency": 6000.0,
+         "Date": "10/06/2022 15:31:38",
+         "id": 213357557079932716
+      },
+      {
+         "save_name": "delta save",
+         "Power": 38,
+         "Bandwidth": 10,
+         "Frequency": 6250.0,
+         "Date": "10/06/2022 15:31:38",
+         "id": 230064185873418899
+      },
+      {
+         "save_name": "delta save",
+         "Power": 28,
+         "Bandwidth": 10,
+         "Frequency": 6300.0,
+         "Date": "10/06/2022 15:31:38",
+         "id": 225299455791440204
+      },
+      {
+         "save_name": "delta save",
+         "Power": 17,
+         "Bandwidth": 10,
+         "Frequency": 6359.5400390625,
+         "Date": "10/06/2022 15:31:38",
+         "id": 100737526858421607
+      }
+   ]
+}

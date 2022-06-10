@@ -16,6 +16,15 @@ Here we write upgrade and change notes.
 
 ✳️ PATCH version when you make backwards compatible bug fixes.
 
+## ✳️[0.12.3] - 2022 JUN 10
+
+-Automatically overwrite or create save file if file is nonexistant or corrupted
+
+## ✳️[0.12.2] - 2022 JUN 10
+
+- Custom load functional!
+- Reconfigured custom save
+
 ## ✳️[0.12.1] - 2022 JUN 7
 
 - Removed the `find_dev.sh` script completely and retained that functionality

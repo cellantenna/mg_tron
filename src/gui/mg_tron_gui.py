@@ -537,7 +537,7 @@ with dpg.window(
         custom_save_button = dpg.add_button(
             tag="custom_save",
             height=70,
-            label="CUSTOM\nSAVE",
+            label="SAVE\nCONFIG",
             width=BUTTON_WIDTH,
             pos=(
                 (dpg.get_item_width(item="big_buttons") - 50) / DIVISOR,
@@ -574,7 +574,7 @@ with dpg.window(
             tag="custom_load_button",
             height=70,
             width=BUTTON_WIDTH,
-            label="CUSTOM\nLOAD",
+            label="LOAD\nCONFIG",
             pos=(
                 (dpg.get_item_width(item="big_buttons") - 250) / DIVISOR,
                 (dpg.get_item_height(item="big_buttons") - CUSTOM_CONFIG_HEIGHT) / 2,
@@ -587,18 +587,24 @@ with dpg.window(
             modal=True,
             tag="modal_load",
         ):
-            SAVED_LIST: list[dict[str]] = custom_load()
+            try:
+                SAVED_LIST: list[dict[str]] = custom_load()
 
-            logger.debug(msg="Custom load options loaded")
-            {
-                dpg.add_menu_item(
-                    parent="load_input",
-                    label=save["Save_name"],
-                    callback=load_chosen,
-                    user_data=save["Save_name"],
-                )
-                for save in SAVED_LIST
-            }
+                unique_names: list = list(
+                    set(save["save_name"] for save in SAVED_LIST))
+
+                logger.debug(msg="Custom load options loaded")
+                {
+                    dpg.add_menu_item(
+                        parent="load_input",
+                        label=unique,
+                        callback=load_chosen,
+                        user_data=unique,
+                    )
+                    for unique in unique_names
+                }
+            except (KeyError, TypeError):
+                logger.exception(msg="Save file corrupted")
 
             dpg.add_button(
                 label="Quit",
