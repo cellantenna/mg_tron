@@ -384,49 +384,246 @@ def two_point_four(sender, app_data, user_data) -> None:
     dpg.set_value(item=f"freq_8", value=5705)
 
 
+def read_config(file: str) -> tuple[str, DEVICE]:
+    """Read the config file and return the contents"""
+
+    devices = DEVICE
+    parser = configparser.ConfigParser()
+    parser.read(filenames=file, encoding="utf-8")
+    loggey.info(msg=f"file {file} read")
+
+    return parser, devices
+
+
 def mission_alpha(sender, app_data, user_data) -> None:
-    """Auto Fill the band 2 celluar band"""
+    """Mission alpha user facing button configuration"""
 
     loggey.info(msg=f"{mission_alpha.__name__}() executed")
 
-    # auto_fill_freq(
-    #     freq_val=650,
-    #     freq_constant=28.54,
-    # )
+    try:
+
+        parser, _ = read_config(file=f"_configs/{mission_alpha.__name__}.ini")
+
+        [
+            (
+                dpg.set_value(
+                    item=f"freq_{config}",
+                    value=float(parser['freq'][f'freq_{config}'])),
+
+                dpg.set_value(
+                    item=f"power_{config}",
+                    value=float(parser['power'][f'power_{config}'])),
+
+                dpg.set_value(
+                    item=f"bandwidth_{config}",
+                    value=float(parser['bandwidth'][f'bw_{config}'])),
+            )
+
+            for config in range(1, 9)
+        ]
+
+    except KeyError:
+        loggey.exception(msg="Error in reading the config file")
+    except SystemError:
+        loggey.exception(
+            msg="Invalid data type;  Expected floating point value")
 
 
 def mission_bravo(sender, app_data, user_data) -> None:
-    """Auto Fill the band 4 celluar band"""
+    """Mission bravo facing button config"""
 
     loggey.info(msg=f"{mission_bravo.__name__}() executed")
 
-    auto_fill_freq(
-        freq_val=1950,
-        freq_constant=57.1429,
-    )
+    try:
+
+        parser, _ = read_config(file=f"_configs/{mission_bravo.__name__}.ini")
+
+        [
+            (
+                dpg.set_value(
+                    item=f"freq_{config}",
+                    value=float(parser['freq'][f'freq_{config}'])),
+
+                dpg.set_value(
+                    item=f"power_{config}",
+                    value=float(parser['power'][f'power_{config}'])),
+
+                dpg.set_value(
+                    item=f"bandwidth_{config}",
+                    value=float(parser['bandwidth'][f'bw_{config}'])),
+            )
+
+            for config in range(1, 9)
+        ]
+
+    except KeyError:
+        loggey.exception(msg="Error in reading the config file")
+    except SystemError:
+        loggey.exception(
+            msg="Invalid data type;  Expected floating point value")
 
 
 def mission_charlie(sender, app_data, user_data) -> None:
-    """Auto Fill the band 5 celluar band"""
+    """Mission delta facing button config"""
 
     loggey.info(msg=f"{mission_charlie.__name__}() executed")
 
-    auto_fill_freq(
-        freq_val=2450,
-        freq_constant=157.1429,
-    )
+    try:
+
+        parser, _ = read_config(
+            file=f"_configs/{mission_charlie.__name__}.ini")
+
+        [
+            (
+                dpg.set_value(
+                    item=f"freq_{config}",
+                    value=float(parser['freq'][f'freq_{config}'])),
+
+                dpg.set_value(
+                    item=f"power_{config}",
+                    value=float(parser['power'][f'power_{config}'])),
+
+                dpg.set_value(
+                    item=f"bandwidth_{config}",
+                    value=float(parser['bandwidth'][f'bw_{config}'])),
+            )
+
+            for config in range(1, 9)
+        ]
+
+    except KeyError:
+        loggey.exception(msg="Error in reading the config file")
+    except SystemError:
+        loggey.exception(
+            msg="Invalid data type;  Expected floating point value")
 
 
-def demo_config(sender, app_data, user_data) -> None:
-    """Demonstration of frequency hopping"""
+def mission_delta(sender, app_data, user_data) -> None:
+    """Mission delta facing button config"""
 
-    loggey.info(msg=f"{demo_config.__name__}() executed")
+    try:
+
+        parser, _ = read_config(file=f"_configs/{mission_delta.__name__}.ini")
+
+        [
+            (
+                dpg.set_value(
+                    item=f"freq_{config}",
+                    value=float(parser['freq'][f'freq_{config}'])),
+
+                dpg.set_value(
+                    item=f"power_{config}",
+                    value=float(parser['power'][f'power_{config}'])),
+
+                dpg.set_value(
+                    item=f"bandwidth_{config}",
+                    value=float(parser['bandwidth'][f'bw_{config}'])),
+            )
+
+            for config in range(1, 9)
+        ]
+
+    except KeyError:
+        loggey.exception(msg="Error in reading the config file")
+    except SystemError:
+        loggey.exception(
+            msg="Invalid data type;  Expected floating point value")
 
 
-def demo_config_2(sender, app_data, user_data) -> None:
-    """Demo 2 config"""
+def mission_echo(sender, app_data, user_data) -> None:
+    """Mission echo facing button config"""
 
-    loggey.info(msg=f"{demo_config_2.__name__}() executed")
+    try:
+
+        parser, _ = read_config(file=f"_configs/{mission_echo.__name__}.ini")
+
+        [
+            (
+                dpg.set_value(
+                    item=f"freq_{config}",
+                    value=float(parser['freq'][f'freq_{config}'])),
+
+                dpg.set_value(
+                    item=f"power_{config}",
+                    value=float(parser['power'][f'power_{config}'])),
+
+                dpg.set_value(
+                    item=f"bandwidth_{config}",
+                    value=float(parser['bandwidth'][f'bw_{config}'])),
+            )
+
+            for config in range(1, 9)
+        ]
+
+    except KeyError:
+        loggey.exception(msg="Error in reading the config file")
+    except SystemError:
+        loggey.exception(
+            msg="Invalid data type;  Expected floating point value")
+
+
+def mission_golf(sender, app_data, user_data) -> None:
+    """Mission golf facing button config"""
+
+    try:
+
+        parser, _ = read_config(file=f"_configs/{mission_golf.__name__}.ini")
+
+        [
+            (
+                dpg.set_value(
+                    item=f"freq_{config}",
+                    value=float(parser['freq'][f'freq_{config}'])),
+
+                dpg.set_value(
+                    item=f"power_{config}",
+                    value=float(parser['power'][f'power_{config}'])),
+
+                dpg.set_value(
+                    item=f"bandwidth_{config}",
+                    value=float(parser['bandwidth'][f'bw_{config}'])),
+            )
+
+            for config in range(1, 9)
+        ]
+
+    except KeyError:
+        loggey.exception(msg="Error in reading the config file")
+    except SystemError:
+        loggey.exception(
+            msg="Invalid data type;  Expected floating point value")
+
+
+def mission_fox(sender, app_data, user_data) -> None:
+    """Mission fox facing button config"""
+
+    try:
+
+        parser, _ = read_config(file=f"_configs/{mission_fox.__name__}.ini")
+
+        [
+            (
+                dpg.set_value(
+                    item=f"freq_{config}",
+                    value=float(parser['freq'][f'freq_{config}'])),
+
+                dpg.set_value(
+                    item=f"power_{config}",
+                    value=float(parser['power'][f'power_{config}'])),
+
+                dpg.set_value(
+                    item=f"bandwidth_{config}",
+                    value=float(parser['bandwidth'][f'bw_{config}'])),
+            )
+
+            for config in range(1, 9)
+        ]
+
+    except KeyError:
+        loggey.exception(msg="Error in reading the config file")
+    except SystemError:
+        loggey.exception(
+            msg="Invalid data type;  Expected floating point value")
 
 
 def auto_fill_custom_save(sender, app_data, user_data) -> None:
@@ -438,60 +635,6 @@ def auto_fill_custom_save(sender, app_data, user_data) -> None:
     freq_8 = dpg.get_value("freq_8")
 
     dpg.set_value(item="save_custom_input", value=str(f"{freq_1} - {freq_8}"))
-
-
-def mission_delta(sender, app_data, user_data) -> None:
-    """GPS blocking presets"""
-
-    loggey.info(msg=f"{mission_delta.__name__}() executed")
-
-    dpg.set_value(item=f"freq_1", value=1221)
-    dpg.set_value(item=f"power_1", value=10)
-    dpg.set_value(item=f"bandwidth_1", value=100)
-
-    dpg.set_value(item=f"freq_2", value=1236)
-    dpg.set_value(item=f"power_2", value=10)
-    dpg.set_value(item=f"bandwidth_2", value=100)
-
-    dpg.set_value(item=f"freq_3", value=1248)
-    dpg.set_value(item=f"power_3", value=10)
-    dpg.set_value(item=f"bandwidth_3", value=100)
-
-    dpg.set_value(item=f"freq_4", value=1260)
-    dpg.set_value(item=f"power_4", value=10)
-    dpg.set_value(item=f"bandwidth_4", value=100)
-
-    dpg.set_value(item=f"freq_5", value=1557)
-    dpg.set_value(item=f"power_5", value=10)
-    dpg.set_value(item=f"bandwidth_5", value=100)
-
-    dpg.set_value(item=f"freq_6", value=1572)
-    dpg.set_value(item=f"power_6", value=10)
-    dpg.set_value(item=f"bandwidth_6", value=100)
-
-    dpg.set_value(item=f"freq_7", value=1587)
-    dpg.set_value(item=f"power_7", value=10)
-    dpg.set_value(item=f"bandwidth_7", value=100)
-
-    dpg.set_value(item=f"freq_8", value=1605)
-    dpg.set_value(item=f"power_8", value=10)
-    dpg.set_value(item=f"bandwidth_8", value=100)
-
-
-def mission_golf(sender, app_data, user_data) -> None:
-    """Test to find max power vs frequency"""
-
-    [
-        (
-            dpg.set_value(item="freq_1", value=i),
-            callstack_helper(channel=1),
-        )
-        for i in range(50, 6400, 10)
-    ]
-
-
-def mission_fox(sender, app_data, user_data) -> None:
-    """Action to be taken upon depression of mission fox button"""
 
 
 def kill_channel(sender, app_data, user_data: int) -> None:
@@ -528,26 +671,24 @@ def device_finder(sender=None, app_data=None, user_data: int = int()) -> None:
 def fill_config():
     """Automatically fill the config file with devices detected"""
 
-    devices = DEVICE
-    parser = configparser.ConfigParser()
-    parser.read(filenames="card_config.ini", encoding="utf-8")
-    config = configparser.ConfigParser()
+    parser, devices = read_config(file="_configs/card_config.ini")
+
     try:
         if not parser["mgtron"]["card_1"]:
             loggey.info(msg="The config file was not populated")
             # Automatically fill in an empty config file
-            config["mgtron"] = {
+            parser["mgtron"] = {
                 f"card_{i+1}": str(devices[i].split(sep="_")[-1])
                 for i in range(len(devices))
             }
-            with open(file="card_config.ini", mode="w") as configfile:
-                config.write(configfile)
+            with open(file="_configs/card_config.ini", mode="w") as config_file:
+                parser.write(config_file)
             loggey.info(msg="Config file has been automatically filled")
         else:
             loggey.info(msg="Config file already filled")
     except (KeyError, IndexError):
         loggey.exception(msg="Config file error")
-        with open(file="card_config.ini", mode="w") as config_file:
+        with open(file="_configs/card_config.ini", mode="w") as config_file:
             config_file.write("[mgtron]\n")
             [config_file.write(f"card_{i+1}=\n") for i in range(len(DEVICE))]
         fill_config()
@@ -556,11 +697,8 @@ def fill_config():
 def config_intake() -> None:
     """Read a config file and assign card buttons"""
 
-    devices = DEVICE
-    parser = configparser.ConfigParser()
-    loggey.info(msg="finding the log file")
-    parser.read(filenames="card_config.ini", encoding="utf-8")
-    loggey.info(msg="file read")
+    parser, devices = read_config(file="_configs/card_config.ini")
+
     if len(devices) > 1:
         for card in range(1, len(devices) + 1):
             try:
@@ -579,17 +717,15 @@ def config_intake() -> None:
                         loggey.info(
                             msg=f"Config ID not detected by devices on {platform.machine()} | {config_intake.__name__}"
                         )
-            except KeyError:
-                loggey.exception(msg="No config file detected")
+            except (KeyError, SystemError):
+                loggey.exception(
+                    msg="No config file detected OR more than eight devices detected")
 
 
 def card_selection(sender, app_data, user_data: int) -> None:
     """Load the selected cards prefix when selected"""
 
-    parser = configparser.ConfigParser()
-    loggey.info(msg="finding the log file")
-    parser.read(filenames="card_config.ini", encoding="utf-8")
-    loggey.info(msg="file read")
+    parser, _ = read_config(file="_configs/card_config.ini")
 
     loggey.info(msg=f"selected card: {user_data} | {card_selection.__name__}")
 

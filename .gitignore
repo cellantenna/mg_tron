@@ -18,4 +18,5 @@ dist/
 mg.log
 build/
 *Stashed*
-card_config.ini
+card_config*
+!_configs

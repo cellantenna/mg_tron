@@ -26,6 +26,8 @@ from helpers import (
     mission_bravo,
     mission_charlie,
     mission_delta,
+    mission_echo,
+    mission_fox,
     mission_golf,
     quick_load,
     reset_button,
@@ -697,7 +699,7 @@ with dpg.window(
             logger.info(msg="Mission Echo button initialized")
             mission_echo_button = dpg.add_button(
                 tag="mssn_echo",
-                callback=two_point_four,
+                callback=mission_echo,
                 label="ECHO\n",
                 height=70,
                 width=BUTTON_WIDTH,
@@ -713,7 +715,7 @@ with dpg.window(
             logger.info(msg="Mission Fox button initialized")
             mission_fox_button = dpg.add_button(
                 tag="mssn_fox",
-                # callback=mission_fox,
+                callback=mission_fox,
                 label="FOX\n",
                 height=70,
                 width=BUTTON_WIDTH,
