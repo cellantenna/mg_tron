@@ -3,10 +3,9 @@
 import configparser
 import json
 import logging
+import pathlib
 import platform
 import subprocess
-import sys
-from cmath import log
 from datetime import datetime
 from typing import Any
 import dearpygui.dearpygui as dpg
@@ -14,6 +13,10 @@ import pandas as pd
 from pysondb import db, errors
 
 from interface import Megatron, find_device
+
+
+ROOT = pathlib.Path(__file__).resolve().parent.parent.parent
+WORKING = ROOT / "src" / "gui"
 
 # datetime object containing current date and time
 now = datetime.now()
@@ -59,13 +62,29 @@ def device_names() -> list[str]:
 
     # Avoid crashing program if there are no devices detected
     try:
-        devices: str = subprocess.check_output(
-            "src/gui/find_dev.sh", stderr=subprocess.STDOUT  # call bash script
-        ).decode("utf-8")
+        listing_script = [
+            f'#!/bin/bash\n'
+            f'for sysdevpath in $(find /sys/bus/usb/devices/usb*/ -name dev | grep "ACM"); do\n'
+            f'(syspath={"${sysdevpath%/dev}"}\n'
+            f'devname={"$(udevadm info -q name -p $syspath)"}\n'
+            f'[[ {"$devname"} == "bus/"* ]] && exit\n'
+            f'eval "$(udevadm info -q property --export -p $syspath)"\n'
+            f'[[ -z "$ID_SERIAL" ]] && exit\n'
+            f'echo "/dev/$devname - $ID_SERIAL"\n'
+            f') done']
+        devices = subprocess.run(
+            args=listing_script,
+            shell=True,
+            stdout=subprocess.PIPE,
+            universal_newlines=True,
+            encoding="utf-8",
+            capture_output=False,
+        )
     except TypeError:
         loggey.exception(msg="No devices detected")
 
-    devices: list = devices.strip().split(sep="\n")
+    devices: list = list(devices.stdout.strip().split(sep="\n"))
+
     loggey.info(msg=f"Devices found: {devices} | {device_names.__name__}")
 
     # If there is only one device skip the hooplah
@@ -464,10 +483,10 @@ def mission_golf(sender, app_data, user_data) -> None:
 
     [
         (
-            dpg.set_value(item="freq_4", value=i),
-            #callstack_helper(channel=4),
+            dpg.set_value(item="freq_1", value=i),
+            callstack_helper(channel=1),
         )
-        for i in range(50, 100, 10)
+        for i in range(50, 6400, 10)
     ]
 
 
@@ -552,7 +571,7 @@ def config_intake() -> None:
                         dpg.bind_item_theme(
                             item=f"card_{card}", theme=blue_btn_theme)
                         dpg.configure_item(item=f"card_{card}", enabled=True)
-                        # devices[card - 1].split("_")[0].split("-")[0]
+
                         loggey.info(
                             msg=f"INI config file matched devices detected | {config_intake.__name__}"
                         )
@@ -703,26 +722,16 @@ def find_signals_and_frequencies() -> dict:
     df = pd.read_csv(b, index_col=False,
                      delim_whitespace=True, engine="python")
 
-
-def find_signals_and_frequencies() -> dict:
-
-    output = subprocess.Popen(
-        ["nmcli", "-f", "ALL", "dev", "wifi"], stdout=subprocess.PIPE
-    )
-    from io import StringIO
-
-    b = StringIO(output.communicate()[0].decode("utf-8"))
-    df = pd.read_csv(b, index_col=False,
-                     delim_whitespace=True, engine="python")
-
     signal_column = df.loc[:, "SECURITY"]
     signal_set = set(signal_column)
-    filtered_signals = [x for x in signal_set if not x.__contains__("MHz") & isinstance(x, str)]
+    filtered_signals = [x for x in signal_set if not x.__contains__(
+        "MHz") & isinstance(x, str)]
 
-    frequency_column = df.loc[:, "FREQ"] 
+    frequency_column = df.loc[:, "FREQ"]
     frequency_column.unique()
     freq_set = set(frequency_column)
-    filtered_frequencies = [x for x in freq_set if not x.__contains__(":") & isinstance(x, str)]
+    filtered_frequencies = [
+        x for x in freq_set if not x.__contains__(":") & isinstance(x, str)]
     freq_and_signal = {}
     for freq in filtered_frequencies:
         for signal in filtered_signals:

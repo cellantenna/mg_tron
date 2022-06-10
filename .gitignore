@@ -1,5 +1,5 @@
 venv*
-__pycache__/*
+__pycache__
 .vscode
 *~
 package-lock.json
@@ -17,5 +17,5 @@ gmon.out
 dist/
 mg.log
 build/
-mg.log*
 *Stashed*
+card_config.ini

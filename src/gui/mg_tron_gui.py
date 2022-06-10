@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-from collections import Counter
 import logging
+import pathlib
 from typing import Any
 
 import dearpygui.dearpygui as dpg
@@ -37,7 +37,12 @@ from helpers import (
     wifi_scan_jam,
 )
 
+ROOT = pathlib.Path(__file__).resolve().parent.parent.parent
+WORKING = ROOT / "src" / "gui"
+
 logger = logging.getLogger(name=__name__)
+
+logger.debug(msg=f"Working dir: {ROOT}")
 
 logger.info(msg=f"Imports imported in GUI file")
 RESOLUTION: list[int] = [1250, 735]  # 1200x800
@@ -107,15 +112,17 @@ with dpg.handler_registry():
     dpg.add_mouse_wheel_handler(callback=change_inputs)
 
 with dpg.font_registry():
-    default_font_added = dpg.add_font(
-        file="src/gui/fonts/MesloLGS NF Regular.ttf", size=40
-    )
-    ital_font = dpg.add_font(
-        file="src/gui/fonts/MesloLGS NF Italic.ttf", size=20)
-    bold_font = dpg.add_font(
-        file="src/gui/fonts/MesloLGS NF Bold Italic.ttf", size=40)
-    small_font = dpg.add_font(
-        file="src/gui/fonts/MesloLGS NF Italic.ttf", size=13)
+    try:  # Stop gap incase the files cannot be found
+        default_font_added = dpg.add_font(
+            file=str(WORKING / "fonts/MesloLGS NF Regular.ttf"), size=40)
+        ital_font = dpg.add_font(
+            file=WORKING / "fonts/MesloLGS NF Italic.ttf", size=20)
+        bold_font = dpg.add_font(
+            file=WORKING / "fonts/MesloLGS NF Bold Italic.ttf", size=40)
+        small_font = dpg.add_font(
+            file=WORKING / "fonts/MesloLGS NF Italic.ttf", size=13)
+    except SystemError:
+        logger.exception(msg="Unable to locate font files")
 
 logger.info(msg="Setting Primary Window in GUI file")
 # Primary Window
@@ -800,18 +807,22 @@ with dpg.window(
             tag="ver_num",
         )
 
-dpg.bind_font(font=ital_font)
-dpg.bind_item_font(item="ver_num", font=small_font)
+try:  # Stop gap in case the files cannot be found
+    dpg.bind_font(font=ital_font)
+    dpg.bind_item_font(item="ver_num", font=small_font)
 
-[
-    (
-        dpg.bind_item_font(item=f"freq_{i}", font=bold_font),
-        dpg.bind_item_font(item=f"power_{i}", font=bold_font),
-        dpg.bind_item_font(item=f"bandwidth_{i}", font=bold_font),
-        dpg.bind_item_font(item=f"channel_{i}", font=default_font_added),
-    )
-    for i in range(1, 9)
-]
+    [
+        (
+            dpg.bind_item_font(item=f"freq_{i}", font=bold_font),
+            dpg.bind_item_font(item=f"power_{i}", font=bold_font),
+            dpg.bind_item_font(item=f"bandwidth_{i}", font=bold_font),
+            dpg.bind_item_font(item=f"channel_{i}", font=default_font_added),
+        )
+        for i in range(1, 9)
+    ]
+
+except NameError:
+    logger.exception(msg="Font files error")
 
 # Global Theme
 with dpg.theme() as global_theme:
@@ -875,5 +886,5 @@ try:
     dpg.start_dearpygui()
 except KeyboardInterrupt:
     logger.exception(msg="Ctrl C executed")
-    exit()  # Exit the program gracefully upon user input to quit
+    exit  # Exit the program gracefully upon user input to quit
 dpg.destroy_context()
