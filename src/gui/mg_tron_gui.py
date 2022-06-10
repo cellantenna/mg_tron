@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 import logging
+import pathlib
 from typing import Any
 
 import dearpygui.dearpygui as dpg
@@ -25,6 +26,8 @@ from helpers import (
     mission_bravo,
     mission_charlie,
     mission_delta,
+    mission_echo,
+    mission_fox,
     mission_golf,
     quick_load,
     reset_button,
@@ -33,9 +36,15 @@ from helpers import (
     send_vals,
     custom_save,
     two_point_four,
+    wifi_scan_jam,
 )
 
+ROOT = pathlib.Path(__file__).resolve().parent.parent.parent
+WORKING = ROOT / "src" / "gui"
+
 logger = logging.getLogger(name=__name__)
+
+logger.debug(msg=f"Working dir: {ROOT}")
 
 logger.info(msg=f"Imports imported in GUI file")
 RESOLUTION: list[int] = [1250, 735]  # 1200x800
@@ -46,9 +55,9 @@ DIVISOR: int = 1.5
 SEND_RESET_ALL_HEIGHT: int = 695
 CUSTOM_CONFIG_HEIGHT: int = 300
 QUICK_CONFIG_HEIGHT: int = 480
-DEMO_HEIGHT: int = 330
-WIFI_HEIGHT: int = 405
-CELLUAR_HEIGHT: int = 240
+DEMO_HEIGHT: int = -470
+WIFI_HEIGHT: int = -400
+CELLUAR_HEIGHT: int = -560
 MAIN_TABLE_HEIGHT: int = 1
 BUTTON_WIDTH = 120
 
@@ -79,32 +88,43 @@ with dpg.theme() as blue_btn_theme:
 # Grey Button Theme
 with dpg.theme() as grey_btn_theme:
     with dpg.theme_component(dpg.mvAll):
-        dpg.add_theme_color(dpg.mvThemeCol_Button, (105, 105, 105, 255))  # GREY
+        dpg.add_theme_color(dpg.mvThemeCol_Button,
+                            (105, 105, 105, 255))  # GREY
 
 # Orange Button Theme
 with dpg.theme() as orng_btn_theme:
     with dpg.theme_component(dpg.mvAll):
-        dpg.add_theme_color(dpg.mvThemeCol_Button, (255, 165, 0, 255))  # ORANGE
+        dpg.add_theme_color(dpg.mvThemeCol_Button,
+                            (255, 165, 0, 255))  # ORANGE
 
 # White Button Theme
 with dpg.theme() as wht_btn_theme:
     with dpg.theme_component(dpg.mvAll):
-        dpg.add_theme_color(dpg.mvThemeCol_Button, (255, 255, 255, 255))  # WHITE
+        dpg.add_theme_color(dpg.mvThemeCol_Button,
+                            (255, 255, 255, 255))  # WHITE
 
 # Grey Column Theme
 with dpg.theme() as grey_column_theme:
     with dpg.theme_component(dpg.mvAll):
-        dpg.add_theme_color(dpg.mvThemeCol_Button, (185, 185, 185, 255))  # WHITE
+        dpg.add_theme_color(dpg.mvThemeCol_Button,
+                            (185, 185, 185, 255))  # WHITE
 logger.info(msg="GUI colors set")
 
 with dpg.handler_registry():
     dpg.add_mouse_wheel_handler(callback=change_inputs)
 
 with dpg.font_registry():
-    default_font_added = dpg.add_font(file="src/gui/MesloLGS NF Regular.ttf", size=40)
-    ital_font = dpg.add_font(file="src/gui/MesloLGS NF Italic.ttf", size=20)
-    bold_font = dpg.add_font(file="src/gui/MesloLGS NF Bold Italic.ttf", size=40)
-    small_font = dpg.add_font(file="src/gui/MesloLGS NF Italic.ttf", size=13)
+    try:  # Stop gap incase the files cannot be found
+        default_font_added = dpg.add_font(
+            file=str(WORKING / "fonts/MesloLGS NF Regular.ttf"), size=40)
+        ital_font = dpg.add_font(
+            file=WORKING / "fonts/MesloLGS NF Italic.ttf", size=20)
+        bold_font = dpg.add_font(
+            file=WORKING / "fonts/MesloLGS NF Bold Italic.ttf", size=40)
+        small_font = dpg.add_font(
+            file=WORKING / "fonts/MesloLGS NF Italic.ttf", size=13)
+    except SystemError:
+        logger.exception(msg="Unable to locate font files")
 
 logger.info(msg="Setting Primary Window in GUI file")
 # Primary Window
@@ -134,7 +154,8 @@ with dpg.window(
         height=ROW_HEIGHT - ADJUSTMENT,
         border=False,
     ):
-        dpg.add_text(default_value=f"Frequency: 6.4GHz", pos=(9, 39 - ADJUSTMENT + 5))
+        dpg.add_text(default_value=f"Frequency: 6.4GHz",
+                     pos=(9, 39 - ADJUSTMENT + 5))
 
     # Header Column Power
     with dpg.child_window(
@@ -423,8 +444,9 @@ with dpg.window(
     with dpg.child_window(
         pos=(860, 0),
         tag="big_buttons",
-        width=270,
+        width=290,
         height=dpg.get_item_height(item="Primary Window") / 1.72,
+        no_scrollbar=True,
         border=False,
     ):
 
@@ -483,7 +505,7 @@ with dpg.window(
         save_all = dpg.add_button(
             tag="save button",
             callback=quick_save,
-            label="QUICK\n SAVE\nCONFIG",
+            label="QUICK\n SAVE",
             height=70,
             width=BUTTON_WIDTH,
             pos=(
@@ -499,7 +521,7 @@ with dpg.window(
         load_all = dpg.add_button(
             tag="load_all",
             callback=quick_load,
-            label="QUICK\n LOAD\nCONFIG",
+            label="QUICK\n LOAD",
             height=70,
             width=BUTTON_WIDTH,
             pos=(
@@ -515,7 +537,7 @@ with dpg.window(
         custom_save_button = dpg.add_button(
             tag="custom_save",
             height=70,
-            label="CUSTOM\nCONFIG\nSAVE",
+            label="CUSTOM\nSAVE",
             width=BUTTON_WIDTH,
             pos=(
                 (dpg.get_item_width(item="big_buttons") - 50) / DIVISOR,
@@ -540,7 +562,8 @@ with dpg.window(
             )
             dpg.add_button(
                 label="Quit",
-                callback=lambda: dpg.configure_item(item="modal_save", show=False),
+                callback=lambda: dpg.configure_item(
+                    item="modal_save", show=False),
             )
 
         ###############
@@ -551,7 +574,7 @@ with dpg.window(
             tag="custom_load_button",
             height=70,
             width=BUTTON_WIDTH,
-            label="CUSTOM\nCONFIG\nLOAD",
+            label="CUSTOM\nLOAD",
             pos=(
                 (dpg.get_item_width(item="big_buttons") - 250) / DIVISOR,
                 (dpg.get_item_height(item="big_buttons") - CUSTOM_CONFIG_HEIGHT) / 2,
@@ -564,162 +587,175 @@ with dpg.window(
             modal=True,
             tag="modal_load",
         ):
-
-            dpg.add_menu(
-                parent="modal_load",
-                label="Load File: ",
-                tag="load_input",
-            )
+            SAVED_LIST: dict[str, Any] = custom_load()
+            SAVED_DATA = set(k["Save_name"] for k in SAVED_LIST)
 
             [
                 dpg.add_menu_item(
                     parent="load_input",
-                    label=f"Previously Saved custom named item {i}",
-                    callback=lambda: logger.info(msg="\nMenu item called\n"),
+                    label=SAVED_DATA,
+                    callback=lambda: logger.info(
+                        msg="\nLoad menu item called\n"),
                 )
-                for i in range(1, 9)
+                for _ in range(len(SAVED_LIST))
             ]
 
             dpg.add_button(
                 label="Quit",
-                callback=lambda: dpg.configure_item(item="modal_load", show=False),
+                callback=lambda: dpg.configure_item(
+                    item="modal_load", show=False),
             )
 
         dpg.add_text(
             default_value="MISSIONS",
             pos=(
                 (dpg.get_item_width(item="big_buttons") - 120) / DIVISOR,
-                (dpg.get_item_height(item="big_buttons") + (DEMO_HEIGHT - 320)) / 2,
-            ),
-        )
-
-        ########################
-        # Mission Alpha button #
-        ########################
-        logger.info(msg="Alpha button initialized")
-        mission_alpha_button = dpg.add_button(
-            tag="Alpha\nConfig",
-            height=70,
-            width=BUTTON_WIDTH,
-            callback=mission_alpha,
-            label="ALPHA\nCONFIG",
-            pos=(
-                (dpg.get_item_width(item="big_buttons") - 250) / DIVISOR,
-                (dpg.get_item_height(item="big_buttons") + (DEMO_HEIGHT - 250)) / 2,
-            ),
-        )
-
-        ########################
-        # Mission Bravo button #
-        ########################
-        logger.info(msg="Bravo button initialized")
-        mission_bravo_button = dpg.add_button(
-            tag="Bravo\nConfig",
-            height=70,
-            width=BUTTON_WIDTH,
-            callback=mission_bravo,
-            label="BRAVO\nCONFIG",
-            pos=(
-                (dpg.get_item_width(item="big_buttons") - 50) / DIVISOR,
-                (dpg.get_item_height(item="big_buttons") + (DEMO_HEIGHT - 250)) / 2,
+                (dpg.get_item_height(item="big_buttons") + (330 - 320)) / 2,
             ),
         )
 
         ##########################
-        # Mission Charlie button #
+        # Mission buttons border #
         ##########################
-        logger.info(msg="Mission Charlie button initialized")
-        mission_charlie_button = dpg.add_button(
-            tag="mssn_charlie",
-            callback=mission_charlie,
-            label="CHARLIE\nCONFIG",
-            height=70,
-            width=BUTTON_WIDTH,
+        with dpg.child_window(
+            border=True,
+            tag="mission_buttons_border",
+            height=330,
+            width=BUTTON_WIDTH * 2 + 23,
+            no_scrollbar=True,
             pos=(
-                (dpg.get_item_width(item="big_buttons") - 250) / DIVISOR,
-                (dpg.get_item_height(item="big_buttons") + CELLUAR_HEIGHT) / 2,
+                (dpg.get_item_width(item="big_buttons") - 255) / DIVISOR,
+                (dpg.get_item_height(item="big_buttons") + (330 - 270)) / 2,
             ),
-        )
+        ):
 
-        ########################
-        # Mission Delta button #
-        ########################
-        logger.info(msg="Mission Delta button initialized")
-        mission_delta_button = dpg.add_button(
-            tag="mssn_delta",
-            callback=mission_delta,
-            label="DELTA\nCONFIG",
-            height=70,
-            width=BUTTON_WIDTH,
-            pos=(
-                (dpg.get_item_width(item="big_buttons") - 50) / DIVISOR,
-                (dpg.get_item_height(item="big_buttons") + CELLUAR_HEIGHT) / 2,
-            ),
-        )
+            ########################
+            # Mission Alpha button #
+            ########################
+            logger.info(msg="Alpha button initialized")
+            mission_alpha_button = dpg.add_button(
+                tag="Alpha\nConfig",
+                height=70,
+                width=BUTTON_WIDTH,
+                callback=mission_alpha,
+                label="ALPHA\n",
+                pos=(
+                    (dpg.get_item_width(item="big_buttons") - 285) / DIVISOR,
+                    (dpg.get_item_height(item="big_buttons") + (DEMO_HEIGHT - 250)) / 2,
+                ),
+            )
 
-        #######################
-        # Mission Echo button #
-        #######################
-        logger.info(msg="Mission Echo button initialized")
-        mission_echo_button = dpg.add_button(
-            tag="mssn_echo",
-            callback=two_point_four,
-            label="ECHO\nCONFIG",
-            height=70,
-            width=BUTTON_WIDTH,
-            pos=(
-                (dpg.get_item_width(item="big_buttons") - 250) / DIVISOR,
-                (dpg.get_item_height(item="big_buttons") + WIFI_HEIGHT) / 2,
-            ),
-        )
+            ########################
+            # Mission Bravo button #
+            ########################
+            logger.info(msg="Bravo button initialized")
+            mission_bravo_button = dpg.add_button(
+                tag="Bravo\nConfig",
+                height=70,
+                width=BUTTON_WIDTH,
+                callback=mission_bravo,
+                label="BRAVO\n",
+                pos=(
+                    (dpg.get_item_width(item="big_buttons") - 85) / DIVISOR,
+                    (dpg.get_item_height(item="big_buttons") + (DEMO_HEIGHT - 250)) / 2,
+                ),
+            )
 
-        ##########################
-        # Mission Fox preset #
-        ##########################
-        logger.info(msg="Mission Fox button initialized")
-        mission_fox_button = dpg.add_button(
-            tag="mssn_fox",
-            # callback=mission_fox,
-            label="FOX\nCONFIG",
-            height=70,
-            width=BUTTON_WIDTH,
-            pos=(
-                (dpg.get_item_width(item="big_buttons") - 50) / DIVISOR,
-                (dpg.get_item_height(item="big_buttons") + WIFI_HEIGHT) / 2,
-            ),
-        )
+            ##########################
+            # Mission Charlie button #
+            ##########################
+            logger.info(msg="Mission Charlie button initialized")
+            mission_charlie_button = dpg.add_button(
+                tag="mssn_charlie",
+                callback=mission_charlie,
+                label="CHARLIE\n",
+                height=70,
+                width=BUTTON_WIDTH,
+                pos=(
+                    (dpg.get_item_width(item="big_buttons") - 285) / DIVISOR,
+                    (dpg.get_item_height(item="big_buttons") + CELLUAR_HEIGHT) / 2,
+                ),
+            )
 
-        #######################
-        # Mission Golf preset #
-        #######################
-        logger.info(msg="Mission Golf button initialized")
-        mission_golf_button = dpg.add_button(
-            tag="mssn_golf",
-            callback=mission_golf,
-            label="GOLF\nCONFIG",
-            height=70,
-            width=BUTTON_WIDTH,
-            pos=(
-                (dpg.get_item_width(item="big_buttons") - 250) / DIVISOR,
-                (dpg.get_item_height(item="big_buttons") - 80),
-            ),
-        )
+            ########################
+            # Mission Delta button #
+            ########################
+            logger.info(msg="Mission Delta button initialized")
+            mission_delta_button = dpg.add_button(
+                tag="mssn_delta",
+                callback=mission_delta,
+                label="DELTA\n",
+                height=70,
+                width=BUTTON_WIDTH,
+                pos=(
+                    (dpg.get_item_width(item="big_buttons") - 85) / DIVISOR,
+                    (dpg.get_item_height(item="big_buttons") + CELLUAR_HEIGHT) / 2,
+                ),
+            )
 
-        ################################
-        # Mission Wifi Scan Jam preset #
-        ################################
-        logger.info(msg="Mission WiFi scan jam button initialized")
-        wifi_scan_jam_button = dpg.add_button(
-            tag="mssn_scan_jam",
-            # callback=,
-            label="WiFi\nScan\nJam",
-            height=70,
-            width=BUTTON_WIDTH,
-            pos=(
-                (dpg.get_item_width(item="big_buttons") - 50) / DIVISOR,
-                (dpg.get_item_height(item="big_buttons") - 80),
-            ),
-        )
+            #######################
+            # Mission Echo button #
+            #######################
+            logger.info(msg="Mission Echo button initialized")
+            mission_echo_button = dpg.add_button(
+                tag="mssn_echo",
+                callback=mission_echo,
+                label="ECHO\n",
+                height=70,
+                width=BUTTON_WIDTH,
+                pos=(
+                    (dpg.get_item_width(item="big_buttons") - 285) / DIVISOR,
+                    (dpg.get_item_height(item="big_buttons") + WIFI_HEIGHT) / 2,
+                ),
+            )
+
+            ##########################
+            # Mission Fox preset #
+            ##########################
+            logger.info(msg="Mission Fox button initialized")
+            mission_fox_button = dpg.add_button(
+                tag="mssn_fox",
+                callback=mission_fox,
+                label="FOX\n",
+                height=70,
+                width=BUTTON_WIDTH,
+                pos=(
+                    (dpg.get_item_width(item="big_buttons") - 85) / DIVISOR,
+                    (dpg.get_item_height(item="big_buttons") + WIFI_HEIGHT) / 2,
+                ),
+            )
+
+            #######################
+            # Mission Golf preset #
+            #######################
+            logger.info(msg="Mission Golf button initialized")
+            mission_golf_button = dpg.add_button(
+                tag="mssn_golf",
+                callback=mission_golf,
+                label="GOLF\n",
+                height=70,
+                width=BUTTON_WIDTH,
+                pos=(
+                    (dpg.get_item_width(item="big_buttons") - 285) / DIVISOR,
+                    (dpg.get_item_height(item="big_buttons") - 480),
+                ),
+            )
+
+            ################################
+            # Mission Wifi Scan Jam preset #
+            ################################
+            logger.info(msg="Mission WiFi scan jam button initialized")
+            wifi_scan_jam_button = dpg.add_button(
+                tag="mssn_scan_jam",
+                callback=wifi_scan_jam,
+                label="WiFi\nScan\nJam",
+                height=70,
+                width=BUTTON_WIDTH,
+                pos=(
+                    (dpg.get_item_width(item="big_buttons") - 85) / DIVISOR,
+                    (dpg.get_item_height(item="big_buttons") - 480),
+                ),
+            )
 
     ##########################
     # Card Selection Buttons #
@@ -727,9 +763,9 @@ with dpg.window(
     with dpg.child_window(
         tag="card_presets",
         height=RESOLUTION[1] - 50,
-        width=75,
+        width=70,
         pos=(
-            RESOLUTION[0] - 80,
+            RESOLUTION[0] - 86,
             10,
         ),
         border=False,
@@ -747,7 +783,7 @@ with dpg.window(
                     user_data=card,
                     enabled=False,
                 ),
-                #dpg.bind_item_theme(item=f"card_{card}", theme=grey_btn_theme),
+                # dpg.bind_item_theme(item=f"card_{card}", theme=grey_btn_theme),
             )
             for card in range(1, 9)
         ]
@@ -763,7 +799,7 @@ with dpg.window(
         border=False,
         no_scrollbar=True,
         pos=(
-            RESOLUTION[0] - 75,
+            RESOLUTION[0] - 80,
             RESOLUTION[1] - 30,
         ),
     ):
@@ -773,18 +809,22 @@ with dpg.window(
             tag="ver_num",
         )
 
-dpg.bind_font(font=ital_font)
-dpg.bind_item_font(item="ver_num", font=small_font)
+try:  # Stop gap in case the files cannot be found
+    dpg.bind_font(font=ital_font)
+    dpg.bind_item_font(item="ver_num", font=small_font)
 
-[
-    (
-        dpg.bind_item_font(item=f"freq_{i}", font=bold_font),
-        dpg.bind_item_font(item=f"power_{i}", font=bold_font),
-        dpg.bind_item_font(item=f"bandwidth_{i}", font=bold_font),
-        dpg.bind_item_font(item=f"channel_{i}", font=default_font_added),
-    )
-    for i in range(1, 9)
-]
+    [
+        (
+            dpg.bind_item_font(item=f"freq_{i}", font=bold_font),
+            dpg.bind_item_font(item=f"power_{i}", font=bold_font),
+            dpg.bind_item_font(item=f"bandwidth_{i}", font=bold_font),
+            dpg.bind_item_font(item=f"channel_{i}", font=default_font_added),
+        )
+        for i in range(1, 9)
+    ]
+
+except NameError:
+    logger.exception(msg="Font files error")
 
 # Global Theme
 with dpg.theme() as global_theme:
@@ -848,5 +888,5 @@ try:
     dpg.start_dearpygui()
 except KeyboardInterrupt:
     logger.exception(msg="Ctrl C executed")
-    exit()  # Exit the program gracefully upon user input to quit
+    exit  # Exit the program gracefully upon user input to quit
 dpg.destroy_context()

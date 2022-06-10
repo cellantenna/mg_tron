@@ -3,20 +3,24 @@
 import configparser
 import json
 import logging
-from operator import mod
+import pathlib
 import platform
 import subprocess
-from time import sleep
+from datetime import datetime
+from typing import Any
 import dearpygui.dearpygui as dpg
 import pandas as pd
-import sys
+from pysondb import db, errors
+
 from interface import Megatron, find_device
 
-from datetime import datetime
+
+ROOT = pathlib.Path(__file__).resolve().parent.parent.parent
+WORKING = ROOT / "src" / "gui"
 
 # datetime object containing current date and time
 now = datetime.now()
-VERSION: str = "0.10.1"
+VERSION: str = "0.12.1"
 
 loggey = logging.getLogger(name=__name__)
 
@@ -44,11 +48,13 @@ with dpg.theme() as blue_btn_theme:
 # Grey Button Theme
 with dpg.theme() as grey_btn_theme:
     with dpg.theme_component(dpg.mvAll):
-        dpg.add_theme_color(dpg.mvThemeCol_Button, (105, 105, 105, 255))  # GREY
+        dpg.add_theme_color(dpg.mvThemeCol_Button,
+                            (105, 105, 105, 255))  # GREY
 # Orange Button Theme
 with dpg.theme() as orng_btn_theme:
     with dpg.theme_component(dpg.mvAll):
-        dpg.add_theme_color(dpg.mvThemeCol_Button, (255, 165, 0, 255))  # ORANGE
+        dpg.add_theme_color(dpg.mvThemeCol_Button,
+                            (255, 165, 0, 255))  # ORANGE
 
 
 def device_names() -> list[str]:
@@ -56,13 +62,29 @@ def device_names() -> list[str]:
 
     # Avoid crashing program if there are no devices detected
     try:
-        devices: str = subprocess.check_output(
-            "src/gui/find_dev.sh", stderr=subprocess.STDOUT  # call bash script
-        ).decode("utf-8")
+        listing_script = [
+            f'#!/bin/bash\n'
+            f'for sysdevpath in $(find /sys/bus/usb/devices/usb*/ -name dev | grep "ACM"); do\n'
+            f'(syspath={"${sysdevpath%/dev}"}\n'
+            f'devname={"$(udevadm info -q name -p $syspath)"}\n'
+            f'[[ {"$devname"} == "bus/"* ]] && exit\n'
+            f'eval "$(udevadm info -q property --export -p $syspath)"\n'
+            f'[[ -z "$ID_SERIAL" ]] && exit\n'
+            f'echo "/dev/$devname - $ID_SERIAL"\n'
+            f') done']
+        devices = subprocess.run(
+            args=listing_script,
+            shell=True,
+            stdout=subprocess.PIPE,
+            universal_newlines=True,
+            encoding="utf-8",
+            capture_output=False,
+        )
     except TypeError:
         loggey.exception(msg="No devices detected")
 
-    devices: list = devices.strip().split(sep="\n")
+    devices: list = list(devices.stdout.strip().split(sep="\n"))
+
     loggey.info(msg=f"Devices found: {devices} | {device_names.__name__}")
 
     # If there is only one device skip the hooplah
@@ -98,7 +120,8 @@ def callstack_helper(
 
     data_vehicle.change_bandwidth(
         channel=channel,
-        percentage=dpg.get_value(f"bandwidth_{channel}") if not bw_value else 0,
+        percentage=dpg.get_value(
+            f"bandwidth_{channel}") if not bw_value else 0,
     )
 
     data_vehicle.change_freq(
@@ -205,7 +228,7 @@ def quick_save(sender, app_data, user_data) -> None:
         for channel in range(1, 9)
     ]
 
-    with open(file="quick_save.json", mode="w") as file:
+    with open(file="src/gui/db/quick_save.json", mode="w") as file:
         file.write(json.dumps(obj=prelim_data, indent=2))
         loggey.info("Save Complete")
 
@@ -214,7 +237,7 @@ def quick_load(sender, app_data, user_data) -> None:
     """Load the last daved data"""
 
     saved_data: list = []
-    with open(file="quick_save.json", mode="r") as file:
+    with open(file="src/gui/db/quick_save.json", mode="r") as file:
         saved_data = json.loads(file.read())
     [
         (
@@ -224,11 +247,13 @@ def quick_load(sender, app_data, user_data) -> None:
             ),
             dpg.set_value(
                 item=f"bandwidth_{channel}",
-                value=saved_data[channel - 1][f"channel {channel}"]["Bandwidth"],
+                value=saved_data[channel -
+                                 1][f"channel {channel}"]["Bandwidth"],
             ),
             dpg.set_value(
                 item=f"freq_{channel}",
-                value=saved_data[channel - 1][f"channel {channel}"]["Frequency"],
+                value=saved_data[channel -
+                                 1][f"channel {channel}"]["Frequency"],
             ),
         )
         for channel in range(1, 9)
@@ -240,56 +265,43 @@ def custom_save(sender, app_data, user_data) -> None:
 
     loggey.info(f"{custom_save.__name__}() executed")
 
-    prelim_data: list[dict[str, dict[str, str, str, str]]] = [
-        {
-            f"channel {channel}": {
+    custom_save_file = db.getDb("src/gui/db/long_save.json")
+    try:
+
+        custom_save_file.addMany(
+            {
+                "Save_name": dpg.get_value(item="save_custom_input"),
+                "channel": channel,
                 "Power": dpg.get_value(f"power_{channel}"),
                 "Bandwidth": dpg.get_value(f"bandwidth_{channel}"),
                 "Frequency": dpg.get_value(f"freq_{channel}"),
                 "Date": dt_string,
-                "Save_name": dpg.get_value(item="save_custom_input")
-                if dpg.get_value(item="custom_save_input")
-                else dpg.set_value(item="save_custom_input", value="Must be filled"),
-            },
-        }
-        for channel in range(1, 9)
-    ]
+            }
+            for channel in range(1, 9)
+        )
 
-    with open(file="long_save.json", mode="a") as file:
-        file.write(json.dumps(obj=prelim_data, indent=2))
-        loggey.debug(json.dumps(obj=prelim_data, indent=2))
-        loggey.info("long save Complete")
+    except (
+        TypeError,
+        IndexError,
+        KeyError,
+        errors.db_errors.SchemaError,
+        AttributeError,
+    ):
+        loggey.exception(msg="database failure")
 
     # Clear input and close input
     dpg.set_value(item="save_custom_input", value="")
     dpg.configure_item(item="modal_save", show=False)
 
 
-def custom_load(sender, app_data, user_data) -> None:
+def custom_load(sender=None, app_data=None, user_data=None) -> json:
     """Load config /w a custom name"""
 
-    saved_data: list = []
-    with open(file="quick_save.json", mode="r") as file:
-        saved_data = json.loads(file.read())
-    [
-        (
-            dpg.set_value(
-                item=f"power_{channel}",
-                value=saved_data[channel - 1][f"channel {channel}"]["Power"],
-            ),
-            dpg.set_value(
-                item=f"bandwidth_{channel}",
-                value=saved_data[channel - 1][f"channel {channel}"]["Bandwidth"],
-            ),
-            dpg.set_value(
-                item=f"freq_{channel}",
-                value=saved_data[channel - 1][f"channel {channel}"]["Frequency"],
-            ),
-        )
-        for channel in range(1, 9)
-        if dpg.get_value(item="modal_load")
-        == saved_data[channel - 1][f"channel {channel}"]["Save_name"]
-    ]
+    loggey.debug(msg="Attempting to load custom save data")
+
+    custom_save_file = db.getDb("src/gui/db/long_save.json")
+
+    return custom_save_file.getAll()
 
 
 def auto_fill_freq(
@@ -305,7 +317,8 @@ def auto_fill_freq(
         dpg.set_value(
             item=f"freq_{i}",
             value=(
-                abs(dpg.get_value(f"freq_{i-2}") - dpg.get_value(f"freq_{i-1}"))
+                abs(dpg.get_value(f"freq_{i-2}") -
+                    dpg.get_value(f"freq_{i-1}"))
                 + dpg.get_value(f"freq_{i-1}")
             )
             if int(dpg.get_value(item=f"freq_{i}")) <= 6400
@@ -340,7 +353,8 @@ def auto_fill_bandwidth() -> None:
     """Auto fill the bandwidth column based on the first input"""
 
     [
-        dpg.set_value(item=f"bandwidth_{i}", value=dpg.get_value(item="bandwidth_1"))
+        dpg.set_value(item=f"bandwidth_{i}",
+                      value=dpg.get_value(item="bandwidth_1"))
         for i in range(2, 9)
     ]
 
@@ -370,50 +384,246 @@ def two_point_four(sender, app_data, user_data) -> None:
     dpg.set_value(item=f"freq_8", value=5705)
 
 
+def read_config(file: str) -> tuple[str, DEVICE]:
+    """Read the config file and return the contents"""
+
+    devices = DEVICE
+    parser = configparser.ConfigParser()
+    parser.read(filenames=file, encoding="utf-8")
+    loggey.info(msg=f"file {file} read")
+
+    return parser, devices
+
+
 def mission_alpha(sender, app_data, user_data) -> None:
-    """Auto Fill the band 2 celluar band"""
+    """Mission alpha user facing button configuration"""
 
     loggey.info(msg=f"{mission_alpha.__name__}() executed")
 
-    # auto_fill_freq(
-    #     freq_val=650,
-    #     freq_constant=28.54,
-    # )
+    try:
 
+        parser, _ = read_config(file=f"_configs/{mission_alpha.__name__}.ini")
+
+        [
+            (
+                dpg.set_value(
+                    item=f"freq_{config}",
+                    value=float(parser['freq'][f'freq_{config}'])),
+
+                dpg.set_value(
+                    item=f"power_{config}",
+                    value=float(parser['power'][f'power_{config}'])),
+
+                dpg.set_value(
+                    item=f"bandwidth_{config}",
+                    value=float(parser['bandwidth'][f'bw_{config}'])),
+            )
+
+            for config in range(1, 9)
+        ]
+
+    except KeyError:
+        loggey.exception(msg="Error in reading the config file")
+    except SystemError:
+        loggey.exception(
+            msg="Invalid data type;  Expected floating point value")
 
 
 def mission_bravo(sender, app_data, user_data) -> None:
-    """Auto Fill the band 4 celluar band"""
+    """Mission bravo facing button config"""
 
     loggey.info(msg=f"{mission_bravo.__name__}() executed")
 
-    auto_fill_freq(
-        freq_val=1950,
-        freq_constant=57.1429,
-    )
+    try:
+
+        parser, _ = read_config(file=f"_configs/{mission_bravo.__name__}.ini")
+
+        [
+            (
+                dpg.set_value(
+                    item=f"freq_{config}",
+                    value=float(parser['freq'][f'freq_{config}'])),
+
+                dpg.set_value(
+                    item=f"power_{config}",
+                    value=float(parser['power'][f'power_{config}'])),
+
+                dpg.set_value(
+                    item=f"bandwidth_{config}",
+                    value=float(parser['bandwidth'][f'bw_{config}'])),
+            )
+
+            for config in range(1, 9)
+        ]
+
+    except KeyError:
+        loggey.exception(msg="Error in reading the config file")
+    except SystemError:
+        loggey.exception(
+            msg="Invalid data type;  Expected floating point value")
 
 
 def mission_charlie(sender, app_data, user_data) -> None:
-    """Auto Fill the band 5 celluar band"""
+    """Mission delta facing button config"""
 
     loggey.info(msg=f"{mission_charlie.__name__}() executed")
 
-    auto_fill_freq(
-        freq_val=2450,
-        freq_constant=157.1429,
-    )
+    try:
+
+        parser, _ = read_config(
+            file=f"_configs/{mission_charlie.__name__}.ini")
+
+        [
+            (
+                dpg.set_value(
+                    item=f"freq_{config}",
+                    value=float(parser['freq'][f'freq_{config}'])),
+
+                dpg.set_value(
+                    item=f"power_{config}",
+                    value=float(parser['power'][f'power_{config}'])),
+
+                dpg.set_value(
+                    item=f"bandwidth_{config}",
+                    value=float(parser['bandwidth'][f'bw_{config}'])),
+            )
+
+            for config in range(1, 9)
+        ]
+
+    except KeyError:
+        loggey.exception(msg="Error in reading the config file")
+    except SystemError:
+        loggey.exception(
+            msg="Invalid data type;  Expected floating point value")
 
 
-def demo_config(sender, app_data, user_data) -> None:
-    """Demonstration of frequency hopping"""
+def mission_delta(sender, app_data, user_data) -> None:
+    """Mission delta facing button config"""
 
-    loggey.info(msg=f"{demo_config.__name__}() executed")
+    try:
+
+        parser, _ = read_config(file=f"_configs/{mission_delta.__name__}.ini")
+
+        [
+            (
+                dpg.set_value(
+                    item=f"freq_{config}",
+                    value=float(parser['freq'][f'freq_{config}'])),
+
+                dpg.set_value(
+                    item=f"power_{config}",
+                    value=float(parser['power'][f'power_{config}'])),
+
+                dpg.set_value(
+                    item=f"bandwidth_{config}",
+                    value=float(parser['bandwidth'][f'bw_{config}'])),
+            )
+
+            for config in range(1, 9)
+        ]
+
+    except KeyError:
+        loggey.exception(msg="Error in reading the config file")
+    except SystemError:
+        loggey.exception(
+            msg="Invalid data type;  Expected floating point value")
 
 
-def demo_config_2(sender, app_data, user_data) -> None:
-    """Demo 2 config"""
+def mission_echo(sender, app_data, user_data) -> None:
+    """Mission echo facing button config"""
 
-    loggey.info(msg=f"{demo_config_2.__name__}() executed")
+    try:
+
+        parser, _ = read_config(file=f"_configs/{mission_echo.__name__}.ini")
+
+        [
+            (
+                dpg.set_value(
+                    item=f"freq_{config}",
+                    value=float(parser['freq'][f'freq_{config}'])),
+
+                dpg.set_value(
+                    item=f"power_{config}",
+                    value=float(parser['power'][f'power_{config}'])),
+
+                dpg.set_value(
+                    item=f"bandwidth_{config}",
+                    value=float(parser['bandwidth'][f'bw_{config}'])),
+            )
+
+            for config in range(1, 9)
+        ]
+
+    except KeyError:
+        loggey.exception(msg="Error in reading the config file")
+    except SystemError:
+        loggey.exception(
+            msg="Invalid data type;  Expected floating point value")
+
+
+def mission_golf(sender, app_data, user_data) -> None:
+    """Mission golf facing button config"""
+
+    try:
+
+        parser, _ = read_config(file=f"_configs/{mission_golf.__name__}.ini")
+
+        [
+            (
+                dpg.set_value(
+                    item=f"freq_{config}",
+                    value=float(parser['freq'][f'freq_{config}'])),
+
+                dpg.set_value(
+                    item=f"power_{config}",
+                    value=float(parser['power'][f'power_{config}'])),
+
+                dpg.set_value(
+                    item=f"bandwidth_{config}",
+                    value=float(parser['bandwidth'][f'bw_{config}'])),
+            )
+
+            for config in range(1, 9)
+        ]
+
+    except KeyError:
+        loggey.exception(msg="Error in reading the config file")
+    except SystemError:
+        loggey.exception(
+            msg="Invalid data type;  Expected floating point value")
+
+
+def mission_fox(sender, app_data, user_data) -> None:
+    """Mission fox facing button config"""
+
+    try:
+
+        parser, _ = read_config(file=f"_configs/{mission_fox.__name__}.ini")
+
+        [
+            (
+                dpg.set_value(
+                    item=f"freq_{config}",
+                    value=float(parser['freq'][f'freq_{config}'])),
+
+                dpg.set_value(
+                    item=f"power_{config}",
+                    value=float(parser['power'][f'power_{config}'])),
+
+                dpg.set_value(
+                    item=f"bandwidth_{config}",
+                    value=float(parser['bandwidth'][f'bw_{config}'])),
+            )
+
+            for config in range(1, 9)
+        ]
+
+    except KeyError:
+        loggey.exception(msg="Error in reading the config file")
+    except SystemError:
+        loggey.exception(
+            msg="Invalid data type;  Expected floating point value")
 
 
 def auto_fill_custom_save(sender, app_data, user_data) -> None:
@@ -427,56 +637,6 @@ def auto_fill_custom_save(sender, app_data, user_data) -> None:
     dpg.set_value(item="save_custom_input", value=str(f"{freq_1} - {freq_8}"))
 
 
-def mission_delta(sender, app_data, user_data) -> None:
-    """GPS blocking presets"""
-
-    loggey.info(msg=f"{mission_delta.__name__}() executed")
-
-    dpg.set_value(item=f"freq_1", value=1221)
-    dpg.set_value(item=f"power_1", value=10)
-    dpg.set_value(item=f"bandwidth_1", value=100)
-
-    dpg.set_value(item=f"freq_2", value=1236)
-    dpg.set_value(item=f"power_2", value=10)
-    dpg.set_value(item=f"bandwidth_2", value=100)
-
-    dpg.set_value(item=f"freq_3", value=1248)
-    dpg.set_value(item=f"power_3", value=10)
-    dpg.set_value(item=f"bandwidth_3", value=100)
-
-    dpg.set_value(item=f"freq_4", value=1260)
-    dpg.set_value(item=f"power_4", value=10)
-    dpg.set_value(item=f"bandwidth_4", value=100)
-
-    dpg.set_value(item=f"freq_5", value=1557)
-    dpg.set_value(item=f"power_5", value=10)
-    dpg.set_value(item=f"bandwidth_5", value=100)
-
-    dpg.set_value(item=f"freq_6", value=1572)
-    dpg.set_value(item=f"power_6", value=10)
-    dpg.set_value(item=f"bandwidth_6", value=100)
-
-    dpg.set_value(item=f"freq_7", value=1587)
-    dpg.set_value(item=f"power_7", value=10)
-    dpg.set_value(item=f"bandwidth_7", value=100)
-
-    dpg.set_value(item=f"freq_8", value=1605)
-    dpg.set_value(item=f"power_8", value=10)
-    dpg.set_value(item=f"bandwidth_8", value=100)
-
-
-def mission_golf(sender, app_data, user_data) -> None:
-    """Test to find max power vs frequency"""
-
-    [
-        (
-            dpg.set_value(item="freq_8", value=i),
-            callstack_helper(channel=8),
-        )
-        for i in range(50, 6400, 10)
-    ]
-
-
 def kill_channel(sender, app_data, user_data: int) -> None:
     """Kill channel w/out resetting power on user facing screen"""
 
@@ -487,7 +647,7 @@ def kill_channel(sender, app_data, user_data: int) -> None:
     dpg.bind_item_theme(item=f"stats_{user_data}", theme=grey_btn_theme),
 
 
-def device_finder(sender, app_data, user_data: int) -> None:
+def device_finder(sender=None, app_data=None, user_data: int = int()) -> None:
     """List all the usb microcontrollers connected to the machine"""
 
     # user data contains the chosen port number
@@ -511,42 +671,34 @@ def device_finder(sender, app_data, user_data: int) -> None:
 def fill_config():
     """Automatically fill the config file with devices detected"""
 
-    devices = DEVICE
-    parser = configparser.ConfigParser()
-    parser.read(filenames="card_config.ini", encoding="utf-8")
-    config = configparser.ConfigParser()
+    parser, devices = read_config(file="_configs/card_config.ini")
+
     try:
         if not parser["mgtron"]["card_1"]:
             loggey.info(msg="The config file was not populated")
             # Automatically fill in an empty config file
-            config["mgtron"] = {
-                "card_1": str(devices[0].split(sep="_")[-1]),
-                "card_2": str(devices[1].split(sep="_")[-1]),
-                "card_3": str(devices[2].split(sep="_")[-1]),
-                "card_4": str(devices[3].split(sep="_")[-1]),
-                "card_5": str(devices[4].split(sep="_")[-1]),
-                "card_6": str(devices[5].split(sep="_")[-1]),
-                "card_7": str(devices[6].split(sep="_")[-1]),
-                "card_8": str(devices[7].split(sep="_")[-1]),
+            parser["mgtron"] = {
+                f"card_{i+1}": str(devices[i].split(sep="_")[-1])
+                for i in range(len(devices))
             }
-
-            with open(file="card_config.ini", mode="w") as configfile:
-                config.write(configfile)
+            with open(file="_configs/card_config.ini", mode="w") as config_file:
+                parser.write(config_file)
             loggey.info(msg="Config file has been automatically filled")
         else:
             loggey.info(msg="Config file already filled")
     except (KeyError, IndexError):
         loggey.exception(msg="Config file error")
+        with open(file="_configs/card_config.ini", mode="w") as config_file:
+            config_file.write("[mgtron]\n")
+            [config_file.write(f"card_{i+1}=\n") for i in range(len(DEVICE))]
+        fill_config()
 
 
 def config_intake() -> None:
     """Read a config file and assign card buttons"""
 
-    devices = DEVICE
-    parser = configparser.ConfigParser()
-    loggey.info(msg="finding the log file")
-    parser.read(filenames="card_config.ini", encoding="utf-8")
-    loggey.info(msg="file read attempted")
+    parser, devices = read_config(file="_configs/card_config.ini")
+
     if len(devices) > 1:
         for card in range(1, len(devices) + 1):
             try:
@@ -554,9 +706,10 @@ def config_intake() -> None:
                     f"card_{card}"
                 ]:
                     case True:
-                        dpg.bind_item_theme(item=f"card_{card}", theme=blue_btn_theme)
+                        dpg.bind_item_theme(
+                            item=f"card_{card}", theme=blue_btn_theme)
                         dpg.configure_item(item=f"card_{card}", enabled=True)
-                        # devices[card - 1].split("_")[0].split("-")[0]
+
                         loggey.info(
                             msg=f"INI config file matched devices detected | {config_intake.__name__}"
                         )
@@ -564,102 +717,194 @@ def config_intake() -> None:
                         loggey.info(
                             msg=f"Config ID not detected by devices on {platform.machine()} | {config_intake.__name__}"
                         )
-            except KeyError:
-                loggey.exception(msg="No config file detected")
+            except (KeyError, SystemError):
+                loggey.exception(
+                    msg="No config file detected OR more than eight devices detected")
 
 
 def card_selection(sender, app_data, user_data: int) -> None:
     """Load the selected cards prefix when selected"""
+
+    parser, _ = read_config(file="_configs/card_config.ini")
 
     loggey.info(msg=f"selected card: {user_data} | {card_selection.__name__}")
 
     # Manipulate the set to accomplish a loop without the currently selected button
     card_list: set[int] = {1, 2, 3, 4, 5, 6, 7, 8}
     match user_data:
+
         case 1:
             dpg.bind_item_theme(item=f"card_{user_data}", theme=grn_btn_theme)
-            dpg.set_value(item="device_indicator", value="button 1 chosen")
+            dpg.set_value(
+                item="device_indicator", value=f"Device:{parser['mgtron']['card_1']}"
+            )
+            device_finder(user_data=0)
 
-            # Grey all other card buttons and make this one green when clicked
+            # Blue all other active card buttons and make this one green when clicked
             card_list.remove(1)
             [
-                dpg.bind_item_theme(item=f"card_{greyed_card}", theme=grey_btn_theme)
+                dpg.bind_item_theme(
+                    item=f"card_{greyed_card}", theme=blue_btn_theme)
                 for greyed_card in card_list
             ]
+
         case 2:
-            card_list.remove(2)
             dpg.bind_item_theme(item=f"card_{user_data}", theme=grn_btn_theme)
+            dpg.set_value(
+                item="device_indicator", value=f"Device:{parser['mgtron']['card_2']}"
+            )
+            device_finder(user_data=1)
+
+            card_list.remove(2)
             [
-                dpg.bind_item_theme(item=f"card_{greyed_card}", theme=grey_btn_theme)
+                dpg.bind_item_theme(
+                    item=f"card_{greyed_card}", theme=blue_btn_theme)
                 for greyed_card in card_list
             ]
+
         case 3:
             card_list.remove(3)
             dpg.bind_item_theme(item=f"card_{user_data}", theme=grn_btn_theme)
+            dpg.set_value(
+                item="device_indicator", value=f"Device:{parser['mgtron']['card_3']}"
+            )
+            device_finder(user_data=2)
+
             [
-                dpg.bind_item_theme(item=f"card_{greyed_card}", theme=grey_btn_theme)
+                dpg.bind_item_theme(
+                    item=f"card_{greyed_card}", theme=blue_btn_theme)
                 for greyed_card in card_list
             ]
+
         case 4:
             card_list.remove(4)
             dpg.bind_item_theme(item=f"card_{user_data}", theme=grn_btn_theme)
+            dpg.set_value(
+                item="device_indicator", value=f"Device:{parser['mgtron']['card_4']}"
+            )
+            device_finder(user_data=3)
+
             [
-                dpg.bind_item_theme(item=f"card_{greyed_card}", theme=grey_btn_theme)
+                dpg.bind_item_theme(
+                    item=f"card_{greyed_card}", theme=blue_btn_theme)
                 for greyed_card in card_list
             ]
+
         case 5:
             card_list.remove(5)
             dpg.bind_item_theme(item=f"card_{user_data}", theme=grn_btn_theme)
+            dpg.set_value(
+                item="device_indicator", value=f"Device:{parser['mgtron']['card_4']}"
+            )
+            device_finder(user_data=4)
+
             [
-                dpg.bind_item_theme(item=f"card_{greyed_card}", theme=grey_btn_theme)
+                dpg.bind_item_theme(
+                    item=f"card_{greyed_card}", theme=blue_btn_theme)
                 for greyed_card in card_list
             ]
+
         case 6:
             card_list.remove(6)
             dpg.bind_item_theme(item=f"card_{user_data}", theme=grn_btn_theme)
+            dpg.set_value(
+                item="device_indicator", value=f"Device:{parser['mgtron']['card_6']}"
+            )
+            device_finder(user_data=5)
+
             [
-                dpg.bind_item_theme(item=f"card_{greyed_card}", theme=grey_btn_theme)
+                dpg.bind_item_theme(
+                    item=f"card_{greyed_card}", theme=blue_btn_theme)
                 for greyed_card in card_list
             ]
+
         case 7:
             card_list.remove(7)
             dpg.bind_item_theme(item=f"card_{user_data}", theme=grn_btn_theme)
+            dpg.set_value(
+                item="device_indicator", value=f"Device:{parser['mgtron']['card_7']}"
+            )
+            device_finder(user_data=6)
+
             [
-                dpg.bind_item_theme(item=f"card_{greyed_card}", theme=grey_btn_theme)
+                dpg.bind_item_theme(
+                    item=f"card_{greyed_card}", theme=blue_btn_theme)
                 for greyed_card in card_list
             ]
+
         case 8:
             card_list.remove(8)
             dpg.bind_item_theme(item=f"card_{user_data}", theme=grn_btn_theme)
+            dpg.set_value(
+                item="device_indicator", value=f"Device:{parser['mgtron']['card_8']}"
+            )
+            device_finder(user_data=7)
+
             [
-                dpg.bind_item_theme(item=f"card_{greyed_card}", theme=grey_btn_theme)
+                dpg.bind_item_theme(
+                    item=f"card_{greyed_card}", theme=blue_btn_theme)
                 for greyed_card in card_list
             ]
-            
+
+
 def find_signals_and_frequencies() -> dict:
-    
-    output = subprocess.Popen(["nmcli", "-f", "ALL", "dev", "wifi"], stdout=subprocess.PIPE)
-    if sys.version_info[0] < 3:
-            from StringIO import StringIO
-    else: 
-        from io import StringIO
-    b = StringIO(output.communicate()[0].decode('utf-8'))
-    df = pd.read_csv(b, index_col=False, delim_whitespace=True, engine='python')
 
-    signal_column = (df.loc[:, "SECURITY"])
+    output = subprocess.Popen(
+        ["nmcli", "-f", "ALL", "dev", "wifi"], stdout=subprocess.PIPE
+    )
+    from io import StringIO
+
+    b = StringIO(output.communicate()[0].decode("utf-8"))
+    df = pd.read_csv(b, index_col=False,
+                     delim_whitespace=True, engine="python")
+
+    signal_column = df.loc[:, "SECURITY"]
     signal_set = set(signal_column)
-    filtered_signals = [x for x in signal_set if not x.__contains__("MHz")]
+    filtered_signals = [x for x in signal_set if not x.__contains__(
+        "MHz") & isinstance(x, str)]
 
-    frequency_column = (df.loc[:, "FREQ"])
+    frequency_column = df.loc[:, "FREQ"]
     frequency_column.unique()
     freq_set = set(frequency_column)
-    filtered_frequencies = [x for x in freq_set if not x.__contains__(":")]
+    filtered_frequencies = [
+        x for x in freq_set if not x.__contains__(":") & isinstance(x, str)]
     freq_and_signal = {}
     for freq in filtered_frequencies:
         for signal in filtered_signals:
             freq_and_signal[freq] = signal
             filtered_signals.remove(signal)
             break
-    return freq_and_signal 
+    loggey.info(
+        msg=f"Freq and Strength: {freq_and_signal} | {find_signals_and_frequencies.__name__}"
+    )
+    return freq_and_signal
+
+
+def wifi_scan_jam(sender, app_data, user_data) -> None:
+    """Scan the local wifi channels and jam them"""
+
+    loggey.info(msg="Scan jammer method called")
+    freq_and_strength: dict = find_signals_and_frequencies()
+    [
+        (
+            dpg.set_value(item=f"freq_{i}", value=float(freq)),
+            dpg.set_value(item=f"power_{i}", value=40),
+            dpg.set_value(item=f"bandwidth_{i}", value=100),
+            loggey.debug(
+                msg=f"Frequency, in sig strength order, discovered: {freq}"),
+            # callstack_helper(channel=i),
+
+        )
+        for i, freq in enumerate(sorted(freq_and_strength), start=1)
+    ]
+
 
 loggey.debug(msg="EOF")
+
+
+def main():
+    print(find_signals_and_frequencies())
+
+
+if __name__ == '__main__':
+    main()

@@ -1,5 +1,5 @@
 venv*
-__pycache__/*
+__pycache__
 .vscode
 *~
 package-lock.json
@@ -8,7 +8,6 @@ node_modules
 package.json
 secret*
 *.env
-*config*
 *.map
 *.pyc
 sql_lite3.db
@@ -16,3 +15,8 @@ sql_lite3.db
 gmon.out
 *egg*
 dist/
+mg.log
+build/
+*Stashed*
+card_config*
+!_configs
