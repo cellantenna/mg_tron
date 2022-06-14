@@ -899,12 +899,12 @@ def find_signals_and_frequencies() -> dict:
     )
 
     b = StringIO(output.communicate()[0].decode("utf-8"))
-    
+
     df = pd.read_csv(b, index_col=False,
                      delim_whitespace=True, engine="python")
 
-    signal_column = df.loc[:, "SECURITY"]
-    signal_list = list(str(signal_column))
+    signal_column = df.loc[:, "SIGNAL"]
+    signal_list = list(signal_column)
     filtered_signals = [x for x in signal_list if 'MHz' not in x]
     filtered_signals_2 = [x for x in filtered_signals if x >= "0"]
     filtered_signals_3 = [x for x in filtered_signals_2 if x <= ":"]
@@ -912,7 +912,7 @@ def find_signals_and_frequencies() -> dict:
 
     frequency_column = df.loc[:, "FREQ"]
     frequency_column.unique()
-    freq_list = list(str(frequency_column))
+    freq_list = list(frequency_column)
     filtered_frequencies = [x for x in freq_list if 'Infra' not in x]
     filtered_frequencies_2 = [x for x in filtered_frequencies if ':' not in x]
     filtered_frequencies_3 = [i for i in filtered_frequencies_2 if i >= "2400"]
