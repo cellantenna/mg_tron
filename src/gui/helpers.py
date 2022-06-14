@@ -12,7 +12,7 @@ from typing import Any
 import dearpygui.dearpygui as dpg
 import pandas as pd
 from pysondb import db, errors
-
+from io import StringIO
 from interface import Megatron, find_device
 
 
@@ -603,6 +603,13 @@ def mission_echo(sender, app_data, user_data) -> None:
 def mission_golf(sender, app_data, user_data) -> None:
     """Mission golf facing button config"""
 
+    [
+        (
+            dpg.set_value(item="freq_4", value=i),
+            # callstack_helper(channel=4),
+        )
+        for i in range(50, 100, 10)
+    ]
     try:
 
         parser, _ = read_config(file=f"_configs/{mission_golf.__name__}.ini")
@@ -890,27 +897,31 @@ def find_signals_and_frequencies() -> dict:
     output = subprocess.Popen(
         ["nmcli", "-f", "ALL", "dev", "wifi"], stdout=subprocess.PIPE
     )
-    from io import StringIO
 
     b = StringIO(output.communicate()[0].decode("utf-8"))
+    
     df = pd.read_csv(b, index_col=False,
                      delim_whitespace=True, engine="python")
 
     signal_column = df.loc[:, "SECURITY"]
-    signal_set = set(signal_column)
-    filtered_signals = [x for x in signal_set if not x.__contains__(
-        "MHz") & isinstance(x, str)]
+    signal_list = list(signal_column)
+    filtered_signals = [x for x in signal_list if 'MHz' not in x]
+    filtered_signals_2 = [x for x in filtered_signals if x >= "0"]
+    filtered_signals_3 = [x for x in filtered_signals_2 if x <= ":"]
+    filtered_signals_4 = [x for x in filtered_signals_3 if 'Infra' not in x]
 
     frequency_column = df.loc[:, "FREQ"]
     frequency_column.unique()
-    freq_set = set(frequency_column)
-    filtered_frequencies = [
-        x for x in freq_set if not x.__contains__(":") & isinstance(x, str)]
+    freq_list = list(frequency_column)
+    filtered_frequencies = [x for x in freq_list if 'Infra' not in x]
+    filtered_frequencies_2 = [x for x in filtered_frequencies if ':' not in x]
+    filtered_frequencies_3 = [i for i in filtered_frequencies_2 if i >= "2400"]
+
     freq_and_signal = {}
-    for freq in filtered_frequencies:
-        for signal in filtered_signals:
+    for freq in filtered_frequencies_3:
+        for signal in filtered_signals_4:
             freq_and_signal[freq] = signal
-            filtered_signals.remove(signal)
+            filtered_signals_4.remove(signal)
             break
     loggey.info(
         msg=f"Freq and Strength: {freq_and_signal} | {find_signals_and_frequencies.__name__}"
