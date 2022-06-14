@@ -1,9 +1,9 @@
 import setuptools
 
-from gui.helpers import VERSION
+from src.gui.helpers import VERSION
 
 with open(
-    "/home/djhunter67/Documents/work_worK_woRk_wOrk_Work/mg_tron/CHANGELOG.md",
+    "CHANGELOG.md",
     "r",
     encoding="utf-8",
 ) as fh:
@@ -31,7 +31,7 @@ setuptools.setup(
     ],
     package_dir={"": "src"},
     packages=setuptools.find_packages(where="src"),
-    install_requires=["dearpygui"],
+    install_requires=["dearpygui"], 
     entry_points={
         "console_scripts": [
             "mgtron=gui:mg_tron_gui",

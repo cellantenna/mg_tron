@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 for sysdevpath in $(find /sys/bus/usb/devices/usb*/ -name dev | grep "ACM"); do
     (
