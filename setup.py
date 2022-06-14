@@ -26,11 +26,11 @@ setuptools.setup(
     ],
     package_dir={"": "src"},
     packages=setuptools.find_packages(where="src"),
-<<<<<<< HEAD
-    install_requires=["dearpygui"], 
-=======
+    install_requires=["dearpygui"],
     install_requires=["dearpygui", "numpy"],
->>>>>>> fd1f8e35d31563e2e6c60eb1d02603ba72c4a2f2
+
+
+    install_requires=["dearpygui", "numpy"],
     entry_points={
         "console_scripts": [
             "mgtron=gui:mg_tron_gui",

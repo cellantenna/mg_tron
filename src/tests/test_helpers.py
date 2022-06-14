@@ -1,4 +1,5 @@
 from sre_constants import ASSERT_NOT
+from xml.etree.ElementPath import find
 
 from numpy import isin
 from gui.helpers import kill_channel
@@ -11,12 +12,14 @@ def test_kill_channel() -> None:
 
 
 def test_wifi_scanner(): 
-    x = find_signals_and_frequencies()
     assert isinstance(find_signals_and_frequencies(), dict)
 
+def test_frequency_and_signal_value_exists():
+    x = find_signals_and_frequencies()
+    assert len(x) != 0, 'Dictionary should not be empty'
 
-def test_frequency_dict_for_string():
 
-    val = "Infra"
-    if val in find_signals_and_frequencies(): 
-        assert isinstance(find_signals_and_frequencies(), list)
+def test_frequency_for_value():
+    assert "Infra" not in find_signals_and_frequencies()
+
+print(find_signals_and_frequencies())
