@@ -20,6 +20,7 @@ Here we write upgrade and change notes.
 
 ## ✳️[0.12.1] - 2022 JUN 7
 
+- Removed the `find_dev.sh` script completely and retained that functionality
 - Critical error in `find_dev.sh`; linux device finding listing script
 - Added YAML file to run PyPi update using GitHub Actions 
 
