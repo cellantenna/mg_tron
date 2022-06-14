@@ -16,12 +16,22 @@ Here we write upgrade and change notes.
 
 ✳️ PATCH version when you make backwards compatible bug fixes.
 
+## ✳️[0.12.3] - 2022 JUN 10
 
+- Automatically overwrite or create save file if file is nonexistant or corrupted
+- Mission buttons are configurable via config file location in `_config/`
+
+## ✳️[0.12.2] - 2022 JUN 10
+
+- Custom load functional!
+- Reconfigured custom save
 
 ## ✳️[0.12.1] - 2022 JUN 7
 
+- Removed the `find_dev.sh` script completely and retained that functionality
 - Critical error in `find_dev.sh`; linux device finding listing script
-- Added YAML file to run PyPi update using GitHub Actions 
+- All phonetic mission buttons are configurable via config files
+- Added YAML file to run PyPi update using GitHub Actions
 
 ## ✴️[0.12.0] - 2022 JUN 6
 

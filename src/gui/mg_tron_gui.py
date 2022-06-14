@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-from collections import Counter
 import logging
+import pathlib
 from typing import Any
 
 import dearpygui.dearpygui as dpg
@@ -11,7 +11,6 @@ from helpers import (
     DEVICE,
     VERSION,
     auto_fill_bandwidth,
-    auto_fill_custom_save,
     auto_fill_freq,
     auto_fill_power,
     card_selection,
@@ -22,10 +21,13 @@ from helpers import (
     device_finder,
     fill_config,
     kill_channel,
+    load_chosen,
     mission_alpha,
     mission_bravo,
     mission_charlie,
     mission_delta,
+    mission_echo,
+    mission_fox,
     mission_golf,
     quick_load,
     reset_button,
@@ -37,7 +39,11 @@ from helpers import (
     wifi_scan_jam,
 )
 
+ROOT = pathlib.Path(__file__).resolve().parent.parent.parent
+
 logger = logging.getLogger(name=__name__)
+
+logger.debug(msg=f"Working dir: {ROOT}")
 
 logger.info(msg=f"Imports imported in GUI file")
 RESOLUTION: list[int] = [1250, 735]  # 1200x800
@@ -107,15 +113,17 @@ with dpg.handler_registry():
     dpg.add_mouse_wheel_handler(callback=change_inputs)
 
 with dpg.font_registry():
-    default_font_added = dpg.add_font(
-        file="src/gui/fonts/MesloLGS NF Regular.ttf", size=40
-    )
-    ital_font = dpg.add_font(
-        file="src/gui/fonts/MesloLGS NF Italic.ttf", size=20)
-    bold_font = dpg.add_font(
-        file="src/gui/fonts/MesloLGS NF Bold Italic.ttf", size=40)
-    small_font = dpg.add_font(
-        file="src/gui/fonts/MesloLGS NF Italic.ttf", size=13)
+    try:  # Stop gap incase the files cannot be found
+        default_font_added = dpg.add_font(
+            file="fonts/MesloLGS NF Regular.ttf", size=40)
+        ital_font = dpg.add_font(
+            file="fonts/MesloLGS NF Italic.ttf", size=20)
+        bold_font = dpg.add_font(
+            file="fonts/MesloLGS NF Bold Italic.ttf", size=40)
+        small_font = dpg.add_font(
+            file="fonts/MesloLGS NF Italic.ttf", size=13)
+    except SystemError:
+        logger.exception(msg="Unable to locate font files")
 
 logger.info(msg="Setting Primary Window in GUI file")
 # Primary Window
@@ -528,7 +536,7 @@ with dpg.window(
         custom_save_button = dpg.add_button(
             tag="custom_save",
             height=70,
-            label="CUSTOM\nSAVE",
+            label="SAVE\nCONFIG",
             width=BUTTON_WIDTH,
             pos=(
                 (dpg.get_item_width(item="big_buttons") - 50) / DIVISOR,
@@ -565,7 +573,7 @@ with dpg.window(
             tag="custom_load_button",
             height=70,
             width=BUTTON_WIDTH,
-            label="CUSTOM\nLOAD",
+            label="LOAD\nCONFIG",
             pos=(
                 (dpg.get_item_width(item="big_buttons") - 250) / DIVISOR,
                 (dpg.get_item_height(item="big_buttons") - CUSTOM_CONFIG_HEIGHT) / 2,
@@ -578,18 +586,24 @@ with dpg.window(
             modal=True,
             tag="modal_load",
         ):
-            SAVED_LIST: dict[str, Any] = custom_load()
-            SAVED_DATA = set(k["Save_name"] for k in SAVED_LIST)
+            try:
+                SAVED_LIST: list[dict[str]] = custom_load()
 
-            [
-                dpg.add_menu_item(
-                    parent="load_input",
-                    label=SAVED_DATA,
-                    callback=lambda: logger.info(
-                        msg="\nLoad menu item called\n"),
-                )
-                for _ in range(len(SAVED_LIST))
-            ]
+                unique_names: list = list(
+                    set(save["save_name"] for save in SAVED_LIST))
+
+                logger.debug(msg="Custom load options loaded")
+                {
+                    dpg.add_menu_item(
+                        parent="load_input",
+                        label=unique,
+                        callback=load_chosen,
+                        user_data=unique,
+                    )
+                    for unique in unique_names
+                }
+            except (KeyError, TypeError):
+                logger.exception(msg="Save file corrupted")
 
             dpg.add_button(
                 label="Quit",
@@ -690,7 +704,7 @@ with dpg.window(
             logger.info(msg="Mission Echo button initialized")
             mission_echo_button = dpg.add_button(
                 tag="mssn_echo",
-                callback=two_point_four,
+                callback=mission_echo,
                 label="ECHO\n",
                 height=70,
                 width=BUTTON_WIDTH,
@@ -706,7 +720,7 @@ with dpg.window(
             logger.info(msg="Mission Fox button initialized")
             mission_fox_button = dpg.add_button(
                 tag="mssn_fox",
-                # callback=mission_fox,
+                callback=mission_fox,
                 label="FOX\n",
                 height=70,
                 width=BUTTON_WIDTH,
@@ -800,18 +814,22 @@ with dpg.window(
             tag="ver_num",
         )
 
-dpg.bind_font(font=ital_font)
-dpg.bind_item_font(item="ver_num", font=small_font)
+try:  # Stop gap in case the files cannot be found
+    dpg.bind_font(font=ital_font)
+    dpg.bind_item_font(item="ver_num", font=small_font)
 
-[
-    (
-        dpg.bind_item_font(item=f"freq_{i}", font=bold_font),
-        dpg.bind_item_font(item=f"power_{i}", font=bold_font),
-        dpg.bind_item_font(item=f"bandwidth_{i}", font=bold_font),
-        dpg.bind_item_font(item=f"channel_{i}", font=default_font_added),
-    )
-    for i in range(1, 9)
-]
+    [
+        (
+            dpg.bind_item_font(item=f"freq_{i}", font=bold_font),
+            dpg.bind_item_font(item=f"power_{i}", font=bold_font),
+            dpg.bind_item_font(item=f"bandwidth_{i}", font=bold_font),
+            dpg.bind_item_font(item=f"channel_{i}", font=default_font_added),
+        )
+        for i in range(1, 9)
+    ]
+
+except NameError:
+    logger.exception(msg="Font files error")
 
 # Global Theme
 with dpg.theme() as global_theme:
@@ -875,5 +893,5 @@ try:
     dpg.start_dearpygui()
 except KeyboardInterrupt:
     logger.exception(msg="Ctrl C executed")
-    exit()  # Exit the program gracefully upon user input to quit
+    exit  # Exit the program gracefully upon user input to quit
 dpg.destroy_context()
