@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-from collections import Counter
 import logging
 from typing import Any
 
@@ -11,7 +10,6 @@ from helpers import (
     DEVICE,
     VERSION,
     auto_fill_bandwidth,
-    auto_fill_custom_save,
     auto_fill_freq,
     auto_fill_power,
     card_selection,

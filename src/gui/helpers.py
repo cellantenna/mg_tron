@@ -5,8 +5,6 @@ import json
 import logging
 import platform
 import subprocess
-import sys
-from cmath import log
 from datetime import datetime
 from typing import Any
 import dearpygui.dearpygui as dpg
