@@ -6,7 +6,7 @@ with open("CHANGELOG.md", "r", encoding="utf-8",) as fh:
 
 setuptools.setup(
     name="mgtron",
-    version="0.12.1",
+    version="0.12.2",
     author="Hunter, Christerpher",
     author_email="djhunter67@gmail.com",
     description="GUI for proprietary signal generator",
@@ -25,11 +25,9 @@ setuptools.setup(
         "Topic :: Terminals :: Serial",
     ],
     package_dir={"": "src"},
-    packages=setuptools.find_packages(where="src"),
-    install_requires=["dearpygui"],
-    install_requires=["dearpygui", "numpy"],
-
-
+    packages=setuptools.find_packages(
+        where="src", include=["gui"]),
+    package_data={"gui": ["fonts/", "db/", "_configs/"]},
     install_requires=["dearpygui", "numpy"],
     entry_points={
         "console_scripts": [
