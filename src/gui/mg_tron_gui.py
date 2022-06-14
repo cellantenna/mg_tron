@@ -11,7 +11,6 @@ from helpers import (
     DEVICE,
     VERSION,
     auto_fill_bandwidth,
-    auto_fill_custom_save,
     auto_fill_freq,
     auto_fill_power,
     card_selection,
