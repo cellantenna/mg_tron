@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+from calendar import month_abbr
 import configparser
 import json
 import logging
@@ -228,7 +229,7 @@ def quick_save(sender, app_data, user_data) -> None:
         for channel in range(1, 9)
     ]
 
-    with open(file="src/gui/db/quick_save.json", mode="w") as file:
+    with open(file="db/quick_save.json", mode="w") as file:
         file.write(json.dumps(obj=prelim_data, indent=2))
         loggey.info("Save Complete")
 
@@ -237,7 +238,7 @@ def quick_load(sender, app_data, user_data) -> None:
     """Load the last daved data"""
 
     saved_data: list = []
-    with open(file="src/gui/db/quick_save.json", mode="r") as file:
+    with open(file="db/quick_save.json", mode="r") as file:
         saved_data = json.loads(file.read())
     [
         (
@@ -265,19 +266,20 @@ def custom_save(sender, app_data, user_data) -> None:
 
     loggey.info(f"{custom_save.__name__}() executed")
 
-    custom_save_file = db.getDb("src/gui/db/long_save.json")
+    custom_save_file = db.getDb("db/long_save.json")
     try:
 
         custom_save_file.addMany(
-            {
-                "Save_name": dpg.get_value(item="save_custom_input"),
-                "channel": channel,
-                "Power": dpg.get_value(f"power_{channel}"),
-                "Bandwidth": dpg.get_value(f"bandwidth_{channel}"),
-                "Frequency": dpg.get_value(f"freq_{channel}"),
-                "Date": dt_string,
-            }
-            for channel in range(1, 9)
+            [
+                {
+                    "save_name": dpg.get_value(item="save_custom_input"),
+                    "Power": dpg.get_value(f"power_{channel}"),
+                    "Bandwidth": dpg.get_value(f"bandwidth_{channel}"),
+                    "Frequency": dpg.get_value(f"freq_{channel}"),
+                    "Date": dt_string
+                }
+                for channel in range(1, 9)
+            ]
         )
 
     except (
@@ -286,22 +288,50 @@ def custom_save(sender, app_data, user_data) -> None:
         KeyError,
         errors.db_errors.SchemaError,
         AttributeError,
+        json.JSONDecodeError,
     ):
-        loggey.exception(msg="database failure")
+        loggey.exception(msg=f"database failure | {custom_save.__name__}()")
 
     # Clear input and close input
     dpg.set_value(item="save_custom_input", value="")
     dpg.configure_item(item="modal_save", show=False)
 
 
-def custom_load(sender=None, app_data=None, user_data=None) -> json:
+def custom_load() -> list:
     """Load config /w a custom name"""
 
     loggey.debug(msg="Attempting to load custom save data")
 
-    custom_save_file = db.getDb("src/gui/db/long_save.json")
+    try:
+        custom_save_file = db.getDb("db/long_save.json")
+    except FileNotFoundError:
+        loggey.exception(msg="No custom save file found")
 
-    return custom_save_file.getAll()
+    try:
+        return custom_save_file.getAll()
+    except json.JSONDecodeError:
+        loggey.exception(msg="No save file detected OR save file corrupted")
+        loggey.warning(
+            msg="Save file being overwritten due to corruption or nonexistence")
+        with open(file="db/long_save.json", mode="w") as overwrite_corruption_or_create:
+            overwrite_corruption_or_create.write('{"data":[]}')
+        return custom_save_file.getAll()
+
+
+def load_chosen(sender=None, app_data=None, user_data=None) -> None:
+    """Take in the chosen file to be loaded"""
+
+    _custom_load = db.getDb("db/long_save.json")
+    _ret_data: list[dict[str]] = _custom_load.getBy({"save_name": user_data})
+
+    [
+        (
+            dpg.set_value(item=f"freq_{iter}", value=data["Frequency"]),
+            dpg.set_value(item=f"power_{iter}", value=data["Power"]),
+            dpg.set_value(item=f"bandwidth_{iter}", value=data["Bandwidth"])
+        )
+        for iter, data in enumerate(_ret_data, start=1)
+    ]
 
 
 def auto_fill_freq(
@@ -556,7 +586,15 @@ def mission_echo(sender, app_data, user_data) -> None:
         ]
 
     except KeyError:
-        loggey.exception(msg="Error in reading the config file")
+        dpg.popup(
+            parent="mission_buttons_border",
+            modal=True,
+            no_move=True,
+            # mousebutton=dpg.mvMouseButton_Left,
+        )
+        loggey.exception(
+            msg="Error in reading the config file OR config file does not exist")
+
     except SystemError:
         loggey.exception(
             msg="Invalid data type;  Expected floating point value")

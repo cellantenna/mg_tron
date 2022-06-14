@@ -21,6 +21,7 @@ from helpers import (
     device_finder,
     fill_config,
     kill_channel,
+    load_chosen,
     mission_alpha,
     mission_bravo,
     mission_charlie,
@@ -39,7 +40,6 @@ from helpers import (
 )
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent.parent
-WORKING = ROOT / "src" / "gui"
 
 logger = logging.getLogger(name=__name__)
 
@@ -115,13 +115,13 @@ with dpg.handler_registry():
 with dpg.font_registry():
     try:  # Stop gap incase the files cannot be found
         default_font_added = dpg.add_font(
-            file=str(WORKING / "fonts/MesloLGS NF Regular.ttf"), size=40)
+            file="fonts/MesloLGS NF Regular.ttf", size=40)
         ital_font = dpg.add_font(
-            file=WORKING / "fonts/MesloLGS NF Italic.ttf", size=20)
+            file="fonts/MesloLGS NF Italic.ttf", size=20)
         bold_font = dpg.add_font(
-            file=WORKING / "fonts/MesloLGS NF Bold Italic.ttf", size=40)
+            file="fonts/MesloLGS NF Bold Italic.ttf", size=40)
         small_font = dpg.add_font(
-            file=WORKING / "fonts/MesloLGS NF Italic.ttf", size=13)
+            file="fonts/MesloLGS NF Italic.ttf", size=13)
     except SystemError:
         logger.exception(msg="Unable to locate font files")
 
@@ -536,7 +536,7 @@ with dpg.window(
         custom_save_button = dpg.add_button(
             tag="custom_save",
             height=70,
-            label="CUSTOM\nSAVE",
+            label="SAVE\nCONFIG",
             width=BUTTON_WIDTH,
             pos=(
                 (dpg.get_item_width(item="big_buttons") - 50) / DIVISOR,
@@ -573,7 +573,7 @@ with dpg.window(
             tag="custom_load_button",
             height=70,
             width=BUTTON_WIDTH,
-            label="CUSTOM\nLOAD",
+            label="LOAD\nCONFIG",
             pos=(
                 (dpg.get_item_width(item="big_buttons") - 250) / DIVISOR,
                 (dpg.get_item_height(item="big_buttons") - CUSTOM_CONFIG_HEIGHT) / 2,
@@ -586,18 +586,24 @@ with dpg.window(
             modal=True,
             tag="modal_load",
         ):
-            SAVED_LIST: dict[str, Any] = custom_load()
-            SAVED_DATA = set(k["Save_name"] for k in SAVED_LIST)
+            try:
+                SAVED_LIST: list[dict[str]] = custom_load()
 
-            [
-                dpg.add_menu_item(
-                    parent="load_input",
-                    label=SAVED_DATA,
-                    callback=lambda: logger.info(
-                        msg="\nLoad menu item called\n"),
-                )
-                for _ in range(len(SAVED_LIST))
-            ]
+                unique_names: list = list(
+                    set(save["save_name"] for save in SAVED_LIST))
+
+                logger.debug(msg="Custom load options loaded")
+                {
+                    dpg.add_menu_item(
+                        parent="load_input",
+                        label=unique,
+                        callback=load_chosen,
+                        user_data=unique,
+                    )
+                    for unique in unique_names
+                }
+            except (KeyError, TypeError):
+                logger.exception(msg="Save file corrupted")
 
             dpg.add_button(
                 label="Quit",
