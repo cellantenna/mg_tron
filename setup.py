@@ -27,7 +27,6 @@ setuptools.setup(
     package_dir={"": "src"},
     packages=setuptools.find_packages(where="src"),
 
-    install_requires=["dearpygui"], 
 
     install_requires=["dearpygui", "numpy"],
     entry_points={
