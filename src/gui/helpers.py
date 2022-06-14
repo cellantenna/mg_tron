@@ -266,7 +266,7 @@ def custom_save(sender, app_data, user_data) -> None:
 
     loggey.info(f"{custom_save.__name__}() executed")
 
-    custom_save_file = db.getDb("src/gui/long_save.json")
+    custom_save_file = db.getDb("src/gui/db/long_save.json")
     try:
 
         custom_save_file.addMany(
@@ -303,7 +303,7 @@ def custom_load() -> list:
     loggey.debug(msg="Attempting to load custom save data")
 
     try:
-        custom_save_file = db.getDb("src/gui/long_save.json")
+        custom_save_file = db.getDb("src/gui/db/long_save.json")
     except FileNotFoundError:
         loggey.exception(msg="No custom save file found")
 
@@ -313,7 +313,7 @@ def custom_load() -> list:
         loggey.exception(msg="No save file detected OR save file corrupted")
         loggey.warning(
             msg="Save file being overwritten due to corruption or nonexistence")
-        with open(file="src/gui/long_save.json", mode="w") as overwrite_corruption_or_create:
+        with open(file="src/gui/db/long_save.json", mode="w") as overwrite_corruption_or_create:
             overwrite_corruption_or_create.write('{"data":[]}')
         return custom_save_file.getAll()
 
@@ -321,7 +321,7 @@ def custom_load() -> list:
 def load_chosen(sender=None, app_data=None, user_data=None) -> None:
     """Take in the chosen file to be loaded"""
 
-    _custom_load = db.getDb("src/gui/long_save.json")
+    _custom_load = db.getDb("src/gui/db/long_save.json")
     _ret_data: list[dict[str]] = _custom_load.getBy({"save_name": user_data})
 
     [

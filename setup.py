@@ -1,12 +1,32 @@
 import setuptools
-
+import codecs
+import os.path
 
 with open("CHANGELOG.md", "r", encoding="utf-8",) as fh:
     long_description = fh.read()
 
+with open('requirements.txt') as fp:
+    install_requires = fp.read()
+
+
+def read(rel_path):
+    here = os.path.abspath(os.path.dirname(__file__))
+    with codecs.open(os.path.join(here, rel_path), 'r') as fp:
+        return fp.read()
+
+
+def get_version(rel_path):
+    for line in read(rel_path).splitlines():
+        if line.startswith('VERSION'):
+            delim = '"' if '"' in line else "'"
+            return line.split(delim)[1]
+    else:
+        raise RuntimeError("Unable to find version string.")
+
+
 setuptools.setup(
     name="mgtron",
-    version="0.12.2",
+    version=get_version("src/gui/helpers.py"),
     author="Hunter, Christerpher",
     author_email="djhunter67@gmail.com",
     description="GUI for proprietary signal generator",
@@ -24,15 +44,10 @@ setuptools.setup(
         "Topic :: System :: Hardware :: Universal Serial Bus (USB)",
         "Topic :: Terminals :: Serial",
     ],
-    package_dir={"": "gui"},
-    packages=setuptools.find_packages(
-        where="gui"),
+    package_dir={"": "src"},
+    packages=setuptools.find_packages(where="src"),
     package_data={"gui": ["fonts/*", "db/*", "_configs/*"]},
-    install_requires=["dearpygui", "numpy"],
-    entry_points={
-        "console_scripts": [
-            "mgtron=gui:mg_tron_gui",
-        ],
-    },
+    install_requires=install_requires,
+    entry_points={"console_scripts": ["mgtron=gui:mg_tron_gui", ]},
     python_requires=">=3.10",
 )
