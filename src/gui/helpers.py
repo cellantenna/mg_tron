@@ -570,7 +570,6 @@ def find_signals_and_frequencies() -> dict:
         ["nmcli", "-f", "ALL", "dev", "wifi"], stdout=subprocess.PIPE
     )
     
-
     b = StringIO(output.communicate()[0].decode("utf-8"))
     df = pd.read_csv(b, index_col=False,
                      delim_whitespace=True, engine="python")
