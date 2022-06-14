@@ -567,36 +567,36 @@ def config_intake() -> None:
 def find_signals_and_frequencies() -> dict:
 
     output = subprocess.Popen(
-        ["nmcli", "-f", "ALL", "dev", "wifi"], stdout=subprocess.PIPE
+        ["nmcli", "-f", "FREQ", "dev", "wifi"], stdout=subprocess.PIPE
     )
-    
+    output2 = subprocess.Popen(
+        ["nmcli", "-f", "SIGNAL", "dev", "wifi"], stdout=subprocess.PIPE
+    )
     b = StringIO(output.communicate()[0].decode("utf-8"))
     df = pd.read_csv(b, index_col=False,
                      delim_whitespace=True, engine="python")
+    c = StringIO(output2.communicate()[0].decode("utf-8"))
+    signals = pd.read_csv(c, index_col=False,
+                          delim_whitespace=True, engine="python")
 
-    signal_column = df.loc[:, "SECURITY"]
+    signal_column = signals.loc[:, "SIGNAL"]
     signal_list = list(signal_column)
-    filtered_signals = [x for x in signal_list if 'MHz' not in x]
-    filtered_signals_2 = [x for x in filtered_signals if x >= "0"]
-    filtered_signals_3 = [x for x in filtered_signals_2 if x <= ":"]
-    filtered_signals_4 = [x for x in filtered_signals_3 if 'Infra' not in x]
-
+    
     frequency_column = df.loc[:, "FREQ"]
     frequency_column.unique()
     freq_list = list(frequency_column)
-    filtered_frequencies = [x for x in freq_list if 'Infra' not in x]
-    filtered_frequencies_2 = [x for x in filtered_frequencies if ':' not in x]
-    filtered_frequencies_3 = [i for i in filtered_frequencies_2 if i >= "2400"]
-
+    
+    filtered_frequencies = [
+        i for i in freq_list if i >= 2400]
     freq_and_signal = {}
-    for freq in filtered_frequencies_3:
-        for signal in filtered_signals_4:
+    for freq in filtered_frequencies:
+        for signal in signal_list:
             freq_and_signal[freq] = signal
-            filtered_signals_4.remove(signal)
+            signal_list.remove(signal)
             break
-    loggey.info(
-        msg=f"Freq and Strength: {freq_and_signal} | {find_signals_and_frequencies.__name__}"
-    )
+        loggey.info(
+            msg=f"Freq and Strength: {freq_and_signal} | {find_signals_and_frequencies.__name__}"
+        )
     return freq_and_signal
 
 

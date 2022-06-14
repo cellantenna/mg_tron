@@ -28,4 +28,7 @@ def test_frequency_value():
 
 def test_frequency_value2():
     assert "2447" in find_signals_and_frequencies()
+
+def test_signal_string():
+    assert "MHz" not in find_signals_and_frequencies()
 print(find_signals_and_frequencies())
