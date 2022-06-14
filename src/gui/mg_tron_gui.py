@@ -115,13 +115,13 @@ with dpg.handler_registry():
 with dpg.font_registry():
     try:  # Stop gap incase the files cannot be found
         default_font_added = dpg.add_font(
-            file="fonts/MesloLGS NF Regular.ttf", size=40)
+            file="src/gui/fonts/MesloLGS NF Regular.ttf", size=40)
         ital_font = dpg.add_font(
-            file="fonts/MesloLGS NF Italic.ttf", size=20)
+            file="src/gui/fonts/MesloLGS NF Italic.ttf", size=20)
         bold_font = dpg.add_font(
-            file="fonts/MesloLGS NF Bold Italic.ttf", size=40)
+            file="src/gui/fonts/MesloLGS NF Bold Italic.ttf", size=40)
         small_font = dpg.add_font(
-            file="fonts/MesloLGS NF Italic.ttf", size=13)
+            file="src/gui/fonts/MesloLGS NF Italic.ttf", size=13)
     except SystemError:
         logger.exception(msg="Unable to locate font files")
 

@@ -24,10 +24,10 @@ setuptools.setup(
         "Topic :: System :: Hardware :: Universal Serial Bus (USB)",
         "Topic :: Terminals :: Serial",
     ],
-    package_dir={"": "src"},
+    package_dir={"": "gui"},
     packages=setuptools.find_packages(
-        where="src", include=["gui"]),
-    package_data={"gui": ["fonts/", "db/", "_configs/"]},
+        where="gui"),
+    package_data={"gui": ["fonts/*", "db/*", "_configs/*"]},
     install_requires=["dearpygui", "numpy"],
     entry_points={
         "console_scripts": [

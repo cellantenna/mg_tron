@@ -229,7 +229,7 @@ def quick_save(sender, app_data, user_data) -> None:
         for channel in range(1, 9)
     ]
 
-    with open(file="db/quick_save.json", mode="w") as file:
+    with open(file="src/gui/quick_save.json", mode="w") as file:
         file.write(json.dumps(obj=prelim_data, indent=2))
         loggey.info("Save Complete")
 
@@ -238,7 +238,7 @@ def quick_load(sender, app_data, user_data) -> None:
     """Load the last daved data"""
 
     saved_data: list = []
-    with open(file="db/quick_save.json", mode="r") as file:
+    with open(file="src/gui/quick_save.json", mode="r") as file:
         saved_data = json.loads(file.read())
     [
         (
@@ -266,7 +266,7 @@ def custom_save(sender, app_data, user_data) -> None:
 
     loggey.info(f"{custom_save.__name__}() executed")
 
-    custom_save_file = db.getDb("db/long_save.json")
+    custom_save_file = db.getDb("src/gui/long_save.json")
     try:
 
         custom_save_file.addMany(
@@ -303,7 +303,7 @@ def custom_load() -> list:
     loggey.debug(msg="Attempting to load custom save data")
 
     try:
-        custom_save_file = db.getDb("db/long_save.json")
+        custom_save_file = db.getDb("src/gui/long_save.json")
     except FileNotFoundError:
         loggey.exception(msg="No custom save file found")
 
@@ -313,7 +313,7 @@ def custom_load() -> list:
         loggey.exception(msg="No save file detected OR save file corrupted")
         loggey.warning(
             msg="Save file being overwritten due to corruption or nonexistence")
-        with open(file="db/long_save.json", mode="w") as overwrite_corruption_or_create:
+        with open(file="src/gui/long_save.json", mode="w") as overwrite_corruption_or_create:
             overwrite_corruption_or_create.write('{"data":[]}')
         return custom_save_file.getAll()
 
@@ -321,7 +321,7 @@ def custom_load() -> list:
 def load_chosen(sender=None, app_data=None, user_data=None) -> None:
     """Take in the chosen file to be loaded"""
 
-    _custom_load = db.getDb("db/long_save.json")
+    _custom_load = db.getDb("src/gui/long_save.json")
     _ret_data: list[dict[str]] = _custom_load.getBy({"save_name": user_data})
 
     [
@@ -432,7 +432,7 @@ def mission_alpha(sender, app_data, user_data) -> None:
 
     try:
 
-        parser, _ = read_config(file=f"_configs/{mission_alpha.__name__}.ini")
+        parser, _ = read_config(file=f"src/gui/_configs/{mission_alpha.__name__}.ini")
 
         [
             (
@@ -466,7 +466,7 @@ def mission_bravo(sender, app_data, user_data) -> None:
 
     try:
 
-        parser, _ = read_config(file=f"_configs/{mission_bravo.__name__}.ini")
+        parser, _ = read_config(file=f"src/gui/_configs/{mission_bravo.__name__}.ini")
 
         [
             (
@@ -501,7 +501,7 @@ def mission_charlie(sender, app_data, user_data) -> None:
     try:
 
         parser, _ = read_config(
-            file=f"_configs/{mission_charlie.__name__}.ini")
+            file=f"src/gui/_configs/{mission_charlie.__name__}.ini")
 
         [
             (
@@ -533,7 +533,7 @@ def mission_delta(sender, app_data, user_data) -> None:
 
     try:
 
-        parser, _ = read_config(file=f"_configs/{mission_delta.__name__}.ini")
+        parser, _ = read_config(file=f"src/gui/_configs/{mission_delta.__name__}.ini")
 
         [
             (
@@ -565,7 +565,7 @@ def mission_echo(sender, app_data, user_data) -> None:
 
     try:
 
-        parser, _ = read_config(file=f"_configs/{mission_echo.__name__}.ini")
+        parser, _ = read_config(file=f"src/gui/_configs/{mission_echo.__name__}.ini")
 
         [
             (
@@ -612,7 +612,7 @@ def mission_golf(sender, app_data, user_data) -> None:
     ]
     try:
 
-        parser, _ = read_config(file=f"_configs/{mission_golf.__name__}.ini")
+        parser, _ = read_config(file=f"src/gui/_configs/{mission_golf.__name__}.ini")
 
         [
             (
@@ -644,7 +644,7 @@ def mission_fox(sender, app_data, user_data) -> None:
 
     try:
 
-        parser, _ = read_config(file=f"_configs/{mission_fox.__name__}.ini")
+        parser, _ = read_config(file=f"src/gui/_configs/{mission_fox.__name__}.ini")
 
         [
             (
@@ -716,7 +716,7 @@ def device_finder(sender=None, app_data=None, user_data: int = int()) -> None:
 def fill_config():
     """Automatically fill the config file with devices detected"""
 
-    parser, devices = read_config(file="_configs/card_config.ini")
+    parser, devices = read_config(file="src/gui/_configs/card_config.ini")
 
     try:
         if not parser["mgtron"]["card_1"]:
@@ -726,14 +726,14 @@ def fill_config():
                 f"card_{i+1}": str(devices[i].split(sep="_")[-1])
                 for i in range(len(devices))
             }
-            with open(file="_configs/card_config.ini", mode="w") as config_file:
+            with open(file="src/gui/card_config.ini", mode="w") as config_file:
                 parser.write(config_file)
             loggey.info(msg="Config file has been automatically filled")
         else:
             loggey.info(msg="Config file already filled")
     except (KeyError, IndexError):
         loggey.exception(msg="Config file error")
-        with open(file="_configs/card_config.ini", mode="w") as config_file:
+        with open(file="src/gui/card_config.ini", mode="w") as config_file:
             config_file.write("[mgtron]\n")
             [config_file.write(f"card_{i+1}=\n") for i in range(len(DEVICE))]
         fill_config()
@@ -742,7 +742,7 @@ def fill_config():
 def config_intake() -> None:
     """Read a config file and assign card buttons"""
 
-    parser, devices = read_config(file="_configs/card_config.ini")
+    parser, devices = read_config(file="src/gui/card_config.ini")
 
     if len(devices) > 1:
         for card in range(1, len(devices) + 1):
@@ -805,7 +805,7 @@ def find_signals_and_frequencies() -> dict:
 def card_selection(sender, app_data, user_data: int) -> None:
     """Load the selected cards prefix when selected"""
 
-    parser, _ = read_config(file="_configs/card_config.ini")
+    parser, _ = read_config(file="src/gui/card_config.ini")
 
     loggey.info(msg=f"selected card: {user_data} | {card_selection.__name__}")
 
