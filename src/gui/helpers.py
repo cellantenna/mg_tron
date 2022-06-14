@@ -21,7 +21,7 @@ WORKING = ROOT / "src" / "gui"
 
 # datetime object containing current date and time
 now = datetime.now()
-VERSION: str = "0.12.1"
+VERSION: str = "0.12.3"
 
 loggey = logging.getLogger(name=__name__)
 
@@ -904,7 +904,7 @@ def find_signals_and_frequencies() -> dict:
                      delim_whitespace=True, engine="python")
 
     signal_column = df.loc[:, "SECURITY"]
-    signal_list = list(signal_column)
+    signal_list = list(str(signal_column))
     filtered_signals = [x for x in signal_list if 'MHz' not in x]
     filtered_signals_2 = [x for x in filtered_signals if x >= "0"]
     filtered_signals_3 = [x for x in filtered_signals_2 if x <= ":"]
