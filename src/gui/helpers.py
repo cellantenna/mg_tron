@@ -783,11 +783,11 @@ def find_signals_and_frequencies() -> dict:
 
     signal_column = signals.loc[:, "SIGNAL"]
     signal_list = list(signal_column)
-    
+
     frequency_column = df.loc[:, "FREQ"]
     frequency_column.unique()
     freq_list = list(frequency_column)
-    
+
     filtered_frequencies = [
         i for i in freq_list if i >= 2400]
     freq_and_signal = {}
@@ -925,43 +925,6 @@ def card_selection(sender, app_data, user_data: int) -> None:
                     item=f"card_{greyed_card}", theme=blue_btn_theme)
                 for greyed_card in card_list
             ]
-
-
-def find_signals_and_frequencies() -> dict:
-
-    output = subprocess.Popen(
-        ["nmcli", "-f", "ALL", "dev", "wifi"], stdout=subprocess.PIPE
-    )
-
-    b = StringIO(output.communicate()[0].decode("utf-8"))
-
-    df = pd.read_csv(b, index_col=False,
-                     delim_whitespace=True, engine="python")
-
-    signal_column = df.loc[:, "SIGNAL"]
-    signal_list = list(signal_column)
-    filtered_signals = [x for x in signal_list if 'MHz' not in x]
-    filtered_signals_2 = [x for x in filtered_signals if x >= "0"]
-    filtered_signals_3 = [x for x in filtered_signals_2 if x <= ":"]
-    filtered_signals_4 = [x for x in filtered_signals_3 if 'Infra' not in x]
-
-    frequency_column = df.loc[:, "FREQ"]
-    frequency_column.unique()
-    freq_list = list(frequency_column)
-    filtered_frequencies = [x for x in freq_list if 'Infra' not in x]
-    filtered_frequencies_2 = [x for x in filtered_frequencies if ':' not in x]
-    filtered_frequencies_3 = [i for i in filtered_frequencies_2 if i >= "2400"]
-
-    freq_and_signal = {}
-    for freq in filtered_frequencies_3:
-        for signal in filtered_signals_4:
-            freq_and_signal[freq] = signal
-            filtered_signals_4.remove(signal)
-            break
-    loggey.info(
-        msg=f"Freq and Strength: {freq_and_signal} | {find_signals_and_frequencies.__name__}"
-    )
-    return freq_and_signal
 
 
 def wifi_scan_jam(sender, app_data, user_data) -> None:
