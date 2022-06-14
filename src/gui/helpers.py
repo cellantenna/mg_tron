@@ -912,7 +912,7 @@ def find_signals_and_frequencies() -> dict:
 
     frequency_column = df.loc[:, "FREQ"]
     frequency_column.unique()
-    freq_list = list(frequency_column)
+    freq_list = list(str(frequency_column))
     filtered_frequencies = [x for x in freq_list if 'Infra' not in x]
     filtered_frequencies_2 = [x for x in filtered_frequencies if ':' not in x]
     filtered_frequencies_3 = [i for i in filtered_frequencies_2 if i >= "2400"]
