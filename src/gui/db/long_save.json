@@ -63,6 +63,134 @@
          "Frequency": 6359.5400390625,
          "Date": "10/06/2022 15:31:38",
          "id": 100737526858421607
+      },
+      {
+         "save_name": "CellAntennaWifi",
+         "Power": 40,
+         "Bandwidth": 100,
+         "Frequency": 2412.0,
+         "Date": "15/06/2022 10:21:34",
+         "id": 117234599851733845
+      },
+      {
+         "save_name": "CellAntennaWifi",
+         "Power": 40,
+         "Bandwidth": 100,
+         "Frequency": 2437.0,
+         "Date": "15/06/2022 10:21:34",
+         "id": 254753502316110335
+      },
+      {
+         "save_name": "CellAntennaWifi",
+         "Power": 40,
+         "Bandwidth": 100,
+         "Frequency": 2447.0,
+         "Date": "15/06/2022 10:21:34",
+         "id": 138337717099262315
+      },
+      {
+         "save_name": "CellAntennaWifi",
+         "Power": 40,
+         "Bandwidth": 100,
+         "Frequency": 2462.0,
+         "Date": "15/06/2022 10:21:34",
+         "id": 190913755859554291
+      },
+      {
+         "save_name": "CellAntennaWifi",
+         "Power": 40,
+         "Bandwidth": 100,
+         "Frequency": 5200.0,
+         "Date": "15/06/2022 10:21:34",
+         "id": 162462330473986184
+      },
+      {
+         "save_name": "CellAntennaWifi",
+         "Power": 40,
+         "Bandwidth": 100,
+         "Frequency": 5765.0,
+         "Date": "15/06/2022 10:21:34",
+         "id": 303774190791442016
+      },
+      {
+         "save_name": "CellAntennaWifi",
+         "Power": 28,
+         "Bandwidth": 10,
+         "Frequency": 50.0,
+         "Date": "15/06/2022 10:21:34",
+         "id": 267603156928630170
+      },
+      {
+         "save_name": "CellAntennaWifi",
+         "Power": 17,
+         "Bandwidth": 10,
+         "Frequency": 50.0,
+         "Date": "15/06/2022 10:21:34",
+         "id": 192988806884989175
+      },
+      {
+         "save_name": "amp_init_test_config",
+         "Power": 63,
+         "Bandwidth": 0,
+         "Frequency": 650.0,
+         "Date": "15/06/2022 10:25:56",
+         "id": 243650236713052889
+      },
+      {
+         "save_name": "amp_init_test_config",
+         "Power": 63,
+         "Bandwidth": 0,
+         "Frequency": 750.0,
+         "Date": "15/06/2022 10:25:56",
+         "id": 984299032376653850
+      },
+      {
+         "save_name": "amp_init_test_config",
+         "Power": 63,
+         "Bandwidth": 0,
+         "Frequency": 850.0,
+         "Date": "15/06/2022 10:25:56",
+         "id": 255693561567044159
+      },
+      {
+         "save_name": "amp_init_test_config",
+         "Power": 63,
+         "Bandwidth": 0,
+         "Frequency": 1960.0,
+         "Date": "15/06/2022 10:25:56",
+         "id": 220157095804513760
+      },
+      {
+         "save_name": "amp_init_test_config",
+         "Power": 63,
+         "Bandwidth": 0,
+         "Frequency": 2140.0,
+         "Date": "15/06/2022 10:25:56",
+         "id": 307247977858613804
+      },
+      {
+         "save_name": "amp_init_test_config",
+         "Power": 63,
+         "Bandwidth": 0,
+         "Frequency": 2350.0,
+         "Date": "15/06/2022 10:25:56",
+         "id": 221257141033347834
+      },
+      {
+         "save_name": "amp_init_test_config",
+         "Power": 63,
+         "Bandwidth": 0,
+         "Frequency": 2650.0,
+         "Date": "15/06/2022 10:25:56",
+         "id": 334346727612773471
+      },
+      {
+         "save_name": "amp_init_test_config",
+         "Power": 0,
+         "Bandwidth": 0,
+         "Frequency": 50.0,
+         "Date": "15/06/2022 10:25:56",
+         "id": 114341040019660826
       }
    ]
 }

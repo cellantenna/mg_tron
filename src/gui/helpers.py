@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-from calendar import month_abbr
 import configparser
 import json
 import logging
@@ -8,13 +7,13 @@ import pathlib
 import platform
 import subprocess
 from datetime import datetime
-from typing import Any
+from io import StringIO
+
 import dearpygui.dearpygui as dpg
 import pandas as pd
 from pysondb import db, errors
-from io import StringIO
-from interface import Megatron, find_device
 
+from interface import Megatron, find_device
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent.parent
 WORKING = ROOT / "src" / "gui"
@@ -229,7 +228,7 @@ def quick_save(sender, app_data, user_data) -> None:
         for channel in range(1, 9)
     ]
 
-    with open(file="src/gui/quick_save.json", mode="w") as file:
+    with open(file="src/gui//db/quick_save.json", mode="w") as file:
         file.write(json.dumps(obj=prelim_data, indent=2))
         loggey.info("Save Complete")
 
@@ -432,7 +431,8 @@ def mission_alpha(sender, app_data, user_data) -> None:
 
     try:
 
-        parser, _ = read_config(file=f"src/gui/_configs/{mission_alpha.__name__}.ini")
+        parser, _ = read_config(
+            file=f"src/gui/_configs/{mission_alpha.__name__}.ini")
 
         [
             (
@@ -466,7 +466,8 @@ def mission_bravo(sender, app_data, user_data) -> None:
 
     try:
 
-        parser, _ = read_config(file=f"src/gui/_configs/{mission_bravo.__name__}.ini")
+        parser, _ = read_config(
+            file=f"src/gui/_configs/{mission_bravo.__name__}.ini")
 
         [
             (
@@ -533,7 +534,8 @@ def mission_delta(sender, app_data, user_data) -> None:
 
     try:
 
-        parser, _ = read_config(file=f"src/gui/_configs/{mission_delta.__name__}.ini")
+        parser, _ = read_config(
+            file=f"src/gui/_configs/{mission_delta.__name__}.ini")
 
         [
             (
@@ -565,7 +567,8 @@ def mission_echo(sender, app_data, user_data) -> None:
 
     try:
 
-        parser, _ = read_config(file=f"src/gui/_configs/{mission_echo.__name__}.ini")
+        parser, _ = read_config(
+            file=f"src/gui/_configs/{mission_echo.__name__}.ini")
 
         [
             (
@@ -612,7 +615,8 @@ def mission_golf(sender, app_data, user_data) -> None:
     ]
     try:
 
-        parser, _ = read_config(file=f"src/gui/_configs/{mission_golf.__name__}.ini")
+        parser, _ = read_config(
+            file=f"src/gui/_configs/{mission_golf.__name__}.ini")
 
         [
             (
@@ -644,7 +648,8 @@ def mission_fox(sender, app_data, user_data) -> None:
 
     try:
 
-        parser, _ = read_config(file=f"src/gui/_configs/{mission_fox.__name__}.ini")
+        parser, _ = read_config(
+            file=f"src/gui/_configs/{mission_fox.__name__}.ini")
 
         [
             (
@@ -733,7 +738,7 @@ def fill_config():
             loggey.info(msg="Config file already filled")
     except (KeyError, IndexError):
         loggey.exception(msg="Config file error")
-        with open(file="src/gui/card_config.ini", mode="w") as config_file:
+        with open(file="src/gui/_configs/card_config.ini", mode="w") as config_file:
             config_file.write("[mgtron]\n")
             [config_file.write(f"card_{i+1}=\n") for i in range(len(DEVICE))]
         fill_config()
@@ -742,7 +747,7 @@ def fill_config():
 def config_intake() -> None:
     """Read a config file and assign card buttons"""
 
-    parser, devices = read_config(file="src/gui/card_config.ini")
+    parser, devices = read_config(file="src/gui/_configs/card_config.ini")
 
     if len(devices) > 1:
         for card in range(1, len(devices) + 1):
@@ -775,11 +780,18 @@ def find_signals_and_frequencies() -> dict:
         ["nmcli", "-f", "SIGNAL", "dev", "wifi"], stdout=subprocess.PIPE
     )
     b = StringIO(output.communicate()[0].decode("utf-8"))
-    df = pd.read_csv(b, index_col=False,
-                     delim_whitespace=True, engine="python")
+
+    df = pd.read_csv(b,
+                     index_col=False,
+                     delim_whitespace=True,
+                     engine="python")
+
     c = StringIO(output2.communicate()[0].decode("utf-8"))
-    signals = pd.read_csv(c, index_col=False,
-                          delim_whitespace=True, engine="python")
+
+    signals = pd.read_csv(c,
+                          index_col=False,
+                          delim_whitespace=True,
+                          engine="python")
 
     signal_column = signals.loc[:, "SIGNAL"]
     signal_list = list(signal_column)

@@ -44,10 +44,20 @@ setuptools.setup(
         "Topic :: System :: Hardware :: Universal Serial Bus (USB)",
         "Topic :: Terminals :: Serial",
     ],
-    packages=["gui"],
-    package_dir={"gui": "src/gui"},    
-    package_data={"gui": ["fonts/*", "db/*", "_configs/*", "*.py"]},
-    install_requires=install_requires,
-    entry_points={"console_scripts": ["mgtron=gui:mg_tron_gui", ]},
+    packages=setuptools.find_packages(where="src", exclude=["tests", ]),
+    package_dir={"": "src"},
+    package_data={
+        "gui": [
+            "fonts/*", "db/*",
+            "_configs/*",
+            "*.ico",
+            "*.md",
+            "*.txt",
+            "*.cfg",
+            "*.rst",
+        ]
+    },
+    entry_points={"console_scripts": ["mgtron=src.gui.mg_tron_gui", ]},
     python_requires=">=3.10",
+    install_requires=install_requires,
 )
