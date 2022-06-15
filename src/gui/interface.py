@@ -1,4 +1,5 @@
 from dataclasses import dataclass
+import pathlib
 import platform
 from time import sleep
 import serial
@@ -6,12 +7,14 @@ import subprocess
 import logging
 
 
+ROOT = pathlib.Path(__file__).resolve().parent.parent.parent
+
 logger = logging.getLogger(__name__)
 logging.basicConfig(
     level=logging.DEBUG,
     format="%(asctime)s :: %(name)s :: %(message)s :: %(levelname)s",
     datefmt="%d-%b-%y %H:%M:%S",
-    filename="mg.log",
+    filename=f"{ROOT}/mg.log",
     filemode="a",
 )
 

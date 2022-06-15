@@ -1,6 +1,13 @@
-import setuptools
 import codecs
-import os.path
+import logging
+import os
+import pathlib
+import setuptools
+
+ROOT = pathlib.Path(__file__).resolve().parent.parent
+WORKING = ROOT / "mg_tron"
+loggick = logging.getLogger(name=__name__)
+
 
 with open("CHANGELOG.md", "r", encoding="utf-8",) as fh:
     long_description = fh.read()
@@ -23,10 +30,10 @@ def get_version(rel_path):
     else:
         raise RuntimeError("Unable to find version string.")
 
-
+loggick.info(f"setup.py: version: {get_version(f'{WORKING}/src/gui/helpers.py')}")
 setuptools.setup(
     name="mgtron",
-    version=get_version("src/gui/helpers.py"),
+    version=get_version(f"{WORKING}/src/gui/helpers.py"),
     author="Hunter, Christerpher",
     author_email="djhunter67@gmail.com",
     description="GUI for proprietary signal generator",

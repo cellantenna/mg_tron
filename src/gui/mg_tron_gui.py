@@ -35,7 +35,6 @@ from helpers import (
     send_all_channels,
     send_vals,
     custom_save,
-    two_point_four,
     wifi_scan_jam,
 )
 
@@ -115,13 +114,13 @@ with dpg.handler_registry():
 with dpg.font_registry():
     try:  # Stop gap incase the files cannot be found
         default_font_added = dpg.add_font(
-            file="src/gui/fonts/MesloLGS NF Regular.ttf", size=40)
+            file=f"{ROOT}/src/gui/fonts/MesloLGS NF Regular.ttf", size=40)
         ital_font = dpg.add_font(
-            file="src/gui/fonts/MesloLGS NF Italic.ttf", size=20)
+            file=f"{ROOT}/src/gui/fonts/MesloLGS NF Italic.ttf", size=20)
         bold_font = dpg.add_font(
-            file="src/gui/fonts/MesloLGS NF Bold Italic.ttf", size=40)
+            file=f"{ROOT}/src/gui/fonts/MesloLGS NF Bold Italic.ttf", size=40)
         small_font = dpg.add_font(
-            file="src/gui/fonts/MesloLGS NF Italic.ttf", size=13)
+            file=f"{ROOT}/src/gui/fonts/MesloLGS NF Italic.ttf", size=13)
     except SystemError:
         logger.exception(msg="Unable to locate font files")
 
@@ -408,7 +407,7 @@ with dpg.window(
             except (TypeError, NameError, SystemError, AssertionError, ValueError):
                 dpg.add_menu_item(
                     parent="choose_device",
-                    label=f"Device Number: Not Found",
+                    label="Device Number: Not Found",
                     callback=lambda: dpg.configure_item(
                         item="modal_device_config", show=False
                     ),
@@ -430,6 +429,7 @@ with dpg.window(
                 )
 
             dpg.add_button(
+                parent="modal_device_config",
                 label="Quit",
                 tag="Quit",
                 callback=lambda: dpg.configure_item(
@@ -599,8 +599,9 @@ with dpg.window(
                         label=unique,
                         callback=load_chosen,
                         user_data=unique,
+                        tag=f"load_{l}",
                     )
-                    for unique in unique_names
+                    for l, unique in enumerate(unique_names)
                 }
             except (KeyError, TypeError):
                 logger.exception(msg="Save file corrupted")
@@ -792,7 +793,6 @@ with dpg.window(
             )
             for card in range(1, 9)
         ]
-        config_intake()
 
     ###############
     # Version Tag #
@@ -814,7 +814,7 @@ with dpg.window(
             tag="ver_num",
         )
 
-try:  # Stop gap in case the files cannot be found
+try:  # Stop gap in case the font files cannot be found
     dpg.bind_font(font=ital_font)
     dpg.bind_item_font(item="ver_num", font=small_font)
 
@@ -859,6 +859,7 @@ blue_btn_list: list[Any] = [
     mission_fox_button,
     wifi_scan_jam_button,
 ]
+config_intake()
 
 dpg.bind_theme(global_theme)
 

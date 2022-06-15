@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+import dearpygui.dearpygui as dpg
 import configparser
 import json
 import logging
@@ -9,7 +10,6 @@ import subprocess
 from datetime import datetime
 from io import StringIO
 
-import dearpygui.dearpygui as dpg
 import pandas as pd
 from pysondb import db, errors
 
@@ -93,7 +93,7 @@ def device_names() -> list[str]:
     return sorted(devices)
 
 
-DEVICE: device_names = device_names()
+DEVICE: list[str] = device_names()
 
 
 def callstack_helper(
@@ -228,7 +228,7 @@ def quick_save(sender, app_data, user_data) -> None:
         for channel in range(1, 9)
     ]
 
-    with open(file="src/gui//db/quick_save.json", mode="w") as file:
+    with open(file=f"{ROOT}/src/gui/db/quick_save.json", mode="w") as file:
         file.write(json.dumps(obj=prelim_data, indent=2))
         loggey.info("Save Complete")
 
@@ -237,7 +237,7 @@ def quick_load(sender, app_data, user_data) -> None:
     """Load the last daved data"""
 
     saved_data: list = []
-    with open(file="src/gui/quick_save.json", mode="r") as file:
+    with open(file=f"{ROOT}/src/gui/db/quick_save.json", mode="r") as file:
         saved_data = json.loads(file.read())
     [
         (
@@ -265,7 +265,7 @@ def custom_save(sender, app_data, user_data) -> None:
 
     loggey.info(f"{custom_save.__name__}() executed")
 
-    custom_save_file = db.getDb("src/gui/db/long_save.json")
+    custom_save_file = db.getDb(f"{ROOT}/src/gui/db/long_save.json")
     try:
 
         custom_save_file.addMany(
@@ -302,7 +302,7 @@ def custom_load() -> list:
     loggey.debug(msg="Attempting to load custom save data")
 
     try:
-        custom_save_file = db.getDb("src/gui/db/long_save.json")
+        custom_save_file = db.getDb(f"{ROOT}/src/gui/db/long_save.json")
     except FileNotFoundError:
         loggey.exception(msg="No custom save file found")
 
@@ -312,7 +312,7 @@ def custom_load() -> list:
         loggey.exception(msg="No save file detected OR save file corrupted")
         loggey.warning(
             msg="Save file being overwritten due to corruption or nonexistence")
-        with open(file="src/gui/db/long_save.json", mode="w") as overwrite_corruption_or_create:
+        with open(file=f"{ROOT}/src/gui/db/long_save.json", mode="w") as overwrite_corruption_or_create:
             overwrite_corruption_or_create.write('{"data":[]}')
         return custom_save_file.getAll()
 
@@ -320,7 +320,7 @@ def custom_load() -> list:
 def load_chosen(sender=None, app_data=None, user_data=None) -> None:
     """Take in the chosen file to be loaded"""
 
-    _custom_load = db.getDb("src/gui/db/long_save.json")
+    _custom_load = db.getDb(f"{ROOT}/src/gui/db/long_save.json")
     _ret_data: list[dict[str]] = _custom_load.getBy({"save_name": user_data})
 
     [
@@ -398,21 +398,6 @@ def change_inputs(sender, app_data, user_data) -> None:
         loggey.debug(dpg.get_value("power_1"))
 
 
-def two_point_four(sender, app_data, user_data) -> None:
-    """Auto Fill the WIFI band"""
-
-    loggey.info(f"{two_point_four.__name__}() executed")
-
-    dpg.set_value(item=f"freq_1", value=2415)
-    dpg.set_value(item=f"freq_2", value=2440)
-    dpg.set_value(item=f"freq_3", value=2455)
-    dpg.set_value(item=f"freq_4", value=5213)
-    dpg.set_value(item=f"freq_5", value=5760)
-    dpg.set_value(item=f"freq_6", value=5195)
-    dpg.set_value(item=f"freq_7", value=5510)
-    dpg.set_value(item=f"freq_8", value=5705)
-
-
 def read_config(file: str) -> tuple[str, DEVICE]:
     """Read the config file and return the contents"""
 
@@ -432,7 +417,7 @@ def mission_alpha(sender, app_data, user_data) -> None:
     try:
 
         parser, _ = read_config(
-            file=f"src/gui/_configs/{mission_alpha.__name__}.ini")
+            file=f"{ROOT}/src/gui/_configs/{mission_alpha.__name__}.ini")
 
         [
             (
@@ -467,7 +452,7 @@ def mission_bravo(sender, app_data, user_data) -> None:
     try:
 
         parser, _ = read_config(
-            file=f"src/gui/_configs/{mission_bravo.__name__}.ini")
+            file=f"{ROOT}/src/gui/_configs/{mission_bravo.__name__}.ini")
 
         [
             (
@@ -502,7 +487,7 @@ def mission_charlie(sender, app_data, user_data) -> None:
     try:
 
         parser, _ = read_config(
-            file=f"src/gui/_configs/{mission_charlie.__name__}.ini")
+            file=f"{ROOT}/src/gui/_configs/{mission_charlie.__name__}.ini")
 
         [
             (
@@ -535,7 +520,7 @@ def mission_delta(sender, app_data, user_data) -> None:
     try:
 
         parser, _ = read_config(
-            file=f"src/gui/_configs/{mission_delta.__name__}.ini")
+            file=f"{ROOT}/src/gui/_configs/{mission_delta.__name__}.ini")
 
         [
             (
@@ -568,7 +553,7 @@ def mission_echo(sender, app_data, user_data) -> None:
     try:
 
         parser, _ = read_config(
-            file=f"src/gui/_configs/{mission_echo.__name__}.ini")
+            file=f"{ROOT}/src/gui/_configs/{mission_echo.__name__}.ini")
 
         [
             (
@@ -616,7 +601,7 @@ def mission_golf(sender, app_data, user_data) -> None:
     try:
 
         parser, _ = read_config(
-            file=f"src/gui/_configs/{mission_golf.__name__}.ini")
+            file=f"{ROOT}/src/gui/_configs/{mission_golf.__name__}.ini")
 
         [
             (
@@ -649,7 +634,7 @@ def mission_fox(sender, app_data, user_data) -> None:
     try:
 
         parser, _ = read_config(
-            file=f"src/gui/_configs/{mission_fox.__name__}.ini")
+            file=f"{ROOT}/src/gui/_configs/{mission_fox.__name__}.ini")
 
         [
             (
@@ -721,54 +706,56 @@ def device_finder(sender=None, app_data=None, user_data: int = int()) -> None:
 def fill_config():
     """Automatically fill the config file with devices detected"""
 
-    parser, devices = read_config(file="src/gui/_configs/card_config.ini")
+    parser, devices = read_config(
+        file=f"{ROOT}/src/gui/_configs/card_config.ini")
 
     try:
         if not parser["mgtron"]["card_1"]:
-            loggey.info(msg="The config file was not populated")
+            loggey.warning(msg="The config file was not populated")
             # Automatically fill in an empty config file
             parser["mgtron"] = {
-                f"card_{i+1}": str(devices[i].split(sep="_")[-1])
-                for i in range(len(devices))
+                f"card_{i+1}": str(dev.split(sep="_")[-1])
+                for i, dev in enumerate(devices)
             }
-            with open(file="src/gui/card_config.ini", mode="w") as config_file:
+            with open(file=f"{ROOT}/src/gui/_configs/card_config.ini", mode="w") as config_file:
                 parser.write(config_file)
             loggey.info(msg="Config file has been automatically filled")
         else:
             loggey.info(msg="Config file already filled")
     except (KeyError, IndexError):
         loggey.exception(msg="Config file error")
-        with open(file="src/gui/_configs/card_config.ini", mode="w") as config_file:
+        with open(file=f"{ROOT}/src/gui/_configs/card_config.ini", mode="w") as config_file:
             config_file.write("[mgtron]\n")
-            [config_file.write(f"card_{i+1}=\n") for i in range(len(DEVICE))]
+            [config_file.write(f"card_{i}=\n")
+             for i, _ in enumerate(DEVICE, start=1)]
         fill_config()
 
 
 def config_intake() -> None:
     """Read a config file and assign card buttons"""
 
-    parser, devices = read_config(file="src/gui/_configs/card_config.ini")
+    parser, devices = read_config(
+        file=f"{ROOT}/src/gui/_configs/card_config.ini")
 
     if len(devices) > 1:
-        for card in range(1, len(devices) + 1):
-            try:
-                match devices[card - 1].split(sep="_")[-1] == parser["mgtron"][
-                    f"card_{card}"
-                ]:
-                    case True:
-                        dpg.bind_item_theme(
-                            item=f"card_{card}", theme=blue_btn_theme)
-                        dpg.configure_item(item=f"card_{card}", enabled=True)
-
-                        loggey.info(
-                            msg=f"INI config file matched devices detected | {config_intake.__name__}"
-                        )
-                    case False:
-                        loggey.info(
-                            msg=f"Config ID not detected by devices on {platform.machine()} | {config_intake.__name__}"
-                        )
-            except KeyError:
-                loggey.exception(msg="No config file detected")
+        try:
+            for _, card in enumerate(devices):
+                for dev_count, _ in enumerate(devices, start=1):
+                    match card.split(sep="_")[-1] in parser["mgtron"][f"card_{dev_count}"]:
+                        case True:
+                            dpg.bind_item_theme(
+                                item=f"card_{dev_count}", theme=blue_btn_theme)
+                            dpg.configure_item(
+                                item=f"card_{dev_count}", enabled=True)
+                            loggey.debug(
+                                f"{card} is assigned to {parser['mgtron'][f'card_{dev_count}']}")
+                        case False:
+                            loggey.warning(
+                                msg=f"Device ID not detected in order OR not at all on {platform.machine()} | {config_intake.__name__}"
+                            )
+        except (KeyError, SystemError):
+            loggey.exception(
+                msg=f"No config file error | {config_intake.__name__}")
 
 
 def find_signals_and_frequencies() -> dict:
@@ -817,7 +804,7 @@ def find_signals_and_frequencies() -> dict:
 def card_selection(sender, app_data, user_data: int) -> None:
     """Load the selected cards prefix when selected"""
 
-    parser, _ = read_config(file="src/gui/card_config.ini")
+    parser, _ = read_config(file=f"{ROOT}/src/gui/_configs/card_config.ini")
 
     loggey.info(msg=f"selected card: {user_data} | {card_selection.__name__}")
 
