@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+from time import sleep
 import dearpygui.dearpygui as dpg
 import configparser
 import json
@@ -263,6 +264,8 @@ def quick_load(sender, app_data, user_data) -> None:
 def custom_save(sender, app_data, user_data) -> None:
     """Save config w/ a custom name"""
 
+    print(f"sender: {sender}")
+    print(f"app_data: {app_data}")
     loggey.info(f"{custom_save.__name__}() executed")
 
     custom_save_file = db.getDb(f"{ROOT}/src/gui/db/long_save.json")
@@ -280,6 +283,8 @@ def custom_save(sender, app_data, user_data) -> None:
                 for channel in range(1, 9)
             ]
         )
+        # dpg.configure_item(item=f"load_{len(custom_save_file.getAll())}")
+        print(f"{len(custom_save_file.getAll())}")
 
     except (
         TypeError,
@@ -317,11 +322,13 @@ def custom_load() -> list:
         return custom_save_file.getAll()
 
 
-def load_chosen(sender=None, app_data=None, user_data=None) -> None:
+def load_chosen(sender=None, app_data=None, user_data: tuple[str, int] = None) -> None:
     """Take in the chosen file to be loaded"""
 
+    loggey.info(f"{load_chosen.__name__}() executed")
     _custom_load = db.getDb(f"{ROOT}/src/gui/db/long_save.json")
-    _ret_data: list[dict[str]] = _custom_load.getBy({"save_name": user_data})
+    _ret_data: list[dict[str]] = _custom_load.getBy(
+        {"save_name": user_data[0]})
 
     [
         (
@@ -346,9 +353,12 @@ def delete_chosen(sender=None, app_data=None, user_data: tuple[str, int] = None)
     # Get the primary key for every chosen name
     primary_keys: list[int] = [data["id"] for data in _ret_data]
 
-    # Set show=False for delete menu items that are no longer valid
+    # Set show=False for delete menu items that are no longer validl; Live update
     dpg.configure_item(item=f"delete_{user_data[1]}", show=False)
     dpg.configure_item(item=f"load_{user_data[1]}", show=False)
+
+    loggey.info(
+        f"Live update of delete and load menu items | {delete_chosen.__name__}()")
 
     try:
         # Loop through the primary keys and delete them

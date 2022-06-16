@@ -20,6 +20,7 @@ Here we write upgrade and change notes.
 
 - Live update of saved list after deletion
 - Added delete and refresh button
+- Added live update of load list
 
 ## ✴️[0.12.4] - 2022 JUN 16
 

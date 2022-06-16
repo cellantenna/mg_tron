@@ -111,6 +111,7 @@ logger.info(msg="GUI colors set")
 
 with dpg.handler_registry():
     dpg.add_mouse_wheel_handler(callback=change_inputs)
+    dpg.add_key_down_handler(key=dpg.mvKey_Return, callback=custom_save)
 
 with dpg.font_registry():
     try:  # Stop gap incase the files cannot be found
@@ -576,8 +577,9 @@ with dpg.window(
             )
             dpg.add_button(
                 label="Quit",
-                callback=lambda: dpg.configure_item(
-                    item="modal_save", show=False),
+                callback=lambda: (
+                    dpg.configure_item(item="modal_save", show=False)
+                ),
             )
 
         ###############
@@ -595,14 +597,28 @@ with dpg.window(
             ),
         )
 
+        # Add refresh button
+        dpg.add_button(
+            parent="big_buttons",
+            label="Refresh",
+            tag="refresh_button",
+            # callback=lambda SAVED_LIST: custom_load(),
+            # user_data="refresh",
+            pos=(
+                (dpg.get_item_width(item="big_buttons") - 220) / DIVISOR,
+                (dpg.get_item_height(item="big_buttons") + (330 - 480)) / 2,
+            ),
+        )
+
+        SAVED_LIST: list[dict[str]] = custom_load()
         with dpg.popup(
             parent=custom_load_button,
             mousebutton=dpg.mvMouseButton_Left,
             modal=True,
             tag="modal_load",
         ):
+            SAVED_LIST: list[dict[str]] = custom_load()
             try:
-                SAVED_LIST: list[dict[str]] = custom_load()
 
                 unique_names: list = list(
                     set(save["save_name"] for save in SAVED_LIST))
@@ -613,7 +629,7 @@ with dpg.window(
                         parent="modal_load",
                         label=unique,
                         callback=load_chosen,
-                        user_data=unique,
+                        user_data=(unique, l),
                         tag=f"load_{l}",
                     )
                     for l, unique in enumerate(unique_names)
@@ -627,19 +643,6 @@ with dpg.window(
                 callback=lambda: dpg.configure_item(
                     item="modal_load", show=False),
             )
-
-        # Add refresh button
-        dpg.add_button(
-            parent="big_buttons",
-            label="Refresh",
-            tag="refresh_button",
-            callback=refresh_save_data,
-            # user_data="refresh",
-            pos=(
-                (dpg.get_item_width(item="big_buttons") - 220) / DIVISOR,
-                (dpg.get_item_height(item="big_buttons") + (330 - 480)) / 2,
-            ),
-        )
 
         ############################
         # Delete Saved Item button #
