@@ -18,6 +18,7 @@ from helpers import (
     config_intake,
     custom_load,
     data_vehicle,
+    delete_chosen,
     device_finder,
     fill_config,
     kill_channel,
@@ -30,6 +31,7 @@ from helpers import (
     mission_fox,
     mission_golf,
     quick_load,
+    refresh_save_data,
     reset_button,
     quick_save,
     send_all_channels,
@@ -58,7 +60,6 @@ WIFI_HEIGHT: int = -400
 CELLUAR_HEIGHT: int = -560
 MAIN_TABLE_HEIGHT: int = 1
 BUTTON_WIDTH = 120
-
 
 dpg.create_context()
 logger.info(msg="creating dpg context")
@@ -356,13 +357,26 @@ with dpg.window(
         tag="device_config",
         border=False,
         width=200,
-        height=75,
+        height=100,
     ):
 
         device_config = dpg.add_button(
             label="Device Config",
             tag="device_config_btn",
             pos=(0,),
+        )
+
+        # Add refresh button
+        dpg.add_button(
+            parent="device_config",
+            label="Refresh",
+            tag="refresh_devices",
+            # callback=refresh_save_data,
+            # user_data="refresh",
+            pos=(
+                0,
+                70
+            ),
         )
 
         with dpg.popup(
@@ -390,7 +404,8 @@ with dpg.window(
                             callback=device_finder,
                             user_data=int(
                                 device.split(sep="_")[0][11:12]
-                            ),  # Grab the integer at the end of `/dev/ttyACM[0:]`
+                            ),
+                            # Grab the integer at the end of `/dev/ttyACM[0:]`
                         )
                         for device in devices
                     }
@@ -595,7 +610,7 @@ with dpg.window(
                 logger.debug(msg="Custom load options loaded")
                 {
                     dpg.add_menu_item(
-                        parent="load_input",
+                        parent="modal_load",
                         label=unique,
                         callback=load_chosen,
                         user_data=unique,
@@ -607,9 +622,75 @@ with dpg.window(
                 logger.exception(msg="Save file corrupted")
 
             dpg.add_button(
+                parent="modal_load",
                 label="Quit",
                 callback=lambda: dpg.configure_item(
                     item="modal_load", show=False),
+            )
+
+        # Add refresh button
+        dpg.add_button(
+            parent="big_buttons",
+            label="Refresh",
+            tag="refresh_button",
+            callback=refresh_save_data,
+            # user_data="refresh",
+            pos=(
+                (dpg.get_item_width(item="big_buttons") - 220) / DIVISOR,
+                (dpg.get_item_height(item="big_buttons") + (330 - 480)) / 2,
+            ),
+        )
+
+        ############################
+        # Delete Saved Item button #
+        ############################
+        delete_button = dpg.add_button(
+            parent="big_buttons",
+            label="Delete",
+            tag="delete_button",
+            # callback=refresh_save_data,
+            # user_data="refresh",
+            pos=(
+                (dpg.get_item_width(item="big_buttons") - 10) / DIVISOR,
+                (dpg.get_item_height(item="big_buttons") + (330 - 480)) / 2,
+            ),
+        )
+
+        with dpg.popup(
+            parent=delete_button,
+            mousebutton=dpg.mvMouseButton_Left,
+            modal=True,
+            tag="modal_delete",
+        ):
+            try:
+                SAVED_LIST: list[dict[str]] = custom_load()
+
+                unique_names: list[str] = list(
+                    set(
+                        save["save_name"] for save in SAVED_LIST
+                    )
+                )
+
+                logger.debug(msg="Custom load options loaded")
+                {
+                    dpg.add_menu_item(
+                        parent="modal_delete",
+                        label=unique,
+                        callback=delete_chosen,
+                        user_data=(unique, l),
+                        tag=f"delete_{l}",
+                        show=True,
+                    )
+                    for l, unique in enumerate(unique_names)
+                }
+            except (KeyError, TypeError):
+                logger.exception(msg="Save file corrupted")
+
+            dpg.add_button(
+                parent="modal_delete",
+                label="Quit",
+                callback=lambda: dpg.configure_item(
+                    item="modal_delete", show=False),
             )
 
         dpg.add_text(
@@ -886,10 +967,12 @@ dpg.create_viewport(
     always_on_top=True,
     x_pos=0,
     y_pos=0,
+    small_icon="network_wireless.ico",
+    large_icon="network_wireless.ico",
 )
 dpg.setup_dearpygui()
 dpg.show_viewport(maximized=False)
-dpg.set_primary_window("Primary Window", True)
+dpg.set_primary_window(window="Primary Window", value=True)
 try:
     dpg.start_dearpygui()
 except KeyboardInterrupt:

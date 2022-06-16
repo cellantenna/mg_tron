@@ -20,7 +20,7 @@ WORKING = ROOT / "src" / "gui"
 
 # datetime object containing current date and time
 now = datetime.now()
-VERSION: str = "0.12.3"
+VERSION: str = "0.13.0"
 
 loggey = logging.getLogger(name=__name__)
 
@@ -331,6 +331,77 @@ def load_chosen(sender=None, app_data=None, user_data=None) -> None:
         )
         for iter, data in enumerate(_ret_data, start=1)
     ]
+
+
+def delete_chosen(sender=None, app_data=None, user_data: tuple[str, int] = None) -> None:
+    """Delete a saved file"""
+
+    # Get the list of saved objects
+    _custom_load = db.getDb(f"{ROOT}/src/gui/db/long_save.json")
+
+    # Get primary key for every name in the database matching the chosen name
+    _ret_data: list[dict[str]] = _custom_load.getBy(
+        {"save_name": user_data[0]})
+
+    # Get the primary key for every chosen name
+    primary_keys: list[int] = [data["id"] for data in _ret_data]
+
+    # Set show=False for delete menu items that are no longer valid
+    dpg.configure_item(item=f"delete_{user_data[1]}", show=False)
+    dpg.configure_item(item=f"load_{user_data[1]}", show=False)
+
+    try:
+        # Loop through the primary keys and delete them
+        loggey.info(f"Deleted {user_data[0]}")
+        [
+            _custom_load.deleteById(pk=primary_key) for primary_key in primary_keys
+        ]
+        dpg.configure_item(item="modal_delete", show=False)
+
+        # Popup confirmation of deletion of the loaded options
+        # with dpg.popup(
+        #     parent="delete_button",
+        # ):
+        #     dpg.add_text(
+        #         default_value=f"Deleted {user_data[0]}",
+        #         tag="delete_popup",
+        #     )
+    except (errors.db_errors.IdNotFoundError):
+        loggey.exception(
+            msg=f"database deletion error | {delete_chosen.__name__}()")
+
+
+def refresh_save_data(sender, app_data, user_data) -> None:
+    """Refresh the saved data and save it to the device"""
+
+    loggey.info(
+        msg=f"Refresh save data method called | {refresh_save_data.__name__}")
+
+    # Refresh the saved data
+    try:
+        _custom_load = db.getDb(f"{ROOT}/src/gui/db/long_save.json")
+    except FileNotFoundError:
+        loggey.exception(msg="No custom save file found")
+    # with dpg.popup(
+    #     parent="custom_load_button",
+    #     mousebutton=dpg.mvMouseButton_Left,
+    #     modal=True,
+    #     tag="modal_re_loaded",
+    # ):
+    unique_names: list = list(
+        set(save["save_name"] for save in _custom_load.getAll()))
+
+    loggey.debug(msg="Custom load options loaded")
+    {
+        dpg.add_menu_item(
+            parent="load_input",
+            label=unique,
+            callback=load_chosen,
+            user_data=unique,
+            tag=f"re_load_{l}",
+        )
+        for l, unique in enumerate(unique_names)
+    }
 
 
 def auto_fill_freq(
@@ -691,6 +762,7 @@ def device_finder(sender=None, app_data=None, user_data: int = int()) -> None:
         new_device = find_device(user_data)[0]
         devices = DEVICE
         device = [device.split(sep="_") for device in devices]
+        print(new_device)
 
         for dev in range(len(device)):
             if int(new_device[-1]) == int(device[dev][0].split(sep="-")[0][-2]):
@@ -712,6 +784,10 @@ def fill_config():
     try:
         if not parser["mgtron"]["card_1"]:
             loggey.warning(msg="The config file was not populated")
+
+            # Ensure eight spot in the config file are filled in if there are not eight devices
+            [devices.append("0") for _ in range(8-len(devices))]
+
             # Automatically fill in an empty config file
             parser["mgtron"] = {
                 f"card_{i+1}": str(dev.split(sep="_")[-1])
@@ -726,8 +802,7 @@ def fill_config():
         loggey.exception(msg="Config file error")
         with open(file=f"{ROOT}/src/gui/_configs/card_config.ini", mode="w") as config_file:
             config_file.write("[mgtron]\n")
-            [config_file.write(f"card_{i}=\n")
-             for i, _ in enumerate(DEVICE, start=1)]
+            config_file.write(f"card_1=\n")
         fill_config()
 
 
@@ -739,16 +814,20 @@ def config_intake() -> None:
 
     if len(devices) > 1:
         try:
-            for _, card in enumerate(devices):
-                for dev_count, _ in enumerate(devices, start=1):
-                    match card.split(sep="_")[-1] in parser["mgtron"][f"card_{dev_count}"]:
-                        case True:
+            for dev_count, _ in enumerate(parser["mgtron"], start=1):
+                for _, card in enumerate(devices):
+                    match card.split(sep="_")[-1] == parser["mgtron"][f"card_{dev_count}"]:
+                        case True if len(card) > 1:
                             dpg.bind_item_theme(
                                 item=f"card_{dev_count}", theme=blue_btn_theme)
                             dpg.configure_item(
                                 item=f"card_{dev_count}", enabled=True)
                             loggey.debug(
                                 f"{card} is assigned to {parser['mgtron'][f'card_{dev_count}']}")
+                        case False if len(card) == 1:
+                            loggey.info(
+                                msg=f"No device filled in on this line {platform.machine()} | {config_intake.__name__}"
+                            )
                         case False:
                             loggey.warning(
                                 msg=f"Device ID not detected in order OR not at all on {platform.machine()} | {config_intake.__name__}"
@@ -919,6 +998,14 @@ def card_selection(sender, app_data, user_data: int) -> None:
             )
             device_finder(user_data=7)
 
+            [
+                dpg.bind_item_theme(
+                    item=f"card_{greyed_card}", theme=blue_btn_theme)
+                for greyed_card in card_list
+            ]
+        case _:
+            loggey.error(msg=f"Invalid card selection: {user_data}")
+            card_list.remove(user_data)
             [
                 dpg.bind_item_theme(
                     item=f"card_{greyed_card}", theme=blue_btn_theme)

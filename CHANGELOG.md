@@ -16,6 +16,15 @@ Here we write upgrade and change notes.
 
 ✳️ PATCH version when you make backwards compatible bug fixes.
 
+## ⭐[0.13.0] - 2022 JUN 16
+
+- Live update of saved list after deletion
+- Added delete and refresh button
+
+## ✴️[0.12.4] - 2022 JUN 16
+
+- Card config file, if it doesnt exist, will auto populate with eigtht spot regardless of devices detected
+
 ## ✳️[0.12.3] - 2022 JUN 10
 
 - Automatically overwrite or create save file if file is nonexistant or corrupted
