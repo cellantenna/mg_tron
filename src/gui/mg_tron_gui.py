@@ -444,15 +444,6 @@ with dpg.window(
                     pos=(5, 35),
                 )
 
-            dpg.add_button(
-                parent="modal_device_config",
-                label="Quit",
-                tag="Quit",
-                callback=lambda: dpg.configure_item(
-                    item="modal_device_config", show=False
-                ),
-            )
-
     ################
     # Side buttons #
     ################
@@ -575,12 +566,6 @@ with dpg.window(
                 tag="save_button",
                 callback=custom_save,
             )
-            dpg.add_button(
-                label="Quit",
-                callback=lambda: (
-                    dpg.configure_item(item="modal_save", show=False)
-                ),
-            )
 
         ###############
         # Custom load #
@@ -637,13 +622,6 @@ with dpg.window(
             except (KeyError, TypeError):
                 logger.exception(msg="Save file corrupted")
 
-            dpg.add_button(
-                parent="modal_load",
-                label="Quit",
-                callback=lambda: dpg.configure_item(
-                    item="modal_load", show=False),
-            )
-
         ############################
         # Delete Saved Item button #
         ############################
@@ -687,13 +665,9 @@ with dpg.window(
             except (KeyError, TypeError):
                 logger.exception(msg="Save file corrupted")
 
-            dpg.add_button(
-                parent="modal_delete",
-                label="Quit",
-                callback=lambda: dpg.configure_item(
-                    item="modal_delete", show=False),
-            )
-
+        ####################
+        # MISSIONS SECTION #
+        ####################
         dpg.add_text(
             default_value="MISSIONS",
             pos=(
