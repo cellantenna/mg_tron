@@ -57,6 +57,19 @@ with dpg.theme() as orng_btn_theme:
         dpg.add_theme_color(dpg.mvThemeCol_Button,
                             (255, 165, 0, 255))  # ORANGE
 
+# load the intial contents of the database for comparison upon new save
+loggey.info(msg="inital loading database")
+try:
+    init_save_data = db.getDb(f"{ROOT}/src/gui/db/long_save.json")
+except FileNotFoundError:
+    loggey.exception(msg="No save file detected OR save file corrupted")
+    loggey.warning(
+        msg="Save file being overwritten due to corruption or nonexistence")
+    with open(file=f"{ROOT}/src/gui/db/long_save.json", mode="w") as overwrite_corruption_or_create:
+        overwrite_corruption_or_create.write('{"data":[]}')
+init_save_data: set = set(data["save_name"]
+                          for data in init_save_data.getAll())
+
 
 def device_names() -> list[str]:
     """Use a bash script to list connected microarchitectures"""
@@ -268,9 +281,8 @@ def custom_save(sender, app_data, user_data) -> None:
     print(f"app_data: {app_data}")
     loggey.info(f"{custom_save.__name__}() executed")
 
-    custom_save_file = db.getDb(f"{ROOT}/src/gui/db/long_save.json")
     try:
-
+        custom_save_file = db.getDb(f"{ROOT}/src/gui/db/long_save.json")
         custom_save_file.addMany(
             [
                 {
@@ -283,8 +295,6 @@ def custom_save(sender, app_data, user_data) -> None:
                 for channel in range(1, 9)
             ]
         )
-        # dpg.configure_item(item=f"load_{len(custom_save_file.getAll())}")
-        print(f"{len(custom_save_file.getAll())}")
 
     except (
         TypeError,
@@ -332,11 +342,11 @@ def load_chosen(sender=None, app_data=None, user_data: tuple[str, int] = None) -
 
     [
         (
-            dpg.set_value(item=f"freq_{iter}", value=data["Frequency"]),
-            dpg.set_value(item=f"power_{iter}", value=data["Power"]),
-            dpg.set_value(item=f"bandwidth_{iter}", value=data["Bandwidth"])
+            dpg.set_value(item=f"freq_{itera}", value=data["Frequency"]),
+            dpg.set_value(item=f"power_{itera}", value=data["Power"]),
+            dpg.set_value(item=f"bandwidth_{itera}", value=data["Bandwidth"])
         )
-        for iter, data in enumerate(_ret_data, start=1)
+        for itera, data in enumerate(_ret_data, start=1)
     ]
 
 
@@ -382,7 +392,7 @@ def delete_chosen(sender=None, app_data=None, user_data: tuple[str, int] = None)
 
 
 def refresh_save_data(sender, app_data, user_data) -> None:
-    """Refresh the saved data and save it to the device"""
+    """Refresh the saved data and send to the GUI"""
 
     loggey.info(
         msg=f"Refresh save data method called | {refresh_save_data.__name__}")
@@ -392,26 +402,48 @@ def refresh_save_data(sender, app_data, user_data) -> None:
         _custom_load = db.getDb(f"{ROOT}/src/gui/db/long_save.json")
     except FileNotFoundError:
         loggey.exception(msg="No custom save file found")
-    # with dpg.popup(
-    #     parent="custom_load_button",
-    #     mousebutton=dpg.mvMouseButton_Left,
-    #     modal=True,
-    #     tag="modal_re_loaded",
-    # ):
-    unique_names: list = list(
-        set(save["save_name"] for save in _custom_load.getAll()))
 
-    loggey.debug(msg="Custom load options loaded")
-    {
-        dpg.add_menu_item(
-            parent="load_input",
-            label=unique,
-            callback=load_chosen,
-            user_data=unique,
-            tag=f"re_load_{l}",
-        )
-        for l, unique in enumerate(unique_names)
-    }
+    # Compare the database before and after a new item is saved
+    unique_names: set = set(data["save_name"]
+                            for data in _custom_load.getAll())
+    global init_save_data
+
+    # Detect if new saved data has been added
+    new_data: set = unique_names.difference(init_save_data)
+
+    loggey.info(
+        msg=f"New save data detected | {refresh_save_data.__name__}()") if new_data else loggey.info(
+            msg=f"No new save data detected | {refresh_save_data.__name__}()")
+
+    if new_data:
+        loggey.debug(msg="Custom load options compared")
+
+        # Get the length of the initial save data
+        init_save_data_length: int = len(init_save_data)
+
+        # Using one for loop for both did not work as expected
+        {
+            dpg.add_menu_item(
+                parent="modal_load",
+                label=unique,
+                tag=f"load_{itera + init_save_data_length}",
+                callback=load_chosen,
+                user_data=(unique, itera),
+            ) for itera, unique in enumerate(new_data, start=0)
+        }
+
+        {
+            dpg.add_menu_item(
+                parent="modal_delete",
+                label=unique,
+                tag=f"delete_{itera + init_save_data_length}",
+                callback=load_chosen,
+                user_data=(unique, itera),
+            ) for itera, unique in enumerate(new_data, start=0)
+        }
+
+    # make the new save data the initial save data
+    init_save_data = unique_names
 
 
 def auto_fill_freq(

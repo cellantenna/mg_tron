@@ -602,7 +602,7 @@ with dpg.window(
             parent="big_buttons",
             label="Refresh",
             tag="refresh_button",
-            # callback=lambda SAVED_LIST: custom_load(),
+            callback=refresh_save_data,
             # user_data="refresh",
             pos=(
                 (dpg.get_item_width(item="big_buttons") - 220) / DIVISOR,
@@ -651,8 +651,6 @@ with dpg.window(
             parent="big_buttons",
             label="Delete",
             tag="delete_button",
-            # callback=refresh_save_data,
-            # user_data="refresh",
             pos=(
                 (dpg.get_item_width(item="big_buttons") - 10) / DIVISOR,
                 (dpg.get_item_height(item="big_buttons") + (330 - 480)) / 2,

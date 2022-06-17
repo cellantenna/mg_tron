@@ -51,7 +51,6 @@ def find_device(DEVICE_NUMBER: int = DEVICE_PORT) -> tuple[str, list[str]]:
             logger.debug(msg=f"Chosen Device: {PORT}")
             return results[DEVICE_NUMBER], results
         except IndexError:
-            logger.warning("No device connected to machine")
             logger.exception("Device not found")
 
     elif platform.system().lower() == "windows":
