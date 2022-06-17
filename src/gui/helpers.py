@@ -21,7 +21,7 @@ WORKING = ROOT / "src" / "gui"
 
 # datetime object containing current date and time
 now = datetime.now()
-VERSION: str = "1.0.0"
+VERSION: str = "1.1.0"
 
 loggey = logging.getLogger(name=__name__)
 
@@ -825,14 +825,24 @@ def device_finder(sender=None, app_data=None, user_data: int = int()) -> None:
                     item="device_indicator", value=f"Device:{device[dev][-1]}"
                 )
                 dpg.configure_item(item="modal_device_config", show=False)
-                [
-                    dpg.bind_item_theme(
-                        item=f"card_{greyed_card}", theme=blue_btn_theme)
-                    for greyed_card in range(1, 9) 
-                ]
+
+        # print(f"new device: {device[user_data][0].split(sep='-')[0][-2]}")
+        # print(f"device indicator: {dpg.get_value('device_indicator')}")
+
+        if dpg.get_value(item="device_indicator") != device[user_data][-1]:
+            card_list: set = {1, 2, 3, 4, 5, 6, 7, 8}
+            card_list.remove(device[user_data][0].split(sep='-')[0][-2] + 1)
+            [dpg.bind_item_theme(
+                item=f"card_{h}", theme=blue_btn_theme) for h in card_list]
 
     except TypeError:
         loggey.exception(msg="No devices found")
+
+
+def device_refresh(sender, app_data, user_data) -> None:
+    """Refresh the device list"""
+
+    device_finder()
 
 
 def fill_config():

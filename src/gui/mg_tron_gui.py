@@ -20,6 +20,7 @@ from helpers import (
     data_vehicle,
     delete_chosen,
     device_finder,
+    device_refresh,
     fill_config,
     kill_channel,
     load_chosen,
@@ -372,7 +373,7 @@ with dpg.window(
             parent="device_config",
             label="Refresh",
             tag="refresh_devices",
-            # callback=refresh_save_data,
+            callback=device_refresh,
             # user_data="refresh",
             pos=(
                 0,
