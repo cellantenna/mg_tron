@@ -1,66 +1,66 @@
 [
   {
     "channel 1": {
-      "Power": 20,
-      "Bandwidth": 3,
+      "Power": 50,
+      "Bandwidth": 18,
       "Frequency": 2450.0,
-      "Date": "06/06/2022 20:24:36"
+      "Date": "17/06/2022 13:40:34"
     }
   },
   {
     "channel 2": {
-      "Power": 20,
-      "Bandwidth": 3,
+      "Power": 50,
+      "Bandwidth": 18,
       "Frequency": 2607.142822265625,
-      "Date": "06/06/2022 20:24:36"
+      "Date": "17/06/2022 13:40:34"
     }
   },
   {
     "channel 3": {
-      "Power": 20,
-      "Bandwidth": 3,
+      "Power": 50,
+      "Bandwidth": 18,
       "Frequency": 2764.28564453125,
-      "Date": "06/06/2022 20:24:36"
+      "Date": "17/06/2022 13:40:34"
     }
   },
   {
     "channel 4": {
-      "Power": 20,
-      "Bandwidth": 3,
+      "Power": 50,
+      "Bandwidth": 18,
       "Frequency": 2921.428466796875,
-      "Date": "06/06/2022 20:24:36"
+      "Date": "17/06/2022 13:40:34"
     }
   },
   {
     "channel 5": {
-      "Power": 20,
-      "Bandwidth": 3,
+      "Power": 30,
+      "Bandwidth": 18,
       "Frequency": 3078.5712890625,
-      "Date": "06/06/2022 20:24:36"
+      "Date": "17/06/2022 13:40:34"
     }
   },
   {
     "channel 6": {
-      "Power": 20,
-      "Bandwidth": 3,
+      "Power": 50,
+      "Bandwidth": 18,
       "Frequency": 3235.714111328125,
-      "Date": "06/06/2022 20:24:36"
+      "Date": "17/06/2022 13:40:34"
     }
   },
   {
     "channel 7": {
-      "Power": 20,
-      "Bandwidth": 3,
+      "Power": 50,
+      "Bandwidth": 18,
       "Frequency": 3392.85693359375,
-      "Date": "06/06/2022 20:24:36"
+      "Date": "17/06/2022 13:40:34"
     }
   },
   {
     "channel 8": {
-      "Power": 20,
-      "Bandwidth": 3,
+      "Power": 50,
+      "Bandwidth": 18,
       "Frequency": 3549.999755859375,
-      "Date": "06/06/2022 20:24:36"
+      "Date": "17/06/2022 13:40:34"
     }
   }
 ]

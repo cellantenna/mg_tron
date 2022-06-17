@@ -21,7 +21,7 @@ WORKING = ROOT / "src" / "gui"
 
 # datetime object containing current date and time
 now = datetime.now()
-VERSION: str = "0.13.0"
+VERSION: str = "1.0.0"
 
 loggey = logging.getLogger(name=__name__)
 
@@ -818,7 +818,6 @@ def device_finder(sender=None, app_data=None, user_data: int = int()) -> None:
         new_device = find_device(user_data)[0]
         devices = DEVICE
         device = [device.split(sep="_") for device in devices]
-        print(new_device)
 
         for dev in range(len(device)):
             if int(new_device[-1]) == int(device[dev][0].split(sep="-")[0][-2]):
@@ -826,6 +825,11 @@ def device_finder(sender=None, app_data=None, user_data: int = int()) -> None:
                     item="device_indicator", value=f"Device:{device[dev][-1]}"
                 )
                 dpg.configure_item(item="modal_device_config", show=False)
+                [
+                    dpg.bind_item_theme(
+                        item=f"card_{greyed_card}", theme=blue_btn_theme)
+                    for greyed_card in range(1, 9) 
+                ]
 
     except TypeError:
         loggey.exception(msg="No devices found")
@@ -936,6 +940,40 @@ def find_signals_and_frequencies() -> dict:
     return freq_and_signal
 
 
+def card_config(card_number: int = int()) -> None:
+
+    try:
+
+        parser, _ = read_config(
+            file=f"{ROOT}/src/gui/_configs/card_{card_number}.ini")
+
+        [
+            (
+                dpg.set_value(
+                    item=f"freq_{config}",
+                    value=float(parser['freq'][f'freq_{config}'])),
+
+                dpg.set_value(
+                    item=f"power_{config}",
+                    value=float(parser['power'][f'power_{config}'])),
+
+                dpg.set_value(
+                    item=f"bandwidth_{config}",
+                    value=float(parser['bandwidth'][f'bw_{config}'])),
+            )
+
+            for config in range(1, 9)
+        ]
+
+    except KeyError:
+        loggey.exception(
+            msg="Error in reading the config file OR config file does not exist")
+
+    except SystemError:
+        loggey.exception(
+            msg="Invalid data type;  Expected floating point value")
+
+
 def card_selection(sender, app_data, user_data: int) -> None:
     """Load the selected cards prefix when selected"""
 
@@ -962,6 +1000,10 @@ def card_selection(sender, app_data, user_data: int) -> None:
                 for greyed_card in card_list
             ]
 
+            card_config(card_number=1)
+            loggey.info(
+                msg=f"Card 1 config loaded | {card_selection.__name__}")
+
         case 2:
             dpg.bind_item_theme(item=f"card_{user_data}", theme=grn_btn_theme)
             dpg.set_value(
@@ -975,6 +1017,10 @@ def card_selection(sender, app_data, user_data: int) -> None:
                     item=f"card_{greyed_card}", theme=blue_btn_theme)
                 for greyed_card in card_list
             ]
+
+            card_config(card_number=2)
+            loggey.info(
+                msg=f"Card 2 config loaded | {card_selection.__name__}")
 
         case 3:
             card_list.remove(3)
@@ -990,6 +1036,10 @@ def card_selection(sender, app_data, user_data: int) -> None:
                 for greyed_card in card_list
             ]
 
+            card_config(card_number=3)
+            loggey.info(
+                msg=f"Card 3 config loaded | {card_selection.__name__}")
+
         case 4:
             card_list.remove(4)
             dpg.bind_item_theme(item=f"card_{user_data}", theme=grn_btn_theme)
@@ -1003,6 +1053,10 @@ def card_selection(sender, app_data, user_data: int) -> None:
                     item=f"card_{greyed_card}", theme=blue_btn_theme)
                 for greyed_card in card_list
             ]
+
+            card_config(card_number=4)
+            loggey.info(
+                msg=f"Card 4 config loaded | {card_selection.__name__}")
 
         case 5:
             card_list.remove(5)
@@ -1018,6 +1072,10 @@ def card_selection(sender, app_data, user_data: int) -> None:
                 for greyed_card in card_list
             ]
 
+            card_config(card_number=5)
+            loggey.info(
+                msg=f"Card 5 config loaded | {card_selection.__name__}")
+
         case 6:
             card_list.remove(6)
             dpg.bind_item_theme(item=f"card_{user_data}", theme=grn_btn_theme)
@@ -1031,6 +1089,10 @@ def card_selection(sender, app_data, user_data: int) -> None:
                     item=f"card_{greyed_card}", theme=blue_btn_theme)
                 for greyed_card in card_list
             ]
+
+            card_config(card_number=6)
+            loggey.info(
+                msg=f"Card 6 config loaded | {card_selection.__name__}")
 
         case 7:
             card_list.remove(7)
@@ -1046,6 +1108,10 @@ def card_selection(sender, app_data, user_data: int) -> None:
                 for greyed_card in card_list
             ]
 
+            card_config(card_number=7)
+            loggey.info(
+                msg=f"Card 7 config loaded | {card_selection.__name__}")
+
         case 8:
             card_list.remove(8)
             dpg.bind_item_theme(item=f"card_{user_data}", theme=grn_btn_theme)
@@ -1059,14 +1125,21 @@ def card_selection(sender, app_data, user_data: int) -> None:
                     item=f"card_{greyed_card}", theme=blue_btn_theme)
                 for greyed_card in card_list
             ]
+
+            card_config(card_number=8)
+            loggey.info(
+                msg=f"Card 8 config loaded | {card_selection.__name__}")
+
         case _:
-            loggey.error(msg=f"Invalid card selection: {user_data}")
+            loggey.warning(msg=f"Invalid card selection: {user_data}")
             card_list.remove(user_data)
             [
                 dpg.bind_item_theme(
                     item=f"card_{greyed_card}", theme=blue_btn_theme)
                 for greyed_card in card_list
             ]
+            loggey.warning(
+                msg=f"No card data loaded | {card_selection.__name__}")
 
 
 def wifi_scan_jam(sender, app_data, user_data) -> None:

@@ -16,7 +16,11 @@ Here we write upgrade and change notes.
 
 ✳️ PATCH version when you make backwards compatible bug fixes.
 
-## ⭐ [1.0.0] - 2022 JUN 17
+## ✴️[1.1.0] - 2022 JUN 17
+
+- Added a custom config file for every quick pick card option
+
+## ⭐[1.0.0] - 2022 JUN 17
 
 - Full save, delete, and select functionality of custom saved configurations
 
