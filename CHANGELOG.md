@@ -16,7 +16,11 @@ Here we write upgrade and change notes.
 
 ✳️ PATCH version when you make backwards compatible bug fixes.
 
-## ⭐[0.13.0] - 2022 JUN 16
+## ⭐ [1.0.0] - 2022 JUN 17
+
+- Full save, delete, and select functionality of custom saved configurations
+
+## ✴️[0.13.0] - 2022 JUN 16
 
 - Live update of saved list after deletion
 - Added delete and refresh button
