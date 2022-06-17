@@ -421,26 +421,40 @@ def refresh_save_data(sender, app_data, user_data) -> None:
         # Get the length of the initial save data
         init_save_data_length: int = len(init_save_data)
 
-        # Using one for loop for both did not work as expected
-        {
-            dpg.add_menu_item(
-                parent="modal_load",
-                label=unique,
-                tag=f"load_{itera + init_save_data_length}",
-                callback=load_chosen,
-                user_data=(unique, itera),
-            ) for itera, unique in enumerate(new_data, start=0)
-        }
+        with dpg.popup(
+            parent="custom_load_button",
+            mousebutton=dpg.mvMouseButton_Left,
+            modal=True,
+            tag="modal_loaded",
+        ):
 
-        {
-            dpg.add_menu_item(
-                parent="modal_delete",
-                label=unique,
-                tag=f"delete_{itera + init_save_data_length}",
-                callback=load_chosen,
-                user_data=(unique, itera),
-            ) for itera, unique in enumerate(new_data, start=0)
-        }
+            # Using one for loop for both did not work as expected
+            {
+                dpg.add_menu_item(
+                    parent="modal_loaded",
+                    label=unique,
+                    tag=f"load_{itera + init_save_data_length}",
+                    callback=load_chosen,
+                    user_data=(unique, itera+init_save_data_length),
+                ) for itera, unique in enumerate(unique_names, start=0)
+            }
+
+        with dpg.popup(
+            parent="delete_button",
+            mousebutton=dpg.mvMouseButton_Left,
+            modal=True,
+            tag="modal_deleted",
+        ):
+
+            {
+                dpg.add_menu_item(
+                    parent="modal_deleted",
+                    label=unique,
+                    tag=f"delete_{itera + init_save_data_length}",
+                    callback=delete_chosen,
+                    user_data=(unique, itera+init_save_data_length),
+                ) for itera, unique in enumerate(unique_names, start=0)
+            }
 
     # make the new save data the initial save data
     init_save_data = unique_names
