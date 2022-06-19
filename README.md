@@ -14,9 +14,17 @@ This project revolves around the MGTron signal generator.  The graphical user in
 * Phonetically names mission buttons.
 * Pre-configurable mission buttons.
 * Can set MGTron Signal Generator to auto resume on power up.
+* Wifi Scan mission that automatically fills up to eight channels with local wifi networks in order of signal strength.
 
 ## Visualization
 
 
 
 ## Installation
+
+### Easy install
+
+`pip install mgtron`
+
+### Less Easy install
+
