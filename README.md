@@ -17,6 +17,7 @@ This project revolves around the MGTron signal generator.  The graphical user in
 * Wifi Scan mission that automatically fills up to eight channels with local wifi networks in order of signal strength.
 
 ## Visualization
+![mgtron_demo](https://user-images.githubusercontent.com/25860608/174464184-1511b551-a6ca-4b74-84f8-aeec5d31d9a4.gif)
 
 
 ## Installation
