@@ -406,7 +406,7 @@ with dpg.window(
                             callback=device_finder,
                             user_data=int(
                                 device.split(sep="_")[0][11:12]
-                            ),
+                            ) if device.split(sep="_")[0][11:12] else None,
                             # Grab the integer at the end of `/dev/ttyACM[0:]`
                         )
                         for device in devices

@@ -19,12 +19,20 @@ This project revolves around the MGTron signal generator.  The graphical user in
 ## Visualization
 
 
-
 ## Installation
+
+### Requirements
+
+* Python 3.10+
 
 ### Easy install
 
-`pip install mgtron`
+    `pip install mgtron`
 
 ### Less Easy install
 
+    `git clone https://github.com/cellantenna/mg_tron.git`
+----------
+    `cd mg_tron`
+----------
+    `pip install .`
