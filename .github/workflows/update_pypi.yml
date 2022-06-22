@@ -3,8 +3,6 @@ name: Update MGTron Package to PyPi
 on:
   pull_request_review:
     types: [submitted]
-    branches:
-      - trunk
     tags:
       - v1.*
 
