@@ -1,7 +1,8 @@
 name: Update MGTron Package to PyPi
 
 on:
-  pull_request:
+  pull_request_review:
+    types: [submitted]
     branches:
       - trunk
     tags:
@@ -9,6 +10,7 @@ on:
 
 jobs:
   deploy:
+    if: github.event.review.state == 'approved'
     runs-on: ubuntu-latest
 
     steps:
@@ -22,7 +24,7 @@ jobs:
       - name: Build and publish
         env:
           TWINE_USERNAME: __token__
-          TWINE_PASSWORD: ${{ secrets.PYPI_API_TOKEN }}
+          TWINE_PASSWORD: ${{ secrets.TESTPYPI_API_TOKEN }}
         run: |
           python setup.py sdist bdist_wheel
           twine upload dist/*
