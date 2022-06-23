@@ -32,7 +32,7 @@ def get_version(rel_path):
 
 loggick.info(f"setup.py: version: {get_version(f'{WORKING}/src/gui/helpers.py')}")
 setuptools.setup(
-    name="mgtron",
+    name="testing_stuff",
     version=get_version(f"{WORKING}/src/gui/helpers.py"),
     author="Hunter, Christerpher",
     author_email="djhunter67@gmail.com",
@@ -64,7 +64,7 @@ setuptools.setup(
             "*.rst",
         ]
     },
-    entry_points={"console_scripts": ["mgtron=src.gui.mg_tron_gui", ]},
+    entry_points={"console_scripts": ["testing_stuff=src.gui:mg_tron_gui", ]},
     python_requires=">=3.10",
     install_requires=install_requires,
 )
