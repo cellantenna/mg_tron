@@ -21,7 +21,7 @@ WORKING = ROOT / "src" / "gui"
 
 # datetime object containing current date and time
 now = datetime.now()
-VERSION: str = "1.1.10"
+VERSION: str = "1.1.11"
 
 loggey = logging.getLogger(name=__name__)
 
