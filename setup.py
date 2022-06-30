@@ -3,7 +3,6 @@ import logging
 import os
 import pathlib
 import setuptools
-import venv
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 WORKING = ROOT / "mg_tron"
 loggick = logging.getLogger(name=__name__)
@@ -20,7 +19,7 @@ def read(rel_path):
     here = os.path.abspath(os.path.dirname(__file__))
     with codecs.open(os.path.join(here, rel_path), 'r') as fp:
         return fp.read()
-        
+
 def get_version(rel_path):
     for line in read(rel_path).splitlines():
         if line.startswith('VERSION'):
@@ -28,6 +27,10 @@ def get_version(rel_path):
             return line.split(delim)[1]
     else:
         raise RuntimeError("Unable to find version string.")
+
+activate_this_file = "/path/to/virtualenv/bin/activate_this.py",
+exec(compile(open(activate_this_file, "rb").read(), activate_this_file, 'exec'), dict(__file__=activate_this_file))
+
 
 loggick.info(f"setup.py: version: {get_version(f'{WORKING}/src/gui/helpers.py')}")
 setuptools.setup(
@@ -63,8 +66,6 @@ setuptools.setup(
             "*.rst",
         ]
     },
-    activate_this_file = "/path/to/virtualenv/bin/activate_this.py"
-    execfile(activate_this_file, dict(__file__=activate_this_file))
     entry_points={"console_scripts": ["testing_stuff=src.gui:mg_tron_gui", ]},
     python_requires=">=3.10",
     install_requires=install_requires,
