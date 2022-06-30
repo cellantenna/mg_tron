@@ -3,7 +3,7 @@ import logging
 import os
 import pathlib
 import setuptools
-
+import venv
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 WORKING = ROOT / "mg_tron"
 loggick = logging.getLogger(name=__name__)
@@ -21,7 +21,8 @@ def read(rel_path):
     with codecs.open(os.path.join(here, rel_path), 'r') as fp:
         return fp.read()
 
-
+def create_venv():
+    
 def get_version(rel_path):
     for line in read(rel_path).splitlines():
         if line.startswith('VERSION'):
@@ -64,6 +65,8 @@ setuptools.setup(
             "*.rst",
         ]
     },
+    activate_this_file = "/path/to/virtualenv/bin/activate_this.py"
+    execfile(activate_this_file, dict(__file__=activate_this_file))
     entry_points={"console_scripts": ["testing_stuff=src.gui:mg_tron_gui", ]},
     python_requires=">=3.10",
     install_requires=install_requires,
