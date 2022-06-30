@@ -20,9 +20,7 @@ def read(rel_path):
     here = os.path.abspath(os.path.dirname(__file__))
     with codecs.open(os.path.join(here, rel_path), 'r') as fp:
         return fp.read()
-
-def create_venv():
-    
+        
 def get_version(rel_path):
     for line in read(rel_path).splitlines():
         if line.startswith('VERSION'):
@@ -71,3 +69,4 @@ setuptools.setup(
     python_requires=">=3.10",
     install_requires=install_requires,
 )
+    
