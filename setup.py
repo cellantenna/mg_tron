@@ -3,6 +3,7 @@ import logging
 import os
 import pathlib
 import setuptools
+import venv
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 WORKING = ROOT / "mg_tron"
 loggick = logging.getLogger(name=__name__)
@@ -28,9 +29,7 @@ def get_version(rel_path):
     else:
         raise RuntimeError("Unable to find version string.")
 
-activate_this_file = "/path/to/virtualenv/bin/activate_this.py",
-exec(compile(open(activate_this_file, "rb").read(), activate_this_file, 'exec'), dict(__file__=activate_this_file))
-
+os.system('python3 -m venv venv && . venv/bin/activate')
 
 loggick.info(f"setup.py: version: {get_version(f'{WORKING}/src/gui/helpers.py')}")
 setuptools.setup(
