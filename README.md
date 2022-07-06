@@ -25,18 +25,20 @@ This project revolves around the MGTron signal generator.  The graphical user in
 
 * Python 3.10+
 
-### Easy install
+### Instructions 
 
-`pip install mgtron`
-
-### Less Easy install
+* Open the Terminal on your Linux Machine and enter the following commands:
 
 `python3.10 -m venv venv` - Optional
 
-`source venv/bin/activate` - Reuired if last line is executed
+`source venv/bin/activate` - Required if last line is executed
 
 `git clone https://github.com/cellantenna/mg_tron.git`
 
 `cd mg_tron`
 
 `pip install .`
+
+* Run the GUI by entering the following command in the same directory:
+
+`./src/gui/mg_tron_gui.py`

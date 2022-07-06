@@ -10,7 +10,6 @@ import platform
 import subprocess
 from datetime import datetime
 from io import StringIO
-
 import pandas as pd
 from pysondb import db, errors
 
@@ -18,7 +17,6 @@ from interface import Megatron, find_device
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent.parent
 WORKING = ROOT / "src" / "gui"
-
 # datetime object containing current date and time
 now = datetime.now()
 VERSION: str = "1.1.11"

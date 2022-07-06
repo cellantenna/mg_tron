@@ -64,7 +64,7 @@ setuptools.setup(
             "*.rst",
         ]
     },
-    entry_points={"console_scripts": ["testing_stuff=python3 -m venv venv && . venv/bin/activate && src.gui:mg_tron_gui", ]},
+    entry_points={"console_scripts": ["testing_stuff=src.gui:mg_tron_gui", ]},
     python_requires=">=3.10",
     install_requires=install_requires,
 )
