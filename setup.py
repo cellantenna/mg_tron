@@ -64,7 +64,7 @@ setuptools.setup(
             "*.rst",
         ]
     },
-    entry_points={"console_scripts": ["mgtron=src.gui.mg_tron_gui", ]},
+    entry_points={"console_scripts": ["mgtron=src.gui:mg_tron_gui", ]},
     python_requires=">=3.10",
     install_requires=install_requires,
 )
