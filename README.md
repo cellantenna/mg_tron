@@ -1,6 +1,6 @@
 # MGTron Signal Generator Interface
 
-## A functional mutlti card interface for the MGTron Signal Generator
+## A functional multi card interface for the MGTron Signal Generator
 
 This project revolves around the MGTron signal generator.  The graphical user interface (GUI) is written purely in python.  There are some facets that utilize linux command line tools.  Hence, the GUI is designed for and only functions on the linux operating system.  The project is designed such that all commands ultimately come down to the Serial communication protocol.  Serial communication, via the  [pyserial](https://pyserial.readtodata.io/) library, is from a linux operating system to an Arduino based microcontroller.  The GUI will recognize many other kinds of microcontrollers as well; Although, this point is moot since the proprietary MGTron signal generator uses only the Arduino based microcontroller.  
 
@@ -26,11 +26,11 @@ This project revolves around the MGTron signal generator.  The graphical user in
 
 * Python 3.10+
 
-### install from GitHub
+### Install from GitHub
 
 `python3.10 -m venv venv` - Optional
 
-`source venv/bin/activate` - Reuired, if last line is executed
+`source venv/bin/activate` - Required, if last line is executed
 
 `git clone https://github.com/cellantenna/mg_tron.git`
 
