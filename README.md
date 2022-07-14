@@ -47,4 +47,4 @@ This project revolves around the MGTron signal generator.  The graphical user in
   * `Update to Python3.10`
 
 * Hardware Rquirements
-  * `Gui only functional on ARM, for dearpygui module`
+  * `GUI only functional on ARM, for dearpygui module`
