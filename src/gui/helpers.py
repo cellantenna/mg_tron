@@ -1177,10 +1177,17 @@ def wifi_scan_jam(sender, app_data, user_data) -> None:
 def neighborhood_list(sender, app_data, user_data) -> None:
     """Mission celluar neighborhood list facing button config"""
 
+    try:
+        modem = EG25G("/dev/ttyUSB3")
+    except:
+        loggey.exception(msg="Neighborhood list method failed")
+        return
+        
     loggey.info(msg="Neighborhood list method called")
-    neighbor_list_earfcn: dict = EG25G.get_neighborhood_list()
+    neighbor_list_earfcn: dict = modem.get_neighborcell_list()
     earfcn_frequencies: list[float] = E_UTRA.convert_to_frequency(
         earfcn=neighbor_list_earfcn)
+
     [
         (
             dpg.set_value(item=f"freq_{i}", value=float(freq)),

@@ -222,25 +222,15 @@ class EG25G:
 
         return band_scan
 
-    def get_frequency_from_neighborcell_list(self) -> list[int]:
-
-        neighborcell = self.get_neighborcell_list()
-
-        # convert neighborcell into frequency based on EARFCN calulation
-        frequency = []
-
-        return frequency
-
 
 def main():
-    eg25g = EG25G("/dev/ttyUSB3")
+    # eg25g = EG25G("/dev/ttyUSB3")
     # eg25g.data_carrier_detection_mode()
     # time.sleep(1)
     # print("earfcn, pcid, rsrq, rsrp, rssi, sinr, srxlev, cell_resel_priority, s_non_intra_search, thresh_serving_low, s_intra_search")
     # eg25g.set_modem_ready()
     # time.sleep(1)
     # [print(f"{tower.split(',')[0]}") for tower in eg25g.get_neighborcell_list()]
-    # [print(f"Freq: {i}") for i in eg25g.get_frequency_from_neighborcell_list()]
     # print(eg25g.get_neighborcell_list()[0])
     # [print(long_scan) for long_scan in eg25g.get_band_scan()]
     earfcns: list = [2600, 5035, 5230, 9820, 67061, 68661,
@@ -263,8 +253,8 @@ def main():
     #     print(f"{F.BLUE}{E_UTRA.convert_to_frequency(earfcn)}{R} MHz")
 
     # print band scan results in colorama yellow
-    for band_scan in eg25g.get_band_scan():
-        print(f"{F.YELLOW}{band_scan.decode()}{R}")
+    # for band_scan in eg25g.get_band_scan():
+    #     print(f"{F.YELLOW}{band_scan.decode()}{R}")
 
 
 if __name__ == "__main__":
