@@ -1,7 +1,5 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-from time import sleep
-import dearpygui.dearpygui as dpg
 import configparser
 import json
 import logging
@@ -10,11 +8,14 @@ import platform
 import subprocess
 from datetime import datetime
 from io import StringIO
+from time import sleep
 
+import dearpygui.dearpygui as dpg
 import pandas as pd
 from pysondb import db, errors
 
 from interface import Megatron, find_device
+from neighborhood_list import E_UTRA, EG25G
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent.parent
 WORKING = ROOT / "src" / "gui"
@@ -714,6 +715,8 @@ def mission_echo(sender, app_data, user_data) -> None:
         loggey.exception(
             msg="Invalid data type;  Expected floating point value")
 
+# Not used and replaced by neighborhood list function
+
 
 def mission_golf(sender, app_data, user_data) -> None:
     """Mission golf facing button config"""
@@ -1168,6 +1171,27 @@ def wifi_scan_jam(sender, app_data, user_data) -> None:
 
         )
         for i, freq in enumerate(sorted(freq_and_strength), start=1)
+    ]
+
+
+def neighborhood_list(sender, app_data, user_data) -> None:
+    """Mission celluar neighborhood list facing button config"""
+
+    loggey.info(msg="Neighborhood list method called")
+    neighbor_list_earfcn: dict = EG25G.get_neighborhood_list()
+    earfcn_frequencies: list[float] = E_UTRA.convert_to_frequency(
+        earfcn=neighbor_list_earfcn)
+    [
+        (
+            dpg.set_value(item=f"freq_{i}", value=float(freq)),
+            dpg.set_value(item=f"power_{i}", value=40),
+            dpg.set_value(item=f"bandwidth_{i}", value=100),
+            loggey.debug(
+                msg=f"Frequency, in sig strength order, discovered: {freq}"),
+            # callstack_helper(channel=i),  # Automatically execute the recently filled fields
+
+        )
+        for i, freq in enumerate(sorted(earfcn_frequencies), start=1)
     ]
 
 

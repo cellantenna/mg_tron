@@ -31,6 +31,7 @@ from helpers import (
     mission_echo,
     mission_fox,
     mission_golf,
+    neighborhood_list,
     quick_load,
     refresh_save_data,
     reset_button,
@@ -794,8 +795,8 @@ with dpg.window(
             logger.info(msg="Mission Golf button initialized")
             mission_golf_button = dpg.add_button(
                 tag="mssn_golf",
-                callback=mission_golf,
-                label="GOLF\n",
+                callback=neighborhood_list,
+                label="NEIGHBORHOOD\n    LIST",
                 height=70,
                 width=BUTTON_WIDTH,
                 pos=(

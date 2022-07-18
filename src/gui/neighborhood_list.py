@@ -1,4 +1,9 @@
+import time
 import serial as sr
+from colorama import Fore as F
+
+
+R = F.RESET
 
 
 class E_UTRA:
@@ -26,6 +31,14 @@ class E_UTRA:
         "20": (791, 6150),
         "21": (1495.9, 6450),
         "24": (1525, 7700),
+        "25": (1900, 8040),
+        "26": (859, 8690),
+        "27": (852, 9040),
+        "28": (758, 9210),
+        "29": (717, 9660),
+        "30": (2350, 9770),
+        "31": (462.5, 9870),
+        "32": (1900, 9920),
         "33": (1900, 36000),
         "34": (2010, 36200),
         "35": (1850, 36350),
@@ -38,10 +51,12 @@ class E_UTRA:
         "42": (3400, 41590),
         "43": (3600, 43590),
         "44": (3700, 45590),
+        "66": (2100, 66436),
+        "71": (617, 66436),
     }
 
     @classmethod
-    def band_ranges(self) -> dict[list[int]]:
+    def _band_ranges(self) -> dict[list[int]]:
         """Define the ranges of earfcns for each band"""
 
         band_1 = [i for i in range(0, 600)]
@@ -64,6 +79,14 @@ class E_UTRA:
         band_20 = [i for i in range(6150, 6450)]
         band_21 = [i for i in range(6450, 6600)]
         band_24 = [i for i in range(7700, 8040)]
+        band_25 = [i for i in range(8040, 8690)]
+        band_26 = [i for i in range(8690, 9040)]
+        band_27 = [i for i in range(9040, 9210)]
+        band_28 = [i for i in range(9210, 9660)]
+        band_29 = [i for i in range(9660, 9770)]  # Downlink only
+        band_30 = [i for i in range(9770, 9870)]
+        band_31 = [i for i in range(9870, 9920)]
+        band_32 = [i for i in range(9920, 10360)]  # Downlink only
         band_33 = [i for i in range(36000, 36200)]
         band_34 = [i for i in range(36200, 36350)]
         band_35 = [i for i in range(36350, 36950)]
@@ -76,6 +99,8 @@ class E_UTRA:
         band_42 = [i for i in range(41590, 43590)]
         band_43 = [i for i in range(43590, 45590)]
         band_44 = [i for i in range(45590, 46590)]
+        band_66 = [i for i in range(66436, 67336)]
+        band_71 = [i for i in range(68586, 68936)]
 
         return {
             "1": band_1,
@@ -98,6 +123,14 @@ class E_UTRA:
             "20": band_20,
             "21": band_21,
             "24": band_24,
+            "25": band_25,
+            "26": band_26,
+            "27": band_27,
+            "28": band_28,
+            "29": band_29,
+            "30": band_30,
+            "31": band_31,
+            "32": band_32,
             "33": band_33,
             "34": band_34,
             "35": band_35,
@@ -110,19 +143,24 @@ class E_UTRA:
             "42": band_42,
             "43": band_43,
             "44": band_44,
+            "66": band_66,
+            "71": band_71,
         }
 
     @classmethod
     def convert_to_frequency(self, earfcn: int) -> float | None:
         """Convert the earfcn to a center band frequency"""
 
-        for band in E_UTRA.band_ranges().items():
+        for band in E_UTRA._band_ranges().items():
             # print(band[1])
             for i in band[1]:
                 if i == earfcn:
-                    FDL_low, NOffs_DL = self.TABLE.get(
-                        band[0])[0], self.TABLE.get(band[0])[1]
-                    return FDL_low + 0.1 * (earfcn - NOffs_DL)
+                    try:
+                        FDL_low, NOffs_DL = self.TABLE.get(
+                            band[0])[0], self.TABLE.get(band[0])[1]
+                        return FDL_low + 0.1 * (earfcn - NOffs_DL)
+                    except TypeError:
+                        return None
 
 
 class EG25G:
@@ -170,11 +208,17 @@ class EG25G:
         return neighborcell
 
     def get_band_scan(self) -> list[str]:
-        key_word = 'AT+QCOPS=6,1,0,2\r'
+        start = time.time()
+        key_word = 'AT+QCOPS=4,0,0,1\r'
         self.ser.write(key_word.encode())
         self.ser.flush()
 
         band_scan = self.ser.readlines()
+
+        end = time.time()
+
+        # show time taken in colorama red
+        print(f"{F.BLUE}Time taken to scan bands{R}: {F.RED}{str(end - start)}{R} secs")
 
         return band_scan
 
@@ -189,21 +233,38 @@ class EG25G:
 
 
 def main():
-    # eg25g = EG25G("/dev/ttyUSB3")
+    eg25g = EG25G("/dev/ttyUSB3")
     # eg25g.data_carrier_detection_mode()
+    # time.sleep(1)
     # print("earfcn, pcid, rsrq, rsrp, rssi, sinr, srxlev, cell_resel_priority, s_non_intra_search, thresh_serving_low, s_intra_search")
     # eg25g.set_modem_ready()
+    # time.sleep(1)
     # [print(f"{tower.split(',')[0]}") for tower in eg25g.get_neighborcell_list()]
     # [print(f"Freq: {i}") for i in eg25g.get_frequency_from_neighborcell_list()]
-    # print(eg25g.get_neighborcell_list())
+    # print(eg25g.get_neighborcell_list()[0])
     # [print(long_scan) for long_scan in eg25g.get_band_scan()]
+    earfcns: list = [2600, 5035, 5230, 9820, 67061, 68661,
+                     750, 2175, 5110, 66961, 66786, 66661, 650, 1100, 2300]
+    cell_modem: list = [1100, 2300, 2175, 2600, 5035, 5110, 5230, 8190, 650]
 
-    print(E_UTRA.convert_to_frequency(1100))
+    # earfcns: list = [E_UTRA.convert_to_frequency(i) for i in sorted(earfcns)]
+    # cell_modem: list = [E_UTRA.convert_to_frequency(
+    #     i) for i in sorted(cell_modem)]
 
-    # print(eg25g.get_band_scan())
-    # print(E_UTRA.TABLE.get("4"))
-    # print(eg25g.check_connection())
-    # eg25g.power_down()
+    # print the values of the earfcn that are in the cell_modem in colorama yellow
+    for earfcn in sorted(earfcns):
+        if earfcn in cell_modem:
+            print(f"{F.YELLOW}{E_UTRA.convert_to_frequency(earfcn)}{R} MHz")
+        else:
+            print(f"{F.RED}{E_UTRA.convert_to_frequency(earfcn)}{R} MHz")
+
+    # show earfcn in colorama blue
+    # for earfcn in earfcns:
+    #     print(f"{F.BLUE}{E_UTRA.convert_to_frequency(earfcn)}{R} MHz")
+
+    # print band scan results in colorama yellow
+    for band_scan in eg25g.get_band_scan():
+        print(f"{F.YELLOW}{band_scan.decode()}{R}")
 
 
 if __name__ == "__main__":
