@@ -178,13 +178,18 @@ class E_UTRA:
         for band in E_UTRA._band_ranges().items():
             # print(band[1])
             for i in band[1]:
-                if i == earfcn:
-                    try:
+                try:
+                    if i == earfcn:
+
                         FDL_low, NOffs_DL = self.TABLE.get(
                             band[0])[0], self.TABLE.get(band[0])[1]
                         return FDL_low + 0.1 * (earfcn - NOffs_DL)
-                    except TypeError:
+                    else:
+                        print(f"{F.RED}Earfcn not found{R}")
                         return None
+                except TypeError:
+                    print("No band found for earfcn: {}".format(earfcn))
+                    return None
 
 
 class EG25G:
@@ -193,7 +198,7 @@ class EG25G:
     POWER_DOWN = "AT+QPOWD"
     DATA_CARRIER_DETECTION_MODE = "AT&C0"  # Always ON
     REQUEST_MODEL_IDENTIFICATION = "AT+GMM"
-    UE_CONFIG = "AT+QCFG" 
+    UE_CONFIG = "AT+QCFG"
     ENGINEERING_MODE = "AT+QENG"
     BAND_SCAN = "AT+QCOPS"
     SIGNAL_QUALITY = "AT+CSQ"
@@ -207,6 +212,7 @@ class EG25G:
         key_word = f"{self.POWER_DOWN}\r"
         self.ser.write(key_word.encode())
         self.ser.flush()
+        print(self.ser.readlines())
         self.ser.close()
 
     def data_carrier_detection_mode(self):
@@ -223,7 +229,7 @@ class EG25G:
 
         return str(self.ser.readlines()[1:][0].decode().strip('\n').strip('\r'))
 
-    def signal_strength(self) -> int | str:
+    def get_signal_strength(self) -> int | str:
 
         key_word = f"{self.SIGNAL_QUALITY}\r"
         self.ser.write(key_word.encode())
@@ -250,6 +256,8 @@ class EG25G:
             case val if 102 <= val < 190:
                 return int(translate(value=val, leftMin=102, leftMax=191, rightMin=-114, rightMax=-25))
             case 199:
+                return "Undetectable"
+            case _:
                 return "Undetectable"
 
     def get_neighborcell(self):
@@ -291,28 +299,28 @@ class EG25G:
         self.ser.write(key_word.encode())
         self.ser.flush()
 
-        band = self.ser.readlines()#[1].decode().strip('\n').strip('\r').split(',')[2]
-        # band = int(band, base=16)
+        band = self.ser.readlines()[1].decode().strip(
+            '\n').strip('\r').split(',')[2]
+        band = int(band, base=16)
 
         return band
 
     def is_ser_open(self) -> bool:
         return self.ser.isOpen()
 
-    def get_neighborcell_list(self) -> list[list[str]]:
+    def get_neighborcell_list(self) -> list[int]:
 
         key_word = f'{self.ENGINEERING_MODE}="neighbourcell"\r'
         self.ser.write(key_word.encode())
         self.ser.flush()
 
-        neighborcell = [line.decode().strip('\n').strip('\r')
+        neighborcell = [line.decode().strip('\n').strip('\r').split("',")
                         for line in self.ser.readlines()][1: -2]
-        neighborcell = [neighborcell.split("',")
-                        for neighborcell in neighborcell]
-        neighborcell = [neighborcell[:][i][0][35:] for i in range(
-            len(neighborcell))]  # remove the first 35 characters
 
-        return neighborcell
+        earfcns = [neighborcell[i][0][35:].split(
+            ",")[0] for i in range(len(neighborcell))]  # Get the earfcn
+
+        return [int(earfcn) for earfcn in earfcns]
 
     def get_band_scan(self) -> list[str]:
         start = time.time()  # 4: 4G only, 1: Most information, 0: show PSID, 1: seconds per scan
@@ -334,45 +342,86 @@ def main():
 
     us_band = EG25G("/dev/ttyUSB3")
 
-    # earfcns: list = [2600, 5035, 5230, 9820, 67061, 68661,
-    #                  750, 2175, 5110, 66961, 66786, 66661, 650, 1100, 2300]
-    # cell_modem: list = [1100, 2300, 2175, 2600, 5035, 5110, 5230, 8190, 650]
+    # [print(f"Signal Strength: {F.BLUE}{us_band.get_signal_strength()}{R} {F.YELLOW}dBm{R}")
+    #  for i in range(20)]
+    # print(f"Current Band: {F.BLUE}{us_band.check_current_band()}{R}")
 
-    # earfcns: list = [E_UTRA.convert_to_frequency(i) for i in sorted(earfcns)]
-    # cell_modem: list = [E_UTRA.convert_to_frequency(
-    #     i) for i in sorted(cell_modem)]
+    # [print(f"Signal Strength: {F.BLUE}{us_band.get_signal_strength()}{R} {F.YELLOW}dBm{R}") for i in range(20)]
 
-    # print the values of the earfcn that are in the cell_modem in colorama yellow
-    # for earfcn in sorted(earfcns):
-    #     if earfcn in cell_modem:
-    #         print(f"{F.YELLOW}{E_UTRA.convert_to_frequency(earfcn)}{R} MHz")
-    #     else:
-    #         print(f"{F.RED}{E_UTRA.convert_to_frequency(earfcn)}{R} MHz")
+    print(
+        f"Neighbor Cell List: {F.YELLOW}{us_band.get_neighborcell_list()}{R}")
+    # get signal strength
+    print(
+        f"Signal Strength: {F.BLUE}{us_band.get_signal_strength()}{R} {F.YELLOW}dBm{R}")
 
-    # print band scan results in colorama yellow
-    # for band_scan in eg25g.get_band_scan():
-    #     print(f"{F.YELLOW}{band_scan.decode()}{R}")
+    # Set the band to band 2
+    us_band.set_band([71])
 
-    # bands = sum([E_UTRA.quectel_band(band) for band in E_UTRA.US_BANDS])
-    # # bands_in_hex = hex(bands)
-    # print(bands)
+    # print signal strength
+    print(f"Checking Connections: {F.BLUE}{us_band.check_connection()}{R}")
+    print(
+        f"Signal Strength: {F.BLUE}{us_band.get_signal_strength()}{R} {F.YELLOW}dBm{R}")
+    print(
+        f"Neighbor Cell List: {F.YELLOW}{us_band.get_neighborcell_list()}{R}")
+    print(f"Current Band: {F.GREEN}{us_band.check_current_band()}{R}")
 
+    us_band.set_band([13])
 
     print(f"Checking Connections: {F.BLUE}{us_band.check_connection()}{R}")
-    print(f"Signal Strength: {F.BLUE}{us_band.signal_strength()}{R} {F.YELLOW}dBm{R}")
-    # Set the band to band 2
-    # us_band.set_band([2])
+    print(
+        f"Signal Strength: {F.BLUE}{us_band.get_signal_strength()}{R} {F.YELLOW}dBm{R}")
+    print(f"Neighbor Cell List: {F.BLUE}{us_band.get_neighborcell_list()}{R}")
+    print(f"Current Band: {F.GREEN}{us_band.check_current_band()}{R}")
 
-    # is the serial port open
-    # print(f"Serial Port: {F.YELLOW}{us_band.is_ser_open()}{R}")
+    us_band.set_band([5])
+
+    print(f"Checking Connections: {F.BLUE}{us_band.check_connection()}{R}")
+    print(
+        f"Signal Strength: {F.BLUE}{us_band.get_signal_strength()}{R} {F.YELLOW}dBm{R}")
+    print(
+        f"Neighbor Cell List: {F.GREEN}{us_band.get_neighborcell_list()}{R}")
+    print(f"Current Band: {F.GREEN}{us_band.check_current_band()}{R}")
+
+    us_band.set_band([4])
+
+    print(f"Checking Connections: {F.BLUE}{us_band.check_connection()}{R}")
+    print(
+        f"Signal Strength: {F.BLUE}{us_band.get_signal_strength()}{R} {F.YELLOW}dBm{R}")
+    print(f"Neighbor Cell List: {F.CYAN}{us_band.get_neighborcell_list()}{R}")
+    print(f"Current Band: {F.GREEN}{us_band.check_current_band()}{R}")
+
+    us_band.set_band([30])
+
+    print(f"Checking Connections: {F.BLUE}{us_band.check_connection()}{R}")
+    print(
+        f"Signal Strength: {F.BLUE}{us_band.get_signal_strength()}{R} {F.YELLOW}dBm{R}")
+    print(f"Neighbor Cell List: {F.BLACK}{us_band.get_neighborcell_list()}{R}")
+    print(f"Current Band: {F.GREEN}{us_band.check_current_band()}{R}")
+
+    us_band.set_band([12])
+
+    print(f"Checking Connections: {F.BLUE}{us_band.check_connection()}{R}")
+    print(
+        f"Signal Strength: {F.BLUE}{us_band.get_signal_strength()}{R} {F.YELLOW}dBm{R}")
+    print(
+        f"Neighbor Cell List: {F.MAGENTA}{us_band.get_neighborcell_list()}{R}")
+    print(f"Current Band: {F.GREEN}{us_band.check_current_band()}{R}")
+
+    us_band.set_band(bands_in_int=[66])
+
+    # print the neighbor cell list
+    print(f"Checking Connections: {F.BLUE}{us_band.check_connection()}{R}")
+    print(
+        f"Signal Strength: {F.BLUE}{us_band.get_signal_strength()}{R} {F.YELLOW}dBm{R}")
+    print(
+        f"Neighbor Cell List: {F.YELLOW}{us_band.get_neighborcell_list()}{R}")
     print()
+    # get current band
+    print(f"Current Band: {F.GREEN}{us_band.check_current_band()}{R}")
 
-    # check the band that is presently set
-    print(f"Current Band: {F.YELLOW}Band {us_band.check_current_band()}{R}")
-    # time.sleep(0.5)
-
-    # print(f"{F.BLUE}Neighborhood list:{R} {F.YELLOW}{us_band.get_neighborcell_list()}{R}")
+    # print the band scan results in colorama yellow
     # us_band.power_down()
+
 
 if __name__ == "__main__":
     main()
