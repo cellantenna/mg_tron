@@ -792,9 +792,9 @@ with dpg.window(
             #######################
             # Mission Golf preset #
             #######################
-            logger.info(msg="Mission Golf button initialized")
+            logger.info(msg="Neighborhood list button initialized")
             mission_golf_button = dpg.add_button(
-                tag="mssn_golf",
+                tag="mssn_neighborhood",
                 callback=neighborhood_list,
                 label="NEIGHBORHOOD\n    LIST",
                 height=70,

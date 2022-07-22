@@ -193,7 +193,7 @@ class EG25G:
     POWER_DOWN = "AT+QPOWD"
     DATA_CARRIER_DETECTION_MODE = "AT&C0"  # Always ON
     REQUEST_MODEL_IDENTIFICATION = "AT+GMM"
-    UE_CONFIG = "AT+QCFG"
+    UE_CONFIG = "AT+QCFG" 
     ENGINEERING_MODE = "AT+QENG"
     BAND_SCAN = "AT+QCOPS"
     SIGNAL_QUALITY = "AT+CSQ"
@@ -204,7 +204,7 @@ class EG25G:
 
     def power_down(self):
 
-        key_word = f"{self.POWER_DOWN.encode()}\r"
+        key_word = f"{self.POWER_DOWN}\r"
         self.ser.write(key_word.encode())
         self.ser.flush()
         self.ser.close()
@@ -215,15 +215,15 @@ class EG25G:
         self.ser.write(key_word.encode())
         self.ser.flush()
 
-    def check_connection(self):
+    def check_connection(self) -> str:
 
-        key_word = f"{self.REQUEST_MODEL_IDENTIFICATION.encode()}\r"
+        key_word = f"{self.REQUEST_MODEL_IDENTIFICATION}\r"
         self.ser.write(key_word.encode())
         self.ser.flush()
 
-        return self.ser.readlines()[1:][0].decode().strip('\n').strip('\r')
+        return str(self.ser.readlines()[1:][0].decode().strip('\n').strip('\r'))
 
-    def signal_strength(self) -> int | float | str | None:
+    def signal_strength(self) -> int | str:
 
         key_word = f"{self.SIGNAL_QUALITY}\r"
         self.ser.write(key_word.encode())
@@ -238,7 +238,7 @@ class EG25G:
             case 1:
                 return -111
             case val if 2 <= val < 31:
-                return translate(value=val, leftMin=2, leftMax=31, rightMin=-109, rightMax=-52)
+                return int(translate(value=val, leftMin=2, leftMax=31, rightMin=-109, rightMax=-52))
             case 31:
                 return -51
             case 99:
@@ -248,9 +248,9 @@ class EG25G:
             case 101:
                 return -115
             case val if 102 <= val < 190:
-                return translate(value=val, leftMin=102, leftMax=191, rightMin=-114, rightMax=-25)
+                return int(translate(value=val, leftMin=102, leftMax=191, rightMin=-114, rightMax=-25))
             case 199:
-                return None
+                return "Undetectable"
 
     def get_neighborcell(self):
 
@@ -291,9 +291,8 @@ class EG25G:
         self.ser.write(key_word.encode())
         self.ser.flush()
 
-        band = self.ser.readlines()[1].decode().strip(
-            '\n').strip('\r').split(',')[2]
-        band = int(band, base=16)
+        band = self.ser.readlines()#[1].decode().strip('\n').strip('\r').split(',')[2]
+        # band = int(band, base=16)
 
         return band
 
@@ -333,6 +332,8 @@ class EG25G:
 
 def main():
 
+    us_band = EG25G("/dev/ttyUSB3")
+
     # earfcns: list = [2600, 5035, 5230, 9820, 67061, 68661,
     #                  750, 2175, 5110, 66961, 66786, 66661, 650, 1100, 2300]
     # cell_modem: list = [1100, 2300, 2175, 2600, 5035, 5110, 5230, 8190, 650]
@@ -356,11 +357,9 @@ def main():
     # # bands_in_hex = hex(bands)
     # print(bands)
 
-    us_band = EG25G("/dev/ttyUSB3")
 
     print(f"Checking Connections: {F.BLUE}{us_band.check_connection()}{R}")
-    # print(
-    # f"Signal Strength: {F.BLUE}{us_band.signal_strength()}{R} {F.YELLOW}dBm{R}")
+    print(f"Signal Strength: {F.BLUE}{us_band.signal_strength()}{R} {F.YELLOW}dBm{R}")
     # Set the band to band 2
     # us_band.set_band([2])
 
@@ -368,18 +367,12 @@ def main():
     # print(f"Serial Port: {F.YELLOW}{us_band.is_ser_open()}{R}")
     print()
 
-    # Set the band to band 2
-    # us_band.set_band([2])
-    time.sleep(1)
-    # print(f"Current Band: {F.BLUE}Band {us_band.check_current_band()}{R}")
-    # time.sleep(1)
-
     # check the band that is presently set
-    # print(f"Current Band: {F.YELLOW}Band {us_band.check_current_band()}{R}")
+    print(f"Current Band: {F.YELLOW}Band {us_band.check_current_band()}{R}")
     # time.sleep(0.5)
 
     # print(f"{F.BLUE}Neighborhood list:{R} {F.YELLOW}{us_band.get_neighborcell_list()}{R}")
-    us_band.power_down()
+    # us_band.power_down()
 
 if __name__ == "__main__":
     main()
