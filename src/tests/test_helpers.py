@@ -1,6 +1,7 @@
+import pytest
 from gui.helpers import kill_channel
 from gui.helpers import find_signals_and_frequencies
-from neighborhood_list import E_UTRA
+from neighborhood_list import E_UTRA, EG25G
 
 
 def test_kill_channel() -> None:
@@ -35,8 +36,8 @@ def test_signal_string():
 
 print(find_signals_and_frequencies())
 
-
-def test_earfcn_value():
+@pytest.mark.parametrize('freq, earfcn',[(1960,900),(1844.9,3800),(729,5010),(1510.9,6599),(1525,7700),(852,9040),(791,6150),(859,8690)])
+def test_earfcn_value(freq, earfcn):
     assert 1980.0 == E_UTRA.convert_to_frequency(1100)
 
 
@@ -52,10 +53,12 @@ def test_band_ranges_key_is_same_as_neighborhood_list_key():
     assert f"{band_number_from_band_ranges}" == str(
         band_number_from_neighborhood_list)
 
+def test_signal_strength_value_0():
+    assert -113 == EG25G.signal_strength(0)
 
-# def test_band_ranges_index_1_is_same_as_next_band_range_index_0():
-#     assert [index_1 for index_1 in E_UTRA._band_ranges().values()][1] == [
-#         index_0 for index_0 in E_UTRA._band_ranges().values()][0]
+def test_signal_strength_value_1():
+    assert -111 == EG25G.signal_strength(1)
+
 
 
 for i in range(0, 600):

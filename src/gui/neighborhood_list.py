@@ -6,6 +6,19 @@ from colorama import Fore as F
 R = F.RESET
 
 
+def translate(value: int | float, leftMin: int | float, leftMax: int | float, rightMin: int | float, rightMax: int | float):
+
+    # Figure out how 'wide' each range is
+    leftSpan = leftMax - leftMin
+    rightSpan = rightMax - rightMin
+
+    # Convert the left range into a 0-1 range (float)
+    valueScaled = float(value - leftMin) / float(leftSpan)
+
+    # Convert the 0-1 range into a value in the right range.
+    return rightMin + (valueScaled * rightSpan)
+
+
 class E_UTRA:
     """Table 5.7.3-1 E-UTRA channel numbers"""
 
@@ -54,6 +67,17 @@ class E_UTRA:
         "66": (2100, 66436),
         "71": (617, 66436),
     }
+
+    US_BANDS = [2, 4, 5, 10, 12, 13, 14, 25, 26,
+                30, 41, 66, 71]  # US bands we want to use
+
+    @classmethod
+    def quectel_band(self, bands: int) -> int:
+        """Convert the desired band for use in Quectel command"""
+
+        new_band = sum([2 ** (int(band) - 1) for band in bands])
+
+        return new_band
 
     @classmethod
     def _band_ranges(self) -> dict[list[int]]:
@@ -166,40 +190,124 @@ class E_UTRA:
 class EG25G:
     """Get the neighborhood list of local celluar towers"""
 
-    POWER_DOWN = "AT+QPOWD\r\n"
-    DATA_CARRIER_DETECTION_MODE = "AT&C0\r\n"  # Always ON
+    POWER_DOWN = "AT+QPOWD"
+    DATA_CARRIER_DETECTION_MODE = "AT&C0"  # Always ON
+    REQUEST_MODEL_IDENTIFICATION = "AT+GMM"
+    UE_CONFIG = "AT+QCFG"
+    ENGINEERING_MODE = "AT+QENG"
+    BAND_SCAN = "AT+QCOPS"
+    SIGNAL_QUALITY = "AT+CSQ"
 
     def __init__(self, port):
         self.port = port
-        self.ser = sr.Serial(port, 9600, timeout=600)
+        self.ser = sr.Serial(port, 115_200, timeout=2)
 
     def power_down(self):
-        self.ser.write(self.POWER_DOWN.encode())
+
+        key_word = f"{self.POWER_DOWN.encode()}\r"
+        self.ser.write(key_word.encode())
         self.ser.flush()
         self.ser.close()
 
     def data_carrier_detection_mode(self):
-        self.ser.write(self.DATA_CARRIER_DETECTION_MODE.encode())
+
+        key_word = f"{self.DATA_CARRIER_DETECTION_MODE}\r"
+        self.ser.write(key_word.encode())
         self.ser.flush()
 
     def check_connection(self):
-        self.ser.write("AT+GMM\r\n".encode())
+
+        key_word = f"{self.REQUEST_MODEL_IDENTIFICATION.encode()}\r"
+        self.ser.write(key_word.encode())
         self.ser.flush()
+
         return self.ser.readlines()[1:][0].decode().strip('\n').strip('\r')
 
-    def set_modem_ready(self) -> bool:
-        key_word = 'AT&D0\r\n'
+    def signal_strength(self) -> int | float | str | None:
+
+        key_word = f"{self.SIGNAL_QUALITY}\r"
+        self.ser.write(key_word.encode())
+        self.ser.flush()
+
+        rssi = int(self.ser.readlines()[1].decode().strip(
+            '\n').strip('\r').split(":")[1].split(",")[0])
+
+        match rssi:
+            case 0:
+                return -113
+            case 1:
+                return -111
+            case val if 2 <= val < 31:
+                return translate(value=val, leftMin=2, leftMax=31, rightMin=-109, rightMax=-52)
+            case 31:
+                return -51
+            case 99:
+                return "Undetectable"
+            case 100:
+                return -116
+            case 101:
+                return -115
+            case val if 102 <= val < 190:
+                return translate(value=val, leftMin=102, leftMax=191, rightMin=-114, rightMax=-25)
+            case 199:
+                return None
+
+    def get_neighborcell(self):
+
+        key_word = f"{self.BAND_SCAN}\r"
+        self.ser.write(key_word.encode())
+        self.ser.flush()
+
+        return self.ser.readlines()[1:][0].decode().strip('\n').strip('\r')
+
+    def ue_config(self):
+
+        key_word = f"{self.UE_CONFIG}\r"
+        self.ser.write(key_word.encode())
+        self.ser.flush()
+
+        return self.ser.readlines()[1:][0].decode().strip('\n').strip('\r')
+
+    def engineering_mode(self):
+
+        key_word = f"{self.ENGINEERING_MODE}\r"
+        self.ser.write(key_word.encode())
+        self.ser.flush()
+
+        return self.ser.readlines()[1:][0].decode().strip('\n').strip('\r')
+
+    def set_band(self, bands_in_int: list) -> bool:
+        """Set the bands to scan"""
+
+        key_word = f'{self.UE_CONFIG}="band",0,{E_UTRA.quectel_band(bands=bands_in_int)},0\r'
         self.ser.write(key_word.encode())
         self.ser.flush()
         return True
 
-    def get_neighborcell_list(self) -> list[list[str]]:
+    def check_current_band(self):
+        """Check the band that is presently set"""
 
-        key_word = 'AT+QENG="neighbourcell"\r\n'
+        key_word = f'{self.UE_CONFIG}="band"\r'
         self.ser.write(key_word.encode())
         self.ser.flush()
+
+        band = self.ser.readlines()[1].decode().strip(
+            '\n').strip('\r').split(',')[2]
+        band = int(band, base=16)
+
+        return band
+
+    def is_ser_open(self) -> bool:
+        return self.ser.isOpen()
+
+    def get_neighborcell_list(self) -> list[list[str]]:
+
+        key_word = f'{self.ENGINEERING_MODE}="neighbourcell"\r'
+        self.ser.write(key_word.encode())
+        self.ser.flush()
+
         neighborcell = [line.decode().strip('\n').strip('\r')
-                        for line in self.ser.readlines()][1:-2]
+                        for line in self.ser.readlines()][1: -2]
         neighborcell = [neighborcell.split("',")
                         for neighborcell in neighborcell]
         neighborcell = [neighborcell[:][i][0][35:] for i in range(
@@ -208,8 +316,8 @@ class EG25G:
         return neighborcell
 
     def get_band_scan(self) -> list[str]:
-        start = time.time()
-        key_word = 'AT+QCOPS=4,0,0,1\r'
+        start = time.time()  # 4: 4G only, 1: Most information, 0: show PSID, 1: seconds per scan
+        key_word = f'{self.BAND_SCAN}=4,1,0,1\r'
         self.ser.write(key_word.encode())
         self.ser.flush()
 
@@ -224,38 +332,54 @@ class EG25G:
 
 
 def main():
-    # eg25g = EG25G("/dev/ttyUSB3")
-    # eg25g.data_carrier_detection_mode()
-    # time.sleep(1)
-    # print("earfcn, pcid, rsrq, rsrp, rssi, sinr, srxlev, cell_resel_priority, s_non_intra_search, thresh_serving_low, s_intra_search")
-    # eg25g.set_modem_ready()
-    # time.sleep(1)
-    # [print(f"{tower.split(',')[0]}") for tower in eg25g.get_neighborcell_list()]
-    # print(eg25g.get_neighborcell_list()[0])
-    # [print(long_scan) for long_scan in eg25g.get_band_scan()]
-    earfcns: list = [2600, 5035, 5230, 9820, 67061, 68661,
-                     750, 2175, 5110, 66961, 66786, 66661, 650, 1100, 2300]
-    cell_modem: list = [1100, 2300, 2175, 2600, 5035, 5110, 5230, 8190, 650]
+
+    # earfcns: list = [2600, 5035, 5230, 9820, 67061, 68661,
+    #                  750, 2175, 5110, 66961, 66786, 66661, 650, 1100, 2300]
+    # cell_modem: list = [1100, 2300, 2175, 2600, 5035, 5110, 5230, 8190, 650]
 
     # earfcns: list = [E_UTRA.convert_to_frequency(i) for i in sorted(earfcns)]
     # cell_modem: list = [E_UTRA.convert_to_frequency(
     #     i) for i in sorted(cell_modem)]
 
     # print the values of the earfcn that are in the cell_modem in colorama yellow
-    for earfcn in sorted(earfcns):
-        if earfcn in cell_modem:
-            print(f"{F.YELLOW}{E_UTRA.convert_to_frequency(earfcn)}{R} MHz")
-        else:
-            print(f"{F.RED}{E_UTRA.convert_to_frequency(earfcn)}{R} MHz")
-
-    # show earfcn in colorama blue
-    # for earfcn in earfcns:
-    #     print(f"{F.BLUE}{E_UTRA.convert_to_frequency(earfcn)}{R} MHz")
+    # for earfcn in sorted(earfcns):
+    #     if earfcn in cell_modem:
+    #         print(f"{F.YELLOW}{E_UTRA.convert_to_frequency(earfcn)}{R} MHz")
+    #     else:
+    #         print(f"{F.RED}{E_UTRA.convert_to_frequency(earfcn)}{R} MHz")
 
     # print band scan results in colorama yellow
     # for band_scan in eg25g.get_band_scan():
     #     print(f"{F.YELLOW}{band_scan.decode()}{R}")
 
+    # bands = sum([E_UTRA.quectel_band(band) for band in E_UTRA.US_BANDS])
+    # # bands_in_hex = hex(bands)
+    # print(bands)
+
+    us_band = EG25G("/dev/ttyUSB3")
+
+    print(f"Checking Connections: {F.BLUE}{us_band.check_connection()}{R}")
+    # print(
+    # f"Signal Strength: {F.BLUE}{us_band.signal_strength()}{R} {F.YELLOW}dBm{R}")
+    # Set the band to band 2
+    # us_band.set_band([2])
+
+    # is the serial port open
+    # print(f"Serial Port: {F.YELLOW}{us_band.is_ser_open()}{R}")
+    print()
+
+    # Set the band to band 2
+    # us_band.set_band([2])
+    time.sleep(1)
+    # print(f"Current Band: {F.BLUE}Band {us_band.check_current_band()}{R}")
+    # time.sleep(1)
+
+    # check the band that is presently set
+    # print(f"Current Band: {F.YELLOW}Band {us_band.check_current_band()}{R}")
+    # time.sleep(0.5)
+
+    # print(f"{F.BLUE}Neighborhood list:{R} {F.YELLOW}{us_band.get_neighborcell_list()}{R}")
+    us_band.power_down()
 
 if __name__ == "__main__":
     main()
