@@ -1,1 +1,1 @@
-We do not want anyone to see our source code, but if for any reason our code is stolen or otherwise obtained, we want to have a license that does not allow disclosure of any kind.
+This codebase is the property of Cellantenna Wireless and is not to be used anywhere else without written permission.
